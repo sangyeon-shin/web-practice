@@ -1,0 +1,62 @@
+조인 문을 생성하는 과정
+[step 1] 지문에서 검색 대상과 조건을 구분한다.
+  --이를 통해 일단 SELECT 절, WHERE 절, ORDER BY 절을 구성한다.
+  --SELECT 절은 [step 5]에서 작성자의 의도에 따라 추가될 수 있다.
+[step 2] SELECT 절과 WHERE 절의 내용에 따라 정보를 검색할 테이블을 찾는다.
+[step 3] 테이블간의 관계를 확인한다.
+  --관계를 확인하는 단계에서 테이블이 추가될 수 있다.
+[step 4] 조인 조건을 기술한다.
+[step 5] 전체 문장을 다듬는다.
+
+위에 제시한 단계별로 지문으로부터 SQL문을 만들어 보자.
+
+ *화학과 학생의 일반화학 기말고사 점수를 검색 하시오.
+[step 1] 지문에서 검색 대상과 조건을 찾는다. 
+ 지문에서 검색 컬럼과 조건을 찾는다.
+  - 검색 대상                                       
+     기말 고사 점수: result                        SELECT result
+  - 조건                                                FROM
+     화학과 학생:  major = '화학'                WHERE major='화학 AND
+     일반 화학 과목: cname = '일반화학'                cname='일반화학'
+-------------------------------------------------------------------------------------
+[step 2]SELECT 절과 WHERE 절의 내용에 따라 정보를 검색할 테이블을 찾는다.
+  SELECT 절과 WHERE 절에 사용된
+  컬럼이 포함된 테이블을 기술한다.          SELECT result
+   * result  : score 테이블                        FROM student, course, score
+   * major : student 테이블                      WHERE major='화학' AND
+   * cname : course 테이블 		              cname='일반화학'	
+---------------------------------------------------------------------------------------
+[step 3] 테이블간의 관계를 확인한다.
+student, course, score 테이블의 관계가
+끊어지지 않도록 관계를 확인한다.             SELECT result
+student--(sno)--score--(cno)--course          FROM student, course, score  
+*테이블간의 관계가 끊어지는 경우 중간에   WHERE major='화학' AND
+ 새로운 테이블을 삽입해서 관계가 끊어지              cname='일반화학'
+ 지 않도록 조치 한다.
+--------------------------------------------------------------------------------------
+[step 4] 조인 조건을 기술한다.
+                                         	SELECT result     
+  FROM 절에 쓰인 테이블 간에             FROM student, course, score
+  조인 조건을 기술한다.                      WHERE student.sno = score.sno
+                                                     AND course.cno = score.cno
+                                                     AND major='화학' 
+                                                     AND cname='일반 화학'  
+---------------------------------------------------------------------------------------
+[step 5] 전체 문장을 다듬는다.
+[step 4]까지 조인 문장이 완성            SELECT major, cname, sno, sname,result 
+되었으나, SELECT문을 읽을때             FROM student, course, score
+해석을 돕기 위해 새로운 컬럼을          WHERE student.sno=score.sno	
+SELECT 절에 추가하거나, 별명을          AND course.cno = score.cno
+지정하거나 등의 부가적인 요소들을      AND major='화학' AND 
+점검한다. 추가된 내용으로 만들어진      cname='일반화학';
+SELECT 문의 논리적인 구성에 
+영향을 끼치지 않아야 한다.
+
+-------------------------------------------------------------------------------------
+* 4학년 학생이 수강하는 과목을 강의하는 교수의 명단을 검색하시오.
+
+
+
+
+
+
