@@ -1,0 +1,388 @@
+조인 문을 생성하는 과정
+[step 1] 지문에서 검색 대상과 조건을 구분한다.
+  --이를 통해 일단 SELECT 절, WHERE 절, ORDER BY 절을 구성한다.
+  --SELECT 절은 [step 5]에서 작성자의 의도에 따라 추가될 수 있다.
+[step 2] SELECT 절과 WHERE 절의 내용에 따라 정보를 검색할 테이블을 찾는다.
+[step 3] 테이블간의 관계를 확인한다.
+  --관계를 확인하는 단계에서 테이블이 추가될 수 있다.
+[step 4] 조인 조건을 기술한다.
+[step 5] 전체 문장을 다듬는다.
+
+위에 제시한 단계별로 지문으로부터 SQL문을 만들어 보자.
+
+ *화학과 학생의 일반화학 기말고사 점수를 검색 하시오.
+[step 1] 지문에서 검색 대상과 조건을 찾는다. 
+ 지문에서 검색 컬럼과 조건을 찾는다.
+  - 검색 대상                                       
+     기말 고사 점수: result                        SELECT result
+  - 조건                                                FROM
+     화학과 학생:  major = '화학'                WHERE major='화학 AND
+     일반 화학 과목: cname = '일반화학'                cname='일반화학'
+-------------------------------------------------------------------------------------
+[step 2]SELECT 절과 WHERE 절의 내용에 따라 정보를 검색할 테이블을 찾는다.
+  SELECT 절과 WHERE 절에 사용된
+  컬럼이 포함된 테이블을 기술한다.          SELECT result
+   * result  : score 테이블                        FROM student, course, score
+   * major : student 테이블                      WHERE major='화학' AND
+   * cname : course 테이블 		              cname='일반화학'	
+---------------------------------------------------------------------------------------
+[step 3] 테이블간의 관계를 확인한다.
+student, course, score 테이블의 관계가
+끊어지지 않도록 관계를 확인한다.             SELECT result
+student--(sno)--score--(cno)--course          FROM student, course, score  
+*테이블간의 관계가 끊어지는 경우 중간에   WHERE major='화학' AND
+ 새로운 테이블을 삽입해서 관계가 끊어지              cname='일반화학'
+ 지 않도록 조치 한다.
+--------------------------------------------------------------------------------------
+[step 4] 조인 조건을 기술한다.
+                                         	SELECT result     
+  FROM 절에 쓰인 테이블 간에             FROM student, course, score
+  조인 조건을 기술한다.                      WHERE student.sno = score.sno
+                                                     AND course.cno = score.cno
+                                                     AND major='화학' 
+                                                     AND cname='일반 화학'  
+---------------------------------------------------------------------------------------
+[step 5] 전체 문장을 다듬는다.
+[step 4]까지 조인 문장이 완성            SELECT major, cname, sno, sname,result 
+되었으나, SELECT문을 읽을때             FROM student, course, score
+해석을 돕기 위해 새로운 컬럼을          WHERE student.sno=score.sno	
+SELECT 절에 추가하거나, 별명을          AND course.cno = score.cno
+지정하거나 등의 부가적인 요소들을      AND major='화학' AND 
+점검한다. 추가된 내용으로 만들어진      cname='일반화학';
+SELECT 문의 논리적인 구성에 
+영향을 끼치지 않아야 한다.
+
+-------------------------------------------------------------------------------------
+* 4학년 학생이 수강하는 과목을 강의하는 교수의 명단을 검색하시오.
+[step 1] 지문에서 검색 대상과 조건을 찾는다.
+  * 검색 대상
+        -교수 명단 : pname                    SELECT  pno, pname
+  * 조건                                            FROM
+        -4 학년 학생: syear = 4;               WHERE  syear = 4;
+-------------------------------------------------------------------------------------
+[step 2]SELECT 절과 WHERE 절의 내용에 따라 정보를 검색할 테이블 찾기
+   * pname : professor                       SELECT pno, pname
+   * syear : student                            FROM student, professor
+                                                     WHERE syear = 4;
+----------------------------------------------------------------------------------
+[step 3] 테이블간의 관계를 확인한다.
+    student --- ??? --- professor
+  student 와 professor 테이블 둘
+사이에는 직접적인 관계가 없다.            SELECT pno, pname
+ student --(sno)--score--(cno)--            FROM student, professor, score,
+ -course--(pno)--professor                            course  
+student와 professor의 관계를 위해서     WHERE syear = 4;
+score와 course테이블이 필요하다.
+-----------------------------------------------------------------------
+[step 4] 조인 조건을 기술한다.
+                                                  SELECT DISTINCT professor.pno, pname
+  4개 테이블간의                            FROM student, professor, score
+  조인 조건을 기술한다.                             course
+                                                  WHERE student.sno = score.sno
+                                                  AND score.cno = course.cno
+                                                  AND course.pno = professor.pno
+                                                  AND syear = 4;
+-----------------------------------------------------------------------------------
+[step 5]전체 문장을 다듬는다.
+
+....          SELECT DISTINCT c.cname 과목명 ,p.pname "교수 명단"
+             FROM student st, course c,score s,professor p
+             WHERE st.sno = s.sno
+             AND s.cno = c.cno
+             AND c.pno = p.pno
+             AND syear = 4;                                          
+
+
+-----------------------------------------------------------------------------
+1)직원과 사수의 명단을 검색하시오. 
+  단 직원명단은 모든 직원 명단이 출력되어야 한다. 
+[step 1] 지문에서 검색 대상과 조건을 찾는다.
+  * 검색 대상
+        -사수 명단 : ename              SELECT  ename, ename
+        -직원 명단 : ename                    
+  * 조건                                      FROM
+        -직원의 사수: mgr = eno;            WHERE  mgr = eno;
+-------------------------------------------------------------------------------------
+[step 2]SELECT 절과 WHERE 절의 내용에 따라 정보를 검색할 테이블 찾기
+   * ename : emp    SELECT ename 사원이름, ename 관리자이름
+   * ename : emp    FROM emp
+                           WHERE mgr = eno;
+----------------------------------------------------------------------------------
+[step 3] 테이블간의 관계를 확인한다.
+     자기 참조 테이블                   
+-----------------------------------------------------------------------
+[step 4] 조인 조건을 기술한다.
+                                               SELECT w.ename, m.ename
+                                               FROM emp w, emp m
+                                               WHERE w.mgr = m.eno;
+-----------------------------------------------------------------------------------
+[step 5]전체 문장을 다듬는다.
+
+SELECT w.eno, w.ename  w.mgr , m.eno m.ename
+FROM emp w, emp m
+WHERE w.mgr = m.eno(+);
+
+
+
+
+
+
+-----------------------------------------------------------------------------
+2) 교수의 정보와 교수가 담당하는 과목명을 검색하시오. 
+[step 1] 지문에서 검색 대상과 조건을 찾는다.
+  * 검색 대상
+        -교수 정보 :  pno, pname, section orders hiredate             
+        -과목명     :  cname                   
+  * 조건                
+        -   course.pno = professor.pno          
+		SELECT pno, pname, section orders hiredate cname
+                           FROM
+                           WHERE course.pno = professor.pno                
+-------------------------------------------------------------------------------------
+[step 2]SELECT 절과 WHERE 절의 내용에 따라 정보를 검색할 테이블 찾기
+   * p.... : professor    SELECT pno, pname, section orders hiredate cname
+   * cname : course    FROM professor, course
+                             WHERE course.pno = professor.pno
+----------------------------------------------------------------------------------
+[step 3] 테이블간의 관계를 확인한다.
+      professor---(pno)---course                
+-----------------------------------------------------------------------
+[step 4] 조인 조건을 기술한다.
+                              SELECT pno, pname, section orders hiredate cname
+                              FROM professor, course
+                              WHERE course.pno = professor.pno 
+-----------------------------------------------------------------------------------
+[step 5]전체 문장을 다듬는다.
+
+SELECT pno, pname, section orders hiredate cname
+FROM professor, course
+WHERE course.pno(+) = professor.pno 
+
+--자연 조인(Nartural Join)
+--자연 조인은 동일한 타입과 이름을 가진 컬럼을
+-- 조인 조건으로 이용하는 조인 문장을 보다
+--간단히 표현하는 방법으로 등가조인이다.
+
+--SELECT 컬럼, ...
+--FROM 테이블1  
+--NATURAL JOIN 테이블2
+--WHERE 일반_조건;
+
+SQL> SELECT eno, ename, dno,dname
+  2  FROM emp
+  3  NATURAL JOIN dept;
+ 위 내용은 아래와 같다.
+SQL> select eno, ename, d.dno, dname
+  2  from emp e, dept d
+  3  where e.dno=d.dno;
+
+--광주에서 근무하는 직원의 명단을 검색하시오.
+SQL> select emp.dno, ename, loc
+  2  FROM emp, dept
+  3  where emp.dno = dept.dno
+  4  AND loc='광주';
+
+SQL> SELECT dno, ename, loc
+  2  FROM emp
+  3  NATURAL JOIN dept
+  4  WHERE loc='광주';
+
+--단일 행 함수 - 문자함수
+-- 프로그래머는 복잡한 SQL문의 이해나
+--오라클이 제공하는 함수를 몰라도 사용에는 문제가 없다.
+
+--문자함수
+--LOWER 문자열을 소문자로 변환한다.
+--UPPER 문자열을 대문자로 변환한다.
+--INITCAP 첫문자만 대문자로 나머지는 소문자
+
+--ERP 부서가 있는 지역을 검색한다.
+
+SQL> SELECT INITCAP('aaa') 대문자  FROM DUAL;
+
+--문자연산함수
+--SUBSTR 문자열내에 지정된 위치의 문자열을 반환 
+       SUBSTR('oracle', 1,2)
+--LENGTH 지정된 문자의 길이를 반환 
+       LENGTH('ORACLE') 
+--INSTR 지정된 문자의 위치를 리턴 
+       INSTR('oracle', 'a')
+
+-- TRIM 접두어나 접미어를 잘라낸다.
+      TRIM('o' FROM 'oracle')
+-- LPAD, RPAD 지정된 문자열의 길이 만큼 빈부분에
+            문자를 채운다.
+            LPAD('20000',10,'*')
+
+--부서의 명과 위치를 하나의 컬럼으로 검색한다.
+--CONCAT는 문자열을 연결해주는 함수
+-- || 연산자과 같은 기능을 한다.
+
+--부서명과 길이를 출력하세요..
+SQL> SELECT dname, LENGTH(dname) from dept;
+
+--SUBSTR 함수를 이용해서 컬럼의 일부 내용만을 검색한다.
+   
+
+--사원 이름에 'a'가 나타나는 위치를 출력해보자 
+   --INSTR('database', 'a')
+
+SQL> SELECT INSTR('databaseabbacbac', 'a', 7,3) FROM dual;
+
+--TRIM 함수를 이용한 다양한 방법으로 문자열 검색
+  SQL> SELECT TRIM('남'  FROM '남기남') FROM dual;
+  SQL> SELECT TRIM(leading '남'  FROM '남기남') FROM dual;
+  SQL> SELECT TRIM(trailing '남'  FROM '남기남') FROM dual;
+
+
+--이름과 급여를 각가 10 컬럼으로 검색하시오.
+SQL> col one for a15
+SQL> col two for a15
+SQL> SELECT RPAD(ename, 10, '*') one , LPAD(sal,10,'*') two FROM emp;
+
+부서명의 마지막 글자를 제외하고 검색하시오.
+SQL> SELECT DNAME , SUBSTR(DNAME, 1,LENGTH(DNAME)-1) DNAME 
+         FROM DEPT;
+
+--문자치환함수 
+-- TRANSLATE : 문자단위 치환된 값을 리턴한다.
+	       TRANSLATE('oracle', 'o', '#')  => #oracle
+-- REPLACE : 문자열단위 치환된 값을 리턴한다.
+                    REPLACE('oracle', 'or', '##')  => ##acle
+
+  SQL> col one for a20
+SQL> col two for a20
+SQL> SELECT TRANSLATE('World of Warcraft','Wo','--') one,
+  2        REPLACE('World of Warcraft', 'Wo','--') two FROM dual;
+
+SQL> SELECT TRANSLATE('World of Warcraft','Wo','--#?') one,
+  2        REPLACE('World of Warcraft', 'Wo','----') two FROM dual;
+
+(모두 단일 행 함수 이용)
+1) 이름이 두 글자인 학생의 이름을 검색하시오
+SQL> SELECT SNAME FROM STUDENT WHERE SNAME LIKE '__';
+SQL> SELECT SNAME FROM STUDENT WHERE LENGTH(SNAME) = 2;
+2)'강' 씨 성을 가진 학생의 이름을 검색하시오
+SQL> SELECT  SUBSTR(SNAME,2)  FROM STUDENT WHERE SUBSTR(SNAME,1,1) = '강';
+3)교수의 지위를 한글자로 검색하시오 (조교수->조)
+SQL> SELECT PNAME , SUBSTR(ORDERS,1,1)  FROM PROFESSOR;
+4)일반 과목을 기초 과목으로 변경해서 모든 과목을 검색하시오
+   (ex 일반화학 -> 기초화학)
+SQL> SELECT CNAME ONE, REPLACE(CNAME,'일반','기초') TWO FROM COURSE
+  2  WHERE CNAME LIKE '일반%';
+5)직원의 연봉을 10자리로 검색하시오. 단 공백은 임의의 채움 문자로 채움
+SQL> SELECT LPAD(SAL*12+NVL(COMM,0),10,'-')  FROM EMP;
+6)학생의 이름을 검색하시오. 
+(단 성이 '심'인 학생은 성을 '사마'로 바꾸어검색) 
+SQL> SELECT  SNAME one, REPLACE(SNAME,'심','사마')  two 
+        FROM STUDENT;
+
+--서브 쿼리 - 단행 행 서브쿼리 
+-- 서브 쿼리는 두 개의 쿼리를 결합하여 하나의 문장으로 
+-- 표현하는 것이다.
+--1) 단일 행 서브쿼리
+      서브쿼리가 하나의 컬럼에서 하나의 행을 검색한다. 
+--2)다중 행 서브쿼리
+--    서브쿼리가 하나의 컬럼에서 여러개의 행을 검색한다.
+  3) 다중 열 서브쿼리 
+      서브쿼리가 여러 개의 컬럼을 검색한다.
+   4) 서브 쿼리는 WHERE 절, HAVING 절과 같이 조건절에 주소 쓰인다.
+       FROM절에 쓰이는 경우도 있다.
+       FROM 절에 서브쿼리를 쓰는 경우를 인라인 뷰(Inline View)
+       라고 한다.
+--SELECT 컬럼, ...
+--FROM 테이블
+--WHERE 컬럼 <단일 행 연산자> (SELECT 문: Sub Query);
+--1) 단일 행 연산자가 사용됨으로 반드시 서브쿼리의 결과값은 1
+      개만 검색되어야 한다.
+--2) 서브 쿼리는 반드시 괄호로 묶는다.
+--3) 서브 쿼리는 메인 쿼리 실행전에 실행된다.
+--4) 서므 쿼리의 검색된 결과값은 메인 쿼리에 사용된다.
+--5)  단일 행 연산자 오른쪽에 기술한다.
+       ( = , <, >, <=, >=, !=)
+--6) WHERE 절에 기술된 열의 숫자와 타입은 
+      SELECT 절과 1:1 대응관계가 되어야 한다.
+
+--안영숙보다 급여를 많이 받는 사원을 검색하시오.
+SQL> SELECT ENAME, SAL FROM EMP WHERE SAL >
+  2  (SELECT SAL FROM EMP WHERE ENAME='안영숙');
+
+--천유정보다 급여를 많이 받는 사원을 검색하시오.
+
+
+--김선유 보다 급여를 많이 받는 사원을 검색하시오.
+   행의 값이 두개여서 에러발생 검색이 될수 없다.
+
+--정의찬과 부서가 다르고 동일한 업무를 하는 사원의 정보를 검색하시오.
+SQL> SELECT eno 서번, ename 이름, dno 부서번호, job 업무
+  2  FROM emp
+  3  where  dno !=( SELECT dno FROM emp WHERE ename='정의찬')
+  4  AND job = (SELECT job FROM emp WHERE ename ='정의찬');
+
+-- 부산에서 근무하는 사원의 정보를 검색하시오
+SQL> SELECT ENO 사원번호 , ENAME 이름 FROM emp
+        WHERE DNO = ( SELECT DNO FROM DEPT WHERE LOC='부산');
+
+1) 김혁윤 보다 평점이 우수한 학생의 학번과 이름을 검색하시오.
+  SELECT sno, sname FROM student
+  WHERE avr > (SELECT avr FROM student WHERE sname='김혁윤');
+2) 권현과 동일한 학년 학생 중에 평점이 강은혜와 동일한 학생을 검색하시오.
+  SELECT sno, sname FROM student
+  WHERE syear = (SELECT syear FROM student WHERE sname='권현')
+        AND avr = (SELECT avr FROM student WHERE sname='강은혜');
+3)이학수학 과목과 동일한 학점수인 과목을 검색하시오.
+  SELECT cno, cname FROM course
+  WHERE st_num = (SELECT st_num FROM course
+                WHERE cname='이학수학')
+		AND cname != '이학수학';
+4)타 학과에 송강 교수와 동일한 지위의 교수 명단을 검색하시오.
+  SELECT pno, pname, section, orders FROM professor
+  WHERE orders = ( SELECT orders FROM professor WHERE pname = '송강')
+  AND section !=(SELECT section FROM professor WHERE pname = '송강');
+5)제갈민 보다 나중에 부임한 교수의 명단을 검색하시오.
+  SELECT pno, pname FROM professor
+  WHERE hiredate > (SELECT hdate FROM emp WHERE ename ='제갈민');
+6)강태용보다 일반 화학 과목의 점수가 더 낮은 학생의 명단을 학점과 
+  검색하시오.
+  SELECT s.sno, sname, cname, grade
+  FROM student s, course c, score r, scgrade g
+  WHERE s.sno=r.sno AND r.cno=c.cno AND result BETWEEN loscore AND hiscore
+  AND cname = '일반화학'
+  AND grade < ( SELECT grade
+                FROM student s, course c, score r, scgrade g
+		WHERE s.sno=r.sno AND r.cno=c.cno
+		AND result BETWEEN loscore AND hiscore
+		AND sname = '강태용'
+		AND cname = '일반화학');
+ 
+--서브 쿼리 - 다중행, 다중 열
+-- SELECT 컬럼,...
+-- FROM 테이블
+-- WHERE 컬럼 < 다중 행 연산자> (SELECT 문: Sub Query 문);
+--1) 서브 쿼리에 여러 개의 행의 검색되는 쿼리를 다중 행 
+      서브 쿼리라고 한다.
+--2) 다중 행 서브 쿼리는 다중행 연산자를 이용한다.
+--3) 다중 행 연산자의 종류
+     IN : 검색된 값중에 하나만 일치하면 참이다.
+     ANY : 검색된 값중에 조건에 맞는 것이 하나 이상 
+              있으면 참이다.
+     ALL : 모든 검색된 값과 조건에 맞아야 참이다.
+
+--20번 부서원들과 동일한 관리자로부터 관리 받는 사원을 검색한다.
+--1)20번 부서원들의 관리자가 여러 명일 수 있다.
+--2) 서브쿼리의 결과가 몇 개일지 예측할 수 없는 경우
+      다중 행 연산자를 이용하여 다중 행 서브쿼리를 작성한다.
+SQL> SELECT DNO, ENO, ENAME FROM EMP WHERE MGR IN ( SELECT MGR
+         FROM EMP WHERE DNO='20') AND dno != '20';
+
+
+
+
+
+
+
+
+
+
+
+
