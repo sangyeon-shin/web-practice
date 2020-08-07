@@ -1,0 +1,200 @@
+--자연 조인을 사용해서
+--광주에서 근무하는 직원의 명단을 검색하시오.
+SQL> SELECT * from dept,emp where dept.dno = emp.dno
+  2  AND loc='광주';
+
+SQL> SELECT * FROM dept NATURAL JOIN emp
+  2  WHERE  loc='광주';
+
+--Using 절을 사용한 Join
+-- 두 테이블에 공통 2개이상인 경우
+--SELECT 컬럼, ...
+--FROM 테이블1
+--JOIN 테이블2 USING(조인 컬럼)
+--[JOIN 테이블3 USING(조인 컬럼)...
+--WHERE 일반_조건;
+--1) NATURAL 과 USING은 함께 사용할 수 없다.
+--2) 조인에 사용되지 않는 동일 명칭의 컬럼은 
+-- 컬러명 앞에 테이블 명을 기술한다.
+
+--Using 절로 각 사원의 근무 부서를 검색한다.
+SQL> SELECT eno, ename, dno, dname
+  2  FROM emp
+  3  JOIN dept USING(dno);
+
+--Using절로 광주에서 근무하는 직원의 명단을 검색하시오.
+SELECT loc, dno, dname, eno, ename
+FROM emp
+NATURAL JOIN dept
+WHERE loc='광주';
+
+SELECT loc, dno, dname, eno, ename
+FROM emp
+JOIN dept USING(dno)
+WHERE loc='광주';
+
+--화학과 1학년 학생들의 유기화학 점수를 검색하시오.
+SELECT * FROM student; --화학과 1학년 학생
+SELECT * FROM course;  --과목중 유기화학 
+SELECT * FROM score;   --점수 
+
+SQL> SELECT major, syear, student.sno, sname, score.cno, cname, result
+  2   FROM student, score, course
+  3  where student.sno = score.sno
+  4   AND score.cno = course.cno
+  5   AND syear=1
+  6  AND cname='유기화학'
+  7  AND major='화학';
+
+
+SQL> SELECT major, syear, sno, sname, cno, cname, result
+  2  FROM student
+  3  JOIN score USING(sno)
+  4  JOIN course USING(cno)
+  5  WHERE major='화학'
+  6  AND syear=1
+  7  AND cname='유기화학';
+
+
+SQL> SELECT major, syear, sno, sname, cno, cname, result
+  2  FROM student
+  3   NATURAL JOIN score
+  4   NATURAL JOIN course
+  5  WHERE major='화학'
+  6  AND syear=1
+  7   AND cname='유기화학';
+
+/*
+   단일 행 함수 -- 변환 함수
+날짜 출력 형식
+ 년 :  YYYY: 네자리로 표현된 년도(1999,2020,2011)
+        YY: 두자리로 표현된 년도(82,20)
+	    앞에 두자리는 현재 년도를 사용한다.
+            99년은 2099년을 의미한다.
+        RR : 두자리로 표현된 년도 ( 99, 20)
+            앞에 두자리는 현재 년도와 가까운 년도를 사용한다.
+	   
+
+ 99년은 1999년, 20년은 2020년
+        MM : 두자리 숫자로 표현된 월(03,04)
+	MONTH: 영문이나 한글로 표현된 월(MARCH, APRIL, 3월)
+	MON : 약자로 표현된 영문 및 한글 월(MAR,APR,3월)
+
+        DD : 두자리 숫자로 표현된 일자(01,02)
+        DAY : 영문이나 한글요일(SUNDAY, MON, 일,월)
+
+	HH24 : 1시에서 24시까지 표현
+	HH : 1시에서 12시까지 표현
+
+	MI : 두자리 분표시
+	SS : 두자리 초표시
+	SSSS : 하루를 초로 환산한 다음 표현(0-86399)
+	오전/오후/AM/PM : 오전 오후 표기
+
+숫자 출력 형식
+  9   숫자의 출력 폭지정
+  0   선행 0표기
+  $   화폐 표기
+  L   지역 화폐표기
+  ,   쉼표 위치 지정
+  .   마침표 위치 지정
+  MI  음수의 - 기호를 오른쪽에 표기
+
+변환 함수
+ TO_CHAR : 날짜나 숫자를 문자로 변환한다.
+	   출력 데이터 형식을 지정한다.
+	   TO_CHAR(날짜, 출력형식)
+	   TO_CHAR(숫자, 출력형식)
+ TO_DATE : 데이터를 날짜형으로 해석한다.
+	   TO_DATE(문자, 해석형식)
+ TO_NUMBER : 데이터를 숫자로 해석한다.
+	   대부분의 경우 오라클의 자동 형변환에 의해
+	   숫자로 읽을 수 있는 문자로 자동 변환됨
+*/
+
+--현재 날짜를 다양한 형식으로 출력해보자 
+SQL> SELECT TO_CHAR(sysdate,'YYYY/MM/DD') "date",
+  2         TO_CHAR(sysdate,'YYYY/MM/DD:HH24:MI:SS') "date",
+  3         TO_CHAR(sysdate,'YY/MM/DD:HH:MI:SS PM') "date" FROM dual;
+
+
+--10번 부서의 사원의 보너스가 급여의 몇 퍼센트인지 검색하시오.
+--급여는 월간급여이고 보너스는 연간 보너스이다.
+--보너스가 null이 경우는 0으로 환원해서 검색한다.
+SQL> SELECT eno, ename, TO_CHAR(NVL(comm,0)/(sal*12) * 100, '99')||'%'  
+FROM emp WHERE DNO='10';
+
+--그룹 함수
+-- 검색된 여러 행을 이용하여 통계정보를 계산하는 함수
+-- MAX  값들 중에 최대값을 반환
+-- MIN  값들 중에 최소값을 반환
+-- AVG  평균값을 계산
+-- CONUT 반환된 행의 수를 계산
+-- SUM 총합을 계산
+-- STDDEV 표준편차를 계산
+-- VARIANCE 분산을 계산
+
+--1) null 값은 무시된다.
+--2) 반드시 1개의 값만을 반환한다.
+--3) GROUP BY 없이 일반 컬럼과 기술 될 수 없다.
+
+---사원의 평균 급여를 검색하시오. 
+SQL> SELECT AVG(sal) 평균급여, ROUND(AVG(sal)) 평균급여 FROM emp;
+
+--사원들에게 지급된 보너스 총합과 보너스 평균을 검색하시오.
+SQL> SELECT SUM(comm) "보너스 총액",
+  2  SUM(NVL(comm,0)) "보너스 총액",
+  3  ROUND(AVG(comm)) 평균,
+  4  COUNT(comm) 수령인원,
+  5  ROUND(AVG(NVL(comm,0))) 환산평균,
+  6  COUNT(*) 전체인원
+  7  FROM emp;
+
+
+--그룹 함수와 GROUD BY 절
+-- SELECT 컬럼 OR 그룹 함수...
+-- FROM 테이블
+-- WHERE 조건
+-- GROUP BY 그룹대상 
+-- ORDER BY 정렬대상
+--1) 그룹함수와 함께 사용되는 컬럼은
+--   반드시 GROUP BY 절에 기술되어야 한다.
+--2) GROUP BY 절에 기술되지 않으면 
+     ORA-00937 에러가 발생한다.
+
+--업무별 평균 급여, 평균 연봉을 검색하시오.
+SQL> SELECT job 업무 , ROUND(AVG(sal)) 평균급여,
+  2  ROUND (AVG(sal*12+NVL(comm,0))) 평균연봉
+  3  FROM emp
+  4  GROUP BY job;
+
+--부서별 평균 급여, 평균 연봉을 검색하시오. 
+SQL> select d.dno 부서번호, dname 부서명,
+  2  ROUND(AVG(sal)) 평균급여,
+  3  ROUND(AVG(sal*12+NVL(comm,0))) 평균연봉
+  4  FROM emp e, dept d
+  5  where d.dno = e.dno
+  6  GROUP BY d.dno, dname;
+
+SQL> select dno 부서번호, dname 부서명,
+  2  ROUND(AVG(sal)) 평균급여,
+  3  ROUND(AVG(sal*12+NVL(comm,0))) 평균연봉
+  4  FROM emp
+  5  NATURAL JOIN dept
+  6  GROUP BY DNO,DNAME;
+
+
+1. 화학과 학년별 평균 평점을 검색하라
+2. 각 학생별 기말고사 평균을 검색하라
+3. 각 학과별 학생 수를 검색하라
+4. 화학과와 생물학과 학생 4.5 환산 평점의 평균을 각각 검색하라
+5. 부임일이 10년 이상 된 직급별(정교수, 조교수, 부교수)
+  교수의 수를 검색하라
+  WHERE MONTHS_BETWEEN(sysdate, hiredate) >= 120;
+6. 과목명에 화학이 포함된 과목의 학점수 총합을 검색하라
+7. 화학과 학생들의 기말고사 성적을 성적순으로 검색하라
+8. 학과별 기말고사 평균을 성적순으로 검색하라
+
+
+
+
