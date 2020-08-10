@@ -1,0 +1,334 @@
+--그룹 함수와 Having 절
+-- 그룹 함수를 포함한 조건을 일반 조건과 계산하는 시점이 다르다.
+-- 일반 조건의 경우 컬럼의 갑을 단지 조건과 비교하면 되지만
+-- 그룹 함수의 결과를 조건으로 하는 경우 GROUP BY 절의 
+-- 사용 유무에 따라 결과 값이 달라지므로 조건에 그룹 함수가
+-- 포함된 경우 이것은 일반 조건과 동일한 시점에 처리 할 수 없다.
+-- SQL 은 이를 위햇 HAVING 절을 제공한다.
+-- HAVING 절은 조건 중에 그룹함수가 포함된 것만을 모아서 기술하는 구문이다.
+
+--SELECT 컬럼 OR 그룹함수 ...
+--FROM 테이블
+--WHERE 일반 조건
+--GROUP BY 그룹 대상
+--HAVING 그룹함수 포함 조건 
+--ORDER BY 정렬 대상;
+--1) HAVING : 조건 중에 그룹함수를 포함하는 조건 기술
+--2) HAVING 절은 GROUP BY  절 뒤에 기술한다.
+--3) HAVING 절의 해석은 WHERE 절과 동일하다.
+     다만 그룹 함수를 포함하는 조건은 
+     HAVING 절에 해야만 한다.
+
+--GROUP BY 절에 따른 그룹 함수 결과 값의 변화
+
+SQL> SELECT ROUND(AVG(SAL))
+  2  FROM EMP
+  3  GROUP BY DNO;
+
+ROUND(AVG(SAL))
+---------------
+           4070
+           2807
+           2483
+           3000
+           2100
+           3170
+
+6 rows selected.
+
+SQL> SELECT ROUND(AVG(SAL))
+  2  FROM EMP
+  3  GROUP BY JOB;
+
+ROUND(AVG(SAL))
+---------------
+           3803
+           4800
+           2900
+           2533
+           2490
+
+
+
+--부서별 급여 평균이 3천 달러 미만인 부서의 부서번호와 
+--평균 급여를 검색하시오.
+SQL> SELECT DNO 부서번호, ROUND(AVG(sal)) 평균급여
+  2  FROM emp
+  3  GROUP BY DNO
+  4  HAVING AVG(SAL) < 3000;
+
+--개발 업무가 아닌 부서별 인원수를 검색하시오.
+SQL> SELECT DNO, COUNT(*) FROM EMP
+  2  WHERE JOB='개발'
+  3  GROUP BY DNO;
+
+
+1)화학과를 제외하고 과별 학생들의 평점 평균을 검색하시오.
+SQL> SELECT MAJOR, ROUND(AVG(avr))
+  2  FROM STUDENT
+  3  GROUP BY MAJOR
+  4  HAVING MAJOR !='화학';
+
+SQL> SELECT MAJOR,ROUND(AVG(AVR))
+  2  FROM STUDENT
+  3  WHERE MAJOR !='화학'
+  4  GROUP BY MAJOR;
+2)화학과를 제외하고 각 학과별 평균 평점중에 평점이 2.0이상인 정보를 검색하시오.
+SQL>  SELECT MAJOR, ROUND(AVG(AVR))
+  2   FROM STUDENT
+  3  WHERE MAJOR != '화학'
+  4  GROUP BY MAJOR
+  5  HAVING AVG(AVR) > 2.0;
+3)기말고사 평균이 60점 이상인 학생의 정보를 검색하시오(학번과 기말고사 평균)
+ SELECT S.SNO, SNAME, ROUND(AVG(RESULT)) "기말고사 평균"
+  2  FROM student s
+  3  JOIN score r ON s.sno = r.sno
+  4  GROUP BY S.SNO, SNAME
+  5  HAVING AVG(RESULT) >= 60;
+4) 강의 학점수가 3학점 이상인 교수의 정보를 검색하시오(교수번호, 이름과 담당 총학점수)
+SQL> SELECT P.PNO, PNAME, SUM(ST_NUM) "담당 학점"
+  2  FROM PROFESSOR P
+  3  JOIN COURSE C ON P.PNO=C.PNO
+  4  GROUP BY P.PNO, PNAME
+  5  HAVING SUM(ST_NUM) >= 3;
+
+--서브 쿼리 - 단일 행 서브쿼리
+-- 서브 쿼리는 두개의 쿼리를 결합하여 하나의 문장으로 표현하는 것이다.
+--1) 단일 행 서브쿼리
+--   서브커리가 하나의 컬럼에서 하나의 행을 검색한다.
+--2) 다중 행 서브쿼리
+--   서브쿼리가 하나의 컬럼에서 여러 개의 행을 검색한다.
+--3) 다중 열 서브쿼리
+--   서브쿼리가 여러 개의 컬럼을 검색한다.
+--4) 서브 쿼리는 WHERE 절, HAVING 절과 같이 조건절에 주소
+--   쓰인다. FROM절에 쓰이는 경우도 있다.
+ 
+--SELECT 컬럼, ...
+--FORM 테이블
+--WHERE 컬럼 <단일 행 연산자> (SELECT 문: Sub Query)
+--1) 단일 행 연산자가 사용됨으로 반드시 서브쿼리의 결과 값은 1개만 검색되어야 한다.
+--2) 서브 쿼리는 반드시 괄호로 묶는다.
+--3) 서브 쿼리는 메인 쿼리 실행 전에 실행된다.
+--4) 서브 쿼리의 검색된 결과값은 메인 쿼리에 사용된다.
+--5) 단일 행 연산자 오른쪽에 기술한다.
+--   ( =, < , >, <=, >=, !=)
+--6) WHERE 절에 기술된 열의 숫자와 타입은 
+--  SELECT 절과 1:1 대응관계가 되어야 한다.
+
+--김연아보다 급여를 많이 받는 사원을 검색하시오.
+--1)김연아의 급여를 검색한다.
+--2)김연아의 급여와 비교하여 더 많이 받는 사원을 검색한다.
+SQL> SELECT ENO, ENAME, SAL FROM EMP
+  2  WHERE SAL > ( SELECT SAL FROM EMP WHERE ENAME='김연아');
+
+--김연아와 부서가 다르고 동일한 업무을 하는 사원의 정보를 검색하시오.
+  (사원번호, 사원이름, 부서번호, 업무)
+SQL> SELECT ENO, ENAME, DNO, JOB FROM EMP
+  2  WHERE DNO != (SELECT DNO FROM EMP WHERE ENAME='김연아')
+  3  AND JOB = (SELECT JOB FROM EMP WHERE ENAME='김연아');
+
+--부서 중 가장 급여를 많이 받는 부서를 검색하시오.
+--1) 부서중 평균 최대급여 계산
+--2) 일치하는 부서를 출력 
+SQL> SELECT DNO
+  2  FROM EMP
+  3  GROUP BY DNO
+  4  HAVING AVG(SAL) = (SELECT MAX(AVG(SAL))
+  5  FROM EMP
+  6  GROUP BY DNO);
+
+--부산에서 근무하는 사원의 정보를 검색하시오.
+(사원번호, 사원명)
+
+SQL> SELECT ENO, ENAME
+  2  FROM EMP
+  3  WHERE DNO = (SELECT DNO FROM DEPT
+  4  WHERE LOC='부산');
+
+서브 쿼리를 사용하세요
+1)김형진 보다 평점이 우수한 학생의 학번과 이름을 검색하시오.
+SQL> SELECT SNO,SNAME, AVR
+  2  FROM STUDENT
+  3  WHERE AVR > (SELECT AVR
+  4  FROM STUDENT
+  5  WHERE SNAME='김형진');
+2)김형진과 동일한 학년중에 평점이 서찬호와 동일한 학생을 검색하시오.
+SQL> SELECT SNO, SNAME
+  2  FROM STUDENT
+  3  WHERE SYEAR = (SELECT SYEAR
+  4  FROM STUDENT
+  5  WHERE SNAME='김형진')
+  6  AND ROUND(AVR) = (SELECT AVR
+  7  FROM STUDENT
+  8  WHERE SNAME='서찬호');
+3)김형진 보다 일반 화학과목의 학점이 더 낮은 학생의 명단을 학점과 함께 검색하시오.
+SQL> SELECT SNAME,RESULT
+  2  FROM STUDENT S
+  3  JOIN SCORE R ON S.SNO = R.SNO
+  4  JOIN COURSE C ON R.CNO=C.CNO
+  5  WHERE CNAME='일반화학'
+  6  AND RESULT < (SELECT RESULT
+  7  FROM STUDENT S
+  8  JOIN SCORE R ON S.SNO=R.SNO
+  9  JOIN COURSE C ON R.CNO=C.CNO
+ 10  WHERE SNAME='김형진'
+ 11  AND CNAME='일반화학');
+4)인원수가 가장 많은 학과를 검색하시오.
+SQL> SELECT MAJOR
+  2  FROM STUDENT
+  3  GROUP BY MAJOR
+  4  HAVING COUNT(*) = (SELECT MAX(COUNT(*))
+  5  FROM STUDENT
+  6  GROUP BY MAJOR);
+5) 학생중 기말고사 성적이 가장 낮은 학생의 정보를 검색하시오.
+
+SQL> SELECT S.SNO, SNAME, RESULT
+  2  FROM STUDENT S
+  3  JOIN SCORE R ON S.SNO=R.SNO
+  4  GROUP BY S.SNO
+;
+
+
+SQL> SELECT S.SNO, SNAME
+  2  FROM STUDENT S
+  3  JOIN SCORE R ON S.SNO=R.SNO
+  4  GROUP BY S.SNO, SNAME
+  5  HAVING AVG(RESULT) = (SELECT MIN(AVG(RESULT))
+  6  FROM SCORE
+  7  GROUP BY SNO);
+
+
+--서브 쿼리 - 다중 행, 다중 열
+
+--SELECT 컬럼, ...
+--FROM 테이블
+--WHERE 컬럼(다중 행 연산자)(SELECT 문: Sub Query 문)
+--1) 서브 쿼리에 여러개의 행이 검색되는 쿼리를 
+     다중 행 서브 커리라고 한다.
+--2) 다중 행 서브 쿼리는 다중 행 연산자를 이용한다.
+--3) 다중 행 연산자의 종류
+--  IN : 검색된 값중에 하나만 일치하면 참이다.
+--  ANY : 검색된 값중에 조건에 맞는 것이 하나 이상 있으면
+	  참이다.
+--  ALL : 모든 검색된 값과 조건에 맞아야 참이다.
+
+--20번 부서원들과 동일한 관리자로 부터 관리받는 사원을 검색하시오
+--1) 20번 부서원들의 관리자가 여러 명일 수 있다.
+--2) 서브쿼리의 결과가 몇 개일지 예측할 수 없는 경우
+     다중 행 연산자를 이용하여 다중 행 서브쿼리를 작성한다. 
+
+SQL> SELECT DNO,ENO,ENAME,MGR
+  2  FROM EMP
+  3  WHERE MGR IN(SELECT MGR
+  4  FROM EMP
+  5  WHERE DNO='20')
+  6  AND DNO != '20';
+
+--다중 행 연산자와 그룹 함수
+--다중 행 연산자인 ALL 이나 ANY는 다음과같이
+--그룹 함수를 이용해서 표현 할 수 있다.
+--ALL : 모두 다 
+--ANY : 모두 중에 하나라도
+--컬럼  > ALL => 컬럼 > MAX : 가장 큰 값보다 크다
+--컬럼  < ALL => 컬럼 < MIN : 가장 작은 값보다 작다
+--컬럼  > ANY => 컬럼 > MIN : 가장 작은 값보다 크다.
+--컬럼  < ANY => 컬럼 < MAX : 가장 큰 값보다 작다.
+
+--20번 부서원들과 보너스가 같은 사원을 검색하시오
+
+SQL> SELECT ENO, ENAME,COMM
+  2  FROM EMP
+  3  WHERE COMM IN(SELECT COMM
+  4  FROM EMP WHERE DNO='20')
+  5  AND DNO !='20';
+
+--각 부서별로 최소 급여를 받는 사원의 정보를 검색하시오.
+--(이름, 급여)
+
+SQL> SELECT DNO, ENAME
+  2  FROM EMP
+  3  WHERE (DNO,SAL) IN(SELECT DNO,MIN(SAL)
+  4  FROM EMP
+  5  GROUP BY DNO)
+  6  ORDER BY DNO;
+
+다중행/다중열 서브쿼리로 해결하세요.
+1. 화학과 학생의 평점이 동일한 학생들을 검색하시오.
+2. 화학과 교수와 부임일이 같은 사원을 검색하시오.
+3. 화학과 학생과 같은 학년에서 평점이 동일한 학생들을 검색하시오.
+4. 10번 부서 사원들과 연봉이 동일한 사원을 검색하시오.
+5. 기말고사 성적이 핵 화학과목보다 우수한 과목의 
+   과목명와 담당 교수명을 검색하시오.
+6. 10번 부서 사원들과 급여 및 연봉이 동일한 사원을 검색하시오. 
+
+--DML(Data Maniuplation Language)란?
+--데이터베이스에 데이터를 입력, 수정, 삭제하는 명령이다.
+--SELECT 문과는 다르게 데이터베이스의 내용을 변경하는 
+--작업을 수행함으로 SELECT 문에 비해서 훨씬 주의깊게 
+--계획되고 실행되어야 한다.
+--이렇게 DML 작업은 이전과는 달리 안전한 작업과정과
+--결과가 요구됨으로 이를 위해 오르클은 DML 작업을
+--트랜잭션이라는 단위로 관리한다.
+
+--INSERT, UPDATE, DELETE
+
+--INSERT INTO 테이블 [(컬럼,컬럼,...)]
+--VALUES (값, 값,...);
+--1)INSERT 문은 하나의 행만을 삽입한다.
+--2)컬럼 리스트와 VALUE 절의 값은 반드시 1:1로 대응된다.
+--3)테이블의 모든 컬럼에 값을 입력하는 경우 컬럼 리스트를 생략 할 수 있다.
+--  VALUE 절에 기술하는 값의 순서는 DESC 명령으로 확인된 테이블의 컬럼 순서와 일치해야 한다.
+--4)입력되는 값이 숫자가 아닌 경우 반드시 단일 인용부호를 사용한다.
+--5)INSERT 문장에서 생략된 컬럼은 NULL 값이 입력된다.
+--6)명시적은 NULL 값은 NULL을 기술한다.
+--7) 값 대신 DEFAULT를 기술하면 DEFAULT 값이 입력된다.
+
+--UPDATE 테이블
+--SET 컬럼=값, 컬럼=값,...
+--[WHERE 조건]
+--1)컬럼의 값을 수정한다.
+--2)WHERE 절을 생략하면 모든 행의 지정된 컬럼 값이 수정된다.
+--3)여러 컬럼의 값을 동시에 수정할 수 있다.
+--4)값 대신에 DEFAULT 를 기술하면 테이블에 정의된 DEFAULT값으로 변경된다.
+
+--DELETE FROM 테이블
+--[WHERE 조건];
+--1) 행단위로 데이터를 삭제한다.
+--2) 조건이 없는 경우 테이블의 모든 행을 삭제한다.
+--3) 테이블을 삭제해도 테이블의 물리적인 구조는 변하지 않느다.
+
+--DCL(Data Control Language)
+--; COMMIT, ROLLBACK
+--COMMIT
+--1) 작업을 완료한다.
+--2) 모든 DML 문장을 수행한 후 작업을 완료할 때 반드시 필요하다.
+
+--ROLLBACK;
+--1) 작업을 취소한다.
+--2) 모든 DML 문장을 수행한 후 작업을 취소할 때 반드시 필요하다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
