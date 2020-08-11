@@ -1,0 +1,419 @@
+--서브쿼리를 이용한 DML 문장과 다이렉트 로드
+--다량의 DML 작업을 수행하는 경우 서브 쿼리문을 
+--이용하는 경우가 많다.
+--특히 INSERT 작업에 대량 데이터를 입력할 때
+--서브 쿼리를 이용하는 것은 매우 유용하고 빠른 작업 방법이다.
+--특히 메모리를 통하지 않고 직접 데이터를 디스크에 입력하는 
+-- 다이렉트 로드를 같이 사용하면 작업 효과는 배가 된다.
+
+--서브 쿼리를 이용한 DML 문
+--INSERT INTO [/*+ APPEND */] 테이블 [NOLOGGING]
+--[ (컬럼, 컬럼,...)]
+--SELECT 문장;
+--1) 서브쿼리(SELECT 문)에서 검색된 행을 입력값으로 사용한다.
+--2) 한번에 많은 행을 입력할 수 있다.
+--3) 컬럼 리스트와 SELECT 문의 컬럼이 1:1로 대응되어야 한다.
+--4) SELECT 문에 사용한 서브 쿼리문과는 달리 괄호를 쓰지 않는다.
+--5) /*+ APPEND */ : 다이렉트 로드함으로 대량의 입력 작업을 
+                     더 빠르게 작업한다.
+--6) [NOLOGGING] : 로그 정보를 남기지 않음으로 입력작업이 
+                   빨라진다. 그러나 장애가 발생시 복구불가능
+
+--UPDATE 테이블
+--SET 컬럼명 = (SELECT 문장),
+      컬럼명 = (SELECT 문장),...
+--[WHERE 조건];
+
+--UPDATE 테이블
+--SET (컬럼, 컬럼,...) = (SELECT 문장)
+--[WHERE 조건];
+--1) UPDATE 문의 SET 절에는 단일 행 서브쿼리문이나
+-- 다중 열 서브 쿼리문을 이용할 수 있다.
+-- 다중 열인 경우도 반드시 결과 행은 하나여야 한다.
+--2)이 때 검색되는 Data는 반드시 수정되는 컬럼명과 1:1 대응돼야 한다.
+--3) SET 절에는 단일행 서브쿼리만 허용되지만 WHERE 절의 서브 쿼리는
+--   연산자에 따라 달라진다.
+
+--emp2 테이블에 사번과 연봉을 입력하시오.
+
+SQL> INSERT INTO EMP2(ENO,ASAL)
+  2  SELECT ENO,SAL*12+NVL(COMM,0) FROM EMP;
+
+--데이터 타입이 일치하지 않으면 에러발생 
+--데이터 입력이 가능한 경우
+--1)데이터 타입이 같고
+--  저장 컬럼의 크기가 입력 데이터 크기보다 클 경우
+--2)데이터 타입이 달라도 자동 형변환이 가능하고 
+--  저장 컬럼의 크기가 입력 데이터 크기보다 클 경우 
+--  '10' => 10
+--  숫자형 => 문자형 컬럼 
+
+SQL> INSERT INTO EMP2(ENO,ASAL)
+  2  SELECT ENO, DNO FROM EMP;
+
+
+
+--각 사원의 정보와 근무지를 emp3 테이블에 저장하시오.
+SQL> INSERT /*+ APPEND */ INTO EMP3 NOLOGGING
+  2  (ENO,ENAME,DNO,DNAME)
+  3  SELECT ENO,ENAME,D.DNO, DNAME
+  4  FROM EMP E
+  5  JOIN DEPT D ON E.DNO=D.DNO;
+
+SQL> SELECT * FROM EMP3;
+SELECT * FROM EMP3
+              *
+ERROR at line 1:
+ORA-12838: cannot read/modify an object after modifying it in parallel
+
+SQL> COMMIT;
+
+SQL> SELECT * FROM EMP3;
+
+--SELECT 작업이나 DML 작업은 모두 메모리에서 이루어진다.
+--오라클은 SGA라는 메모리 영역 내에 데이터베이스 버퍼 캐시
+--(Database Buffer Cache)라는 영역을 이들 작업 공간으로
+--이용한다. 이를 통해 디스크 접근 회수와 양을 줄여 성능을
+--향상시킨다.
+--그러나 일괄적인 대량의 DML 작업이 메모리에서 일어나면
+--이를 디스크에 반영하고 다시 메모리를 정리하는 등의
+--다이렉트 로드(Direct Load)라 한다. DML 작업을 다이렉트
+--로드하기 위해서는 /*+ APPEND */를 문장에 삽입한다.
+--/* */는 평소에는 주석으로 사용되지만 + 기호를 붙여줌으로써
+--주석이 아닌 오라클에 옵션을 전달하는 용도로 사용된다.
+
+--그리고 오라클은 안전한 시스템 운영을 위해 장애 발생 시 복구
+--할 수 있도록 DB에 변경을 가하는 모든 작업의 내용을 리두 로그
+--(Redo Log)영역에 로그 정보로 보관한다. 그러나 대량의 DML
+--작업은 작업의 효율을 위해 이를 수행하지 않을 수 있다.
+--작업 성능을 위해 로그 정보를 남기지 않기 위해 NOLOGGING 옵션을 
+--사용한다.
+--그러나 이렇게 복구가 불가능하도록 작업한 이후에는 장애에 대비한
+--백업을 잊지 않아야 한다. 대량의 작업에서 다이렉트 로드와
+--노로깅방식을 사용하면 작업 성능은 비약적으로 향상되지만 작업의
+--안전도는 떨어지게 된다.
+
+--다이렉트 로드를 이용해서 대량의 데이터를 테이블에 입력한 경우
+--입력되는 물리적인 위치가 일반 입력과 달라 트랜잭션을 마무리
+--하지 않고 검색하게 되면 'ORA-12838: 병렬로 수정한 후 객체를
+--읽거나 수정할 수 없습니다'라는 에러를 만나게 된다.
+--이것은 입력 데이터의 손상을 방지하기 위한 기능이다.
+--반드시 COMMIT을 한 이후 검색하면 정상적으로 검색이 된다.
+
+--서브 쿼리를 이용한 UPDATE 문을 수행해보자.
+
+
+--윤고은의 급여와 보너스를
+--각각 김연아의 급여와
+--손하늘의 보너스와 동일하게 수정하시오.
+SQL> SELECT * FROM EMP WHERE ENAME IN ('윤고은','김연아','손하늘');
+
+--제갈민과 동일한 부서의 사원들의 급여를
+--제갈민의 급여와 동일하게 수정하시오. 
+SQL> UPDATE EMP SET
+  2  SAL = (SELECT SAL FROM EMP WHERE ENAME='제갈민')
+  3  WHERE DNO =(SELECT DNO FROM EMP WHERE ENAME='제갈민');
+--이초록의 급여, 보너스를 김연아와 동일하게 수정하시오.
+SQL> UPDATE EMP SET
+  2  SAL=(SELECT SAL FROM EMP WHERE ENAME='김연아'),
+  3  COMM = (SELECT COMM FROM EMP WHERE ENAME='김연아')
+  4  WHERE ENAME='이초록';
+
+SQL> UPDATE EMP SET
+  2  (SAL,COMM) = (SELECT SAL,COMM FROM EMP WHERE ENAME='김연아')
+  3  WHERE ENAME='이초록';
+
+1) 일반 화학 과목을 수강하는 학생의 성적을 4.5만점 기준으로 수정하시오.
+SQL> UPDATE STUDENT SET
+  2  AVR=AVR/4.0*4/5
+  3  WHERE SNO IN (SELECT SNO
+  4  FROM STUDENT
+  5  NATURAL JOIN SCORE
+  6  NATURAL JOIN COURSE
+  7  WHERE CNAME='일반화학');
+2) 화학과 교수의 과목중에 학점이 3학점 미만인 과목을 모두 3학점으로 수정하시오.
+SQL> UPDATE COURSE SET
+  2  ST_NUM = 3
+  3  WHERE ST_NUM <3
+  4  AND PNO IN (SELECT PNO
+  5  FROM PROFESSOR
+  6  WHERE SECTION='화학');
+3) 학생의 기말고사 성적을 모두 st_score 테이블에 저장하시오.
+DESC st_score;
+
+INSERT INTO st_score
+SELECT sno, sname, major, syear, cno, cname, result
+FROM student
+NATURAL JOIN course
+NATURAL JOIN score;
+
+SELECT * 
+FROM st_score;
+4) st_score 테이블에 각 학생의 평점을 학과별, 과목별로 입력하시오.
+INSERT /*+APPEND */ INTO st_score NOLOGGING 
+(sno, sname, major, syear, cno, cname, result)
+SELECT sno, sname, major, syear, cno, cname, result
+FROM student
+NATURAL JOIN course
+NATURAL JOIN score
+ORDER BY major, cname;
+
+SELECT * 
+FROM st_score;
+5) 화학과 학생이 수강하는 과목을 강의하는 교수의 부임일자를 1년 늦도록 수정하시오.UPDATE professor SET
+hiredate = hiredate+365
+WHERE pno IN (SELECT DISTINCT pno
+             FROM professor
+             NATURAL JOIN course
+             NATURAL JOIN student
+             WHERE major='화학');
+
+
+1. 트랜잭션의 이해
+; 응용 프로그램 개발 과정에서 잘못 설계된 트랜잭션으로 인해
+많은 문제가 발생한다.
+문제의 대부분은 업무분석의 미숙이나 트랜잭션이 일으키는 
+잠금(Lock)에 대한 이해가 부족해서 나타나는 것이다.
+
+2.트랜잭션이란?
+트랜잭션은 반드시 함께 실행되는 작업의 단위를 의미한다.
+즉 사용자의 의도에 따라 여러 개의 문장으로 구성된
+트랜잭션은 반드시 동시에 실행(COMMIT)되거나 
+취소(ROLLBACK)된다.
+RDBMS는 트랜잭션을 통해 작업의 단위를 결장함으로써
+작업 결과의 신뢰성을 확보한다.
+
+3. 트랜잭션의 예시
+금융 거래 중에 계좌 이체를 생각해 보자
+A라는 사람이 자신이 소유 계좌에서 100만원을 
+B라는 사람의 계좌로 이체한다면 최소 2가지 작업이 수행된다.
+첫번째 작업은 A의 계좌에서 100만원이 출금되는 것이다.
+두번째 작업은 B의 계좌에서 100만원이 입금되는 것이다.
+
+그런데, A의 계좌에서 100만원이 출금은 성공했지만
+B의 계좌에 100만원이 입금되기 전에 시스템이 다운된다면
+B의 계좌에는 100만원이 입금되지 않고, A의 계좌에서만
+100만원이 없어지게 된다.
+
+이를 방지하기 위해 이 2개의 과정을 하나의 트랜잭션으로
+묶어놓아 2개의 과정이 모두 처리되지 않으면 ROLLBACK을 
+처리하여 거래가 취소 되도록 함으로써 거래의 신뢰성을  확보하는 것이다.
+  O    O    X  
+A -> B -> C -> D
+A ~ D의 모든 절차를 묶어서 트랜잭션이라 부른다.
+A에서 B는 성공
+B에서 C는 성공
+C에서 D는 실패
+이렇게 되면 ROLLBACK(취소)처리를 한다(트랜잭션 취소)
+C에서 D가 성공이면 COMMIT(성공)처리를 한다(트랜잭션 완료)
+
+4. 트랜잭션의 시작과 종료
+  1) 시작
+   이전 트랜잭션이 종료된 이후 DML(INSERT,UPDATE,DELETE)
+   문장이나 DDL(CREATE, ALTER, DROP, TRUNCATE),
+   DCL(GRANT, REVOKE)문장이 실행되었을때 시작된다.
+  2) 종료
+   2-1) COMMIT 이나 ROLLBACK 명령이 실행될 때 종료된다.
+   2-2) DDL이나 DCL문장의 실행이 완료되면 자동으로 종료된다.
+   2-3) 사용자의 정상 종료 시에 종료된다.
+   2-4) 데드락(DeadLock)이 걸리면 트랜잭션의 일부만 종료 된다.
+
+ 트랜잭션은 하나의 세션에서 단지 하나만 시작할 수 있다.
+ DML 인 경우 반드시 COMMIT 이나 ROLLBACK 으로 종료한다.
+ DDL 이나 DCL은 오라클이 알아서 제어하니까 신경안써도 된다.
+ (세션이란? 오라클서버를 접속한 단위, 하나의 연결)
+
+ 5.트랜잭션과 언두 세그먼트(Undo segment)
+  DML 작업을 ROLLBACK 하기 위해서는 작업 이전 데이터를 
+  어딘가에 저장해 두어야 한다.
+  오라클은 작업이 발생하면 즉시 테이블의 내용을 변경함으로써
+  DELETE 나 UPDATE 문을 실행하면 테이블의 정보가 즉시 변경된다.
+  그런데 사용자가 ROLLBACK을 실행하면 DML 작업에 의해서
+  변경된 정보를 이전 정보로 환원해야 하는데 만일 작업 이전
+  정보를 저장하고 있지 않다면 ROLLBACK 을 실행 할 수 없게된다.
+
+  이렇게 작업 이전 정보를 저장하고 관리하는 것은 트랜잭션의 
+  기본 기능이며 이를 위해서 오라클은 Undo Tablespace와
+  Undo Segment 라는 물리적 구조를 이용한다.
+  이들은 자동으로 관리되며 사용자는 이들 정보를 직접 볼 수
+  없으며 단지 트랜잭션에서만 사용된다. 
+
+  6. 트랜잭션 과정
+  예시로써 테이블의 데이터 5를 7에 update 하는 과정을 묘사하다
+  DML 문장은 과정이 모두 동일하다.
+  
+  1) UDDATE 명령이 내려지게 된다.
+  2) 문장 수행을 위해 오라클은 Undo Segment를 결정한다.
+  3) 테이블에 저장되어있던 원래 값(5)이 Undo Segment에 저장된다.
+  4) UPDATE 된 값(7)이 테이블에 저장된다.
+  5) 값이 변경된 행(레코드)는 독점 잠금(Lock)이 발생한다.
+  6) 테이블에는 공유 잠금(Lock)이 발생한다.
+  7) 트랜잭션이 COMMIT 되면 잠금은 해제되고
+     변경된 값(7)은 영구히 저장된다.
+  8) 트랜잭션이 ROLLBACK 되면 Undo Segment에 저장했던
+     원래 값(5)을 테이블로 환원하고 잠금이 해제된다.
+
+7. 독점 잠금(Exclusive Lock)과 공유 잠금(Share Lock)
+   1) 독점 잠금 : 현재 세션이외에는 접근을 불허하는 잠금이다.
+                트랜잭션으로 행에 잠금이 발생하면
+                다른 세션에서는 해당 행을 검색할 수 없고,
+                단지 Undo Segment의 정보만 보게 된다.
+                그리고 이때 테이블에는 공유 잠금이 발생하세 된다.
+   2) 공유 잠금 : 이것은 DML 작업으로 행이 잠겨있는 테이블에
+                대해서 DDL(DROP,ALTER)작업을 방지한다.
+
+--트랜잭션과 잠금의 이해
+--1) 실습에는 2개의 일반 사용자 세션이 사용된다.
+--2) 동일한 계정으로 접속한 2개의 콘솔을 실행한다.
+--3) 2개의 창은 [세션1]과 [세션2]로 구분한다.
+
+[세션 1]
+--1)
+SQL> SELECT * FROM STUDENT WHERE SNAME='마초';
+
+SQL> INSERT INTO STUDENT(SNO,SNAME,SEX,SYEAR,MAJOR,AVR)
+  2  VALUES('915304','마초','남',4,'화학',1.68);
+
+--2) COMMIT 을 하지 않았으므로 마초의 행에는
+ -- 독점 잠금이 발생하고, STUDENT 테이블에는
+ -- 공유 잠금이 발생하였다.
+ -- STUDENT 테이블의 AVR 값은 새로 변경되었고
+ -- Undo Segment 에는 마초의 이전 avr 값이 저장 되었다.
+
+
+---------------------------------------------------------------
+[세션 1]
+--1) 데이터를 변경하자(UPDATE) - 트랜잭션 시작
+  -- 마초의 행에는 독점 잠금이 발생된다.
+  -- STUDENT 테이블에는 공유 잠금이 발생된다.
+  -- STUDENT 테이블은 새로운 학과인 '사회'로 변경된다.
+  -- Undo Segment에는 마초의 변경 이전 학과인 
+  -- '화학' 정보가 저장된다.
+
+SELECT SNO, SNAME,MAJOR
+FROM STUDENT
+WHERE SNAME='마초';
+
+UPDATE STUDENT SET MAJOR='사회'
+WHERE SNAME='마초';
+
+[세션 2]
+--2) 다른 세션에서 변경하고 트랜잭션이 
+     완료되지 않은 행을 검색한다.
+--Undo Segment 의 데이타를 읽어온다.
+SQL> SELECT MAJOR FROM STUDENT WHERE SNAME='마초';
+
+--3) 독점 잠금이 걸린 행을 UPDATE 시도 한다.
+  UPDATE STUDENT SET MAJOR='경제'
+  WHERE SNAME='마초';
+
+[세션1]
+--4) 상대방의 독점잠금이 걸린 행을
+     다시 변경하려고 시도하였으나 
+     세션1의 트랜잭션이 끝나지 않아
+     무한 대기상태에 걸려 있다.
+
+     트랜잭션을 완료한다.
+    COMMIT;
+
+
+----------------------------------------------------------------------
+[세션 1]
+--1) 관우, 장각 학생의 학과 정보를 검색한다.
+SQL> SELECT SNO, SNAME, MAJOR
+  2  FROM STUDENT
+  3  WHERE SNAME IN ('관우','장각');
+
+--2) 관우 학생의 학과를 경제로 변경시도한다.
+--트랜잭션 시작
+UPDATE STUDENT SET MAJOR='경제'
+WHERE SNAME='관우';
+
+--3) 변경이 잘 되었는지
+     관우, 장각 학생의 학과 정보를 검색한다.
+     아직 트랜잭션이 완료되지 않은 상태
+SELECT SNO, SNAME,MAJOR
+FROM STUDENT
+WHERE SNAME IN ('관우','장각');
+
+[세션 2]
+--4) 세션1에서 변경을 시도한 행을 포함한
+     관우, 장각 학생의 학과 정보를 검색한다.
+ SELECT SNO,SNAME,MAJOR
+ FROM STUDENT
+ WHERE SNAME IN ('관우','장각');
+
+--5) 장각 학생의 학과를 경제로 변경시도한다.
+  UPDATE STUDENT SET MAJOR='경제'
+  WHERE SNAME='장각';
+
+--6) 잘 적용되었는지
+     관우, 장각 학생의 학과 정보를 검색한다.
+    SELECT SNO,SNAME,MAJOR
+    FROM STUDENT
+    WHERE SNAME IN ('관우','장각');
+
+--7) 관우 학생의 학과를 '물리' 로 변경을 시도
+     현재 세션1에 의해 관우 학생의 행은 독점잠금이
+     걸려있는 상태이다.
+   UPDATE STUDENT SET MAJOR='물리'
+   WHERE SNAME='관우';
+
+[세션 1]
+--8) 세션2 장각의 트랜잭션을 진행중인 것을 모르고
+     장각의 학과를 천문 학과로 변경을 시도
+UPDATE student SET major='천문'
+WHERE SNAME='장각';
+
+세션2는 관우 학생의 변경을 시도했으므로 무한 대기상태였고
+세션1은 세션2에 의해 트랜잭션이 진행중인 장각의 변경을
+시도했으므로 동시에 무한 대기 상태로 빠져든다.
+이렇게 2개의 세션모두 무한 대기상태에 빠져든 것을
+DeadLock이라 부른다.
+DeaLock은 세션 사용자에 의해 해결되지 않으므로
+오라클은 먼저 무한 대기상태에 걸린 세션을 오류 처리하고
+강제로 마지막 명령만 ROLLBACK 함으로써 DeadLock을 해결한다.
+
+--테이블 생성과 데이터 타입의 이해
+-- DB에서 데이터를 저장하는 가장 기본적인 구조는 
+-- 테이블(Tables)이다.
+-- 오라클에는 테이블 이외에 뷰(View), 인덱스(Index),
+-- 시퀀스(Sequence)등 여러 개체가 있고 이들 중에
+-- 물리적인 공간을 갖는 개체를 세그먼트(Segment)라고 
+-- 분류하는데, 이들 중 테이블은 사용자가 직접 조회 가능한
+-- 데이터를 저장하는 유일한 세그먼트이다.
+
+1. 테이블 생성과 삭제
+
+   CREATE TABLE 테이블명(
+     컬럼명   데이터타입[DEFAULT 디폴트값] [컬럼 레벨 제약조건],
+     컬럼명   데이터타입[DEFAULT 디폴트값] [컬럼 레벨 제약조건],
+    );
+
+--테이블을 생성하자
+--테이블 명: board
+--컬럼 구성 : no(게시물 번호)
+            name(작성자)
+            sub(제목)
+            content(내용)
+            hdate(입력일시)
+
+CREATE TABLE BOARD(
+   NO  	  NUMBER,
+   NAME   VARCHAR2(50),
+   SUB    VARCHAR2(100),
+   CONTENT VARCHAR2(4000),
+   HDATE DATE DEFAULT SYSDATE
+);
+
+--client 테이블을 삭제하가
+DROP TABLE client;
+
+--client 테이블을 생성하라
+CREATE TABLE client(
+  cnum  NUMBER,
+  cname VARCHAR2(50),
+  addr  VARCHAR2(200),
+  tel   VARCHAR2(20)
+);
+
