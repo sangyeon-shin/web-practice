@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>선형 그라데이션</title>
+    <style>
+        div{
+            width: 500px;
+            height: 300px;
+            border-radius: 10px;
+        }
+        .grad1{
+            background:blue;
+            background:-webkit-radial-gradient(white,green,blue);
+            background:-moz-radial-gradient(white,green,blue);
+            background:radial-gradient(white,green,red);
+        }
+        .grad2{
+            background:blue;
+            background:-webkit-radial-gradient(circle,white,green,blue);
+            background:-moz-radial-gradient(circle,white,green,blue);
+            background:radial-gradient(circle,white,green,red);
+        }
+    </style>
+</head>
+<body>
+    <div class="grad1"></div>
+    <div class="grad2"></div>
+</body>
+</html>
