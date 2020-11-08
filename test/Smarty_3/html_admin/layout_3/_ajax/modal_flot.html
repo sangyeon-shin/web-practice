@@ -1,0 +1,83 @@
+		<!-- Header -->
+		<div class="modal-header">
+			<h2 class="modal-title fs--18 m-0">
+				Flot Chart Modal
+			</h2>
+
+			<button type="button" class="close pointer" data-dismiss="modal" aria-label="Close">
+				<span class="fi fi-close fs--18" aria-hidden="true"></span>
+			</button>
+		</div>
+
+
+		<!-- Content -->
+		<div class="modal-body">
+
+			<div class="row">
+				<div class="col-12 col-lg-6">
+
+					<div class="form-label-group mb-3">
+						<input required placeholder="val_x" id="val_x" name="val_x" type="text" value="" class="form-control">
+						<label for="val_x">val_x</label>
+					</div>
+
+					<div class="form-label-group mb-3">
+						<input required placeholder="val_y" id="val_y" name="val_y" type="text" value="" class="form-control">
+						<label for="val_y">val_y</label>
+					</div>
+
+				</div>
+
+				<div class="col-12 col-lg-6">
+
+					<div class="form-label-group mb-3">
+						<input required placeholder="pos_x" id="pos_x" name="pos_x" type="text" value="" class="form-control">
+						<label for="pos_x">pos_x</label>
+					</div>
+
+					<div class="form-label-group mb-3">
+						<input required placeholder="pos_y" id="pos_y" name="pos_y" type="text" value="" class="form-control">
+						<label for="pos_y">pos_y</label>
+					</div>
+
+				</div>
+
+			</div>
+
+			<p class="bg-light p--15">
+				If <code>flot_callback(event, pos, item)</code> function is present, Smarty modal is passing the available data from flot. Function is present in this modal! 
+				(<small>documentation/_ajax/modal_flot.html</small>)
+			</p>
+
+		</div>
+
+
+        <!-- Footer -->
+        <div class="modal-footer">
+        	<!--
+            <button type="button" class="btn btn-sm btn-primary">
+                <i class="fi fi-check"></i> 
+                Save
+            </button>
+            -->
+
+            <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">
+                <i class="fi fi-close"></i> 
+                Close
+            </button>
+        </div>
+
+
+
+
+
+        <script>
+
+	        flot_callback = function(event, pos, item) {
+	        	// evrything that flot is passing
+	        	console.log(event);
+	        	console.log(pos);
+	        	console.log(item);
+	        }
+
+        </script>

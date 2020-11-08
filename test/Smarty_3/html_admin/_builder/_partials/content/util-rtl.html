@@ -1,0 +1,154 @@
+﻿					<!-- doc:start -->
+					<div class="page-title bg-transparent b-0">
+
+						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
+							RTL
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--13 pb-2 px-3">
+								<li class="breadcrumb-item">
+									<a href="index.html" class="js-ajax">Dashboard</a>
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Utils
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									RTL
+								</li>
+							</ol>
+						</nav>
+
+					</div>
+
+
+
+
+
+
+
+					<!-- start:row -->
+					<div class="row gutters-sm">
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>RTL Utilities</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<table class="table table-lg">
+											<thead>
+												<tr>
+													<th scope="col" class="w--300">Class</th>
+													<th scope="col">Description</th>
+												</tr>
+											</thead>
+
+											<tbody>
+
+												<tr>
+													<td>
+														<code class="d-block">.text-align-start</code>
+														<code class="d-block">.text-align-end</code>
+														<code class="d-block">.float-start</code>
+														<code class="d-block">.float-end</code>
+														<br>
+														<code class="d-block">.p--0-start</code>
+														<code class="d-block">.p--0-end</code>
+														<code class="d-block">.m--0-start</code>
+														<code class="d-block">.m--0-end</code>
+														<code class="d-block">.m-auto-start</code>
+														<code class="d-block">.m-auto-end</code>
+														<code class="d-block">.b--0-start</code>
+														<code class="d-block">.b--0-end</code>
+														<br>
+														<code class="d-block">.rtl-scalex-1</code>
+														<code class="d-block">.rtl-scalex-n1</code>
+													</td>
+													<td>
+
+														<p>
+															LTR = left to right <br>
+															RTL = right to left
+														</p>
+
+														<p>
+															*-start = always left on LTR ; always right on RTL.<br>
+															*-end = always right on LTR ; always left on RTL.
+														</p>
+														<code class="d-inline-block w--150">.text-align-start</code> 	LTR: text-left , RTL: text-right <br>
+														<code class="d-inline-block w--150">.text-align-end</code> 		LTR: text-right , RTL: text-left <br>
+														<code class="d-inline-block w--150">.float-start</code>			LTR: float-left , RTL: float-right <br>
+														<code class="d-inline-block w--150">.float-end</code>			LTR: float-right , RTL: float-left <br>
+														<br>
+														<code class="d-inline-block w--150">.p--0-start</code> 			LTR: padding-left: 0 , RTL: padding-right: 0 <br>
+														<code class="d-inline-block w--150">.p--0-end</code> 			LTR: padding-right: 0 , RTL: padding-left: 0 <br>
+														<code class="d-inline-block w--150">.m--0-start</code> 			LTR: margin-left: 0 , RTL: margin-right: 0 <br>
+														<code class="d-inline-block w--150">.m--0-end</code> 			LTR: margin-right: 0 , RTL: margin-left: 0 <br>
+														<code class="d-inline-block w--150">.m-auto-start</code> 		LTR: margin-left: auto , RTL: margin-right: auto <br>
+														<code class="d-inline-block w--150">.m-auto-end</code> 			LTR: margin-right: auto , RTL: margin-left: auto <br>
+														<code class="d-inline-block w--150">.b--0-start</code> 			LTR: border-left: 0 , RTL: border-right: 0 <br>
+														<code class="d-inline-block w--150">.b--0-end</code> 			LTR: border-right: 0 , RTL: border-left: 0 <br>
+														<br>
+
+														<p>
+															<code>.rtl-scalex-n1</code> = flip horizontal! scaleX(-1)<br>
+															<code>.rtl-scalex-1</code> = flip back! scaleX(1)<br>
+														</p>
+														<p class="bg-light p--15">
+															<span class="text-danger font-weight-medium">Please note: the entire Smarty is developed from scratch in "dual mode".</span> Is writen for both: LTR and RTL using @if conditionals. 
+															When you build your project (scss/gulp), according to your variables.scss settings, the output will be LTR or RTL.<br>
+															<code><b>$global-rtl-enable: false !default;</b></code><br><br>
+															No additional css classes, no useless code generated! All classes are generated for the <u>exactly</u> mode you want. This is also unique in Smarty.
+														</p>
+
+														<p>
+															These very few additional classes you see above, are the most common ones, helping you to avoid common confusions. 
+															As an example: <code>.float-start</code> is actually <code>.float-left</code> on LTR (normal) but is <code>.float-right</code> on RTL! 
+															So you don't need to worry about switching/editing the classes in your HTML code because is displaying in wrong direction. By default, Smarty uses these classes in all layouts/blocks.
+														</p>
+														<p>
+															The beauty: if you are a developer and don't speak arab, develop the website in LTR mode and when you are done, just switch <code><b>$global-rtl-enable: true !default;</b></code> in variables.scss and everything should be in place!
+														</p>
+
+														<h6>This is how Smarty is written:</h6>
+														<code>
+														.float-start { <br>
+
+															&nbsp;&nbsp; @if $global-rtl-enable == false {<br>
+																&nbsp;&nbsp; &nbsp;&nbsp; float: left !important;<br>
+															&nbsp;&nbsp; } @else {<br>
+																&nbsp;&nbsp; &nbsp;&nbsp; float: right !important;<br>
+															&nbsp;&nbsp; }<br>
+														}
+														</code>
+														<p>
+															This is a tiny example of code, but everything is written this way: header, components, etc! 
+															All floats, paddings, margins are using conditionals to be generated for LTR or RTL.
+														</p>
+
+													</td>
+												</tr>
+
+											</tbody>
+										</table>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+					</div>
+					<!-- end:row: -->
+					<!-- doc:end -->

@@ -1,0 +1,12 @@
+/**
+
+		- Font Size 				.fs--*, .font-weight-medium
+
+**/
+@each $val in $util-font-size-val {
+	.fs--#{$val} { font-size: #{$val}px !important; }
+}
+
+	.font-weight-medium {
+	    font-weight: $font-weight-medium; 
+	}

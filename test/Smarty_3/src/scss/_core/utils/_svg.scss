@@ -1,0 +1,34 @@
+/**
+
+		- SVG Fills
+			.fill-primary, .fill-secondary, etc
+			.fill-gray-*
+
+**/
+@each $color, $value in $theme-colors {
+	.fill-#{$color} {
+		fill: $value !important;
+	}
+
+	.bg-#{$color}-soft .fill-#{$color} {
+
+		@if $color == 'warning' {
+
+			fill: darken(map-get($theme-colors, $color), 10%) !important;
+
+		} @else {
+
+			fill: lighten(map-get($theme-colors, $color), 5%) !important;
+		}
+
+	}
+}
+.fill-gray-100 { fill: $gray-100 !important; }
+.fill-gray-200 { fill: $gray-200 !important; }
+.fill-gray-300 { fill: $gray-300 !important; }
+.fill-gray-400 { fill: $gray-400 !important; }
+.fill-gray-500 { fill: $gray-500 !important; }
+.fill-gray-600 { fill: $gray-600 !important; }
+.fill-gray-700 { fill: $gray-700 !important; }
+.fill-gray-800 { fill: $gray-800 !important; }
+.fill-gray-900 { fill: $gray-900 !important; }

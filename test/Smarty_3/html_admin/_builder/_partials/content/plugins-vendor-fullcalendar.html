@@ -1,0 +1,253 @@
+﻿					<!-- doc:start -->
+					<div class="page-title bg-transparent b-0">
+
+						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
+							Vendor : Fullcalendar
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--13 pb-2 px-3">
+								<li class="breadcrumb-item">
+									<a href="index.html" class="js-ajax">Dashboard</a>
+								</li>
+								<li class="breadcrumb-item active">
+									Vendor Plugins
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Fullcalendar
+								</li>
+							</ol>
+						</nav>
+
+					</div>
+
+
+
+					<!-- ALERT : NOTE -->
+					<div class="bg-white shadow-xs p-2 mb-4 rounded">
+						<div class="clearfix bg-light p-2 rounded d-flex align-items-center">
+							<span class="btn row-pill btn-sm bg-gradient-warning b-0 py-1 mb-0 float-start">
+								<i class="fi fi-round-info-full"></i>
+								Note
+							</span>
+							<span class="d-block px-2 text-muted text-truncate">
+								This is a basic demo! Please see main <a href="../../html_frontend/documentation/plugins-vendor-fullcalendar.html" target="smarty" class="link-muted">full documentation here</a>.
+							</span>
+						</div>
+					</div>
+					<!-- /ALERT : NOTE -->
+
+
+
+					<!-- start:row -->
+					<div class="row gutters-sm">
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Info</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<p class="lead">
+											Full-sized, drag &amp; drop event calendar.<br>
+										</p>
+										<p>
+											Because of unlimited ways of customizing fullcalendar, Smarty added few basic functions you can extend. <br>
+											If your application require a very custom fullcalendar, you might want to skip using Smarty Controller or extend it &ndash; see <a href="#section_3" class="link-muted scroll-to">Attributes &amp; Javascript</a> 
+										</p>
+
+										<ul class="mt-3">
+											<li class="mt-3">
+												<a href="https://fullcalendar.io" target="smarty" class="link-muted">
+													https://fullcalendar.io
+												</a>
+											</li>
+											<li>
+												License: MIT
+											</li>
+										</ul>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Examples</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<!--
+
+											data-fullcalendar-default-date="now|2019-08-01" = calendar date view (now or date)
+
+											Event id is added at the end of edit URL!
+											You should get data from database and populate your form!
+											data-fullcalendar-modal-event-edit="_ajax/fullcalendar_event_create.html?id=" 
+
+											On date click - open modal
+											data-fullcalendar-date-click="modal"		= open in modal
+											data-fullcalendar-date-click="redirect"		= redirect to url
+											data-fullcalendar-date-click=""				= do nothing 
+
+											data-fullcalendar-source-json-url 			= url of JSON data. Multiple sources supported.
+											data-fullcalendar-source-json-inline 		= the format is json, the same as external json, but added here (inline)
+											data-fullcalendar-source-object="myObj" 	= javascript object - example:
+											<script>
+												var myObj = [
+													{
+														id: '1',
+														title: 'All Day Event',
+														start: '2019-08-01'
+													},
+													{
+														id: '2',
+														title: 'Long Event',
+														start: '2019-08-07',
+														end: '2019-08-10'
+													},
+												];
+											</script>
+
+
+											data-fullcalendar-default-view="dayGridMonth|timeGridWeek|timeGridDay|listWeek"
+
+											++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ 
+											ENTIRELY CUSTOM FULLCALENDAR! THIS WILL EXTEND CURRENT SETTINGS (ADD|OVERWRITE)!
+
+											data-fullcalendar-extend="extendCalendar"
+											<script>
+												var extendCalendar = {
+													// your custom fullcalendar
+												};
+											</script>
+											++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ 
+
+
+
+											++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ 
+											ENTIRELY CUSTOM FULLCALENDAR! ALL SMARTY FULLCALENDAR IS IGNORED
+											EXCEPT THESE (which you can overwrite in your custom)
+												var _defaults = {
+
+													themeSystem 	: 'bootstrap',
+													defaultView 	: defaultView || 'dayGridMonth', 	// dayGridMonth|timeGridWeek|timeGridDay|listWeek
+													defaultDate 	: new Date(),
+													dir 			: $.SOW.globals.direction, 			// LTR|RTL
+													header 			: {
+																		left 	: 'prev,next, today',
+																		center 	: 'title',
+																		right 	: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+																	}
+
+												};
+
+
+											data-fullcalendar-custom="customCalendar"
+											<script>
+												var customCalendar = {
+													// your custom fullcalendar
+												};
+											</script>
+											++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ 
+										-->
+										<div class="fullcalendar rounded"
+											data-fullcalendar-default-view="dayGridMonth" 
+											data-fullcalendar-editable="true" 
+											data-fullcalendar-timezone="local" 
+											data-fullcalendar-default-date="2019-08-11" 
+
+											data-fullcalendar-modal-size="modal-lg" 
+
+											data-fullcalendar-event-create-modal="true" 
+											data-fullcalendar-modal-event-create="_ajax/fullcalendar_event_create.html" 
+											
+											data-fullcalendar-event-edit-modal="true" 
+											data-fullcalendar-modal-event-edit="_ajax/fullcalendar_event_edit.html?id=" 
+
+											data-fullcalendar-date-click="modal" 
+											data-fullcalendar-modal-date-click-modal="_ajax/fullcalendar_event_create.html?date=" 
+
+											data-toast-success="Successfully Updated!" 
+											data-toast-position="top-center"  
+
+											data-fullcalendar-plugins='[ "interaction", "dayGrid", "timeGrid", "list", "bootstrap", "googleCalendar" ]'
+											
+											data-fullcalendar-google-apikey="AIzaSyCBpT7NTo9rwR-gS5iq7ayV-dGlE_Ebr0s"
+
+											data-fullcalendar-source-json-url='[
+												{
+													"url": "_ajax/fullcalendar_events.json",
+													"method": "GET",
+													"extraParams": {
+														"param1": "val1",
+														"param2": "val2"
+													}
+												}, 
+
+												{
+													"googleCalendarId": "6dhq1i511vid645mmtn2pujfok@group.calendar.google.com",
+													"className": "fc-smarty-gcal bg-primary-soft border-primary-soft"
+												}
+											]' 
+
+											data-fullcalendar-lang-btn='{
+												"today" : "today",
+												"month" : "month",
+												"week" 	: "week",
+												"day" 	: "day",
+												"list" 	: "list"
+											}' 
+
+											data-fullcalendar-header='{
+												"left" 		: "prev,next, today, customAddEventButton",
+												"center" 	: "title",
+												"right" 	: "dayGridMonth,timeGridWeek,timeGridDay,listWeek"
+											}' 
+
+											data-fullcalendar-time-format='{
+												"hour" 		: "numeric",
+												"minute" 	: "2-digit",
+												"meridiem" 	: "short"
+											}'
+
+										></div>
+
+
+										<div class="p--15 bg-light mt-4">
+											Calendar data is loaded from a JSON file. <a href="_ajax/fullcalendar_events.json" target="smarty">View json format</a>
+										</div>
+
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+
+					</div>
+					<!-- end:row: -->
+					<!-- doc:end -->

@@ -1,0 +1,288 @@
+﻿					<!-- doc:start -->
+					<div class="page-title bg-transparent b-0">
+
+						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
+							SOW : Dropdown
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--13 pb-2 px-3">
+								<li class="breadcrumb-item">
+									<a href="index.html" class="js-ajax">Dashboard</a>
+								</li>
+								<li class="breadcrumb-item active">
+									SOW : Core Plugins
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Dropdown
+								</li>
+							</ol>
+						</nav>
+
+					</div>
+
+
+
+					<!-- ALERT : NOTE -->
+					<div class="bg-white shadow-xs p-2 mb-4 rounded">
+						<div class="clearfix bg-light p-2 rounded d-flex align-items-center">
+							<span class="btn row-pill btn-sm bg-gradient-warning b-0 py-1 mb-0 float-start">
+								<i class="fi fi-round-info-full"></i>
+								Note
+							</span>
+							<span class="d-block px-2 text-muted text-truncate">
+								This is a basic demo! Please see main <a href="../../html_frontend/documentation/plugins-sow-dropdown.html" target="smarty" class="link-muted">full documentation here</a>.
+							</span>
+						</div>
+					</div>
+					<!-- /ALERT : NOTE -->
+
+
+
+					<!-- start:row -->
+					<div class="row gutters-sm">
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Examples</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<div class="row">
+											<div class="col-12 col-lg-6">
+
+												<div class="dropdown d-inline-block mb-3">
+													<a href="#" class="btn btn-primary btn-soft" data-toggle="dropdown">
+														No .dropdown-click-ignore
+													</a>
+
+
+													<div class="dropdown-menu">
+														<div class="p--15">
+															Click Me
+														</div>
+													</div>
+												</div>
+
+											</div>
+
+											<div class="col-12 col-lg-6">
+												<div class="dropdown d-inline-block mb-3">
+													<a href="#" class="btn btn-success btn-soft" data-toggle="dropdown">
+														With .dropdown-click-ignore
+													</a>
+
+
+													<div class="dropdown-menu dropdown-click-ignore">
+														<div class="p--15">
+															Click Me!
+														</div>
+													</div>
+												</div>
+
+											</div>
+										</div>
+
+
+										<hr>
+
+										<h6>Dropdown Click Update</h6>
+										<div class="dropdown d-inline-block mb-3">
+											
+											<a href="#" class="btn btn-warning" data-toggle="dropdown">
+												<span class="js-trigger-text">Item #1</span>
+											</a>
+
+
+											<div class="dropdown-menu dropdown-menu-click-update" data-dropdown-callback="myfunc">
+												<a href="#!" class="dropdown-item active">
+													<span class="js-trigger-text">Item #1</span>
+												</a>
+												<a href="#!" class="dropdown-item">
+													<span class="js-trigger-text">Item #2</span>
+												</a>
+												<a href="#!" class="dropdown-item">
+													<span class="js-trigger-text">Item #3</span>
+												</a>
+												<a href="#!" class="dropdown-item">
+													<span class="js-trigger-text">Item #4</span>
+												</a>
+												<a href="#!" class="dropdown-item">
+													<span class="js-trigger-text">Item #5</span>
+												</a>
+											</div>
+										</div>
+
+										<hr>
+
+										<!-- Ajax : html -->
+										<div class="dropdown d-inline-block">
+
+											<!--
+													
+												Required Plugins:
+													SOW : Dropdown
+													SOW : Dropdown Ajax
+													SOW : Dropdown Click Ignore
+													* If SOW : Ajax Navigation used (like right now in the demo), 
+													ajax links will be active inside dropdown. Just add .js-ajax to the valid links.
+
+												Optional:
+													data-dropdown-ajax-reload-always="true"
+														Each time a dropdown is clicked, an ajax request is sent to reload the dropdown content.
+														If .dropdown-menu has .dropdown-menu-hover class (dropdown is open on mouse over), is ignored (except on mobile)
+													
+													Refresh cache interval - dropdown content refreshed on hover after specified time 
+													(60000 = 1 min. (formula: 1000 * 60)). Default is set to 1 min.
+														data-dropdown-ajax-refresh-interval="60000" 
+														
+												Using localstorage cache - useful for header main menu (auto repopulate on page load)
+												Cache lifetime is 30 min! Cache is set by URL so by adding to URL: ?v=xxx will invalidate cache!
+													data-dropdown-ajax-cache="true" 
+
+												More optional params if needed:
+													data-dropdown-ajax-method="GET|POST"	(default is "GET")
+													data-dropdown-ajax-contentType=""		(jQuery default)
+													data-dropdown-ajax-dataType=""			(jQuery default)
+													data-dropdown-ajax-loadicon=""			(default: "fi fi-circle-spin fi-spin")
+
+											-->
+											<a 	href="#" id="ddAjax_demo1" 
+												data-dropdown-ajax-source="_ajax/dropdown_ajax.html"
+												data-toggle="dropdown" 
+												aria-expanded="false" 
+												aria-haspopup="true" 
+												class="btn btn-sm btn-danger btn-soft btn-pill">
+
+												<span class="group-icon">
+													<i class="fi fi-arrow-end-slim"></i>
+													<i class="fi fi-arrow-down"></i>
+												</span>
+												<span>Ajax : Html</span>
+
+											</a>
+
+											<!--
+												Required: 
+													.dropdown-menu-block-md added to .dropdown-menu (mobile, if dropdown has multilevel)
+
+												Optional:
+													.dropdown-menu-hover
+											-->
+											<div aria-labelledby="ddAjax_demo1" class="dropdown-menu dropdown-menu-clean dropdown-menu-block-md max-w-200">
+												
+												<!-- ajax content -->
+
+											</div>
+
+										</div>
+
+
+										<!-- Ajax : json -->
+										<div class="dropdown d-inline-block">
+
+											<!--
+													
+												1. Ajax Dropdown Content
+													The dropdown content is loaded on user interaction only:
+														- on mouse over (if dropdown is opening on mouse over (click on mobile device))
+														- on mouse click
+													++ ++ ++
+													Curently is set by config to work for links: a[data-toggle="dropdown"]
+													You can add to config for buttons (separated by comma): button[data-toggle="dropdown"]
+													Or simply by using a class. 
+													Instead of autoinit by config, the plugin can also be called alone like this: 
+														$.SOW.core.dropdown_ajax.init('a[data-toggle="dropdown"]');
+
+
+											-->
+											<a 	href="#" id="ddAjax_demo2" 
+												data-dropdown-ajax-source="_ajax/dropdown_ajax.json"
+												data-dropdown-ajax-mode="json"
+												data-toggle="dropdown" 
+												aria-expanded="false" 
+												aria-haspopup="true" 
+												class="btn btn-sm btn-danger btn-soft btn-pill">
+
+												<span class="group-icon">
+													<i class="fi fi-arrow-end-slim"></i>
+													<i class="fi fi-arrow-down"></i>
+												</span>
+												<span>Ajax : Json</span>
+
+											</a>
+
+											<!--
+
+												Required Plugins:
+													SOW : Dropdown
+													SOW : Dropdown Ajax
+													SOW : Dropdown Click Ignore
+													* If SOW : Ajax Navigation used (like right now in the demo), 
+													ajax links will be active inside dropdown. Just add .js-ajax to dropdown links.
+
+												Optional:
+													data-dropdown-ajax-reload-always="true"
+														Each time a dropdown is clicked, an ajax request is sent to reload the dropdown content.
+														If .dropdown-menu has .dropdown-menu-hover class (dropdown is open on mouse over), is ignored (except on mobile)
+
+
+													Refresh cache interval - dropdown content refreshed on hover after specified time 
+													(60000 = 1 min. (formula: 1000 * 60)). Default is set to 1 min.
+														data-dropdown-ajax-refresh-interval="60000" 
+
+													Using localstorage cache - useful for header main menu (auto repopulate on page load)
+													Cache lifetime is 30 min! Cache is set by URL so by adding to URL: ?v=xxx will invalidate cache!
+														data-dropdown-ajax-cache="true" 
+
+
+												More optional params if needed:
+													data-dropdown-ajax-method="GET|POST"	(default is "GET")
+													data-dropdown-ajax-contentType=""		(jQuery|config default)
+													data-dropdown-ajax-dataType=""			(jQuery|config default)
+													data-dropdown-ajax-loadicon=""			(default: "fi fi-circle-spin fi-spin")
+
+													data-dropdown-ajax-mode="html|json" 			html|json ; json = Build dropdown from json data
+																			html structure: _ajax/dropdown_ajax.html
+																			json structure: _ajax/dropdown_ajax.json
+																			see also _ajax/dropdown_ajax.php (for a php example)
+
+
+												Working examples
+													data-dropdown-ajax-source="_ajax/dropdown_ajax.html"
+													data-dropdown-ajax-mode="html"
+
+													data-dropdown-ajax-source="_ajax/dropdown_ajax.json"
+													data-dropdown-ajax-mode="json"
+
+													data-dropdown-ajax-source="_ajax/dropdown_ajax.php"
+													data-dropdown-ajax-mode="json"
+
+											-->
+											<div aria-labelledby="ddAjax_demo2" class="dropdown-menu dropdown-menu-clean dropdown-menu-block-md max-w-200">
+												
+												<!-- ajax content -->
+
+											</div>
+
+										</div>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+					</div>
+					<!-- end:row: -->
+					<!-- doc:end -->

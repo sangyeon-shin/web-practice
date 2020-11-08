@@ -1,0 +1,1371 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Smarty V3</title>
+		<meta name="description" content="...">
+
+        <meta name="viewport" content="width=device-width, maximum-scale=5, initial-scale=1, user-scalable=0">
+        <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+        <!-- up to 10% speed up for external res -->
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+        <link rel="preconnect" href="https://fonts.googleapis.com/">
+        <link rel="preconnect" href="https://fonts.gstatic.com/">
+        <!-- preloading icon font is helping to speed up a little bit -->
+        <link rel="preload" href="assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
+        
+        <link rel="stylesheet" href="assets/css/core.min.css">
+        <link rel="stylesheet" href="assets/css/vendor_bundle.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap">
+
+		<!-- favicon -->
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="apple-touch-icon" href="demo.files/logo/icon_512x512.png">
+
+		<link rel="manifest" href="assets/images/manifest/manifest.json">
+		<meta name="theme-color" content="#377dff">
+
+	</head>
+
+	<body>
+
+		<div id="wrapper">
+
+
+			<!-- HEADER -->
+			<header id="header" class="shadow-xs bg-gradient-warning">
+
+
+				<!-- NAVBAR -->
+				<div class="container position-relative">
+
+
+					<nav class="navbar navbar-expand-lg navbar-light justify-content-lg-between justify-content-md-inherit">
+
+						<div class="align-items-start">
+
+							<!-- mobile menu button : show -->
+							<button class="navbar-toggler b-0" type="button" data-toggle="collapse" data-target="#navbarMainNav" aria-controls="navbarMainNav" aria-expanded="false" aria-label="Toggle navigation">
+								<svg width="25" viewBox="0 0 20 20">
+									<path d="M 19.9876 1.998 L -0.0108 1.998 L -0.0108 -0.0019 L 19.9876 -0.0019 L 19.9876 1.998 Z"></path>
+									<path d="M 19.9876 7.9979 L -0.0108 7.9979 L -0.0108 5.9979 L 19.9876 5.9979 L 19.9876 7.9979 Z"></path>
+									<path d="M 19.9876 13.9977 L -0.0108 13.9977 L -0.0108 11.9978 L 19.9876 11.9978 L 19.9876 13.9977 Z"></path>
+									<path d="M 19.9876 19.9976 L -0.0108 19.9976 L -0.0108 17.9976 L 19.9876 17.9976 L 19.9876 19.9976 Z"></path>
+								</svg>
+							</button>
+
+							<!-- 
+								Logo : height: 70px max
+							-->
+							<a class="navbar-brand m-0" href="index.html">
+								<img src="assets/images/logo/logo_dark.svg" width="110" height="70" alt="...">
+							</a>
+
+						</div>
+
+
+						<!-- 
+
+							[SOW] SEARCH SUGGEST PLUGIN
+							++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++
+							PLEASE READ DOCUMENTATION
+							documentation/plugins-sow-search-suggest.html
+							++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++
+
+						-->
+						<form 	action="search-result-2.html" 
+								method="GET" 
+								data-autosuggest="on" 
+
+								data-mode="json" 
+								data-json-max-results='10'
+								data-json-related-title='Explore Smarty'
+								data-json-related-item-icon='fi fi-star-empty'
+								data-json-suggest-title='Suggestions for you'
+								data-json-suggest-noresult='No results for'
+								data-json-suggest-item-icon='fi fi-search'
+								data-json-suggest-min-score='5'
+								data-json-highlight-term='true'
+								data-contentType='application/json; charset=utf-8'
+								data-dataType='json'
+
+								data-theme-class="danger" 
+
+								data-container="#sow-search-container" 
+								data-input-min-length="2" 
+								data-input-delay="250" 
+								data-related-keywords="" 
+								data-related-url="_ajax/search_suggest_related.json" 
+								data-suggest-url="_ajax/search_suggest_input.json" 
+								data-related-action="related_get" 
+								data-suggest-action="suggest_get" 
+								class="js-ajax-search sow-search sow-search-mobile-float d-flex-1-1-auto mx-5 m-0-xs">
+							<div class="sow-search-input w-100">
+
+								<!-- rounded: form-control-pill -->
+								<div class="input-group-over d-flex align-items-center w-100 h-100 rounded form-control-pill">
+
+									<input placeholder="Search everything in any location" name="s" type="text" class="form-control-sow-search form-control form-control-lg b-0 bg-light" value="" autocomplete="off">
+
+									<span class="sow-search-buttons">
+
+										<!-- search button -->
+										<button aria-label="Global Search" type="submit" class="btn shadow-none m-0 px-3 py-2 bg-transparent text-muted">
+											<i class="fi fi-search fs--20 m-0"></i>
+										</button>
+
+										<!-- close : mobile only (d-inline-block d-lg-none) -->
+										<a href="javascript:;" class="btn-sow-search-toggler btn btn-light shadow-none m-0 p-2 d-inline-block d-lg-none">
+											<i class="fi fi-close fs--20 m-0"></i>
+										</a>
+
+									</span>
+
+								</div>
+
+							</div>
+
+							<!-- search suggestion container -->
+							<div class="sow-search-container w-100 p-0 hide shadow-md" id="sow-search-container">
+								<div class="sow-search-container-wrapper">
+
+									<!-- main search container -->
+									<div class="sow-search-loader p-3 text-center hide">
+										<i class="fi fi-circle-spin fi-spin text-muted fs--30"></i>
+									</div>
+
+									<!-- 
+										AJAX CONTENT CONTAINER 
+										SHOULD ALWAYS BE AS IT IS : NO COMMENTS OR EVEN SPACES!
+									--><div class="sow-search-content rounded w-100 scrollable-vertical"></div>
+
+								</div>
+							</div>
+							<!-- /search suggestion container -->
+
+							<!-- 
+
+								overlay combinations:
+									overlay-dark opacity-* [1-9]
+									overlay-light opacity-* [1-9]
+
+							-->
+							<div class="sow-search-backdrop overlay-dark opacity-3 hide"></div>
+
+						</form>
+						<!-- /SEARCH -->
+
+
+
+
+						<!-- OPTIONS -->
+						<ul class="list-inline list-unstyled mb-0 d-flex align-items-end">
+
+							<!-- mobile : search toggler -->
+							<li class="list-inline-item mx-1 dropdown d-inline-block d-lg-none">
+
+								<a href="#!" class="btn-sow-search-toggler btn btn-sm btn-warning active bg-gradient-warning rounded-circle" aria-label="Search" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+									<i class="fi fi-search m-0"></i>
+								</a>
+
+							</li>
+
+							<!-- join us button -->
+							<li class="list-inline-item mx-1 dropdown">
+								
+								<a href="#!" class="btn btn-sm btn-pill btn-primary rounded-circle-xs">
+									
+									<i class="fi fi-plus m-0-xs"></i>
+									<span class="px-2 d-none d-lg-inline-block">
+										New
+									</span>
+
+								</a>
+
+							</li>
+
+						</ul>
+						<!-- /OPTIONS -->
+
+
+					</nav>
+
+				</div>
+				<!-- /NAVBAR -->
+
+
+
+
+				<div class="clearfix">
+					
+					<!-- line -->
+					<hr class="m-0 opacity-5">
+					
+					<div class="container">
+
+						<nav class="navbar navbar-expand-lg navbar-light h-auto justify-content-lg-between justify-content-md-inherit">
+
+							<!-- Menu -->
+							<div class="collapse navbar-collapse navbar-animate-fadein" id="navbarMainNav">
+
+
+								<!-- MOBILE MENU NAVBAR -->
+								<div class="navbar-xs d-none bg-gradient-warning">
+
+									<!-- mobile menu button : close -->
+									<button class="navbar-toggler pt-0 b-0" type="button" data-toggle="collapse" data-target="#navbarMainNav" aria-controls="navbarMainNav" aria-expanded="false" aria-label="Toggle navigation">
+										<svg width="20" viewBox="0 0 20 20">
+											<path d="M 20.7895 0.977 L 19.3752 -0.4364 L 10.081 8.8522 L 0.7869 -0.4364 L -0.6274 0.977 L 8.6668 10.2656 L -0.6274 19.5542 L 0.7869 20.9676 L 10.081 11.679 L 19.3752 20.9676 L 20.7895 19.5542 L 11.4953 10.2656 L 20.7895 0.977 Z"></path>
+										</svg>
+									</button>
+
+									<!-- 
+										Mobile Menu Logo 
+										Logo : height: 70px max
+									-->
+									<a class="navbar-brand" href="index.html">
+										<img src="assets/images/logo/logo_dark.svg" width="110" height="70" alt="...">
+									</a>
+
+								</div>
+								<!-- /MOBILE MENU NAVBAR -->
+
+
+
+								<!-- NAVIGATION -->
+								<ul class="navbar-nav navbar-sm">
+
+
+									<!-- categories -->
+									<li class="nav-item dropdown dropdown-mega">
+
+										<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="mainNavMainCategories">
+											Categories
+										</a>
+
+										<ul class="dropdown-menu dropdown-menu-hover dropdown-menu-clean" aria-labelledby="mainNavMainCategories">
+											<li class="dropdown-item bg-transparent">
+												
+												<div class="row col-border-md">
+
+													<div class="col-12 col-md-3">
+
+														<h3 class="h6 mb-3">
+															Properties : <span class="text-danger">Sale</span>
+														</h3>
+														<ul class="prefix-link-icon prefix-icon-line">
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Houses</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Apartments</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Lands &amp; Plots</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Offices</a>
+															</li>
+
+														</ul>
+
+
+														<h3 class="h6 mb-3 mt-4">
+															Properties : <span class="text-danger">Rent</span>
+														</h3>
+														<ul class="prefix-link-icon prefix-icon-line">
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Houses</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Apartments</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Lands &amp; Plots</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Offices</a>
+															</li>
+
+														</ul>
+
+
+														<h3 class="h6 mb-3 mt-4">
+															Cars
+														</h3>
+														<ul class="prefix-link-icon prefix-icon-line">
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Sale</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Commercial Vehicles</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Spare Parts</a>
+															</li>
+
+														</ul>
+
+													</div>
+
+													<div class="col-12 col-md-3">
+
+														<h3 class="h6 mb-3">
+															Electronics
+														</h3>
+														<ul class="prefix-link-icon prefix-icon-line">
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">TV / Audio / Video</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Computers &amp; Laptops</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Camers &amp; Lenses</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Games / Entertainment</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Fridges</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Computer Accesories</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">HDD / Printes / Monitors</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Washing MAchine</a>
+															</li>
+
+														</ul>
+
+														<h3 class="h6 mb-3 mt-4">
+															Phone / Mobile
+														</h3>
+														<ul class="prefix-link-icon prefix-icon-line">
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Mobile Phones</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Tablets</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Charges / Earphones</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Accessories</a>
+															</li>
+
+														</ul>
+
+													</div>
+
+													<div class="col-12 col-md-3">
+
+														<h3 class="h6 mb-3">
+															Services
+														</h3>
+														<ul class="prefix-link-icon prefix-icon-line">
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Electronis &amp; Computer</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Education</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Development / Webdesign</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Health &amp; Beauty</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Driving / Taxi</a>
+															</li>
+
+														</ul>
+
+
+														<h3 class="h6 mb-3 mt-4">
+															Pets
+														</h3>
+														<ul class="prefix-link-icon prefix-icon-line">
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Fishes &amp; Aquarium</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Pet Food &amp; Accessories</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Dogs</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Cats</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Toys</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Other Pets</a>
+															</li>
+
+														</ul>
+
+
+													</div>
+
+													<div class="col-12 col-md-3">
+
+														<h3 class="h6 mb-3">
+															Fashion
+														</h3>
+														<ul class="prefix-link-icon prefix-icon-line">
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Men</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Women</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Kids</a>
+															</li>
+
+														</ul>
+
+
+														<h3 class="h6 mb-3 mt-4">
+															Books &amp; Hobbies
+														</h3>
+														<ul class="prefix-link-icon prefix-icon-line">
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Books</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Gym &amp; Finess</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Muscial Instruments</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Sport Equipment</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Mountain Equipment</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="niche.classifieds-category.html">Other</a>
+															</li>
+
+														</ul>
+
+													</div>
+
+												</div>
+
+											</li>
+										</ul>
+
+									</li>
+
+									<!-- news -->
+									<li class="nav-item dropdown active">
+
+										<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="mainNavNews">
+											News
+										</a>
+
+										<ul class="dropdown-menu dropdown-menu-clean dropdown-menu-hover prefix-link-icon prefix-icon-dot" aria-labelledby="mainNavNews">
+											
+											<li class="dropdown-item">
+												<a class="dropdown-link" href="#!">All News</a>
+											</li>
+
+											<li class="dropdown-item">
+												<a class="dropdown-link" href="#!">Car Market</a>
+											</li>
+
+											<li class="dropdown-item">
+												<a class="dropdown-link" href="#!">Real Estate</a>
+											</li>
+
+											<li class="dropdown-item">
+												<a class="dropdown-link" href="#!">New Launches</a>
+											</li>
+
+											<li class="dropdown-item">
+												<a class="dropdown-link" href="#!">Reviews</a>
+											</li>
+
+											<li class="dropdown-item">
+												<a class="dropdown-link" href="#!">Photos &amp; videos</a>
+											</li>
+
+										</ul>
+
+									</li>
+
+
+									<!-- sell -->
+									<li class="nav-item dropdown">
+
+										<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="mainNavSellItem">
+											<span>Sell</span>
+										</a>
+
+										<div class="dropdown-menu dropdown-menu-clean dropdown-menu-hover w--300 py-0" aria-labelledby="mainNavSellItem">
+											
+											<a href="#!" class="dropdown-item transition-hover-left clearfix text-primary pt-4 pb-4">
+
+												<!-- badge -->
+												<span class="badge badge-success badge-soft position-absolute absolute-top right-0 ml-2 mr-2">
+													FREE
+												</span>
+
+												<!-- svg icon -->
+												<span class="float-start w--50 mr--20">
+													<svg width="50" viewBox="0 0 492 492"><path d="M314.629 321.023c.445-2.004-.164-4.094-1.613-5.543l-43.516-43.516c12.785-17.621 10.863-41.922-4.531-57.316-15.395-15.395-39.695-17.316-57.316-4.531l-43.52-43.516c-1.449-1.453-3.539-2.059-5.539-1.617-2.004.445-3.641 1.879-4.34 3.809l-35.824 98.512c-11.809 32.328-30.516 61.699-54.816 86.074-9.816 9.816-9.816 25.734 0 35.555l27.07 27.066c9.816 9.82 25.734 9.82 35.551 0l.5-.488 55.98 55.98c2.344 2.344 6.141 2.344 8.484 0 17.297-17.293 17.297-45.332 0-62.625l-24.941-24.941c14.477-9.234 29.918-16.859 46.051-22.742l98.512-35.824c1.926-.699 3.363-2.336 3.809-4.336zm-80.977-107.344c11.793 0 22.645 6.426 28.313 16.766 5.668 10.34 5.246 22.949-1.102 32.887l-44.582-44.582c5.184-3.324 11.215-5.086 17.371-5.07zm-125.191 197.684c-3.488.012-6.832-1.375-9.293-3.848l-27.066-27.07c-5.133-5.129-5.133-13.449 0-18.582 4.672-4.676 9.156-9.547 13.453-14.605l46.797 46.805c-5.051 4.293-9.918 8.777-14.605 13.453-2.457 2.473-5.801 3.859-9.285 3.848zm74.258 5.992c10.969 10.973 12.586 28.195 3.852 41.02l-51.102-51.102c6.574-5.883 13.473-11.395 20.66-16.508zm25.488-67.449c-23.887 8.73-46.301 21.066-66.453 36.582l-48.625-48.625c15.512-20.156 27.848-42.566 36.578-66.457l32.602-89.66 135.559 135.555zm0 0M298.98 193.5c-18.473-18.508-46.223-24.172-70.465-14.375-3.074 1.238-4.563 4.734-3.324 7.809 1.238 3.074 4.734 4.563 7.809 3.324 19.781-7.969 42.41-3.355 57.492 11.727 15.078 15.078 19.695 37.707 11.727 57.492-1.238 3.07.25 6.566 3.324 7.805s6.566-.25 7.805-3.32c9.797-24.242 4.137-51.992-14.367-70.461zm0 0M334.734 278.438c3.074 1.238 6.57-.25 7.809-3.324 14.414-35.777 6.07-76.703-21.207-103.977-27.273-27.277-68.203-35.621-103.977-21.207-3.074 1.238-4.563 4.734-3.324 7.809 1.238 3.074 4.734 4.563 7.809 3.324 31.313-12.617 67.137-5.313 91.008 18.559 23.871 23.871 31.176 59.695 18.559 91.008-1.238 3.074.25 6.57 3.324 7.809zm0 0M401.625 0c-49.914 0-90.375 40.461-90.375 90.375s40.461 90.375 90.375 90.375 90.375-40.461 90.375-90.375c-.055-49.891-40.484-90.32-90.375-90.375zm0 168.75c-43.285 0-78.375-35.09-78.375-78.375s35.09-78.375 78.375-78.375 78.375 35.09 78.375 78.375c-.051 43.266-35.109 78.324-78.375 78.375zm0 0M434.09 79.879c12.379 0 22.418-10.023 22.438-22.406.016-12.379-9.996-22.434-22.375-22.469s-22.449 9.965-22.5 22.344l-27.824 16.066c-8.98-7.773-22.461-7.203-30.754 1.301-8.289 8.504-8.516 21.996-.512 30.773 8 8.777 21.457 9.797 30.691 2.328l28.523 17.875c1.176 11.082 10.297 19.625 21.434 20.07 11.133.445 20.91-7.34 22.969-18.293 2.055-10.953-4.23-21.758-14.77-25.379-10.539-3.625-22.141 1.027-27.254 10.93l-23.906-14.98c1.711-4.707 1.797-9.855.242-14.617l24.531-14.168c4.09 6.602 11.301 10.621 19.066 10.625zm0-32.871c5.762 0 10.434 4.672 10.434 10.438 0 5.762-4.672 10.434-10.438 10.434-5.762 0-10.438-4.672-10.438-10.438.008-5.762 4.676-10.43 10.441-10.434zm-64.93 53.805c-5.762 0-10.434-4.676-10.434-10.438 0-5.766 4.672-10.438 10.438-10.438 5.762 0 10.438 4.672 10.438 10.438-.008 5.762-4.676 10.43-10.441 10.438zm64.93 12.059c5.762 0 10.434 4.672 10.434 10.438s-4.672 10.438-10.438 10.438c-5.766 0-10.438-4.676-10.438-10.438.008-5.762 4.676-10.434 10.441-10.438zm0 0M401.625 311.25c-49.914 0-90.375 40.461-90.375 90.375s40.461 90.375 90.375 90.375 90.375-40.461 90.375-90.375c-.055-49.891-40.484-90.32-90.375-90.375zm0 168.75c-43.285 0-78.375-35.09-78.375-78.375s35.09-78.375 78.375-78.375 78.375 35.09 78.375 78.375c-.051 43.266-35.109 78.324-78.375 78.375zm0 0M438.73 396.523l-49.148-30.402c-1.852-1.145-4.176-1.195-6.078-.137-1.898 1.059-3.078 3.063-3.078 5.238v60.801c0 2.176 1.18 4.18 3.078 5.238 1.902 1.059 4.227 1.004 6.078-.141l49.148-30.398c1.77-1.094 2.844-3.023 2.844-5.105 0-2.078-1.074-4.008-2.844-5.102zm-46.305 24.734v-39.266l31.742 19.633zm0 0M90.375 180.75c49.914 0 90.375-40.461 90.375-90.375s-40.461-90.375-90.375-90.375-90.375 40.461-90.375 90.375c.055 49.891 40.484 90.32 90.375 90.375zm0-168.75c43.285 0 78.375 35.09 78.375 78.375s-35.09 78.375-78.375 78.375-78.375-35.09-78.375-78.375c.051-43.266 35.109-78.324 78.375-78.375zm0 0M53.5 126.258h42.938c8.836-.012 15.992-7.168 16-16v-.953l21.926 12.031c1.859 1.02 4.117.984 5.941-.098 1.828-1.078 2.945-3.043 2.945-5.164v-51.398c0-2.121-1.121-4.082-2.945-5.164-1.824-1.078-4.082-1.117-5.941-.098l-21.926 12.035v-.957c-.008-8.832-7.164-15.988-16-16h-42.938c-8.832.012-15.988 7.168-16 16v39.766c.012 8.832 7.168 15.988 16 16zm77.75-51.445v31.125l-18.813-10.32v-10.48zm-81.75-4.32c0-2.207 1.789-4 4-4h42.938c2.211 0 4 1.793 4 4v39.766c0 2.207-1.789 4-4 4h-42.938c-2.211 0-4-1.793-4-4zm0 0"/></svg>
+												</span>
+
+												Create Ad
+
+												<span class="d-block text-muted text-truncate fs--14">
+													Sale your item
+												</span>
+											</a>
+
+											<div class="dropdown-divider"></div>
+											
+											<a href="#!" class="dropdown-item transition-hover-left clearfix text-primary pt-4 pb-4">
+
+												<!-- svg icon -->
+												<span class="float-start w--50 mr--20">
+													<svg width="50" viewBox="0 0 480.008 480.008"><path d="M56 400.004c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm0 32c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8zM474.498 338.774c-6.984-11.645-19.567-18.77-33.146-18.77h-1.688c-6.342.004-12.586 1.564-18.184 4.544l-61.48 32.792v-109.336h28c24.301 0 44-19.699 44-44s-19.699-44-44-44h-172c-22.091 0-40-17.909-40-40s17.909-40 40-40h28l45.6 60.8c1.511 2.014 3.882 3.2 6.4 3.2h176c4.418 0 8-3.582 8-8v-128c0-4.418-3.582-8-8-8h-176c-2.518 0-4.889 1.186-6.4 3.2l-45.6 60.8h-28c-30.928 0-56 25.072-56 56s25.072 56 56 56h172c15.464 0 28 12.536 28 28s-12.536 28-28 28h-28v-32c0-4.418-3.582-8-8-8h-224c-4.418 0-8 3.582-8 8v120c-6.203 2.166-12.215 4.842-17.976 8h-102.024v16h96v120h-96v16h303.136c7.252 0 14.367-1.972 20.584-5.704l137.512-82.504c18.305-10.979 24.244-34.717 13.266-53.022zm-162.399-244.143c12.497-4.418 19.046-18.131 14.627-30.627-4.418-12.497-18.131-19.046-30.627-14.627-6.835 2.416-12.211 7.793-14.627 14.627h-17.472l36-48h164v112h-164l-36-48h17.472c4.418 12.497 18.131 19.046 30.627 14.627zm-16.099-22.627c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8-8-3.582-8-8zm-72 136h32v32h-32v-32zm-88 0h72v40c0 4.418 3.582 8 8 8h48c4.418 0 8-3.582 8-8v-40h72v157.864l-13.104 6.984c4.887-19.272-6.775-38.857-26.048-43.744-2.892-.733-5.864-1.104-8.848-1.104h-77.912c-25.053-13.657-54.117-18.053-82.088-12.416v-107.584zm317 170.072l-137.512 82.504c-3.731 2.24-8 3.424-12.352 3.424h-191.136v-123.2c31.576-16.149 69.159-15.329 100 2.184 1.221.685 2.6 1.036 4 1.016h80c11.046 0 20 8.954 20 20s-8.954 20-20 20h-72c-4.418 0-8 3.582-8 8s3.582 8 8 8h88c1.314.002 2.608-.319 3.768-.936l113.24-60.4c3.281-1.746 6.94-2.661 10.656-2.664h1.688c12.508-.001 22.649 10.138 22.65 22.646 0 7.959-4.176 15.333-11.002 19.426zM431.917 84.266c-.623-6.087-4.325-11.429-9.805-14.15l-21.056-10.528c-.937-.458-1.325-1.589-.867-2.525.312-.639.956-1.048 1.667-1.059h30.144v-16h-16v-8h-16v8.192c-9.793 1.002-16.919 9.753-15.917 19.546.623 6.087 4.325 11.429 9.805 14.15l21.056 10.528c.937.458 1.325 1.589.867 2.525-.312.639-.956 1.048-1.667 1.059h-30.144v16h16v8h16v-8.192c9.793-1.002 16.919-9.753 15.917-19.546z"/></svg>
+												</span>
+
+												How to Sell
+
+												<span class="d-block text-muted text-truncate fs--14">
+													Guide to get started
+												</span>
+											</a>
+
+										</div>
+
+									</li>
+
+
+									<!-- social : mobile only (d-block d-sm-none)-->
+									<li class="nav-item d-block d-sm-none text-center mb-4">
+
+										<h3 class="h6 text-muted">Follow Us</h3>
+
+										<a href="#!" class="btn btn-sm btn-facebook transition-hover-top mb-2 rounded-circle text-white" rel="noopener">
+											<i class="fi fi-social-facebook"></i> 
+										</a>
+
+										<a href="#!" class="btn btn-sm btn-twitter transition-hover-top mb-2 rounded-circle text-white" rel="noopener">
+											<i class="fi fi-social-twitter"></i> 
+										</a>
+
+										<a href="#!" class="btn btn-sm btn-linkedin transition-hover-top mb-2 rounded-circle text-white" rel="noopener">
+											<i class="fi fi-social-linkedin"></i> 
+										</a>
+
+										<a href="#!" class="btn btn-sm btn-youtube transition-hover-top mb-2 rounded-circle text-white" rel="noopener">
+											<i class="fi fi-social-youtube"></i> 
+										</a>
+
+									</li>
+
+								</ul>
+								</ul>
+								<!-- /NAVIGATION -->
+
+							</div>
+
+
+							<!-- desktop social -->
+							<div class="float-end d-none d-lg-inline-block d-xl-inline-block d-xl-none">
+
+								<a href="#!" class="btn btn-sm btn-facebook transition-hover-top rounded-circle p-2 my-0 mr--2 ml--2" rel="noopener" aria-label="facebook page">
+									<i class="fi fi-social-facebook"></i> 
+								</a>
+
+								<a href="#!" class="btn btn-sm btn-twitter transition-hover-top rounded-circle p-2 my-0 mr--2 ml--2" rel="noopener" aria-label="twitter page">
+									<i class="fi fi-social-twitter"></i> 
+								</a>
+
+								<a href="#!" class="btn btn-sm btn-linkedin transition-hover-top rounded-circle p-2 my-0 mr--2 ml--2" rel="noopener" aria-label="linkedin page">
+									<i class="fi fi-social-linkedin"></i> 
+								</a>
+
+							</div>
+							<!-- /desktop social -->
+
+						</nav>
+
+					</div>
+
+				</div>
+
+			</header>
+			<!-- /HEADER -->
+
+
+			<section>
+				<div class="container">
+
+					<div class="row">
+
+						<div class="col mb-5">
+
+							<span class="h2 h3-xs float-end text-danger">
+								$124.00
+							</span>
+
+							<h1 class="h2 h3-xs mb-5">
+								2019 New original shoes, never weared
+								
+								<small class="d-block fs--12 text-muted">
+									Updated on: 16 April 2019
+								</small>
+							</h1>
+
+							<figure class="mb-5">
+								<img class="img-fluid" src="demo.files/images/unsplash/products/barrett-ward-cOJgO4Zzs-w-unsplash-min.jpg" alt="...">
+							</figure>
+
+							<h2 class="h5">Seller's Comments</h2>
+							<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+
+							<div class="bg-light p-3 fs--14">
+								We highly recommend buyers to get the precise details from sellers directly before making any decision. We don't guarantee the correctness of data, please refer to our disclaimer policy.
+							</div>
+
+						</div>
+
+						<div class="col-12 col-lg-4 mb-5">
+
+							<h2 class="h6 text-primary">
+								Seller Information
+							</h2>
+
+							<div class="clearfix">
+								<i class="fi fi-users float-start"></i> 
+								Private Seller
+							</div>
+
+							<hr>
+
+							<a href="#!" class="btn btn-lg btn-block btn-warning">
+								Contact Seller
+							</a>
+
+							<!-- specifications -->
+							<div class="mt-5">
+								
+								<h3 class="h5">
+									Specifications
+								</h3>
+
+								<!-- specs list -->
+								<ul class="list-unstyled mb-0">
+
+									<li class="list-item clearfix border-bottom py-2">
+										<span class="float-end">Summer</span>
+										<span class="text-muted"> 
+											<i class="fi fi-arrow-end text-gray-400 fs--20"></i> 
+											<span class="d-inline-block px-2">Season</span>
+										</span>
+									</li>
+
+									<li class="list-item clearfix border-bottom py-3"> 
+										<a href="#!" class="float-end link-muted">
+											Smarty
+										</a>
+										<span class="text-muted"> 
+											<i class="fi fi-brain fs--20"></i> 
+											<span class="d-inline-block px-2">Brand</span>
+										</span>
+									</li>
+
+									<li class="list-item clearfix border-bottom py-2">
+										<span class="float-end">Yes</span>
+										<span class="text-muted"> 
+											<i class="fi fi-fingerprint fs--20"></i> 
+											<span class="d-inline-block px-2">Fingerprint</span>
+										</span>
+									</li>
+
+									<li class="list-item clearfix border-bottom py-2">
+										<i class="float-end fi fi-check text-success fs--20"></i>
+										<span class="text-muted"> 
+											<i class="fi fi-lightbulb fs--20"></i> 
+											<span class="d-inline-block px-2">Smart</span>
+										</span>
+									</li>
+
+									<li class="list-item clearfix border-bottom py-2">
+										<i class="float-end fi fi-close text-danger fs--20"></i>
+										<span class="text-muted"> 
+											<i class="fi fi-colors-2 fs--20"></i> 
+											<span class="d-inline-block px-2">Milticolor</span>
+										</span>
+									</li>
+
+									<li class="list-item clearfix border-bottom py-2">
+										<span class="float-end">Yes</span>
+										<span class="text-muted"> 
+											<i class="fi fi-loud fs--20"></i> 
+											<span class="d-inline-block px-2">Loud Volume</span>
+										</span>
+									</li>
+
+									<li class="list-item clearfix border-bottom py-2">
+										<span class="float-end">7/7</span>
+											<span class="text-muted"> 
+											<i class="fi fi-support fs--20"></i> 
+											<span class="d-inline-block px-2">Support</span>
+										</span>
+									</li>
+
+								</ul>
+								<!-- /specs list -->
+
+								<!-- expand specs list -->
+								<div id="specs_expand" class="collapse">
+									<ul class="list-unstyled mb-0">
+
+										<li class="list-item clearfix border-bottom py-2">
+											<span class="float-end">24/24</span>
+											<span class="text-muted"> 
+												<i class="fi fi-24 fs--20"></i> 
+												<span class="d-inline-block px-2">Online</span>
+											</span>
+										</li>
+
+
+										<li class="list-item clearfix border-bottom py-2">
+											<span class="float-end">Yes</span>
+											<span class="text-muted"> 
+												<i class="fi fi-dashboard fs--20"></i> 
+												<span class="d-inline-block px-2">High Speed</span>
+											</span>
+										</li>
+
+										<li class="list-item clearfix border-bottom py-2">
+											<span class="float-end">Yes</span>
+											<span class="text-muted"> 
+												<i class="fi fi-lightning fs--20"></i> 
+												<span class="d-inline-block px-2">Protection</span>
+											</span>
+										</li>
+
+									</ul>
+								</div>
+
+
+								<!-- button : expand specs -->
+								<div class="mt-3">
+									<a href="#specs_expand" class="btn-toggle text-decoration-none text-danger fs--14" data-toggle="collapse">
+										<span class="group-icon">
+											<i class="fi fi-plus"></i>
+											<i class="fi fi-minus"></i>
+										</span>
+
+										<span class="group-icon pl-2 pr-2">
+											<span>view more specs</span>
+											<span>view less specs</span>
+										</span>
+									</a>
+								</div>
+								<!-- /expand specs list -->
+
+							</div>
+							<!-- /specifications -->
+
+						</div>
+
+					</div>
+
+				</div>
+			</section>
+
+
+			<section class="border-top">
+				<div class="container">
+
+					<h2 class="mb-5">Recommended</h2>
+
+					<div class="row">
+
+						<!-- item -->
+						<div class="col-6 col-md-4 col-lg-3 mb-4">
+							<a href="niche.classifieds-item.html" class="d-block p-2 shadow-xs b-0 text-decoration-none shadow-md-hover transition-hover-top transition-all-ease-250">
+								
+								<!-- image -->
+								<div class="text-center bg-light rounded h--200 bg-cover lazy" data-background-image="demo.files/images/unsplash/products/thumb_330/aidan-hancock-LIFe9y3-HKE-unsplash-min.jpg"></div>
+
+								<div class="card-body">
+
+									<h3 class="fs--16 font-weight-medium text-truncate text-muted">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+									</h3>
+
+									<p class="m-0 text-danger">
+										$159.99
+									</p>
+
+								</div>
+
+							</a>
+						</div>
+
+
+						<!-- item -->
+						<div class="col-6 col-md-4 col-lg-3 mb-4">
+							<a href="niche.classifieds-item.html" class="d-block p-2 shadow-xs b-0 text-decoration-none shadow-md-hover transition-hover-top transition-all-ease-250">
+
+								<!-- badge -->
+								<div class="badge badge-success badge-soft position-absolute top-0 end-0 m-2">NEW</div>
+
+								<!-- image -->
+								<div class="text-center bg-light rounded h--200 bg-cover lazy" data-background-image="demo.files/images/unsplash/products/thumb_330/imani-clovis-LxVxPA1LOVM-unsplash-min.jpg"></div>
+
+								<div class="card-body">
+
+									<h3 class="fs--16 font-weight-medium text-truncate text-muted">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+									</h3>
+									
+									<p class="m-0 text-danger">
+										$159.99
+									</p>
+
+								</div>
+
+							</a>
+						</div>
+
+
+						<!-- item -->
+						<div class="col-6 col-md-4 col-lg-3 mb-4">
+							<a href="niche.classifieds-item.html" class="d-block p-2 shadow-xs b-0 text-decoration-none shadow-md-hover transition-hover-top transition-all-ease-250">
+								
+								<!-- image -->
+								<div class="text-center bg-light rounded h--200 bg-cover lazy" data-background-image="demo.files/images/unsplash/products/thumb_330/barrett-ward-fYYUgvHYgpU-unsplash-min.jpg"></div>
+
+								<div class="card-body">
+
+									<h3 class="fs--16 font-weight-medium text-truncate text-muted">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+									</h3>
+									
+									<p class="m-0 text-danger">
+										$159.99
+									</p>
+
+								</div>
+
+							</a>
+						</div>
+
+
+						<!-- item -->
+						<div class="col-6 col-md-4 col-lg-3 mb-4">
+							<a href="niche.classifieds-item.html" class="d-block p-2 shadow-xs b-0 text-decoration-none shadow-md-hover transition-hover-top transition-all-ease-250">
+								
+								<!-- image -->
+								<div class="text-center bg-light rounded h--200 bg-cover lazy" data-background-image="demo.files/images/unsplash/products/thumb_330/hardik-sharma-CrPAvN29Nhs-unsplash-min.jpg"></div>
+
+								<div class="card-body">
+
+									<h3 class="fs--16 font-weight-medium text-truncate text-muted">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+									</h3>
+									
+									<p class="m-0 text-danger">
+										$159.99
+									</p>
+
+								</div>
+
+							</a>
+						</div>
+
+					</div>
+
+				</div>
+			</section>
+
+
+			<!-- SUBSCRIBE -->
+			<section class="border-top py-2">
+				<div class="container">
+
+					<div class="row">
+
+						<div class="col-10 mx-auto col-lg-8 py-5 pb-0-xs text-center-md text-center-xs">
+							<h3 class="m-0">Subscribe and follow the <span class="text-danger">best deals</span>!</h3>
+							<p class="m-0">Never miss a best deal, get 'em all into your own email address!</p>
+						</div>
+
+						<div class="col-10 mx-auto col-lg-4 py-4">
+
+							<form novalidate method="post" action="#subscribe_url" class="bs-validate py-3 mt-1 input-group-over input-group-pill"> 
+									
+								<input required class="form-control form-control-lg font-weight-light text-center-md text-center-xs" name="subscriber_email" type="email" value="" placeholder="email address..." aria-label="email address...">
+
+								<button aria-label="subscribe" type="submit" class="btn bg-transparent shadow-none"> 
+									<i class="fi fi-send fs--18"></i> 
+								</button>
+
+							</form>
+
+						</div>
+
+					</div>
+
+				</div>
+			</section>
+			<!-- /SUBSCRIBE -->
+
+
+
+
+
+
+			<!-- Testimonial Block -->
+			<section class="bg-light">
+				<div class="container">
+
+					<div class="row">
+
+						<div class="col-12 col-lg-6 order-1 order-lg-2 mb-5">
+
+							<div class="px-4">
+
+								<h2 class="h3-xs text-center-xs mb-5">
+									<small class="d-block h6 text-secondary">We wait your best deal!</small>
+									When <span class="text-danger">Smarty</span> buyers are happy!
+								</h2>
+
+								<p class="lead mb-5">
+									Tell us about your best deal on <b>Smarty</b> #1 Classifieds website! We are waiting for your incredible story, for sure you have one or definitely you'll get one with Smarty!
+								</p>
+
+								<a href="contact-1.html" class="btn btn-danger transition-hover-top">
+									Tell us your story!
+								</a>
+
+							</div>
+
+						</div>
+
+
+						<div class="col-12 col-lg-6 order-2 order-lg-1 mb-5">
+
+							<div class="p-4 shadow-xs bg-white rounded text-center">
+
+								<div class="swiper-container max-w-500"
+									data-swiper='{
+										"slidesPerView": 1,
+										"spaceBetween": 0,
+										"slidesPerGroup": 1,
+										"loop": true,
+										"autoplay": false,
+										"pagination": { "el":".swiper-pagination", "type": "bullets" },
+										"breakpoints": {
+											"1024": { "slidesPerView": "1" },
+											"920": 	{ "slidesPerView": "1" },
+											"768": 	{ "slidesPerView": "1" },
+											"460": 	{ "slidesPerView": "1" }
+										}
+									}'>
+									<div class="swiper-wrapper">
+										
+										<!-- slide -->
+										<div class="swiper-slide py-5">
+
+											<div class="mb-4"><!-- svg quote : svg also present as image in demo.files/svg/icons/quotes.svg -->
+												<svg width="40" class="fill-danger" viewBox="0 0 377.917 377.917">
+													<path d="M377.917 109.665l-12.124-55.747c-87.296 3.999-147.809 40.32-147.809 147.133v122.947h152.509v-154.526h-57.759c.001-34.273 21.505-54.431 65.183-59.807zM159.933 109.665l-12.124-55.747c-87.296 3.999-147.809 40.321-147.809 147.134v122.947h152.515v-154.527h-57.795c0-34.273 21.504-54.431 65.213-59.807z"/>
+												</svg>
+											</div>
+
+											<!-- testimonial paragraph -->
+											<p class="lead mb-4">
+												Buy this now. I'd be lost without webdesign. I made back the purchase price in just 48 hours!"
+											</p>
+											
+											<!-- avatar -->
+											<span class="w--70 h--70 rounded-circle d-inline-block bg-cover" style="background-image:url('demo.files/images/unsplash/team/thumb_330/michael-dam-mEZ3PoFGs_k-unsplash.jpg')"></span>
+
+											<!-- name -->
+											<p>
+												Lynette Y. <span class="font-weight-medium">CEO Smarty</span>
+											</p>
+
+										</div>
+
+
+
+										<!-- slide -->
+										<div class="swiper-slide py-5">
+
+											<div class="mb-4"><!-- svg quote : svg also present as image in demo.files/svg/icons/quotes.svg -->
+												<svg width="40" class="fill-danger" viewBox="0 0 377.917 377.917">
+													<path d="M377.917 109.665l-12.124-55.747c-87.296 3.999-147.809 40.32-147.809 147.133v122.947h152.509v-154.526h-57.759c.001-34.273 21.505-54.431 65.183-59.807zM159.933 109.665l-12.124-55.747c-87.296 3.999-147.809 40.321-147.809 147.134v122.947h152.515v-154.527h-57.795c0-34.273 21.504-54.431 65.213-59.807z"/>
+												</svg>
+											</div>
+
+											<!-- testimonial paragraph -->
+											<p class="lead mb-4">
+												I have gotten at least 50 times the value from webdesign. I would like to personally thank you for your outstanding product.
+											</p>
+											
+											<!-- avatar -->
+											<span class="w--70 h--70 rounded-circle d-inline-block bg-cover" style="background-image:url('demo.files/images/unsplash/team/thumb_330/joseph-gonzalez-iFgRcqHznqg-unsplash.jpg')"></span>
+
+											<!-- name -->
+											<p>
+												Benoite I. <span class="font-weight-medium">CEO Healtyes</span>
+											</p>
+
+										</div>
+
+
+
+										<!-- slide -->
+										<div class="swiper-slide py-5">
+
+											<div class="mb-4"><!-- svg quote : svg also present as image in demo.files/svg/icons/quotes.svg -->
+												<svg width="40" class="fill-danger" viewBox="0 0 377.917 377.917">
+													<path d="M377.917 109.665l-12.124-55.747c-87.296 3.999-147.809 40.32-147.809 147.133v122.947h152.509v-154.526h-57.759c.001-34.273 21.505-54.431 65.183-59.807zM159.933 109.665l-12.124-55.747c-87.296 3.999-147.809 40.321-147.809 147.134v122.947h152.515v-154.527h-57.795c0-34.273 21.504-54.431 65.213-59.807z"/>
+												</svg>
+											</div>
+
+											<!-- testimonial paragraph -->
+											<p class="lead mb-4">
+												Thank You! This is simply unbelievable! I have gotten at least 50 times the value from webdesign
+											</p>
+											
+											<!-- avatar -->
+											<span class="w--70 h--70 rounded-circle d-inline-block bg-cover" style="background-image:url('demo.files/images/unsplash/team/thumb_330/craig-mckay-jmURdhtm7Ng-unsplash.jpg')"></span>
+
+											<!-- name -->
+											<p>
+												Anthony I. <span class="font-weight-medium">Director Alibyaby</span>
+											</p>
+
+										</div>
+
+
+									</div>
+
+									<!-- Add Pagination -->
+									<div class="swiper-pagination"></div>
+
+								</div>
+
+
+							</div>
+
+						</div>
+
+					</div>
+
+
+				</div>
+			</section>
+			<!-- /Testimonial Block -->
+
+
+
+
+
+			<!-- 
+
+				CALL TO ACTION : APP 
+
+				Class Utils (top/bottom borders, if needed) 
+
+					.border-top 
+					.border-bottom
+
+			-->
+			<section class="py-5">
+				<div class="container">
+					<div class="row text-center-xs">
+
+						<div class="col-12 col-md-6">
+							<h3 class="m-0">Everywhere! Always! Connected!</h3>
+							<p class="m-0">You always want to be the first getting and doing the best deals!</p>
+						</div>
+						
+						<div class="col-12 mb-5 d-block d-md-none"><!-- mobile spacer --></div>
+
+						<div class="col-12 col-md-6 text-align-end text-center-xs">
+
+							<!-- App Store -->
+							<a href="#!" class="btn btn-dark bg-gradient-dark b-0 mx-1 rounded-xl transition-hover-top">
+								<i class="float-start">
+									<svg height="32" viewBox="0 0 90 90">
+										<path fill="#ffffff" d="M49.645 6.817c3.232-3.8 8.695-6.627 13.203-6.817.575 5.279-1.541 10.565-4.669 14.374-3.133 3.802-8.261 6.764-13.294 6.369-.684-5.165 1.851-10.551 4.76-13.926zm25.646 72.01c-3.741 5.485-7.61 10.938-13.718 11.053-6.012.114-7.938-3.571-14.799-3.571-6.866 0-9.016 3.457-14.69 3.686-5.897.222-10.382-5.926-14.152-11.387-7.703-11.168-13.585-31.576-5.677-45.35 3.916-6.84 10.934-11.167 18.537-11.282 5.792-.107 11.263 3.917 14.799 3.917 3.544 0 10.185-4.831 17.165-4.122 2.922.121 11.123 1.181 16.391 8.912-.417.274-9.789 5.745-9.676 17.141.114 13.614 11.891 18.137 12.029 18.199-.108.32-1.884 6.459-6.209 12.804z"/>
+									</svg>
+								</i>
+
+								<span class="float-start text-align-start px-2">
+									<span class="d-block line-height-1 fs--13">Download on the</span>
+									<span class="d-block line-height-1 fs--20 pt-1">App Store</span>
+								</span>
+							</a>
+
+							<div class="mt-3 d-block d-md-none"><!-- mobile spacer --></div>
+
+							<!-- Play Store -->
+							<a href="#!" class="btn btn-dark bg-gradient-dark b-0 mx-1 rounded-xl transition-hover-top">
+								<i class="float-start">
+									<svg height="32" viewBox="0 0 512 512">
+										<path fill="#ffffff" d="M99.617 8.057c-11.664-7.537-25.674-9.815-38.815-6.713l230.932 230.933 74.846-74.846-266.963-149.374zM32.139 20.116c-6.441 8.563-10.148 19.077-10.148 30.199v411.358c0 11.123 3.708 21.636 10.148 30.199l235.877-235.877-235.877-235.879zM464.261 212.087l-67.266-37.637-81.544 81.544 81.548 81.548 67.273-37.64c16.117-9.03 25.738-25.442 25.738-43.908s-9.621-34.877-25.749-43.907zM291.733 279.711l-230.918 230.918c3.786.891 7.639 1.371 11.492 1.371 9.522 0 19.011-2.708 27.31-8.07l266.965-149.372-74.849-74.847z"/>
+									</svg>
+								</i>
+
+								<span class="float-start text-align-start px-2">
+									<span class="d-block line-height-1 fs--13">Download on the</span>
+									<span class="d-block line-height-1 fs--20 pt-1">Play Store</span>
+								</span>
+							</a>
+
+						</div>
+
+					</div>
+				</div>
+			</section>
+			<!-- /CALL TO ACTION : APP -->
+
+
+
+
+			<!-- Footer -->
+			<footer id="footer" class="border-top">
+				
+				<div class="container py-4">
+
+					<div class="row">
+
+						<div class="col text-center-xs my-5">
+
+							<!-- logo -->
+							<span class="h--70 d-inline-flex align-items-center">
+								<img src="assets/images/logo/logo_dark.svg" width="110" height="70" alt="...">
+							</span>
+
+							<div class="clearfix mb-4">
+
+								<!-- social -->
+								<a href="#!" class="btn btn-sm btn-light transition-hover-top mb-2 rounded-circle" rel="noopener" aria-label="facebook page">
+									<i class="fi fi-social-facebook"></i> 
+								</a>
+
+								<a href="#!" class="btn btn-sm btn-light transition-hover-top mb-2 rounded-circle" rel="noopener" aria-label="twitter page">
+									<i class="fi fi-social-twitter"></i> 
+								</a>
+
+								<a href="#!" class="btn btn-sm btn-light transition-hover-top mb-2 rounded-circle" rel="noopener" aria-label="linkedin page">
+									<i class="fi fi-social-linkedin"></i> 
+								</a>
+
+								<a href="#!" class="btn btn-sm btn-light transition-hover-top mb-2 rounded-circle" rel="noopener" aria-label="youtube page">
+									<i class="fi fi-social-youtube"></i> 
+								</a>
+
+							</div>
+
+							<p class="m-0 text-gray-500 fs--14">
+								&copy; My Company Inc. All Rights Reserved.
+							</p>
+
+						</div>
+
+
+						<div class="col-12 col-lg-8 my-5">
+
+							<div class="row">
+
+								<div class="col-12 col-lg-4 mb-1">
+
+									<!-- mobile only -->
+									<button class="clearfix btn btn-toggle btn-sm btn-block text-align-left shadow-md border rounded mb-1 d-block d-lg-none" data-target="#footer_c1" data-toggle-container-class="d-none d-sm-block bg-white shadow-md border animate-fadein rounded p-3">
+										<span class="group-icon px-2 py-2 float-start">
+											<i class="fi fi-bars-2"></i>
+											<i class="fi fi-close"></i>
+										</span>
+
+										<span class="h5 py-2 m-0 float-start">
+											Orders
+										</span>
+									</button>
+
+									<!-- desktop only -->
+									<h3 class="h5 pt-3 pb-3 m-0 d-none d-lg-block">
+										Orders
+									</h3>
+
+
+									<!-- navigation -->
+									<ul id="footer_c1" class="nav flex-column d-none d-lg-block">
+										<li class="list-item">
+											<a class="d-block py-1" href="#!">My Account</a>
+										</li>
+
+										<li class="list-item">
+											<a class="d-block py-1" href="#!">How do I order?</a>
+										</li>
+
+										<li class="list-item">
+											<a class="d-block py-1" href="#!">Payment Methods</a>
+										</li>
+									</ul>
+
+								</div>
+
+
+								<div class="col-12 col-lg-4 mb-1">
+
+									<!-- mobile only -->
+									<button class="clearfix btn btn-toggle btn-sm btn-block text-align-left shadow-md border rounded mb-1 d-block d-lg-none" data-target="#footer_c2" data-toggle-container-class="d-none d-sm-block bg-white shadow-md border animate-fadein rounded p-3">
+										<span class="group-icon px-2 py-2 float-start">
+											<i class="fi fi-bars-2"></i>
+											<i class="fi fi-close"></i>
+										</span>
+
+										<span class="h5 py-2 m-0 float-start">
+											Explore
+										</span>
+									</button>
+
+									<!-- desktop only -->
+									<h3 class="h5 pt-3 pb-3 m-0 d-none d-lg-block">
+										Explore
+									</h3>
+
+
+									<!-- navigation -->
+									<ul id="footer_c2" class="nav flex-column d-none d-lg-block">
+										<li class="list-item">
+											<a class="d-block py-1" href="blog-page-sidebar.html">Smarty Blog</a>
+										</li>
+
+										<li class="list-item">
+											<a class="d-block py-1" href="#!">Shipping</a>
+										</li>
+
+										<li class="list-item">
+											<a class="d-block py-1" href="#!">Cookies</a>
+										</li>
+									</ul>
+
+
+								</div>
+
+
+								<div class="col-12 col-lg-4 mb-1">
+
+									<!-- mobile only -->
+									<button class="clearfix btn btn-toggle btn-sm btn-block text-align-left shadow-md border rounded mb-1 d-block d-lg-none" data-target="#footer_c3" data-toggle-container-class="d-none d-sm-block bg-white shadow-md border animate-fadein rounded p-3">
+										<span class="group-icon px-2 py-2 float-start">
+											<i class="fi fi-bars-2"></i>
+											<i class="fi fi-close"></i>
+										</span>
+
+										<span class="h5 py-2 m-0 float-start">
+											Support
+										</span>
+									</button>
+
+									<!-- desktop only -->
+									<h3 class="h5 pt-3 pb-3 m-0 d-none d-lg-block">
+										Support
+									</h3>
+
+
+									<!-- navigation -->
+									<ul id="footer_c3" class="nav flex-column d-none d-lg-block">
+										<li class="list-item">
+											<a class="d-block py-1" href="#!">Refund Policy</a>
+										</li>
+
+										<li class="list-item">
+											<a class="d-block py-1" href="#!">Privacy Policy</a>
+										</li>
+
+										<li class="list-item">
+											<a class="d-block py-1" href="#!">Terms &amp; Conditions</a>
+										</li>
+									</ul>
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+			</footer>
+			<!-- /Footer -->
+
+
+		</div><!-- /#wrapper -->
+
+		<script src="assets/js/core.min.js"></script>
+		
+	</body>
+</html>

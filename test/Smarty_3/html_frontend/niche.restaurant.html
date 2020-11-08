@@ -1,0 +1,1306 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Smarty V3</title>
+		<meta name="description" content="...">
+
+        <meta name="viewport" content="width=device-width, maximum-scale=5, initial-scale=1, user-scalable=0">
+        <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+        <!-- up to 10% speed up for external res -->
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+        <link rel="preconnect" href="https://fonts.googleapis.com/">
+        <link rel="preconnect" href="https://fonts.gstatic.com/">
+        <!-- preloading icon font is helping to speed up a little bit -->
+        <link rel="preload" href="assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
+
+        <link rel="stylesheet" href="assets/css/core.min.css">
+        <link rel="stylesheet" href="assets/css/vendor_bundle.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap">
+
+		<!-- favicon -->
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="apple-touch-icon" href="demo.files/logo/icon_512x512.png">
+
+		<link rel="manifest" href="assets/images/manifest/manifest.json">
+		<meta name="theme-color" content="#377dff">
+
+	</head>
+
+	<!--
+		++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++
+
+			PLUGINS USED
+				SOW: 	
+					lazyload 		/documentation/plugins-sow-lazyload.html
+					ajax modal 		/documentation/plugins-sow-ajax-modal.html
+
+				VENDORS
+					Swiper 			/documentation/plugins-vendor-swiper.html
+					Photoswipe 		/documentation/plugins-vendor-photoswipe.html
+					Map (leaflet) 	/documentation/components-map.html
+					Jarallax 		/documentation/plugins-vendor-jarallax.html
+
+		++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++
+	-->
+	<body class="header-over header-sticky">
+
+		<div id="wrapper">
+
+
+			<!-- HEADER -->
+			<header id="header" class="shadow-xs">
+
+
+				<!-- NAVBAR -->
+				<div class="container position-relative">
+
+					<nav class="navbar navbar-expand-lg navbar-light justify-content-lg-between justify-content-md-inherit">
+
+						<div class="align-items-start">
+
+							<!-- mobile menu button : show -->
+							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMainNav" aria-controls="navbarMainNav" aria-expanded="false" aria-label="Toggle navigation">
+								<svg width="25" viewBox="0 0 20 20">
+									<path d="M 19.9876 1.998 L -0.0108 1.998 L -0.0108 -0.0019 L 19.9876 -0.0019 L 19.9876 1.998 Z"></path>
+									<path d="M 19.9876 7.9979 L -0.0108 7.9979 L -0.0108 5.9979 L 19.9876 5.9979 L 19.9876 7.9979 Z"></path>
+									<path d="M 19.9876 13.9977 L -0.0108 13.9977 L -0.0108 11.9978 L 19.9876 11.9978 L 19.9876 13.9977 Z"></path>
+									<path d="M 19.9876 19.9976 L -0.0108 19.9976 L -0.0108 17.9976 L 19.9876 17.9976 L 19.9876 19.9976 Z"></path>
+								</svg>
+							</button>
+
+							<!-- 
+								Logo : height: 70px max
+							-->
+							<a class="navbar-brand" href="index.html">
+								<img src="assets/images/logo/logo_dark.svg" width="110" height="70" alt="...">
+								<img src="assets/images/logo/logo_light.svg" width="110" height="70" alt="...">
+							</a>
+
+						</div>
+
+
+
+
+						<!-- Menu -->
+						<div class="collapse navbar-collapse justify-content-end" id="navbarMainNav">
+
+
+							<!-- MOBILE MENU NAVBAR -->
+							<div class="navbar-xs d-none"><!-- .sticky-top -->
+
+								<!-- mobile menu button : close -->
+								<button class="navbar-toggler pt-0" type="button" data-toggle="collapse" data-target="#navbarMainNav" aria-controls="navbarMainNav" aria-expanded="false" aria-label="Toggle navigation">
+									<svg width="20" viewBox="0 0 20 20">
+										<path d="M 20.7895 0.977 L 19.3752 -0.4364 L 10.081 8.8522 L 0.7869 -0.4364 L -0.6274 0.977 L 8.6668 10.2656 L -0.6274 19.5542 L 0.7869 20.9676 L 10.081 11.679 L 19.3752 20.9676 L 20.7895 19.5542 L 11.4953 10.2656 L 20.7895 0.977 Z"></path>
+									</svg>
+								</button>
+
+								<!-- 
+									Mobile Menu Logo 
+									Logo : height: 70px max
+								-->
+								<a class="navbar-brand" href="index.html">
+									<img src="assets/images/logo/logo_dark.svg" width="110" height="70" alt="...">
+								</a>
+
+							</div>
+							<!-- /MOBILE MENU NAVBAR -->
+
+
+
+							<!-- NAVIGATION -->
+							<ul class="navbar-nav fs--14">
+
+								<!-- home -->
+								<li class="nav-item">
+
+									<a class="nav-link scroll-to" href="#wrapper">
+										HOME
+									</a>
+
+								</li>
+
+								<!-- about -->
+								<li class="nav-item">
+
+									<a class="nav-link scroll-to" href="#section_about">
+										ABOUT US
+									</a>
+
+								</li>
+
+								<!-- about -->
+								<li class="nav-item">
+
+									<a class="nav-link scroll-to" href="#section_team">
+										CHIEFS
+									</a>
+
+								</li>
+
+
+								<!-- about -->
+								<li class="nav-item">
+
+									<a class="nav-link scroll-to" href="#section_contact">
+										CONTACT US
+									</a>
+
+								</li>
+
+
+								<!-- social : mobile only (d-block d-sm-none)-->
+								<li class="nav-item d-block d-sm-none text-center mb-4">
+
+									<h3 class="h6 text-muted">Follow Us</h3>
+
+									<a href="#!" class="btn btn-sm btn-facebook transition-hover-top mb-2 rounded-circle text-white" rel="noopener">
+										<i class="fi fi-social-facebook"></i> 
+									</a>
+
+									<a href="#!" class="btn btn-sm btn-twitter transition-hover-top mb-2 rounded-circle text-white" rel="noopener">
+										<i class="fi fi-social-twitter"></i> 
+									</a>
+
+									<a href="#!" class="btn btn-sm btn-linkedin transition-hover-top mb-2 rounded-circle text-white" rel="noopener">
+										<i class="fi fi-social-linkedin"></i> 
+									</a>
+
+									<a href="#!" class="btn btn-sm btn-youtube transition-hover-top mb-2 rounded-circle text-white" rel="noopener">
+										<i class="fi fi-social-youtube"></i> 
+									</a>
+
+								</li>
+
+
+							</ul>
+							<!-- /NAVIGATION -->
+
+
+						</div>
+
+
+
+
+
+						<!-- OPTIONS -->
+						<ul class="list-inline list-unstyled mb-0 d-flex align-items-end">
+
+
+						</ul>
+						<!-- /OPTIONS -->
+
+
+
+					</nav>
+
+				</div>
+				<!-- /NAVBAR -->
+
+			</header>
+			<!-- /HEADER -->
+
+
+		
+
+
+
+
+
+
+
+
+
+			<!-- COVER 
+				data-sow-slideshow="..."
+				data-sow-slideshow-xs="..."		(smaller, mobile devices)
+			 -->
+			<section class="sow-util-slideshow min-h-100vh d-middle justify-content-start overlay-dark overlay-opacity-6" 
+				data-sow-slideshow-interval="4000" 
+				data-sow-slideshow-fade-delay="2000" 
+				data-sow-slideshow="
+					 demo.files/images/unsplash/restaurant/louis-hansel-PRJbFSNgSzQ-unsplash-min.jpg
+					,demo.files/images/unsplash/restaurant/stefan-johnson-xIFbDeGcy44-unsplash.jpg
+					,demo.files/images/unsplash/restaurant/jade-wulfraat-UaOPeqfdW1c-unsplash-min.jpg
+				">
+
+				<div class="container"> 
+
+					<div class="row text-center-md text-center-xs d-middle justify-content-start">
+						
+						<div class="col-12 col-lg-6 mb-5 text-white py-7" data-aos="fade-in" data-aos-delay="0" data-aos-offset="0">
+
+							<!-- main title -->
+							<h1 class="h1-xs display-4 mb-0 font-weight-medium">
+								<span class="text-danger">Smarty</span> Restaurant
+							</h1>
+							
+							<!-- slogan -->
+							<p class="h2 h5-xs font-weight-normal mb-0">
+								See you tomorrow!
+							</p>
+
+						</div>
+
+						<div class="col-12 col-lg-6 text-align-end text-center-md text-center-xs" data-aos="fade-in" data-aos-delay="50" data-aos-offset="0">
+
+							<div class="d-inline-block bg-white shadow-primary-xs rounded p-5 p-4-xs w-100 max-w-450 text-align-start jarallax" data-jarallax-element="60">
+								
+								<h2 class="h5 mb-5">
+									<i class="fi fi-time"></i> 
+									<span class="d-inline-block pl-2 pr-2">Book Now</span>
+								</h2>
+
+								<form novalidate class="bs-validate" method="get" action="#">
+
+									<!-- Date -->
+									<div class="form-label-group mb-4">
+										<input placeholder="Date" id="book_date" type="text" value="" class="form-control rangepicker" autocomplete="off" 
+												data-disable-auto-update-input="true" 
+												data-single-datepicker="true" 
+												data-timepicker="true" 
+												data-timepicker-24h="true" 
+												data-timepicker-show-seconds="false" 
+												data-disable-past-dates="true" 
+												data-date-format="MM/DD/YYYY HH:mm:ss" 
+												data-quick-locale='{
+													"lang_apply"	: "Apply",
+													"lang_cancel"	: "Cancel",
+													"lang_crange"	: "Custom Range",
+													"lang_months" 	: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+													"lang_weekdays" : ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
+												}'>
+										<label for="book_date">Date</label>
+									</div>
+
+									<!-- People -->
+									<div class="form-label-group mb-4">
+										<select required id="book_people" class="form-control bs-select" title="No of People">
+											<option value="">No of People</option>
+											<option value="1">1 Person</option>
+											<option value="2">2 People</option>
+											<option value="3">3 People</option>
+											<option value="4">4 People</option>
+											<option value="6">6 People</option>
+											<option value="8">8 People</option>
+											<option value="12">12 People</option>
+											<option value="18">18 People</option>
+											<option value="20">20 People</option>
+											<option value="20+">20+ People</option>
+										</select>
+										<label for="book_people">No of People</label>
+									</div>
+
+									<!-- Name -->
+									<div class="form-label-group mb-4">
+										<input placeholder="Full Name" id="book_fullname" type="text" value="" class="form-control">
+										<label for="book_fullname">Full Name</label>
+									</div>
+
+									<button type="submit" class="btn btn-block btn-lg btn-danger bg-gradient-danger">
+										<i class="fi fi-time"></i>
+										Book Now
+									</button>
+
+									<small class="d-block text-muted fs--13 mt-3">
+										By sending this message, you agree our <a href="#" target="blank" class="link-muted">terms and conditions</a> related to GDPR law!
+									</small>
+
+								</form>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</section>	
+			<!-- /COVER + SEARCH -->
+
+
+
+
+
+
+			<!-- 
+
+				SUBSCRIBE
+
+				Class Utils (top/bottom borders, if needed) 
+
+					.border-top 
+					.border-bottom
+
+			-->
+			<section class="py-2">
+				<div class="container">
+
+					<div class="row">
+
+						<div class="col-10 mx-auto col-lg-8 py-5 pb-0-xs text-center-md text-center-xs">
+							<h3 class="m-0">Let's connect to share the <span class="text-danger">best deals</span>!</h3>
+							<p class="m-0">You know you want the best deals, especially tasty best deals, isn't it?</p>
+						</div>
+
+						<div class="col-10 mx-auto col-lg-4 py-4">
+
+							<form novalidate="" method="post" action="#subscribe_url" class="bs-validate py-3 mt-1 input-group-over input-group-pill"> 
+									
+								<input required="" class="form-control form-control-lg font-weight-light text-center-md text-center-xs" name="subscriber_email" type="email" value="" placeholder="email address..." aria-label="email address...">
+
+								<button aria-label="subscribe" type="submit" class="btn bg-transparent shadow-none"> 
+									<i class="fi fi-send fs--18"></i> 
+								</button>
+
+							</form>
+
+						</div>
+
+					</div>
+
+				</div>
+			</section>
+			<!-- /SUBSCRIBE -->
+							
+
+
+
+
+
+
+
+			<!-- block : about us -->
+			<section id="section_about" class="py-0 overflow-hidden bg-light">
+				<div class="container">
+				
+					<div class="row d-flex flex-wrap align-items-center">
+					
+						<!-- ITEMS COLUMN -->
+						<div class="order-2 order-md-1 col-12 col-md-8 py-6">
+
+							<h2 class="h1 h2-md mb-5">
+								<span class="font-weight-light">About Us</span> We Cook!
+							</h2>
+
+							<p class="lead mb-5">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas tellus rutrum tellus pellentesque eu. In metus vulputate eu scelerisque felis imperdiet proin.
+							</p>
+
+
+							<!--
+								
+								IMAGES SET AS BACKGROUND WITH LAZYLOAD!
+
+								SEO NOTE: make sure you set title="" to each link!
+								Images are indexed from the href (big/original ones).
+								
+								Do not set anything relevant to alt="..." images - are blank/svg images
+								used for scaling only (responsive proportions of background image)!
+
+							-->
+							<div class="row gutters-lg gutters-xs--xs">
+
+								<!-- 2 in 1 -->
+								<div class="col-6 mb-5 mb-2-xs d-flex flex-wrap align-items-center">
+
+									<!-- item 1 -->
+									<div class="w-100"><!-- div = flex wrapper -->
+										<a class="photoswipe photoswipe-secondary d-block w-100 overlay-dark-hover overlay-opacity-3 transition-hover-top transition-all-ease-500 rounded bg-light bg-cover lazy" 
+											data-photoswipe="restaurant_plates" data-background-image="demo.files/images/unsplash/restaurant/thumb_600/caroline-attwood-bpPTlXWTOvg-unsplash.jpg" 
+											href="demo.files/images/unsplash/restaurant/caroline-attwood-bpPTlXWTOvg-unsplash.jpg">
+											
+											<!-- blank svg / autoresizer -->
+											<img class="w-100" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiA5IiAvPg==" alt="..." />
+										</a>
+										<h3 class="h6 py-3 b-3 text-muted">Pappardelle with Sea Urchin and Cauliflower</h3>
+									</div>
+
+									<!-- item 2 -->
+									<div class="w-100"><!-- div = flex wrapper -->
+										<a class="photoswipe photoswipe-secondary d-block w-100 overlay-dark-hover overlay-opacity-3 transition-hover-top transition-all-ease-500 rounded bg-light bg-cover lazy" 
+											data-photoswipe="restaurant_plates" data-background-image="demo.files/images/unsplash/restaurant/thumb_600/jade-wulfraat-sIzym-INcvk-unsplash-min-min.jpg" 
+											href="demo.files/images/unsplash/restaurant/jade-wulfraat-sIzym-INcvk-unsplash-min.jpg">
+											
+											<!-- blank svg / autoresizer -->
+											<img class="w-100" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiA5IiAvPg==" alt="..." />
+										</a>
+										<h3 class="h6 py-3 text-muted">Braised Leeks with Mozzarella &amp; a Fried Egg</h3>
+									</div>
+
+								</div>
+
+								<div class="col-6 mb-5 mb-2-xs">
+
+									<a class="photoswipe photoswipe-secondary d-block w-100 overlay-dark-hover overlay-opacity-3 transition-hover-top transition-all-ease-500 rounded bg-light bg-cover lazy" data-photoswipe="restaurant_plates" 
+										data-background-image="demo.files/images/unsplash/restaurant/thumb_600/mae-mu-en4qp-aK1h4-unsplash-min.jpg" 
+										href="demo.files/images/unsplash/restaurant/mae-mu-en4qp-aK1h4-unsplash-min.jpg">
+										
+										<!-- blank svg / autoresizer -->
+										<img class="w-100" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyIDMiIC8+" alt="..." />
+									</a>
+									<h3 class="h6 py-3 text-muted">Scallop Sashimi with Meyer Lemon Confit</h3>
+
+								</div>
+
+								<div class="col-6 mb-5 mb-2-xs">
+
+									<a class="photoswipe photoswipe-secondary d-block w-100 overlay-dark-hover overlay-opacity-3 transition-hover-top transition-all-ease-500 rounded bg-light bg-cover lazy" data-photoswipe="restaurant_plates" 
+										data-background-image="demo.files/images/unsplash/restaurant/thumb_600/mae-mu-IHFa5s6xaRE-unsplash-min.jpg" 
+										href="demo.files/images/unsplash/restaurant/mae-mu-IHFa5s6xaRE-unsplash-min.jpg">
+										
+										<!-- blank svg / autoresizer -->
+										<img class="w-100" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyIDMiIC8+" alt="..." />
+									</a>
+									<h3 class="h6 py-3 text-muted">Scallop Sashimi with Meyer Lemon Confit</h3>
+
+								</div>
+
+
+								<!-- 2 in 1 -->
+								<div class="col-6 mb-5 mb-2-xs d-flex flex-wrap align-items-center">
+
+									<!-- item 1 -->
+									<div class="w-100"><!-- div = flex wrapper -->
+										<a class="photoswipe photoswipe-secondary d-block w-100 overlay-dark-hover overlay-opacity-3 transition-hover-top transition-all-ease-500 rounded bg-light bg-cover lazy" data-photoswipe="restaurant_plates" 
+											data-background-image="demo.files/images/unsplash/restaurant/thumb_600/jonathan-borba-KSAThuJ9mjs-unsplash.jpg" 
+											href="demo.files/images/unsplash/restaurant/jonathan-borba-KSAThuJ9mjs-unsplash.jpg">
+											
+											<!-- blank svg / autoresizer -->
+											<img class="w-100" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiA5IiAvPg==" alt="..." />
+										</a>
+										<h3 class="h6 py-3 mb-4 text-muted">Scallop Sashimi with Meyer Lemon Confit</h3>
+									</div>
+
+									<!-- item 2 -->
+									<div class="w-100"><!-- div = flex wrapper -->
+										<a class="photoswipe photoswipe-secondary d-block w-100 overlay-dark-hover overlay-opacity-3 transition-hover-top transition-all-ease-500 rounded bg-light bg-cover lazy" data-photoswipe="restaurant_plates" 
+											data-background-image="demo.files/images/unsplash/restaurant/thumb_600/jonathan-borba-r4lfDRSg19o-unsplash.jpg" 
+											href="demo.files/images/unsplash/restaurant/jonathan-borba-r4lfDRSg19o-unsplash.jpg">
+											
+											<!-- blank svg / autoresizer -->
+											<img class="w-100" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiA5IiAvPg==" alt="..." />
+										</a>
+										<h3 class="h6 py-3 text-muted">Smoked Pork Jowl with Pickles</h3>
+									</div>
+
+								</div>
+
+
+								<div class="col-6 mb-5 mb-2-xs">
+
+									<a class="photoswipe photoswipe-secondary d-block w-100 overlay-dark-hover overlay-opacity-3 transition-hover-top transition-all-ease-500 rounded bg-light bg-cover lazy" 
+										data-photoswipe="restaurant_plates" data-background-image="demo.files/images/unsplash/restaurant/thumb_600/louis-hansel-MlPD-AzZYMg-unsplash-min-min.jpg" 
+										href="demo.files/images/unsplash/restaurant/louis-hansel-MlPD-AzZYMg-unsplash-min.jpg">
+										
+										<!-- blank svg / autoresizer -->
+										<img class="w-100" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiA5IiAvPg==" alt="..." />
+									</a>
+									<h3 class="h6 py-3 text-muted">Braised Leeks with Mozzarella &amp; a Fried Egg</h3>
+
+								</div>
+
+								<div class="col-6 mb-5 mb-2-xs">
+
+									<a class="photoswipe photoswipe-secondary d-block w-100 overlay-dark-hover overlay-opacity-3 transition-hover-top transition-all-ease-500 rounded bg-light bg-cover lazy" 
+										data-photoswipe="restaurant_plates" data-background-image="demo.files/images/unsplash/restaurant/thumb_600/louis-hansel-phEaeqe555M-unsplash-min-min.jpg" 
+										href="demo.files/images/unsplash/restaurant/louis-hansel-phEaeqe555M-unsplash-min.jpg">
+										
+										<!-- blank svg / autoresizer -->
+										<img class="w-100" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiA5IiAvPg==" alt="..." />
+									</a>
+									<h3 class="h6 py-3 text-muted">Lamb Salad with Fregola</h3>
+
+								</div>
+
+							</div>
+
+
+						</div>
+
+
+
+						<!-- ASIDE PARALLAX -->
+						<div class="order-1 order-md-2 col-12 col-md-3 offset-md-1 d-md-flex align-self-md-stretch">
+
+							<!-- remove .jarallax class to have a simple but nice image cover -->
+							<div class="stretch-end bg-cover jarallax max-h-300-xs align-self-md-stretch flex-md-fill overlay-dark overlay-opacity-1" style="background-image:url('demo.files/images/unsplash/restaurant/pablo-merchan-montes-hyIE90CN6b0-unsplash.jpg')">
+								
+								<!-- blank svg / autoresizer -->
+								<img class="w-100 py-7 my-7 m-0-xs" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyIDMiIC8+" alt="...">
+							
+							</div>		
+
+						</div>
+
+					</div>
+
+				</div>
+			</section>
+			<!-- /block : about us -->
+
+			
+
+
+
+			<!-- block : story + interior presentations -->
+			<section class="overflow-hidden">
+				<div class="container">
+				
+					<div class="row d-flex flex-wrap align-items-center">
+					
+						<div class="order-2 order-md-1 col-12 col-md-6 mb-5">
+
+							<h2 class="h1 h2-md mb-5">
+								Our Story!
+							</h2>
+							<p class="lead mb-5">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas tellus rutrum tellus pellentesque eu. In metus vulputate eu scelerisque felis imperdiet proin.
+							</p>
+
+
+							<!-- play -->
+							<div class="clearfix d-flex align-items-center">
+
+								<!-- play button : based on SOW : Ajax Modal -->
+								<span class="d-inline-block rounded-circle border border-light bw--3 p-1 transition-hover-zoom transition-all-ease-150 shadow-primary-lg">
+									<a aria-label="See our video" href="https://www.youtube.com/watch?v=iM_KMYulI_s" class="js-ajax-modal d-inline-flex bg-primary text-white rounded-circle w--60 h--60 align-items-center justify-content-center text-decoration-none" 
+										data-ajax-modal-type="video" 
+										data-ajax-modal-size="modal-xl" 
+										data-ajax-modal-centered="true">
+										<i class="fi fi-arrow-end-full fs--25 mt--3"></i>
+									</a>
+								</span> 
+
+								<span class="d-inline-block px-3 text-primary">
+									<b>SEE OUR STORY</b>
+								</span>
+
+							</div>
+							<!-- /play -->
+
+						</div>
+
+						<div class="order-1 order-md-2 col-12 col-md-6 mb-5">
+
+							<div class="stretch-end rounded-xl bg-light">
+
+								<div class="swiper-container swiper-preloader swiper-warning swiper-btn-group swiper-btn-group-start text-white" 
+									data-swiper='{
+										"slidesPerView": 1,
+										"spaceBetween": 0,
+										"autoplay": { "delay" : 2500, "disableOnInteraction": false },
+										"effect": "fade",
+										"loop": true,
+										"pagination": { "type": "progressbar" }
+									}'>
+
+									<!-- 
+
+										interior/exterior images
+
+										these are random from unsplash because... not a single restaurant image found
+										(most likely there is an issue with their internal search)
+
+										For more image height, increase paddings: py-5 up to py-7.
+										If anyway more needed, use margins: my-1 to my-7
+										More needed? Use Smarty classes: documentation/util-padding-margin.html
+
+									-->
+									<div class="swiper-wrapper">
+
+										<div class="swiper-slide overlay-dark overlay-opacity-3 bg-cover" style="background:url('demo.files/images/unsplash/restaurant/alexander-kovacs-TivEEYzzhik-unsplash-min.jpg')">
+											
+											<!-- required empty image / background used -->
+											<img class="w-100 py-5" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAKCAQAAADxnt1TAAAAEUlEQVR42mNkIBowjiodaKUACusAC4zze1kAAAAASUVORK5CYII=" alt="...">
+										</div>
+
+										<div class="swiper-slide overlay-dark overlay-opacity-3 bg-cover" style="background:url('demo.files/images/unsplash/restaurant/alexander-kovacs-PK1pzUGQSjc-unsplash-min.jpg')">
+											
+											<!-- required empty image / background used -->
+											<img class="w-100 py-5" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAKCAQAAADxnt1TAAAAEUlEQVR42mNkIBowjiodaKUACusAC4zze1kAAAAASUVORK5CYII=" alt="...">
+										</div>
+
+										<div class="swiper-slide overlay-dark overlay-opacity-3 bg-cover" style="background:url('demo.files/images/unsplash/restaurant/louis-hansel-EfnyiaBFkCU-unsplash-min.jpg')">
+											
+											<!-- required empty image / background used -->
+											<img class="w-100 py-5" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAKCAQAAADxnt1TAAAAEUlEQVR42mNkIBowjiodaKUACusAC4zze1kAAAAASUVORK5CYII=" alt="...">
+										</div>
+
+										<div class="swiper-slide overlay-dark overlay-opacity-3 bg-cover" style="background:url('demo.files/images/unsplash/restaurant/dieny-portinanni-KrjjVGFb6L0-unsplash-min.jpg')">
+											
+											<!-- required empty image / background used -->
+											<img class="w-100 py-5" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAKCAQAAADxnt1TAAAAEUlEQVR42mNkIBowjiodaKUACusAC4zze1kAAAAASUVORK5CYII=" alt="...">
+										</div>
+
+									</div>
+
+									<!-- prev/next arrows -->
+									<div class="swiper-button-next swiper-button-white"></div>
+									<div class="swiper-button-prev swiper-button-white"></div>
+
+									<!-- 
+										Add Pagination :: Used as Progressbar
+											if .position-relative class used,
+											progressbar is on bottom!
+									 -->
+									<div class="swiper-pagination h--3 mt--1 position-relative"></div>
+
+								</div>
+
+							</div>		
+
+						</div>
+
+					</div>
+
+				</div>
+			</section>
+			<!-- /block : story + interior presentations -->
+
+
+
+
+			<!-- block : team -->
+			<section id="section_team">
+				<div class="container">
+
+					<!-- team -->
+					<div class="row d-flex flex-wrap align-items-center">
+
+						<div class="order-1 order-lg-2 col-12 col-lg-6 mb-5">
+
+							<h2 class="h1 font-weight-light mb-4">
+								Smarty Chefs <span class="text-primary font-weight-medium">Salutes You</span>!
+							</h2>
+
+							<p class="lead mb-5">
+								Answering those questions and more is a tall order, but one you should approach with enthusiasm. 
+							</p>
+							<p class="lead mb-5">
+								After all, this is the one place you can and should sing your own praises.  This is your opportunity to tell the world why your company is awesome. But you’ll need to do it tactfully, and that’s the tricky part.
+							</p>
+
+							<a href="#wrapper" class="scroll-to btn btn-primary btn-soft">
+								Book a table now
+							</a>
+
+						</div>
+
+						<div class="order-2 order-lg-1 col-12 col-lg-6 mb-5">
+
+							<div class="row gutters-md gutters-xs--xs">
+
+								<div class="col-6 jarallax" data-jarallax-element="-20">
+
+									<div class="bg-white rounded-xl mb-4 mb-2-xs shadow-3d transition-hover-top transition-all-ease-150 overflow-hidden">
+										
+										<a href="demo.files/images/unsplash/restaurant/thumb_600/david-greenwood-haigh-tCJftk5DWdg-unsplash.jpg" class="d-block photoswipe photoswipe-secondary overlay-dark-hover overlay-opacity-3 rounded-top bg-cover lazy" data-photoswipe="restaurant_team" 
+											data-background-image="demo.files/images/unsplash/restaurant/thumb_600/david-greenwood-haigh-tCJftk5DWdg-unsplash.jpg">
+											
+											<!-- blank image : lazy background used -->
+											<img class="w-100" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="...">
+										</a>
+
+										<div class="p-3">
+											<h5 class="mb-0">Craig Mckay</h5>
+											<p class="mb-0">Chef Master</p>
+										</div>
+
+									</div>
+
+									<div class="bg-white rounded-xl mb-4 mb-2-xs shadow-3d transition-hover-top transition-all-ease-150 overflow-hidden">
+
+										<a href="demo.files/images/unsplash/restaurant/thumb_600/thomas-marban-EHK-EH1SRzQ-unsplash.jpg" class="d-block photoswipe photoswipe-secondary overlay-dark-hover overlay-opacity-3 rounded-top bg-cover lazy" data-photoswipe="restaurant_team" 
+											data-background-image="demo.files/images/unsplash/restaurant/thumb_600/thomas-marban-EHK-EH1SRzQ-unsplash.jpg">
+											
+											<!-- blank image : lazy background used -->
+											<img class="w-100" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="...">
+										</a>
+
+										<div class="p-3">
+											<h5 class="mb-0">Erik Mclean</h5>
+											<p class="mb-0">Chef Senior</p>
+										</div>
+
+									</div>
+
+								</div>
+
+								<div class="col-6 jarallax" data-jarallax-element="20">
+
+									<div class="bg-white rounded-xl mb-4 mb-2-xs shadow-3d transition-hover-top transition-all-ease-150 overflow-hidden">
+
+										<a href="demo.files/images/unsplash/restaurant/thumb_600/eiliv-sonas-aceron-0GquCjDFNjw-unsplash.jpg" class="d-block photoswipe photoswipe-secondary overlay-dark-hover overlay-opacity-3 rounded-top bg-cover lazy" data-photoswipe="restaurant_team" 
+											data-background-image="demo.files/images/unsplash/restaurant/thumb_600/eiliv-sonas-aceron-0GquCjDFNjw-unsplash.jpg">
+											
+											<!-- blank image : lazy background used -->
+											<img class="w-100" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="...">
+										</a>
+
+										<div class="p-3">
+											<h5 class="mb-0">Irena Carpaccio</h5>
+											<p class="mb-0">Chef Senior</p>
+										</div>
+
+									</div>
+
+									<div class="bg-white rounded-xl mb-4 mb-2-xs shadow-3d transition-hover-top transition-all-ease-150 overflow-hidden">
+
+										<a href="demo.files/images/unsplash/restaurant/thumb_600/jonathan-borba-YaiY50wzWzI-unsplash.jpg" class="d-block photoswipe photoswipe-secondary overlay-dark-hover overlay-opacity-3 rounded-top bg-cover lazy" data-photoswipe="restaurant_team" 
+											data-background-image="demo.files/images/unsplash/restaurant/thumb_600/jonathan-borba-YaiY50wzWzI-unsplash.jpg">
+											
+											<!-- blank image : lazy background used -->
+											<img class="w-100" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="...">
+										</a>
+
+										<div class="p-3">
+											<h5 class="mb-0">Joseph Gonzalez</h5>
+											<p class="mb-0">Laboratory</p>
+										</div>
+
+									</div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+			</section>
+			<!-- /block : team -->
+
+
+
+
+
+			<!-- 
+
+				SUBSCRIBE
+
+				Class Utils (top/bottom borders, if needed) 
+
+					.border-top 
+					.border-bottom
+
+			-->
+			<section class="py-2 bg-light">
+				<div class="container">
+
+					<div class="row">
+
+						<div class="col-10 mx-auto col-lg-8 py-5 pb-0-xs text-center-md text-center-xs">
+							<h3 class="m-0">Let's connect to share the <span class="text-danger">best deals</span>!</h3>
+							<p class="m-0">You know you want the best deals, especially tasty best deals, isn't it?</p>
+						</div>
+
+						<div class="col-10 mx-auto col-lg-4 py-4">
+
+							<form novalidate="" method="post" action="#subscribe_url" class="bs-validate py-3 mt-1 input-group-over input-group-pill"> 
+									
+								<input required="" class="form-control form-control-lg font-weight-light text-center-md text-center-xs" name="subscriber_email" type="email" value="" placeholder="email address..." aria-label="email address...">
+
+								<button aria-label="subscribe" type="submit" class="btn bg-transparent shadow-none"> 
+									<i class="fi fi-send fs--18"></i> 
+								</button>
+
+							</form>
+
+						</div>
+
+					</div>
+
+				</div>
+			</section>
+			<!-- /SUBSCRIBE -->
+
+
+
+
+			<!-- block : testimonials -->
+			<section>
+				<div class="container z-index-1">
+
+					<!-- block : testimonials -->
+					<div class="max-w-600 mx-auto text-center mb-7">
+						<h2 class="h1 font-weight-light">
+							People have said nice things about us
+						</h2>
+					</div>
+
+					<div class="row">
+
+						<div class="col-12 col-lg-6 my-5">
+
+							<div class="h-100 bg-white shadow-md rounded">
+
+								<!-- pic/avatar -->
+								<span class="mt--n40 w--80 h--80 rounded-circle d-inline-block bg-light bg-cover lazy" data-background-image="demo.files/images/unsplash/team/thumb_330/joseph-gonzalez-iFgRcqHznqg-unsplash.jpg"></span>
+
+								<div class=" px-4 pb-5 pt-4">
+									<h3 class="h5 mb-4 font-weight-normal">
+										<span class="d-block-xs">Joseph Campbell</span>
+										<span class="rating-5 float-end m-0 float-none-xs text-warning fs--14 mt-1"></span>
+									</h3>
+									<p class="lead">
+										That food, Damn! You simply can't rezist! You have to eat here!
+									</p>
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="col-12 col-lg-6 my-5">
+
+							<div class="h-100 bg-white shadow-md rounded">
+
+								<!-- pic/avatar -->
+								<span class="mt--n40 w--80 h--80 rounded-circle d-inline-block bg-light bg-cover lazy" data-background-image="demo.files/images/unsplash/team/thumb_330/michael-dam-mEZ3PoFGs_k-unsplash.jpg"></span>
+
+								<div class=" px-4 pb-5 pt-4">
+									<h3 class="h5 mb-4 font-weight-normal">
+										<span class="d-block-xs">Jessica Doe</span>
+										<span class="rating-5 float-end m-0 float-none-xs text-warning fs--14 mt-1"></span>
+									</h3>
+									<p class="lead">
+										"Amazing" is such a weak word to describe Smarty! You have to eat everything you can!
+									</p>
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+
+				<!-- svg shape -->
+				<svg class="absolute-full z-index-0" width="100%" height="100%" viewBox="0 0 1920 90" preserveAspectRatio="none">
+					<path fill="rgba(0,0,0,.01)" d="M1920,0C1217,0,120.574,155.567,0,0v90h1920V0z"></path>
+				</svg>
+
+			</section>
+			<!-- /block : testimonials -->
+
+
+
+
+
+			<!-- block : contact -->
+			<section id="section_contact" class="mt-1 bg-light">
+				<div class="container">
+
+					<div class="row">
+
+						<div class="col-12 col-lg-6 mb-5">
+
+							<h2 class="font-weight-light mb-5">
+								<span class="font-weight-medium">Smarty</span> Contact!
+								<small class="d-block h6">Let us know how can we help you!</small>
+							</h2>
+
+
+							<div class="row">
+
+								<!-- call us -->
+								<div class="col-12 col-sm-6 mb-4">
+									<h3 class="font-weight-light text-primary h5 mb-4">
+										Call Us
+									</h3>
+
+									<p class="m-0">
+										<a href="tel:01555-88978" class="link-muted">+01 785-388-9450</a>
+									</p>
+									<p class="m-0">
+										<a href="email:john.doe@gmail.com" class="link-muted">john.doe@gmail.com</a>
+									</p>
+								</div>
+
+								<!-- address -->
+								<div class="col-12 col-sm-6 mb-4">
+
+									<h3 class="font-weight-light text-primary h5 mb-4">
+										Our Address
+									</h3>
+
+									<p class="m-0">
+										Road 741, No.44, New York <br>
+										United States
+									</p>
+
+								</div>
+							</div>
+
+
+
+							<div class="bg-white shadow-primary-xs rounded p-2 mt-5">
+
+								<!--
+									Map
+								-->
+								<div class="map-leaflet h--400 w-100 rounded" 
+									data-map-tile="voyager" 
+									data-map-zoom="8" 
+									data-map-json='[
+										{ 
+											"map_lat": 40.750765,
+											"map_long": -73.993428,
+											"map_popup": "<b>Smarty Inc.</b> <br> Road 741, No.44,<br> New York / United States <br> <a href=`tel:7853889450`>(01)-785-388-9450</a>"
+										}
+									]'><!-- map container--></div>
+
+							</div>
+
+						</div>
+
+						<div class="col-12 col-lg-6">
+
+							<div class="rounded bg-white shadow-xs d-flex">
+								<div class="m-5 m-4-xs">
+
+									<h2 class="h3-xs font-weight-light mb-5">
+										Send us a message
+									</h2>
+
+
+									<!-- 
+										CONTACT FORM : AJAX [TESTED|WORKING AS IT IS]
+
+											Plugin required: SOW Ajax Forms
+
+											In order to work as ajax form, SOW Ajax Forms should be available/enabled
+											Else, SOW Form Validation plugin is used.
+											If none of them are available, normal submit is used and you can remove:
+												.js-ajax
+												.bs-validate
+												novalidate
+												any data-ajax-*
+												any data-error-*
+
+											** Remove data-error-toast-* for no error toast notifications
+
+
+
+
+										Ajax will control success/fail alerts according to server response:
+											
+											1. unexpected error: 		if server response is this string: {:err:unexpected:}
+											2. mising mandatory:		if server response is this string: {:err:required:}
+											3. success:					if server response is this string: {:success:}
+											
+											data-ajax-control-alerts="true"
+											data-ajax-control-alert-succes="#contactSuccess" 
+											data-ajax-control-alert-unexpected="#contactErrorUnexpected" 
+											data-ajax-control-alert-mandaroty="#contactErrorMandatory" 
+
+										+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+											WORKING CONTACT! Edit your php/config.inc.php
+										+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+									-->
+									<form 	novalidate 
+											action="php/contact_form.php" 
+											method="POST" 
+
+											data-ajax-container="#ajax_dd_contact_response_container" 
+											data-ajax-update-url="false" 
+											data-ajax-show-loading-icon="true" 
+											data-ajax-callback-function="" 
+											data-error-scroll-up="false" 
+											
+											data-ajax-control-alerts="true"
+											data-ajax-control-alert-succes="#contactSuccess" 
+											data-ajax-control-alert-unexpected="#contactErrorUnexpected" 
+											data-ajax-control-alert-mandaroty="#contactErrorMandatory" 
+
+											data-error-toast-text="<i class='fi fi-circle-spin fi-spin float-start'></i> Please, complete all required fields!" 
+											data-error-toast-delay="2000" 
+											data-error-toast-position="bottom-center"
+
+											class="bs-validate js-ajax">
+
+
+										<!-- 1. 
+											optional, hidden action for your backend
+
+											PHP Basic Example
+											if($_POST['action'] == 'contact_form_submit') {
+												... send message
+											}
+										-->
+										<input type="hidden" name="action" value="contact_form_submit" tabindex="-1"> 
+										<!-- -->
+
+
+										<!-- 2. 
+											A very small optional trick (using .hide class instead of type="hidden") for some low spam robots. 
+											If this is not empty, the process should stop. A normal user/visitor should not be able to see this field.
+
+											PHP Basic Example
+											if($_POST['norobot'] != '') {
+												exit;
+											}
+										-->
+										<input type="text" name="norobot" value="" class="hide" tabindex="-1"> 
+										<!-- -->
+
+										<div class="form-label-group mb-3">
+											<input required placeholder="Name" id="contact_name" name="contact_name" type="text" class="form-control">
+											<label for="contact_name">Name</label>
+										</div>
+
+										<div class="form-label-group mb-3">
+											<input required placeholder="Email" id="contact_email" name="contact_email" type="email" class="form-control">
+											<label for="contact_email">Email</label>
+										</div>
+
+										<div class="form-label-group mb-3">
+											<input required placeholder="Phone" id="contact_phone" name="contact_phone" type="text" class="form-control">
+											<label for="contact_phone">Phone</label>
+										</div>
+
+										<div class="form-label-group mb-4">
+											<textarea required placeholder="Message" id="contact_message" name="contact_message" class="form-control" rows="3"></textarea>
+											<label for="contact_message">Message</label>
+										</div>
+
+										<!-- GDPR CONSENT -->
+										<div class="clearfix bg-light position-relative rounded p-4 mb-4">
+
+											<span class="text-muted fs--12 d-block position-absolute bottom-0 end-0 m-2">
+												EU GDPR
+											</span>
+
+											<label class="form-checkbox form-checkbox-primary">
+												<input required type="checkbox" name="contact_gdpr">
+												<i></i> 
+												<span> 	
+													I consent that my data is being stored in 
+													line with the guidelines set out in  
+													<a href="page-terms-and-conditions.html" target="_blank">Privacy Policy</a>. 
+												</span>
+											</label>
+
+										</div>
+										<!-- /GDPR CONSENT -->
+
+
+
+
+										<!-- 
+											Server detailed error
+											!ONLY! If debug is enabled!
+											Else, shown ony "Server Error!"
+										-->
+										<div id="ajax_dd_contact_response_container"></div>
+
+										<!-- {:err:unexpected:} internal server error -->
+										<div id="contactErrorUnexpected" class="hide alert alert-danger p-3">
+											Unexpected Error!
+										</div>
+
+										<!-- {:err:required:} mandatory fields -->
+										<div id="contactErrorMandatory" class="hide alert alert-danger p-3">
+											Please, review your data and try again!
+										</div>
+
+										<!-- {:success:} message sent -->
+										<div id="contactSuccess" class="hide alert alert-success p-3">
+											Thank you for your message!
+										</div>
+
+
+
+
+										<button type="submit" class="btn btn-primary btn-block">
+											Send Message
+										</button>
+
+									</form>
+									<!-- /CONTACT FORM : AJAX -->
+
+
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+			</section>
+			<!-- /block : contact -->
+
+							
+
+
+
+			<!-- Footer -->
+			<footer id="footer" class="shadow-xs">
+				<div class="container">
+
+					<div class="row gutters-lg">
+
+						<!-- col 1 : contact -->
+						<div class="order-3 order-lg-1 col">
+
+							<div class="py-5 px-3 text-center">
+
+								<h4>Contact</h4>
+
+								<div class="mb-4">
+
+									<ul class="list-unstyled mb-0 mt-5 px-3">
+
+										<li class="list-item py-2">
+
+											<a href="tel:+01-555-5555" class="clearfix py-1 h5 mb-0 d-block font-weight-medium">
+												785-388-9450
+											</a>
+
+										</li>
+
+										<li class="list-item py-2">
+
+											<a href="mailto:info@mycomany.com" class="clearfix py-1 h5 d-block font-weight-medium">
+												info@mycomany.com
+											</a>
+
+										</li>
+
+									</ul>
+
+
+									<!-- social -->
+									<div class="clearfix"> 
+
+										<a href="#!" class="btn btn-sm btn-facebook transition-hover-top mb-2 rounded-circle text-white" rel="noopener" aria-label="facebook page">
+											<i class="fi fi-social-facebook"></i> 
+										</a>
+
+										<a href="#!" class="btn btn-sm btn-twitter transition-hover-top mb-2 rounded-circle text-white" rel="noopener" aria-label="twitter page">
+											<i class="fi fi-social-twitter"></i> 
+										</a>
+
+										<a href="#!" class="btn btn-sm btn-linkedin transition-hover-top mb-2 rounded-circle text-white" rel="noopener" aria-label="linkedin page">
+											<i class="fi fi-social-linkedin"></i> 
+										</a>
+
+										<a href="#!" class="btn btn-sm btn-youtube transition-hover-top mb-2 rounded-circle text-white" rel="noopener" aria-label="youtube page">
+											<i class="fi fi-social-youtube"></i> 
+										</a>
+
+									</div>
+									<!-- /social -->
+
+
+								</div>
+							
+							</div>
+
+						</div>
+
+
+						<!-- MIDDLE : LOGO -->
+						<div class="order-2 col-12 col-lg-4 col-xl-4 mt--n30 m-0-xs m-0-md bg-gradient-dark rounded-top d-flex flex-wrap align-items-center justify-content-center">
+
+							<div class="px-4 py-5 text-center">
+
+								<!-- svg icon -->
+								<div class="py-3">
+									<svg width="80" height="80" viewBox="0 0 512 512"><path fill="#ffffff" d="M498.682 435.326l-200.765-200.766-234.56-234.56h-18.331l-3.743 9.511c-9.879 25.104-14.1 50.78-12.205 74.249 2.16 26.752 12.323 49.913 29.392 66.982l183.11 183.11 24.152-24.152 169.285 189.293c16.84 16.84 45.825 17.84 63.665 0 17.554-17.554 17.554-46.114 0-63.667zM156.728 291.442l-143.411 143.411c-17.552 17.552-17.552 46.113 0 63.665 16.674 16.674 45.519 18.146 63.665 0l143.412-143.412-63.666-63.664zM490.253 85.249l-81.351 81.35-21.223-21.222 81.351-81.351-21.222-21.222-81.35 81.35-21.222-21.222 81.351-81.35-21.221-21.221-106.11 106.11c-12.981 12.981-20.732 30.217-21.828 48.535-.277 4.641-1.329 9.206-3.074 13.548l68.929 68.929c4.342-1.747 8.908-2.798 13.548-3.075 18.318-1.093 35.554-8.846 48.535-21.827l106.11-106.109-21.223-21.223z"></path></svg>
+								</div>
+
+								<!-- logo -->
+								<div class="py-3">
+									<img height="60" src="assets/images/logo/logo_light.svg" alt="...">
+								</div>
+
+								<!-- copyright -->
+								<p class="fs--14">
+									All Rights Reserved
+									<br>
+									Company Inc.
+								</p>
+
+							</div>
+
+						</div>
+
+
+						<!-- col 2 : Opening -->
+						<div class="order-1 order-lg-3 col">
+
+							<div class="py-5">
+
+								<h4 class="text-center mb-5">Opening Hours</h4>
+
+								<ul class="list-unstyled mb-0 px-3">
+
+									<li class="list-item d-flex border-dashed border-dark-soft bx-0 bt-0 px-1 py-2">
+
+										<div class="w-50">
+											Weekdays
+										</div>
+
+										<div class="w-50 text-align-end">
+											09:30 &ndash; 18:00
+										</div>
+
+									</li>
+
+
+									<li class="list-item d-flex border-dashed border-dark-soft bx-0 bt-0 px-1 py-2">
+
+										<div class="w-50">
+											Saturaday
+										</div>
+
+										<div class="w-50 text-align-end">
+											09:30 &ndash; 15:00
+										</div>
+
+									</li>
+
+
+									<li class="list-item d-flex border-dashed border-dark-soft bx-0 bt-0 px-1 py-2">
+
+										<div class="w-50">
+											Sunday
+										</div>
+
+										<div class="w-50 text-align-end">
+											Closed
+										</div>
+
+									</li>
+
+								</ul>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+			</footer>
+			<!-- /Footer -->
+
+
+		</div><!-- /#wrapper -->
+
+
+		<script src="assets/js/core.min.js"></script>
+
+		
+	</body>
+</html>

@@ -1,0 +1,1605 @@
+﻿<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+
+		<meta charset="UTF-8">
+		<title>Smarty</title>
+		<meta name="description" content="Smarty Documentation">
+
+        <meta name="viewport" content="width=device-width, maximum-scale=5, initial-scale=1, user-scalable=0">
+        <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+        <!-- up to 10% speed up for external res -->
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+        <link rel="preconnect" href="https://fonts.googleapis.com/">
+        <link rel="preconnect" href="https://fonts.gstatic.com/">
+        <!-- preloading icon font is helping to speed up a little bit -->
+        <link rel="preload" href="../assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
+
+		<link rel="stylesheet" href="../assets/css/core.min.css">
+		<link rel="stylesheet" href="../assets/css/vendor_bundle.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
+
+		<!-- favicon -->
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="apple-touch-icon" href="../demo.files/logo/icon_512x512.png">
+
+		<link rel="manifest" href="../assets/images/manifest/manifest.json">
+		<meta name="theme-color" content="#377dff">
+
+	</head>
+
+
+	<!--
+
+		Layout Admin
+			.layout-admin 	(required)
+
+			.aside-sticky  					- sidebar : fixed and push header
+			.header-sticky  				- header : always visible on top (acting as old .header-focus)
+			.header-scroll-reveal  			- header : hide on scroll down and reveal on scroll up
+
+	-->
+	<body class="layout-admin aside-sticky header-sticky" data-s2t-class="btn-indigo btn-sm rounded-circle">
+
+		<div id="wrapper">
+
+
+
+			<!-- HEADER -->
+			<header id="header" class="d-flex align-items-center shadow-md">
+
+
+				<!-- NAVBAR -->
+				<div class="container-fluid position-relative">
+
+					<nav class="navbar navbar-expand-lg navbar-dark justify-content-lg-between">
+
+						<div class="align-items-start">
+							
+							<!-- 
+								sidebar toggler 
+							-->
+							<a href="#aside-main" class="btn-sidebar-toggle h-100 d-inline-block d-lg-none justify-content-center align-items-center p-2">
+								<span class="group-icon">
+									<i>
+										<svg width="25" viewBox="0 0 20 20">
+											<path fill="#333333" d="M 19.9876 1.998 L -0.0108 1.998 L -0.0108 -0.0019 L 19.9876 -0.0019 L 19.9876 1.998 Z"></path>
+											<path fill="#333333" d="M 19.9876 7.9979 L -0.0108 7.9979 L -0.0108 5.9979 L 19.9876 5.9979 L 19.9876 7.9979 Z"></path>
+											<path fill="#333333" d="M 19.9876 13.9977 L -0.0108 13.9977 L -0.0108 11.9978 L 19.9876 11.9978 L 19.9876 13.9977 Z"></path>
+											<path fill="#333333" d="M 19.9876 19.9976 L -0.0108 19.9976 L -0.0108 17.9976 L 19.9876 17.9976 L 19.9876 19.9976 Z"></path>
+										</svg>
+									</i>
+
+									<i>
+										<svg width="25" viewBox="0 0 47.971 47.971">
+											<path fill="#333333" d="M28.228,23.986L47.092,5.122c1.172-1.171,1.172-3.071,0-4.242c-1.172-1.172-3.07-1.172-4.242,0L23.986,19.744L5.121,0.88c-1.172-1.172-3.07-1.172-4.242,0c-1.172,1.171-1.172,3.071,0,4.242l18.865,18.864L0.879,42.85c-1.172,1.171-1.172,3.071,0,4.242C1.465,47.677,2.233,47.97,3,47.97s1.535-0.293,2.121-0.879l18.865-18.864L42.85,47.091c0.586,0.586,1.354,0.879,2.121,0.879s1.535-0.293,2.121-0.879c1.172-1.171,1.172-3.071,0-4.242L28.228,23.986z"/>
+										</svg>
+									</i>
+								</span>
+
+							</a>
+
+
+							<!-- 
+								Logo : height: 60px max
+							-->
+							<a class="navbar-brand" href="index.html">
+								<img src="assets/images/logo/logo_dark.svg" width="110" height="70" alt="...">
+							</a>
+
+						</div>
+
+
+
+
+					<!-- 
+
+						[SOW] SEARCH SUGGEST PLUGIN
+						[GULP/src/plugins/sow_search_suggest/sow_search_suggest.js]
+						[SCSS/_plugins/sow_search_suggest.scss]
+						++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++
+
+						PLEASE READ DOCUMENTATION
+						documentation/plugins-sow-search.html
+
+					-->
+					<form 	action="index.html" 
+							method="GET" 
+							data-autosuggest="on" 
+
+							data-mode="json" 
+							data-json-max-results='10'
+							data-json-related-title='Explore Smarty'
+							data-json-related-item-icon='fi fi-star-empty'
+							data-json-suggest-title='Suggestions for you'
+							data-json-suggest-noresult='No results for'
+							data-json-suggest-item-icon='fi fi-search'
+							data-json-suggest-min-score='5'
+							data-json-highlight-term='true'
+							data-contentType='application/json; charset=utf-8'
+							data-dataType='json'
+
+							data-container="#sow-search-container" 
+							data-input-min-length="2" 
+							data-input-delay="100" 
+							data-related-keywords="" 
+							data-related-url="_ajax/search_suggestion_json_related.json" 
+							data-suggest-url="_ajax/search_suggestion_json_suggest.json" 
+							data-related-action="related_get" 
+							data-suggest-action="suggest_get" 
+							class="js-ajax-search sow-search sow-search-mobile-float d-flex-1-1-auto mx-4">
+						<div class="sow-search-input w-100 d-flex align-items-center">
+
+							<div class="input-group-over d-flex align-items-center w-100 h-100 rounded">
+
+								<input placeholder="component search..." name="s" type="text" class="form-control-sow-search form-control form-control-pill b-0 bg-gray-100" value="" autocomplete="off">
+
+								<span class="sow-search-buttons">
+
+									<!-- search button -->
+									<button type="submit" class="btn btn-primary btn-noshadow m-0 px-2 py-1 b-0 bg-transparent text-muted">
+										<i class="fi fi-search fs--20"></i>
+									</button>
+
+									<!-- close : mobile only (d-inline-block d-lg-none) -->
+									<a href="javascript:;" class="btn-sow-search-toggler btn btn-light btn-noshadow m-0 px-2 py-1 d-inline-block d-lg-none">
+										<i class="fi fi-close fs--20"></i>
+									</a>
+
+								</span>
+
+							</div>
+
+						</div>
+
+						<!-- search suggestion container -->
+						<div class="sow-search-container rounded-xl w-100 p-0 hide shadow-md" id="sow-search-container">
+							<div class="sow-search-container-wrapper rounded-xl">
+
+								<!-- main search container -->
+								<div class="sow-search-loader p--15 text-center hide">
+									<i class="fi fi-circle-spin fi-spin text-muted fs--30"></i>
+								</div>
+
+								<!-- 
+									AJAX CONTENT CONTAINER 
+									SHOULD ALWAYS BE AS IT IS : NO COMMENTS OR EVEN SPACES!
+								--><div class="sow-search-content rounded w-100 scrollable-vertical"></div>
+
+							</div>
+						</div>
+						<!-- /search suggestion container -->
+
+						<!-- 
+
+							overlay combinations:
+								overlay-dark opacity-* [1-9]
+								overlay-light opacity-* [1-9]
+
+						-->
+						<div class="sow-search-backdrop overlay-dark opacity-3 hide"></div>
+
+					</form>
+					<!-- /SEARCH -->
+
+
+
+
+					<!-- OPTIONS -->
+					<ul class="list-inline list-unstyled mb-0 d-flex align-items-end">
+
+						<li class="list-inline-item mx-1 dropdown float-start d-inline-block d-lg-none">
+
+							<a href="#" class="btn-sow-search-toggler btn btn-sm rounded-circle btn-warning bg-gradient-warning">
+								<i class="fi fi-search"></i>
+							</a>
+
+						</li>
+
+
+						<li class="list-inline-item mx-1 dropdown float-start d-none d-lg-inline-block">
+
+							<div class="btn-group rounded-xxl overflow-hidden" role="group" aria-label="Basic example">
+								
+								<a href="../index.html" target="layerstore" class="btn btn-sm btn-pills btn-indigo">
+									<span>Front</span>
+								</a>
+
+								<a href="https://wrapbootstrap.com/theme/smarty-website-admin-rtl-WB02DSN1B" target="wrapbootstrap" class="btn btn-sm btn-pills btn-indigo py-1">
+									<i class="fi fi-cart-1 mx-2 fs--20"></i>
+								</a>
+
+								<a href="../../html_admin/layout_1/" target="layerstore" class="btn btn-sm btn-pills btn-indigo">
+									<span>Admin</span>
+								</a>
+
+							</div>
+
+						</li>
+
+						<!-- header toggle : desktop only -->
+						<li class="list-inline-item mx-1 dropdown float-start d-none d-lg-block">
+
+							<a href="#" class="btn-header-toggle btn-toggle btn btn-sm rounded-circle btn-secondary">
+								<span class="group-icon">
+									<i class="fi fi-arrow-up"></i>
+									<i class="fi fi-arrow-down"></i>
+								</span>
+							</a>
+
+						</li>
+
+					</ul>
+					<!-- /OPTIONS -->
+
+
+
+					</nav>
+
+				</div>
+				<!-- /NAVBAR -->
+
+			</header>
+			<!-- /HEADER -->
+
+
+
+
+
+			<div id="wrapper_content" class="d-flex align-items-stretch">
+
+				<!-- SIDEBAR -->
+				<aside id="aside-main" class="aside-start bg-gradient-indigo font-weight-normal aside-hide-xs">
+
+					<div class="aside-wrapper scrollable-vertical scrollable-styled-light">
+
+						<!-- hide on mobile: d-none d-lg-block -->
+						<div class="p-3">
+							<!--<img class="js-ajax-loaded-animate img-fluid" src="assets/svg/artworks/undraw_smiley_face_lmgm.svg" width="300" height="248" alt="...">-->
+							<img class="js-ajax-loaded-animate img-fluid" src="assets/svg/artworks/startup.svg" width="225" height="198" alt="...">
+						</div>
+
+
+						<!--
+
+							All parent open navs are closed on click!
+							To ignore this feature, add .js-ignore to .nav-deep
+
+							Links height (paddings):
+								.nav-deep-xs
+								.nav-deep-md  	(default, ununsed class)
+								.nav-deep-sm
+								.nav-deep-lg
+						-->
+						<nav class="nav-deep nav-deep-dark nav-deep-xs pb-5">
+							<ul class="nav flex-column">
+
+								<li class="nav-title mt-3">
+									<h6 class="fs--14 mb-1 font-weight-medium text-warning">
+										HOW DO I START?
+									</h6>
+								</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="index.html">
+											Introduction
+										</a>
+									</li>
+
+									<li class="nav-item active">
+										<a class="nav-link js-ajax" href="changelog.html">
+											<span class="badge float-end mt-1">v3.1.2</span>
+											Changelog
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="credits.html">
+											Credits
+										</a>
+									</li>
+
+
+
+
+
+								<li class="nav-title mt-5">
+									<h6 class="fs--14 mb-1 font-weight-medium text-warning">
+										COMPONENTS &amp; BLOCKS
+									</h6>
+								</li>
+
+								<li class="nav-item">
+									<a class="nav-link" href="#">
+										<span class="group-icon float-end">
+											<i class="fi fi-arrow-end-slim"></i>
+											<i class="fi fi-arrow-down-slim"></i>
+										</span>
+										<b>Components</b>
+									</a>
+								
+									<ul class="nav flex-column">
+
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-alerts.html">
+												Alerts
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-accordions.html">
+												Accordions
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-badges.html">
+												Badges
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-breadcrumbs.html">
+												Breadcrumbs
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-buttons.html">
+												Buttons
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-cards.html">
+												Cards
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-carousel.html">
+												Carousel
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-collapse.html">
+												Collapse
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-dropdowns.html">
+												Dropdowns
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-forms.html">
+												Forms
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-icons.html">
+												Icons
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-flags.html">
+												Flags
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-lists.html">
+												Lists
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-media.html">
+												Media
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-modals.html">
+												Modals
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-navs.html">
+												Navs
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-navigation.html">
+												Navigation
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-pagination.html">
+												Pagination
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-progress.html">
+												Progress
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-popover.html">
+												Popover
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-scrollspy.html">
+												Scrollspy
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-spinners.html">
+												Spinners
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-tabs.html">
+												Tabs
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-tables.html">
+												Tables
+											</a>
+										</li>
+
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-timeline.html">
+												Timeline
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-thumbnails.html">
+												Thumbnails
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-tooltip.html">
+												Tooltip
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-typography.html">
+												Typography
+											</a>
+										</li>
+
+									</ul>
+								</li>
+
+
+
+
+
+									<li class="nav-item">
+										<a class="nav-link" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											<b>Quick Blocks</b>
+										</a>
+
+										<ul class="nav flex-column">
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-testimonials.html">
+													Testimonials
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-pricing.html">
+													Pricing
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-cta.html">
+													Call to action
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-brands.html">
+													Brands
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-various.html">
+													Various
+												</a>
+											</li>
+										</ul>
+
+									</li>
+
+
+
+									<li class="nav-item">
+										<a class="nav-link" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											<b>Utilities</b>
+										</a>
+
+										<ul class="nav flex-column">
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-text-backgrounds.html">
+													Text &amp; Backgrouns
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-text-color-extended.html">
+													Extended Text Color
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-borders.html">
+													Borders
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-shadows.html">
+													Box Shadows
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-font.html">
+													Font Size / Weight
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-width-height.html">
+													Width / Height
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-padding-margin.html">
+													Paddings / Margins
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-transition.html">
+													Transitions / Transforms
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-position.html">
+													Position
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-visibility.html">
+													Visibility
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-overlays.html">
+													Overlays &amp; Opacity
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-scroll.html">
+													Scroll &amp; Scrollbar
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-misc.html">
+													Miscellaneous
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-responsive.html">
+													Responsive
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-rtl.html">
+													RTL
+												</a>
+											</li>
+
+										</ul>
+									</li>
+
+		
+
+
+
+
+
+
+
+									<li class="nav-item">
+										<a class="nav-link" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											<b>Php / Forms</b>
+										</a>
+
+										<ul class="nav flex-column">
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="php-introduction.html">
+													Introduction
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="php-forms.html">
+													Contact Forms
+												</a>
+											</li>
+										</ul>
+
+									</li>
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+									<li class="nav-item nav-item-extended overlay-dark overlay-opacity-2">
+										<a class="nav-link js-ajax" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-expand"></i>
+												<i class="fi fi-shrink"></i>
+											</span>
+											Predefined Layouts
+										</a>
+
+
+										<!-- extended item -->
+										<div class="aside-item d-flex flex-column bg-white shadow-xs w--350"><!-- .w-100 = full width -->
+											
+											<!-- header -->
+											<h3 class="fs--18 bg-light-soft p--15">
+												<button type="button" class="btn-aside-item-extended-close close fi fi-close fs--20 mt--n4 float-end"></button>
+												<i class="fi fi-heart-slim float-start fs--18"></i> 
+												Ready to start
+											</h3>
+
+											<!-- extended item content -->
+											<div 	id="layout_list" 
+													data-ajax-url="_ajax/layout_list.html" 
+													class="js-ajax p-3 scrollable-vertical scrollable-styled-dark m--1">
+
+												<div class="text-center"><!-- ajax loading icon -->
+													<i class="fi fi-circle-spin fi-spin fs--30 text-muted"></i>
+												</div><!-- /ajax loading icon -->
+
+											</div>
+											<!-- /extended item content -->
+
+										</div>
+										<!-- /extended item -->
+
+									</li>
+
+
+
+
+
+								<li class="nav-title mt-5">
+									<h6 class="fs--14 mb-1 font-weight-medium text-warning">
+										SOW : CORE PLUGINS
+									</h6>
+								</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-introduction.html">
+											Introduction
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-header.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">7Kb</span>
+											SOW : Header
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-search-suggest.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">9Kb</span>
+											SOW : Search Suggest
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-input-suggest.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : Input Suggest
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-navigation.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">10Kb</span>
+											SOW : Ajax : Navigation
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-forms.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4Kb</span>
+											SOW : Ajax : Forms
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-content.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4Kb</span>
+											SOW : Ajax : Content
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-modal.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">3Kb</span>
+											SOW : Ajax : Modals
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-confirm.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">6Kb</span>
+											SOW : Ajax : Confirm
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-select.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4.5Kb</span>
+											SOW : Ajax : Select
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-form-validation.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : Form Validation
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-form-advanced.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">7Kb</span>
+											SOW : Form Advanced
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-file-upload.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">24Kb</span>
+											SOW : File Upload
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-checkall.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Check All
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-checkgroup.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Check Group
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-toasts.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4Kb</span>
+											SOW : Toasts
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-gdpr.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : GDPR Cookies
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-inline-search.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Inline Search
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-dropdown.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">3Kb</span>
+											SOW : Dropdowns
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-deep-navigation.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : Deep Navigation
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-btn-toggle.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2.5Kb</span>
+											SOW : Button Toggle
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-scroll-to.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Scroll To
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-timer-autohide.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Timer Autohide
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-timer-countdown.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : Timer Countdown
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-gfont.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1.5Kb</span>
+											SOW : Google Font
+										</a>
+									</li>
+                                    <li class="nav-item">
+                                        <a class="nav-link js-ajax" href="plugins-sow-lazyload.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+                                            SOW : Lazyload
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link js-ajax" href="plugins-sow-count-animate.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4.1Kb</span>
+                                            SOW : Count Animate
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link js-ajax" href="plugins-sow-utils.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+                                            SOW : Utils
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link js-ajax" href="plugins-sow-service-worker.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+                                            SOW : Service Worker!
+                                        </a>
+                                    </li>
+									<li class="nav-item pl--15 pr--15">
+										<div class="bg-indigo text-gray-500 fs--13 p-2 rounded">
+											SOW Core plugins are developed from scratch. 
+											You can remove, disable or use your own!
+										</div>
+									</li>
+
+
+
+
+
+								<li class="nav-title mt-5">
+									<h6 class="fs--14 mb-1 font-weight-medium text-warning">
+										VENDOR PLUGINS
+									</h6>
+								</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-bootstrap-select.html">
+											Vendor : Bootstrap Select
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-flickity.html">
+											Vendor : Flickity Slider
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-swiper.html">
+											Vendor : Swiper Slider
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-jarallax.html">
+											Vendor : Jaxallax
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-sticky-kit.html">
+											Vendor : Sticky Kit
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-fancybox.html">
+											Vendor : Fancybox
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-photoswipe.html">
+											Vendor : Photoswipe
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="components-map.html">
+											Vendor : Map
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-slimscroll.html">
+											Vendor : Slimscroll
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-nestable.html">
+											Vendor : Nestable
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											Vendor : Pickers
+										</a>
+										<ul class="nav flex-column">
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-datepicker.html">
+													Datepicker
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-rangepicker.html">
+													Rangepicker
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-colorpicker.html">
+													Colorpicker
+												</a>
+											</li>
+										</ul>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											Vendor : Charts
+										</a>
+										<ul class="nav flex-column">
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-chartjs.html">
+													Chart.js
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-flot.html">
+													Flot Chart
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-easypie.html">
+													Easy Pie Chart
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-sparkline.html">
+													Sparkline Charts
+												</a>
+											</li>
+										</ul>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											Vendor : Editors
+										</a>
+										<ul class="nav flex-column">
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-medium-editor.html">
+													Medium Editor
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-markdown.html">
+													Markdown Editor
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-summernote.html">
+													Summernote
+												</a>
+											</li>
+										</ul>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-datatable.html">
+											Vendor : Datatable
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-fullcalendar.html">
+											Vendor : Fullcalendar
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-prismjs.html">
+											Vendor : Prismjs (Highlighter)
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-aos.html">
+											Vendor : AOS
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-typed.html">
+											Vendor : Typed
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-sortablejs.html">
+											Vendor : Sortablejs
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-cocoen.html">
+											Vendor : Cocoen <small>(Img Compare)</small>
+										</a>
+									</li>
+
+
+
+
+
+
+
+
+
+							</ul>
+						</nav>
+
+
+
+					</div>
+				</aside>
+				<!-- /SIDEBAR -->
+
+
+				<!-- MIDDLE -->
+				<div id="middle" class="flex-fill">
+
+
+
+					<header class="mb-5">
+						<h1 class="h2 mb-0 text-gray-700">
+							Changelog
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--14">
+								<li class="breadcrumb-item active" aria-current="page">
+									Smarty documentation
+								</li>
+							</ol>
+						</nav>
+
+					</header>
+
+
+
+					<div class="row d-flex flex-fill align-items-start">
+
+						<div class="col align-self-start">
+
+							<div>
+
+								<ul>
+
+									<li id="v3_1_2" class="mb-3">
+										<p class="mb-1">
+											<span class="badge badge-pill badge-soft badge-primary font-regular">v3.1.2</span>
+											<span>&ndash; Tuesday, August 11, 2020</span>
+										</p>
+
+										* <span class="bg-success-soft px-1 rounded">New</span>		Ajax Image Switcher <a href="plugins-sow-dropdown.html#ddimgs" class="js-ajax">plugins-sow-dropdown.html</a><br>
+										* <span class="bg-success-soft px-1 rounded">New</span>		Ajax Checkbox/Radio Group <a href="plugins-sow-checkgroup.html" class="js-ajax">plugins-sow-checkgroup.html</a><br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span>	SOW : File Upload<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span>	SOW : Checkall (Rewritten)<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span>	SOW : Utils (+ Ajax Container Reload)<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span>	SOW : Utils (+ Ajax Form Live Monitor)<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span>	SOW : Input Suggest (+ Simple Search Suggest)<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span>	NPM Bootstrap to v4.5.2<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span>	NPM bootstrap-select to 1.13.18<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span>	NPM datatables buttons to 1.6.3<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span>	NPM pickr to 1.7.2<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span>	NPM jarallax to 1.12.2<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span>	NPM pdfmake to 0.1.68<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span>	NPM prismjs to 1.21.0<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span>	NPM swiper to 6.1.1<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span>	gulp.config__vendors.js (js/css paths: swiper)<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span>	Added (src/js/sow.core/sow.vanilla.js) <br>
+																									PREPARING FOR JQUERY REPLACEMENT, PURE VANILLAJS<br>
+										* <span class="bg-danger-soft px-1 rounded">Fix</span>		Header sicky/scroll-reveal jump on hard reload<br>
+										* <span class="bg-danger-soft px-1 rounded">Fix</span>		SOW : Utils - 'Time ago' live update<br>
+										* <span class="bg-danger-soft px-1 rounded">Fix</span> 		SOW : File Upload (validation for `required` attribute, without `multiple` attribute)<br>
+										* <span class="bg-info-soft px-1 rounded">Cleanup</span> 		SOW plugins (various cleanups)<br>
+
+<pre class="bg-gradient-dark language-js"><code>
+	:: npm output before update:
+Package                      Current    Wanted    Latest  Location
+@babel/cli                    7.8.4    7.10.5    7.10.5  smarty
+@babel/core                  	7.9.6    7.11.1    7.11.1  smarty
+@babel/plugin-proposal-class-properties      7.8.3    7.10.4    7.10.4  smarty
+@babel/plugin-proposal-decorators        7.8.3    7.10.5    7.10.5  smarty
+@babel/plugin-proposal-object-rest-spread    7.9.6    7.11.0    7.11.0  smarty
+@babel/preset-env                7.9.6    7.11.0    7.11.0  smarty
+@babel/register                  7.9.0    7.10.5    7.10.5  smarty
+@fullcalendar/bootstrap              4.4.0    4.4.2    5.2.0  smarty
+@fullcalendar/core                4.4.0    4.4.2    5.2.1  smarty
+@fullcalendar/daygrid              4.4.0    4.4.2    5.2.0  smarty
+@fullcalendar/google-calendar          4.4.0    4.4.2    5.2.0  smarty
+@fullcalendar/interaction            4.4.0    4.4.2    5.2.0  smarty
+@fullcalendar/list                4.4.0    4.4.2    5.2.0  smarty
+@fullcalendar/timegrid              4.4.0    4.4.2    5.2.0  smarty
+@simonwep/pickr                  1.6.0    1.7.2    1.7.2  smarty
+autoprefixer                  9.8.0    9.8.6    9.8.6  smarty
+bootstrap-select                1.13.17    1.13.18    1.13.18  smarty
+chalk                      4.0.0    4.1.0    4.1.0  smarty
+datatables.net-buttons-bs4            1.6.2    1.6.3    1.6.3  smarty
+easymde                      2.10.1    2.11.0     2.11.0  smarty
+gulp-terser                    1.2.0    1.3.2    1.3.2  smarty
+imagemin-mozjpeg                8.0.0    8.0.0    9.0.0  smarty
+imagemin-pngquant                8.0.0    8.0.0    9.0.0  smarty
+jarallax                    1.12.1    1.12.2    1.12.2  smarty
+jszip                      3.4.0    3.5.0    3.5.0  smarty
+merge2                      1.3.0     1.4.1    1.4.1  smarty
+moment                      2.26.0    2.27.0    2.27.0  smarty
+node-notifier                  7.0.1    7.0.2    7.0.2  smarty
+open                      7.0.4    7.1.0    7.1.0  smarty
+pdfmake                      0.1.65    0.1.68    0.1.68  smarty
+prismjs                      1.20.0    1.21.0    1.21.0  smarty
+swiper                      5.4.1    5.4.5    6.1.1  smarty
+through2                    3.0.1    3.0.2    4.0.2  smarty
+
+
+--- --- ---
+npm audit
+found 0 vulnerabilities in 1555 scanned packages
+
+</code></pre>
+
+									</li>
+
+									<li id="v3_1_1" class="mb-3">
+										<p class="mb-1">
+											<span class="badge badge-pill badge-soft badge-primary font-regular">v3.1.1</span>
+											<span>&ndash; Monday, May 25, 2020</span>
+										</p>
+										* <span class="bg-danger-soft px-1 rounded">Fix</span>		Menu toggler on mobile (borders)
+									</li>
+									
+									<li id="v3_1_0" class="mb-3">
+										<p class="mb-1">
+											<span class="badge badge-pill badge-soft badge-primary font-regular">v3.1.0</span>
+											<span>&ndash; Monday, May 25, 2020</span>
+										</p>
+
+										<p class="bg-light p-3 fs--15">
+										* NOTE:		To update Smarty is basically a copy/paste of CSS and JS files and your live project is not affected!
+													For this update you have to pay attention to your HEADER LOGO IMAGE (desktop and mobile). CSS rules for 
+													autoresize were removed! From now on, the logo must be manually set right, like any other image - including
+													spaces top/bottom/left/right - depending on the your/client logo!
+										</p>
+										* <span class="bg-success-soft px-1 rounded">New</span>		2 Admin Layouts - Horizontal menu only<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span>	Bootstrap 4.5.0 &amp; jQuery 3.5.1<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span>	Stop propagation on click if dropdown has .dropdown-menu-hover class! is marking it as open!<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span> 	Admin Layouts - changed title/H1 from white background to transparent by default!<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span> 	Multiple changes/updates/fixes in SOW javascript plugins!<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span> 	Latest Bootstrap (4.5.0)<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span> 	Latest jQuery (3.5.1)<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span> 	Multiple Vendors update (datatable, summernote, colorpicker, swpier, flot, prismjs)<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span> 	Documentation (content, layout)<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span> 	Multiple HTML files in frontend and admin (various improvements)<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span> 	Close dropdown on click, if .js-ajax class is present on the link! (fullajax navigation)<br>
+										* <span class="bg-info-soft px-1 rounded">Cleanup</span>	CSS/SCSS Header Logo : removed auto/force resize no matter the width/height of the logo<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span> 	SCSS Variables (src/scss/variables.scss) added lines 503 - 509 (navbar brand, navbar toggler)<br>
+													This line will remove default bootstrap .navbar-brand Y-axis paddings (~5px). Logo need<br>
+													no extra Y-axis paddings for any Smarty header. This means 10px height more space for logo!<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span>	Logo width/height on mobile (src/scss/_layout/_admin.scss ; src/scss/_layout/_header.scss)<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span>	Admin content paddings on mobile (src/scss/_layout/_admin.scss)<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span>	Datatable dropdowns CSS layout (src/scss/_vendors/vendor.datatables.scss)<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span>	PrismJS margins (src/scss/_vendors/vendor.prismjs.scss)<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span> 	GULP - multiple NPM packages (eerything is up to date)<br>
+										* <span class="bg-info-soft px-1 rounded">Removed</span> 	GULP functions (gulp html:build_frontend ; gulp html:build_admin).<br>
+										* <span class="bg-danger-soft px-1 rounded">Fix</span>		SOW : Form Advanced - modal backdrop (bug appeared in previous update)<br>
+										* <span class="bg-danger-soft px-1 rounded">Fix</span>		SOW : Ajax Select 	: rolled back from version 3.0.8 (conflict reason) (push htlm content to a div/container via select)<br>
+										* <span class="bg-danger-soft px-1 rounded">Fix</span> 		Multiple SCSS/CSS fixes<br>
+
+									</li>
+
+									<li id="v3_0_8" class="mb-3">
+										<p class="mb-1">
+											<span class="badge badge-pill badge-soft badge-primary font-regular">v3.0.8</span>
+											<span>&ndash; Saturday, May 09, 2020</span>
+										</p>
+										* <span class="bg-success-soft px-1 rounded">New</span> 		Admin page: <a href="../../html_admin/layout_1/page-list.html" target="smarty">page-list.html</a> <br>
+										* <span class="bg-success-soft px-1 rounded">New</span> 		Admin page: <a href="../../html_admin/layout_1/page-product-add.html" target="smarty">page-product-add.html</a> <br>
+										* <span class="bg-success-soft px-1 rounded">New</span> 		SOW : Util - Ghost Ajax Form: <a href="plugins-sow-utils.html" class="js-ajax">plugins-sow-utils.html</a> <br>
+										* <span class="bg-success-soft px-1 rounded">New</span> 		SOW : Form Advanced - Dynamic Table (Variants) <a href="plugins-sow-form-advanced.html#section_1g" target="smarty">plugins-sow-form-advanced.html</a> <br>
+										* <span class="bg-success-soft px-1 rounded">New</span> 		SOW : Input Suggest <a href="plugins-sow-input-suggest.html" target="smarty">plugins-sow-input-suggest.html</a> <br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span> 		SOW : Ajax : Confirm (src/js/sow.core/sow.ajax_confirm.js)<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span> 		Nestable Vendor  (src/js/vendors/vendor.nestable.js)<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span> 		SOW : Ajax Select (added: "Via ajax / content populate" (src/js/sow.core/sow.ajax_select.js)) <br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span> 		SOW : Form Advanced (src/js/sow.core/sow.form_advanced.js) <br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span> 		Nestable - delete via modal (src/js/vendors/vendor.nestable.js) <br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span> 		Daterangepicker - positioning param (src/js/vendors/vendor.daterangepicker.js) <br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span> 		NPM : Fullcalendar <br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span> 		NPM : Bootstrap Select <br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span> 		NPM : Jarallax <br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span> 		NPM : PrismJS <br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span> 		NPM : Summernote  <br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span> 		NPM : Swiper Slider <br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span> 		gulp.config__core.js (sow_util section) <br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span> 		gulp.config__core.js (sow_input_search added) <br>
+										* <span class="bg-danger-soft px-1 rounded">Fix</span> 			*-sm forms (src/scss/_core/components/_forms.scss) <br>
+										* <span class="bg-danger-soft px-1 rounded">Fix</span> 			Nestable Controller : delete on reorder (src/js/vendors/vendor.nestable.js) <br>
+										* <span class="bg-danger-soft px-1 rounded">Fix</span> 			Datepicker Controller - data-date-start="" accept real date (src/js/vendors/vendor.datepicker.js) <br>
+
+									</li>
+
+									<li id="v3_0_7" class="mb-3">
+										<p class="mb-1">
+											<span class="badge badge-pill badge-soft badge-primary font-regular">v3.0.7</span>
+											<span>&ndash; Wednesday, February 5, 2020</span>
+										</p>
+										* <span class="bg-success-soft px-1 rounded">New</span> 		<a href="plugins-vendor-cocoen.html" class="js-ajax">Cocoen Vendor</a> Image Compare<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span>	SOW : Ajax Navigation (src/js/sow.core/sow.ajax_navigation.js) <br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span>	src/scss/_vendors/summernote.scss (because of npm update) <br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span>	gulp.config__vendors.js: (summernote section) <br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span>	package.json: <code>npm update</code> <br>
+<pre class="bg-gradient-dark language-js"><code>
+	:: npm output before update:
+Package                     Current  Wanted  Latest  Location
+@babel/cli                    7.6.4   7.8.3   7.8.3  smarty
+@babel/core                    7.6.4   7.8.3   7.8.3  smarty
+@babel/plugin-proposal-class-properties      7.5.5   7.8.3   7.8.3  smarty
+@babel/plugin-proposal-decorators        7.6.0   7.8.3   7.8.3  smarty
+@babel/plugin-proposal-object-rest-spread    7.6.2   7.8.3   7.8.3  smarty
+@babel/preset-env                7.6.3   7.8.3   7.8.3  smarty
+@babel/register                  7.6.2   7.8.3   7.8.3  smarty
+@simonwep/pickr                  1.4.6   1.5.0   1.5.0  smarty
+autoprefixer                  9.7.0   9.7.4   9.7.4  smarty
+bootstrap                    4.3.1   4.4.1   4.4.1  smarty
+chalk                      2.4.2   2.4.2   3.0.0  smarty
+easymde                      2.8.0   2.9.0   2.9.0  smarty
+flot                      3.2.13  3.2.13   4.1.1  smarty
+gulp-rename                    1.4.0   1.4.0   2.0.0  smarty
+imagemin                    7.0.0   7.0.1   7.0.1  smarty
+leaflet                      1.5.1   1.6.0   1.6.0  smarty
+pdfmake                      0.1.61  0.1.63  0.1.63  smarty
+prismjs                      1.17.1  1.19.0  1.19.0  smarty
+sortablejs                    1.10.1  1.10.2  1.10.2  smarty
+summernote                    0.8.12  0.8.15  0.8.15  smarty
+swiper                      5.2.0   5.3.0   5.3.0  smarty
+
+--- --- ---
+npm audit
+found 0 vulnerabilities in 21337 scanned packages
+
+</code></pre>
+									</li>
+
+
+
+									<li id="v3_0_6" class="mb-3">
+										<p class="mb-1">
+											<span class="badge badge-pill badge-soft badge-primary font-regular">v3.0.6</span>
+											<span>&ndash; Tuesday, December 3, 2019</span>
+										</p>
+										* <span class="bg-success-soft px-1 rounded">New</span> 		<a href="../shop-index-christmas.html" target="smarty">Christmas Shop</a> Concept page<br>
+										* <span class="bg-success-soft px-1 rounded">New</span> 		<a href="../landing-7.html" target="smarty">Landing 7</a> (Clean SAAS start page)<br>
+										* <span class="bg-success-soft px-1 rounded">New</span> 		SOW : Util &ndash; new function added <a href="plugins-sow-utils.html#section_4" target="smarty">Element Cloner</a> function <br>
+										* <span class="bg-success-soft px-1 rounded">New</span> 		SOW : Util &ndash; new function added <a href="plugins-sow-utils.html#section_5" target="smarty">Element Util</a> function <br>
+										* <span class="bg-success-soft px-1 rounded">New</span> 		<a href="plugins-vendor-prismjs.html" target="smarty">Vendor : Prismjs</a> &ndash; code highlighter<br>
+										* <span class="bg-success-soft px-1 rounded">New</span> 		<a href="util-misc.html#section_grd_notes" target="smarty">Notebook-like Grid</a> Class<br>
+										* <span class="bg-success-soft px-1 rounded">New</span> 		Admin page: <a href="../../html_admin/layout_1/account-settings.html" target="smarty">account-settings.html</a><br>
+										* <span class="bg-success-soft px-1 rounded">New</span> 		Admin page: <a href="../../html_admin/layout_1/admin-staff.html" target="smarty">admin-staff.html</a><br>
+										* <span class="bg-success-soft px-1 rounded">New</span> 		Admin pages: <a href="../../html_admin/layout_1/message-inbox.html" target="smarty">message-*.html</a><br>
+										* <span class="bg-danger text-white fs--16 px-1 rounded">Update</span> 	(GULP users only) <b>Important</b> rewrite in Flaticon (Smarty Core Icons)! <br>
+
+																											<div class="px-6">
+																												<ol>
+																													<li>
+																														<code><b>Variables.scss</b></code> : <u>quotes only</u> removed for icons: <br>
+																														<code>$rating-icon-empty: \f173 !default;</code> &nbsp; &nbsp; (instead of "\f173" !default;) <br>
+																														<code>$rating-icon-half: \f191 !default;</code> &nbsp; &nbsp; &nbsp; (instead of "\f191" !default;) <br>
+																														<code>$rating-icon-full: \f190 !default;</code> &nbsp; &nbsp; &nbsp; (instead of "\f190" !default;) <br> 
+																														<code>$header-main-links-caret-main-ico: \f1c4 !default;</code> &nbsp; &nbsp; &nbsp; (instead of "\f1c4" !default;) <br>
+																													</li>
+
+																													<li>
+																														<span class="text-danger d-block">
+																															Very important to also replace icon folder: <b>src/scss/_vendors/_sow/flaticon/</b>.
+																														</span>
+																													</li>
+																												</ol>
+																												Added icon-unquote() mixin function to <code>src/scss/_core/mixins.scss</code> so icons are using it from now! <br>
+																												<b>For this update, <code>src/scss/_core/</code> folder must be replaced</b> - many icons are updated to avoid browser display issues!
+																											</div>
+										* <span class="bg-warning-soft px-1 rounded">Update</span> 	removed additional shadow for soft buttons on active and focus state<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span> 	Minor CSS updates/changes (like dropdown spacings)<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span> 	added <code>$toast-font-size</code> to <code>src/scss/variables.scss</code><br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span> 	SOW : Button Toggle - allow temporized on ajax requests ( back to previous state for a another request(s) )<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span> 	SOW : Ajax Confirm &ndash; new params *-target<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span> 	SOW : Toast plugin - replaced default Smarty Utility classes with default Bootstrap classes (nothing affected)<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span>	GULP : will now copy js/css to html_frontend/assets/ only if html_frontend directory exists<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span>	GULP : remove javascript comments on minified files <br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span>	GULP : prepend current version to core &amp; vendor (js and css) <br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span>	Grid adjustment/spacings (shop-index-3.html &amp; shop-index-4.html) featured on mobile<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span>	package.json: <code>npm remove popper.js</code> (ununsed, bootstrap already has it packed) <br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span>	package.json: <code>npx npm-update-all</code> <br>
+<pre class="bg-gradient-dark language-js"><code>
+	:: Affected by update: 1 plugin (chart.js : 2 deprecated variables)
+	:: changes: src/js/vendors/vendor.chartjs.js
+	:: 		- label position (bugfix in Smarty controller when legend was set "true")
+	:: 		- categoryPercentage &amp; barPercentage : moved to [data][datasets]
+	:: 		- added RTL for tooltip &amp; legend
+	:: npm output before update:
+Package                  Current  Wanted  Latest  Location
+@simonwep/pickr               1.4.4   1.4.6   1.4.6  smarty
+autoprefixer               9.6.5   9.7.0   9.7.0  smarty
+chart.js                 2.8.0   2.9.1   2.9.1  smarty
+datatables.net-buttons-bs4         1.6.0   1.6.1   1.6.1  smarty
+jarallax                 1.11.1  1.12.0  1.12.0  smarty
+open                   6.4.0   6.4.0   7.0.0  smarty
+pdfmake                   0.1.60  0.1.61  0.1.61  smarty
+swiper                   5.0.4   5.2.0   5.2.0  smarty
+
+--- --- ---
+npm audit
+found 0 vulnerabilities in 20730 scanned packages
+
+</code></pre>
+
+									</li>
+									<li id="v3_0_5" class="mb-3">
+										<p class="mb-1">
+											<span class="badge badge-pill badge-soft badge-primary font-regular">v3.0.5</span>
+											<span>&ndash; Wednesday, October 23, 2019</span>
+										</p>
+										* <span class="bg-secondary-soft px-1 rounded">Fix</span> 	Fullajax mobile - close navigation on click
+									</li>
+									<li id="v3_0_4" class="mb-3">
+										<p class="mb-1">
+											<span class="badge badge-pill badge-soft badge-primary font-regular">v3.0.4</span>
+											<span>&ndash; Wednesday, October 23, 2019</span>
+										</p>
+										* <span class="bg-success-soft px-1 rounded">New</span> 		Full Ajax 13 Frontend Pages (as a demonstration of Smarty Power)<br>
+										* <span class="bg-success-soft px-1 rounded">New</span> 		Footer variation #4<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span>	Added Social Icons: instagram, twitch, spotify, github, soundcloud<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span>	SOW Header - added onepage navigation function (close navbar if .scroll-to class is present)<br>
+										* <span class="bg-secondary-soft px-1 rounded">Fix</span>		Small wrong typos in documentation<br>
+										* <span class="bg-secondary-soft px-1 rounded">Fix</span> 		Dropdown links spacing for no deep dropdowns<br>
+										* <span class="bg-secondary-soft px-1 rounded">Fix</span> 		.text-rotate class in RTL mode<br>
+									</li>
+									<li id="v3_0_3" class="mb-3">
+										<p class="mb-1">
+											<span class="badge badge-pill badge-soft badge-primary font-regular">v3.0.3</span>
+											<span>&ndash; Monday, October 21, 2019</span>
+										</p>
+										* <span class="bg-success-soft px-1 rounded">New</span> 		Niche Caffe<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span> 	Added fadein animation alias class to .navbar-collapse <br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span> 	SOW : GRPD - using Google Cookies rules.<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span> 	Smarty Core now set a default "sow" `SameSite &amp; Secure` Cookie according to new Google rules.<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span> 	Removed default "bouncein" animation on mobile main menu to solve possible issues on new header layouts.<br>
+											  		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Now available using classes: navbar-animation-fadein, navbar-animation-bouncein<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span> 	Documentation layout - adaptable using flex utilities (so right boxes are not anynmore shrink).<br>
+										* <span class="bg-warning-soft px-1 rounded">Update</span> 	indigo color from #6610f2 to #533be2 (scss/_variables.scss)<br>
+										* <span class="bg-secondary-soft px-1 rounded">Fix</span> 		Slimscroll Vendor : z-index is hardcoded and a css rule was added to be lower than #header<br>
+									</li>
+									<li id="v3_0_2" class="mb-3">
+										<p class="mb-1">
+											<span class="badge badge-pill badge-soft badge-primary font-regular">v3.0.2</span>
+											<span>&ndash; Wednesday, October 16, 2019</span>
+										</p>
+										* <span class="bg-success-soft px-1 rounded">New</span> Shop Category 4<br>
+										* <span class="bg-success-soft px-1 rounded">New</span> Added SEED_PROJECT folder - ready to start a project<br>
+										* <span class="bg-secondary-soft px-1 rounded">Fix</span> Firefox Select icon<br>
+										* <span class="bg-secondary-soft px-1 rounded">Fix</span> `.scrollable-vertical` class visibility
+									</li>
+									<li id="v3_0_1" class="mb-3">
+										<p class="mb-1">
+											<span class="badge badge-pill badge-soft badge-primary font-regular">v3.0.1</span>
+											<span>&ndash; Wednesday, October 16, 2019</span>
+										</p>
+										* <span class="bg-success-soft px-1 rounded">New</span> Forum Pages
+									</li>
+
+									<li id="v3_0_0" class="mb-3">
+										<p class="mb-1">
+											<span class="badge badge-pill badge-soft badge-primary font-regular">v3.0.0</span>
+											<span>&ndash; Tuesday, October 15, 2019</span>
+										</p>
+										<i class="text-pink fi fi-emoji-evil"></i> &nbsp; Initial release!
+									</li>
+								</ul>
+
+							</div>
+
+
+
+
+						</div>
+
+						<div class="col w-100 max-w-300 d-none d-xl-flex align-self-md-stretch">
+
+							<div class="w-100">
+								<div class="sticky-kit">
+
+								<h6 class="text-primary">Jump To</h6>
+								<ul class="list-unstyled m-0">
+									<li class="list-item">
+										<a href="#v3_1_2" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											v3.1.2
+										</a>
+									</li>
+									<li class="list-item">
+										<a href="#v3_1_1" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											v3.1.1
+										</a>
+									</li>
+									<li class="list-item">
+										<a href="#v3_1_0" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											v3.1.0
+										</a>
+									</li>
+									<li class="list-item">
+										<a href="#v3_0_8" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											v3.0.8
+										</a>
+									</li>
+									<li class="list-item">
+										<a href="#v3_0_7" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											v3.0.7
+										</a>
+									</li>
+									<li class="list-item">
+										<a href="#v3_0_6" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											v3.0.6
+										</a>
+									</li>
+									<li class="list-item">
+										<a href="#v3_0_5" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											v3.0.5
+										</a>
+									</li>
+									<li class="list-item">
+										<a href="#v3_0_4" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											v3.0.4
+										</a>
+									</li>
+									<li class="list-item">
+										<a href="#v3_0_3" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											v3.0.3
+										</a>
+									</li>
+									<li class="list-item">
+										<a href="#v3_0_2" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											v3.0.2
+										</a>
+									</li>
+									<li class="list-item">
+										<a href="#v3_0_1" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											v3.0.1
+										</a>
+									</li>
+									<li class="list-item">
+										<a href="#v3_0_0" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											v3.0.0
+										</a>
+									</li>
+								</ul>
+
+							</div>
+
+						</div>
+
+					</div>
+
+
+
+				</div>
+				<!-- /MIDDLE -->
+
+			</div>
+
+
+
+		</div><!-- /#wrapper -->
+
+
+		<!--
+			
+			Toast On Load
+
+				data-type 			= '', success, danger, warning, info
+				data-title 			= toast title 	(optional)
+				data-body 			= toast body 	(required)
+				data-pos 			= top-left, top-right, bottom-left, bottom-right, top-center, bottom-center
+				data-delay 			= autoclose in ms
+				data-fill 			= background color fill [true|false]
+
+		-->
+		<div class="hide toast-on-load"
+			data-toast-type="pink" 
+			data-toast-title="" 
+			data-toast-body="<i class='fi fi-emoji-cool float-start'></i> Ajax navigation enabled! Yay!" 
+			data-toast-pos="bottom-center" 
+			data-toast-delay="4000" 
+			data-toast-fill="true" 
+		></div>
+
+
+
+
+		<script src="../assets/js/core.min.js"></script>
+		<script src="../assets/js/vendor_bundle.min.js"></script>
+
+
+
+		<!--
+
+			[SOW Ajax Navigation Plugin] [AJAX ONLY, IF USED]
+			If you have specific page js files, wrap them inside #page_js_files 
+			Ajax Navigation will use them for this page! 
+			This way you can load this page in a normal way and/or via ajax.
+			(you can change/add more containers in sow.config.js)
+
+		-->
+		<div id="page_js_files">
+
+
+
+			<!-- 
+
+				CONTENT CLIPBOARD COPY 
+
+					<a href="#clipboard_1" class="btn-clipboard btn btn-sm btn-light float-end">
+						<i class="fi fi-lightning"></i> 
+						copy code
+					</a>
+
+					<div id="clipboard_1">
+						.. code 
+					</div>
+
+			-->
+			<script src="assets/js/sow.clipboard.js"></script>
+			<script>
+
+				$.SOW.core.clipboard.init('#middle a.btn-clipboard');
+
+			</script>
+
+
+		</div>
+
+
+	</body>
+</html>

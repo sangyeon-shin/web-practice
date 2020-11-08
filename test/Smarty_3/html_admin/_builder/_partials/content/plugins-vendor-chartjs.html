@@ -1,0 +1,868 @@
+﻿					<!-- doc:start -->
+					<div class="page-title bg-transparent b-0">
+
+						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
+							Vendor : Chartjs
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--13 pb-2 px-3">
+								<li class="breadcrumb-item">
+									<a href="index.html" class="js-ajax">Dashboard</a>
+								</li>
+								<li class="breadcrumb-item active">
+									Vendor Plugins
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Chartjs
+								</li>
+							</ol>
+						</nav>
+
+					</div>
+
+
+
+					<!-- ALERT : NOTE -->
+					<div class="bg-white shadow-xs p-2 mb-4 rounded">
+						<div class="clearfix bg-light p-2 rounded d-flex align-items-center">
+							<span class="btn row-pill btn-sm bg-gradient-warning b-0 py-1 mb-0 float-start">
+								<i class="fi fi-round-info-full"></i>
+								Note
+							</span>
+							<span class="d-block px-2 text-muted text-truncate">
+								This is a basic demo! Please see main <a href="../../html_frontend/documentation/plugins-vendor-chartjs.html" target="smarty" class="link-muted">full documentation here</a>.
+							</span>
+						</div>
+					</div>
+					<!-- /ALERT : NOTE -->
+
+
+
+					<!-- start:row -->
+					<div class="row gutters-sm">
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Examples</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<p class="lead">
+											Simple HTML5 Charts using the canvas tag.
+										</p>
+
+										<ul class="mt-3">
+											<li class="mt-3">
+												<a href="https://github.com/chartjs/Chart.js" target="smarty" class="link-muted">
+													https://github.com/chartjs/Chart.js
+												</a>
+											</li>
+											<li>
+												License: MIT
+											</li>
+										</ul>
+
+	                                    <div class="alert alert-primary bg-primary-soft mt-5">
+	                                        HINT! Use <a href="plugins-vendor-colorpicker.html" class="js-ajax">Smarty Colorpicker</a> to get RGBA colors for your graphs! <i class="fi fi-emoji-smile"></i>
+	                                    </div>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Single ChartJS</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+	                                    <div class="bg-light rounded-xl clearfix fs--18 p-3 mb-4">
+	                                        
+	                                        <!-- save image -->
+	                                        <a href="#" data-chartjs-id="smartySimple" data-file-name="smartySimple" class="btn btn-sm btn-light rounded-circle chartjs-save float-end m-0" title="Save Chart" aria-label="Save Chart">
+	                                            <i class="fi fi-arrow-download m-0"></i>
+	                                        </a>
+	                                        <!-- /save image -->
+
+	                                        Single ChartJS
+	                                        <small class="fs--11 text-muted d-block mt-1">SIMPLIFIED VIA SMARTY CONTROLLER</small>
+
+	                                    </div>
+
+
+	                                    <!--
+	                                        
+	                                        data-chartjs-type="line|bar" 
+	                                        data-chartjs-grid="true|false|xAxes|yAxes" 
+	                                        data-chartjs-legend="false|top|bottom|left|right" 
+
+	                                        Color Examples
+	                                            Red:        rgb(255, 99, 132, 1)
+	                                            Orange:     rgb(255, 159, 64, 1)
+	                                            Yellow:     rgb(255, 205, 86, 1)
+	                                            Green:      rgb(75, 192, 192, 1)
+	                                            Blue:       rgb(54, 162, 235, 1)
+	                                            Purple:     rgb(153, 102, 255, 1)
+	                                            Grey:       rgb(201, 203, 207, 1)
+	                                            
+	                                            To set opacity, change the last value (0 - 1). 
+	                                            Example:    rgb(255, 99, 132, 0.5)
+	                                            :: Use Smarty Colorpicker :)
+	                                    -->
+	                                    <canvas id="smartySimple" class="chartjs" 
+	                                        data-chartjs-dots="true" 
+	                                        data-chartjs-legend="top" 
+	                                        data-chartjs-grid="true" 
+	                                        data-chartjs-tooltip="true" 
+
+	                                        data-chartjs-title="Single Chart" 
+	                                        data-chartjs-xaxes-label="Month" 
+	                                        data-chartjs-yaxes-label="Visits" 
+	                                        data-chartjs-line-width="5" 
+
+	                                        data-chartjs-type="line" 
+	                                        data-chartjs-labels='["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]' 
+	                                        data-chartjs-datasets='[{                                                           
+	                                            "label":                    "Visits",
+	                                            "data":                     [20, 22, 24, 21, 23, 26, 24, 23, 21, 24, 23, 22],
+	                                            "fill":                     true,
+	                                            "backgroundColor":          "rgba(133, 145, 255, 0.5)"
+	                                        }]'
+	                                    ></canvas>
+
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Multiple Charts</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+	                                    <div class="bg-light rounded-xl clearfix fs--18 p-3 mb-4">
+	                                        
+	                                        <!-- save image -->
+	                                        <a href="#" data-chartjs-id="smartyMultiple" data-file-name="smartyMultiple" class="btn btn-sm btn-light rounded-circle chartjs-save float-end m-0" title="Save Chart" aria-label="Save Chart">
+	                                            <i class="fi fi-arrow-download m-0"></i>
+	                                        </a>
+	                                        <!-- /save image -->
+
+	                                        Multiple Charts
+	                                        <small class="fs--11 text-muted d-block mt-1">SIMPLIFIED VIA SMARTY CONTROLLER</small>
+
+	                                    </div>
+
+
+
+										<!--
+											
+											data-chartjs-type="line|bar" 
+											data-chartjs-grid="true|false|xAxes|yAxes" 
+											data-chartjs-legend="false|top|bottom|left|right" 
+
+											Color Examples
+												Red: 		rgb(255, 99, 132, 1)
+												Orange: 	rgb(255, 159, 64, 1)
+												Yellow:		rgb(255, 205, 86, 1)
+												Green:		rgb(75, 192, 192, 1)
+												Blue:		rgb(54, 162, 235, 1)
+												Purple:		rgb(153, 102, 255, 1)
+												Grey:		rgb(201, 203, 207, 1)
+												
+												To set opacity, change the last value (0 - 1). 
+												Example:	rgb(255, 99, 132, 0.5)
+												:: Use Smarty Colorpicker :)
+										-->
+										<canvas id="smartyMultiple" class="chartjs" 
+											data-chartjs-dots="false" 
+											data-chartjs-legend="top" 
+											data-chartjs-grid="true" 
+											data-chartjs-tooltip="true" 
+
+											data-chartjs-title="Multiple Charts" 
+											data-chartjs-xaxes-label="Month" 
+											data-chartjs-yaxes-label="Visits vs Orders" 
+											data-chartjs-line-width="5" 
+
+											data-chartjs-type="line" 
+											data-chartjs-labels='["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]' 
+											data-chartjs-datasets='[{															
+												"label": 					"Visits",
+												"data": 					[20, 22, 24, 21, 23, 26, 24, 23, 21, 24, 23, 22],
+							                    "fill": 					true,
+												"backgroundColor": 			"rgba(255, 159, 64, 0.5)"
+											},{
+												"label": 					"Orders",
+												"data": 					[14, 16, 16, 14, 13, 12, 14, 14, 13, 14, 12, 10],
+							                    "fill": 					true,
+												"backgroundColor": 			"rgba(255, 159, 64, 0.9)"
+											}]'
+										></canvas>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span> Line ChartJS</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+	                                    <div class="bg-light rounded-xl clearfix fs--18 p-3 mb-4">
+	                                        
+	                                        <!-- save image -->
+	                                        <a href="#" data-chartjs-id="graphLineMixed" data-file-name="graphLineMixed" class="btn btn-sm btn-light rounded-circle chartjs-save float-end m-0" title="Save Chart" aria-label="Save Chart">
+	                                            <i class="fi fi-arrow-download m-0"></i>
+	                                        </a>
+	                                        <!-- /save image -->
+
+	                                        Line ChartJS
+	                                        <small class="fs--11 text-muted d-block mt-1">SIMPLIFIED VIA SMARTY CONTROLLER</small>
+
+	                                    </div>
+
+
+	                                    <!--
+	                                        
+	                                        data-chartjs-type="line|bar" 
+	                                        data-chartjs-grid="true|false|xAxes|yAxes" 
+	                                        data-chartjs-legend="false|top|bottom|left|right" 
+
+	                                        Color Examples
+	                                            Red:        rgb(255, 99, 132, 1)
+	                                            Orange:     rgb(255, 159, 64, 1)
+	                                            Yellow:     rgb(255, 205, 86, 1)
+	                                            Green:      rgb(75, 192, 192, 1)
+	                                            Blue:       rgb(54, 162, 235, 1)
+	                                            Purple:     rgb(153, 102, 255, 1)
+	                                            Grey:       rgb(201, 203, 207, 1)
+	                                            
+	                                            To set opacity, change the last value (0 - 1). 
+	                                            Example:    rgb(255, 99, 132, 0.5)
+	                                            :: Use Smarty Colorpicker :)
+	                                    -->
+	                                    <canvas id="graphLineMixed" class="chartjs" 
+	                                        data-chartjs-dots="false" 
+	                                        data-chartjs-legend="left" 
+	                                        data-chartjs-grid="true" 
+	                                        data-chartjs-tooltip="true" 
+
+	                                        data-chartjs-title="Line Chart" 
+	                                        data-chartjs-xaxes-label="Month" 
+	                                        data-chartjs-yaxes-label="Visits vs Orders" 
+	                                        data-chartjs-line-width="5" 
+
+	                                        data-chartjs-type="line" 
+	                                        data-chartjs-labels='["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]' 
+	                                        data-chartjs-datasets='[{                                                           
+	                                            "label":                    "Visits",
+	                                            "data":                     [30, 32, 34, 31, 33, 36, 34, 63, 31, 64, 33, 32],
+	                                            "fill":                     true,
+	                                            "backgroundColor":          "rgba(201, 203, 207, 0.3)"
+	                                        },{                                                           
+	                                            "label":                    "Orders",
+	                                            "data":                     [20, 22, 24, 21, 23, 26, 24, 23, 21, 24, 23, 22],
+	                                            "fill":                     false,
+	                                            "backgroundColor":          "rgba(255, 99, 132, 0.6)"
+	                                        }]'
+	                                    ></canvas>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Line ChartJS</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+	                                    <div class="bg-light rounded-xl clearfix fs--18 p-3 mb-4">
+	                                        
+	                                        <!-- save image -->
+	                                        <a href="#" data-chartjs-id="graphLine" data-file-name="graphLine" class="btn btn-sm btn-light rounded-circle chartjs-save float-end m-0" title="Save Chart" aria-label="Save Chart">
+	                                            <i class="fi fi-arrow-download m-0"></i>
+	                                        </a>
+	                                        <!-- /save image -->
+
+	                                        Line ChartJS
+	                                        <small class="fs--11 text-muted d-block mt-1">SIMPLIFIED VIA SMARTY CONTROLLER</small>
+
+	                                    </div>
+
+
+	                                    <!--
+	                                        
+	                                        data-chartjs-type="line|bar" 
+	                                        data-chartjs-grid="true|false|xAxes|yAxes" 
+	                                        data-chartjs-legend="false|top|bottom|left|right" 
+
+	                                        Color Examples
+	                                            Red:        rgb(255, 99, 132, 1)
+	                                            Orange:     rgb(255, 159, 64, 1)
+	                                            Yellow:     rgb(255, 205, 86, 1)
+	                                            Green:      rgb(75, 192, 192, 1)
+	                                            Blue:       rgb(54, 162, 235, 1)
+	                                            Purple:     rgb(153, 102, 255, 1)
+	                                            Grey:       rgb(201, 203, 207, 1)
+	                                            
+	                                            To set opacity, change the last value (0 - 1). 
+	                                            Example:    rgb(255, 99, 132, 0.5)
+	                                            :: Use Smarty Colorpicker :)
+	                                    -->
+	                                    <canvas id="graphLine" class="chartjs" 
+	                                        data-chartjs-dots="false" 
+	                                        data-chartjs-legend="left" 
+	                                        data-chartjs-grid="true" 
+	                                        data-chartjs-tooltip="true" 
+
+	                                        data-chartjs-title="Line Chart" 
+	                                        data-chartjs-xaxes-label="Month" 
+	                                        data-chartjs-yaxes-label="Visits vs Orders" 
+	                                        data-chartjs-line-width="5" 
+
+	                                        data-chartjs-type="line" 
+	                                        data-chartjs-labels='["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]' 
+	                                        data-chartjs-datasets='[{                                                           
+	                                            "label":                    "Visits",
+	                                            "data":                     [30, 32, 34, 31, 33, 36, 34, 63, 31, 64, 33, 32],
+	                                            "fill":                     false,
+	                                            "backgroundColor":          "rgba(75, 192, 192, 1)"
+	                                        },{                                                           
+	                                            "label":                    "Orders",
+	                                            "data":                     [20, 22, 24, 21, 23, 26, 24, 23, 21, 24, 23, 22],
+	                                            "fill":                     false,
+	                                            "backgroundColor":          "rgba(153, 102, 255, 0.6)"
+	                                        }]'
+	                                    ></canvas>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Examples</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+	                                    <div class="row">
+
+	                                        <div class="col-12 col-lg-4 mb-3">
+
+	                                            <canvas class="w--250 h--250 chartjs" 
+	                                                data-chartjs-dots="false" 
+	                                                data-chartjs-legend="false" 
+	                                                data-chartjs-grid="false" 
+	                                                data-chartjs-tooltip="false" 
+
+	                                                data-chartjs-line-width="3" 
+
+	                                                data-chartjs-type="line" 
+	                                                data-chartjs-labels='["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]' 
+	                                                data-chartjs-datasets='[{                                                           
+	                                                    "label":                    "Visits",
+	                                                    "data":                     [11, 11, 17, 11, 15, 12, 13, 16, 11, 18, 15, 14],
+	                                                    "fill":                     false,
+	                                                    "backgroundColor":          "rgba(255, 99, 132, 1)"
+	                                                }]'
+	                                            ></canvas>
+
+	                                        </div>
+
+
+	                                        <div class="col-12 col-lg-4 mb-3">
+
+	                                            <canvas class="w--250 h--250 chartjs" 
+	                                                data-chartjs-dots="false" 
+	                                                data-chartjs-legend="false" 
+	                                                data-chartjs-grid="false" 
+	                                                data-chartjs-tooltip="false" 
+
+	                                                data-chartjs-line-width="3" 
+
+	                                                data-chartjs-type="line" 
+	                                                data-chartjs-labels='["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]' 
+	                                                data-chartjs-datasets='[{                                                           
+	                                                    "label":                    "Visits",
+	                                                    "data":                     [11, 11, 17, 11, 15, 12, 13, 16, 11, 18, 15, 14],
+	                                                    "fill":                     false,
+	                                                    "backgroundColor":          "rgba(75, 192, 192, 1)"
+	                                                }]'
+	                                            ></canvas>
+
+	                                        </div>
+
+
+	                                        <div class="col-12 col-lg-4 mb-3">
+
+	                                            <canvas  class="w--250 h--250 chartjs" 
+	                                                data-chartjs-dots="false" 
+	                                                data-chartjs-legend="false" 
+	                                                data-chartjs-grid="false" 
+	                                                data-chartjs-tooltip="false" 
+
+	                                                data-chartjs-line-width="3" 
+
+	                                                data-chartjs-type="line" 
+	                                                data-chartjs-labels='["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]' 
+	                                                data-chartjs-datasets='[{                                                           
+	                                                    "label":                    "Visits",
+	                                                    "data":                     [11, 11, 17, 11, 15, 12, 13, 16, 11, 18, 15, 14],
+	                                                    "fill":                     false,
+	                                                    "backgroundColor":          "rgba(153, 102, 255, 1)"
+	                                                }]'
+	                                            ></canvas>
+
+	                                        </div>
+
+	                                    </div>
+
+
+
+
+	                                    <div class="row">
+
+	                                        <div class="col-12 col-lg-4 mb-3">
+
+	                                            <canvas class="w--250 h--250 chartjs" 
+	                                                data-chartjs-dots="false" 
+	                                                data-chartjs-legend="false" 
+	                                                data-chartjs-grid="false" 
+	                                                data-chartjs-tooltip="false" 
+
+	                                                data-chartjs-line-width="3" 
+
+	                                                data-chartjs-type="line" 
+	                                                data-chartjs-labels='["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]' 
+	                                                data-chartjs-datasets='[{                                                           
+	                                                    "label":                    "Visits",
+	                                                    "data":                     [11, 11, 17, 11, 15, 12, 13, 16, 11, 18, 15, 14],
+	                                                    "fill":                     false,
+	                                                    "backgroundColor":          "rgba(201, 203, 207, 1)"
+	                                                }]'
+	                                            ></canvas>
+
+	                                        </div>
+
+
+	                                        <div class="col-12 col-lg-4 mb-3">
+
+	                                            <canvas class="w--250 h--250 chartjs" 
+	                                                data-chartjs-dots="false" 
+	                                                data-chartjs-legend="false" 
+	                                                data-chartjs-grid="false" 
+	                                                data-chartjs-tooltip="false" 
+
+	                                                data-chartjs-line-width="3" 
+
+	                                                data-chartjs-type="line" 
+	                                                data-chartjs-labels='["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]' 
+	                                                data-chartjs-datasets='[{                                                           
+	                                                    "label":                    "Visits",
+	                                                    "data":                     [11, 11, 17, 11, 15, 12, 13, 16, 11, 18, 15, 14],
+	                                                    "fill":                     false,
+	                                                    "backgroundColor":          "rgba(255, 205, 86, 1)"
+	                                                }]'
+	                                            ></canvas>
+
+	                                        </div>
+
+
+	                                        <div class="col-12 col-lg-4 mb-3">
+
+	                                            <canvas  class="w--250 h--250 chartjs" 
+	                                                data-chartjs-dots="false" 
+	                                                data-chartjs-legend="false" 
+	                                                data-chartjs-grid="false" 
+	                                                data-chartjs-tooltip="false" 
+
+	                                                data-chartjs-line-width="3" 
+
+	                                                data-chartjs-type="line" 
+	                                                data-chartjs-labels='["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]' 
+	                                                data-chartjs-datasets='[{                                                           
+	                                                    "label":                    "Visits",
+	                                                    "data":                     [11, 11, 17, 11, 15, 12, 13, 16, 11, 18, 15, 14],
+	                                                    "fill":                     false,
+	                                                    "backgroundColor":          "rgba(54, 162, 235, 1)"
+	                                                }]'
+	                                            ></canvas>
+
+	                                        </div>
+
+	                                    </div>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span> Simple Bar Charts</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+	                                    <div class="bg-light rounded-xl clearfix fs--18 p-3 mb-4">
+	                                        
+	                                        <!-- save image -->
+	                                        <a href="#" data-chartjs-id="smartyBarSimple" data-file-name="smartyBarSimple" class="btn btn-sm btn-light rounded-circle chartjs-save float-end m-0" title="Save Chart" aria-label="Save Chart">
+	                                            <i class="fi fi-arrow-download m-0"></i>
+	                                        </a>
+	                                        <!-- /save image -->
+
+	                                        Simple Bar Charts
+	                                        <small class="fs--11 text-muted d-block mt-1">SIMPLIFIED VIA SMARTY CONTROLLER</small>
+
+	                                    </div>
+
+
+
+	                                    <!--
+	                                        
+	                                        data-chartjs-type="line|bar" 
+	                                        data-chartjs-grid="true|false|xAxes|yAxes" 
+	                                        data-chartjs-legend="false|top|bottom|left|right" 
+
+	                                        Color Examples
+	                                            Red:        rgb(255, 99, 132, 1)
+	                                            Orange:     rgb(255, 159, 64, 1)
+	                                            Yellow:     rgb(255, 205, 86, 1)
+	                                            Green:      rgb(75, 192, 192, 1)
+	                                            Blue:       rgb(54, 162, 235, 1)
+	                                            Purple:     rgb(153, 102, 255, 1)
+	                                            Grey:       rgb(201, 203, 207, 1)
+	                                            
+	                                            To set opacity, change the last value (0 - 1). 
+	                                            Example:    rgb(255, 99, 132, 0.5)
+	                                            :: Use Smarty Colorpicker :)
+	                                    -->
+	                                    <canvas id="smartyBarSimple" class="chartjs" 
+	                                        data-chartjs-dots="false" 
+	                                        data-chartjs-legend="true" 
+	                                        data-chartjs-grid="true" 
+	                                        data-chartjs-tooltip="true" 
+
+	                                        data-chartjs-title="Simple Bar Charts" 
+	                                        data-chartjs-xaxes-label="Month" 
+	                                        data-chartjs-yaxes-label="Visits" 
+
+	                                        data-chartjs-type="bar" 
+	                                        data-chartjs-labels='["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]' 
+	                                        data-chartjs-datasets='[{                                                           
+	                                            "label":                    "Visits",
+	                                            "data":                     [20, 22, 24, 21, 23, 26, 24, 23, 21, 24, 23, 22],
+	                                            "backgroundColor":          "rgba(139, 195, 74, 0.35)"
+	                                        }]'
+	                                    ></canvas>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Multiple Bar Charts</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+
+	                                    <div class="bg-light rounded-xl clearfix fs--18 p-3 mb-4">
+	                                        
+	                                        <!-- save image -->
+	                                        <a href="#" data-chartjs-id="smartyBarMultiple" data-file-name="smartyBarMultiple" class="btn btn-sm btn-light rounded-circle chartjs-save float-end m-0" title="Save Chart" aria-label="Save Chart">
+	                                            <i class="fi fi-arrow-download m-0"></i>
+	                                        </a>
+	                                        <!-- /save image -->
+
+	                                        Multiple Bar Charts
+	                                        <small class="fs--11 text-muted d-block mt-1">SIMPLIFIED VIA SMARTY CONTROLLER</small>
+
+	                                    </div>
+
+
+
+	                                    <!--
+	                                        
+	                                        data-chartjs-type="line|bar" 
+	                                        data-chartjs-grid="true|false|xAxes|yAxes" 
+	                                        data-chartjs-legend="false|top|bottom|left|right" 
+
+	                                        Color Examples
+	                                            Red:        rgb(255, 99, 132, 1)
+	                                            Orange:     rgb(255, 159, 64, 1)
+	                                            Yellow:     rgb(255, 205, 86, 1)
+	                                            Green:      rgb(75, 192, 192, 1)
+	                                            Blue:       rgb(54, 162, 235, 1)
+	                                            Purple:     rgb(153, 102, 255, 1)
+	                                            Grey:       rgb(201, 203, 207, 1)
+	                                            
+	                                            To set opacity, change the last value (0 - 1). 
+	                                            Example:    rgb(255, 99, 132, 0.5)
+	                                            :: Use Smarty Colorpicker :)
+	                                    -->
+	                                    <canvas id="smartyBarMultiple" class="chartjs" 
+	                                        data-chartjs-dots="false" 
+	                                        data-chartjs-legend="true" 
+	                                        data-chartjs-grid="true" 
+	                                        data-chartjs-tooltip="true" 
+
+	                                        data-chartjs-title="Multiple Bar Charts" 
+	                                        data-chartjs-xaxes-label="Month" 
+	                                        data-chartjs-yaxes-label="Visits vs Orders" 
+
+	                                        data-chartjs-type="bar" 
+	                                        data-chartjs-labels='["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]' 
+	                                        data-chartjs-datasets='[{                                                           
+	                                            "label":                    "Visits",
+	                                            "data":                     [20, 22, 24, 21, 23, 26, 24, 23, 21, 24, 23, 22],
+	                                            "backgroundColor":          "rgba(3, 169, 244, 0.7)"
+	                                        },{
+	                                            "label":                    "Orders",
+	                                            "data":                     [14, 16, 16, 14, 13, 12, 14, 14, 13, 14, 12, 10],
+	                                            "backgroundColor":          "rgba(255, 193, 7, 0.61)"
+	                                        }]'
+	                                    ></canvas>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Pie ChartJS</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+	                                    <div class="bg-light rounded-xl clearfix fs--18 p-3 mb-4">
+	                                        
+	                                        <!-- save image -->
+	                                        <a href="#" data-chartjs-id="pieChart" data-file-name="pieChart" class="btn btn-sm btn-light rounded-circle chartjs-save float-end m-0" title="Save Chart" aria-label="Save Chart">
+	                                            <i class="fi fi-arrow-download m-0"></i>
+	                                        </a>
+	                                        <!-- /save image -->
+
+	                                        Pie ChartJS
+	                                        <small class="fs--11 text-muted d-block mt-1">SIMPLIFIED VIA SMARTY CONTROLLER</small>
+
+	                                    </div>
+
+
+	                                    <!--
+	                                            
+	                                            Pie & Doughnut Chart
+	                                                pie
+	                                                doughnut
+
+	                                            data-chartjs-legend="false|top|bottom|left|right" 
+	                                    -->
+	                                    <canvas id="pieChart" class="chartjs" 
+	                                        data-chartjs-title="" 
+	                                        data-chartjs-legend="left" 
+	                                        data-chartjs-tooltip="true" 
+
+	                                        data-chartjs-type="pie" 
+	                                        data-chartjs-datasets='[
+	                                            ["Visitors", 544, "#ff0000"],
+	                                            ["Orders", 412, "#377dff"],
+	                                            ["Green Stuff", 455, "#6dbb30"],
+	                                            ["This is Yellow", 511, "#fad776"]
+	                                        ]'></canvas>
+
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Donut ChartJS</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+	                                    <div class="bg-light rounded-xl clearfix fs--18 p-3 mb-4">
+	                                        
+	                                        <!-- save image -->
+	                                        <a href="#" data-chartjs-id="donutChart" data-file-name="donutChart" class="btn btn-sm btn-light rounded-circle chartjs-save float-end m-0" title="Save Chart" aria-label="Save Chart">
+	                                            <i class="fi fi-arrow-download m-0"></i>
+	                                        </a>
+	                                        <!-- /save image -->
+
+	                                        Donut ChartJS
+	                                        <small class="fs--11 text-muted d-block mt-1">SIMPLIFIED VIA SMARTY CONTROLLER</small>
+
+	                                    </div>
+
+
+
+	                                    <!--
+	                                            
+	                                            Pie & Doughnut Chart
+	                                                pie
+	                                                doughnut
+
+	                                            data-chartjs-legend="false|top|bottom|left|right" 
+	                                    -->
+	                                    <canvas id="donutChart" class="chartjs" 
+	                                        data-chartjs-title="" 
+	                                        data-chartjs-legend="left" 
+	                                        data-chartjs-tooltip="true" 
+
+	                                        data-chartjs-type="doughnut" 
+	                                        data-chartjs-datasets='[
+	                                            ["Visitors", 544, "#ff0000"],
+	                                            ["Orders", 412, "#377dff"],
+	                                            ["Green Stuff", 455, "#6dbb30"],
+	                                            ["This is Yellow", 511, "#fad776"]
+	                                        ]'></canvas>
+
+	                                 </div>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+					</div>
+					<!-- end:row: -->
+					<!-- doc:end -->

@@ -1,0 +1,3230 @@
+﻿<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+
+		<meta charset="UTF-8">
+		<title>Smarty</title>
+		<meta name="description" content="Smarty Documentation">
+
+        <meta name="viewport" content="width=device-width, maximum-scale=5, initial-scale=1, user-scalable=0">
+        <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+        <!-- up to 10% speed up for external res -->
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+        <link rel="preconnect" href="https://fonts.googleapis.com/">
+        <link rel="preconnect" href="https://fonts.gstatic.com/">
+        <!-- preloading icon font is helping to speed up a little bit -->
+        <link rel="preload" href="../assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
+
+		<link rel="stylesheet" href="../assets/css/core.min.css">
+		<link rel="stylesheet" href="../assets/css/vendor_bundle.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
+
+		<!-- favicon -->
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="apple-touch-icon" href="../demo.files/logo/icon_512x512.png">
+
+		<link rel="manifest" href="../assets/images/manifest/manifest.json">
+		<meta name="theme-color" content="#377dff">
+
+	</head>
+
+
+	<!--
+
+		Layout Admin
+			.layout-admin 	(required)
+
+			.aside-sticky  					- sidebar : fixed and push header
+			.header-sticky  				- header : always visible on top (acting as old .header-focus)
+			.header-scroll-reveal  			- header : hide on scroll down and reveal on scroll up
+
+	-->
+	<body class="layout-admin aside-sticky header-sticky" data-s2t-class="btn-indigo btn-sm rounded-circle">
+
+		<div id="wrapper">
+
+
+
+			<!-- HEADER -->
+			<header id="header" class="d-flex align-items-center shadow-xs">
+
+
+				<!-- NAVBAR -->
+				<div class="container-fluid position-relative">
+
+					<nav class="navbar navbar-expand-lg navbar-dark justify-content-lg-between">
+
+						<div class="align-items-start">
+							
+							<!-- 
+								sidebar toggler 
+							-->
+							<a href="#aside-main" class="btn-sidebar-toggle h-100 d-inline-block d-lg-none justify-content-center align-items-center p-2">
+								<span class="group-icon">
+									<i>
+										<svg width="25" viewBox="0 0 20 20">
+											<path fill="#333333" d="M 19.9876 1.998 L -0.0108 1.998 L -0.0108 -0.0019 L 19.9876 -0.0019 L 19.9876 1.998 Z"></path>
+											<path fill="#333333" d="M 19.9876 7.9979 L -0.0108 7.9979 L -0.0108 5.9979 L 19.9876 5.9979 L 19.9876 7.9979 Z"></path>
+											<path fill="#333333" d="M 19.9876 13.9977 L -0.0108 13.9977 L -0.0108 11.9978 L 19.9876 11.9978 L 19.9876 13.9977 Z"></path>
+											<path fill="#333333" d="M 19.9876 19.9976 L -0.0108 19.9976 L -0.0108 17.9976 L 19.9876 17.9976 L 19.9876 19.9976 Z"></path>
+										</svg>
+									</i>
+
+									<i>
+										<svg width="25" viewBox="0 0 47.971 47.971">
+											<path fill="#333333" d="M28.228,23.986L47.092,5.122c1.172-1.171,1.172-3.071,0-4.242c-1.172-1.172-3.07-1.172-4.242,0L23.986,19.744L5.121,0.88c-1.172-1.172-3.07-1.172-4.242,0c-1.172,1.171-1.172,3.071,0,4.242l18.865,18.864L0.879,42.85c-1.172,1.171-1.172,3.071,0,4.242C1.465,47.677,2.233,47.97,3,47.97s1.535-0.293,2.121-0.879l18.865-18.864L42.85,47.091c0.586,0.586,1.354,0.879,2.121,0.879s1.535-0.293,2.121-0.879c1.172-1.171,1.172-3.071,0-4.242L28.228,23.986z"/>
+										</svg>
+									</i>
+								</span>
+
+							</a>
+
+
+							<!-- 
+								Logo : height: 60px max
+							-->
+							<a class="navbar-brand" href="index.html">
+								<img src="assets/images/logo/logo_dark.svg" width="110" height="70" alt="...">
+							</a>
+
+						</div>
+
+
+
+
+					<!-- 
+
+						[SOW] SEARCH SUGGEST PLUGIN
+						[GULP/src/plugins/sow_search_suggest/sow_search_suggest.js]
+						[SCSS/_plugins/sow_search_suggest.scss]
+						++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++
+
+						PLEASE READ DOCUMENTATION
+						documentation/plugins-sow-search.html
+
+					-->
+					<form 	action="index.html" 
+							method="GET" 
+							data-autosuggest="on" 
+
+							data-mode="json" 
+							data-json-max-results='10'
+							data-json-related-title='Explore Smarty'
+							data-json-related-item-icon='fi fi-star-empty'
+							data-json-suggest-title='Suggestions for you'
+							data-json-suggest-noresult='No results for'
+							data-json-suggest-item-icon='fi fi-search'
+							data-json-suggest-min-score='5'
+							data-json-highlight-term='true'
+							data-contentType='application/json; charset=utf-8'
+							data-dataType='json'
+
+							data-container="#sow-search-container" 
+							data-input-min-length="2" 
+							data-input-delay="100" 
+							data-related-keywords="" 
+							data-related-url="_ajax/search_suggestion_json_related.json" 
+							data-suggest-url="_ajax/search_suggestion_json_suggest.json" 
+							data-related-action="related_get" 
+							data-suggest-action="suggest_get" 
+							class="js-ajax-search sow-search sow-search-mobile-float d-flex-1-1-auto mx-4">
+						<div class="sow-search-input w-100 d-flex align-items-center">
+
+							<div class="input-group-over d-flex align-items-center w-100 h-100 rounded">
+
+								<input placeholder="component search..." name="s" type="text" class="form-control-sow-search form-control form-control-pill b-0 bg-gray-100" value="" autocomplete="off">
+
+								<span class="sow-search-buttons">
+
+									<!-- search button -->
+									<button type="submit" class="btn btn-primary btn-noshadow m-0 px-2 py-1 b-0 bg-transparent text-muted">
+										<i class="fi fi-search fs--20"></i>
+									</button>
+
+									<!-- close : mobile only (d-inline-block d-lg-none) -->
+									<a href="javascript:;" class="btn-sow-search-toggler btn btn-light btn-noshadow m-0 px-2 py-1 d-inline-block d-lg-none">
+										<i class="fi fi-close fs--20"></i>
+									</a>
+
+								</span>
+
+							</div>
+
+						</div>
+
+						<!-- search suggestion container -->
+						<div class="sow-search-container rounded-xl w-100 p-0 hide shadow-md" id="sow-search-container">
+							<div class="sow-search-container-wrapper rounded-xl">
+
+								<!-- main search container -->
+								<div class="sow-search-loader p--15 text-center hide">
+									<i class="fi fi-circle-spin fi-spin text-muted fs--30"></i>
+								</div>
+
+								<!-- 
+									AJAX CONTENT CONTAINER 
+									SHOULD ALWAYS BE AS IT IS : NO COMMENTS OR EVEN SPACES!
+								--><div class="sow-search-content rounded w-100 scrollable-vertical"></div>
+
+							</div>
+						</div>
+						<!-- /search suggestion container -->
+
+						<!-- 
+
+							overlay combinations:
+								overlay-dark opacity-* [1-9]
+								overlay-light opacity-* [1-9]
+
+						-->
+						<div class="sow-search-backdrop overlay-dark opacity-3 hide"></div>
+
+					</form>
+					<!-- /SEARCH -->
+
+
+
+
+					<!-- OPTIONS -->
+					<ul class="list-inline list-unstyled mb-0 d-flex align-items-end">
+
+						<li class="list-inline-item mx-1 dropdown float-start d-inline-block d-lg-none">
+
+							<a href="#" class="btn-sow-search-toggler btn btn-sm rounded-circle btn-warning bg-gradient-warning">
+								<i class="fi fi-search"></i>
+							</a>
+
+						</li>
+
+
+						<li class="list-inline-item mx-1 dropdown float-start d-none d-lg-inline-block">
+
+							<div class="btn-group rounded-xxl overflow-hidden" role="group" aria-label="Basic example">
+								
+								<a href="../index.html" target="layerstore" class="btn btn-sm btn-pills btn-indigo">
+									<span>Front</span>
+								</a>
+
+								<a href="https://wrapbootstrap.com/theme/smarty-website-admin-rtl-WB02DSN1B" target="wrapbootstrap" class="btn btn-sm btn-pills btn-indigo py-1">
+									<i class="fi fi-cart-1 mx-2 fs--20"></i>
+								</a>
+
+								<a href="../../html_admin/layout_1/" target="layerstore" class="btn btn-sm btn-pills btn-indigo">
+									<span>Admin</span>
+								</a>
+
+							</div>
+
+						</li>
+
+						<!-- header toggle : desktop only -->
+						<li class="list-inline-item mx-1 dropdown float-start d-none d-lg-block">
+
+							<a href="#" class="btn-header-toggle btn-toggle btn btn-sm rounded-circle btn-secondary">
+								<span class="group-icon">
+									<i class="fi fi-arrow-up"></i>
+									<i class="fi fi-arrow-down"></i>
+								</span>
+							</a>
+
+						</li>
+
+					</ul>
+					<!-- /OPTIONS -->
+
+
+
+					</nav>
+
+				</div>
+				<!-- /NAVBAR -->
+
+			</header>
+			<!-- /HEADER -->
+
+
+
+
+
+			<div id="wrapper_content" class="d-flex align-items-stretch">
+
+				<!-- SIDEBAR -->
+				<aside id="aside-main" class="aside-start bg-gradient-indigo font-weight-normal aside-hide-xs">
+
+					<div class="aside-wrapper scrollable-vertical scrollable-styled-light">
+
+						<!-- hide on mobile: d-none d-lg-block -->
+						<div class="p-3">
+							<!--<img class="js-ajax-loaded-animate img-fluid" src="assets/svg/artworks/undraw_smiley_face_lmgm.svg" width="300" height="248" alt="...">-->
+							<img class="js-ajax-loaded-animate img-fluid" src="assets/svg/artworks/startup.svg" width="225" height="198" alt="...">
+						</div>
+
+
+						<!--
+
+							All parent open navs are closed on click!
+							To ignore this feature, add .js-ignore to .nav-deep
+
+							Links height (paddings):
+								.nav-deep-xs
+								.nav-deep-md  	(default, ununsed class)
+								.nav-deep-sm
+								.nav-deep-lg
+						-->
+						<nav class="nav-deep nav-deep-dark nav-deep-xs pb-5">
+							<ul class="nav flex-column">
+
+								<li class="nav-title mt-3">
+									<h6 class="fs--14 mb-1 font-weight-medium text-warning">
+										HOW DO I START?
+									</h6>
+								</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="index.html">
+											Introduction
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="changelog.html">
+											<span class="badge float-end mt-1">v3.1.2</span>
+											Changelog
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="credits.html">
+											Credits
+										</a>
+									</li>
+
+
+
+
+
+								<li class="nav-title mt-5">
+									<h6 class="fs--14 mb-1 font-weight-medium text-warning">
+										COMPONENTS &amp; BLOCKS
+									</h6>
+								</li>
+
+								<li class="nav-item">
+									<a class="nav-link" href="#">
+										<span class="group-icon float-end">
+											<i class="fi fi-arrow-end-slim"></i>
+											<i class="fi fi-arrow-down-slim"></i>
+										</span>
+										<b>Components</b>
+									</a>
+								
+									<ul class="nav flex-column">
+
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-alerts.html">
+												Alerts
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-accordions.html">
+												Accordions
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-badges.html">
+												Badges
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-breadcrumbs.html">
+												Breadcrumbs
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-buttons.html">
+												Buttons
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-cards.html">
+												Cards
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-carousel.html">
+												Carousel
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-collapse.html">
+												Collapse
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-dropdowns.html">
+												Dropdowns
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-forms.html">
+												Forms
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-icons.html">
+												Icons
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-flags.html">
+												Flags
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-lists.html">
+												Lists
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-media.html">
+												Media
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-modals.html">
+												Modals
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-navs.html">
+												Navs
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-navigation.html">
+												Navigation
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-pagination.html">
+												Pagination
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-progress.html">
+												Progress
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-popover.html">
+												Popover
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-scrollspy.html">
+												Scrollspy
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-spinners.html">
+												Spinners
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-tabs.html">
+												Tabs
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-tables.html">
+												Tables
+											</a>
+										</li>
+
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-timeline.html">
+												Timeline
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-thumbnails.html">
+												Thumbnails
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-tooltip.html">
+												Tooltip
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-typography.html">
+												Typography
+											</a>
+										</li>
+
+									</ul>
+								</li>
+
+
+
+
+
+									<li class="nav-item">
+										<a class="nav-link" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											<b>Quick Blocks</b>
+										</a>
+
+										<ul class="nav flex-column">
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-testimonials.html">
+													Testimonials
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-pricing.html">
+													Pricing
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-cta.html">
+													Call to action
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-brands.html">
+													Brands
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-various.html">
+													Various
+												</a>
+											</li>
+										</ul>
+
+									</li>
+
+
+
+									<li class="nav-item">
+										<a class="nav-link" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											<b>Utilities</b>
+										</a>
+
+										<ul class="nav flex-column">
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-text-backgrounds.html">
+													Text &amp; Backgrouns
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-text-color-extended.html">
+													Extended Text Color
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-borders.html">
+													Borders
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-shadows.html">
+													Box Shadows
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-font.html">
+													Font Size / Weight
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-width-height.html">
+													Width / Height
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-padding-margin.html">
+													Paddings / Margins
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-transition.html">
+													Transitions / Transforms
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-position.html">
+													Position
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-visibility.html">
+													Visibility
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-overlays.html">
+													Overlays &amp; Opacity
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-scroll.html">
+													Scroll &amp; Scrollbar
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-misc.html">
+													Miscellaneous
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-responsive.html">
+													Responsive
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-rtl.html">
+													RTL
+												</a>
+											</li>
+
+										</ul>
+									</li>
+
+		
+
+
+
+
+
+
+
+									<li class="nav-item">
+										<a class="nav-link" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											<b>Php / Forms</b>
+										</a>
+
+										<ul class="nav flex-column">
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="php-introduction.html">
+													Introduction
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="php-forms.html">
+													Contact Forms
+												</a>
+											</li>
+										</ul>
+
+									</li>
+
+
+
+
+
+
+
+
+
+
+
+
+									<li class="nav-item nav-item-extended overlay-dark overlay-opacity-2">
+										<a class="nav-link js-ajax" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-expand"></i>
+												<i class="fi fi-shrink"></i>
+											</span>
+											Predefined Layouts
+										</a>
+
+
+										<!-- extended item -->
+										<div class="aside-item d-flex flex-column bg-white shadow-xs w--350"><!-- .w-100 = full width -->
+											
+											<!-- header -->
+											<h3 class="fs--18 bg-light-soft p--15">
+												<button type="button" class="btn-aside-item-extended-close close fi fi-close fs--20 mt--n4 float-end"></button>
+												<i class="fi fi-heart-slim float-start fs--18"></i> 
+												Ready to start
+											</h3>
+
+											<!-- extended item content -->
+											<div 	id="layout_list" 
+													data-ajax-url="_ajax/layout_list.html" 
+													class="js-ajax p-3 scrollable-vertical scrollable-styled-dark m--1">
+
+												<div class="text-center"><!-- ajax loading icon -->
+													<i class="fi fi-circle-spin fi-spin fs--30 text-muted"></i>
+												</div><!-- /ajax loading icon -->
+
+											</div>
+											<!-- /extended item content -->
+
+										</div>
+										<!-- /extended item -->
+
+									</li>
+
+
+
+
+
+								<li class="nav-title mt-5 active">
+									<h6 class="fs--14 mb-1 font-weight-medium text-warning">
+										SOW : CORE PLUGINS
+									</h6>
+								</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-introduction.html">
+											Introduction
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-header.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">7Kb</span>
+											SOW : Header
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-search-suggest.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">9Kb</span>
+											SOW : Search Suggest
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-input-suggest.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : Input Suggest
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-navigation.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">10Kb</span>
+											SOW : Ajax : Navigation
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-forms.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4Kb</span>
+											SOW : Ajax : Forms
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-content.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4Kb</span>
+											SOW : Ajax : Content
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-modal.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">3Kb</span>
+											SOW : Ajax : Modals
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-confirm.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">6Kb</span>
+											SOW : Ajax : Confirm
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-select.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4.5Kb</span>
+											SOW : Ajax : Select
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-form-validation.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : Form Validation
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-form-advanced.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">7Kb</span>
+											SOW : Form Advanced
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-file-upload.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">24Kb</span>
+											SOW : File Upload
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-checkall.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Check All
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-checkgroup.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Check Group
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-toasts.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4Kb</span>
+											SOW : Toasts
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-gdpr.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : GDPR Cookies
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-inline-search.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Inline Search
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-dropdown.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">3Kb</span>
+											SOW : Dropdowns
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-deep-navigation.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : Deep Navigation
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-btn-toggle.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2.5Kb</span>
+											SOW : Button Toggle
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-scroll-to.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Scroll To
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-timer-autohide.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Timer Autohide
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-timer-countdown.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : Timer Countdown
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-gfont.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1.5Kb</span>
+											SOW : Google Font
+										</a>
+									</li>
+                                    <li class="nav-item">
+                                        <a class="nav-link js-ajax" href="plugins-sow-lazyload.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+                                            SOW : Lazyload
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link js-ajax" href="plugins-sow-count-animate.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4.1Kb</span>
+                                            SOW : Count Animate
+                                        </a>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a class="nav-link js-ajax" href="plugins-sow-utils.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+                                            SOW : Utils
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link js-ajax" href="plugins-sow-service-worker.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+                                            SOW : Service Worker!
+                                        </a>
+                                    </li>
+									<li class="nav-item pl--15 pr--15">
+										<div class="bg-indigo text-gray-500 fs--13 p-2 rounded">
+											SOW Core plugins are developed from scratch. 
+											You can remove, disable or use your own!
+										</div>
+									</li>
+
+
+
+
+
+								<li class="nav-title mt-5">
+									<h6 class="fs--14 mb-1 font-weight-medium text-warning">
+										VENDOR PLUGINS
+									</h6>
+								</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-bootstrap-select.html">
+											Vendor : Bootstrap Select
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-flickity.html">
+											Vendor : Flickity Slider
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-swiper.html">
+											Vendor : Swiper Slider
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-jarallax.html">
+											Vendor : Jaxallax
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-sticky-kit.html">
+											Vendor : Sticky Kit
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-fancybox.html">
+											Vendor : Fancybox
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-photoswipe.html">
+											Vendor : Photoswipe
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="components-map.html">
+											Vendor : Map
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-slimscroll.html">
+											Vendor : Slimscroll
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-nestable.html">
+											Vendor : Nestable
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											Vendor : Pickers
+										</a>
+										<ul class="nav flex-column">
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-datepicker.html">
+													Datepicker
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-rangepicker.html">
+													Rangepicker
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-colorpicker.html">
+													Colorpicker
+												</a>
+											</li>
+										</ul>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											Vendor : Charts
+										</a>
+										<ul class="nav flex-column">
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-chartjs.html">
+													Chart.js
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-flot.html">
+													Flot Chart
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-easypie.html">
+													Easy Pie Chart
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-sparkline.html">
+													Sparkline Charts
+												</a>
+											</li>
+										</ul>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											Vendor : Editors
+										</a>
+										<ul class="nav flex-column">
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-medium-editor.html">
+													Medium Editor
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-markdown.html">
+													Markdown Editor
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-summernote.html">
+													Summernote
+												</a>
+											</li>
+										</ul>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-datatable.html">
+											Vendor : Datatable
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-fullcalendar.html">
+											Vendor : Fullcalendar
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-prismjs.html">
+											Vendor : Prismjs (Highlighter)
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-aos.html">
+											Vendor : AOS
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-typed.html">
+											Vendor : Typed
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-sortablejs.html">
+											Vendor : Sortablejs
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-cocoen.html">
+											Vendor : Cocoen <small>(Img Compare)</small>
+										</a>
+									</li>
+
+
+
+
+
+
+
+
+
+							</ul>
+						</nav>
+
+
+
+					</div>
+				</aside>
+				<!-- /SIDEBAR -->
+
+
+				<!-- MIDDLE -->
+				<div id="middle" class="flex-fill">
+
+
+
+					<header class="mb-5">
+						<h1 class="h2 mb-0 text-gray-700">
+							SOW : Utils
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--14">
+								<li class="breadcrumb-item active" aria-current="page">
+									Smarty documentation
+								</li>
+							</ol>
+						</nav>
+
+					</header>
+
+
+
+					<div class="row d-flex flex-fill align-items-start">
+
+						<div class="col align-self-start">
+
+							<!-- scss path -->
+							<div class="alert border p--20 text-gray-600">
+								SOW = Step Of Web (Smarty author).<br>
+								SOW plugins are part of <a href="https://wrapbootstrap.com/theme/smarty-website-admin-rtl-WB02DSN1B" class="link-muted" target="smarty">Smarty</a> Core, written from scratch!
+							</div>
+							<!-- /scss path -->
+
+
+
+
+							<section>
+
+								<header class="d-flex b-0">
+
+									<h2 class="h5 text-truncate w-100">
+										Info
+									</h2>
+
+								</header>
+
+
+								<div class="my-4">
+
+									<p class="lead">
+										A collection of useful tools, as light as possible!
+									</p>
+
+									<p class="lead">
+										Main purpose: cut backend coding &amp; processing!<br>
+										Example: avatar initials would be parsed in a backend loop! Why not doing this on client side?
+									</p>
+
+									<pre class="mt--50"><code class="language-js">
+/* 
+	:: Plugin File
+	src/js/sow.core/sow.utils.js
+
+	:: Plugin Init
+*/	$.SOW.core.utils.init();
+									</code></pre>
+
+								</div>
+
+
+							</section>
+
+
+
+
+
+
+							<section id="section_slide">
+
+								<header class="b-0">
+
+									<h2 class="h5 text-truncate w-100">
+										Simple Background Slideshow
+									</h2>
+									<p>
+										Simple background image slideshow (as cover) written from scratch (1.5Kb final size)! Mobile supported with different set of images!<br>
+										Please note: Images are loaded on page load, so is not recommended to use too many images or too many slideshows on the same page! Depends on total size!<br><br>
+										There are no controlls! Just a simple slideshow!
+									</p>
+
+								</header>
+
+
+								<div class="my-4">
+
+									<div class="clearfix">
+										<div class="float-start mx-3">
+											<div class="sow-util-slideshow position-relative w--300 h--300 overlay-dark overlay-opacity-3" 
+												data-sow-slideshow-interval="3000" 
+												data-sow-slideshow-fade-delay="1500" 
+												data-sow-slideshow="
+													../demo.files/images/unsplash/restaurant/thumb_600/jade-wulfraat-sIzym-INcvk-unsplash-min-min.jpg,
+													../demo.files/images/unsplash/restaurant/thumb_600/jade-wulfraat-UaOPeqfdW1c-unsplash-min-min.jpg,
+													../demo.files/images/unsplash/restaurant/thumb_600/jade-wulfraat-yXnPoTkkY94-unsplash-min-min.jpg
+												">
+											</div>
+											<code class="fs--13">
+												data-sow-slideshow-interval="3000" 
+											<br>
+												data-sow-slideshow-fade-delay="1500" 
+											</code>
+										</div>
+
+										<div class="float-start mx-3">
+											<div class="sow-util-slideshow position-relative w--500 h--300 overlay-dark overlay-opacity-3" 
+												data-sow-slideshow-interval="8000" 
+												data-sow-slideshow-fade-delay="3000" 
+												data-sow-slideshow="
+													../demo.files/images/unsplash/restaurant/thumb_600/jade-wulfraat-sIzym-INcvk-unsplash-min-min.jpg,
+													../demo.files/images/unsplash/restaurant/thumb_600/jade-wulfraat-UaOPeqfdW1c-unsplash-min-min.jpg,
+													../demo.files/images/unsplash/restaurant/thumb_600/jade-wulfraat-yXnPoTkkY94-unsplash-min-min.jpg
+												">
+											</div>
+											<code class="fs--13">
+												data-sow-slideshow-interval="8000" 
+											<br>
+												data-sow-slideshow-fade-delay="3000" 
+											</code>
+										</div>
+									</div>
+
+
+
+									<pre class="mt--50"><code class="language-html">&lt;!-- 
+Please note, position-relative of main container, if something goes wrong 
+Anjust overlay (darknes or lightness if .overlay-light used instead):	
+	overlay-opacity-[0-9]
+
+Also note: in this example, we have 300px width/height! 
+Because is a background image, width/height should be set/known.
+
+Real example of this script: <a href="../niche.restaurant.html" target="smarty">niche.restaurant.html</a>
+-->
+&lt;div class="sow-util-slideshow position-relative w--300 h--300 overlay-dark overlay-opacity-3" 
+	data-sow-slideshow-interval="3000" 
+	data-sow-slideshow-fade-delay="1500" 
+	data-sow-slideshow="
+		demo.files/images/unsplash/restaurant/thumb_600/jade-wulfraat-sIzym-INcvk-unsplash-min-min.jpg,
+		demo.files/images/unsplash/restaurant/thumb_600/jade-wulfraat-UaOPeqfdW1c-unsplash-min-min.jpg,
+		.demo.files/images/unsplash/restaurant/thumb_600/jade-wulfraat-yXnPoTkkY94-unsplash-min-min.jpg
+	">
+&lt;/div>
+
+
+&lt;!-- 
+
+	Using mobile attribute for smaller image size 
+	(~768px is ok) 
+
+-->
+&lt;div class="sow-util-slideshow position-relative w--300 h--300 overlay-dark overlay-opacity-3" 
+	data-sow-slideshow-interval="3000" 
+	data-sow-slideshow-fade-delay="1500" 
+	data-sow-slideshow="
+		demo.files/images/unsplash/restaurant/jade-wulfraat-sIzym-INcvk-unsplash-min-min.jpg,
+		demo.files/images/unsplash/restaurant/jade-wulfraat-UaOPeqfdW1c-unsplash-min-min.jpg,
+		demo.files/images/unsplash/restaurant/jade-wulfraat-yXnPoTkkY94-unsplash-min-min.jpg
+	"
+	data-sow-slideshow-xs="
+		demo.files/images/unsplash/restaurant/thumb_600/jade-wulfraat-sIzym-INcvk-unsplash-min-min.jpg,
+		demo.files/images/unsplash/restaurant/thumb_600/jade-wulfraat-UaOPeqfdW1c-unsplash-min-min.jpg,
+		demo.files/images/unsplash/restaurant/thumb_600/jade-wulfraat-yXnPoTkkY94-unsplash-min-min.jpg
+	"
+	>
+&lt;/div>
+									</code></pre>
+
+								</div>
+
+
+							</section>
+
+
+
+
+
+
+
+							<section id="section_1">
+
+								<header class="b-0">
+
+									<h2 class="h5 text-truncate w-100">
+										Initials by attribute
+									</h2>
+									<p>Extract the full name and inject the initials only.</p>
+
+								</header>
+
+
+								<div class="my-4">
+
+									<div class="row">
+
+										<div class="col-12 col-lg-6">
+
+											<h6>Manual/static color</h6>
+											<span data-initials="John Doe" class="sow-util-initials bg-danger-soft h5 w--40 h--40 rounded d-inline-flex justify-content-center align-items-center">
+												<i class="fi fi-circle-spin fi-spin"></i>
+											</span>
+
+											<span data-initials="Felicia M. Doe" class="sow-util-initials bg-warning-soft h5 w--50 h--50 rounded d-inline-flex justify-content-center align-items-center">
+												<i class="fi fi-circle-spin fi-spin"></i>
+											</span>
+
+											<span data-initials="Mellisa Cordell" class="sow-util-initials bg-primary-soft h5 w--60 h--60 rounded d-inline-flex justify-content-center align-items-center">
+												<i class="fi fi-circle-spin fi-spin"></i>
+											</span>
+
+											<span data-initials="Peter Sam" class="sow-util-initials bg-secondary-soft h5 w--70 h--70 rounded d-inline-flex justify-content-center align-items-center">
+												<i class="fi fi-circle-spin fi-spin"></i>
+											</span>
+
+											<span data-initials="Simba Lowell" class="sow-util-initials bg-info-soft h5 w--80 h--80 rounded d-inline-flex justify-content-center align-items-center">
+												<i class="fi fi-circle-spin fi-spin"></i>
+											</span>
+
+											<hr>
+
+											<h6>Asign color by name</h6>
+											<span data-initials="John Doe" data-assign-color="true" class="sow-util-initials bg-light h5 w--40 h--40 rounded d-inline-flex justify-content-center align-items-center">
+												<i class="fi fi-circle-spin fi-spin"></i>
+											</span>
+
+											<span data-initials="Felicia M. Doe" data-assign-color="true" class="sow-util-initials bg-light h5 w--50 h--50 rounded d-inline-flex justify-content-center align-items-center">
+												<i class="fi fi-circle-spin fi-spin"></i>
+											</span>
+
+											<span data-initials="Mellisa Cordell" data-assign-color="true" class="sow-util-initials bg-light h5 w--60 h--60 rounded d-inline-flex justify-content-center align-items-center">
+												<i class="fi fi-circle-spin fi-spin"></i>
+											</span>
+
+											<span data-initials="Peter Sam" data-assign-color="true" class="sow-util-initials bg-light h5 w--70 h--70 rounded d-inline-flex justify-content-center align-items-center">
+												<i class="fi fi-circle-spin fi-spin"></i>
+											</span>
+
+											<span data-initials="Simba Lowell" data-assign-color="true" class="sow-util-initials bg-light h5 w--80 h--80 rounded d-inline-flex justify-content-center align-items-center">
+												<i class="fi fi-circle-spin fi-spin"></i>
+											</span>
+
+										</div>
+
+										<div class="col-12 col-lg-6">
+
+											<h6>Manual/static color</h6>
+											<span data-initials="John Doe" class="sow-util-initials bg-danger-soft h5 w--40 h--40 rounded-circle d-inline-flex justify-content-center align-items-center">
+												<i class="fi fi-circle-spin fi-spin"></i>
+											</span>
+
+											<span data-initials="Felicia M. Doe" class="sow-util-initials bg-warning-soft h5 w--50 h--50 rounded-circle d-inline-flex justify-content-center align-items-center">
+												<i class="fi fi-circle-spin fi-spin"></i>
+											</span>
+
+											<span data-initials="Mellisa Cordell" class="sow-util-initials bg-primary-soft h5 w--60 h--60 rounded-circle d-inline-flex justify-content-center align-items-center">
+												<i class="fi fi-circle-spin fi-spin"></i>
+											</span>
+
+											<span data-initials="Peter Sam" class="sow-util-initials bg-secondary-soft h5 w--70 h--70 rounded-circle d-inline-flex justify-content-center align-items-center">
+												<i class="fi fi-circle-spin fi-spin"></i>
+											</span>
+
+											<span data-initials="Simba Lowell" class="sow-util-initials bg-info-soft h5 w--80 h--80 rounded-circle d-inline-flex justify-content-center align-items-center">
+												<i class="fi fi-circle-spin fi-spin"></i>
+											</span>
+
+											<hr>
+
+											<h6>Asign color by name</h6>
+											<span data-initials="John Doe" data-assign-color="true" class="sow-util-initials bg-light h5 w--40 h--40 rounded-circle d-inline-flex justify-content-center align-items-center">
+												<i class="fi fi-circle-spin fi-spin"></i>
+											</span>
+
+											<span data-initials="Felicia M. Doe" data-assign-color="true" class="sow-util-initials bg-light h5 w--50 h--50 rounded-circle d-inline-flex justify-content-center align-items-center">
+												<i class="fi fi-circle-spin fi-spin"></i>
+											</span>
+
+											<span data-initials="Mellisa Cordell" data-assign-color="true" class="sow-util-initials bg-light h5 w--60 h--60 rounded-circle d-inline-flex justify-content-center align-items-center">
+												<i class="fi fi-circle-spin fi-spin"></i>
+											</span>
+
+											<span data-initials="Peter Sam" data-assign-color="true" class="sow-util-initials bg-light h5 w--70 h--70 rounded-circle d-inline-flex justify-content-center align-items-center">
+												<i class="fi fi-circle-spin fi-spin"></i>
+											</span>
+
+											<span data-initials="Simba Lowell" data-assign-color="true" class="sow-util-initials bg-light h5 w--80 h--80 rounded-circle d-inline-flex justify-content-center align-items-center">
+												<i class="fi fi-circle-spin fi-spin"></i>
+											</span>
+
+										</div>
+
+									</div>
+
+
+
+									<pre class="mt--50"><code class="language-html">&lt;!-- circle elements: replace .rounded with .rounded-circle -->
+&lt;span data-initials="John Doe" class="sow-util-initials bg-danger-soft rounded h5 w--40 h--40 d-inline-flex justify-content-center align-items-center">
+	&lt;i class="fi fi-circle-spin fi-spin">&lt;/i>
+&lt;/span>
+
+
+&lt;!-- 
+	Assign color by name 
+
+	by default we set .bg-light as a default background color!
+	Is replaced by the plugin with actual name color!
+-->
+&lt;span data-initials="John Doe" data-assign-color="true" class="sow-util-initials bg-light rounded h5 w--40 h--40 d-inline-flex justify-content-center align-items-center">
+	&lt;i class="fi fi-circle-spin fi-spin">&lt;/i>
+&lt;/span>
+									</code></pre>
+
+								</div>
+
+
+							</section>
+
+
+
+
+
+
+
+
+
+
+
+
+							<section id="section_2">
+
+								<header class="b-0">
+
+									<h2 class="h5 text-truncate w-100">
+										Cookies by attribute
+									</h2>
+									<p>Add, delete and toggle cookies using a button/link</p>
+
+								</header>
+
+
+								<div>
+
+									<a href="#" class="sow-util-cookie btn btn-primary btn-sm btn-soft"
+										data-cookie-set="_test_" 
+										data-cookie-val="1" 
+										data-cookie-expire="1" 
+
+										data-toast-msg-set="Set: _test_" 
+										data-toast-msg-pos="top-center" 
+										data-toast-msg-type-set="success-soft">
+										Set Cookie
+									</a>
+
+
+									<a href="#" class="sow-util-cookie btn btn-danger btn-sm btn-soft"
+										data-cookie-del="_test_" 
+
+										data-toast-msg-del="Deleted: _test_" 
+										data-toast-msg-pos="top-center" 
+										data-toast-msg-type-del="danger-soft">
+										Set Delete
+									</a>
+
+
+									<a href="#" class="sow-util-cookie btn btn-warning btn-sm btn-soft"
+										data-cookie-toggle="_test_" 
+										data-cookie-val="1" 
+										data-cookie-expire="1" 
+
+										data-toast-msg-set="Set: _test_" 
+										data-toast-msg-del="Deleted: _test_" 
+										data-toast-msg-pos="top-center"
+										data-toast-msg-type-set="success-soft" 
+										data-toast-msg-type-del="danger-soft">
+										Toggle
+									</a>
+
+
+									<pre class="mt-5"><code class="language-html">&lt;!-- 
+	data-cookie-val  		is set by defatul to "1" if not provided!
+	data-cookie-expire 		(in days) is set by default to 7 if not pvided!
+	data-cookie-path="/" 		(cookie path, default "/")
+
+Note: toast is optional!
+	data-toast-msg-type-set="primary|success|warning|danger" (default: success)
+	data-toast-msg-type-del="primary|success|warning|danger" (default: success)
+-->
+
+
+
+&lt;!-- add cookie -->
+&lt;a href="#" class="sow-util-cookie"
+	data-cookie-set="_test_" 
+	data-cookie-val="1" 
+	data-cookie-expire="1" 
+
+	data-toast-msg-set="Set: _test_" 
+	data-toast-msg-pos="top-center" 
+	data-toast-msg-type-set="success-soft">
+	Set Cookie
+&lt;/a>
+
+&lt;!-- delete cookie -->
+&lt;a href="#" class="sow-util-cookie"
+	data-cookie-del="_test_" 
+
+	data-toast-msg-del="Deleted: _test_" 
+	data-toast-msg-pos="top-center" 
+	data-toast-msg-type-del="danger-soft">
+	Set Delete
+&lt;/a>
+
+&lt;!-- toggle cookie -->
+&lt;a href="#" class="sow-util-cookie"
+	data-cookie-toggle="_test_" 
+	data-cookie-val="1" 
+	data-cookie-expire="1" 
+
+	data-toast-msg-set="Set: _test_" 
+	data-toast-msg-del="Deleted: _test_" 
+	data-toast-msg-pos="top-center"
+	data-toast-msg-type-set="success-soft" 
+	data-toast-msg-type-del="danger-soft">
+	Toggle
+&lt;/a>
+									</code></pre>
+									<pre class="mt-3"><code class="language-js">
+
+	/*
+	programatically 
+	Cookie Plugin is added as Core in Smarty:
+	https://github.com/js-cookie/js-cookie
+	So you can also use directly in your app:
+	*/
+
+	Cookies.set('key', 'val', { expires: 365, path: '/' });
+	Cookies.get('key');
+	Cookies.remove('key', { path: '/' });
+
+
+	/*
+		IMPORTANT! 'SameSite=None; secure'
+		You can pass the Google params in path.
+		And you can use the global variable:
+		$.SOW.globals.cookie_secure
+	*/
+
+	Cookies.set('key', 'val', { expires: 365, path: $.SOW.globals.cookie_secure });
+	Cookies.get('key', { path: $.SOW.globals.cookie_secure });
+	Cookies.remove('key', { path: $.SOW.globals.cookie_secure });
+									</code></pre>
+
+								</div>
+
+
+							</section>
+
+
+
+
+
+
+
+
+
+
+							<section id="section_3">
+
+								<header class="b-0">
+
+									<h2 class="h5 text-truncate w-100">
+										Time ago
+									</h2>
+
+								</header>
+
+
+								<div class="my-4">
+
+									<abbr class="sow-util-timeago" data-time="2011-12-17T09:24:17Z"></abbr> 
+
+									<hr>
+
+									<abbr class="sow-util-timeago" data-time="December 17, 2012"></abbr>
+
+									<hr>
+
+									<time class="sow-util-timeago" 
+										datetime="2019-09-17T23:59:17" 
+										data-live="true" 
+										data-lang='{
+											"seconds" 		: "less than a minute ago",
+											"minute" 		: "about a minute ago",
+											"minutes" 		: "%d minutes ago",
+											"hour" 			: "about an hour ago",
+											"hours" 		: "about %d hours ago",
+											"day" 			: "a day ago",
+											"days" 			: "%d days ago",
+											"month" 		: "about a month ago",
+											"months" 		: "%d months ago",
+											"year" 			: "about a year ago",
+											"years" 		: "%d years ago"
+										}'></time>
+
+									<hr>
+
+									<time class="sow-util-timeago" datetime="2013-01-17T09:24:17Z"></time>
+
+									<hr>
+
+									<span class="sow-util-timeago" data-time="1372218564"></span>
+
+									<pre class="mt--50"><code class="language-html">
+&lt;!-- 
+	WAYS TO SET THE LANGUAGE 
+	(default is already english ; can be changed in gulp.config__core.js)
+
+		1. by data attribute, as you can see the working example below (will overwrite anything)
+		2. by javascript
+			&lt;script>
+				var sow_util_timeago_lang = {
+					seconds 		: "less than a minute ago",
+					minute 			: "about a minute ago",
+					minutes 		: "%d minutes ago",
+					hour 			: "about an hour ago",
+					hours 			: "about %d hours ago",
+					day 			: "a day ago",
+					days 			: "%d days ago",
+					month 			: "about a month ago",
+					months 			: "%d months ago",
+					year 			: "about a year ago",
+					years 			: "%d years ago"
+				}
+			&lt;/script>
+
+		3. by empty span tag
+				&lt;span class="hide sow-util-timeago-lang" data-lang='{
+					"seconds" 		: "less than a minute ago",
+					"minute" 		: "about a minute ago",
+					"minutes" 		: "%d minutes ago",
+					"hour" 			: "about an hour ago",
+					"hours" 		: "about %d hours ago",
+					"day" 			: "a day ago",
+					"days" 			: "%d days ago",
+					"month" 		: "about a month ago",
+					"months" 		: "%d months ago",
+					"year" 			: "about a year ago",
+					"years" 		: "%d years ago"
+				}'>
+
+		2 &amp; 3 &ndash; used for multilanguage portal, if multiple timeago are used.
+		Set it once anywhere, for each page that timeago is required!
+		You can also change the default (english) in gulp.config__core.js and rebuild using GULP
+
+	
+
+	data-live="true" 	will update in realtime (1min. loop)
+
+-->
+&lt;time class="sow-util-timeago" 
+	datetime="2019-09-17T23:59:17" 
+	data-live="true" 
+	data-lang='{
+		"seconds" 		: "less than a minute ago",
+		"minute" 		: "about a minute ago",
+		"minutes" 		: "%d minutes ago",
+		"hour" 			: "about an hour ago",
+		"hours" 		: "about %d hours ago",
+		"day" 			: "a day ago",
+		"days" 			: "%d days ago",
+		"month" 		: "about a month ago",
+		"months" 		: "%d months ago",
+		"year" 			: "about a year ago",
+		"years" 		: "%d years ago"
+	}'>&lt;/time>
+
+
+&lt;!-- using abbr -->
+&lt;abbr class="sow-util-timeago" data-time="December 17, 2012">December 17, 2012&lt;/abbr>
+&lt;abbr class="sow-util-timeago" data-time="2011-12-17T09:24:17Z">&lt;/abbr> 
+
+&lt;!-- using span (and timestamp example) -->
+&lt;span class="sow-util-timeago" data-time="1372218564">&lt;/span>
+
+Note: any date format is working on any tag: span, abbr, etc.
+Here are just few examples of using them!
+
+									</code></pre>
+
+								</div>
+
+
+							</section>
+
+
+
+
+
+
+
+							<section id="section_4">
+
+								<header class="b-0">
+
+									<h2 class="h5 text-truncate w-100">
+										Element Cloner
+										<small class="fs--13 d-block text-success">Hint: create some clones and then drag to reorder</small>
+									</h2>
+
+								</header>
+
+
+								<div class="container my-4">
+
+
+									<div class="row">
+										<div class="col-xl-6">
+											
+											<h6 class="mt-4">Self Cloning</h6>
+											<div id="container_clone_example">
+
+												<div class="input-group mb-3">
+													<input type="text" class="form-control" placeholder="Recipient's username">
+
+													<div class="input-group-append">
+														<a href="#" 
+															data-clone-target="#container_clone_example" 
+															data-clone-destination="#container_clones"  
+															data-clone-sortable="true" 
+															data-clone-limit="0" 
+															class="sow-util-cloner btn btn-outline-secondary">
+															<!-- 
+																note: icon class replaced when cloned
+																attribute not limited to icon - can be added to any element inside clone
+															 -->
+															<i class="fi fi-plus m-0" data-cloned-replace-class="fi fi-close m-0"></i>
+														</a>
+													</div>
+												</div>
+
+											</div>
+
+											<div id="container_clones"><!-- clones appended here --></div>
+
+										</div>
+
+
+										<div class="col-xl-6">
+											
+											<h6>Outside Cloning (hidden element as `template`)</h6>
+											<small class="text-muted">Note: this example is simple, no buttons</small>
+											
+											<br>
+											<br>
+											<a href="#" 
+
+												data-clone-target="#container_tpl_hidden>div" 
+												data-clone-destination="#container_clones2"  
+												data-clone-sortable="true" 
+												data-clone-limit="5" 
+
+												class="sow-util-cloner">
+												ADD ELEMENT
+											</a>
+
+											<div id="container_clones2"><!-- clones appended here --></div>
+
+											<!-- hidden container containing the `template` to be cloned -->
+											<div id="container_tpl_hidden" class="hide">
+												
+												<!-- this will be cloned -->
+												<div class="clearfix mb-3"><!-- always wrap elements inside a div/container -->
+													<input type="text" class="form-control" data-cloned-replace-class="form-control rangepicker">
+													<a href="#" class="btn-clone-remove">remove</a>
+												</div>
+
+											</div>
+
+										</div>
+
+									</div>
+
+									<pre class="mt-7"><code class="language-html">
+&lt;!-- 
+	
+	Attributes 
+
+	data-clone-target="..."  				what to clone
+	data-clone-destination="..."  		where to append the clone
+	data-clone-sortable="true" 				true = reorder on drag/drop
+	data-clone-limit="0"  				max no. of clones
+	data-clone-method="append"  			append|prepend (default: append)
+
+	.sow-util-cloner class is required on "+" button/link
+	.btn-clone-remove class is required only for the second example (not for self cloning)
+
+
+	IMPORTANT! (see example 2)
+		If a field is datepicker, colorpicker (or anything else),
+		the plugin should know what to reinit for each clone! Will not work for "self cloning"
+		so the second example with a hidden element should be used instead.
+
+		We can't add .datepicker class directly because will be initialized on
+		page load and the clone will be wrong! So we add this attribute instead of a direct class:
+	 		data-cloned-replace-class="datepicker"
+
+	 Other examples:
+	 	data-cloned-replace-class="bs-select"	(for selects)
+	 	data-cloned-replace-class="rangepicker"
+	 	data-cloned-replace-class="colorpicker"
+	 	... and so on
+-->
+
+
+
+
+
+&lt;!-- 1. Self Cloning -->
+&lt;div id="container_clone_example">
+
+	&lt;div class="input-group mb-3">
+		&lt;input type="text" class="form-control" placeholder="Recipient's username">
+
+		&lt;div class="input-group-append">
+			&lt;a href="#" 
+
+				data-clone-target="#container_clone_example" 
+				data-clone-destination="#container_clones"  
+				data-clone-sortable="true" 
+				data-clone-limit="0" 
+			
+				class="sow-util-cloner btn btn-outline-secondary">
+				&lt;!-- 
+					note: icon class replaced when cloned
+					attribute not limited to icon - can be added to any element inside clone
+				 -->
+				&lt;i class="fi fi-plus m-0" data-cloned-replace-class="fi fi-close m-0">&lt;/i>
+			&lt;/a>
+		&lt;/div>
+	&lt;/div>
+
+&lt;/div>
+
+&lt;div id="container_clones">&lt;!-- clones appended here -->&lt;/div>
+									</code></pre>
+
+
+									<pre class="mt--50"><code class="language-html">
+&lt;!-- 2. Outside Cloning (hidden element as `template`) -->
+&lt;a href="#" 
+
+	data-clone-target="#container_tpl_hidden>div" 
+	data-clone-destination="#container_clones2"  
+	data-clone-sortable="true" 
+	data-clone-limit="5" 
+
+	class="sow-util-cloner">
+	ADD ELEMENT
+&lt;/a>
+
+&lt;div id="container_clones2">&lt;!-- clones appended here -->&lt;/div>
+
+&lt;!-- hidden container containing the `template` to be cloned -->
+&lt;div id="container_tpl_hidden" class="hide">
+	
+	&lt;!-- this will be cloned -->
+	&lt;div class="clearfix mb-3">&lt;!-- always wrap elements inside a div/container -->
+		&lt;input type="text" class="form-control" data-cloned-replace-class="form-control rangepicker">
+		&lt;a href="#" class="btn-clone-remove">remove&lt;/a>
+	&lt;/div>
+
+&lt;/div>
+									</code></pre>
+
+									<pre class="mt--50"><code class="language-html">&lt;!-- PREADDED ITEMS 
+Preadded items should be present inside the clone container and 
+this is the strucuture (for the first example):
+-->
+&lt;div id="container_clones">
+	&lt;div class="js-cloned">
+
+		&lt;input type="text" class="form-control">
+
+		&lt;a href="#" data-clone-target="#container_clone_example">remove&lt;/a>
+
+	&lt;/div>
+&lt;/div>
+									</code></pre>
+								</div>
+
+
+							</section>
+
+
+
+
+
+
+
+
+							<section id="section_4a">
+
+								<header class="b-0">
+
+									<h2 class="h5 text-truncate w-100">
+										Advanced Group Cloner
+										<small class="fs--13 d-block text-success">Hint: type min. 3 chars in "Product Search"</small>
+									</h2>
+
+								</header>
+
+
+								<div class="container my-4">
+
+
+
+									<!--
+
+										CLONE MAIN CONTAINER
+
+									-->
+									<div id="clone_group_list" class="row sortable">
+
+										<!--
+
+											PREADDED
+
+										-->
+										<div class="col-12 col-lg-6 mt-3 py-3 rounded js-cloned">
+
+											<div class="border border-primary rounded border-dashed p--15">
+
+												<!-- header -->
+												<div class="clearfix mb-2 sortable-handle">
+
+													<!-- on/off -->
+													<label class="form-switch form-switch-pill form-switch-primary">
+														<input type="checkbox" value="1" checked="" name="group_on[0]">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Enable
+													</label>
+
+													<!-- remove button -->
+													<a href="#" class="sow-util-cloner close mt--n8 float-end" data-clone-target="#clone_group_list" tabindex="-1">
+														<i class="fi fi-close m-0"></i>
+													</a>
+
+												</div>
+
+												<!-- group name -->
+												<div class="form-label-group mb-3">
+													<input type="text" placeholder="Group Name" class="form-control" name="group_name[0]" value="">
+													<label>Group Name</label>
+													<small class="d-block text-gray-500">Example: <span class="font-weight-medium">Memory Upgrade</span></small>
+												</div>
+
+												<!-- 
+													See the console for Ajax request 
+
+													Params sent to URL:
+														{ajax: "true", action: "input_search", key: "_USER_KEYWORDS_", limit: 20}
+
+													Note: in this demo, there are always the same results
+													because the active search is done by the backend!
+
+												-->
+												<div class="input-suggest-group">
+													<div class="form-label-group">
+
+														<!--
+															
+															NOTE:
+																data-name="product_id[]"
+																Is used to generate hidden input fields for each item added to the list
+																If not provided, name="..." attribute is used!
+																If none of them found, "item[]" is used by default for input hidden fields!
+														-->
+														<input type="text" class="form-control input-suggest" value="" 
+															data-cloned-replace-class="form-control input-suggest" 
+															placeholder="Product Search..." 
+															data-name="product_id[0][]" 
+															data-input-suggest-mode="append" 
+															data-input-suggest-typing-delay="300" 
+															data-input-suggest-typing-min-char="3" 
+															data-input-suggest-append-container="parent:group" 
+															data-input-suggest-max-items="2" 
+															data-input-suggest-ajax-url="_ajax/input_suggest_append.json" 
+															data-input-suggest-ajax-method="GET" 
+															data-input-suggest-ajax-limit="10">
+														<label>Product Search...</label>
+													</div>
+
+													<!-- append data -->
+													<div class="input-suggest-container sortable hide-empty mt-3"></div>
+												</div>
+
+											</div>
+										</div>
+
+									</div>
+
+
+
+
+									<!--
+
+										CLONE TEMPLATE
+										HIDDEN, USED BY "ADD GROUP" BUTTON
+
+									-->
+									<div id="configurator_tpl" class="hide">
+
+										<div class="col-12 col-lg-6 mt-3 py-3 rounded">
+
+											<div class="border border-primary rounded border-dashed p--15">
+
+												<!-- header -->
+												<div class="clearfix mb-2 sortable-handle">
+
+													<!-- on/off -->
+													<label class="form-switch form-switch-pill form-switch-primary">
+														<input type="checkbox" value="1" checked="" data-cloned-replace-name="group_on[$]">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Enable
+													</label>
+
+													<!-- remove button -->
+													<a href="#" class="sow-util-cloner close mt--n8 float-end" data-clone-target="#clone_group_list" tabindex="-1">
+														<i class="fi fi-close m-0"></i>
+													</a>
+
+												</div>
+
+												<!-- group name -->
+												<div class="form-label-group mb-3">
+													<input type="text" placeholder="Group Name" class="form-control" data-cloned-replace-name="group_name[$]" value="">
+													<label>Group Name</label>
+													<small class="d-block text-gray-500">Example: <span class="font-weight-medium">Memory Upgrade</span></small>
+												</div>
+
+												<!-- 
+													See the console for Ajax request 
+
+													Params sent to URL:
+														{ajax: "true", action: "input_search", key: "_USER_KEYWORDS_", limit: 20}
+
+													Note: in this demo, there are always the same results
+													because the active search is done by the backend!
+
+												-->
+												<div class="input-suggest-group">
+													<div class="form-label-group">
+
+														<!--
+															
+															NOTE:
+																data-name="product_id[]"
+																Is used to generate hidden input fields for each item added to the list
+																If not provided, name="..." attribute is used!
+																If none of them found, "item[]" is used by default for input hidden fields!
+														-->
+														<input type="text" class="form-control" value="" 
+															data-cloned-replace-class="form-control input-suggest" 
+															placeholder="Product Search..." 
+															data-name="product_id[]" 
+															data-cloned-replace-attribute-name="data-name" 
+															data-cloned-replace-attribute-value="product_id[$][]" 
+															data-input-suggest-mode="append" 
+															data-input-suggest-typing-delay="300" 
+															data-input-suggest-typing-min-char="3" 
+															data-input-suggest-append-container="parent:group" 
+															data-input-suggest-max-items="2" 
+															data-input-suggest-ajax-url="_ajax/input_suggest_append.json" 
+															data-input-suggest-ajax-method="GET" 
+															data-input-suggest-ajax-limit="10">
+														<label>Product Search...</label>
+													</div>
+
+													<!-- append data -->
+													<div class="input-suggest-container hide-empty mt-3" data-cloned-replace-class="input-suggest-container sortable hide-empty mt-3"></div>
+												</div>
+
+											</div>
+										</div>
+
+									</div>
+
+
+									<!--
+
+										CLONE TRIGGER
+
+									-->
+									<div class="mt-3">
+										<a href="#" 
+											data-clone-target="#configurator_tpl>div" 
+											data-clone-destination="#clone_group_list"	
+											data-clone-limit="5" 
+
+											class="sow-util-cloner btn btn-sm btn-secondary">
+											ADD GROUP
+										</a>
+									</div>
+
+
+
+
+
+									<pre class="mt-7"><code class="language-html">&lt;!--
+
+	NOTE
+
+		Because clonned elements are arrays, fields are replaced (input, select, etc)!
+
+			[$] is replaced with group number like this: [1], [2], etc
+			according to group number (each box is a group)
+
+			1. Replace form field name ; example:  name="group_on[1]"
+				data-cloned-replace-name="group_on[$]"
+
+			2. Replace data attribute (used by input-suggest in this example)
+				this will replace the attribute (similar to previous example, but for data attributes)
+				replaced attribute is used then to apply ajax rules - so is dynamically applied.
+			data-name="product_id[]" 
+			data-cloned-replace-attribute-name="data-name" 
+			data-cloned-replace-attribute-value="product_id[$][]" 
+
+
+		Please use inspect element to see it working.
+
+		Dependencies in this demo:
+			SOW : Input Suggest 
+			Vendor : Sortable
+
+-->
+
+
+
+
+
+&lt;!--
+
+	CLONE MAIN CONTAINER
+
+-->
+&lt;div id="clone_group_list" class="row sortable">
+
+	&lt;!--
+
+		PREADDED
+
+	-->
+	&lt;div class="col-12 col-lg-6 mt-3 py-3 rounded js-cloned">
+
+		&lt;div class="border border-primary rounded border-dashed p--15">
+
+			&lt;!-- header -->
+			&lt;div class="clearfix mb-2 sortable-handle">
+
+				&lt;!-- on/off -->
+				&lt;label class="form-switch form-switch-pill form-switch-primary">
+					&lt;input type="checkbox" value="1" checked="" name="group_on[0]">
+					&lt;i data-on="&#10004;" data-off="&#10005;">&lt;/i>
+					Enable
+				&lt;/label>
+
+				&lt;!-- remove button -->
+				&lt;a href="#" class="sow-util-cloner close mt--n8 float-end" data-clone-target="#clone_group_list" tabindex="-1">
+					&lt;i class="fi fi-close m-0">&lt;/i>
+				&lt;/a>
+
+			&lt;/div>
+
+			&lt;!-- group name -->
+			&lt;div class="form-label-group mb-3">
+				&lt;input type="text" placeholder="Group Name" class="form-control" name="group_name[0]" value="">
+				&lt;label>Group Name&lt;/label>
+				&lt;small class="d-block text-gray-500">Example: &lt;span class="font-weight-medium">Memory Upgrade&lt;/span>&lt;/small>
+			&lt;/div>
+
+			&lt;!-- 
+				See the console for Ajax request 
+
+				Params sent to URL:
+					{ajax: "true", action: "input_search", key: "_USER_KEYWORDS_", limit: 20}
+
+				Note: in this demo, there are always the same results
+				because the active search is done by the backend!
+
+			-->
+			&lt;div class="input-suggest-group">
+				&lt;div class="form-label-group">
+
+					&lt;!--
+						
+						NOTE:
+							data-name="product_id[]"
+							Is used to generate hidden input fields for each item added to the list
+							If not provided, name="..." attribute is used!
+							If none of them found, "item[]" is used by default for input hidden fields!
+					-->
+					&lt;input type="text" class="form-control input-suggest" value="" 
+						data-cloned-replace-class="form-control input-suggest" 
+						placeholder="Product Search..." 
+						data-name="product_id[0][]" 
+						data-input-suggest-mode="append" 
+						data-input-suggest-typing-delay="300" 
+						data-input-suggest-typing-min-char="3" 
+						data-input-suggest-append-container="parent:group" 
+						data-input-suggest-max-items="2" 
+						data-input-suggest-ajax-url="_ajax/input_suggest_append.json" 
+						data-input-suggest-ajax-method="GET" 
+						data-input-suggest-ajax-limit="10">
+					&lt;label>Product Search...&lt;/label>
+				&lt;/div>
+
+				&lt;!-- append data -->
+				&lt;div class="input-suggest-container sortable hide-empty mt-3">&lt;/div>
+			&lt;/div>
+
+		&lt;/div>
+	&lt;/div>
+
+&lt;/div>
+
+
+
+
+&lt;!--
+
+	CLONE TPL
+
+-->
+&lt;div id="configurator_tpl" class="hide">
+
+	&lt;div class="col-12 col-lg-6 mt-3 py-3 rounded">
+
+		&lt;div class="border border-primary rounded border-dashed p--15">
+
+			&lt;!-- header -->
+			&lt;div class="clearfix mb-2 sortable-handle">
+
+				&lt;!-- on/off -->
+				&lt;label class="form-switch form-switch-pill form-switch-primary">
+					&lt;input type="checkbox" value="1" checked="" name="group_on[]" data-cloned-replace-name="group_on[$]">
+					&lt;i data-on="&#10004;" data-off="&#10005;">&lt;/i>
+					Enable
+				&lt;/label>
+
+				&lt;!-- remove button -->
+				&lt;a href="#" class="sow-util-cloner close mt--n8 float-end" data-clone-target="#clone_group_list" tabindex="-1">
+					&lt;i class="fi fi-close m-0">&lt;/i>
+				&lt;/a>
+
+			&lt;/div>
+
+			&lt;!-- group name -->
+			&lt;div class="form-label-group mb-3">
+				&lt;input type="text" placeholder="Group Name" class="form-control" id="group_name" name="group_name[]" data-cloned-replace-name="group_name[$]" value="">
+				&lt;label for="group_name">Group Name&lt;/label>
+				&lt;small class="d-block text-gray-500">Example: &lt;span class="font-weight-medium">Memory Upgrade&lt;/span>&lt;/small>
+			&lt;/div>
+
+			&lt;!-- 
+				See the console for Ajax request 
+
+				Params sent to URL:
+					{ajax: "true", action: "input_search", key: "_USER_KEYWORDS_", limit: 20}
+
+				Note: in this demo, there are always the same results
+				because the active search is done by the backend!
+
+			-->
+			&lt;div class="input-suggest-group">
+				&lt;div class="form-label-group">
+
+					&lt;!--
+						
+						NOTE:
+							data-name="product_id[]"
+							Is used to generate hidden input fields for each item added to the list
+							If not provided, name="..." attribute is used!
+							If none of them found, "item[]" is used by default for input hidden fields!
+					-->
+					&lt;input type="text" class="form-control" value="" 
+						data-cloned-replace-class="form-control input-suggest" 
+						placeholder="Product Search..." 
+						data-name="product_id[]" 
+						data-cloned-replace-attribute-name="data-name" 
+						data-cloned-replace-attribute-value="product_id[$][]" 
+						data-input-suggest-mode="append" 
+						data-input-suggest-typing-delay="300" 
+						data-input-suggest-typing-min-char="3" 
+						data-input-suggest-append-container="parent:group" 
+						data-input-suggest-max-items="2" 
+						data-input-suggest-ajax-url="_ajax/input_suggest_append.json" 
+						data-input-suggest-ajax-method="GET" 
+						data-input-suggest-ajax-limit="10">
+					&lt;label>Product Search...&lt;/label>
+				&lt;/div>
+
+				&lt;!-- append data -->
+				&lt;div class="input-suggest-container hide-empty mt-3" data-cloned-replace-class="input-suggest-container sortable hide-empty mt-3">&lt;/div>
+			&lt;/div>
+
+		&lt;/div>
+	&lt;/div>
+
+&lt;/div>
+
+
+&lt;!--
+
+	CLONE TRIGGER
+
+-->
+&lt;div class="mt-3">
+	&lt;a href="#" 
+		data-clone-target="#configurator_tpl>div" 
+		data-clone-destination="#clone_group_list"	
+		data-clone-limit="5" 
+		class="sow-util-cloner btn btn-sm btn-secondary">
+		ADD GROUP
+	&lt;/a>
+&lt;/div>
+									</code></pre>
+								</div>
+
+
+							</section>
+
+
+
+
+
+							<section id="section_5">
+
+								<header class="b-0">
+
+									<h2 class="h5 text-truncate w-100">
+										Action Util
+									</h2>
+
+									<p>
+										Many util functions for a single button/checkbox/etc. Slightly similar with SOW : Button Toggle plugin but extended, more options and more flexible.
+									</p>
+
+								</header>
+
+
+								<div class="container my-4">
+
+
+									<div class="row">
+										<div class="col-xl-6">
+											
+
+											<!-- EMAIL ADDRESS -->
+											<div class="input-group-over">
+
+												<div class="form-label-group">
+													<input required readonly placeholder="Email Address" id="account_email" name="account[email]" type="email" class="form-control" value="john.doe@gmail.com">
+													<label for="account_email"><span class="text-danger">Email</span> Address</label>
+												</div>
+
+												<a id="email_edit_show" href="#!" class="btn transition-none sow-util-action" 
+													data-util-self-ignore="true" 
+													data-util-target-hide="#email_edit_show" 
+													data-util-target-show="#email_edit_hide, #email_edit_password_request" 
+													data-util-target-readonly-off="#account_email" 
+
+													data-util-target-input="#account_email" 
+													data-util-target-input-val="" 
+
+													data-util-target-focus="#account_email">
+													<i class="fi fi-pencil m-0"></i>
+												</a>
+
+												<a id="email_edit_hide" href="#!" class="btn transition-none sow-util-action hide" 
+													data-util-self-ignore="true" 
+													data-util-target-hide="#email_edit_hide, #email_edit_password_request" 
+													data-util-target-show="#email_edit_show" 
+													data-util-target-readonly-on="#account_email" 
+
+													data-util-target-input="#account_email" 
+													data-util-target-input-val="john.doe@gmail.com">
+													<i class="fi fi-close m-0"></i>
+												</a>
+
+											</div>
+
+
+											<div id="email_edit_password_request" class="mt-3 hide">
+
+												<!-- password -->
+												<div class="input-group-over">
+													<div class="form-label-group mb-3">
+														<input placeholder="Account Password" id="account_password" name="account[current_password]" type="password" class="form-control">
+														<label for="account_password">Account Password</label>
+													</div>
+
+													<!-- Show Password -->
+													<a href="#" class="btn btn-password-type-toggle" data-target="#account_password">
+														<span class="group-icon">
+															<i class="fi fi-eye m-0"></i>
+															<i class="fi fi-close m-0"></i>
+														</span>
+													</a>
+												</div>
+												<!-- /password -->
+
+											</div>
+												
+
+										</div>
+
+
+										<div class="col-xl-6">
+											
+											<pre class="language-html"><code>
+&lt;!-- EMAIL ADDRESS -->
+&lt;div class="input-group-over">
+
+	&lt;div class="form-label-group">
+		&lt;input required readonly placeholder="Email Address" id="account_email" name="account[email]" type="email" class="form-control" value="john.doe@gmail.com">
+		&lt;label for="account_email">&lt;span class="text-danger">Email&lt;/span> Address&lt;/label>
+	&lt;/div>
+
+	&lt;a id="email_edit_show" href="#!" class="btn transition-none sow-util-action" 
+		data-util-self-ignore="true" 
+		data-util-target-hide="#email_edit_show" 
+		data-util-target-show="#email_edit_hide, #email_edit_password_request" 
+		data-util-target-readonly-off="#account_email" 
+
+		data-util-target-input="#account_email" 
+		data-util-target-input-val="" 
+
+		data-util-target-focus="#account_email">
+		&lt;i class="fi fi-pencil m-0">&lt;/i>
+	&lt;/a>
+
+	&lt;a id="email_edit_hide" href="#!" class="btn transition-none sow-util-action hide" 
+		data-util-self-ignore="true" 
+		data-util-target-hide="#email_edit_hide, #email_edit_password_request" 
+		data-util-target-show="#email_edit_show" 
+		data-util-target-readonly-on="#account_email" 
+
+		data-util-target-input="#account_email" 
+		data-util-target-input-val="john.doe@gmail.com">
+		&lt;i class="fi fi-close m-0">&lt;/i>
+	&lt;/a>
+
+&lt;/div>
+
+
+&lt;div id="email_edit_password_request" class="mt-3 hide">
+
+	&lt;!-- password -->
+	&lt;div class="input-group-over">
+		&lt;div class="form-label-group mb-3">
+			&lt;input placeholder="Account Password" id="account_password" name="account[current_password]" type="password" class="form-control">
+			&lt;label for="account_password">Account Password&lt;/label>
+		&lt;/div>
+
+		&lt;!-- Show Password -->
+		&lt;a href="#" class="btn btn-password-type-toggle" data-target="#account_password">
+			&lt;span class="group-icon">
+				&lt;i class="fi fi-eye m-0">&lt;/i>
+				&lt;i class="fi fi-close m-0">&lt;/i>
+			&lt;/span>
+		&lt;/a>
+	&lt;/div>
+	&lt;!-- /password -->
+
+&lt;/div>
+											</code></pre>
+
+										</div>
+
+									</div>
+
+<pre class="language-html"><code>&lt;!-- AVAILABLE OPTIONS -->
+
+
+&lt;!-- Do not toggle self "active" class : on button click -->
+data-util-self-ignore="true"
+
+&lt;!-- Show/Hide -->
+data-util-target-hide="#container" 
+data-util-target-show="#container" 
+
+&lt;!-- Add Class -->
+data-util-target-class-add="#container" 
+data-util-target-class-add-val="someclass" 
+
+&lt;!-- Remove Class -->
+data-util-target-class-remove="#container" 
+data-util-target-class-remove-val="someclass" 
+
+&lt;!-- Toggle Class -->
+data-util-target-class-toggle="#container" 
+data-util-target-class-toggle-val="someclass" 
+
+&lt;!-- Input/Textarea Value -->
+data-util-target-input="#inputElement" 
+data-util-target-input-val="someValue" 
+
+&lt;!-- Input/Textarea Placeholder -->
+data-util-target-placeholder="#inputElement" 
+data-util-target-placeholder-val="someValue" 
+
+&lt;!-- Readonly Attribute -->
+data-util-target-readonly-on="#inputElement" 
+data-util-target-readonly-off="#inputElement" 
+data-util-target-readonly-toggle="#inputElement" 
+
+&lt;!-- Disabled Attribute -->
+data-util-target-disable-on="#element" 
+data-util-target-disable-off="#element" 
+data-util-target-disable-toggle="#element" 
+
+&lt;!-- Remove Container -->
+data-util-target-remove="#container" 
+
+&lt;!-- Focus Input/Textarea -->
+data-util-target-focus="#inputElement" 
+
+&lt;!-- Toast Message on click (different then ajax toast) -->
+data-util-toast-msg="Item Changed" 
+data-util-toast-position="top-center" 
+data-util-toast-type="success" 
+data-util-toast-timeout="2500" 
+
+&lt;!-- Ajax Request -->
+data-util-ajax-request="URL_HERE" 
+data-util-ajax-method="GET" 
+data-util-ajax-params="['param1','value1']['param2','value2']" 
+data-util-ajax-toast-success="Successfully Updated!" 
+data-util-ajax-toast-position="top-center" 
+data-util-ajax-toast-timeout="2500" 
+data-util-ajax-append-response="#container" 
+
+</code></pre>
+
+
+
+
+									<h2 class="h5 text-truncate w-100 mt-7 mb-3">
+										Group Util
+									</h2>
+
+
+
+									<div class="row">
+										<div class="col-12 col-xl-6">
+
+											<p class="lead mb-5">
+												Links acting like checkboxes/radio! Can be used in various places, by manipulating a class.
+											</p>	
+
+											<div id="group_checkbox">
+
+												<a href="#!" class="form-checkbox form-checkbox-primary clearfix d-block mb-2 sow-util-action" 
+													data-util-group-active="#group_checkbox>a.form-checkbox" 
+													data-util-group-active-class="active">
+													<i></i> Option 1
+												</a>
+
+												<a href="#!" class="form-checkbox form-checkbox-primary clearfix d-block mb-2 sow-util-action" 
+													data-util-group-active="#group_checkbox>a.form-checkbox" 
+													data-util-group-active-class="active">
+													<i></i> Option 2
+												</a>
+
+												<a href="#!" class="form-checkbox form-checkbox-primary clearfix d-block mb-2 sow-util-action" 
+													data-util-group-active="#group_checkbox>a.form-checkbox" 
+													data-util-group-active-class="active">
+													<i></i> Option 3
+												</a>
+
+											</div>
+
+											<br><br>
+
+											<div id="group_radio">
+
+												<a href="#!" class="form-radio form-radio-primary clearfix d-block mb-2 sow-util-action" 
+													data-util-group-active="#group_radio>a.form-radio" 
+													data-util-group-active-class="active">
+													<i></i> Option 1
+												</a>
+
+												<a href="#!" class="form-radio form-radio-primary clearfix d-block mb-2 sow-util-action" 
+													data-util-group-active="#group_radio>a.form-radio" 
+													data-util-group-active-class="active">
+													<i></i> Option 2
+												</a>
+
+												<a href="#!" class="form-radio form-radio-primary clearfix d-block mb-2 sow-util-action" 
+													data-util-group-active="#group_radio>a.form-radio" 
+													data-util-group-active-class="active">
+													<i></i> Option 3
+												</a>
+
+											</div>
+
+										</div>
+
+										<div class="col-12 col-xl-6">
+
+<pre class="language-html"><code>&lt;!-- checkbox like -->
+&lt;div id="group_checkbox">
+
+	&lt;a href="#!" class="form-checkbox form-checkbox-primary clearfix d-block mb-2 sow-util-action" 
+		data-util-group-active="#group_checkbox>a.form-checkbox" 
+		data-util-group-active-class="active">
+		&lt;i>&lt;/i> Option 1
+	&lt;/a>
+
+	&lt;a href="#!" class="form-checkbox form-checkbox-primary clearfix d-block mb-2 sow-util-action" 
+		data-util-group-active="#group_checkbox>a.form-checkbox" 
+		data-util-group-active-class="active">
+		&lt;i>&lt;/i> Option 2
+	&lt;/a>
+
+&lt;/div>
+
+&lt;!-- radio like -->
+&lt;div id="group_radio">
+
+	&lt;a href="#!" class="form-radio form-radio-primary clearfix d-block mb-2 sow-util-action" 
+		data-util-group-active="#group_radio>a.form-radio" 
+		data-util-group-active-class="active">
+		&lt;i>&lt;/i> Option 1
+	&lt;/a>
+
+	&lt;a href="#!" class="form-radio form-radio-primary clearfix d-block mb-2 sow-util-action" 
+		data-util-group-active="#group_radio>a.form-radio" 
+		data-util-group-active-class="active">
+		&lt;i>&lt;/i> Option 2
+	&lt;/a>
+
+&lt;/div>
+</code></pre>
+
+										</div>
+									</div>
+
+								</div>
+
+
+							</section>
+
+
+
+
+
+
+
+
+							<section id="section_6">
+
+								<header class="b-0">
+
+									<h2 class="h5 text-truncate w-100">
+										Ghost Ajax Form
+									</h2>
+
+									<p class="mb-0">
+										Without using form tags!
+									</p>
+									<p>
+										In rare situations when we can't use form inside form.
+									</p>
+
+								</header>
+
+
+								<div class="container my-4">
+
+
+									<div class="row">
+										<div class="col-xl-6">
+											
+											<div class="mb-5">
+												<div>
+													Price: $<span id="price_info">23.99</span>
+												</div>
+												<div>
+													Sale Price: $<span id="price_sale_info">18.99</span>
+												</div>
+												<div>
+													Inventory: <span id="product_inventory_info">100</span> items
+												</div>
+											</div>
+
+											<div class="sow-util-form position-relative" 
+												 data-util-form-action="../demo.files/php/demo.ajax_request.php" 
+												 data-util-form-method="post" 
+												 data-util-form-params="['param1','value1']" 
+												 data-util-form-toast-success="Successfully Saved!" 
+												 data-util-form-toast-error="Unexpected Internal error!" 
+												 data-util-form-toast-position="top-center">
+												
+												<!-- price -->
+												<div class="form-label-group mb-1">
+													<input required placeholder="Price" id="price" name="price" type="number" value="23.99" class="form-control form-control-sm" data-util-update="#price_info">
+													<label for="price">Price</label>
+												</div>
+
+												<!-- sale price -->
+												<div class="form-label-group mb-1">
+													<input placeholder="Sale Price" id="price_sale" name="price_sale" type="number" value="18.99" class="form-control form-control-sm" data-util-update="#price_sale_info">
+													<label for="price_sale">Sale Price</label>
+												</div>
+
+												<!-- inventory -->
+												<div class="form-label-group mb-1">
+													<input required placeholder="Inventory" id="inventory" name="inventory" type="number" value="100" class="form-control form-control-sm" data-util-update="#product_inventory_info">
+													<label for="inventory">Inventory</label>
+												</div>
+
+												<!-- submit -->
+												<a href="#!" class="sow-util-form-submit btn btn-block btn-warning btn-sm">Submit</a>
+												
+												<!-- loading (optional) -->
+												<span class="sow-util-loader absolute-full z-index-1 bg-white opacity-3 d-middle hide">
+													<i class="fi fi-orbit fi-spin fs--30"></i>
+												</span>
+
+											</div>
+
+										</div>
+
+
+										<div class="col-xl-6">
+											
+											<pre class="language-html"><code>
+&lt;div class="mb-5">
+	&lt;div>
+		Price: $&lt;span id="price_info">23.99&lt;/span>
+	&lt;/div>
+	&lt;div>
+		Sale Price: $&lt;span id="price_sale_info">18.99&lt;/span>
+	&lt;/div>
+	&lt;div>
+		Inventory: &lt;span id="product_inventory_info">100&lt;/span> items
+	&lt;/div>
+&lt;/div>
+
+
+
+&lt;div class="sow-util-form position-relative" 
+	 data-util-form-action="../demo.files/php/demo.ajax_request.php" 
+	 data-util-form-method="post" 
+	 data-util-form-params="['param1','value1'],['param2','value2']" 
+	 data-util-form-toast-success="Successfully Saved!" 
+	 data-util-form-toast-error="Unexpected Internal error!" 
+	 data-util-form-toast-position="top-center">
+	
+	&lt;!-- price -->
+	&lt;div class="form-label-group mb-1">
+		&lt;input placeholder="Price" id="price" name="price" type="number" value="23.99" class="form-control form-control-sm" data-util-update="#price_info">
+		&lt;label for="price">Price&lt;/label>
+	&lt;/div>
+
+	&lt;!-- sale price -->
+	&lt;div class="form-label-group mb-1">
+		&lt;input placeholder="Sale Price" id="price_sale" name="price_sale" type="number" value="18.99" class="form-control form-control-sm" data-util-update="#price_sale_info">
+		&lt;label for="price_sale">Sale Price&lt;/label>
+	&lt;/div>
+
+	&lt;!-- inventory -->
+	&lt;div class="form-label-group mb-1">
+		&lt;input placeholder="Inventory" id="inventory" name="inventory" type="number" value="100" class="form-control form-control-sm" data-util-update="#product_inventory_info">
+		&lt;label for="inventory">Inventory&lt;/label>
+	&lt;/div>
+
+	&lt;!-- submit -->
+	&lt;a href="#!" class="sow-util-form-submit btn btn-block btn-warning btn-sm">Submit&lt;/a>
+	
+	&lt;!-- loading (optional) -->
+	&lt;span class="sow-util-loader absolute-full z-index-1 bg-white opacity-3 d-middle hide">
+		&lt;i class="fi fi-orbit fi-spin fs--30">&lt;/i>
+	&lt;/span>
+
+&lt;/div>
+											</code></pre>
+
+										</div>
+
+									</div>
+
+
+								</div>
+
+
+							</section>
+
+
+
+
+
+
+
+
+
+							<section id="section_7">
+
+								<header class="b-0">
+
+									<h2 class="h5 text-truncate w-100">
+										Ajax Form : Live Monintor
+									</h2>
+
+									<p class="mb-0">
+										Monitor any change and send data to the server via ajax.
+									</p>
+
+								</header>
+
+
+								<div class="my-4">
+
+
+									<div class="row">
+										<div class="col-xl-6">
+
+											<form class="sow-util-form-live-monitor" 
+													data-util-live-ajax-url="../demo.files/php/demo.ajax_request.php" 
+													data-util-live-ajax-method="GET" 
+													data-util-live-ajax-params="['param1','value1']['param2','value2']" 
+													data-util-live-monitor="true" 
+													data-util-live-monitor-elements="*" 
+													data-util-live-monitor-append-response="#demoPrependData" 
+													data-util-live-monitor-user-delay="1000" 
+
+													data-util-live-toast-msg="Data Saved" 
+													data-util-live-toast-position="top-center" 
+													data-util-live-toast-type="success" 
+													data-util-live-toast-timeout="2500">
+												
+												<div class="form-label-group mb-3">
+													<input type="text" placeholder="First Name" class="form-control" id="first_name" name="first_name" value="">
+													<label for="first_name">First Name</label>
+												</div>
+
+												<div class="form-label-group mb-3">
+													<select id="select_options" name="select_options" class="form-control bs-select">
+														<option value="1">Option 1</option>
+														<option value="2">Option 2</option>
+														<option value="3">Option 3</option>
+													</select>
+													<label for="select_options">Select</label>
+												</div>
+
+												<label class="form-checkbox form-checkbox-primary">
+													<input type="checkbox" name="checkbox" id="checkbox" checked>
+													<i></i> <span>Checkbox</span>
+												</label>
+
+												<!-- submit -->
+												<!-- <a href="#!" class="sow-util-form-submit btn btn-block btn-warning btn-sm">Submit</a> -->
+
+											</form>
+
+
+											<div class="mt-4" id="demoPrependData"></div>
+
+										</div>
+
+
+										<div class="col-xl-6">
+											
+											<pre class="language-html"><code>&lt;!--
+
+All Elements inside form
+data-util-live-monitor-elements="*" 
+
+Specific elements inside Form
+data-util-live-monitor-elements="#first_name, #select_options" 
+
+Ignoring specific elements
+Add .js-ignore class to elements you need to ignore
+
+User action delay (in milliseconds)
+data-util-live-monitor-user-delay="1000" 
+
+Append server response to container
+data-util-live-monitor-append-response="#container" 
+
+-->
+&lt;form class="sow-util-form-live-monitor" 
+		data-util-live-ajax-url="../demo.files/php/demo.ajax_request.php" 
+		data-util-live-ajax-method="GET" 
+		data-util-live-ajax-params="['param1','value1']['param2','value2']" 
+		data-util-live-monitor="true" 
+		data-util-live-monitor-elements="*" 
+		data-util-live-monitor-append-response="" 
+		data-util-live-monitor-user-delay="1000" 
+
+		data-util-live-toast-msg="Data Saved" 
+		data-util-live-toast-position="top-center" 
+		data-util-live-toast-type="success" 
+		data-util-live-toast-timeout="2500">
+	
+	&lt;div class="form-label-group mb-3">
+		&lt;input type="text" placeholder="First Name" class="form-control" id="first_name" name="first_name" value="">
+		&lt;label for="first_name">First Name&lt;/label>
+	&lt;/div>
+
+	&lt;div class="form-label-group mb-3">
+		&lt;select id="select_options" name="select_options" class="form-control bs-select">
+			&lt;option value="1">Option 1&lt;/option>
+			&lt;option value="2">Option 2&lt;/option>
+			&lt;option value="3">Option 3&lt;/option>
+		&lt;/select>
+		&lt;label for="select_options">Select&lt;/label>
+	&lt;/div>
+
+	&lt;label class="form-checkbox form-checkbox-primary">
+		&lt;input type="checkbox" name="checkbox" id="checkbox" checked>
+		&lt;i>&lt;/i> &lt;span>Checkbox&lt;/span>
+	&lt;/label>
+
+	&lt;!-- submit -->
+	&lt;!-- &lt;a href="#!" class="sow-util-form-submit btn btn-block btn-warning btn-sm">Submit&lt;/a> -->
+
+&lt;/form>
+											</code></pre>
+
+										</div>
+
+									</div>
+
+
+								</div>
+
+
+							</section>
+
+
+
+
+
+
+
+
+
+							<section id="section_8">
+
+								<header class="b-0">
+
+									<h2 class="h5 text-truncate w-100">
+										Ajax : Live Container Reload
+									</h2>
+
+									<p class="mb-0">
+										Reload containers by ajax on change/click/keyup
+									</p>
+
+								</header>
+
+
+								<div class="my-4">
+
+
+									<div class="row">
+										<div class="col-xl-6">
+												
+											<div class="form-label-group mb-3">
+												<input type="text" placeholder="First Name" class="form-control sow-util-live-reload" name="first_name" value="" data-util-live-reload-target="#reloadTargetContainer">
+												<label>First Name</label>
+											</div>
+
+											<label class="form-checkbox form-checkbox-primary">
+												<input type="checkbox" name="checkbox" class="sow-util-live-reload" data-util-live-reload-target="#reloadTargetContainer">
+												<i></i> <span>Checkbox</span>
+											</label>
+
+											<div class="form-label-group mb-3">
+												<select id="select_options" name="select_options" class="form-control bs-select sow-util-live-reload" data-util-live-reload-target="#reloadTargetContainer">
+													<option value="1">Option 1</option>
+													<option value="2">Option 2</option>
+													<option value="3">Option 3</option>
+												</select>
+												<label for="select_options">Select</label>
+											</div>
+
+											<br><br><br>
+
+											<div id="reloadTargetContainer" 
+												data-reload-ajax-url="_ajax/dummy_text.html" 
+												data-reload-ajax-method="GET" 
+												data-reload-ajax-params="['param1','value1']['param2','value2']" 
+												data-reload-ajax-delay="500">
+
+													<h2 class="h4 mb-4 font-weight-normal text-primary">
+														Lorem Ipsum
+													</h2>
+
+													<p class="fs--18 mb-4">
+														Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+													</p>
+
+													<a href="plugins-sow-search-suggest.html" class="js-ajax" data-ajax-update-url="true" data-ajax-reponse-extract-element="#middle" data-toggle="tooltip" title="Ajax Inside">
+														Ajax link inside ajax content
+													</a>
+
+											</div>
+
+										</div>
+
+
+										<div class="col-xl-6">
+											
+											<pre class="language-html"><code>&lt;!--
+
+Each element should have: 
+class: .sow-util-live-reload
+param: data-util-live-reload-target="#reloadTargetContainer"
+
+Supported elements: 
+input, select, checkboxe, radio, textarea, link, button
+
+Can be used together with
+Ajax Form : Live Monintor
+-->
+&lt;div class="form-label-group mb-3">
+	&lt;input type="text" placeholder="First Name" class="form-control sow-util-live-reload" name="first_name" value="" data-util-live-reload-target="#reloadTargetContainer">
+	&lt;label>First Name&lt;/label>
+&lt;/div>
+
+&lt;label class="form-checkbox form-checkbox-primary">
+	&lt;input type="checkbox" name="checkbox" class="sow-util-live-reload" data-util-live-reload-target="#reloadTargetContainer">
+	&lt;i>&lt;/i> &lt;span>Checkbox&lt;/span>
+&lt;/label>
+
+&lt;div class="form-label-group mb-3">
+	&lt;select id="select_options" name="select_options" class="form-control bs-select sow-util-live-reload" data-util-live-reload-target="#reloadTargetContainer">
+		&lt;option value="1">Option 1&lt;/option>
+		&lt;option value="2">Option 2&lt;/option>
+		&lt;option value="3">Option 3&lt;/option>
+	&lt;/select>
+	&lt;label for="select_options">Select&lt;/label>
+&lt;/div>
+
+&lt;!-- Container (ajax params) -->
+&lt;div id="reloadTargetContainer" 
+	data-reload-ajax-url="_ajax/dummy_text.html" 
+	data-reload-ajax-method="GET" 
+	data-reload-ajax-params="['param1','value1']['param2','value2']" 
+	data-reload-ajax-delay="500">
+
+	&lt;!-- content here -->
+
+&lt;/div>
+											</code></pre>
+
+										</div>
+
+									</div>
+
+
+								</div>
+
+
+							</section>
+
+
+
+
+
+
+
+						</div>
+
+						<div class="col w-100 max-w-300 d-none d-xl-flex align-self-md-stretch">
+
+							<div class="w-100">
+								<div class="sticky-kit">
+
+								<h6 class="text-dark">Jump To</h6>
+								<ul class="list-unstyled mb-5">
+									<li class="list-item">
+										<a href="#section_1" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											Initials by attribute
+										</a>
+									</li>
+									<li class="list-item">
+										<a href="#section_2" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											Cookies by attribute
+										</a>
+									</li>
+									<li class="list-item">
+										<a href="#section_3" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											Time ago
+										</a>
+									</li>
+									<li class="list-item">
+										<a href="#section_4" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											Element Cloner
+										</a>
+									</li>
+									<li class="list-item">
+										<a href="#section_4a" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											Advanced Group Cloner
+										</a>
+									</li>
+									<li class="list-item">
+										<a href="#section_5" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											Action Util
+										</a>
+									</li>
+									<li class="list-item">
+										<a href="#section_6" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											Ghost Ajax Form
+										</a>
+									</li>
+									<li class="list-item">
+										<a href="#section_7" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											Ajax Form : Live Monintor
+										</a>
+									</li>
+									<li class="list-item">
+										<a href="#section_8" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											Ajax : Live Container Reload
+										</a>
+									</li>
+								</ul>
+
+
+
+								<!-- AJAX BOX INFO -->
+								<div 	id="boxinfo_v3" 
+										class="js-ajax" 
+										data-ajax-url="_ajax/boxinfo_v3.html">
+
+									<!-- ajax loading icon -->
+									<div class="text-center bg-white rounded shadow-md p--15 mb-5">
+										<i class="fi fi-circle-spin fi-spin fs--30 text-muted"></i>
+									</div><!-- /ajax loading icon -->
+
+								</div>
+								<!-- /AJAX BOX INFO -->
+
+
+								</div>
+
+
+
+							</div>
+
+						</div>
+
+					</div>
+
+
+
+				</div>
+				<!-- /MIDDLE -->
+
+			</div>
+
+
+
+		</div><!-- /#wrapper -->
+
+
+
+
+		<!--
+			
+			Toast On Load
+
+				data-type 			= '', success, danger, warning, info
+				data-title 			= toast title 	(optional)
+				data-body 			= toast body 	(required)
+				data-pos 			= top-left, top-right, bottom-left, bottom-right, top-center, bottom-center
+				data-delay 			= autoclose in ms
+				data-fill 			= background color fill [true|false]
+
+		-->
+		<div class="hide toast-on-load"
+			data-toast-type="pink" 
+			data-toast-title="" 
+			data-toast-body="<i class='fi fi-emoji-cool float-start'></i> Ajax navigation enabled! Yay!" 
+			data-toast-pos="bottom-center" 
+			data-toast-delay="4000" 
+			data-toast-fill="true" 
+		></div>
+
+
+
+
+		<script src="../assets/js/core.js"></script>
+		<script src="../assets/js/vendor_bundle.min.js"></script>
+
+
+
+		<!--
+
+			[SOW Ajax Navigation Plugin] [AJAX ONLY, IF USED]
+			If you have specific page js files, wrap them inside #page_js_files 
+			Ajax Navigation will use them for this page! 
+			This way you can load this page in a normal way and/or via ajax.
+			(you can change/add more containers in sow.config.js)
+
+		-->
+		<div id="page_js_files">
+
+
+
+			<!-- 
+
+				CONTENT CLIPBOARD COPY 
+
+					<a href="#clipboard_1" class="btn-clipboard btn btn-sm btn-light float-end">
+						<i class="fi fi-lightning"></i> 
+						copy code
+					</a>
+
+					<div id="clipboard_1">
+						.. code 
+					</div>
+
+			-->
+			<script src="assets/js/sow.clipboard.js"></script>
+			<script>
+
+				$.SOW.core.clipboard.init('#middle a.btn-clipboard');
+
+			</script>
+
+
+		</div>
+
+
+	</body>
+</html>

@@ -1,0 +1,1345 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Smarty V3</title>
+		<meta name="description" content="...">
+
+        <meta name="viewport" content="width=device-width, maximum-scale=5, initial-scale=1, user-scalable=0">
+        <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+        <!-- up to 10% speed up for external res -->
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+        <link rel="preconnect" href="https://fonts.googleapis.com/">
+        <link rel="preconnect" href="https://fonts.gstatic.com/">
+        <!-- preloading icon font is helping to speed up a little bit -->
+        <link rel="preload" href="assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
+
+        <link rel="stylesheet" href="assets/css/core.min.css">
+        <link rel="stylesheet" href="assets/css/vendor_bundle.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap">
+
+		<!-- favicon -->
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="apple-touch-icon" href="demo.files/logo/icon_512x512.png">
+
+		<link rel="manifest" href="assets/images/manifest/manifest.json">
+		<meta name="theme-color" content="#377dff">
+
+	</head>
+
+	<!--
+
+		Available Body Classes
+			.layout-boxed 					- boxed layout (ignored if any .header-* class is present)
+
+			.header-scroll-reveal  			- header : hide on scroll down and reveal on scroll up
+			.header-sticky  				- header : always visible on top
+			.header-over  					- header : over slider|parallax|image (next section must contain a large image, else will be indistinguishable)
+
+				Possible header combinations:
+					.header-over + .header-scroll-reveal
+					.header-over + .header-sticky
+						* NOTE: if .header-sticky + .header-scroll-reveal are both used, .header-scroll-reveal is ignored
+
+
+			.bg-cover .bg-fixed 			- both classes used with .layout-boxed to set a background image via style="background-image:url(...)"
+	-->
+	<body>
+
+		<div id="wrapper">
+
+
+			<!-- HEADER -->
+			<header id="header" class="shadow-xs">
+
+				<!-- TOP BAR -->
+				<div id="top_bar" class="bg-light fs--14"> <!-- optional if body.header-sticky is present: add .js-ignore class to ignore autohide and stay visible all the time -->
+					<div class="container">
+
+						<div class="text-nowrap"><!-- change with .scrollable-horizontal to horizontally scroll, if -only- no dropdown is present -->
+							<div class="d-flex justify-content-between">
+
+								<div class="d-inline-block float-start">
+									<ul class="list-inline m-0">
+
+										<!-- LANGUAGE -->
+										<li class="dropdown list-inline-item m-0">
+
+											<a id="topDDLanguage" href="#!" class="py-2 d-inline-block" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+												<i class="flag flag-us"></i> 
+												<span class="text-muted pl-2 pr-2">ENGLISH</span>
+											</a>
+
+											<div aria-labelledby="topDDLanguage" class="dropdown-menu dropdown-menu-hover text-uppercase fs--13 px-1 pt-1 pb-0 m-0 max-h-50vh scrollable-vertical">
+												<a href="#!" class="active dropdown-item text-muted text-truncate line-height-1 rounded p--12 mb-1">
+													<i class="flag flag-us"></i> 
+													ENGLISH
+												</a>
+												<a href="#!" class="dropdown-item text-muted text-truncate line-height-1 rounded p--12 mb-1">
+													<i class="flag flag-de"></i> 
+													GERMAN
+												</a>
+												<a href="#!" class="dropdown-item text-muted text-truncate line-height-1 rounded p--12 mb-1">
+													<i class="flag flag-fr"></i> 
+													FRANCAISE
+												</a>
+											</div>
+
+										</li>
+										<!-- /LANGUAGE -->
+
+
+										<!-- CURRENCY -->
+										<li class="dropdown list-inline-item m-0">
+
+											<span class="text-muted">/</span><!-- optional separator -->
+
+											<a id="topDDCurrency" href="#" class="py-2 d-inline-block" data-toggle="dropdown" aria-expanded="false">
+												<span class="text-muted pl-2 pr-2">USD</span>
+											</a>
+
+											<div aria-labelledby="topDDCurrency" class="dropdown-menu dropdown-menu-hover text-uppercase text-center fs--13 px-1 pt-1 pb-0 m-0 max-h-50vh w-auto scrollable-vertical">
+												<a href="#!" class="active dropdown-item text-muted text-truncate line-height-1 rounded pt--12 pb--12 mb-1">
+													USD
+												</a>
+												<a href="#!" class="dropdown-item text-muted text-truncate line-height-1 rounded pt--12 pb--12 mb-1">
+													EUR
+												</a>
+												<a href="#!" class="dropdown-item text-muted text-truncate line-height-1 rounded pt--12 pb--12 mb-1">
+													GBP
+												</a>
+											</div>
+
+										</li>
+										<!-- /CURRENCY -->
+
+									</ul>
+								</div>
+
+
+								<div class="d-inline-block float-end">
+
+									<ul class="list-inline m-0">
+
+										<li class="dropdown list-inline-item">
+
+											<a href="tel:+01-555-5555" class="p-2 d-inline-block font-weight-medium">
+												<i class="float-start fi fi-phone"></i> (+01) 555-5555
+											</a>
+
+										</li>
+
+									</ul>
+
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<!-- /TOP BAR -->
+
+
+
+
+				<!-- NAVBAR -->
+				<div class="container position-relative">
+
+
+					<!-- 
+
+						[SOW] SEARCH SUGGEST PLUGIN
+						++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++
+						PLEASE READ DOCUMENTATION
+						documentation/plugins-sow-search-suggest.html
+						++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++
+
+					-->
+					<form 	action="search-result-2.html" 
+							method="GET" 
+							data-autosuggest="on" 
+
+							data-mode="json" 
+							data-json-max-results='10'
+							data-json-related-title='Explore Smarty'
+							data-json-related-item-icon='fi fi-star-empty'
+							data-json-suggest-title='Suggestions for you'
+							data-json-suggest-noresult='No results for'
+							data-json-suggest-item-icon='fi fi-search'
+							data-json-suggest-min-score='5'
+							data-json-highlight-term='true'
+							data-contentType='application/json; charset=utf-8'
+							data-dataType='json'
+
+							data-container="#sow-search-container" 
+							data-input-min-length="2" 
+							data-input-delay="250" 
+							data-related-keywords="" 
+							data-related-url="_ajax/search_suggest_related.json" 
+							data-suggest-url="_ajax/search_suggest_input.json" 
+							data-related-action="related_get" 
+							data-suggest-action="suggest_get" 
+							class="js-ajax-search sow-search sow-search-over hide d-inline-flex">
+						<div class="sow-search-input w-100">
+
+							<div class="input-group-over d-flex align-items-center w-100 h-100 rounded shadow-md">
+
+								<input placeholder="what are you looking today?" aria-label="what are you looking today?" name="s" type="text" class="form-control-sow-search form-control form-control-lg shadow-xs" value="" autocomplete="off">
+
+								<span class="sow-search-buttons">
+
+									<!-- search button -->
+									<button aria-label="Global Search" type="submit" class="btn bg-transparent shadow-none m-0 px-2 py-1 text-muted">
+										<i class="fi fi-search fs--20"></i>
+									</button>
+
+									<!-- close : mobile only (d-inline-block d-lg-none) -->
+									<a href="javascript:;" class="btn-sow-search-toggler btn btn-light shadow-none m-0 px-2 py-1 d-inline-block d-lg-none">
+										<i class="fi fi-close fs--20"></i>
+									</a>
+
+								</span>
+
+							</div>
+
+						</div>
+
+						<!-- search suggestion container -->
+						<div class="sow-search-container w-100 p-0 hide shadow-md" id="sow-search-container">
+							<div class="sow-search-container-wrapper">
+
+								<!-- main search container -->
+								<div class="sow-search-loader p-3 text-center hide">
+									<i class="fi fi-circle-spin fi-spin text-muted fs--30"></i>
+								</div>
+
+								<!-- 
+									AJAX CONTENT CONTAINER 
+									SHOULD ALWAYS BE AS IT IS : NO COMMENTS OR EVEN SPACES!
+								--><div class="sow-search-content rounded w-100 scrollable-vertical"></div>
+
+							</div>
+						</div>
+						<!-- /search suggestion container -->
+
+						<!-- 
+
+							overlay combinations:
+								overlay-dark opacity-* [1-9]
+								overlay-light opacity-* [1-9]
+
+						-->
+						<div class="sow-search-backdrop overlay-dark opacity-3 hide"></div>
+
+					</form>
+					<!-- /SEARCH -->
+
+
+
+
+
+					<nav class="navbar navbar-expand-lg navbar-light justify-content-lg-between justify-content-md-inherit">
+
+						<div class="align-items-start">
+
+							<!-- mobile menu button : show -->
+							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMainNav" aria-controls="navbarMainNav" aria-expanded="false" aria-label="Toggle navigation">
+								<svg width="25" viewBox="0 0 20 20">
+									<path d="M 19.9876 1.998 L -0.0108 1.998 L -0.0108 -0.0019 L 19.9876 -0.0019 L 19.9876 1.998 Z"></path>
+									<path d="M 19.9876 7.9979 L -0.0108 7.9979 L -0.0108 5.9979 L 19.9876 5.9979 L 19.9876 7.9979 Z"></path>
+									<path d="M 19.9876 13.9977 L -0.0108 13.9977 L -0.0108 11.9978 L 19.9876 11.9978 L 19.9876 13.9977 Z"></path>
+									<path d="M 19.9876 19.9976 L -0.0108 19.9976 L -0.0108 17.9976 L 19.9876 17.9976 L 19.9876 19.9976 Z"></path>
+								</svg>
+							</button>
+
+							<!-- 
+								Logo : height: 70px max
+							-->
+							<a class="navbar-brand" href="index.html">
+								<img src="assets/images/logo/logo_dark.svg" width="110" height="70" alt="...">
+							</a>
+
+						</div>
+
+
+
+
+						<!-- Menu -->
+						<!--
+
+							Dropdown Classes (should be added to primary .dropdown-menu only, dropdown childs are also affected)
+								.dropdown-menu-dark 		- dark dropdown (desktop only, will be white on mobile)
+								.dropdown-menu-hover 		- open on hover
+								.dropdown-menu-clean 		- no background color on hover
+								.dropdown-menu-invert 		- open dropdown in oposite direction (left|right, according to RTL|LTR)
+								.dropdown-menu-uppercase 	- uppercase text (font-size is scalled down to 13px)
+								.dropdown-click-ignore 		- keep dropdown open on inside click (useful on forms inside dropdown)
+
+								Repositioning long dropdown childs (Example: Pages->Account)
+									.dropdown-menu-up-n100 		- open up with top: -100px
+									.dropdown-menu-up-n100 		- open up with top: -150px
+									.dropdown-menu-up-n180 		- open up with top: -180px
+									.dropdown-menu-up-n220 		- open up with top: -220px
+									.dropdown-menu-up-n250 		- open up with top: -250px
+									.dropdown-menu-up 			- open up without negative class
+
+
+								Dropdown prefix icon (optional, if enabled in variables.scss)
+									.prefix-link-icon .prefix-icon-dot 		- link prefix
+									.prefix-link-icon .prefix-icon-line 	- link prefix
+									.prefix-link-icon .prefix-icon-ico 		- link prefix
+									.prefix-link-icon .prefix-icon-arrow 	- link prefix
+
+								.nav-link.nav-link-caret-hide 	- no dropdown icon indicator on main link
+								.nav-item.dropdown-mega 		- required ONLY on fullwidth mega menu
+
+								Mobile animation - add to .navbar-collapse:
+								.navbar-animate-fadein
+								.navbar-animate-bouncein
+
+						-->
+						<div class="collapse navbar-collapse navbar-animate-fadein" id="navbarMainNav">
+
+
+							<!-- MOBILE MENU NAVBAR -->
+							<div class="navbar-xs d-none"><!-- .sticky-top -->
+
+								<!-- mobile menu button : close -->
+								<button class="navbar-toggler pt-0" type="button" data-toggle="collapse" data-target="#navbarMainNav" aria-controls="navbarMainNav" aria-expanded="false" aria-label="Toggle navigation">
+									<svg width="20" viewBox="0 0 20 20">
+										<path d="M 20.7895 0.977 L 19.3752 -0.4364 L 10.081 8.8522 L 0.7869 -0.4364 L -0.6274 0.977 L 8.6668 10.2656 L -0.6274 19.5542 L 0.7869 20.9676 L 10.081 11.679 L 19.3752 20.9676 L 20.7895 19.5542 L 11.4953 10.2656 L 20.7895 0.977 Z"></path>
+									</svg>
+								</button>
+
+								<!-- 
+									Mobile Menu Logo 
+									Logo : height: 70px max
+								-->
+								<a class="navbar-brand" href="index.html">
+									<img src="assets/images/logo/logo_dark.svg" width="110" height="70" alt="...">
+								</a>
+
+							</div>
+							<!-- /MOBILE MENU NAVBAR -->
+
+
+
+							<!-- NAVIGATION -->
+							<ul class="navbar-nav">
+															<!-- Menu -->
+								<!--
+
+									Dropdown Classes (should be added to primary .dropdown-menu only, dropdown childs are also affected)
+										.dropdown-menu-dark 		- dark dropdown (desktop only, will be white on mobile)
+										.dropdown-menu-hover 		- open on hover
+										.dropdown-menu-clean 		- no background color on hover
+										.dropdown-menu-invert 		- open dropdown in oposite direction (left|right, according to RTL|LTR)
+										.dropdown-menu-uppercase 	- uppercase text (font-size is scalled down to 13px)
+										.dropdown-click-ignore 		- keep dropdown open on inside click (useful on forms inside dropdown)
+
+										Repositioning long dropdown childs (Example: Pages->Account)
+											.dropdown-menu-up-n100 		- open up with top: -100px
+											.dropdown-menu-up-n100 		- open up with top: -150px
+											.dropdown-menu-up-n180 		- open up with top: -180px
+											.dropdown-menu-up-n220 		- open up with top: -220px
+											.dropdown-menu-up-n250 		- open up with top: -250px
+											.dropdown-menu-up 			- open up without negative class
+
+
+										Dropdown prefix icon (optional, if enabled in variables.scss)
+											.prefix-link-icon .prefix-icon-dot 		- link prefix
+											.prefix-link-icon .prefix-icon-line 	- link prefix
+											.prefix-link-icon .prefix-icon-ico 		- link prefix
+											.prefix-link-icon .prefix-icon-arrow 	- link prefix
+
+										.nav-link.nav-link-caret-hide 	- no dropdown icon indicator on main link
+										.nav-item.dropdown-mega 		- required ONLY on fullwidth mega menu
+
+								-->
+								<!-- mobile only image + simple search (d-block d-sm-none) -->
+								<li class="nav-item d-block d-sm-none">
+
+									<!-- image -->
+									<div class="mb-4">
+										<img width="600" height="600" class="img-fluid" src="demo.files/svg/artworks/people_crossbrowser.svg" alt="...">
+									</div>
+
+									<!-- search -->
+									<form method="get" action="#!search" class="input-group-over mb-5 bg-light p-2 form-control-pill">
+										<input type="text" name="keyword" value="" placeholder="Quick search..." class="form-control border-dashed">
+										<button class="btn btn-primary fi fi-search p-0 ml-2 mr-2 w--50 h--50"></button>
+									</form>
+
+								</li>
+
+
+								<!-- home -->
+								<li class="nav-item dropdown active">
+
+									<a href="#" id="mainNavHome" class="nav-link dropdown-toggle" 
+										data-toggle="dropdown" 
+										aria-haspopup="true" 
+										aria-expanded="false">
+										Home
+									</a>
+
+									<div aria-labelledby="mainNavHome" class="dropdown-menu dropdown-menu-clean dropdown-menu-hover">
+									    <ul class="list-unstyled m-0 p-0">
+									        <li class="dropdown-item dropdown"><a href="#" class="dropdown-link" data-toggle="dropdown">Home Landing</a>
+									            <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg b-0 m-0">
+									                <li class="dropdown-item"><a href="landing-1.html" class="dropdown-link">Landing 1</a></li>
+									                <li class="dropdown-item"><a href="landing-2.html" class="dropdown-link">Landing 2</a></li>
+									                <li class="dropdown-item"><a href="landing-3.html" class="dropdown-link">Landing 3</a></li>
+									                <li class="dropdown-item"><a href="landing-4.html" class="dropdown-link">Landing 4</a></li>
+									                <li class="dropdown-item"><a href="landing-5.html" class="dropdown-link">Landing 5</a></li>
+									                <li class="dropdown-item"><a href="landing-6.html" class="dropdown-link">Landing 6</a></li>
+									                <li class="dropdown-item">
+									                	<a href="landing-7.html" class="dropdown-link">
+									                		<span class="badge badge-secondary float-end">new</span>
+									                		Landing 7 (SAAS)
+									                	</a>
+									                </li>
+									            </ul>
+									        </li>
+									        <li class="dropdown-item dropdown"><a href="#" class="dropdown-link" data-toggle="dropdown">Niche</a>
+									            <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg b-0 m-0">
+									                <li class="dropdown-item"><a href="niche.classifieds.html" class="dropdown-link">Classifieds</a></li>
+									                <li class="dropdown-item"><a href="niche.realestate.html" class="dropdown-link">Real Estate</a></li>
+									                <li class="dropdown-item"><a href="niche.restaurant.html" class="dropdown-link">Restaurant</a></li>
+									                <li class="dropdown-item"><a href="niche.caffe.html" class="dropdown-link">Caffe</a></li>
+									                <li class="dropdown-item"><a href="niche.lawyer.html" class="dropdown-link">Lawyer</a></li>
+									                <li class="dropdown-item"><a href="niche.tattoo.html" class="dropdown-link">Tattoo</a></li>
+									                <li class="dropdown-item"><a href="niche.hosting.html" class="dropdown-link">Hosting</a></li>
+									                <li class="dropdown-item"><a href="#" class="dropdown-link disabled">More : Soon</a></li>
+									            </ul>
+									        </li>
+									        <li class="dropdown-item"><a href="help-center-1-index.html" class="dropdown-link">Help Center 1</a></li>
+									        <li class="dropdown-item"><a href="help-center-2-index.html" class="dropdown-link">Help Center 2</a></li>
+									        <li class="dropdown-item"><a href="fullajax-index.html" class="dropdown-link" target="_blank">
+									        	<span class="badge badge-secondary float-end">new</span>
+									        	Full Ajax
+									        </a></li>
+									        <li class="dropdown-divider"></li>
+									        <li class="dropdown-item"><a href="https://theme.stepofweb.com/Smarty/v2.3.1/HTML_BS4/start_v4.html" class="dropdown-link" target="_blank">Smarty v2.x <i class="fi fi-emoji-smile text-muted"></i> <span class="d-block text-muted pt--6 fs--13 font-weight-light">You also get previous <br> Smarty version. Eh?</span></a></li>
+									    </ul>
+									</div>
+
+								</li>
+
+
+								<!-- pages -->
+								<li class="nav-item dropdown">
+
+									<a href="#" id="mainNavPages" class="nav-link dropdown-toggle" 
+										data-toggle="dropdown" 
+										aria-haspopup="true" 
+										aria-expanded="false">
+										Pages
+									</a>
+
+									<div aria-labelledby="mainNavPages" class="dropdown-menu dropdown-menu-clean dropdown-menu-hover">
+									    <ul class="list-unstyled m-0 p-0">
+									        <li class="dropdown-item dropdown"><a href="#" class="dropdown-link" data-toggle="dropdown">About</a>
+									            <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg b-0 m-0">
+									                <li class="dropdown-item"><a href="about-us-1.html" class="dropdown-link">About Us 1</a></li>
+									                <li class="dropdown-item"><a href="about-us-2.html" class="dropdown-link">About Us 2</a></li>
+									                <li class="dropdown-item"><a href="about-us-3.html" class="dropdown-link">About Us 3</a></li>
+									                <li class="dropdown-item"><a href="about-us-4.html" class="dropdown-link">About Us 4</a></li>
+									                <li class="dropdown-item"><a href="about-us-5.html" class="dropdown-link">About Us 5</a></li>
+									                <li class="dropdown-divider"></li>
+									                <li class="dropdown-item"><a href="about-me-1.html" class="dropdown-link">About Me 1</a></li>
+									                <li class="dropdown-item"><a href="about-me-2.html" class="dropdown-link">About Me 2</a></li>
+									            </ul>
+									        </li>
+									        <li class="dropdown-item dropdown"><a href="#" class="dropdown-link" data-toggle="dropdown">Services</a>
+									            <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg b-0 m-0">
+									                <li class="dropdown-item"><a href="services-1.html" class="dropdown-link">Services 1</a></li>
+									                <li class="dropdown-item"><a href="services-2.html" class="dropdown-link">Services 2</a></li>
+									                <li class="dropdown-item"><a href="services-3.html" class="dropdown-link">Services 3</a></li>
+									                <li class="dropdown-item"><a href="services-4.html" class="dropdown-link">Services 4</a></li>
+									                <li class="dropdown-item"><a href="services-5.html" class="dropdown-link">Services 5</a></li>
+									            </ul>
+									        </li>
+									        <li class="dropdown-item dropdown"><a href="#" class="dropdown-link" data-toggle="dropdown">Contact</a>
+									            <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg b-0 m-0">
+									                <li class="dropdown-item"><a href="contact-1.html" class="dropdown-link">Contact 1</a></li>
+									                <li class="dropdown-item"><a href="contact-2.html" class="dropdown-link">Contact 2</a></li>
+									                <li class="dropdown-item"><a href="contact-3.html" class="dropdown-link">Contact 3</a></li>
+									                <li class="dropdown-item"><a href="contact-4.html" class="dropdown-link">Contact 4</a></li>
+									            </ul>
+									        </li>
+									        <li class="dropdown-item dropdown"><a href="#" class="dropdown-link" data-toggle="dropdown">Pricing</a>
+									            <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg b-0 m-0">
+									                <li class="dropdown-item"><a href="pricing-1.html" class="dropdown-link">Pricing 1</a></li>
+									                <li class="dropdown-item"><a href="pricing-2.html" class="dropdown-link">Pricing 2</a></li>
+									                <li class="dropdown-item"><a href="pricing-3.html" class="dropdown-link">Pricing 3</a></li>
+									                <li class="dropdown-item"><a href="pricing-4.html" class="dropdown-link">Pricing 4</a></li>
+									                <li class="dropdown-item"><a href="pricing-5.html" class="dropdown-link">Pricing 5</a></li>
+									            </ul>
+									        </li>
+									        <li class="dropdown-item dropdown"><a href="#" class="dropdown-link" data-toggle="dropdown">FAQ</a>
+									            <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg b-0 m-0">
+									                <li class="dropdown-item"><a href="faq-1.html" class="dropdown-link">FAQ 1</a></li>
+									                <li class="dropdown-item"><a href="faq-2.html" class="dropdown-link">FAQ 2</a></li>
+									                <li class="dropdown-item"><a href="faq-3.html" class="dropdown-link">FAQ 3</a></li>
+									                <li class="dropdown-item"><a href="faq-4.html" class="dropdown-link">FAQ 4</a></li>
+									            </ul>
+									        </li>
+									        <li class="dropdown-item dropdown"><a href="#" class="dropdown-link" data-toggle="dropdown">Team</a>
+									            <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg b-0 m-0">
+									                <li class="dropdown-item"><a href="team-1.html" class="dropdown-link">Team 1</a></li>
+									                <li class="dropdown-item"><a href="team-2.html" class="dropdown-link">Team 2</a></li>
+									            </ul>
+									        </li>
+									        <li class="dropdown-item dropdown"><a href="#" class="dropdown-link" data-toggle="dropdown">Account</a>
+									            <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg b-0 m-0">
+									                <li class="dropdown-item"><a href="account-full-signin-1.html" class="dropdown-link">Sign In/Up : Full 1</a></li>
+									                <li class="dropdown-item"><a href="account-full-signin-2.html" class="dropdown-link">Sign In/Up : Full 2</a></li>
+									                <li class="dropdown-item"><a href="account-onepage-signin.html" class="dropdown-link">Sign In/Up : Onepage</a></li>
+									                <li class="dropdown-item"><a href="account-simple-signin.html" class="dropdown-link">Sign In/Up : Simple</a></li>
+									                <li class="dropdown-item"><a href="account-modal-signin.html" class="dropdown-link">Sign In/Up : Modal</a></li>
+									                <li class="dropdown-divider"></li>
+									                <li class="dropdown-item"><a href="account-orders.html" class="dropdown-link">Account : Orders</a></li>
+									                <li class="dropdown-item"><a href="account-favourites.html" class="dropdown-link">Account : Favourites</a></li>
+									                <li class="dropdown-item"><a href="account-settings.html" class="dropdown-link">Account : Settings</a></li>
+									            </ul>
+									        </li>
+									        <li class="dropdown-item dropdown"><a href="#" class="dropdown-link" data-toggle="dropdown">Clients / Career</a>
+									            <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg b-0 m-0">
+									                <li class="dropdown-item"><a href="clients.html" class="dropdown-link">Clients</a></li>
+									                <li class="dropdown-item"><a href="career.html" class="dropdown-link">Career</a></li>
+									            </ul>
+									        </li>
+									        <li class="dropdown-item dropdown"><a href="#" class="dropdown-link" data-toggle="dropdown">Portfolio</a>
+									            <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg b-0 m-0">
+									                <li class="dropdown-item"><a href="portfolio-columns-2.html" class="dropdown-link">2 Columns</a></li>
+									                <li class="dropdown-item"><a href="portfolio-columns-3.html" class="dropdown-link">3 Columns</a></li>
+									                <li class="dropdown-item"><a href="portfolio-columns-4.html" class="dropdown-link">4 Columns</a></li>
+									                <li class="dropdown-divider"></li>
+									                <li class="dropdown-item"><a href="portfolio-single-1.html" class="dropdown-link">Single Item 1</a></li>
+									                <li class="dropdown-item"><a href="portfolio-single-2.html" class="dropdown-link">Single Item 2</a></li>
+									                <li class="dropdown-item"><a href="portfolio-single-3.html" class="dropdown-link">Single Item 3</a></li>
+									                <li class="dropdown-item"><a href="portfolio-single-4.html" class="dropdown-link">Single Item 4</a></li>
+									            </ul>
+									        </li>
+									        <li class="dropdown-item dropdown"><a href="#" class="dropdown-link" data-toggle="dropdown">Search Result</a>
+									            <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg b-0 m-0">
+									                <li class="dropdown-item"><a href="search-result-1.html" class="dropdown-link">Search Result 1</a></li>
+									                <li class="dropdown-item"><a href="search-result-2.html" class="dropdown-link">Search Result 2</a></li>
+									            </ul>
+									        </li>
+									        <li class="dropdown-item">
+									        	<a href="forum-index.html" class="dropdown-link">Forum / Comunity</a>
+									        </li>
+									        <li class="dropdown-item dropdown"><a href="#" class="dropdown-link" data-toggle="dropdown">Utility</a>
+									            <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-up dropdown-menu-block-md shadow-lg b-0 m-0">
+									                <li class="dropdown-item"><a href="404-1.html" class="dropdown-link">Error 1</a></li>
+									                <li class="dropdown-item"><a href="404-2.html" class="dropdown-link">Error 2</a></li>
+									                <li class="dropdown-item"><a href="404-3.html" class="dropdown-link">Error 3</a></li>
+									                <li class="dropdown-divider"></li>
+									                <li class="dropdown-item"><a href="maintenance-1.html" class="dropdown-link">Maintenance 1</a></li>
+									                <li class="dropdown-item"><a href="maintenance-2.html" class="dropdown-link">Maintenance 2</a></li>
+									                <li class="dropdown-divider"></li>
+									                <li class="dropdown-item"><a href="comingsoon-1.html" class="dropdown-link">Coming Soon 1</a></li>
+									                <li class="dropdown-item"><a href="comingsoon-2.html" class="dropdown-link">Coming Soon 2</a></li>
+									                <li class="dropdown-divider"></li>
+									                <li class="dropdown-item"><a href="page-cookie.html" class="dropdown-link">GDPR Page &amp; Cookie Window</a></li>
+									            </ul>
+									        </li>
+									        <li class="dropdown-divider"></li>
+									        <li class="dropdown-item"><a href="__junkyard.html" class="dropdown-link text-gray-500" target="smarty">Smarty Junkyard</a></li>
+									    </ul>
+									</div>
+
+								</li>
+
+
+								<!-- features -->
+								<li class="nav-item dropdown">
+
+									<a href="#" id="mainNavFeatures" class="nav-link dropdown-toggle" 
+										data-toggle="dropdown" 
+										aria-haspopup="true" 
+										aria-expanded="false">
+										Features
+									</a>
+
+									<div aria-labelledby="mainNavFeatures" class="dropdown-menu dropdown-menu-clean dropdown-menu-hover">
+									    <ul class="list-unstyled m-0 p-0">
+									        <li class="dropdown-item dropdown"><a href="#" class="dropdown-link" data-toggle="dropdown">Header</a>
+									            <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg b-0 m-0">
+									                <li class="dropdown-item dropdown"><a href="#" class="dropdown-link font-weight-bold" data-toggle="dropdown">Variants</a>
+									                    <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg b-0 m-0">
+									                        <li class="dropdown-item"><a href="header-variant-1.html" class="dropdown-link">Header : Variant : 1</a></li>
+									                        <li class="dropdown-item"><a href="header-variant-2.html" class="dropdown-link">Header : Variant : 2</a></li>
+									                        <li class="dropdown-item"><a href="header-variant-3.html" class="dropdown-link">Header : Variant : 3</a></li>
+									                    </ul>
+									                </li>
+									                <li class="dropdown-divider"></li>
+									                <li class="dropdown-item"><a href="header-option-light.html" class="dropdown-link">Header : Light <small class="text-muted">(default)</small></a></li>
+									                <li class="dropdown-item"><a href="header-option-dark.html" class="dropdown-link">Header : Dark</a></li>
+									                <li class="dropdown-item"><a href="header-option-color.html" class="dropdown-link">Header : Color</a></li>
+									                <li class="dropdown-item"><a href="header-option-transparent.html" class="dropdown-link">Header : Transparent</a></li>
+									                <li class="dropdown-divider"></li>
+									                <li class="dropdown-item"><a href="header-option-centered.html" class="dropdown-link">Header : Centered</a></li>
+									                <li class="dropdown-item"><a href="header-option-bottom.html" class="dropdown-link">Header : Bottom</a></li>
+									                <li class="dropdown-item"><a href="header-option-floating.html" class="dropdown-link">Header : Floating</a></li>
+									                <li class="dropdown-divider"></li>
+									                <li class="dropdown-item"><a href="header-option-fixed.html" class="dropdown-link">Header : Fixed</a></li>
+									                <li class="dropdown-item"><a href="header-option-reveal.html" class="dropdown-link">Header : Reveal on Scroll</a></li>
+									                <li class="dropdown-divider"></li>
+									                <li class="dropdown-item"><a href="header-option-ajax-search-json.html" class="dropdown-link">Ajax Search : Json</a></li>
+									                <li class="dropdown-item"><a href="header-option-ajax-search-html.html" class="dropdown-link">Ajax Search : Html</a></li>
+									            </ul>
+									        </li>
+									        <li class="dropdown-item dropdown"><a href="#" class="dropdown-link" data-toggle="dropdown">Footer</a>
+									            <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg b-0 m-0">
+									                <li class="dropdown-item dropdown"><a href="#" class="dropdown-link font-weight-bold" data-toggle="dropdown">Variants</a>
+									                    <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg b-0 m-0">
+									                        <li class="dropdown-item"><a href="footer-variant-1.html#footer" class="dropdown-link">Footer : Variant : 1</a></li>
+									                        <li class="dropdown-item"><a href="footer-variant-2.html#footer" class="dropdown-link">Footer : Variant : 2</a></li>
+									                        <li class="dropdown-item"><a href="footer-variant-3.html#footer" class="dropdown-link">Footer : Variant : 3</a></li>
+									                        <li class="dropdown-item"><a href="footer-variant-4.html#footer" class="dropdown-link">Footer : Variant : 4</a></li>
+									                        <li class="dropdown-item"><a href="footer-variant-5.html#footer" class="dropdown-link">Footer : Variant : 5</a></li>
+									                        <li class="dropdown-item"><a href="footer-variant-6.html#footer" class="dropdown-link">Footer : Variant : 6</a></li>
+									                    </ul>
+									                </li>
+									                <li class="dropdown-divider"></li>
+									                <li class="dropdown-item"><a href="footer-option-light.html" class="dropdown-link">Footer : Light</a></li>
+									                <li class="dropdown-item"><a href="footer-option-dark.html" class="dropdown-link">Footer : Dark <small class="text-muted">(default)</small></a></li>
+									                <li class="dropdown-item"><a href="footer-option-image.html" class="dropdown-link">Footer : Image</a></li>
+									            </ul>
+									        </li>
+									        <li class="dropdown-item dropdown"><a href="#" class="dropdown-link" data-toggle="dropdown">Sliders</a>
+									            <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg b-0 m-0">
+									                <li class="dropdown-item"><a href="slider-swiper.html" class="dropdown-link">Swiper Slider</a></li>
+									            </ul>
+									        </li>
+									        <li class="dropdown-item dropdown"><a href="#" class="dropdown-link" data-toggle="dropdown">Page Title</a>
+									            <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg b-0 m-0">
+									                <li class="dropdown-item"><a href="page-title-classic.html" class="dropdown-link">Page Title : Classic</a></li>
+									                <li class="dropdown-item"><a href="page-title-alternate.html" class="dropdown-link">Page Title : Alternate</a></li>
+									                <li class="dropdown-item"><a href="page-title-color.html" class="dropdown-link">Page Title : Color + Nav</a></li>
+									                <li class="dropdown-item"><a href="page-title-clean.html" class="dropdown-link">Page Title : Clean</a></li>
+									                <li class="dropdown-item"><a href="page-title-parallax-1.html" class="dropdown-link">Page Title : Parallax 1</a></li>
+									                <li class="dropdown-item"><a href="page-title-parallax-2.html" class="dropdown-link">Page Title : Parallax 2</a></li>
+									            </ul>
+									        </li>
+									        <li class="dropdown-item dropdown"><a href="#" class="dropdown-link" data-toggle="dropdown">Sidebar</a>
+									            <ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg b-0 m-0">
+									                <li class="dropdown-item"><a href="sidebar-float-dark.html" class="dropdown-link">Sidebar : Float : Dark</a></li>
+									                <li class="dropdown-item"><a href="sidebar-float-light.html" class="dropdown-link">Sidebar : Float : Light</a></li>
+									                <li class="dropdown-divider"></li>
+									                <li class="dropdown-item"><a href="sidebar-static-dark.html" class="dropdown-link">Sidebar : Static : Dark</a></li>
+									                <li class="dropdown-item"><a href="sidebar-static-light.html" class="dropdown-link">Sidebar : Static : Light</a></li>
+									                <li class="dropdown-divider"></li>
+									                <li class="dropdown-item"><span class="d-block text-muted py-2 px-4 fs--13 font-weight-bold">Same as admin</span></li>
+									                <li class="dropdown-item"><a href="sidebar-float-admin-color.html" class="dropdown-link">Sidebar : Float</a></li>
+									                <li class="dropdown-item"><a href="sidebar-static-admin-color.html" class="dropdown-link">Sidebar : Static</a></li>
+									            </ul>
+									        </li>
+									        <li class="dropdown-divider"></li>
+									        <li class="dropdown-item"><a href="layout-boxed-1.html" class="dropdown-link">Boxed Layout</a></li>
+									        <li class="dropdown-item"><a href="layout-boxed-0.html" class="dropdown-link">Boxed + Header Over</a></li>
+									        <li class="dropdown-item"><a href="layout-boxed-2.html" class="dropdown-link">Boxed + Background</a></li>
+									    </ul>
+									</div>
+
+								</li>
+
+
+								<!-- shop + blog -->
+								<li class="nav-item dropdown dropdown-mega">
+
+									<a href="#" id="mainNavShop" class="nav-link dropdown-toggle" 
+										data-toggle="dropdown" 
+										aria-haspopup="true" 
+										aria-expanded="false">
+										Shop &amp; Blog
+									</a>
+
+									<div aria-labelledby="mainNavShop" class="dropdown-menu dropdown-menu-hover dropdown-menu-clean">
+									    <!-- Blog and Shop : Megamenu -->
+									    <ul class="list-unstyled m-0 p-0">
+									        <li class="dropdown-item bg-transparent">
+
+									            <div class="row col-border-md">
+
+									                <div class="col-12 col-md-3">
+
+									                    <h3 class="h6 text-muted text-uppercase fs--14 mb-3">Shop Homepage</h3>
+									                    <ul class="prefix-link-icon prefix-icon-dot">
+
+									                        <li class="dropdown-item">
+									                            <a class="dropdown-link" href="shop-index-1.html">Shop Home 1</a>
+									                        </li>
+
+									                        <li class="dropdown-item">
+									                            <a class="dropdown-link" href="shop-index-2.html">Shop Home 2</a>
+									                        </li>
+
+									                        <li class="dropdown-item">
+									                            <a class="dropdown-link" href="shop-index-3.html">Shop Home 3</a>
+									                        </li>
+
+									                        <li class="dropdown-item">
+									                            <a class="dropdown-link" href="shop-index-4.html">Shop Home 4</a>
+									                        </li>
+
+									                        <li class="dropdown-item">
+									                            <a class="dropdown-link" href="shop-index-christmas.html">
+									                            	<span class="badge badge-secondary float-end">new</span>
+									                            	Shop : Christmas
+									                           	</a>
+									                        </li>
+
+									                        <li class="dropdown-item">
+									                            <a class="dropdown-link disabled" href="#!">More : Soon</a>
+									                        </li>
+
+									                    </ul>
+
+									                </div>
+
+									                <div class="col-12 col-md-3">
+
+									                    <h3 class="h6 text-muted text-uppercase fs--14 mb-3">Shop Category</h3>
+									                    <ul class="prefix-link-icon prefix-icon-dot">
+
+									                        <li class="dropdown-item">
+									                            <a class="dropdown-link" href="shop-page-category-1.html">Category 1</a>
+									                        </li>
+
+									                        <li class="dropdown-item">
+									                            <a class="dropdown-link" href="shop-page-category-2.html">Category 2</a>
+									                        </li>
+
+									                        <li class="dropdown-item">
+									                            <a class="dropdown-link" href="shop-page-category-3.html">Category 3</a>
+									                        </li>
+
+									                        <li class="dropdown-item">
+									                            <a class="dropdown-link" href="shop-page-category-4.html">Category 4</a>
+									                        </li>
+
+									                        <li class="dropdown-item">
+									                            <a class="dropdown-link" href="shop-page-category-lazyload.html">Using Lazyload</a>
+									                        </li>
+
+									                    </ul>
+
+									                </div>
+
+									                <div class="col-12 col-md-3">
+
+									                    <h3 class="h6 text-muted text-uppercase fs--14 mb-3">Shop Cart</h3>
+									                    <ul class="prefix-link-icon prefix-icon-dot">
+
+									                        <li class="dropdown-item">
+									                            <a class="dropdown-link" href="shop-page-cart-1.html">Cart</a>
+									                        </li>
+
+									                        <li class="dropdown-item">
+									                            <a class="dropdown-link" href="shop-page-cart-2.html">Cart Empty</a>
+									                        </li>
+
+									                        <li class="dropdown-item">
+									                            <a class="dropdown-link" href="shop-page-checkout-success.html">Checkout Success</a>
+									                        </li>
+
+									                    </ul>
+
+									                    <h3 class="h6 text-muted text-uppercase fs--14 mb-3 mt-5">Shop Product</h3>
+									                    <ul class="prefix-link-icon prefix-icon-dot">
+
+									                        <li class="dropdown-item">
+									                            <a class="dropdown-link" href="shop-page-product-1.html">Product Page 1</a>
+									                        </li>
+
+									                        <li class="dropdown-item">
+									                            <a class="dropdown-link" href="shop-page-product-2.html">Product Page 2</a>
+									                        </li>
+
+									                        <li class="dropdown-item">
+									                            <a class="dropdown-link" href="shop-page-product-3.html">Product Page 3</a>
+									                        </li>
+
+									                        <li class="dropdown-item">
+									                            <a class="dropdown-link" href="shop-page-product-4.html">Product Page 4</a>
+									                        </li>
+
+									                        <li class="dropdown-item">
+									                            <a class="dropdown-link" href="shop-page-product-5.html">Product Page 5</a>
+									                        </li>
+
+									                    </ul>
+
+									                </div>
+
+									                <div class="col-12 col-md-3">
+
+									                    <h3 class="h6 text-muted text-uppercase fs--14 mb-3">Blog Pages</h3>
+									                    <ul class="prefix-link-icon prefix-icon-line">
+
+									                        <li class="dropdown-item">
+									                            <a class="dropdown-link" href="blog-page-sidebar.html">With Sidebar</a>
+									                        </li>
+
+									                        <li class="dropdown-item">
+									                            <a class="dropdown-link" href="blog-page-sidebar-no.html">Without Sidebar</a>
+									                        </li>
+
+									                        <li class="dropdown-item">
+									                            <a class="dropdown-link" href="blog-page-single-sidebar.html">Single With Sidebar</a>
+									                        </li>
+
+									                        <li class="dropdown-item">
+									                            <a class="dropdown-link" href="blog-page-single-sidebar-no.html">Single Without Sidebar</a>
+									                        </li>
+
+									                    </ul>
+
+									                    <div class="mt-4">
+									                        <img width="600" height="600" class="img-fluid" src="demo.files/svg/artworks/undraw_wireframing_nxyi.svg" alt="...">
+									                    </div>
+
+									                </div>
+
+									            </div>
+
+									        </li>
+									    </ul>
+									</div>
+
+								</li>
+
+
+								<!-- documentation -->
+								<li class="nav-item dropdown">
+
+									<a href="#" id="mainNavDocumentation" class="nav-link dropdown-toggle nav-link-caret-hide" 
+										data-toggle="dropdown" 
+										aria-haspopup="true" 
+										aria-expanded="false">
+										<span>Documentation</span>
+									</a>
+
+									<div aria-labelledby="mainNavDocumentation" class="dropdown-menu dropdown-menu-clean dropdown-menu-hover w--300">										
+										<!-- Documentation : no container, direct links! -->
+										<a href="documentation/index.html" class="dropdown-item transition-hover-left clearfix text-primary pt-4 pb-4 fs--14">
+
+											<span class="float-start w--50 mr--20">
+												<img width="50" height="50" class="img-fluid" src="demo.files/svg/icons/menu_doc_1.svg" alt="...">
+											</span>
+
+											DOCUMENTATION
+											<span class="d-block text-muted text-truncate fs--14">
+												Don't get stuck!
+											</span>
+										</a>
+
+										<div class="dropdown-divider"></div>
+										
+										<a href="documentation/changelog.html" class="dropdown-item transition-hover-left clearfix text-primary pt-4 pb-4 fs--14">
+											
+											<span class="badge badge-secondary badge-soft position-absolute absolute-top right-0 ml-2 mr-2">v3.x</span>
+
+											<span class="float-start w--50 mr--20">
+												<img width="50" height="50" class="img-fluid" src="demo.files/svg/icons/menu_doc_2.svg" alt="...">
+											</span>
+
+											CHANGELOG
+											<span class="d-block text-muted text-truncate fs--14">
+												Smarty Reborn Changes
+											</span>
+										</a>
+									</div>
+
+								</li>
+
+
+
+
+								<!-- social : mobile only (d-block d-sm-none)-->
+								<li class="nav-item d-block d-sm-none text-center mb-4">
+
+									<h3 class="h6 text-muted">Follow Us</h3>
+
+									<a href="#!" class="btn btn-sm btn-facebook transition-hover-top mb-2 rounded-circle text-white" rel="noopener">
+										<i class="fi fi-social-facebook"></i> 
+									</a>
+
+									<a href="#!" class="btn btn-sm btn-twitter transition-hover-top mb-2 rounded-circle text-white" rel="noopener">
+										<i class="fi fi-social-twitter"></i> 
+									</a>
+
+									<a href="#!" class="btn btn-sm btn-linkedin transition-hover-top mb-2 rounded-circle text-white" rel="noopener">
+										<i class="fi fi-social-linkedin"></i> 
+									</a>
+
+									<a href="#!" class="btn btn-sm btn-youtube transition-hover-top mb-2 rounded-circle text-white" rel="noopener">
+										<i class="fi fi-social-youtube"></i> 
+									</a>
+
+								</li>
+
+
+
+								<!-- buy now : mobile only (d-block d-sm-none)-->
+								<li class="nav-item d-block d-sm-none">
+									<a target="_blank" href="#buy_now" class="btn btn-block btn-primary shadow-none text-white m-0">
+										Buy Now
+									</a>
+								</li>
+
+							</ul>
+							<!-- /NAVIGATION -->
+
+
+						</div>
+
+
+
+
+
+						<!-- OPTIONS -->
+						<ul class="list-inline list-unstyled mb-0 d-flex align-items-end">
+
+							<li class="list-inline-item mx-1 dropdown">
+
+								<a href="#" aria-label="Account Options" id="dropdownAccountOptions" class="btn btn-sm rounded-circle btn-primary btn-soft-static" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+									<span class="group-icon">
+										<i class="fi fi-user-male"></i>
+										<i class="fi fi-close"></i>
+									</span>
+								</a>
+
+
+								<!--
+									
+									Dropdown Classes
+										.dropdown-menu-dark 		- dark dropdown (desktop only, will be white on mobile)
+										.dropdown-menu-hover 		- open on hover
+										.dropdown-menu-clean 		- no background color on hover
+										.dropdown-menu-invert 		- open dropdown in oposite direction (left|right, according to RTL|LTR)
+										.dropdown-click-ignore 		- keep dropdown open on inside click (useful on forms inside dropdown)
+
+										Dropdown prefix icon (optional, if enabled in variables.scss)
+											.prefix-link-icon .prefix-icon-dot 		- link prefix
+											.prefix-link-icon .prefix-icon-line 	- link prefix
+											.prefix-link-icon .prefix-icon-ico 		- link prefix
+											.prefix-link-icon .prefix-icon-arrow 	- link prefix
+
+											.prefix-icon-ignore 					- ignore, do not use on a specific link
+
+								-->
+								<div aria-labelledby="dropdownAccountOptions" class="prefix-link-icon prefix-icon-dot dropdown-menu dropdown-menu-clean dropdown-menu-invert dropdown-click-ignore p-0 mt--18 fs--15">
+									<div class="dropdown-header">
+										John Doe
+									</div>
+									<div class="dropdown-divider"></div>
+									<a href="account-orders.html" title="My Orders" class="dropdown-item text-truncate font-weight-light">
+										My Orders <small>(2)</small>
+									</a>
+									<a href="account-favourites.html" title="My Favourites" class="dropdown-item text-truncate font-weight-light">
+										My Favourites <small>(3)</small>
+									</a>
+									<a href="account-settings.html" title="Account Settings" class="dropdown-item text-truncate font-weight-light">
+										Account Settings
+									</a>
+									<div class="dropdown-divider mb-0"></div>
+									<a href="#!" title="Log Out" class="prefix-icon-ignore dropdown-footer dropdown-custom-ignore">
+										<i class="fi fi-power float-start"></i>
+										Log Out
+									</a>
+								</div>
+
+							</li>
+
+							<li class="list-inline-item mx-1 dropdown">
+
+								<a href="#" aria-label="website search" class="btn-sow-search-toggler btn btn-sm rounded-circle btn-primary btn-soft-static">
+									<i class="fi fi-search"></i>
+								</a>
+
+							</li>
+
+							<li class="list-inline-item ml--6 mr--6 float-start d-none d-lg-inline-block">
+								<a target="_blank" href="https://wrapbootstrap.com/theme/smarty-website-admin-rtl-WB02DSN1B" class="btn btn-sm btn-primary shadow-none m-0">
+									Buy Now
+								</a>
+							</li>
+
+						</ul>
+						<!-- /OPTIONS -->
+
+
+
+					</nav>
+
+				</div>
+				<!-- /NAVBAR -->
+
+			</header>
+			<!-- /HEADER -->
+
+
+		
+
+			<!-- PAGE TITLE -->
+			<section class="bg-light p-0">
+				<div class="container py-4">
+
+					<h1 class="h3">
+						Terms &amp; Conditions
+					</h1>
+
+					<nav aria-label="breadcrumb">
+						<ol class="breadcrumb fs--14">
+							<li class="breadcrumb-item"><a href="#!">Home</a></li>
+							<li class="breadcrumb-item active" aria-current="page">Terms &amp; Conditions</li>
+						</ol>
+					</nav>
+
+				</div>
+			</section>
+			<!-- /PAGE TITLE -->
+
+
+
+
+			<!-- -->
+			<section>
+				<div class="container">
+
+					<!--
+						.article-format class will add some slightly formattings for a good text visuals. 
+						This is because most editors are not ready formatted for bootstrap
+						Blog content should come inside this container, as it is from database!
+						src/scss/_core/base/_typography.scss
+					-->
+					<div class="article-format">
+
+						<h2>Overview</h2>
+
+						<p>This website is operated by <span class="terms_company_name">- Company Name -</span>. Throughout the site, the terms "we", "us" and "our" refer to <span class="terms_company_name">- Company Name -</span>. <span class="terms_company_name">- Company Name -</span> offers this website, including all information, tools and services available from this site to you, the user, conditioned upon your acceptance of all terms, conditions, policies and notices stated here.</p>
+
+						<p>By visiting our site and/ or purchasing something from us, you engage in our "Service" and agree to be bound by the following terms and conditions ("Terms of Service", "Terms"), including those additional terms and conditions and policies referenced herein and/or available by hyperlink. These Terms of Service apply  to all users of the site, including without limitation users who are browsers, vendors, customers, merchants, and/ or contributors of content.</p>
+
+						<p>Please read these Terms of Service carefully before accessing or using our website. By accessing or using any part of the site, you agree to be bound by these Terms of Service. If you do not agree to all the terms and conditions of this agreement, then you may not access the website or use any services. If these Terms of Service are considered an offer, acceptance is expressly limited to these Terms of Service.</p>
+
+						<p>Any new features or tools which are added to the current store shall also be subject to the Terms of Service. You can review the most current version of the Terms of Service at any time on this page. We reserve the right to update, change or replace any part of these Terms of Service by posting updates and/or changes to our website. It is your responsibility to check this page periodically for changes. Your continued use of or access to the website following the posting of any changes constitutes acceptance of those changes.</p>
+
+						<p>Our store is hosted by Global Layerstore Srl, providing us the online e-commerce platform that allows us to sell our products and services to you.</p>
+
+
+						<h2>Online store terms</h2>
+
+						<p>By agreeing to these Terms of Service, you represent that you are at least the age of majority in your state or province of residence, or that you are the age of majority in your state or province of residence and you have given us your consent to allow any of your minor dependents to use this site.</p>
+
+						<p>You may not use our products for any illegal or unauthorized purpose nor may you, in the use of the Service, violate any laws in your jurisdiction (including but not limited to copyright laws).</p>
+
+						<p>You must not transmit any worms or viruses or any code of a destructive nature.</p>
+
+						<p>A breach or violation of any of the Terms will result in an immediate termination of your Services.</p>
+
+
+						<h2>General conditions</h2>
+
+						<p>We reserve the right to refuse service to anyone for any reason at any time.</p>
+
+						<p>You understand that your content (not including credit card information), may be transferred unencrypted and involve (a) transmissions over various networks; and (b) changes to conform and adapt to technical requirements of connecting networks or devices. Credit card information is always encrypted during transfer over networks.</p>
+
+						<p>You agree not to reproduce, duplicate, copy, sell, resell or exploit any portion of the Service, use of the Service, or access to the Service or any contact on the website through which the service is provided, without express written permission by us.</p>
+
+						<p>The headings used in this agreement are included for convenience only and will not limit or otherwise affect these Terms.</p>
+
+
+						<h2>Accuracy, completeness and timeliness of information</h2>
+
+						<p>We are not responsible if information made available on this site is not accurate, complete or current. The material on this site is provided for general information only and should not be relied upon or used as the sole basis for making decisions without consulting primary, more accurate, more complete or more timely sources of information. Any reliance on the material on this site is at your own risk.</p>
+
+						<p>This site may contain certain historical information. Historical information, necessarily, is not current and is provided for your reference only. We reserve the right to modify the contents of this site at any time, but we have no obligation to update any information on our site. You agree that it is your responsibility to monitor changes to our site.</p>
+
+
+						<h2>Modifications to the service and prices</h2>
+
+						<p>Prices for our products are subject to change without notice.</p>
+
+						<p>We reserve the right at any time to modify or discontinue the Service (or any part or content thereof) without notice at any time.</p>
+
+						<p>We shall not be liable to you or to any third-party for any modification, price change, suspension or discontinuance of the Service.</p>
+
+
+						<h2>Products or services (if applicable)</h2>
+
+						<p>Certain products or services may be available exclusively online through the website. These products or services may have limited quantities and are subject to return or exchange only according to our Return Policy.</p>
+
+						<p>We have made every effort to display as accurately as possible the colors and images of our products that appear at the store. We cannot guarantee that your computer monitor's display of any color will be accurate.</p>
+
+						<p>We reserve the right, but are not obligated, to limit the sales of our products or Services to any person, geographic region or jurisdiction. We may exercise this right on a case-by-case basis. We reserve the right to limit the quantities of any products or services that we offer. All descriptions of products or product pricing are subject to change at anytime without notice, at the sole discretion of us. We reserve the right to discontinue any product at any time. Any offer for any product or service made on this site is void where prohibited.</p>
+
+						<p>We do not warrant that the quality of any products, services, information, or other material purchased or obtained by you will meet your expectations, or that any errors in the Service will be corrected.</p>
+
+
+						<h2>Accuracy of billing and account information</h2>
+
+						<p>We reserve the right to refuse any order you place with us. We may, in our sole discretion, limit or cancel quantities purchased per person, per household or per order. These restrictions may include orders placed by or under the same customer account, the same credit card, and/or orders that use the same billing and/or shipping address. In the event that we make a change to or cancel an order, we may attempt to notify you by contacting the e-mail and/or billing address/phone number provided at the time the order was made. We reserve the right to limit or prohibit orders that, in our sole judgment, appear to be placed by dealers, resellers or distributors.</p>
+
+						<p>You agree to provide current, complete and accurate purchase and account information for all purchases made at our store. You agree to promptly update your account and other information, including your email address and credit card numbers and expiration dates, so that we can complete your transactions and contact you as needed.</p>
+
+						<p>For more detail, please review our Returns Policy.</p>
+
+
+						<h2>Optional tools</h2>
+
+						<p>We may provide you with access to third-party tools over which we neither monitor nor have any control nor input.</p>
+
+						<p>You acknowledge and agree that we provide access to such tools "as is" and "as available" without any warranties, representations or conditions of any kind and without any endorsement. We shall have no liability whatsoever arising from or relating to your use of optional third-party tools.</p>
+
+						<p>Any use by you of optional tools offered through the site is entirely at your own risk and discretion and you should ensure that you are familiar with and approve of the terms on which tools are provided by the relevant third-party provider(s).</p>
+
+						<p>We may also, in the future, offer new services and/or features through the website (including, the release of new tools and resources). Such new features and/or services shall also be subject to these Terms of Service.</p>
+
+
+						<h2>Third-Party links</h2>
+
+						<p>Certain content, products and services available via our Service may include materials from third-parties.</p>
+
+						<p>Third-party links on this site may direct you to third-party websites that are not affiliated with us. We are not responsible for examining or evaluating the content or accuracy and we do not warrant and will not have any liability or responsibility for any third-party materials or websites, or for any other materials, products, or services of third-parties.</p>
+
+						<p>We are not liable for any harm or damages related to the purchase or use of goods, services, resources, content, or any other transactions made in connection with any third-party websites. Please review carefully the third-party's policies and practices and make sure you understand them before you engage in any transaction. Complaints, claims, concerns, or questions regarding third-party products should be directed to the third-party.</p>
+
+
+						<h2>User comments, feedback and other submissions</h2>
+
+						<p>If, at our request, you send certain specific submissions (for example contest entries) or without a request from us you send creative ideas, suggestions, proposals, plans, or other materials, whether online, by email, by postal mail, or otherwise (collectively, 'comments'), you agree that we may, at any time, without restriction, edit, copy, publish, distribute, translate and otherwise use in any medium any comments that you forward to us. We are and shall be under no obligation (1) to maintain any comments in confidence; (2) to pay compensation for any comments; or (3) to respond to any comments.</p>
+
+						<p>We may, but have no obligation to, monitor, edit or remove content that we determine in our sole discretion are unlawful, offensive, threatening, libelous, defamatory, pornographic, obscene or otherwise objectionable or violates any party’s intellectual property or these Terms of Service.</p>
+
+						<p>You agree that your comments will not violate any right of any third-party, including copyright, trademark, privacy, personality or other personal or proprietary right. You further agree that your comments will not contain libelous or otherwise unlawful, abusive or obscene material, or contain any computer virus or other malware that could in any way affect the operation of the Service or any related website. You may not use a false e-mail address, pretend to be someone other than yourself, or otherwise mislead us or third-parties as to the origin of any comments. You are solely responsible for any comments you make and their accuracy. We take no responsibility and assume no liability for any comments posted by you or any third-party.</p>
+
+
+						<h2>Personal information</h2>
+
+						<p>Your submission of personal information through the store is governed by our Privacy Policy. To view our Privacy Policy.</p>
+
+
+						<h2>Errors, inaccuracies and omissions</h2>
+
+						<p>Occasionally there may be information on our site or in the Service that contains typographical errors, inaccuracies or omissions that may relate to product descriptions, pricing, promotions, offers, product shipping charges, transit times and availability. We reserve the right to correct any errors, inaccuracies or omissions, and to change or update information or cancel orders if any information in the Service or on any related website is inaccurate at any time without prior notice (including after you have submitted your order).</p>
+
+						<p>We undertake no obligation to update, amend or clarify information in the Service or on any related website, including without limitation, pricing information, except as required by law. No specified update or refresh date applied in the Service or on any related website, should be taken to indicate that all information in the Service or on any related website has been modified or updated.</p>
+
+
+
+						<h2>Prohibited uses</h2>
+
+						<p>In addition to other prohibitions as set forth in the Terms of Service, you are prohibited from using the site or its content: (a) for any unlawful purpose; (b) to solicit others to perform or participate in any unlawful acts; (c) to violate any international, federal, provincial or state regulations, rules, laws, or local ordinances; (d) to infringe upon or violate our intellectual property rights or the intellectual property rights of others; (e) to harass, abuse, insult, harm, defame, slander, disparage, intimidate, or discriminate based on gender, sexual orientation, religion, ethnicity, race, age, national origin, or disability; (f) to submit false or misleading information; (g) to upload or transmit viruses or any other type of malicious code that will or may be used in any way that will affect the functionality or operation of the Service or of any related website, other websites, or the Internet; (h) to collect or track the personal information of others; (i) to spam, phish, pharm, pretext, spider, crawl, or scrape; (j) for any obscene or immoral purpose; or (k) to interfere with or circumvent the security features of the Service or any related website, other websites, or the Internet. We reserve the right to terminate your use of the Service or any related website for violating any of the prohibited uses.</p>
+
+
+						<h2>Disclaimer of warranties; limitation of liability</h2>
+
+						<p>We do not guarantee, represent or warrant that your use of our service will be uninterrupted, timely, secure or error-free.</p>
+
+						<p>We do not warrant that the results that may be obtained from the use of the service will be accurate or reliable.</p>
+
+						<p>You agree that from time to time we may remove the service for indefinite periods of time or cancel the service at any time, without notice to you.</p>
+
+						<p>You expressly agree that your use of, or inability to use, the service is at your sole risk. The service and all products and services delivered to you through the service are (except as expressly stated by us) provided 'as is' and 'as available' for your use, without any representation, warranties or conditions of any kind, either express or implied, including all implied warranties or conditions of merchantability, merchantable quality, fitness for a particular purpose, durability, title, and non-infringement.</p>
+
+						<p>In no case shall <span class="terms_company_name">- Company Name -</span>, our directors, officers, employees, affiliates, agents, contractors, interns, suppliers, service providers or licensors be liable for any injury, loss, claim, or any direct, indirect, incidental, punitive, special, or consequential damages of any kind, including, without limitation lost profits, lost revenue, lost savings, loss of data, replacement costs, or any similar damages, whether based in contract, tort (including negligence), strict liability or otherwise, arising from your use of any of the service or any products procured using the service, or for any other claim related in any way to your use of the service or any product, including, but not limited to, any errors or omissions in any content, or any loss or damage of any kind incurred as a result of the use of the service or any content (or product) posted, transmitted, or otherwise made available via the service, even if advised of their possibility. Because some states or jurisdictions do not allow the exclusion or the limitation of liability for consequential or incidental damages, in such states or jurisdictions, our liability shall be limited to the maximum extent permitted by law.</p>
+
+
+
+						<h2>Indemnification</h2>
+
+						<p>You agree to indemnify, defend and hold harmless <span class="terms_company_name">- Company Name -</span> and our parent, subsidiaries, affiliates, partners, officers, directors, agents, contractors, licensors, service providers, subcontractors, suppliers, interns and employees, harmless from any claim or demand, including reasonable attorneys’ fees, made by any third-party due to or arising out of your breach of these Terms of Service or the documents they incorporate by reference, or your violation of any law or the rights of a third-party.</p>
+
+
+						<h2>Severability</h2>
+
+						<p>In the event that any provision of these Terms of Service is determined to be unlawful, void or unenforceable, such provision shall nonetheless be enforceable to the fullest extent permitted by applicable law, and the unenforceable portion shall be deemed to be severed from these Terms of Service, such determination shall not affect the validity and enforceability of any other remaining provisions.</p>
+
+
+						<h2>Termination</h2>
+
+						<p>The obligations and liabilities of the parties incurred prior to the termination date shall survive the termination of this agreement for all purposes.</p>
+
+						<p>These Terms of Service are effective unless and until terminated by either you or us. You may terminate these Terms of Service at any time by notifying us that you no longer wish to use our Services, or when you cease using our site.</p>
+
+						<p>If in our sole judgment you fail, or we suspect that you have failed, to comply with any term or provision of these Terms of Service, we also may terminate this agreement at any time without notice and you will remain liable for all amounts due up to and including the date of termination; and/or accordingly may deny you access to our Services (or any part thereof).</p>
+
+
+						<h2>Entire agreement</h2>
+
+						<p>The failure of us to exercise or enforce any right or provision of these Terms of Service shall not constitute a waiver of such right or provision.</p>
+
+						<p>These Terms of Service and any policies or operating rules posted by us on this site or in respect to The Service constitutes the entire agreement and understanding between you and us and govern your use of the Service, superseding any prior or contemporaneous agreements, communications and proposals, whether oral or written, between you and us (including, but not limited to, any prior versions of the Terms of Service).</p>
+
+						<p>Any ambiguities in the interpretation of these Terms of Service shall not be construed against the drafting party.</p>
+
+
+						<h2>Governing law</h2>
+
+						<p>These Terms of Service and any separate agreements whereby we provide you Services shall be governed by and construed in accordance with the laws of <span class="terms_company_address">- Company Address -</span>.</p>
+
+
+						<h2>Changes to terms of service</h2>
+
+						<p>You can review the most current version of the Terms of Service at any time at this page.</p>
+
+						<p>We reserve the right, at our sole discretion, to update, change or replace any part of these Terms of Service by posting updates and changes to our website. It is your responsibility to check our website periodically for changes. Your continued use of or access to our website or the Service following the posting of any changes to these Terms of Service constitutes acceptance of those changes.</p>
+
+
+						<h2>Contact information</h2>
+
+						<p>Questions about the Terms of Service should be sent to us at <span class="terms_company_email">- Company Email -</span>.</p>
+						<p>Last Update: <span class="terms_update_date">- Update Date -</span></p>
+
+					</div>
+
+				</div>
+			</section>
+			<!-- / -->
+
+
+
+
+
+			<!-- Footer -->
+			<footer id="footer" class="footer-dark">
+				<div class="container">
+
+					<div class="row">
+						
+						<div class="bg-distinct col-12 col-md-6 col-lg-4 text-center p-0 py-5">
+
+							<div class="footer-svg-shape position-absolute absolute-top z-index-2 mt--n70 w-100 overflow-hidden pt--5">
+								<svg viewBox="0 0 1440 28" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+									<path d="M0 28H1440C1440 28 1154 3.21961e-10 720 1.30487e-09C286 2.28777e-09 0 28 0 28Z"></path>
+								</svg>
+							</div>
+
+							<form method="post" action="#subscribe_url" class="px-4"> 
+
+								<input type="hidden" name="action" value="subscribe" tabindex="-1"> 
+								
+								<p id="btnAriaFooterFormTitle" class="text-muted">
+									Claim your candy now!
+								</p>
+								
+									
+								<div class="input-group-over input-group-pill mb-4"> 
+									
+									<input required class="form-control b-0" name="subscriber_email" type="email" value="" placeholder="email address..." aria-label="email address...">
+									
+									<button type="submit" class="btn bg-transparent shadow-none" aria-label="subscribe" aria-labelledby="btnAriaFooterFormTitle"> 
+										<i class="fi fi-send fs--18"></i> 
+									</button>
+
+								</div>
+
+
+							</form>
+
+							<div class="mt--12"> 
+
+								<a href="#!" class="btn btn-sm btn-facebook transition-hover-top mb-2 rounded-circle" rel="noopener" aria-label="facebook page">
+									<i class="fi fi-social-facebook"></i> 
+								</a>
+
+								<a href="#!" class="btn btn-sm btn-twitter transition-hover-top mb-2 rounded-circle" rel="noopener" aria-label="twitter page">
+									<i class="fi fi-social-twitter"></i> 
+								</a>
+
+								<a href="#!" class="btn btn-sm btn-linkedin transition-hover-top mb-2 rounded-circle" rel="noopener" aria-label="linkedin page">
+									<i class="fi fi-social-linkedin"></i> 
+								</a>
+
+								<a href="#!" class="btn btn-sm btn-youtube transition-hover-top mb-2 rounded-circle" rel="noopener" aria-label="youtube page">
+									<i class="fi fi-social-youtube"></i> 
+								</a>
+
+							</div>
+
+						</div>
+
+
+						<div class="col-12 col-md-6 col-lg-8 py-5 fs--15 text-center-xs">
+
+							<h3 class="fs--15 text-muted">SPY US! WE'VE GOT SECRETS!</h3>
+
+							<ul class="mt--30 mb-0 breadcrumb bg-transparent p-0 block-xs"> 
+								<li class="breadcrumb-item"><a href="contact-1.html">Contact</a></li> 
+								<li class="breadcrumb-item"><a href="about-us-1.html">About Us</a></li> 
+								<li class="breadcrumb-item"><a href="page-terms-and-conditions.html">Terms &amp; Conditions</a></li> 
+								<li class="breadcrumb-item"><a href="page-cookie.html">GDPR &amp; Cookies</a></li> 
+							</ul>
+
+							<div class="text-muted mt--30">
+								<p>
+									Frontend? Admin? What if you don't need anymore to learn and work with two different templates on your projects? 
+									<b>What would you do if time really matter?</b> Both: frontend and admin uses exactly the same core and all elements can be used in both sides because... actually there are no such thing "two sides" with Smarty!
+								</p>
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="bg-distinct py-3 clearfix">
+
+					<div class="container clearfix font-weight-light text-center-xs">
+
+						<div class="fs--14 py-2 float-start float-none-xs m-0-xs">
+							&copy; My Company Inc.
+						</div>
+
+						<ul class="list-inline mb-0 mt-2 float-end float-none-xs m-0-xs"> 
+							<li class="list-inline-item m-0"> 
+								<img width="38" height="24" class="lazy" data-src="assets/images/credit_card/visa.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="visa credit card icon">
+							</li> 
+
+							<li class="list-inline-item m-0"> 
+								<img width="38" height="24" class="lazy" data-src="assets/images/credit_card/mastercard.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="mastercard credit card icon">
+							</li> 
+
+							<li class="list-inline-item m-0"> 
+								<img width="38" height="24" class="lazy" data-src="assets/images/credit_card/discover.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="discover credit card icon">
+							</li>
+
+							<li class="list-inline-item m-0"> 
+								<img width="38" height="24" class="lazy" data-src="assets/images/credit_card/amazon.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="amazon credit card icon">
+							</li>
+							
+							<li class="list-inline-item m-0"> 
+								<img width="38" height="24" class="lazy" data-src="assets/images/credit_card/paypal.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="paypal credit card icon">
+							</li>
+
+							<li class="list-inline-item m-0"> 
+								<img width="38" height="24" class="lazy" data-src="assets/images/credit_card/skrill.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="skrill credit card icon">
+							</li>
+
+							<!-- more vendors on assets/images/credit_card/ -->
+
+						</ul>
+
+					</div>
+				</div>
+
+			</footer>
+			<!-- /Footer -->
+
+
+		</div><!-- /#wrapper -->
+
+
+		<script src="assets/js/core.min.js"></script>
+		
+	</body>
+</html>

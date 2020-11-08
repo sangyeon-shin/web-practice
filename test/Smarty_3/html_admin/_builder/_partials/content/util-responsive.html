@@ -1,0 +1,339 @@
+﻿					<!-- doc:start -->
+					<div class="page-title bg-transparent b-0">
+
+						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
+							Responsive
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--13 pb-2 px-3">
+								<li class="breadcrumb-item">
+									<a href="index.html" class="js-ajax">Dashboard</a>
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Utils
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Responsive
+								</li>
+							</ol>
+						</nav>
+
+					</div>
+
+
+
+
+
+
+
+					<!-- start:row -->
+					<div class="row gutters-sm">
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Responsive</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<table class="table table-lg">
+											<thead>
+												<tr>
+													<th scope="col" class="w--300">Class</th>
+													<th scope="col">Description</th>
+												</tr>
+											</thead>
+
+											<tbody>
+
+												<tr>
+													<td>
+														<h6>Desktop</h6>
+														<code class="d-block">.float-none-lg</code>
+														<code class="d-block">.b--0-lg</code>
+														<code class="d-block">.m--0-lg</code>
+														<code class="d-block">.p--0-lg</code>
+														<br>
+														<code class="d-block">.border-top-lg</code>
+														<code class="d-block">.border-bottom-lg</code>
+													</td>
+													<td>
+
+														<p>
+															There are situations where you need float/border/margin/padding in mobile devices but not for desktop/laptop. 
+														</p>
+
+														<code>.float-none-lg</code> no float <br>
+														<code>.b--0-lg</code> no borders <br>
+														<code>.b--0-lg</code> no margins <br>
+														<code>.b--0-lg</code> no paddings <br>
+
+													</td>
+												</tr>
+
+												<tr>
+													<td>
+														<h6>Medium (md-up)</h6>
+														<code class="d-block">.text-center-md</code>
+														<code class="d-block">.text-start-md</code>
+														<code class="d-block">.float-none-md</code>
+														<code class="d-block">.btn.d-block-md</code>
+														<code class="d-block">.position-absolute-md</code>
+														<code class="d-block">.position-relative-md</code>
+														<code class="d-block">.position-fixed-md</code>
+														<br>
+														<code class="d-block">.m--0-md</code>
+														<code class="d-block">.mt--0-md</code>
+														<code class="d-block">.mr--0-md</code>
+														<code class="d-block">.ml--0-md</code>
+														<code class="d-block">.m--15-md</code>
+														<br>
+														<code class="d-block">.p--0-md</code>
+														<code class="d-block">.pt--0-md</code>
+														<code class="d-block">.pr--0-md</code>
+														<code class="d-block">.pl--0-md</code>
+														<code class="d-block">.p--15-md</code>
+														<br>
+														<code class="d-block">.b--0-md</code>
+														<code class="d-block">.bt--0-md</code>
+														<code class="d-block">.br--0-md</code>
+														<code class="d-block">.bl--0-md</code>
+														<br>
+														<br>
+														<code class="d-block">.border-top-md</code>
+														<code class="d-block">.border-bottom-md</code>
+														<br>
+														<br>
+														<code class="d-block">.w-100-md</code>
+														<code class="d-block">.w-100vh-md</code>
+														<br>
+														<code class="d-block">.h-100-md</code>
+														<code class="d-block">.h-100vh-md</code>
+														<br>
+														<code class="d-block">.rounded-0-md</code>
+														<code class="d-block">.rounded-circle-md</code>
+														<code class="d-block">.overlay-none-md</code>
+														<br>
+														<code class="d-block">.h1-md</code>
+														<code class="d-block">.h2-md</code>
+														<code class="d-block">.h3-md</code>
+														<code class="d-block">.h4-md</code>
+														<code class="d-block">.h5-md</code>
+														<code class="d-block">.h6-md</code>
+														<br>
+														<code class="d-block">.shadow-none-md</code>
+													</td>
+													<td>
+
+														<p>
+															All classes are to cancel/rewrite rules on medium-up devices (desktops).
+														</p>
+														<code class="text-info">@media only screen and (max-width: map-get($grid-breakpoints, "lg") - 1) and (min-width: map-get($grid-breakpoints, "md"))</code>
+
+														<br><br>
+
+														<p>
+															<code>.m--*</code> all margins <br>
+															<code>.mt--*</code> margin top <br>
+															<code>.mr--*</code> margin right <br>
+															<code>.mb--*</code> margin bottom <br>
+															<code>.ml--*</code> margin left <br>
+														</p>
+
+														<p>
+															<code>.p--*</code> all paddings <br>
+															<code>.pt--*</code> padding top <br>
+															<code>.pr--*</code> padding right <br>
+															<code>.pb--*</code> padding bottom <br>
+															<code>.pl--*</code> padding left <br>
+														</p>
+
+														<p>
+															<code>.w-*</code> width <br>
+															<code>.h-*</code> height <br>
+														</p>
+
+														<hr>
+
+														<code>
+															.p--15-md {
+																padding: 15px !important;
+															}<br>
+															<br>
+															.w-100-xs {
+																min-width: 0% !important;
+																width: 100% !important;
+															} <br>
+															.w-100vh-xs {
+																max-width: 100% !important;
+																width: 100vh !important;
+															} <br>
+ 															<br>
+															.h-100-xs {
+																height: auto !important;
+																min-height: 100% !important;
+															} <br>
+															.h-100vh-xs {
+																height: auto !important;
+																min-height: 100vh !important;
+															} <br>
+
+														</code>
+													</td>
+												</tr>
+
+												<tr>
+													<td>
+														<h6>Small (md-down)</h6>
+														<code class="d-block">.text-center-xs</code>
+														<code class="d-block">.text-start-xs</code>
+														<code class="d-block">.float-none-xs</code>
+														<code class="d-block">.btn.d-block-xs</code>
+														<code class="d-block">.position-absolute-xs</code>
+														<code class="d-block">.position-relative-xs</code>
+														<code class="d-block">.position-fixed-xs</code>
+														<br>
+														<code class="d-block">.m--0-xs</code>
+														<code class="d-block">.mt--0-xs</code>
+														<code class="d-block">.mr--0-xs</code>
+														<code class="d-block">.ml--0-xs</code>
+														<code class="d-block">.m--15-xs</code>
+														<br>
+														<code class="d-block">.p--0-xs</code>
+														<code class="d-block">.pt--0-xs</code>
+														<code class="d-block">.pr--0-xs</code>
+														<code class="d-block">.pl--0-xs</code>
+														<code class="d-block">.p--15-xs</code>
+														<code class="d-block">.p-*-xs</code>
+														<br>
+														<code class="d-block">.b--0-xs</code>
+														<code class="d-block">.bt--0-xs</code>
+														<code class="d-block">.br--0-xs</code>
+														<code class="d-block">.bl--0-xs</code>
+														<br>
+														<br>
+														<code class="d-block">.border-top-xs</code>
+														<code class="d-block">.border-bottom-xs</code>
+														<br>
+														<br>
+														<code class="d-block">.w-100-xs</code>
+														<code class="d-block">.w-100vh-xs</code>
+														<code class="d-block">.h-auto-xs</code>
+														<br>
+														<code class="d-block">.h-100-xs</code>
+														<code class="d-block">.h-100vh-xs</code>
+														<br>
+														<code class="d-block">.rounded-0-xs</code>
+														<code class="d-block">.rounded-circle-xs</code>
+														<code class="d-block">.overlay-none-xs</code>
+														<br>
+														<code class="d-block">.h1-xs</code>
+														<code class="d-block">.h2-xs</code>
+														<code class="d-block">.h3-xs</code>
+														<code class="d-block">.h4-xs</code>
+														<code class="d-block">.h5-xs</code>
+														<code class="d-block">.h6-xs</code>
+														<br>
+														<code class="d-block">.m-1-xs</code>
+														<code class="d-block">.m-2-xs</code>
+														<code class="d-block">.m-3-xs</code>
+														<code class="d-block">.m-4-xs</code>
+														<code class="d-block">.m-5-xs</code>
+														<br>
+														<code class="d-block">.mt-1-xs</code>
+														<code class="d-block">.mt-2-xs</code>
+														<code class="d-block">.mt-3-xs</code>
+														<code class="d-block">.mt-4-xs</code>
+														<code class="d-block">.mt-5-xs</code>
+														<br>
+														<code class="d-block">.mb-1-xs</code>
+														<code class="d-block">.mb-2-xs</code>
+														<code class="d-block">.mb-3-xs</code>
+														<code class="d-block">.mb-4-xs</code>
+														<code class="d-block">.mb-5-xs</code>
+														<br>
+														<code class="d-block">.shadow-none-xs</code>
+													</td>
+													<td>
+
+														<p>
+															All classes are to cancel/rewrite rules on medium-down devices (mobile devices).
+														</p>
+														<code class="text-info">@media only screen and (max-width: map-get($grid-breakpoints, "md"))</code>
+
+														<br><br>
+
+														<p>
+															<code>.m--*</code> all margins <br>
+															<code>.mt--*</code> margin top <br>
+															<code>.mr--*</code> margin right <br>
+															<code>.mb--*</code> margin bottom <br>
+															<code>.ml--*</code> margin left <br>
+														</p>
+
+														<p>
+															<code>.p--*</code> all paddings <br>
+															<code>.pt--*</code> padding top <br>
+															<code>.pr--*</code> padding right <br>
+															<code>.pb--*</code> padding bottom <br>
+															<code>.pl--*</code> padding left <br>
+														</p>
+
+														<p>
+															<code>.w-*</code> width <br>
+															<code>.h-*</code> height <br>
+														</p>
+
+														<hr>
+
+														<code>
+															.p--15-md {
+																padding: 15px !important;
+															}<br>
+															<br>
+															.w-100-xs {
+																min-width: 0% !important;
+																width: 100% !important;
+															} <br>
+															.w-100vh-xs {
+																max-width: 100% !important;
+																width: 100vh !important;
+															} <br>
+ 															<br>
+															.h-100-xs {
+																height: auto !important;
+																min-height: 100% !important;
+															} <br>
+															.h-100vh-xs {
+																height: auto !important;
+																min-height: 100vh !important;
+															} <br>
+
+														</code>
+
+													</td>
+
+												</tr>
+
+											</tbody>
+										</table>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+					</div>
+					<!-- end:row: -->
+					<!-- doc:end -->

@@ -1,0 +1,2008 @@
+﻿<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+
+		<meta charset="UTF-8">
+		<title>Smarty</title>
+		<meta name="description" content="Smarty Documentation">
+
+        <meta name="viewport" content="width=device-width, maximum-scale=5, initial-scale=1, user-scalable=0">
+        <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+        <!-- up to 10% speed up for external res -->
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+        <link rel="preconnect" href="https://fonts.googleapis.com/">
+        <link rel="preconnect" href="https://fonts.gstatic.com/">
+        <!-- preloading icon font is helping to speed up a little bit -->
+        <link rel="preload" href="../assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
+
+		<link rel="stylesheet" href="../assets/css/core.min.css">
+		<link rel="stylesheet" href="../assets/css/vendor_bundle.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
+
+		<!-- favicon -->
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="apple-touch-icon" href="../demo.files/logo/icon_512x512.png">
+
+		<link rel="manifest" href="../assets/images/manifest/manifest.json">
+		<meta name="theme-color" content="#377dff">
+
+	</head>
+
+
+	<!--
+
+		Layout Admin
+			.layout-admin 	(required)
+
+			.aside-sticky  					- sidebar : fixed and push header
+			.header-sticky  				- header : always visible on top (acting as old .header-focus)
+			.header-scroll-reveal  			- header : hide on scroll down and reveal on scroll up
+
+	-->
+	<body class="layout-admin aside-sticky header-sticky" data-s2t-class="btn-indigo btn-sm rounded-circle">
+
+		<div id="wrapper">
+
+
+
+			<!-- HEADER -->
+			<header id="header" class="d-flex align-items-center shadow-xs">
+
+
+				<!-- NAVBAR -->
+				<div class="container-fluid position-relative">
+
+					<nav class="navbar navbar-expand-lg navbar-dark justify-content-lg-between">
+
+						<div class="align-items-start">
+							
+							<!-- 
+								sidebar toggler 
+							-->
+							<a href="#aside-main" class="btn-sidebar-toggle h-100 d-inline-block d-lg-none justify-content-center align-items-center p-2">
+								<span class="group-icon">
+									<i>
+										<svg width="25" viewBox="0 0 20 20">
+											<path fill="#333333" d="M 19.9876 1.998 L -0.0108 1.998 L -0.0108 -0.0019 L 19.9876 -0.0019 L 19.9876 1.998 Z"></path>
+											<path fill="#333333" d="M 19.9876 7.9979 L -0.0108 7.9979 L -0.0108 5.9979 L 19.9876 5.9979 L 19.9876 7.9979 Z"></path>
+											<path fill="#333333" d="M 19.9876 13.9977 L -0.0108 13.9977 L -0.0108 11.9978 L 19.9876 11.9978 L 19.9876 13.9977 Z"></path>
+											<path fill="#333333" d="M 19.9876 19.9976 L -0.0108 19.9976 L -0.0108 17.9976 L 19.9876 17.9976 L 19.9876 19.9976 Z"></path>
+										</svg>
+									</i>
+
+									<i>
+										<svg width="25" viewBox="0 0 47.971 47.971">
+											<path fill="#333333" d="M28.228,23.986L47.092,5.122c1.172-1.171,1.172-3.071,0-4.242c-1.172-1.172-3.07-1.172-4.242,0L23.986,19.744L5.121,0.88c-1.172-1.172-3.07-1.172-4.242,0c-1.172,1.171-1.172,3.071,0,4.242l18.865,18.864L0.879,42.85c-1.172,1.171-1.172,3.071,0,4.242C1.465,47.677,2.233,47.97,3,47.97s1.535-0.293,2.121-0.879l18.865-18.864L42.85,47.091c0.586,0.586,1.354,0.879,2.121,0.879s1.535-0.293,2.121-0.879c1.172-1.171,1.172-3.071,0-4.242L28.228,23.986z"/>
+										</svg>
+									</i>
+								</span>
+
+							</a>
+
+
+							<!-- 
+								Logo : height: 60px max
+							-->
+							<a class="navbar-brand" href="index.html">
+								<img src="assets/images/logo/logo_dark.svg" width="110" height="70" alt="...">
+							</a>
+
+						</div>
+
+
+
+
+					<!-- 
+
+						[SOW] SEARCH SUGGEST PLUGIN
+						[GULP/src/plugins/sow_search_suggest/sow_search_suggest.js]
+						[SCSS/_plugins/sow_search_suggest.scss]
+						++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++
+
+						PLEASE READ DOCUMENTATION
+						documentation/plugins-sow-search.html
+
+					-->
+					<form 	action="index.html" 
+							method="GET" 
+							data-autosuggest="on" 
+
+							data-mode="json" 
+							data-json-max-results='10'
+							data-json-related-title='Explore Smarty'
+							data-json-related-item-icon='fi fi-star-empty'
+							data-json-suggest-title='Suggestions for you'
+							data-json-suggest-noresult='No results for'
+							data-json-suggest-item-icon='fi fi-search'
+							data-json-suggest-min-score='5'
+							data-json-highlight-term='true'
+							data-contentType='application/json; charset=utf-8'
+							data-dataType='json'
+
+							data-container="#sow-search-container" 
+							data-input-min-length="2" 
+							data-input-delay="100" 
+							data-related-keywords="" 
+							data-related-url="_ajax/search_suggestion_json_related.json" 
+							data-suggest-url="_ajax/search_suggestion_json_suggest.json" 
+							data-related-action="related_get" 
+							data-suggest-action="suggest_get" 
+							class="js-ajax-search sow-search sow-search-mobile-float d-flex-1-1-auto mx-4">
+						<div class="sow-search-input w-100 d-flex align-items-center">
+
+							<div class="input-group-over d-flex align-items-center w-100 h-100 rounded">
+
+								<input placeholder="component search..." name="s" type="text" class="form-control-sow-search form-control form-control-pill b-0 bg-gray-100" value="" autocomplete="off">
+
+								<span class="sow-search-buttons">
+
+									<!-- search button -->
+									<button type="submit" class="btn btn-primary btn-noshadow m-0 px-2 py-1 b-0 bg-transparent text-muted">
+										<i class="fi fi-search fs--20"></i>
+									</button>
+
+									<!-- close : mobile only (d-inline-block d-lg-none) -->
+									<a href="javascript:;" class="btn-sow-search-toggler btn btn-light btn-noshadow m-0 px-2 py-1 d-inline-block d-lg-none">
+										<i class="fi fi-close fs--20"></i>
+									</a>
+
+								</span>
+
+							</div>
+
+						</div>
+
+						<!-- search suggestion container -->
+						<div class="sow-search-container rounded-xl w-100 p-0 hide shadow-md" id="sow-search-container">
+							<div class="sow-search-container-wrapper rounded-xl">
+
+								<!-- main search container -->
+								<div class="sow-search-loader p--15 text-center hide">
+									<i class="fi fi-circle-spin fi-spin text-muted fs--30"></i>
+								</div>
+
+								<!-- 
+									AJAX CONTENT CONTAINER 
+									SHOULD ALWAYS BE AS IT IS : NO COMMENTS OR EVEN SPACES!
+								--><div class="sow-search-content rounded w-100 scrollable-vertical"></div>
+
+							</div>
+						</div>
+						<!-- /search suggestion container -->
+
+						<!-- 
+
+							overlay combinations:
+								overlay-dark opacity-* [1-9]
+								overlay-light opacity-* [1-9]
+
+						-->
+						<div class="sow-search-backdrop overlay-dark opacity-3 hide"></div>
+
+					</form>
+					<!-- /SEARCH -->
+
+
+
+
+					<!-- OPTIONS -->
+					<ul class="list-inline list-unstyled mb-0 d-flex align-items-end">
+
+						<li class="list-inline-item mx-1 dropdown float-start d-inline-block d-lg-none">
+
+							<a href="#" class="btn-sow-search-toggler btn btn-sm rounded-circle btn-warning bg-gradient-warning">
+								<i class="fi fi-search"></i>
+							</a>
+
+						</li>
+
+
+						<li class="list-inline-item mx-1 dropdown float-start d-none d-lg-inline-block">
+
+							<div class="btn-group rounded-xxl overflow-hidden" role="group" aria-label="Basic example">
+								
+								<a href="../index.html" target="layerstore" class="btn btn-sm btn-pills btn-indigo">
+									<span>Front</span>
+								</a>
+
+								<a href="https://wrapbootstrap.com/theme/smarty-website-admin-rtl-WB02DSN1B" target="wrapbootstrap" class="btn btn-sm btn-pills btn-indigo py-1">
+									<i class="fi fi-cart-1 mx-2 fs--20"></i>
+								</a>
+
+								<a href="../../html_admin/layout_1/" target="layerstore" class="btn btn-sm btn-pills btn-indigo">
+									<span>Admin</span>
+								</a>
+
+							</div>
+
+						</li>
+
+						<!-- header toggle : desktop only -->
+						<li class="list-inline-item mx-1 dropdown float-start d-none d-lg-block">
+
+							<a href="#" class="btn-header-toggle btn-toggle btn btn-sm rounded-circle btn-secondary">
+								<span class="group-icon">
+									<i class="fi fi-arrow-up"></i>
+									<i class="fi fi-arrow-down"></i>
+								</span>
+							</a>
+
+						</li>
+
+					</ul>
+					<!-- /OPTIONS -->
+
+
+
+					</nav>
+
+				</div>
+				<!-- /NAVBAR -->
+
+			</header>
+			<!-- /HEADER -->
+
+
+
+
+
+			<div id="wrapper_content" class="d-flex align-items-stretch">
+
+				<!-- SIDEBAR -->
+				<aside id="aside-main" class="aside-start bg-gradient-indigo font-weight-normal aside-hide-xs">
+
+					<div class="aside-wrapper scrollable-vertical scrollable-styled-light">
+
+						<!-- hide on mobile: d-none d-lg-block -->
+						<div class="p-3">
+							<!--<img class="js-ajax-loaded-animate img-fluid" src="assets/svg/artworks/undraw_smiley_face_lmgm.svg" width="300" height="248" alt="...">-->
+							<img class="js-ajax-loaded-animate img-fluid" src="assets/svg/artworks/startup.svg" width="225" height="198" alt="...">
+						</div>
+
+
+						<!--
+
+							All parent open navs are closed on click!
+							To ignore this feature, add .js-ignore to .nav-deep
+
+							Links height (paddings):
+								.nav-deep-xs
+								.nav-deep-md  	(default, ununsed class)
+								.nav-deep-sm
+								.nav-deep-lg
+						-->
+						<nav class="nav-deep nav-deep-dark nav-deep-xs pb-5">
+							<ul class="nav flex-column">
+
+								<li class="nav-title mt-3">
+									<h6 class="fs--14 mb-1 font-weight-medium text-warning">
+										HOW DO I START?
+									</h6>
+								</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="index.html">
+											Introduction
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="changelog.html">
+											<span class="badge float-end mt-1">v3.1.2</span>
+											Changelog
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="credits.html">
+											Credits
+										</a>
+									</li>
+
+
+
+
+
+								<li class="nav-title mt-5">
+									<h6 class="fs--14 mb-1 font-weight-medium text-warning">
+										COMPONENTS &amp; BLOCKS
+									</h6>
+								</li>
+
+								<li class="nav-item">
+									<a class="nav-link" href="#">
+										<span class="group-icon float-end">
+											<i class="fi fi-arrow-end-slim"></i>
+											<i class="fi fi-arrow-down-slim"></i>
+										</span>
+										<b>Components</b>
+									</a>
+								
+									<ul class="nav flex-column">
+
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-alerts.html">
+												Alerts
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-accordions.html">
+												Accordions
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-badges.html">
+												Badges
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-breadcrumbs.html">
+												Breadcrumbs
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-buttons.html">
+												Buttons
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-cards.html">
+												Cards
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-carousel.html">
+												Carousel
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-collapse.html">
+												Collapse
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-dropdowns.html">
+												Dropdowns
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-forms.html">
+												Forms
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-icons.html">
+												Icons
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-flags.html">
+												Flags
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-lists.html">
+												Lists
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-media.html">
+												Media
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-modals.html">
+												Modals
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-navs.html">
+												Navs
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-navigation.html">
+												Navigation
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-pagination.html">
+												Pagination
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-progress.html">
+												Progress
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-popover.html">
+												Popover
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-scrollspy.html">
+												Scrollspy
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-spinners.html">
+												Spinners
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-tabs.html">
+												Tabs
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-tables.html">
+												Tables
+											</a>
+										</li>
+
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-timeline.html">
+												Timeline
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-thumbnails.html">
+												Thumbnails
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-tooltip.html">
+												Tooltip
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-typography.html">
+												Typography
+											</a>
+										</li>
+
+									</ul>
+								</li>
+
+
+
+
+
+									<li class="nav-item">
+										<a class="nav-link" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											<b>Quick Blocks</b>
+										</a>
+
+										<ul class="nav flex-column">
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-testimonials.html">
+													Testimonials
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-pricing.html">
+													Pricing
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-cta.html">
+													Call to action
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-brands.html">
+													Brands
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-various.html">
+													Various
+												</a>
+											</li>
+										</ul>
+
+									</li>
+
+
+
+									<li class="nav-item">
+										<a class="nav-link" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											<b>Utilities</b>
+										</a>
+
+										<ul class="nav flex-column">
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-text-backgrounds.html">
+													Text &amp; Backgrouns
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-text-color-extended.html">
+													Extended Text Color
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-borders.html">
+													Borders
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-shadows.html">
+													Box Shadows
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-font.html">
+													Font Size / Weight
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-width-height.html">
+													Width / Height
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-padding-margin.html">
+													Paddings / Margins
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-transition.html">
+													Transitions / Transforms
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-position.html">
+													Position
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-visibility.html">
+													Visibility
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-overlays.html">
+													Overlays &amp; Opacity
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-scroll.html">
+													Scroll &amp; Scrollbar
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-misc.html">
+													Miscellaneous
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-responsive.html">
+													Responsive
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-rtl.html">
+													RTL
+												</a>
+											</li>
+
+										</ul>
+									</li>
+
+		
+
+
+
+
+
+
+
+									<li class="nav-item active">
+										<a class="nav-link" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											<b>Php / Forms</b>
+										</a>
+
+										<ul class="nav flex-column">
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="php-introduction.html">
+													Introduction
+												</a>
+											</li>
+											<li class="nav-item active">
+												<a class="nav-link js-ajax" href="php-forms.html">
+													Contact Forms
+												</a>
+											</li>
+										</ul>
+
+									</li>
+
+
+
+
+
+
+
+
+
+
+
+
+									<li class="nav-item nav-item-extended overlay-dark overlay-opacity-2">
+										<a class="nav-link js-ajax" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-expand"></i>
+												<i class="fi fi-shrink"></i>
+											</span>
+											Predefined Layouts
+										</a>
+
+
+										<!-- extended item -->
+										<div class="aside-item d-flex flex-column bg-white shadow-xs w--350"><!-- .w-100 = full width -->
+											
+											<!-- header -->
+											<h3 class="fs--18 bg-light-soft p--15">
+												<button type="button" class="btn-aside-item-extended-close close fi fi-close fs--20 mt--n4 float-end"></button>
+												<i class="fi fi-heart-slim float-start fs--18"></i> 
+												Ready to start
+											</h3>
+
+											<!-- extended item content -->
+											<div 	id="layout_list" 
+													data-ajax-url="_ajax/layout_list.html" 
+													class="js-ajax p-3 scrollable-vertical scrollable-styled-dark m--1">
+
+												<div class="text-center"><!-- ajax loading icon -->
+													<i class="fi fi-circle-spin fi-spin fs--30 text-muted"></i>
+												</div><!-- /ajax loading icon -->
+
+											</div>
+											<!-- /extended item content -->
+
+										</div>
+										<!-- /extended item -->
+
+									</li>
+
+
+
+
+
+								<li class="nav-title mt-5">
+									<h6 class="fs--14 mb-1 font-weight-medium text-warning">
+										SOW : CORE PLUGINS
+									</h6>
+								</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-introduction.html">
+											Introduction
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-header.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">7Kb</span>
+											SOW : Header
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-search-suggest.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">9Kb</span>
+											SOW : Search Suggest
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-input-suggest.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : Input Suggest
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-navigation.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">10Kb</span>
+											SOW : Ajax : Navigation
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-forms.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4Kb</span>
+											SOW : Ajax : Forms
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-content.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4Kb</span>
+											SOW : Ajax : Content
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-modal.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">3Kb</span>
+											SOW : Ajax : Modals
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-confirm.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">6Kb</span>
+											SOW : Ajax : Confirm
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-select.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4.5Kb</span>
+											SOW : Ajax : Select
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-form-validation.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : Form Validation
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-form-advanced.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">7Kb</span>
+											SOW : Form Advanced
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-file-upload.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">24Kb</span>
+											SOW : File Upload
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-checkall.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Check All
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-checkgroup.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Check Group
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-toasts.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4Kb</span>
+											SOW : Toasts
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-gdpr.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : GDPR Cookies
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-inline-search.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Inline Search
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-dropdown.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">3Kb</span>
+											SOW : Dropdowns
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-deep-navigation.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : Deep Navigation
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-btn-toggle.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2.5Kb</span>
+											SOW : Button Toggle
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-scroll-to.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Scroll To
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-timer-autohide.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Timer Autohide
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-timer-countdown.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : Timer Countdown
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-gfont.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1.5Kb</span>
+											SOW : Google Font
+										</a>
+									</li>
+                                    <li class="nav-item">
+                                        <a class="nav-link js-ajax" href="plugins-sow-lazyload.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+                                            SOW : Lazyload
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link js-ajax" href="plugins-sow-count-animate.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4.1Kb</span>
+                                            SOW : Count Animate
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link js-ajax" href="plugins-sow-utils.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+                                            SOW : Utils
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link js-ajax" href="plugins-sow-service-worker.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+                                            SOW : Service Worker!
+                                        </a>
+                                    </li>
+									<li class="nav-item pl--15 pr--15">
+										<div class="bg-indigo text-gray-500 fs--13 p-2 rounded">
+											SOW Core plugins are developed from scratch. 
+											You can remove, disable or use your own!
+										</div>
+									</li>
+
+
+
+
+
+								<li class="nav-title mt-5">
+									<h6 class="fs--14 mb-1 font-weight-medium text-warning">
+										VENDOR PLUGINS
+									</h6>
+								</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-bootstrap-select.html">
+											Vendor : Bootstrap Select
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-flickity.html">
+											Vendor : Flickity Slider
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-swiper.html">
+											Vendor : Swiper Slider
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-jarallax.html">
+											Vendor : Jaxallax
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-sticky-kit.html">
+											Vendor : Sticky Kit
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-fancybox.html">
+											Vendor : Fancybox
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-photoswipe.html">
+											Vendor : Photoswipe
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="components-map.html">
+											Vendor : Map
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-slimscroll.html">
+											Vendor : Slimscroll
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-nestable.html">
+											Vendor : Nestable
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											Vendor : Pickers
+										</a>
+										<ul class="nav flex-column">
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-datepicker.html">
+													Datepicker
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-rangepicker.html">
+													Rangepicker
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-colorpicker.html">
+													Colorpicker
+												</a>
+											</li>
+										</ul>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											Vendor : Charts
+										</a>
+										<ul class="nav flex-column">
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-chartjs.html">
+													Chart.js
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-flot.html">
+													Flot Chart
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-easypie.html">
+													Easy Pie Chart
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-sparkline.html">
+													Sparkline Charts
+												</a>
+											</li>
+										</ul>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											Vendor : Editors
+										</a>
+										<ul class="nav flex-column">
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-medium-editor.html">
+													Medium Editor
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-markdown.html">
+													Markdown Editor
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-summernote.html">
+													Summernote
+												</a>
+											</li>
+										</ul>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-datatable.html">
+											Vendor : Datatable
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-fullcalendar.html">
+											Vendor : Fullcalendar
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-prismjs.html">
+											Vendor : Prismjs (Highlighter)
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-aos.html">
+											Vendor : AOS
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-typed.html">
+											Vendor : Typed
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-sortablejs.html">
+											Vendor : Sortablejs
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-cocoen.html">
+											Vendor : Cocoen <small>(Img Compare)</small>
+										</a>
+									</li>
+
+
+
+
+
+
+
+
+
+							</ul>
+						</nav>
+
+
+
+					</div>
+				</aside>
+				<!-- /SIDEBAR -->
+
+
+				<!-- MIDDLE -->
+				<div id="middle" class="flex-fill">
+
+
+
+					<header class="mb-5">
+						<h1 class="h2 mb-0 text-gray-700">
+							PHP / Forms
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--14">
+								<li class="breadcrumb-item active" aria-current="page">
+									Smarty documentation
+								</li>
+							</ol>
+						</nav>
+
+					</header>
+
+
+
+					<div class="row d-flex flex-fill align-items-start">
+
+						<div class="col align-self-start">
+
+							<section id="section_0">
+
+								<header class="d-flex b-0">
+
+									<h2 class="h5 text-truncate w-100">
+										Contact Form
+									</h2>
+
+									<div class="ui-options d-flex">
+
+										<!-- fullscreen -->
+										<a href="#" class="btn-toggle" data-toggle-container-class="fullscreen" data-toggle-body-class="overflow-hidden" data-target="#section_0">
+											<span class="group-icon">
+												<i class="fi fi-expand"></i>
+												<i class="fi fi-shrink"></i>
+											</span>
+										</a>
+
+									</div>
+
+								</header>
+
+
+								<div class="container mt--50">
+
+									<p>
+										You can add to config.inc.php multiple SMTP email providers (your own hosting, Amazon SES, Mailgun, etc) and the SMTP class will try to send the email using the first available provider. If the first one fail, will try the next one and so on.
+									</p>
+									<hr>
+									<p>
+										Setting up the contact form is not difficult. All default Smarty forms are already able by default to use the PHP. You can add multiple fields to any HTML contact form without doing anything else (PHP script will automatically handle all fields).
+									</p>
+
+									<p>
+										1. Open <code>php/config.inc.php</code> <br>
+										2. Edit <code>$config['sow.smtp:provider_email_list']</code> array
+									</p>
+									<p>
+										If you add multiple providers, duplicate any of the array (please pay attention to comma and punctuation). Set 'enabled' to true or false to enable or disable a specific SMTP provider.
+									</p>
+
+									<p class="bg-warning p--15">
+										Because this is <b>Smarty</b>, you have a config generator so you don't need to deal with plain PHP code. <i class="fi fi-emoji-evil"></i> <br>
+										Generate, save it and replace your php/config.inc.php
+									</p>
+
+									<p class="bg-light p--15">
+										Note! You can also set multiple departments by using a &lt;select> in your contact form. If you need multiple email destination for each department (marketing, support, sales, etc), you have to manually edit the config and follow the instructions on how to add a &lt;select>.
+									</p>
+
+								</div>
+
+								<div class="mt--100 mb-4">
+
+									<a href="#code_1" class="scroll-to btn btn-sm btn-light" data-toggle="collapse">
+										<i class="fi fi-code"></i> 
+										view config smtp section
+									</a>
+
+								</div>
+
+								<div id="code_1" class="collapse">
+									<pre><code class="language-php">
+$config['sow.smtp:provider_email_list'] 	= array(
+
+		/* 
+
+			1. Private Hosting
+		
+			Check your cPanel for valid credentials.
+			Do not use your own email address.
+			Create an address like 'noreply@yourdomain.com'
+				so can be used only by the website to send the emails
+				from sections like contact form.
+
+		*/
+		array( 
+			'name'			=> 'My Hosting',				// Informative only
+			'enabled'		=> true, 					// true|false
+
+			'host'			=> 'my-smtp-from-cpanel.com',
+			'port'			=> 587, 					// 25, 465 or 587
+			'type'			=> 'tls',					// secure type: tls or ssl (ssl is deprecated)
+			'user'			=> 'noreply@mydomain.com',
+			'pass'			=> 'noreply_email_password',
+		),
+
+
+
+
+		/* 
+
+			2. 	Amazon SES
+				https://aws.amazon.com/ses/
+		
+
+			INFORMATIVE LIMITS:
+				50.000 emails / day
+				14 per seconds
+				$0.10 / 1000 emails
+				Pay as you go
+				~$100 per 1M emails
+
+		*/
+		array( 
+			'name'			=> 'Amazon SES',				// Informative only
+			'enabled'		=> false, 					// true|false
+
+			'host'			=> 'email-smtp.eu-west-1.amazonaws.com',
+			'port'			=> 587, 					// 25, 465 or 587
+			'type'			=> 'tls',					// secure type: tls or ssl (ssl is deprecated)
+			'user'			=> '',
+			'pass'			=> '',
+		),
+
+
+
+		/* 
+			Add more if needed, the same format 
+			copy/paste an array above and edit.
+
+			Transactional email providers you might like 
+			(Smarty has nothing to do with them, we just used them over time for various projects)
+
+				Amazon SES 	https://aws.amazon.com/ses/
+				Mailgun: 	https://www.mailgun.com/
+				Dendinblue 	https://www.sendinblue.com/
+				Sendgrid 	https://sendgrid.com/
+
+		*/
+
+);
+
+									</code></pre>
+								</div>
+
+							</section>
+
+
+
+
+
+
+							<section id="section_c">
+
+								<header class="d-flex b-0">
+
+									<h2 class="h5 text-truncate w-100">
+										Config Generator
+										<small class="d-block text-success fs--12">
+											Localhost PHP server required.<br> 
+											Entered data is not saved anywhere, just served for download!
+										</small>
+									</h2>
+
+									<div class="ui-options d-flex">
+
+										<!-- fullscreen -->
+										<a href="#" class="btn-toggle" data-toggle-container-class="fullscreen" data-toggle-body-class="overflow-hidden" data-target="#section_c">
+											<span class="group-icon">
+												<i class="fi fi-expand"></i>
+												<i class="fi fi-shrink"></i>
+											</span>
+										</a>
+
+									</div>
+
+								</header>
+
+
+								<div class="container mt--50 mb--100">
+
+									<form class="bs-validate" novalidate method="POST" action="../demo.files/php/config_generator.php">
+										<input type="hidden" name="action" value="config_generate" tabindex="-1">
+
+										<div class="row">
+
+											<div class="col-12 col-md-6 mb-3">
+
+
+												<div class="bg-light rounded p-4 mb-5">
+
+													<label class="d-block mb-1 font-weight-medium">Destination Name: <span class="font-weight-light text-gray-500">(who receive the emails?)</span></label>
+													<input type="text" name="config[department][name]" value="" class="form-control" placeholder="John Doe">
+
+													<label class="d-block mb-1 mt-4 font-weight-medium">Destination Email <span class="font-weight-light text-gray-500">(required)</span></label>
+													<input required="" type="text" name="config[department][email]" value="" class="form-control" placeholder="john.doe@mydomain.com">
+
+												</div>
+
+											</div>
+
+										</div>
+
+
+
+										<div id="ajax_response">
+
+										</div>
+
+
+
+
+
+										<div class="row">
+
+											<div class="col-12 col-md-6 mb-3">
+
+
+
+
+												<!-- php default timezone -->
+												<label class="d-block mb-1 font-weight-medium">Time Zone</label>
+												<select name="config[time_zone]" class="form-control">
+													<option value="0">Timezone...</option>
+													<option value="Africa/Abidjan">[UTC+00:00] Africa/Abidjan</option>
+													<option value="Africa/Accra">[UTC+00:00] Africa/Accra</option>
+													<option value="Africa/Addis_Ababa">[UTC+03:00] Africa/Addis_Ababa</option>
+													<option value="Africa/Algiers">[UTC+01:00] Africa/Algiers</option>
+													<option value="Africa/Asmara">[UTC+03:00] Africa/Asmara</option>
+													<option value="Africa/Bamako">[UTC+00:00] Africa/Bamako</option>
+													<option value="Africa/Bangui">[UTC+01:00] Africa/Bangui</option>
+													<option value="Africa/Banjul">[UTC+00:00] Africa/Banjul</option>
+													<option value="Africa/Bissau">[UTC+00:00] Africa/Bissau</option>
+													<option value="Africa/Blantyre">[UTC+02:00] Africa/Blantyre</option>
+													<option value="Africa/Brazzaville">[UTC+01:00] Africa/Brazzaville</option>
+													<option value="Africa/Bujumbura">[UTC+02:00] Africa/Bujumbura</option>
+													<option value="Africa/Cairo">[UTC+02:00] Africa/Cairo</option>
+													<option value="Africa/Casablanca">[UTC+01:00] Africa/Casablanca</option>
+													<option value="Africa/Ceuta">[UTC+02:00] Africa/Ceuta</option>
+													<option value="Africa/Conakry">[UTC+00:00] Africa/Conakry</option>
+													<option value="Africa/Dakar">[UTC+00:00] Africa/Dakar</option>
+													<option value="Africa/Dar_es_Salaam">[UTC+03:00] Africa/Dar_es_Salaam</option>
+													<option value="Africa/Djibouti">[UTC+03:00] Africa/Djibouti</option>
+													<option value="Africa/Douala">[UTC+01:00] Africa/Douala</option>
+													<option value="Africa/El_Aaiun">[UTC+01:00] Africa/El_Aaiun</option>
+													<option value="Africa/Freetown">[UTC+00:00] Africa/Freetown</option>
+													<option value="Africa/Gaborone">[UTC+02:00] Africa/Gaborone</option>
+													<option value="Africa/Harare">[UTC+02:00] Africa/Harare</option>
+													<option value="Africa/Johannesburg">[UTC+02:00] Africa/Johannesburg</option>
+													<option value="Africa/Juba">[UTC+03:00] Africa/Juba</option>
+													<option value="Africa/Kampala">[UTC+03:00] Africa/Kampala</option>
+													<option value="Africa/Khartoum">[UTC+03:00] Africa/Khartoum</option>
+													<option value="Africa/Kigali">[UTC+02:00] Africa/Kigali</option>
+													<option value="Africa/Kinshasa">[UTC+01:00] Africa/Kinshasa</option>
+													<option value="Africa/Lagos">[UTC+01:00] Africa/Lagos</option>
+													<option value="Africa/Libreville">[UTC+01:00] Africa/Libreville</option>
+													<option value="Africa/Lome">[UTC+00:00] Africa/Lome</option>
+													<option value="Africa/Luanda">[UTC+01:00] Africa/Luanda</option>
+													<option value="Africa/Lubumbashi">[UTC+02:00] Africa/Lubumbashi</option>
+													<option value="Africa/Lusaka">[UTC+02:00] Africa/Lusaka</option>
+													<option value="Africa/Malabo">[UTC+01:00] Africa/Malabo</option>
+													<option value="Africa/Maputo">[UTC+02:00] Africa/Maputo</option>
+													<option value="Africa/Maseru">[UTC+02:00] Africa/Maseru</option>
+													<option value="Africa/Mbabane">[UTC+02:00] Africa/Mbabane</option>
+													<option value="Africa/Mogadishu">[UTC+03:00] Africa/Mogadishu</option>
+													<option value="Africa/Monrovia">[UTC+00:00] Africa/Monrovia</option>
+													<option value="Africa/Nairobi">[UTC+03:00] Africa/Nairobi</option>
+													<option value="Africa/Ndjamena">[UTC+01:00] Africa/Ndjamena</option>
+													<option value="Africa/Niamey">[UTC+01:00] Africa/Niamey</option>
+													<option value="Africa/Nouakchott">[UTC+00:00] Africa/Nouakchott</option>
+													<option value="Africa/Ouagadougou">[UTC+00:00] Africa/Ouagadougou</option>
+													<option value="Africa/Porto-Novo">[UTC+01:00] Africa/Porto-Novo</option>
+													<option value="Africa/Sao_Tome">[UTC+00:00] Africa/Sao_Tome</option>
+													<option value="Africa/Tripoli">[UTC+02:00] Africa/Tripoli</option>
+													<option value="Africa/Tunis">[UTC+01:00] Africa/Tunis</option>
+													<option value="Africa/Windhoek">[UTC+01:00] Africa/Windhoek</option>
+													<option value="America/Adak">[UTC-09:00] America/Adak</option>
+													<option value="America/Anchorage">[UTC-08:00] America/Anchorage</option>
+													<option value="America/Anguilla">[UTC-04:00] America/Anguilla</option>
+													<option value="America/Antigua">[UTC-04:00] America/Antigua</option>
+													<option value="America/Araguaina">[UTC-03:00] America/Araguaina</option>
+													<option value="America/Argentina/Buenos_Aires">[UTC-03:00] America/Argentina/Buenos_Aires</option>
+													<option value="America/Argentina/Catamarca">[UTC-03:00] America/Argentina/Catamarca</option>
+													<option value="America/Argentina/Cordoba">[UTC-03:00] America/Argentina/Cordoba</option>
+													<option value="America/Argentina/Jujuy">[UTC-03:00] America/Argentina/Jujuy</option>
+													<option value="America/Argentina/La_Rioja">[UTC-03:00] America/Argentina/La_Rioja</option>
+													<option value="America/Argentina/Mendoza">[UTC-03:00] America/Argentina/Mendoza</option>
+													<option value="America/Argentina/Rio_Gallegos">[UTC-03:00] America/Argentina/Rio_Gallegos</option>
+													<option value="America/Argentina/Salta">[UTC-03:00] America/Argentina/Salta</option>
+													<option value="America/Argentina/San_Juan">[UTC-03:00] America/Argentina/San_Juan</option>
+													<option value="America/Argentina/San_Luis">[UTC-03:00] America/Argentina/San_Luis</option>
+													<option value="America/Argentina/Tucuman">[UTC-03:00] America/Argentina/Tucuman</option>
+													<option value="America/Argentina/Ushuaia">[UTC-03:00] America/Argentina/Ushuaia</option>
+													<option value="America/Aruba">[UTC-04:00] America/Aruba</option>
+													<option value="America/Asuncion">[UTC-04:00] America/Asuncion</option>
+													<option value="America/Atikokan">[UTC-05:00] America/Atikokan</option>
+													<option value="America/Bahia">[UTC-03:00] America/Bahia</option>
+													<option value="America/Bahia_Banderas">[UTC-05:00] America/Bahia_Banderas</option>
+													<option value="America/Barbados">[UTC-04:00] America/Barbados</option>
+													<option value="America/Belem">[UTC-03:00] America/Belem</option>
+													<option value="America/Belize">[UTC-06:00] America/Belize</option>
+													<option value="America/Blanc-Sablon">[UTC-04:00] America/Blanc-Sablon</option>
+													<option value="America/Boa_Vista">[UTC-04:00] America/Boa_Vista</option>
+													<option value="America/Bogota">[UTC-05:00] America/Bogota</option>
+													<option value="America/Boise">[UTC-06:00] America/Boise</option>
+													<option value="America/Cambridge_Bay">[UTC-06:00] America/Cambridge_Bay</option>
+													<option value="America/Campo_Grande">[UTC-04:00] America/Campo_Grande</option>
+													<option value="America/Cancun">[UTC-05:00] America/Cancun</option>
+													<option value="America/Caracas">[UTC-04:30] America/Caracas</option>
+													<option value="America/Cayenne">[UTC-03:00] America/Cayenne</option>
+													<option value="America/Cayman">[UTC-05:00] America/Cayman</option>
+													<option value="America/Chicago">[UTC-05:00] America/Chicago</option>
+													<option value="America/Chihuahua">[UTC-06:00] America/Chihuahua</option>
+													<option value="America/Costa_Rica">[UTC-06:00] America/Costa_Rica</option>
+													<option value="America/Creston">[UTC-07:00] America/Creston</option>
+													<option value="America/Cuiaba">[UTC-04:00] America/Cuiaba</option>
+													<option value="America/Curacao">[UTC-04:00] America/Curacao</option>
+													<option value="America/Danmarkshavn">[UTC+00:00] America/Danmarkshavn</option>
+													<option value="America/Dawson">[UTC-07:00] America/Dawson</option>
+													<option value="America/Dawson_Creek">[UTC-07:00] America/Dawson_Creek</option>
+													<option value="America/Denver">[UTC-06:00] America/Denver</option>
+													<option value="America/Detroit">[UTC-04:00] America/Detroit</option>
+													<option value="America/Dominica">[UTC-04:00] America/Dominica</option>
+													<option value="America/Edmonton">[UTC-06:00] America/Edmonton</option>
+													<option value="America/Eirunepe">[UTC-05:00] America/Eirunepe</option>
+													<option value="America/El_Salvador">[UTC-06:00] America/El_Salvador</option>
+													<option value="America/Fort_Nelson">[UTC-07:00] America/Fort_Nelson</option>
+													<option value="America/Fortaleza">[UTC-03:00] America/Fortaleza</option>
+													<option value="America/Glace_Bay">[UTC-03:00] America/Glace_Bay</option>
+													<option value="America/Godthab">[UTC-02:00] America/Godthab</option>
+													<option value="America/Goose_Bay">[UTC-03:00] America/Goose_Bay</option>
+													<option value="America/Grand_Turk">[UTC-04:00] America/Grand_Turk</option>
+													<option value="America/Grenada">[UTC-04:00] America/Grenada</option>
+													<option value="America/Guadeloupe">[UTC-04:00] America/Guadeloupe</option>
+													<option value="America/Guatemala">[UTC-06:00] America/Guatemala</option>
+													<option value="America/Guayaquil">[UTC-05:00] America/Guayaquil</option>
+													<option value="America/Guyana">[UTC-04:00] America/Guyana</option>
+													<option value="America/Halifax">[UTC-03:00] America/Halifax</option>
+													<option value="America/Havana">[UTC-04:00] America/Havana</option>
+													<option value="America/Hermosillo">[UTC-07:00] America/Hermosillo</option>
+													<option value="America/Indiana/Indianapolis">[UTC-04:00] America/Indiana/Indianapolis</option>
+													<option value="America/Indiana/Knox">[UTC-05:00] America/Indiana/Knox</option>
+													<option value="America/Indiana/Marengo">[UTC-04:00] America/Indiana/Marengo</option>
+													<option value="America/Indiana/Petersburg">[UTC-04:00] America/Indiana/Petersburg</option>
+													<option value="America/Indiana/Tell_City">[UTC-05:00] America/Indiana/Tell_City</option>
+													<option value="America/Indiana/Vevay">[UTC-04:00] America/Indiana/Vevay</option>
+													<option value="America/Indiana/Vincennes">[UTC-04:00] America/Indiana/Vincennes</option>
+													<option value="America/Indiana/Winamac">[UTC-04:00] America/Indiana/Winamac</option>
+													<option value="America/Inuvik">[UTC-06:00] America/Inuvik</option>
+													<option value="America/Iqaluit">[UTC-04:00] America/Iqaluit</option>
+													<option value="America/Jamaica">[UTC-05:00] America/Jamaica</option>
+													<option value="America/Juneau">[UTC-08:00] America/Juneau</option>
+													<option value="America/Kentucky/Louisville">[UTC-04:00] America/Kentucky/Louisville</option>
+													<option value="America/Kentucky/Monticello">[UTC-04:00] America/Kentucky/Monticello</option>
+													<option value="America/Kralendijk">[UTC-04:00] America/Kralendijk</option>
+													<option value="America/La_Paz">[UTC-04:00] America/La_Paz</option>
+													<option value="America/Lima">[UTC-05:00] America/Lima</option>
+													<option value="America/Los_Angeles">[UTC-07:00] America/Los_Angeles</option>
+													<option value="America/Lower_Princes">[UTC-04:00] America/Lower_Princes</option>
+													<option value="America/Maceio">[UTC-03:00] America/Maceio</option>
+													<option value="America/Managua">[UTC-06:00] America/Managua</option>
+													<option value="America/Manaus">[UTC-04:00] America/Manaus</option>
+													<option value="America/Marigot">[UTC-04:00] America/Marigot</option>
+													<option value="America/Martinique">[UTC-04:00] America/Martinique</option>
+													<option value="America/Matamoros">[UTC-05:00] America/Matamoros</option>
+													<option value="America/Mazatlan">[UTC-06:00] America/Mazatlan</option>
+													<option value="America/Menominee">[UTC-05:00] America/Menominee</option>
+													<option value="America/Merida">[UTC-05:00] America/Merida</option>
+													<option value="America/Metlakatla">[UTC-08:00] America/Metlakatla</option>
+													<option value="America/Mexico_City">[UTC-05:00] America/Mexico_City</option>
+													<option value="America/Miquelon">[UTC-02:00] America/Miquelon</option>
+													<option value="America/Moncton">[UTC-03:00] America/Moncton</option>
+													<option value="America/Monterrey">[UTC-05:00] America/Monterrey</option>
+													<option value="America/Montevideo">[UTC-03:00] America/Montevideo</option>
+													<option value="America/Montserrat">[UTC-04:00] America/Montserrat</option>
+													<option value="America/Nassau">[UTC-04:00] America/Nassau</option>
+													<option value="America/New_York">[UTC-04:00] America/New_York</option>
+													<option value="America/Nipigon">[UTC-04:00] America/Nipigon</option>
+													<option value="America/Nome">[UTC-08:00] America/Nome</option>
+													<option value="America/Noronha">[UTC-02:00] America/Noronha</option>
+													<option value="America/North_Dakota/Beulah">[UTC-05:00] America/North_Dakota/Beulah</option>
+													<option value="America/North_Dakota/Center">[UTC-05:00] America/North_Dakota/Center</option>
+													<option value="America/North_Dakota/New_Salem">[UTC-05:00] America/North_Dakota/New_Salem</option>
+													<option value="America/Ojinaga">[UTC-06:00] America/Ojinaga</option>
+													<option value="America/Panama">[UTC-05:00] America/Panama</option>
+													<option value="America/Pangnirtung">[UTC-04:00] America/Pangnirtung</option>
+													<option value="America/Paramaribo">[UTC-03:00] America/Paramaribo</option>
+													<option value="America/Phoenix">[UTC-07:00] America/Phoenix</option>
+													<option value="America/Port-au-Prince">[UTC-05:00] America/Port-au-Prince</option>
+													<option value="America/Port_of_Spain">[UTC-04:00] America/Port_of_Spain</option>
+													<option value="America/Porto_Velho">[UTC-04:00] America/Porto_Velho</option>
+													<option value="America/Puerto_Rico">[UTC-04:00] America/Puerto_Rico</option>
+													<option value="America/Rainy_River">[UTC-05:00] America/Rainy_River</option>
+													<option value="America/Rankin_Inlet">[UTC-05:00] America/Rankin_Inlet</option>
+													<option value="America/Recife">[UTC-03:00] America/Recife</option>
+													<option value="America/Regina">[UTC-06:00] America/Regina</option>
+													<option value="America/Resolute">[UTC-05:00] America/Resolute</option>
+													<option value="America/Rio_Branco">[UTC-05:00] America/Rio_Branco</option>
+													<option value="America/Santarem">[UTC-03:00] America/Santarem</option>
+													<option value="America/Santiago">[UTC-04:00] America/Santiago</option>
+													<option value="America/Santo_Domingo">[UTC-04:00] America/Santo_Domingo</option>
+													<option value="America/Sao_Paulo">[UTC-03:00] America/Sao_Paulo</option>
+													<option value="America/Scoresbysund">[UTC+00:00] America/Scoresbysund</option>
+													<option value="America/Sitka">[UTC-08:00] America/Sitka</option>
+													<option value="America/St_Barthelemy">[UTC-04:00] America/St_Barthelemy</option>
+													<option value="America/St_Johns">[UTC-02:30] America/St_Johns</option>
+													<option value="America/St_Kitts">[UTC-04:00] America/St_Kitts</option>
+													<option value="America/St_Lucia">[UTC-04:00] America/St_Lucia</option>
+													<option value="America/St_Thomas">[UTC-04:00] America/St_Thomas</option>
+													<option value="America/St_Vincent">[UTC-04:00] America/St_Vincent</option>
+													<option value="America/Swift_Current">[UTC-06:00] America/Swift_Current</option>
+													<option value="America/Tegucigalpa">[UTC-06:00] America/Tegucigalpa</option>
+													<option value="America/Thule">[UTC-03:00] America/Thule</option>
+													<option value="America/Thunder_Bay">[UTC-04:00] America/Thunder_Bay</option>
+													<option value="America/Tijuana">[UTC-07:00] America/Tijuana</option>
+													<option value="America/Toronto">[UTC-04:00] America/Toronto</option>
+													<option value="America/Tortola">[UTC-04:00] America/Tortola</option>
+													<option value="America/Vancouver">[UTC-07:00] America/Vancouver</option>
+													<option value="America/Whitehorse">[UTC-07:00] America/Whitehorse</option>
+													<option value="America/Winnipeg">[UTC-05:00] America/Winnipeg</option>
+													<option value="America/Yakutat">[UTC-08:00] America/Yakutat</option>
+													<option value="America/Yellowknife">[UTC-06:00] America/Yellowknife</option>
+													<option value="Antarctica/Casey">[UTC+08:00] Antarctica/Casey</option>
+													<option value="Antarctica/Davis">[UTC+07:00] Antarctica/Davis</option>
+													<option value="Antarctica/DumontDUrville">[UTC+10:00] Antarctica/DumontDUrville</option>
+													<option value="Antarctica/Macquarie">[UTC+11:00] Antarctica/Macquarie</option>
+													<option value="Antarctica/Mawson">[UTC+05:00] Antarctica/Mawson</option>
+													<option value="Antarctica/McMurdo">[UTC+12:00] Antarctica/McMurdo</option>
+													<option value="Antarctica/Palmer">[UTC-04:00] Antarctica/Palmer</option>
+													<option value="Antarctica/Rothera">[UTC-03:00] Antarctica/Rothera</option>
+													<option value="Antarctica/Syowa">[UTC+03:00] Antarctica/Syowa</option>
+													<option value="Antarctica/Troll">[UTC+02:00] Antarctica/Troll</option>
+													<option value="Antarctica/Vostok">[UTC+06:00] Antarctica/Vostok</option>
+													<option value="Asia/Aden">[UTC+03:00] Asia/Aden</option>
+													<option value="Asia/Almaty">[UTC+06:00] Asia/Almaty</option>
+													<option value="Asia/Amman">[UTC+03:00] Asia/Amman</option>
+													<option value="Asia/Anadyr">[UTC+12:00] Asia/Anadyr</option>
+													<option value="Asia/Aqtau">[UTC+05:00] Asia/Aqtau</option>
+													<option value="Asia/Aqtobe">[UTC+05:00] Asia/Aqtobe</option>
+													<option value="Asia/Ashgabat">[UTC+05:00] Asia/Ashgabat</option>
+													<option value="Asia/Baghdad">[UTC+03:00] Asia/Baghdad</option>
+													<option value="Asia/Bahrain">[UTC+03:00] Asia/Bahrain</option>
+													<option value="Asia/Baku">[UTC+04:00] Asia/Baku</option>
+													<option value="Asia/Bangkok">[UTC+07:00] Asia/Bangkok</option>
+													<option value="Asia/Barnaul">[UTC+07:00] Asia/Barnaul</option>
+													<option value="Asia/Beirut">[UTC+03:00] Asia/Beirut</option>
+													<option value="Asia/Bishkek">[UTC+06:00] Asia/Bishkek</option>
+													<option value="Asia/Brunei">[UTC+08:00] Asia/Brunei</option>
+													<option value="Asia/Chita">[UTC+09:00] Asia/Chita</option>
+													<option value="Asia/Choibalsan">[UTC+09:00] Asia/Choibalsan</option>
+													<option value="Asia/Colombo">[UTC+05:30] Asia/Colombo</option>
+													<option value="Asia/Damascus">[UTC+03:00] Asia/Damascus</option>
+													<option value="Asia/Dhaka">[UTC+06:00] Asia/Dhaka</option>
+													<option value="Asia/Dili">[UTC+09:00] Asia/Dili</option>
+													<option value="Asia/Dubai">[UTC+04:00] Asia/Dubai</option>
+													<option value="Asia/Dushanbe">[UTC+05:00] Asia/Dushanbe</option>
+													<option value="Asia/Gaza">[UTC+03:00] Asia/Gaza</option>
+													<option value="Asia/Hebron">[UTC+03:00] Asia/Hebron</option>
+													<option value="Asia/Ho_Chi_Minh">[UTC+07:00] Asia/Ho_Chi_Minh</option>
+													<option value="Asia/Hong_Kong">[UTC+08:00] Asia/Hong_Kong</option>
+													<option value="Asia/Hovd">[UTC+08:00] Asia/Hovd</option>
+													<option value="Asia/Irkutsk">[UTC+08:00] Asia/Irkutsk</option>
+													<option value="Asia/Jakarta">[UTC+07:00] Asia/Jakarta</option>
+													<option value="Asia/Jayapura">[UTC+09:00] Asia/Jayapura</option>
+													<option value="Asia/Jerusalem">[UTC+03:00] Asia/Jerusalem</option>
+													<option value="Asia/Kabul">[UTC+04:30] Asia/Kabul</option>
+													<option value="Asia/Kamchatka">[UTC+12:00] Asia/Kamchatka</option>
+													<option value="Asia/Karachi">[UTC+05:00] Asia/Karachi</option>
+													<option value="Asia/Kathmandu">[UTC+05:45] Asia/Kathmandu</option>
+													<option value="Asia/Khandyga">[UTC+09:00] Asia/Khandyga</option>
+													<option value="Asia/Kolkata">[UTC+05:30] Asia/Kolkata</option>
+													<option value="Asia/Krasnoyarsk">[UTC+07:00] Asia/Krasnoyarsk</option>
+													<option value="Asia/Kuala_Lumpur">[UTC+08:00] Asia/Kuala_Lumpur</option>
+													<option value="Asia/Kuching">[UTC+08:00] Asia/Kuching</option>
+													<option value="Asia/Kuwait">[UTC+03:00] Asia/Kuwait</option>
+													<option value="Asia/Macau">[UTC+08:00] Asia/Macau</option>
+													<option value="Asia/Magadan">[UTC+10:00] Asia/Magadan</option>
+													<option value="Asia/Makassar">[UTC+08:00] Asia/Makassar</option>
+													<option value="Asia/Manila">[UTC+08:00] Asia/Manila</option>
+													<option value="Asia/Muscat">[UTC+04:00] Asia/Muscat</option>
+													<option value="Asia/Nicosia">[UTC+03:00] Asia/Nicosia</option>
+													<option value="Asia/Novokuznetsk">[UTC+07:00] Asia/Novokuznetsk</option>
+													<option value="Asia/Novosibirsk">[UTC+06:00] Asia/Novosibirsk</option>
+													<option value="Asia/Omsk">[UTC+06:00] Asia/Omsk</option>
+													<option value="Asia/Oral">[UTC+05:00] Asia/Oral</option>
+													<option value="Asia/Phnom_Penh">[UTC+07:00] Asia/Phnom_Penh</option>
+													<option value="Asia/Pontianak">[UTC+07:00] Asia/Pontianak</option>
+													<option value="Asia/Pyongyang">[UTC+08:30] Asia/Pyongyang</option>
+													<option value="Asia/Qatar">[UTC+03:00] Asia/Qatar</option>
+													<option value="Asia/Qyzylorda">[UTC+06:00] Asia/Qyzylorda</option>
+													<option value="Asia/Rangoon">[UTC+06:30] Asia/Rangoon</option>
+													<option value="Asia/Riyadh">[UTC+03:00] Asia/Riyadh</option>
+													<option value="Asia/Sakhalin">[UTC+11:00] Asia/Sakhalin</option>
+													<option value="Asia/Samarkand">[UTC+05:00] Asia/Samarkand</option>
+													<option value="Asia/Seoul">[UTC+09:00] Asia/Seoul</option>
+													<option value="Asia/Shanghai">[UTC+08:00] Asia/Shanghai</option>
+													<option value="Asia/Singapore">[UTC+08:00] Asia/Singapore</option>
+													<option value="Asia/Srednekolymsk">[UTC+11:00] Asia/Srednekolymsk</option>
+													<option value="Asia/Taipei">[UTC+08:00] Asia/Taipei</option>
+													<option value="Asia/Tashkent">[UTC+05:00] Asia/Tashkent</option>
+													<option value="Asia/Tbilisi">[UTC+04:00] Asia/Tbilisi</option>
+													<option value="Asia/Tehran">[UTC+04:30] Asia/Tehran</option>
+													<option value="Asia/Thimphu">[UTC+06:00] Asia/Thimphu</option>
+													<option value="Asia/Tokyo">[UTC+09:00] Asia/Tokyo</option>
+													<option value="Asia/Ulaanbaatar">[UTC+09:00] Asia/Ulaanbaatar</option>
+													<option value="Asia/Urumqi">[UTC+06:00] Asia/Urumqi</option>
+													<option value="Asia/Ust-Nera">[UTC+10:00] Asia/Ust-Nera</option>
+													<option value="Asia/Vientiane">[UTC+07:00] Asia/Vientiane</option>
+													<option value="Asia/Vladivostok">[UTC+10:00] Asia/Vladivostok</option>
+													<option value="Asia/Yakutsk">[UTC+09:00] Asia/Yakutsk</option>
+													<option value="Asia/Yekaterinburg">[UTC+05:00] Asia/Yekaterinburg</option>
+													<option value="Asia/Yerevan">[UTC+04:00] Asia/Yerevan</option>
+													<option value="Atlantic/Azores">[UTC+00:00] Atlantic/Azores</option>
+													<option value="Atlantic/Bermuda">[UTC-03:00] Atlantic/Bermuda</option>
+													<option value="Atlantic/Canary">[UTC+01:00] Atlantic/Canary</option>
+													<option value="Atlantic/Cape_Verde">[UTC-01:00] Atlantic/Cape_Verde</option>
+													<option value="Atlantic/Faroe">[UTC+01:00] Atlantic/Faroe</option>
+													<option value="Atlantic/Madeira">[UTC+01:00] Atlantic/Madeira</option>
+													<option value="Atlantic/Reykjavik">[UTC+00:00] Atlantic/Reykjavik</option>
+													<option value="Atlantic/South_Georgia">[UTC-02:00] Atlantic/South_Georgia</option>
+													<option value="Atlantic/St_Helena">[UTC+00:00] Atlantic/St_Helena</option>
+													<option value="Atlantic/Stanley">[UTC-03:00] Atlantic/Stanley</option>
+													<option value="Australia/Adelaide">[UTC+09:30] Australia/Adelaide</option>
+													<option value="Australia/Brisbane">[UTC+10:00] Australia/Brisbane</option>
+													<option value="Australia/Broken_Hill">[UTC+09:30] Australia/Broken_Hill</option>
+													<option value="Australia/Currie">[UTC+10:00] Australia/Currie</option>
+													<option value="Australia/Darwin">[UTC+09:30] Australia/Darwin</option>
+													<option value="Australia/Eucla">[UTC+08:45] Australia/Eucla</option>
+													<option value="Australia/Hobart">[UTC+10:00] Australia/Hobart</option>
+													<option value="Australia/Lindeman">[UTC+10:00] Australia/Lindeman</option>
+													<option value="Australia/Lord_Howe">[UTC+10:30] Australia/Lord_Howe</option>
+													<option value="Australia/Melbourne">[UTC+10:00] Australia/Melbourne</option>
+													<option value="Australia/Perth">[UTC+08:00] Australia/Perth</option>
+													<option value="Australia/Sydney">[UTC+10:00] Australia/Sydney</option>
+													<option value="Europe/Amsterdam">[UTC+02:00] Europe/Amsterdam</option>
+													<option value="Europe/Andorra">[UTC+02:00] Europe/Andorra</option>
+													<option value="Europe/Astrakhan">[UTC+04:00] Europe/Astrakhan</option>
+													<option value="Europe/Athens">[UTC+03:00] Europe/Athens</option>
+													<option value="Europe/Belgrade">[UTC+02:00] Europe/Belgrade</option>
+													<option value="Europe/Berlin">[UTC+02:00] Europe/Berlin</option>
+													<option value="Europe/Bratislava">[UTC+02:00] Europe/Bratislava</option>
+													<option value="Europe/Brussels">[UTC+02:00] Europe/Brussels</option>
+													<option value="Europe/Bucharest" selected="">[UTC+03:00] Europe/Bucharest</option>
+													<option value="Europe/Budapest">[UTC+02:00] Europe/Budapest</option>
+													<option value="Europe/Busingen">[UTC+02:00] Europe/Busingen</option>
+													<option value="Europe/Chisinau">[UTC+03:00] Europe/Chisinau</option>
+													<option value="Europe/Copenhagen">[UTC+02:00] Europe/Copenhagen</option>
+													<option value="Europe/Dublin">[UTC+01:00] Europe/Dublin</option>
+													<option value="Europe/Gibraltar">[UTC+02:00] Europe/Gibraltar</option>
+													<option value="Europe/Guernsey">[UTC+01:00] Europe/Guernsey</option>
+													<option value="Europe/Helsinki">[UTC+03:00] Europe/Helsinki</option>
+													<option value="Europe/Isle_of_Man">[UTC+01:00] Europe/Isle_of_Man</option>
+													<option value="Europe/Istanbul">[UTC+03:00] Europe/Istanbul</option>
+													<option value="Europe/Jersey">[UTC+01:00] Europe/Jersey</option>
+													<option value="Europe/Kaliningrad">[UTC+02:00] Europe/Kaliningrad</option>
+													<option value="Europe/Kiev">[UTC+03:00] Europe/Kiev</option>
+													<option value="Europe/Lisbon">[UTC+01:00] Europe/Lisbon</option>
+													<option value="Europe/Ljubljana">[UTC+02:00] Europe/Ljubljana</option>
+													<option value="Europe/London">[UTC+01:00] Europe/London</option>
+													<option value="Europe/Luxembourg">[UTC+02:00] Europe/Luxembourg</option>
+													<option value="Europe/Madrid">[UTC+02:00] Europe/Madrid</option>
+													<option value="Europe/Malta">[UTC+02:00] Europe/Malta</option>
+													<option value="Europe/Mariehamn">[UTC+03:00] Europe/Mariehamn</option>
+													<option value="Europe/Minsk">[UTC+03:00] Europe/Minsk</option>
+													<option value="Europe/Monaco">[UTC+02:00] Europe/Monaco</option>
+													<option value="Europe/Moscow">[UTC+03:00] Europe/Moscow</option>
+													<option value="Europe/Oslo">[UTC+02:00] Europe/Oslo</option>
+													<option value="Europe/Paris">[UTC+02:00] Europe/Paris</option>
+													<option value="Europe/Podgorica">[UTC+02:00] Europe/Podgorica</option>
+													<option value="Europe/Prague">[UTC+02:00] Europe/Prague</option>
+													<option value="Europe/Riga">[UTC+03:00] Europe/Riga</option>
+													<option value="Europe/Rome">[UTC+02:00] Europe/Rome</option>
+													<option value="Europe/Samara">[UTC+04:00] Europe/Samara</option>
+													<option value="Europe/San_Marino">[UTC+02:00] Europe/San_Marino</option>
+													<option value="Europe/Sarajevo">[UTC+02:00] Europe/Sarajevo</option>
+													<option value="Europe/Simferopol">[UTC+03:00] Europe/Simferopol</option>
+													<option value="Europe/Skopje">[UTC+02:00] Europe/Skopje</option>
+													<option value="Europe/Sofia">[UTC+03:00] Europe/Sofia</option>
+													<option value="Europe/Stockholm">[UTC+02:00] Europe/Stockholm</option>
+													<option value="Europe/Tallinn">[UTC+03:00] Europe/Tallinn</option>
+													<option value="Europe/Tirane">[UTC+02:00] Europe/Tirane</option>
+													<option value="Europe/Ulyanovsk">[UTC+04:00] Europe/Ulyanovsk</option>
+													<option value="Europe/Uzhgorod">[UTC+03:00] Europe/Uzhgorod</option>
+													<option value="Europe/Vaduz">[UTC+02:00] Europe/Vaduz</option>
+													<option value="Europe/Vatican">[UTC+02:00] Europe/Vatican</option>
+													<option value="Europe/Vienna">[UTC+02:00] Europe/Vienna</option>
+													<option value="Europe/Vilnius">[UTC+03:00] Europe/Vilnius</option>
+													<option value="Europe/Volgograd">[UTC+03:00] Europe/Volgograd</option>
+													<option value="Europe/Warsaw">[UTC+02:00] Europe/Warsaw</option>
+													<option value="Europe/Zagreb">[UTC+02:00] Europe/Zagreb</option>
+													<option value="Europe/Zaporozhye">[UTC+03:00] Europe/Zaporozhye</option>
+													<option value="Europe/Zurich">[UTC+02:00] Europe/Zurich</option>
+													<option value="Indian/Antananarivo">[UTC+03:00] Indian/Antananarivo</option>
+													<option value="Indian/Chagos">[UTC+06:00] Indian/Chagos</option>
+													<option value="Indian/Christmas">[UTC+07:00] Indian/Christmas</option>
+													<option value="Indian/Cocos">[UTC+06:30] Indian/Cocos</option>
+													<option value="Indian/Comoro">[UTC+03:00] Indian/Comoro</option>
+													<option value="Indian/Kerguelen">[UTC+05:00] Indian/Kerguelen</option>
+													<option value="Indian/Mahe">[UTC+04:00] Indian/Mahe</option>
+													<option value="Indian/Maldives">[UTC+05:00] Indian/Maldives</option>
+													<option value="Indian/Mauritius">[UTC+04:00] Indian/Mauritius</option>
+													<option value="Indian/Mayotte">[UTC+03:00] Indian/Mayotte</option>
+													<option value="Indian/Reunion">[UTC+04:00] Indian/Reunion</option>
+													<option value="Pacific/Apia">[UTC+13:00] Pacific/Apia</option>
+													<option value="Pacific/Auckland">[UTC+12:00] Pacific/Auckland</option>
+													<option value="Pacific/Bougainville">[UTC+11:00] Pacific/Bougainville</option>
+													<option value="Pacific/Chatham">[UTC+12:45] Pacific/Chatham</option>
+													<option value="Pacific/Chuuk">[UTC+10:00] Pacific/Chuuk</option>
+													<option value="Pacific/Easter">[UTC-06:00] Pacific/Easter</option>
+													<option value="Pacific/Efate">[UTC+11:00] Pacific/Efate</option>
+													<option value="Pacific/Enderbury">[UTC+13:00] Pacific/Enderbury</option>
+													<option value="Pacific/Fakaofo">[UTC+13:00] Pacific/Fakaofo</option>
+													<option value="Pacific/Fiji">[UTC+12:00] Pacific/Fiji</option>
+													<option value="Pacific/Funafuti">[UTC+12:00] Pacific/Funafuti</option>
+													<option value="Pacific/Galapagos">[UTC-06:00] Pacific/Galapagos</option>
+													<option value="Pacific/Gambier">[UTC-09:00] Pacific/Gambier</option>
+													<option value="Pacific/Guadalcanal">[UTC+11:00] Pacific/Guadalcanal</option>
+													<option value="Pacific/Guam">[UTC+10:00] Pacific/Guam</option>
+													<option value="Pacific/Honolulu">[UTC-10:00] Pacific/Honolulu</option>
+													<option value="Pacific/Johnston">[UTC-10:00] Pacific/Johnston</option>
+													<option value="Pacific/Kiritimati">[UTC+14:00] Pacific/Kiritimati</option>
+													<option value="Pacific/Kosrae">[UTC+11:00] Pacific/Kosrae</option>
+													<option value="Pacific/Kwajalein">[UTC+12:00] Pacific/Kwajalein</option>
+													<option value="Pacific/Majuro">[UTC+12:00] Pacific/Majuro</option>
+													<option value="Pacific/Marquesas">[UTC-09:30] Pacific/Marquesas</option>
+													<option value="Pacific/Midway">[UTC-11:00] Pacific/Midway</option>
+													<option value="Pacific/Nauru">[UTC+12:00] Pacific/Nauru</option>
+													<option value="Pacific/Niue">[UTC-11:00] Pacific/Niue</option>
+													<option value="Pacific/Norfolk">[UTC+11:00] Pacific/Norfolk</option>
+													<option value="Pacific/Noumea">[UTC+11:00] Pacific/Noumea</option>
+													<option value="Pacific/Pago_Pago">[UTC-11:00] Pacific/Pago_Pago</option>
+													<option value="Pacific/Palau">[UTC+09:00] Pacific/Palau</option>
+													<option value="Pacific/Pitcairn">[UTC-08:00] Pacific/Pitcairn</option>
+													<option value="Pacific/Pohnpei">[UTC+11:00] Pacific/Pohnpei</option>
+													<option value="Pacific/Port_Moresby">[UTC+10:00] Pacific/Port_Moresby</option>
+													<option value="Pacific/Rarotonga">[UTC-10:00] Pacific/Rarotonga</option>
+													<option value="Pacific/Saipan">[UTC+10:00] Pacific/Saipan</option>
+													<option value="Pacific/Tahiti">[UTC-10:00] Pacific/Tahiti</option>
+													<option value="Pacific/Tarawa">[UTC+12:00] Pacific/Tarawa</option>
+													<option value="Pacific/Tongatapu">[UTC+13:00] Pacific/Tongatapu</option>
+													<option value="Pacific/Wake">[UTC+12:00] Pacific/Wake</option>
+													<option value="Pacific/Wallis">[UTC+12:00] Pacific/Wallis</option>
+												</select>
+
+											</div>
+
+										</div>
+
+
+
+										<div id="config_smtp_list" class="row">
+
+											<div class="col-12 col-md-6 mb-3">
+
+
+												<!-- SMTP ARRAY -->
+												<div class="config-generator-smtp-array border border-primary rounded border-dashed p--15 mt-3">
+													<input type="hidden" name="config[smtp][type][]" value="tls">
+
+													<div class="d-block mb-1 font-weight-medium text-primary">
+
+														<!-- clone remover -->
+														<a href="#" class="hide close btn-config-clone-remover mt--n5">
+															<i class="fi fi-close"></i>
+														</a>
+														<!-- /clone remover -->
+
+														<label class="form-switch form-switch-pill form-switch-primary">
+															<input type="checkbox" value="1" checked="" name="config[smtp][enabled][]">
+															<i data-on="ON" data-off="OFF"></i>
+															SMTP Provider
+														</label>
+
+													</div>
+													
+													<label class="d-block mb-1 mt-4 font-weight-medium">SMTP Name <span class="font-weight-light text-gray-500">(can be anything, just an identifier)</span></label>
+													<input type="text" name="config[smtp][name][]" value="" class="form-control" placeholder="eg.: My hosting , Amazon SES , etc">
+
+													<div class="bg-light p--15 text-gray-7 fs--13 mt-3">
+														If you use your hosting, go to your cPanel and create an email address - something like <b>noreply@mydomain.com</b>, so only your website can use it. 
+														Copy/paste here the SMTP credentials. <b class="text-danger">Do NOT use your own good/official email address</b>.
+													</div>
+
+													<div class="row">
+														
+														<div class="col-7">
+															
+															<label class="d-block mb-1 mt-4 font-weight-medium">Host</label>
+															<input required type="text" name="config[smtp][host][]" value="" class="form-control" placeholder="my-smtp-from-cpanel.com">
+														
+														</div>
+
+														<div class="col-5">
+
+															<label class="d-block mb-1 mt-4 font-weight-medium">Port</label>
+															<input required type="number" name="config[smtp][port][]" value="587" class="form-control" placeholder="25/465/587/etc">
+
+														</div>
+
+													</div>
+
+
+													<label class="d-block mb-1 mt-4 font-weight-medium">User</label>
+													<input required type="text" name="config[smtp][user][]" value="" class="form-control" autocomplete="off" placeholder="noreply@mydomain.com -or- transactional user">
+
+													<label class="d-block mb-1 mt-4 font-weight-medium">Password</label>
+													<input required type="text" name="config[smtp][pass][]" value="" class="form-control" autocomplete="off" placeholder="">
+
+												</div>
+												<!-- /SMTP ARRAY -->
+
+											</div>
+
+										</div>
+
+										<small class="config-smtp-info hide-force d-block mb-3 text-danger">* drag to change the order</small>
+
+										<button type="submit" class="btn btn-primary">
+											<i class="fi fi-check"></i>
+											<span>Generate Config</span>
+										</button>
+
+										<a href="#" class="btn btn-secondary btn-smtp-cloner">
+											+ SMTP Provider
+										</a>
+
+									</form>
+
+								</div>
+
+							</section>
+
+
+
+
+
+
+						</div>
+
+						<div class="col w-100 max-w-300 d-none d-xl-flex align-self-md-stretch">
+
+							<div class="w-100">
+								<div class="sticky-kit">
+
+								<!--
+								<h6 class="text-dark">Jump To</h6>
+								<ul class="list-unstyled mb-5">
+									<li class="list-item">
+										<a href="#section_0" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											- -
+										</a>
+									</li>
+								</ul>
+								-->
+
+
+
+								<!-- AJAX BOX INFO -->
+								<div 	id="boxinfo_v3" 
+										class="js-ajax" 
+										data-ajax-url="_ajax/boxinfo_v3.html">
+
+									<!-- ajax loading icon -->
+									<div class="text-center bg-white rounded shadow-md p--15 mb-5">
+										<i class="fi fi-circle-spin fi-spin fs--30 text-muted"></i>
+									</div><!-- /ajax loading icon -->
+
+								</div>
+								<!-- /AJAX BOX INFO -->
+
+
+								</div>
+
+
+
+							</div>
+
+						</div>
+
+					</div>
+
+
+
+				</div>
+				<!-- /MIDDLE -->
+
+			</div>
+
+
+
+		</div><!-- /#wrapper -->
+
+
+
+
+		<!--
+			
+			Toast On Load
+
+				data-type 			= '', success, danger, warning, info
+				data-title 			= toast title 	(optional)
+				data-body 			= toast body 	(required)
+				data-pos 			= top-left, top-right, bottom-left, bottom-right, top-center, bottom-center
+				data-delay 			= autoclose in ms
+				data-fill 			= background color fill [true|false]
+
+		-->
+		<div class="hide toast-on-load"
+			data-toast-type="pink" 
+			data-toast-title="" 
+			data-toast-body="<i class='fi fi-emoji-cool float-start'></i> Ajax navigation enabled! Yay!" 
+			data-toast-pos="bottom-center" 
+			data-toast-delay="4000" 
+			data-toast-fill="true" 
+		></div>
+
+
+
+
+		<script src="../assets/js/core.min.js"></script>
+		<script src="../assets/js/vendor_bundle.min.js"></script>
+
+
+
+		<!--
+
+			[SOW Ajax Navigation Plugin] [AJAX ONLY, IF USED]
+			If you have specific page js files, wrap them inside #page_js_files 
+			Ajax Navigation will use them for this page! 
+			This way you can load this page in a normal way and/or via ajax.
+			(you can change/add more containers in sow.config.js)
+
+		-->
+		<div id="page_js_files">
+
+
+
+			<!-- 
+
+				CONTENT CLIPBOARD COPY 
+
+					<a href="#clipboard_1" class="btn-clipboard btn btn-sm btn-light float-end">
+						<i class="fi fi-lightning"></i> 
+						copy code
+					</a>
+
+					<div id="clipboard_1">
+						.. code 
+					</div>
+
+			-->
+			<script src="assets/js/sow.clipboard.js"></script>
+			<script>
+
+				$.SOW.core.clipboard.init('#middle a.btn-clipboard');
+
+			</script>
+
+
+
+			<script>
+
+				/* SMTP Config Cloner */
+				var config_smtp_primary_clone = jQuery('#config_smtp_list').clone();
+				jQuery('#config_smtp_list .btn-config-clone-remover').remove();
+
+				jQuery('a.btn-smtp-cloner').on('click', function(e) {
+					e.preventDefault();
+
+					/* append clone */
+					jQuery('#config_smtp_list').append(config_smtp_primary_clone.html()).addClass('config-smtp-clone');
+
+					/* bind remove button */
+					jQuery('.config-smtp-clone .btn-config-clone-remover').removeClass('hide').on('click', function(e) {
+						e.preventDefault();
+						jQuery(this).parents('.config-generator-smtp-array').parent('.col-12').remove();
+
+						/* show|hide info */
+						___cloner_info();
+
+					});
+
+					/* remove clone identifier class */
+					jQuery('.config-smtp-clone').removeClass('config-smtp-clone');
+
+					/* init sortable */
+					$.SOW.vendor.sortable.init('#config_smtp_list');
+
+					/* show|hide info */
+					___cloner_info();
+				});
+
+
+				/* show|hide info */
+				___cloner_info = function() {
+
+					/* how|hide info */
+					if($('#config_smtp_list>div').length > 1)
+						jQuery('.config-smtp-info').removeClass('hide-force');
+					else
+						jQuery('.config-smtp-info').addClass('hide-force');
+
+				}
+			</script>
+
+		</div>
+
+
+	</body>
+</html>

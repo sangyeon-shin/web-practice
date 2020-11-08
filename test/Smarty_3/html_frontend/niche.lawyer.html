@@ -1,0 +1,1045 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Smarty V3</title>
+		<meta name="description" content="...">
+
+        <meta name="viewport" content="width=device-width, maximum-scale=5, initial-scale=1, user-scalable=0">
+        <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+        <!-- up to 10% speed up for external res -->
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+        <link rel="preconnect" href="https://fonts.googleapis.com/">
+        <link rel="preconnect" href="https://fonts.gstatic.com/">
+        <!-- preloading icon font is helping to speed up a little bit -->
+        <link rel="preload" href="assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
+
+        <link rel="stylesheet" href="assets/css/core.min.css">
+        <link rel="stylesheet" href="assets/css/vendor_bundle.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap">
+
+		<!-- favicon -->
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="apple-touch-icon" href="demo.files/logo/icon_512x512.png">
+
+		<link rel="manifest" href="assets/images/manifest/manifest.json">
+		<meta name="theme-color" content="#377dff">
+
+	</head>
+
+	<!--
+		++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++
+
+			PLUGINS USED
+				SOW: 	
+					lazyload 		/documentation/plugins-sow-lazyload.html
+					ajax modal 		/documentation/plugins-sow-ajax-modal.html
+
+				VENDORS
+					Swiper 			/documentation/plugins-vendor-swiper.html
+					Photoswipe 		/documentation/plugins-vendor-photoswipe.html
+					Map (leaflet) 	/documentation/components-map.html
+					Jarallax 		/documentation/plugins-vendor-jarallax.html
+
+		++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++
+	-->
+	<body class="header-over header-sticky">
+
+		<div id="wrapper">
+
+
+			<!-- HEADER -->
+			<header id="header" class="shadow-xs">
+
+
+				<!-- NAVBAR -->
+				<div class="container position-relative">
+
+					<nav class="navbar navbar-expand-lg navbar-light justify-content-lg-between justify-content-md-inherit">
+
+						<div class="align-items-start">
+
+							<!-- mobile menu button : show -->
+							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMainNav" aria-controls="navbarMainNav" aria-expanded="false" aria-label="Toggle navigation">
+								<svg width="25" viewBox="0 0 20 20">
+									<path d="M 19.9876 1.998 L -0.0108 1.998 L -0.0108 -0.0019 L 19.9876 -0.0019 L 19.9876 1.998 Z"></path>
+									<path d="M 19.9876 7.9979 L -0.0108 7.9979 L -0.0108 5.9979 L 19.9876 5.9979 L 19.9876 7.9979 Z"></path>
+									<path d="M 19.9876 13.9977 L -0.0108 13.9977 L -0.0108 11.9978 L 19.9876 11.9978 L 19.9876 13.9977 Z"></path>
+									<path d="M 19.9876 19.9976 L -0.0108 19.9976 L -0.0108 17.9976 L 19.9876 17.9976 L 19.9876 19.9976 Z"></path>
+								</svg>
+							</button>
+
+							<!-- 
+								Logo : height: 70px max
+							-->
+							<a class="navbar-brand" href="index.html">
+								<img src="assets/images/logo/logo_dark.svg" width="110" height="70" alt="...">
+								<img src="assets/images/logo/logo_light.svg" width="110" height="70" alt="...">
+							</a>
+
+						</div>
+
+
+
+
+						<!-- Menu -->
+						<div class="collapse navbar-collapse justify-content-end" id="navbarMainNav">
+
+
+							<!-- MOBILE MENU NAVBAR -->
+							<div class="navbar-xs d-none"><!-- .sticky-top -->
+
+								<!-- mobile menu button : close -->
+								<button class="navbar-toggler pt-0" type="button" data-toggle="collapse" data-target="#navbarMainNav" aria-controls="navbarMainNav" aria-expanded="false" aria-label="Toggle navigation">
+									<svg width="20" viewBox="0 0 20 20">
+										<path d="M 20.7895 0.977 L 19.3752 -0.4364 L 10.081 8.8522 L 0.7869 -0.4364 L -0.6274 0.977 L 8.6668 10.2656 L -0.6274 19.5542 L 0.7869 20.9676 L 10.081 11.679 L 19.3752 20.9676 L 20.7895 19.5542 L 11.4953 10.2656 L 20.7895 0.977 Z"></path>
+									</svg>
+								</button>
+
+								<!-- 
+									Mobile Menu Logo 
+									Logo : height: 70px max
+								-->
+								<a class="navbar-brand" href="index.html">
+									<img src="assets/images/logo/logo_dark.svg" width="110" height="70" alt="...">
+								</a>
+
+							</div>
+							<!-- /MOBILE MENU NAVBAR -->
+
+
+
+							<!-- NAVIGATION -->
+							<ul class="navbar-nav fs--14">
+
+								<!-- home -->
+								<li class="nav-item">
+
+									<a class="nav-link scroll-to" href="#wrapper">
+										HOME
+									</a>
+
+								</li>
+
+								<!-- about -->
+								<li class="nav-item">
+
+									<a class="nav-link scroll-to" href="#section_about">
+										ABOUT US
+									</a>
+
+								</li>
+
+								<!-- about -->
+								<li class="nav-item">
+
+									<a class="nav-link scroll-to" href="#section_reputation">
+										REPUTATION
+									</a>
+
+								</li>
+
+
+								<!-- about -->
+								<li class="nav-item">
+
+									<a class="nav-link scroll-to" href="#section_contact">
+										CONTACT US
+									</a>
+
+								</li>
+
+
+								<!-- social : mobile only (d-block d-sm-none)-->
+								<li class="nav-item d-block d-sm-none text-center mb-4">
+
+									<h3 class="h6 text-muted">Follow Us</h3>
+
+									<a href="#!" class="btn btn-sm btn-facebook transition-hover-top mb-2 rounded-circle text-white" rel="noopener">
+										<i class="fi fi-social-facebook"></i> 
+									</a>
+
+									<a href="#!" class="btn btn-sm btn-twitter transition-hover-top mb-2 rounded-circle text-white" rel="noopener">
+										<i class="fi fi-social-twitter"></i> 
+									</a>
+
+									<a href="#!" class="btn btn-sm btn-linkedin transition-hover-top mb-2 rounded-circle text-white" rel="noopener">
+										<i class="fi fi-social-linkedin"></i> 
+									</a>
+
+									<a href="#!" class="btn btn-sm btn-youtube transition-hover-top mb-2 rounded-circle text-white" rel="noopener">
+										<i class="fi fi-social-youtube"></i> 
+									</a>
+
+								</li>
+
+
+							</ul>
+							<!-- /NAVIGATION -->
+
+
+						</div>
+
+
+
+
+
+						<!-- OPTIONS -->
+						<ul class="list-inline list-unstyled mb-0 d-flex align-items-end">
+
+
+						</ul>
+						<!-- /OPTIONS -->
+
+
+
+					</nav>
+
+				</div>
+				<!-- /NAVBAR -->
+
+			</header>
+			<!-- /HEADER -->
+
+
+		
+
+
+
+
+
+
+
+
+
+			<!-- COVER 
+				data-sow-slideshow="..."
+				data-sow-slideshow-xs="..."		(smaller, mobile devices)
+			 -->
+			<section class="sow-util-slideshow min-h-75vh d-middle justify-content-start overlay-dark overlay-opacity-7" 
+				data-sow-slideshow-interval="4000" 
+				data-sow-slideshow-fade-delay="2000" 
+				data-sow-slideshow="
+					demo.files/images/unsplash/lawyer/sebastian-pichler-bAQH53VquTc-unsplash.jpg
+					,demo.files/images/unsplash/lawyer/helloquence-OQMZwNd3ThU-unsplash.jpg
+				">
+
+				<div class="container"> 
+
+					<div class="text-center-md text-center-xs d-middle justify-content-start">
+						
+						<div class="text-white py-7" data-aos="fade-in" data-aos-delay="0" data-aos-offset="0">
+
+							<!-- main title -->
+							<h1 class="h1-xs display-4 mb-0 font-weight-medium">
+								Prefessional <span class="text-brown-200">Lawyers</span>
+							</h1>
+							
+							<!-- slogan -->
+							<p class="h2 h5-xs font-weight-normal mb-0 text-brown-100">
+								Fighting together for the better
+							</p>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</section>	
+			<!-- /COVER + SEARCH -->
+
+
+
+
+
+
+			<!-- COUNTER -->
+			<section class="pt-5 pb-0 mt-1">
+				<div class="container">
+
+					<div class="row col-border text-center text-brown-400">
+						
+						<div class="col-6 col-md-3 mb-5">
+
+							<div class="h1">
+								<span data-toggle="count" 
+									data-count-from="0" 
+									data-count-to="368" 
+									data-count-duration="2500" 
+									data-count-decimals="0">0</span>
+							</div>
+							
+							<h3 class="h6 m-0">TRUSTED CLIENTS</h3>
+
+						</div>
+
+
+						<div class="col-6 col-md-3 mb-5">
+
+							<div class="h1">
+								<span data-toggle="count" 
+									data-count-from="0" 
+									data-count-to="98" 
+									data-count-duration="2500" 
+									data-count-decimals="0">0</span><span class="font-weight-light">%</span>
+							</div>
+							
+							<h3 class="h6 m-0">SUCCESSFUL CASES</h3>
+
+						</div>
+
+
+						<div class="col-6 col-md-3 mb-5">
+
+							<div class="h1">
+								<span data-toggle="count" 
+									data-count-from="0" 
+									data-count-to="199" 
+									data-count-duration="2500" 
+									data-count-decimals="0">0</span>
+							</div>
+							
+							<h3 class="h6 m-0">PERSONAL INJURY CASES</h3>
+
+						</div>
+
+
+						<div class="col-6 col-md-3 mb-5">
+
+							<div class="h1">
+								$<span data-toggle="count" 
+									data-count-from="0" 
+									data-count-to="12000000" 
+									data-count-duration="2500" 
+									data-count-decimals="0">0</span>
+							</div>
+							
+							<h3 class="h6 m-0">RECOVERED FOR OUR CLIENTS</h3>
+
+						</div>
+
+					</div>
+
+				</div>
+			</section>
+			<!-- /COUNTER -->
+							
+
+
+
+
+
+			<!-- block : about us -->
+			<section id="section_about" class="overflow-hidden bg-light">
+				<div class="container">
+				
+					<div class="row d-flex flex-wrap align-items-center">
+
+
+						<div class="order-2 col-12 col-md-6 offset-md-1 mb-5">
+
+							<h2 class="display-5 font-weight-normal h2-md mb-5 text-brown-400">
+								Who we are?
+							</h2>
+							<p class="mb-5 lead">
+								Answering those questions and more is a tall order, but one you should approach with enthusiasm. After all, this is the one place you can and should sing your own praises.
+							</p>
+
+							<p class="mb-5">
+								Answering those questions and more is a tall order, but one you should approach with enthusiasm. After all, this is the one place you can and should sing your own praises.
+							</p>
+
+							<!-- play -->
+							<div class="clearfix d-flex align-items-center">
+
+								<!-- play button : based on SOW : Ajax Modal -->
+								<span class="d-inline-block rounded-circle border border-light bw--3 p-1 transition-hover-zoom transition-all-ease-150 shadow-primary-lg">
+									<a aria-label="See our video" href="https://www.youtube.com/watch?v=I_fQh_HmF6s" class="js-ajax-modal d-inline-flex bg-primary text-white rounded-circle w--60 h--60 align-items-center justify-content-center text-decoration-none" 
+										data-ajax-modal-type="video" 
+										data-ajax-modal-size="modal-xl" 
+										data-ajax-modal-centered="true">
+										<i class="fi fi-arrow-end-full fs--25 mt--3"></i>
+									</a>
+								</span> 
+
+								<span class="d-inline-block px-3 text-primary">
+									<b>SEE OUR VIDEO</b>
+								</span>
+
+							</div>
+							<!-- /play -->
+
+						</div>
+
+
+						<div class="order-1 col-12 col-md-5 mb-5">
+
+							<div class="block-img-card">
+
+								<div class="block-img block-img-1 bg-light rounded-xl bg-cover lazy jarallax" data-jarallax-element="-60" data-background-image="demo.files/images/unsplash/team/sage-kirk-Wx2AjoLtpcU-unsplash.jpg">
+									<img class="w-100" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="...">
+								</div>
+
+								<div class="block-img block-img-2 bg-light rounded-xl bg-cover lazy jarallax" data-jarallax-element="-90" data-background-image="demo.files/images/unsplash/team/ospan-ali-yQJSbsTPvxg-unsplash.jpg">
+									<img class="w-100" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="...">
+								</div>
+
+								<div class="block-img block-img-3 bg-light rounded-xl bg-cover lazy jarallax" data-jarallax-element="-120" data-background-image="demo.files/images/unsplash/team/ali-morshedlou-WMD64tMfc4k-unsplash.jpg">
+									<img class="w-100" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="...">
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+			</section>
+			<!-- /block : about us -->
+
+
+
+
+			<!-- jarallax -->
+			<section class="overlay-dark overlay-opacity-8 jarallax bg-cover" style="background-image:url('demo.files/images/unsplash/lawyer/sebastian-pichler-bAQH53VquTc-unsplash.jpg')">
+				<div class="container">
+
+					<div class="py-7 text-white text-center mx-auto max-w-600">
+
+						<h2 class="h3-xs display-4 font-weight-medium">LET'S WORK TOGETHER</h2>
+						<p class="font-weight-light mb-5">We can't solve problems by using the same kind of thinking we used when we created them.</p>
+
+						<a href="tel:7853889450" class="h3-xs display-4 font-weight-medium m-0 text-white">785-388-9450</a>
+					</div>
+
+				</div>
+			</section>
+			<!-- /jarallax -->
+
+
+
+
+
+
+			<!-- block : reputation -->
+			<section id="section_reputation" class="bg-light">
+				<div class="container">
+
+					<!-- block : testimonials -->
+					<div class="max-w-600 mx-auto text-center mb-7">
+						<h2 class="h1 font-weight-normal text-brown-400">
+							Lawyers With A Global Reputation
+						</h2>
+					</div>
+
+
+					<div class="row">
+
+
+						<div class="col-12 col-sm-6 col-lg-3">
+
+							<div class="bg-white shadow-xs rounded p-4 mb-4 mb-2-xs transition-hover-top transition-all-ease-150 text-decoration-none text-gray-800">
+								<h3 class="h6 py-3">WHAT WE DO</h3>
+								<p>
+									Answering those questions and more is a tall order, but one you should approach with enthusiasm.
+								</p>
+							</div>
+
+						</div>
+
+
+						<div class="col-12 col-sm-6 col-lg-3">
+
+							<div class="bg-white shadow-xs rounded p-4 mb-4 mb-2-xs transition-hover-top transition-all-ease-150 text-decoration-none text-gray-800">
+								<h3 class="h6 py-3">WHERE WE WORK</h3>
+								<p>
+									Answering those questions and more is a tall order, but one you should approach with enthusiasm.
+								</p>
+							</div>
+
+						</div>
+
+
+						<div class="col-12 col-sm-6 col-lg-3">
+
+							<div class="bg-white shadow-xs rounded p-4 mb-4 mb-2-xs transition-hover-top transition-all-ease-150 text-decoration-none text-gray-800">
+								<h3 class="h6 py-3">SMARTY LAWYERS</h3>
+								<p>
+									Answering those questions and more is a tall order, but one you should approach with enthusiasm.
+								</p>
+							</div>
+
+						</div>
+
+
+						<div class="col-12 col-sm-6 col-lg-3">
+
+							<div class="bg-white shadow-xs rounded p-4 mb-4 mb-2-xs transition-hover-top transition-all-ease-150 text-decoration-none text-gray-800">
+								<h3 class="h6 py-3">FUTURE VIEW</h3>
+								<p>
+									Answering those questions and more is a tall order, but one you should approach with enthusiasm.
+								</p>
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+			</section>
+			<!-- /block : reputation -->
+
+
+			<!-- block : reputation : 2 -->
+			<section class="bg-light mt-1 py-6">
+				<div class="container">
+
+
+					<div class="row">
+
+						<div class="col-6 col-md-4 py-4 my-3 m-0-xs d-lg-flex">
+
+							<div class="flex-none w--80">
+								<i class="fi fi-lightbulb fs--45"></i>
+							</div>
+
+							<div class="flex-lg-fill">
+								<h2 class="h5">Expert Lawyers</h2>
+								<p>
+									Answering those questions and more is a tall order, but one you should approach with enthusiasm.
+								</p>
+
+								<a href="#!">Learn more</a>
+							</div>
+
+						</div>
+
+
+						<div class="col-6 col-md-4 py-4 my-3 m-0-xs d-lg-flex">
+
+							<div class="flex-none w--80">
+								<i class="fi fi-graph fs--45"></i>
+							</div>
+
+							<div class="flex-lg-fill">
+								<h2 class="h5">A Global View</h2>
+								<p>
+									Answering those questions and more is a tall order, but one you should approach with enthusiasm.
+								</p>
+
+								<a href="#!">Learn more</a>
+							</div>
+
+						</div>
+
+
+						<div class="col-12 col-md-4 py-4 my-3 m-0-xs d-lg-flex">
+
+							<div class="flex-none w--80">
+								<i class="fi fi-brain fs--45"></i>
+							</div>
+
+							<div class="flex-lg-fill">
+								<h2 class="h5">Customer Focus</h2>
+								<p>
+									Answering those questions and more is a tall order, but one you should approach with enthusiasm.
+								</p>
+
+								<a href="#!">Learn more</a>
+							</div>
+
+						</div>
+
+					</div>
+
+
+				</div>
+			</section>
+			<!-- /block : reputation : 2 -->
+
+
+
+			<!-- block : testimonials -->
+			<section>
+				<div class="container z-index-1">
+
+					<!-- block : testimonials -->
+					<div class="max-w-600 mx-auto text-center mb-7">
+						<h2 class="h1 font-weight-normal text-brown-400">
+							Testimonials
+						</h2>
+					</div>
+
+					<div class="row">
+
+						<div class="col-12 col-lg-6 my-5">
+
+							<div class="h-100 bg-white shadow-md rounded">
+
+								<!-- pic/avatar -->
+								<span class="mt--n40 w--80 h--80 rounded-circle d-inline-block bg-light bg-cover lazy" data-background-image="demo.files/images/unsplash/team/thumb_330/joseph-gonzalez-iFgRcqHznqg-unsplash.jpg"></span>
+
+								<div class=" px-4 pb-5 pt-4">
+									<h3 class="h5 mb-4 font-weight-normal">
+										<span class="d-block-xs">Joseph Campbell</span>
+										<span class="rating-5 float-end m-0 float-none-xs text-warning fs--14 mt-1"></span>
+									</h3>
+									<p class="lead">
+										Professionals, no doubt! Helped me to win a case in no time, I was hopeless beefore!
+									</p>
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="col-12 col-lg-6 my-5">
+
+							<div class="h-100 bg-white shadow-md rounded">
+
+								<!-- pic/avatar -->
+								<span class="mt--n40 w--80 h--80 rounded-circle d-inline-block bg-light bg-cover lazy" data-background-image="demo.files/images/unsplash/team/thumb_330/michael-dam-mEZ3PoFGs_k-unsplash.jpg"></span>
+
+								<div class=" px-4 pb-5 pt-4">
+									<h3 class="h5 mb-4 font-weight-normal">
+										<span class="d-block-xs">Jessica Doe</span>
+										<span class="rating-5 float-end m-0 float-none-xs text-warning fs--14 mt-1"></span>
+									</h3>
+									<p class="lead">
+										Recommended by a friend! I never thought I win my case, was complicated! They are a miracle!
+									</p>
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+
+				<!-- svg shape -->
+				<svg class="absolute-full z-index-0" width="100%" height="100%" viewBox="0 0 1920 90" preserveAspectRatio="none">
+					<path fill="rgba(0,0,0,.01)" d="M1920,0C1217,0,120.574,155.567,0,0v90h1920V0z"></path>
+				</svg>
+
+			</section>
+			<!-- /block : testimonials -->
+
+
+
+
+
+			<!-- block : contact -->
+			<section id="section_contact" class="mt-1 bg-light">
+				<div class="container">
+
+					<div class="row">
+
+						<div class="col-12 col-lg-6 mb-5">
+
+							<h2 class="font-weight-light mb-5 text-brown-400">
+								<span class="font-weight-medium">Smarty</span> Contact!
+								<small class="d-block h6">Let us know how can we help you!</small>
+							</h2>
+
+
+							<div class="row">
+
+								<!-- call us -->
+								<div class="col-12 col-sm-6 mb-4">
+									<h3 class="font-weight-light text-primary h5 mb-4">
+										Call Us
+									</h3>
+
+									<p class="m-0">
+										<a href="tel:01555-88978" class="link-muted">+01 785-388-9450</a>
+									</p>
+									<p class="m-0">
+										<a href="email:john.doe@gmail.com" class="link-muted">john.doe@gmail.com</a>
+									</p>
+								</div>
+
+								<!-- address -->
+								<div class="col-12 col-sm-6 mb-4">
+
+									<h3 class="font-weight-light text-primary h5 mb-4">
+										Our Address
+									</h3>
+
+									<p class="m-0">
+										Road 741, No.44, New York <br>
+										United States
+									</p>
+
+								</div>
+							</div>
+
+
+
+							<div class="bg-white shadow-primary-xs rounded p-2 mt-5">
+
+								<!--
+									Map
+								-->
+								<div class="map-leaflet h--400 w-100 rounded" 
+									data-map-tile="voyager" 
+									data-map-zoom="8" 
+									data-map-json='[
+										{ 
+											"map_lat": 40.750765,
+											"map_long": -73.993428,
+											"map_popup": "<b>Smarty Inc.</b> <br> Road 741, No.44,<br> New York / United States <br> <a href=`tel:7853889450`>(01)-785-388-9450</a>"
+										}
+									]'><!-- map container--></div>
+
+							</div>
+
+						</div>
+
+						<div class="col-12 col-lg-6">
+
+							<div class="rounded bg-white shadow-xs d-flex">
+								<div class="m-5 m-4-xs">
+
+									<h2 class="h3-xs font-weight-light mb-5 text-brown-400">
+										Send us a message
+									</h2>
+
+
+									<!-- 
+										CONTACT FORM : AJAX [TESTED|WORKING AS IT IS]
+
+											Plugin required: SOW Ajax Forms
+
+											In order to work as ajax form, SOW Ajax Forms should be available/enabled
+											Else, SOW Form Validation plugin is used.
+											If none of them are available, normal submit is used and you can remove:
+												.js-ajax
+												.bs-validate
+												novalidate
+												any data-ajax-*
+												any data-error-*
+
+											** Remove data-error-toast-* for no error toast notifications
+
+
+
+
+										Ajax will control success/fail alerts according to server response:
+											
+											1. unexpected error: 		if server response is this string: {:err:unexpected:}
+											2. mising mandatory:		if server response is this string: {:err:required:}
+											3. success:					if server response is this string: {:success:}
+											
+											data-ajax-control-alerts="true"
+											data-ajax-control-alert-succes="#contactSuccess" 
+											data-ajax-control-alert-unexpected="#contactErrorUnexpected" 
+											data-ajax-control-alert-mandaroty="#contactErrorMandatory" 
+
+										+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+											WORKING CONTACT! Edit your php/config.inc.php
+										+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+									-->
+									<form 	novalidate 
+											action="php/contact_form.php" 
+											method="POST" 
+
+											data-ajax-container="#ajax_dd_contact_response_container" 
+											data-ajax-update-url="false" 
+											data-ajax-show-loading-icon="true" 
+											data-ajax-callback-function="" 
+											data-error-scroll-up="false" 
+											
+											data-ajax-control-alerts="true"
+											data-ajax-control-alert-succes="#contactSuccess" 
+											data-ajax-control-alert-unexpected="#contactErrorUnexpected" 
+											data-ajax-control-alert-mandaroty="#contactErrorMandatory" 
+
+											data-error-toast-text="<i class='fi fi-circle-spin fi-spin float-start'></i> Please, complete all required fields!" 
+											data-error-toast-delay="2000" 
+											data-error-toast-position="bottom-center"
+
+											class="bs-validate js-ajax">
+
+
+										<!-- 1. 
+											optional, hidden action for your backend
+
+											PHP Basic Example
+											if($_POST['action'] == 'contact_form_submit') {
+												... send message
+											}
+										-->
+										<input type="hidden" name="action" value="contact_form_submit" tabindex="-1"> 
+										<!-- -->
+
+
+										<!-- 2. 
+											A very small optional trick (using .hide class instead of type="hidden") for some low spam robots. 
+											If this is not empty, the process should stop. A normal user/visitor should not be able to see this field.
+
+											PHP Basic Example
+											if($_POST['norobot'] != '') {
+												exit;
+											}
+										-->
+										<input type="text" name="norobot" value="" class="hide" tabindex="-1"> 
+										<!-- -->
+
+										<div class="form-label-group mb-3">
+											<input required placeholder="Name" id="contact_name" name="contact_name" type="text" class="form-control">
+											<label for="contact_name">Name</label>
+										</div>
+
+										<div class="form-label-group mb-3">
+											<input required placeholder="Email" id="contact_email" name="contact_email" type="email" class="form-control">
+											<label for="contact_email">Email</label>
+										</div>
+
+										<div class="form-label-group mb-3">
+											<input required placeholder="Phone" id="contact_phone" name="contact_phone" type="text" class="form-control">
+											<label for="contact_phone">Phone</label>
+										</div>
+
+										<div class="form-label-group mb-4">
+											<textarea required placeholder="Message" id="contact_message" name="contact_message" class="form-control" rows="3"></textarea>
+											<label for="contact_message">Message</label>
+										</div>
+
+										<!-- GDPR CONSENT -->
+										<div class="clearfix bg-light position-relative rounded p-4 mb-4">
+
+											<span class="text-muted fs--12 d-block position-absolute bottom-0 end-0 m-2">
+												EU GDPR
+											</span>
+
+											<label class="form-checkbox form-checkbox-primary">
+												<input required type="checkbox" name="contact_gdpr">
+												<i></i> 
+												<span> 	
+													I consent that my data is being stored in 
+													line with the guidelines set out in  
+													<a href="page-terms-and-conditions.html" target="_blank">Privacy Policy</a>. 
+												</span>
+											</label>
+
+										</div>
+										<!-- /GDPR CONSENT -->
+
+
+
+
+										<!-- 
+											Server detailed error
+											!ONLY! If debug is enabled!
+											Else, shown ony "Server Error!"
+										-->
+										<div id="ajax_dd_contact_response_container"></div>
+
+										<!-- {:err:unexpected:} internal server error -->
+										<div id="contactErrorUnexpected" class="hide alert alert-danger p-3">
+											Unexpected Error!
+										</div>
+
+										<!-- {:err:required:} mandatory fields -->
+										<div id="contactErrorMandatory" class="hide alert alert-danger p-3">
+											Please, review your data and try again!
+										</div>
+
+										<!-- {:success:} message sent -->
+										<div id="contactSuccess" class="hide alert alert-success p-3">
+											Thank you for your message!
+										</div>
+
+
+
+
+										<button type="submit" class="btn btn-primary btn-block">
+											Send Message
+										</button>
+
+									</form>
+									<!-- /CONTACT FORM : AJAX -->
+
+
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+			</section>
+			<!-- /block : contact -->
+
+							
+
+
+
+			<!-- Footer -->
+			<footer id="footer" class="shadow-xs">
+				<div class="container">
+
+					<div class="row gutters-lg">
+
+						<!-- col 1 : contact -->
+						<div class="order-3 order-lg-1 col">
+
+							<div class="py-5 px-3 text-center">
+
+								<h4>Contact</h4>
+
+								<div class="mb-4">
+
+									<ul class="list-unstyled mb-0 mt-5 px-3">
+
+										<li class="list-item py-2">
+
+											<a href="tel:+01-555-5555" class="clearfix py-1 h5 mb-0 d-block font-weight-medium">
+												785-388-9450
+											</a>
+
+										</li>
+
+										<li class="list-item py-2">
+
+											<a href="mailto:info@mycomany.com" class="clearfix py-1 h5 d-block font-weight-medium">
+												info@mycomany.com
+											</a>
+
+										</li>
+
+									</ul>
+
+
+									<!-- social -->
+									<div class="clearfix"> 
+
+										<a href="#!" class="btn btn-sm btn-facebook transition-hover-top mb-2 rounded-circle text-white" rel="noopener" aria-label="facebook page">
+											<i class="fi fi-social-facebook"></i> 
+										</a>
+
+										<a href="#!" class="btn btn-sm btn-twitter transition-hover-top mb-2 rounded-circle text-white" rel="noopener" aria-label="twitter page">
+											<i class="fi fi-social-twitter"></i> 
+										</a>
+
+										<a href="#!" class="btn btn-sm btn-linkedin transition-hover-top mb-2 rounded-circle text-white" rel="noopener" aria-label="linkedin page">
+											<i class="fi fi-social-linkedin"></i> 
+										</a>
+
+										<a href="#!" class="btn btn-sm btn-youtube transition-hover-top mb-2 rounded-circle text-white" rel="noopener" aria-label="youtube page">
+											<i class="fi fi-social-youtube"></i> 
+										</a>
+
+									</div>
+									<!-- /social -->
+
+
+								</div>
+							
+							</div>
+
+						</div>
+
+
+						<!-- MIDDLE : LOGO -->
+						<div class="order-2 col-12 col-lg-4 col-xl-4 mt--n30 m-0-xs m-0-md bg-gradient-dark rounded-top d-flex flex-wrap align-items-center justify-content-center">
+
+							<div class="px-4 py-5 text-center">
+
+								<!-- svg icon -->
+								<div class="py-3">
+									<svg width="80" height="80" fill="#ffffff" viewBox="0 0 33.441 33.441"><path d="M11.452 5.3l7.317 4.225c.203.116.461.046.578-.155l.211-.366c.117-.201.047-.46-.154-.577l-7.318-4.225c-.202-.117-.461-.047-.577.154l-.211.366c-.117.202-.048.461.154.578zM5.115 16.277l7.318 4.226c.202.116.461.047.577-.154l.211-.365c.117-.201.048-.461-.154-.577l-7.318-4.225c-.202-.117-.461-.047-.577.154l-.211.366c-.118.199-.049.458.154.575zM30.92 21.44l-14.646-7.591 1.969-3.41c.116-.201.047-.461-.153-.577l-6.588-3.803c-.201-.116-.461-.046-.577.155l-4.648 8.05c-.115.201-.046.461.155.577l6.587 3.802c.201.117.461.047.576-.154l1.97-3.41 13.896 8.889c.196.125.451.063.567-.139l1.057-1.83c.115-.199.041-.451-.165-.559zM33.23 22.509l-.731-.422c-.2-.117-.461-.047-.577.154l-1.269 2.195c-.115.201-.046.461.155.576l.731.422c.201.117.46.048.577-.154l1.268-2.195c.117-.201.048-.461-.154-.576zM17.418 25.114h-.881c.111-.124.185-.284.185-.464v-.696c0-.383-.313-.697-.696-.697h-13.936c-.384 0-.697.314-.697.697v.696c0 .18.074.34.186.464h-.882c-.385 0-.697.315-.697.698v2.787c0 .383.313.697.697.697h16.723c.385 0 .696-.314.696-.697v-2.789c0-.381-.313-.696-.698-.696zm-.991 3.221h-14.675c-.403 0-.733-.33-.733-.732v-.734c.001-.402.33-.734.733-.732h14.675c.405 0 .735.33.734.731l.001.735c-.001.402-.33.732-.735.732z"/></svg>
+								</div>
+
+								<!-- logo -->
+								<div class="py-3">
+									<img height="60" src="assets/images/logo/logo_light.svg" alt="...">
+								</div>
+
+								<!-- copyright -->
+								<p class="fs--14">
+									All Rights Reserved
+									<br>
+									Company Inc.
+								</p>
+
+							</div>
+
+						</div>
+
+
+						<!-- col 2 : Opening -->
+						<div class="order-1 order-lg-3 col">
+
+							<div class="py-5">
+
+								<h4 class="text-center mb-5">Working Hours</h4>
+
+								<ul class="list-unstyled mb-0 px-3">
+
+									<li class="list-item d-flex border-dashed border-dark-soft bx-0 bt-0 px-1 py-2">
+
+										<div class="w-50">
+											Weekdays
+										</div>
+
+										<div class="w-50 text-align-end">
+											09:30 &ndash; 18:00
+										</div>
+
+									</li>
+
+
+									<li class="list-item d-flex border-dashed border-dark-soft bx-0 bt-0 px-1 py-2">
+
+										<div class="w-50">
+											Saturaday
+										</div>
+
+										<div class="w-50 text-align-end">
+											09:30 &ndash; 15:00
+										</div>
+
+									</li>
+
+
+									<li class="list-item d-flex border-dashed border-dark-soft bx-0 bt-0 px-1 py-2">
+
+										<div class="w-50">
+											Sunday
+										</div>
+
+										<div class="w-50 text-align-end">
+											Closed
+										</div>
+
+									</li>
+
+								</ul>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+			</footer>
+			<!-- /Footer -->
+
+
+		</div><!-- /#wrapper -->
+
+
+		<script src="assets/js/core.min.js"></script>
+
+		
+	</body>
+</html>

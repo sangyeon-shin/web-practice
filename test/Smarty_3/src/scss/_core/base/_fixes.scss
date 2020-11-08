@@ -1,0 +1,15 @@
+/**
+
+    Various Fixes
+	
+	This file should be as little as possible!
+	If not, means "fixing own bugs using two files"
+
+	:)
+
+**/
+
+// bootstrap .col
+// required for flex grid to have
+// a perfect width fit
+.col { min-width: 0; }

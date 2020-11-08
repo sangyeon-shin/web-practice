@@ -1,0 +1,81 @@
+﻿					<!-- doc:start -->
+					<div class="page-title bg-transparent b-0">
+
+						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
+							Ajax Params
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--13 pb-2 px-3">
+								<li class="breadcrumb-item">
+									<a href="index.html" class="js-ajax">Dashboard</a>
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Ajax Params
+								</li>
+							</ol>
+						</nav>
+
+					</div>
+
+
+
+
+
+
+
+					<!-- start:row -->
+					<div class="row gutters-sm">
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Info</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+								<pre class="bg-gradient-dark rounded p-3"><code>
+data-ajax-params="['action','get_county_list']['param2','value2']"
+								</code></pre>
+
+								<p class="lead">
+									SOW Ajax plugins are using this format &ndash; dedicated for ajax requests and its purpose is to send additional params to your backend!
+									<br>
+									You can add as many params as you need, keeping the same format.
+								</p>
+
+								<p class="lead mt--50">
+									Their equivalent is this:
+								</p>
+								<pre class="bg-gradient-dark rounded p-3"><code>
+&lt;input type="hidden" name="action" value="get_county_list">
+&lt;input type="hidden" name="param2" value="value2">
+								</code></pre>
+
+								<p class="lead mt--50">
+									Params are often needed in POST methods because on GET we can use the usual: <br>
+									<code>?action=get_county_list&amp;param2=value2&amp;....</code>
+								</p>
+								<p>
+									So if the plugin is using <code>data-ajax-params</code>, you can use the way you want/like for GET methods.
+								</p>
+
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+					</div>
+					<!-- end:row: -->
+					<!-- doc:end -->

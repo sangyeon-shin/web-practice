@@ -1,0 +1,732 @@
+﻿					<!-- doc:start -->
+					<div class="page-title bg-transparent b-0">
+
+						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
+							Extended Text Color
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--13 pb-2 px-3">
+								<li class="breadcrumb-item">
+									<a href="index.html" class="js-ajax">Dashboard</a>
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Utils
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Extended Text Color
+								</li>
+							</ol>
+						</nav>
+
+					</div>
+
+
+
+					<!-- ALERT : NOTE -->
+					<div class="bg-white shadow-xs p-2 mb-4 rounded">
+						<div class="clearfix bg-light p-2 rounded d-flex align-items-center">
+							<span class="btn row-pill btn-sm bg-gradient-warning b-0 py-1 mb-0 float-start">
+								<i class="fi fi-round-info-full"></i>
+								Note
+							</span>
+							<span class="d-block px-2 text-muted text-truncate">
+								This is a basic demo! Please see main <a href="../../html_frontend/documentation/util-text-color-extended.html" target="smarty" class="link-muted">full documentation here</a>.
+							</span>
+						</div>
+					</div>
+					<!-- /ALERT : NOTE -->
+
+
+
+					<!-- start:row -->
+					<div class="row gutters-sm">
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Text Color : Extended</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<p>
+
+			                                Size: 7Kb (~3Kb gzipped)<br>
+											Colors inspired from material design! <small>(text-gray-* already added by bootstrap!)</small><br>
+			                                <br>
+											If not needed, simply remove from: <code>src/scss/main.scss</code>
+											<br>
+											If backgrounds needed, add the code below to your <code>src/scss/_custom/main.scss</code> and rebuild using GULP. <span class="text-gray-500">(+8Kb will be added - better use style and hex color)</span></code>
+										</p>
+
+<pre class="m-0"><code class="rounded bg-gradient-dark text-white d-block p-4">// Smarty Extended : Bg Colors [Material Design][8Kb]
+@each $color-name, $color-variants in $material-colors {
+    @each $color-variant, $hex-value in $color-variants {
+
+        .bg-#{$color-name}-#{$color-variant} { background-color: #{$hex-value}!important; }
+
+    }
+}</code></pre>
+
+
+
+									</div>
+
+
+							            <!-- 
+							                :: INLINE CSS ::
+
+							                USED BY THIS TABLE ONLY 
+							                BECAUSE WE DID NOT GENERATED THE BGS 
+							            -->
+							            <style type="text/css">
+							                .bg-red-100{background-color:#ffcdd2!important}.bg-red-200{background-color:#ef9a9a!important}.bg-red-300{background-color:#e57373!important}.bg-red-400{background-color:#ef5350!important}.bg-red-500{background-color:#f44336!important}.bg-red-600{background-color:#e53935!important}.bg-red-700{background-color:#d32f2f!important}.bg-red-800{background-color:#c62828!important}.bg-red-900{background-color:#b71c1c!important}.bg-pink-100{background-color:#f8bbd0!important}.bg-pink-200{background-color:#f48fb1!important}.bg-pink-300{background-color:#f06292!important}.bg-pink-400{background-color:#ec407a!important}.bg-pink-500{background-color:#e91e63!important}.bg-pink-600{background-color:#d81b60!important}.bg-pink-700{background-color:#c2185b!important}.bg-pink-800{background-color:#ad1457!important}.bg-pink-900{background-color:#880e4f!important}.bg-purple-100{background-color:#e1bee7!important}.bg-purple-200{background-color:#ce93d8!important}.bg-purple-300{background-color:#ba68c8!important}.bg-purple-400{background-color:#ab47bc!important}.bg-purple-500{background-color:#9c27b0!important}.bg-purple-600{background-color:#8e24aa!important}.bg-purple-700{background-color:#7b1fa2!important}.bg-purple-800{background-color:#6a1b9a!important}.bg-purple-900{background-color:#4a148c!important}.bg-deep-purple-100{background-color:#d1c4e9!important}.bg-deep-purple-200{background-color:#b39ddb!important}.bg-deep-purple-300{background-color:#9575cd!important}.bg-deep-purple-400{background-color:#7e57c2!important}.bg-deep-purple-500{background-color:#673ab7!important}.bg-deep-purple-600{background-color:#5e35b1!important}.bg-deep-purple-700{background-color:#512da8!important}.bg-deep-purple-800{background-color:#4527a0!important}.bg-deep-purple-900{background-color:#311b92!important}.bg-indigo-100{background-color:#c5cae9!important}.bg-indigo-200{background-color:#9fa8da!important}.bg-indigo-300{background-color:#7986cb!important}.bg-indigo-400{background-color:#5c6bc0!important}.bg-indigo-500{background-color:#3f51b5!important}.bg-indigo-600{background-color:#3949ab!important}.bg-indigo-700{background-color:#303f9f!important}.bg-indigo-800{background-color:#283593!important}.bg-indigo-900{background-color:#1a237e!important}.bg-blue-100{background-color:#bbdefb!important}.bg-blue-200{background-color:#90caf9!important}.bg-blue-300{background-color:#64b5f6!important}.bg-blue-400{background-color:#42a5f5!important}.bg-blue-500{background-color:#2196f3!important}.bg-blue-600{background-color:#1e88e5!important}.bg-blue-700{background-color:#1976d2!important}.bg-blue-800{background-color:#1565c0!important}.bg-blue-900{background-color:#0d47a1!important}.bg-light-blue-100{background-color:#b3e5fc!important}.bg-light-blue-200{background-color:#81d4fa!important}.bg-light-blue-300{background-color:#4fc3f7!important}.bg-light-blue-400{background-color:#29b6f6!important}.bg-light-blue-500{background-color:#03a9f4!important}.bg-light-blue-600{background-color:#039be5!important}.bg-light-blue-700{background-color:#0288d1!important}.bg-light-blue-800{background-color:#0277bd!important}.bg-light-blue-900{background-color:#01579b!important}.bg-cyan-100{background-color:#b2ebf2!important}.bg-cyan-200{background-color:#80deea!important}.bg-cyan-300{background-color:#4dd0e1!important}.bg-cyan-400{background-color:#26c6da!important}.bg-cyan-500{background-color:#00bcd4!important}.bg-cyan-600{background-color:#00acc1!important}.bg-cyan-700{background-color:#0097a7!important}.bg-cyan-800{background-color:#00838f!important}.bg-cyan-900{background-color:#006064!important}.bg-teal-100{background-color:#b2dfdb!important}.bg-teal-200{background-color:#80cbc4!important}.bg-teal-300{background-color:#4db6ac!important}.bg-teal-400{background-color:#26a69a!important}.bg-teal-500{background-color:#009688!important}.bg-teal-600{background-color:#00897b!important}.bg-teal-700{background-color:#00796b!important}.bg-teal-800{background-color:#00695c!important}.bg-teal-900{background-color:#004d40!important}.bg-green-100{background-color:#c8e6c9!important}.bg-green-200{background-color:#a5d6a7!important}.bg-green-300{background-color:#81c784!important}.bg-green-400{background-color:#66bb6a!important}.bg-green-500{background-color:#4caf50!important}.bg-green-600{background-color:#43a047!important}.bg-green-700{background-color:#388e3c!important}.bg-green-800{background-color:#2e7d32!important}.bg-green-900{background-color:#1b5e20!important}.bg-light-green-100{background-color:#dcedc8!important}.bg-light-green-200{background-color:#c5e1a5!important}.bg-light-green-300{background-color:#aed581!important}.bg-light-green-400{background-color:#9ccc65!important}.bg-light-green-500{background-color:#8bc34a!important}.bg-light-green-600{background-color:#7cb342!important}.bg-light-green-700{background-color:#689f38!important}.bg-light-green-800{background-color:#558b2f!important}.bg-light-green-900{background-color:#33691e!important}.bg-lime-100{background-color:#f0f4c3!important}.bg-lime-200{background-color:#e6ee9c!important}.bg-lime-300{background-color:#dce775!important}.bg-lime-400{background-color:#d4e157!important}.bg-lime-500{background-color:#cddc39!important}.bg-lime-600{background-color:#c0ca33!important}.bg-lime-700{background-color:#afb42b!important}.bg-lime-800{background-color:#9e9d24!important}.bg-lime-900{background-color:#827717!important}.bg-yellow-100{background-color:#fff9c4!important}.bg-yellow-200{background-color:#fff59d!important}.bg-yellow-300{background-color:#fff176!important}.bg-yellow-400{background-color:#ffee58!important}.bg-yellow-500{background-color:#ffeb3b!important}.bg-yellow-600{background-color:#fdd835!important}.bg-yellow-700{background-color:#fbc02d!important}.bg-yellow-800{background-color:#f9a825!important}.bg-yellow-900{background-color:#f57f17!important}.bg-amber-100{background-color:#ffecb3!important}.bg-amber-200{background-color:#ffe082!important}.bg-amber-300{background-color:#ffd54f!important}.bg-amber-400{background-color:#ffca28!important}.bg-amber-500{background-color:#ffc107!important}.bg-amber-600{background-color:#ffb300!important}.bg-amber-700{background-color:#ffa000!important}.bg-amber-800{background-color:#ff8f00!important}.bg-amber-900{background-color:#ff6f00!important}.bg-orange-100{background-color:#ffe0b2!important}.bg-orange-200{background-color:#ffcc80!important}.bg-orange-300{background-color:#ffb74d!important}.bg-orange-400{background-color:#ffa726!important}.bg-orange-500{background-color:#ff9800!important}.bg-orange-600{background-color:#fb8c00!important}.bg-orange-700{background-color:#f57c00!important}.bg-orange-800{background-color:#ef6c00!important}.bg-orange-900{background-color:#e65100!important}.bg-deep-orange-100{background-color:#ffccbc!important}.bg-deep-orange-200{background-color:#ffab91!important}.bg-deep-orange-300{background-color:#ff8a65!important}.bg-deep-orange-400{background-color:#ff7043!important}.bg-deep-orange-500{background-color:#ff5722!important}.bg-deep-orange-600{background-color:#f4511e!important}.bg-deep-orange-700{background-color:#e64a19!important}.bg-deep-orange-800{background-color:#d84315!important}.bg-deep-orange-900{background-color:#bf360c!important}.bg-brown-100{background-color:#d7ccc8!important}.bg-brown-200{background-color:#bcaaa4!important}.bg-brown-300{background-color:#a1887f!important}.bg-brown-400{background-color:#8d6e63!important}.bg-brown-500{background-color:#795548!important}.bg-brown-600{background-color:#6d4c41!important}.bg-brown-700{background-color:#5d4037!important}.bg-brown-800{background-color:#4e342e!important}.bg-brown-900{background-color:#3e2723!important}.bg-blue-gray-100{background-color:#cfd8dc!important}.bg-blue-gray-200{background-color:#b0bec5!important}.bg-blue-gray-300{background-color:#90a4ae!important}.bg-blue-gray-400{background-color:#78909c!important}.bg-blue-gray-500{background-color:#607d8b!important}.bg-blue-gray-600{background-color:#546e7a!important}.bg-blue-gray-700{background-color:#455a64!important}.bg-blue-gray-800{background-color:#37474f!important}.bg-blue-gray-900{background-color:#263238!important}
+							            </style>
+
+										<table id="table_colors" class="table font-weight-light fs--11 text-white b-0">
+											
+							                <thead>
+												<tr>
+											      <td title="Red" class="text-center bg-red-500">
+											            Red
+											      </td>
+											      <td title="Pink" class="text-center bg-pink-500">
+											            Pink
+											      </td>
+											      <td title="Purple" class="text-center bg-purple-500">
+											            Purple
+											      </td>
+											      <td title="Deep Purple" class="text-center bg-deep-purple-500">
+											            Deep Purple
+											      </td>
+											      <td title="Indigo" class="text-center bg-indigo-500">
+											            Indigo
+											      </td>
+											      <td title="Blue" class="text-center bg-blue-500">
+											            Blue
+											      </td>
+											      <td title="Light Blue" class="text-center bg-light-blue-500">
+											            Light Blue
+											      </td>
+											      <td title="Cyan" class="text-center bg-cyan-500">
+											            Cyan
+											      </td>
+											      <td title="Teal" class="text-center bg-teal-500">
+											            Teal
+											      </td>
+											      <td title="Green" class="text-center bg-green-500">
+											            Green
+											      </td>
+											      <td title="Light Green" class="text-center bg-light-green-500">
+											            Light Green
+											      </td>
+											      <td title="Lime" class="text-center bg-lime-500 text-lime-900">
+											            Lime
+											      </td>
+											      <td title="Yellow" class="text-center bg-yellow-500 text-yellow-900">
+											            Yellow
+											      </td>
+											      <td title="Amber" class="text-center bg-amber-500">
+											            Amber
+											      </td>
+											      <td title="Orange" class="text-center bg-orange-500">
+											            Orange
+											      </td>
+											      <td title="Deep Orange" class="text-center bg-deep-orange-500">
+											            Deep Orange
+											      </td>
+											      <td title="Brown" class="text-center bg-brown-500">
+											            Brown
+											      </td>
+											      <td title="gray" class="text-center bg-gray-500">
+											            Gray
+											      </td>
+											      <td title="Blue gray" class="text-center bg-blue-gray-500">
+											            Blue gray
+											      </td>
+
+										      </tr>
+										    </thead>
+
+										    <tbody>
+
+											   <tr>
+											      <td class="p-2 b-0"></td>
+											      <td class="p-2 b-0"></td>
+											      <td class="p-2 b-0"></td>
+											      <td class="p-2 b-0"></td>
+											      <td class="p-2 b-0"></td>
+											      <td class="p-2 b-0"></td>
+											      <td class="p-2 b-0"></td>
+											      <td class="p-2 b-0"></td>
+											      <td class="p-2 b-0"></td>
+											      <td class="p-2 b-0"></td>
+											      <td class="p-2 b-0"></td>
+											      <td class="p-2 b-0"></td>
+											      <td class="p-2 b-0"></td>
+											      <td class="p-2 b-0"></td>
+											      <td class="p-2 b-0"></td>
+											      <td class="p-2 b-0"></td>
+											      <td class="p-2 b-0"></td>
+											      <td class="p-2 b-0"></td>
+											   </tr>
+
+											   <tr>
+											      <td class="cursor-pointer b-0 bg-red-100">
+											            100<b> : #ffcdd2</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-pink-100">
+											            100<b> : #F8BBD0</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-purple-100">
+											            100<b> : #E1BEE7</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-deep-purple-100">
+											            100<b> : #D1C4E9</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-indigo-100">
+											            100<b> : #C5CAE9</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-blue-100">
+											            100<b> : #BBDEFB</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-light-blue-100">
+											            100<b> : #B3E5FC</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-cyan-100">
+											            100<b> : #B2EBF2</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-teal-100">
+											            100<b> : #B2DFDB</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-green-100">
+											            100<b> : #C8E6C9</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-light-green-100">
+											            100<b> : #DCEDC8</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-lime-100">
+											            100<b> : #F0F4C3</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-yellow-100">
+											            100<b> : #FFF9C4</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-amber-100">
+											            100<b> : #FFECB3</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-orange-100">
+											            100<b> : #FFE0B2</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-deep-orange-100">
+											            100<b> : #FFCCBC</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-brown-100">
+											            100<b> : #D7CCC8</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-gray-100">
+											            100<b> : #F5F5F5</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-blue-gray-100">
+											            100<b> : #CFD8DC</b>
+											      </td>
+											   </tr>
+											   <tr>
+											      <td class="cursor-pointer b-0 bg-red-200">
+											            200<b> : #ef9a9a</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-pink-200">
+											            200<b> : #F48FB1</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-purple-200">
+											            200<b> : #CE93D8</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-deep-purple-200">
+											            200<b> : #B39DDB</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-indigo-200">
+											            200<b> : #9FA8DA</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-blue-200">
+											            200<b> : #90CAF9</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-light-blue-200">
+											            200<b> : #81D4FA</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-cyan-200">
+											            200<b> : #80DEEA</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-teal-200">
+											            200<b> : #80CBC4</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-green-200">
+											            200<b> : #A5D6A7</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-light-green-200">
+											            200<b> : #C5E1A5</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-lime-200">
+											            200<b> : #E6EE9C</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-yellow-200">
+											            200<b> : #FFF59D</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-amber-200">
+											            200<b> : #FFE082</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-orange-200">
+											            200<b> : #FFCC80</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-deep-orange-200">
+											            200<b> : #FFAB91</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-brown-200">
+											            200<b> : #BCAAA4</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-gray-200">
+											            200<b> : #EEEEEE</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-blue-gray-200">
+											            200<b> : #B0BEC5</b>
+											      </td>
+											   </tr>
+											   
+											   <tr>
+											      <td class="cursor-pointer b-0 bg-red-300">
+											            300<b> : #e57373</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-pink-300">
+											            300<b> : #F06292</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-purple-300">
+											            300<b> : #BA68C8</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-deep-purple-300">
+											            300<b> : #9575CD</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-indigo-300">
+											            300<b> : #7986CB</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-blue-300">
+											            300<b> : #64B5F6</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-light-blue-300">
+											            300<b> : #4FC3F7</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-cyan-300">
+											            300<b> : #4DD0E1</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-teal-300">
+											            300<b> : #4DB6AC</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-green-300">
+											            300<b> : #81C784</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-light-green-300">
+											            300<b> : #AED581</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-lime-300">
+											            300<b> : #DCE775</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-yellow-300">
+											            300<b> : #FFF176</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-amber-300">
+											            300<b> : #FFD54F</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-orange-300">
+											            300<b> : #FFB74D</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-deep-orange-300">
+											            300<b> : #FF8A65</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-brown-300">
+											            300<b> : #A1887F</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-gray-300">
+											            300<b> : #E0E0E0</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-blue-gray-300">
+											            300<b> : #90A4AE</b>
+											      </td>
+											   </tr>
+
+											   <tr>
+											      <td class="cursor-pointer b-0 bg-red-400">
+											            400<b> : #ef5350</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-pink-400">
+											            400<b> : #EC407A</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-purple-400">
+											            400<b> : #AB47BC</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-deep-purple-400">
+											            400<b> : #7E57C2</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-indigo-400">
+											            400<b> : #5C6BC0</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-blue-400">
+											            400<b> : #42A5F5</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-light-blue-400">
+											            400<b> : #29B6F6</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-cyan-400">
+											            400<b> : #26C6DA</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-teal-400">
+											            400<b> : #26A69A</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-green-400">
+											            400<b> : #66BB6A</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-light-green-400">
+											            400<b> : #9CCC65</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-lime-400">
+											            400<b> : #D4E157</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-yellow-400">
+											            400<b> : #FFEE58</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-amber-400">
+											            400<b> : #FFCA28</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-orange-400">
+											            400<b> : #FFA726</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-deep-orange-400">
+											            400<b> : #FF7043</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-brown-400">
+											            400<b> : #8D6E63</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-gray-400">
+											            400<b> : #BDBDBD</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-blue-gray-400">
+											            400<b> : #78909C</b>
+											      </td>
+											   </tr>
+
+											   <tr>
+											      <td class="cursor-pointer b-0 bg-red-500">
+											            500<b> : #f44336</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-pink-500">
+											            500<b> : #E91E63</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-purple-500">
+											            500<b> : #9C27B0</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-deep-purple-500">
+											            500<b> : #673AB7</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-indigo-500">
+											            500<b> : #3F51B5</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-blue-500">
+											            500<b> : #2196F3</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-light-blue-500">
+											            500<b> : #03A9F4</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-cyan-500">
+											            500<b> : #00BCD4</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-teal-500">
+											            500<b> : #009688</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-green-500">
+											            500<b> : #4CAF50</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-light-green-500">
+											            500<b> : #8BC34A</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-lime-500">
+											            500<b> : #CDDC39</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-yellow-500">
+											            500<b> : #FFEB3B</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-amber-500">
+											            500<b> : #FFC107</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-orange-500">
+											            500<b> : #FF9800</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-deep-orange-500">
+											            500<b> : #FF5722</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-brown-500">
+											            500<b> : #795548</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-gray-500">
+											            500<b> : #9E9E9E</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-blue-gray-500">
+											            500<b> : #607D8B</b>
+											      </td>
+											   </tr>
+
+											   <tr>
+											      <td class="cursor-pointer b-0 bg-red-600">
+											            600<b> : #e53935</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-pink-600">
+											            600<b> : #D81B60</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-purple-600">
+											            600<b> : #8E24AA</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-deep-purple-600">
+											            600<b> : #5E35B1</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-indigo-600">
+											            600<b> : #3949AB</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-blue-600">
+											            600<b> : #1E88E5</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-light-blue-600">
+											            600<b> : #039BE5</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-cyan-600">
+											            600<b> : #00ACC1</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-teal-600">
+											            600<b> : #00897B</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-green-600">
+											            600<b> : #43A047</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-light-green-600">
+											            600<b> : #7CB342</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-lime-600">
+											            600<b> : #C0CA33</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-yellow-600">
+											            600<b> : #FDD835</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-amber-600">
+											            600<b> : #FFB300</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-orange-600">
+											            600<b> : #FB8C00</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-deep-orange-600">
+											            600<b> : #F4511E</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-brown-600">
+											            600<b> : #6D4C41</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-gray-600">
+											            600<b> : #757575</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-blue-gray-600">
+											            600<b> : #546E7A</b>
+											      </td>
+											   </tr>
+
+											   <tr>
+											      <td class="cursor-pointer b-0 bg-red-700">
+											            700<b> : #d32f2f</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-pink-700">
+											            700<b> : #C2185B</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-purple-700">
+											            700<b> : #7B1FA2</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-deep-purple-700">
+											            700<b> : #512DA8</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-indigo-700">
+											            700<b> : #303F9F</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-blue-700">
+											            700<b> : #1976D2</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-light-blue-700">
+											            700<b> : #0288D1</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-cyan-700">
+											            700<b> : #0097A7</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-teal-700">
+											            700<b> : #00796B</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-green-700">
+											            700<b> : #388E3C</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-light-green-700">
+											            700<b> : #689F38</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-lime-700">
+											            700<b> : #AFB42B</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-yellow-700">
+											            700<b> : #FBC02D</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-amber-700">
+											            700<b> : #FFA000</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-orange-700">
+											            700<b> : #F57C00</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-deep-orange-700">
+											            700<b> : #E64A19</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-brown-700">
+											            700<b> : #5D4037</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-gray-700">
+											            700<b> : #616161</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-blue-gray-700">
+											            700<b> : #455A64</b>
+											      </td>
+											   </tr>
+
+											   <tr>
+											      <td class="cursor-pointer b-0 bg-red-800">
+											            800<b> : #c62828</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-pink-800">
+											            800<b> : #AD1457</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-purple-800">
+											            800<b> : #6A1B9A</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-deep-purple-800">
+											            800<b> : #4527A0</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-indigo-800">
+											            800<b> : #283593</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-blue-800">
+											            800<b> : #1565C0</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-light-blue-800">
+											            800<b> : #0277BD</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-cyan-800">
+											            800<b> : #00838F</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-teal-800">
+											            800<b> : #00695C</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-green-800">
+											            800<b> : #2E7D32</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-light-green-800">
+											            800<b> : #558B2F</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-lime-800">
+											            800<b> : #9E9D24</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-yellow-800">
+											            800<b> : #F9A825</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-amber-800">
+											            800<b> : #FF8F00</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-orange-800">
+											            800<b> : #EF6C00</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-deep-orange-800">
+											            800<b> : #D84315</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-brown-800">
+											            800<b> : #4E342E</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-gray-800">
+											            800<b> : #424242</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-blue-gray-800">
+											            800<b> : #37474F</b>
+											      </td>
+											   </tr>
+
+											   <tr>
+											      <td class="cursor-pointer b-0 bg-red-900">
+											            900<b> : #b71c1c</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-pink-900">
+											            900<b> : #880E4F</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-purple-900">
+											            900<b> : #4A148C</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-deep-purple-900">
+											            900<b> : #311B92</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-indigo-900">
+											            900<b> : #1A237E</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-blue-900">
+											            900<b> : #0D47A1</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-light-blue-900">
+											            900<b> : #01579B</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-cyan-900">
+											            900<b> : #006064</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-teal-900">
+											            900<b> : #004D40</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-green-900">
+											            900<b> : #1B5E20</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-light-green-900">
+											            900<b> : #33691E</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-lime-900">
+											            900<b> : #827717</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-yellow-900">
+											            900<b> : #F57F17</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-amber-900">
+											            900<b> : #FF6F00</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-orange-900">
+											            900<b> : #E65100</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-deep-orange-900">
+											            900<b> : #BF360C</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-brown-900">
+											            900<b> : #3E2723</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-gray-900">
+											            900<b> : #212121</b>
+											      </td>
+											      <td class="cursor-pointer b-0 bg-blue-gray-900">
+											            900<b> : #263238</b>
+											      </td>
+											   </tr>
+											 
+										   </tbody>
+										</table>
+
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+					</div>
+					<!-- end:row: -->
+					<!-- doc:end -->

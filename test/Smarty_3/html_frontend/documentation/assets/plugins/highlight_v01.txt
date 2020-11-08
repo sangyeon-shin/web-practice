@@ -1,0 +1,16 @@
+			<!-- 
+				CODE HIGHLIGHTER 
+				https://github.com/highlightjs/highlight.js
+			-->
+			<link rel="stylesheet" href="assets/plugins/highlight.js/styles/stepofweb.css">
+			<script src="assets/plugins/highlight.js/highlight.pack.js"></script>
+			<script>
+
+			    var _selector = document.querySelectorAll(".highlight");
+			    [].forEach.call(_selector, function(_selector) {
+			        ! function(_selector) {
+			            hljs.highlightBlock(_selector)
+			        }(_selector);
+			    });
+
+			</script>

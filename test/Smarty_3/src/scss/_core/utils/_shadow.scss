@@ -1,0 +1,85 @@
+/**
+
+		- Box Shadows 				.shadow (default) , .shadow-*, .shadow-*-hover,
+									[[.shadow-*-hover can be used in combination with .transition-all-ease-*]]
+
+**/
+.shadow-none {
+	@include vendors-generate(box-shadow, none !important);
+}
+
+// .shadow, /* already used by bootstrap */
+.shadow-hover:hover {
+	@include vendors-generate(box-shadow, $box-shadow !important);
+}
+.shadow-xs,
+.shadow-xs-hover:hover {
+	@include vendors-generate(box-shadow, $box-shadow-xs !important);
+}
+// .shadow-sm, /* already used by bootstrap */
+.shadow-sm-hover:hover {
+	@include vendors-generate(box-shadow, $box-shadow-sm !important);
+}
+.shadow-md,
+.shadow-md-hover:hover {
+	@include vendors-generate(box-shadow, $box-shadow-md !important);
+}
+// .shadow-lg, /* already used by bootstrap */
+.shadow-lg-hover:hover {
+	@include vendors-generate(box-shadow, $box-shadow-lg !important);
+}
+.shadow-xlg,
+.shadow-xlg-hover:hover {
+	@include vendors-generate(box-shadow, $box-shadow-xlg !important);
+}
+
+
+.shadow-3d-up,
+.shadow-3d-up-hover:hover {
+	box-shadow: 0rem -2rem 3.5rem rgba(22,28,45,.1) !important;
+}
+
+.shadow-3d-down,
+.shadow-3d-down-hover:hover,
+.shadow-3d,
+.shadow-3d-hover:hover {
+	box-shadow: 0 2.5rem 4rem rgba(22,28,45,.1) !important;
+}
+
+
+/*
+	
+	.shadow-primary-*
+	.shadow-secondary-*
+	.....
+	.shadow-*-*
+
+*/
+@each $color-name, $color-hex in $theme-colors {
+
+	.shadow-#{$color-name}-xs, 
+	.shadow-#{$color-name}-xs-hover:hover {
+		box-shadow: 0 0 25px rgba($color-hex, 0.100) !important;
+	}
+
+	.shadow-#{$color-name}-sm, 
+	.shadow-#{$color-name}-sm-hover:hover {
+		box-shadow: 00 0 35px rgba($color-hex, 0.125) !important;
+	}
+
+	.shadow-#{$color-name}-md, 
+	.shadow-#{$color-name}-md-hover:hover {
+		box-shadow: 0 0 35px rgba($color-hex, 0.150) !important;
+	}
+
+	.shadow-#{$color-name}-lg, 
+	.shadow-#{$color-name}-lg-hover:hover {
+		box-shadow: 0 10px 40px 10px rgba($color-hex, 0.175) !important;
+	}
+
+	.shadow-#{$color-name}-xlg, 
+	.shadow-#{$color-name}-xlg-hover:hover {
+		box-shadow: 0 10px 40px 10px rgba($color-hex, 0.300) !important;
+	}
+
+}

@@ -1,0 +1,199 @@
+﻿					<!-- doc:start -->
+					<div class="page-title bg-transparent b-0">
+
+						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
+							Overlays &amp; Opacity
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--13 pb-2 px-3">
+								<li class="breadcrumb-item">
+									<a href="index.html" class="js-ajax">Dashboard</a>
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Utils
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Overlays &amp; Opacity
+								</li>
+							</ol>
+						</nav>
+
+					</div>
+
+
+
+
+
+
+
+					<!-- start:row -->
+					<div class="row gutters-sm">
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Overlays &amp; Opacity</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<table class="table table-lg">
+											<thead>
+												<tr>
+													<th scope="col" class="w--300">Class</th>
+													<th scope="col">Description</th>
+													<th scope="col" class="w--300">Quick Example</th>
+												</tr>
+											</thead>
+
+											<tbody>
+
+												<tr>
+													<td>
+														<code class="d-block">.overlay-light</code>
+														<code class="d-block">.overlay-dark</code>
+														<br>
+														<code class="d-block">.overlay-opacity-[0-9]</code>
+														<code class="d-block">.opacity-99</code>
+													</td>
+													<td>
+
+														<p>
+															Overlays are used on various places. Example: using together with <code>.bg-cover</code>
+														</p>
+
+														<p>
+															You can set the overlay opacity using <code>overlay-opacity-[0-9]</code>
+														</p>
+														<p class="bg-light p--15">
+															<b>You can set an overlay in two ways:</b> <br>
+															1. by adding directly to main container: <code>.overlay-dark .overlay-opacity-*</code> <br>
+															2. by adding an inside element (&lt;span> as an example) with classes: <code>.absolute-full .overlay-dark .overlay-opacity-*</code>
+															<br><br>
+															Please note: using <code>.absolute-full</code> might need in some situations to add to other elements: <code>.z-index-[1-10|99|100]</code> and maybe in combination with <code>.position-relative</code>. Smarty elements do not need these classes but might be situations where you need them.
+														</p>
+
+														<p>
+															<code>.opacity-99</code> - (opacity: 0.99) used as a trick only, when z-index is needed! Example: <code>&lt;div class="bg-light"> &lt;svg class="z-index-n1">&lt;/svg> &lt;div></code> in this case, svg is not vizible because of background color so .opacity-99 will do the trick!
+														</p>
+
+													</td>
+
+													<td>
+
+														<small>Overlay :after</small>
+														<div class="bg-cover h--100 mb-3 overlay-dark overlay-opacity-2 rounded-xl overflow-hidden" style="background-image:url('../../html_frontend/demo.files/images/unsplash/brooke-cagle-g1Kr4Ozfoac-unsplash.jpg')">
+															<div class="d-table">
+																<div class="d-table-cell align-middle text-white text-center">
+																	.overlay-dark .overlay-opacity-2
+																</div>
+															</div>
+														</div>
+
+														<div class="bg-cover h--100 mb-3 overlay-dark overlay-opacity-6 rounded-xl overflow-hidden" style="background-image:url('../../html_frontend/demo.files/images/unsplash/brooke-cagle-g1Kr4Ozfoac-unsplash.jpg')">
+															<div class="d-table">
+																<div class="d-table-cell align-middle text-white text-center">
+																	.overlay-dark .overlay-opacity-6
+																</div>
+															</div>
+														</div>
+
+														<br>
+
+														<small>Overlay .absolute-full</small>
+														<div class="bg-cover h--100 mb-3 position-relative rounded-xl overflow-hidden" style="background-image:url('../../html_frontend/demo.files/images/unsplash/brooke-cagle-g1Kr4Ozfoac-unsplash.jpg')">
+															<span class="absolute-full overlay-dark overlay-opacity-2"></span>
+															
+															<div class="d-table">
+																<div class="d-table-cell align-middle text-white text-center">
+																	.absolute-full .overlay-dark .overlay-opacity-2
+																</div>
+															</div>
+														</div>
+
+														<div class="bg-cover h--100 mb-3 position-relative rounded-xl overflow-hidden" style="background-image:url('../../html_frontend/demo.files/images/unsplash/brooke-cagle-g1Kr4Ozfoac-unsplash.jpg')">
+															<span class="absolute-full overlay-dark overlay-opacity-6"></span>
+
+															<div class="d-table">
+																<div class="d-table-cell align-middle text-white text-center">
+																	.absolute-full .overlay-dark .overlay-opacity-6
+																</div>
+															</div>
+														</div>
+
+													</td>
+												</tr>
+
+												<tr>
+													<td>
+														<code class="d-block">.opacity-[0-9]</code>
+														<code class="d-block">.opacity-none</code>
+													</td>
+													<td>
+
+														<p>
+															Add opacity to anything: text, images, buttons, etc<br><br>
+															<code>.opacity-0</code> = opacity: 0 <br>
+															<code>.opacity-1</code> = opacity: 0.1 <br>
+															<code>.opacity-2</code> = opacity: 0.2 <br>
+															<code>.opacity-3</code> = opacity: 0.3 <br>
+															<code>.opacity-4</code> = opacity: 0.4 <br>
+															<code>.opacity-5</code> = opacity: 0.5 <br>
+															<code>.opacity-6</code> = opacity: 0.6 <br>
+															<code>.opacity-7</code> = opacity: 0.7 <br>
+															<code>.opacity-8</code> = opacity: 0.8 <br>
+															<code>.opacity-9</code> = opacity: 0.9 <br>
+															<code>.opacity-none</code> = opacity: 1 !important
+														</p>
+
+													</td>
+
+													<td>
+
+														<small class="d-block mb-1">original, no opacity</small>
+														<img class="img-fluid" src="../../html_frontend/demo.files/images/unsplash/brooke-cagle-g1Kr4Ozfoac-unsplash.jpg" alt="...">
+
+
+														<small class="d-block mt-3 mb-1">img .opacity-3 example</small>
+														<img class="img-fluid opacity-3" src="../../html_frontend/demo.files/images/unsplash/brooke-cagle-g1Kr4Ozfoac-unsplash.jpg" alt="...">
+
+														<small class="d-block mt-3 mb-1">img .opacity-6 example</small>
+														<img class="img-fluid opacity-6" src="../../html_frontend/demo.files/images/unsplash/brooke-cagle-g1Kr4Ozfoac-unsplash.jpg" alt="...">
+
+														<small class="d-block mt-3 mb-1">buttons example</small>
+														<div class="mb-3">
+															<button class="btn btn-primary opacity-4">.opacity-4</button> 
+															<button class="btn btn-warning opacity-4">.opacity-4</button> 
+														</div>
+														<div class="mb-3">
+															<button class="btn btn-primary opacity-6">.opacity-6</button> 
+															<button class="btn btn-warning opacity-6">.opacity-6</button> 
+														</div>
+														<div class="mb-3">
+															<button class="btn btn-primary opacity-8">.opacity-8</button>
+															<button class="btn btn-warning opacity-8">.opacity-8</button>
+														</div>
+													</td>
+												</tr>
+
+											</tbody>
+										</table>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+					</div>
+					<!-- end:row: -->
+					<!-- doc:end -->

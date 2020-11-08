@@ -1,0 +1,2627 @@
+﻿<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+
+		<meta charset="UTF-8">
+		<title>Smarty</title>
+		<meta name="description" content="Smarty Documentation">
+
+        <meta name="viewport" content="width=device-width, maximum-scale=5, initial-scale=1, user-scalable=0">
+        <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+        <!-- up to 10% speed up for external res -->
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+        <link rel="preconnect" href="https://fonts.googleapis.com/">
+        <link rel="preconnect" href="https://fonts.gstatic.com/">
+        <!-- preloading icon font is helping to speed up a little bit -->
+        <link rel="preload" href="../assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
+
+		<link rel="stylesheet" href="../assets/css/core.min.css">
+		<link rel="stylesheet" href="../assets/css/vendor_bundle.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
+
+		<!-- favicon -->
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="apple-touch-icon" href="../demo.files/logo/icon_512x512.png">
+
+		<link rel="manifest" href="../assets/images/manifest/manifest.json">
+		<meta name="theme-color" content="#377dff">
+
+	</head>
+
+
+	<!--
+
+		Layout Admin
+			.layout-admin 	(required)
+
+			.aside-sticky  					- sidebar : fixed and push header
+			.header-sticky  				- header : always visible on top (acting as old .header-focus)
+			.header-scroll-reveal  			- header : hide on scroll down and reveal on scroll up
+
+	-->
+	<body class="layout-admin aside-sticky header-sticky" data-s2t-class="btn-indigo btn-sm rounded-circle">
+
+		<div id="wrapper">
+
+
+
+			<!-- HEADER -->
+			<header id="header" class="d-flex align-items-center shadow-xs">
+
+
+				<!-- NAVBAR -->
+				<div class="container-fluid position-relative">
+
+					<nav class="navbar navbar-expand-lg navbar-dark justify-content-lg-between">
+
+						<div class="align-items-start">
+							
+							<!-- 
+								sidebar toggler 
+							-->
+							<a href="#aside-main" class="btn-sidebar-toggle h-100 d-inline-block d-lg-none justify-content-center align-items-center p-2">
+								<span class="group-icon">
+									<i>
+										<svg width="25" viewBox="0 0 20 20">
+											<path fill="#333333" d="M 19.9876 1.998 L -0.0108 1.998 L -0.0108 -0.0019 L 19.9876 -0.0019 L 19.9876 1.998 Z"></path>
+											<path fill="#333333" d="M 19.9876 7.9979 L -0.0108 7.9979 L -0.0108 5.9979 L 19.9876 5.9979 L 19.9876 7.9979 Z"></path>
+											<path fill="#333333" d="M 19.9876 13.9977 L -0.0108 13.9977 L -0.0108 11.9978 L 19.9876 11.9978 L 19.9876 13.9977 Z"></path>
+											<path fill="#333333" d="M 19.9876 19.9976 L -0.0108 19.9976 L -0.0108 17.9976 L 19.9876 17.9976 L 19.9876 19.9976 Z"></path>
+										</svg>
+									</i>
+
+									<i>
+										<svg width="25" viewBox="0 0 47.971 47.971">
+											<path fill="#333333" d="M28.228,23.986L47.092,5.122c1.172-1.171,1.172-3.071,0-4.242c-1.172-1.172-3.07-1.172-4.242,0L23.986,19.744L5.121,0.88c-1.172-1.172-3.07-1.172-4.242,0c-1.172,1.171-1.172,3.071,0,4.242l18.865,18.864L0.879,42.85c-1.172,1.171-1.172,3.071,0,4.242C1.465,47.677,2.233,47.97,3,47.97s1.535-0.293,2.121-0.879l18.865-18.864L42.85,47.091c0.586,0.586,1.354,0.879,2.121,0.879s1.535-0.293,2.121-0.879c1.172-1.171,1.172-3.071,0-4.242L28.228,23.986z"/>
+										</svg>
+									</i>
+								</span>
+
+							</a>
+
+
+							<!-- 
+								Logo : height: 60px max
+							-->
+							<a class="navbar-brand" href="index.html">
+								<img src="assets/images/logo/logo_dark.svg" width="110" height="70" alt="...">
+							</a>
+
+						</div>
+
+
+
+
+					<!-- 
+
+						[SOW] SEARCH SUGGEST PLUGIN
+						[GULP/src/plugins/sow_search_suggest/sow_search_suggest.js]
+						[SCSS/_plugins/sow_search_suggest.scss]
+						++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++
+
+						PLEASE READ DOCUMENTATION
+						documentation/plugins-sow-search.html
+
+					-->
+					<form 	action="index.html" 
+							method="GET" 
+							data-autosuggest="on" 
+
+							data-mode="json" 
+							data-json-max-results='10'
+							data-json-related-title='Explore Smarty'
+							data-json-related-item-icon='fi fi-star-empty'
+							data-json-suggest-title='Suggestions for you'
+							data-json-suggest-noresult='No results for'
+							data-json-suggest-item-icon='fi fi-search'
+							data-json-suggest-min-score='5'
+							data-json-highlight-term='true'
+							data-contentType='application/json; charset=utf-8'
+							data-dataType='json'
+
+							data-container="#sow-search-container" 
+							data-input-min-length="2" 
+							data-input-delay="100" 
+							data-related-keywords="" 
+							data-related-url="_ajax/search_suggestion_json_related.json" 
+							data-suggest-url="_ajax/search_suggestion_json_suggest.json" 
+							data-related-action="related_get" 
+							data-suggest-action="suggest_get" 
+							class="js-ajax-search sow-search sow-search-mobile-float d-flex-1-1-auto mx-4">
+						<div class="sow-search-input w-100 d-flex align-items-center">
+
+							<div class="input-group-over d-flex align-items-center w-100 h-100 rounded">
+
+								<input placeholder="component search..." name="s" type="text" class="form-control-sow-search form-control form-control-pill b-0 bg-gray-100" value="" autocomplete="off">
+
+								<span class="sow-search-buttons">
+
+									<!-- search button -->
+									<button type="submit" class="btn btn-primary btn-noshadow m-0 px-2 py-1 b-0 bg-transparent text-muted">
+										<i class="fi fi-search fs--20"></i>
+									</button>
+
+									<!-- close : mobile only (d-inline-block d-lg-none) -->
+									<a href="javascript:;" class="btn-sow-search-toggler btn btn-light btn-noshadow m-0 px-2 py-1 d-inline-block d-lg-none">
+										<i class="fi fi-close fs--20"></i>
+									</a>
+
+								</span>
+
+							</div>
+
+						</div>
+
+						<!-- search suggestion container -->
+						<div class="sow-search-container rounded-xl w-100 p-0 hide shadow-md" id="sow-search-container">
+							<div class="sow-search-container-wrapper rounded-xl">
+
+								<!-- main search container -->
+								<div class="sow-search-loader p--15 text-center hide">
+									<i class="fi fi-circle-spin fi-spin text-muted fs--30"></i>
+								</div>
+
+								<!-- 
+									AJAX CONTENT CONTAINER 
+									SHOULD ALWAYS BE AS IT IS : NO COMMENTS OR EVEN SPACES!
+								--><div class="sow-search-content rounded w-100 scrollable-vertical"></div>
+
+							</div>
+						</div>
+						<!-- /search suggestion container -->
+
+						<!-- 
+
+							overlay combinations:
+								overlay-dark opacity-* [1-9]
+								overlay-light opacity-* [1-9]
+
+						-->
+						<div class="sow-search-backdrop overlay-dark opacity-3 hide"></div>
+
+					</form>
+					<!-- /SEARCH -->
+
+
+
+
+					<!-- OPTIONS -->
+					<ul class="list-inline list-unstyled mb-0 d-flex align-items-end">
+
+						<li class="list-inline-item mx-1 dropdown float-start d-inline-block d-lg-none">
+
+							<a href="#" class="btn-sow-search-toggler btn btn-sm rounded-circle btn-warning bg-gradient-warning">
+								<i class="fi fi-search"></i>
+							</a>
+
+						</li>
+
+
+						<li class="list-inline-item mx-1 dropdown float-start d-none d-lg-inline-block">
+
+							<div class="btn-group rounded-xxl overflow-hidden" role="group" aria-label="Basic example">
+								
+								<a href="../index.html" target="layerstore" class="btn btn-sm btn-pills btn-indigo">
+									<span>Front</span>
+								</a>
+
+								<a href="https://wrapbootstrap.com/theme/smarty-website-admin-rtl-WB02DSN1B" target="wrapbootstrap" class="btn btn-sm btn-pills btn-indigo py-1">
+									<i class="fi fi-cart-1 mx-2 fs--20"></i>
+								</a>
+
+								<a href="../../html_admin/layout_1/" target="layerstore" class="btn btn-sm btn-pills btn-indigo">
+									<span>Admin</span>
+								</a>
+
+							</div>
+
+						</li>
+
+						<!-- header toggle : desktop only -->
+						<li class="list-inline-item mx-1 dropdown float-start d-none d-lg-block">
+
+							<a href="#" class="btn-header-toggle btn-toggle btn btn-sm rounded-circle btn-secondary">
+								<span class="group-icon">
+									<i class="fi fi-arrow-up"></i>
+									<i class="fi fi-arrow-down"></i>
+								</span>
+							</a>
+
+						</li>
+
+					</ul>
+					<!-- /OPTIONS -->
+
+
+
+					</nav>
+
+				</div>
+				<!-- /NAVBAR -->
+
+			</header>
+			<!-- /HEADER -->
+
+
+
+
+
+			<div id="wrapper_content" class="d-flex align-items-stretch">
+
+				<!-- SIDEBAR -->
+				<aside id="aside-main" class="aside-start bg-gradient-indigo font-weight-normal aside-hide-xs">
+
+					<div class="aside-wrapper scrollable-vertical scrollable-styled-light">
+
+						<!-- hide on mobile: d-none d-lg-block -->
+						<div class="p-3">
+							<!--<img class="js-ajax-loaded-animate img-fluid" src="assets/svg/artworks/undraw_smiley_face_lmgm.svg" width="300" height="248" alt="...">-->
+							<img class="js-ajax-loaded-animate img-fluid" src="assets/svg/artworks/startup.svg" width="225" height="198" alt="...">
+						</div>
+
+
+						<!--
+
+							All parent open navs are closed on click!
+							To ignore this feature, add .js-ignore to .nav-deep
+
+							Links height (paddings):
+								.nav-deep-xs
+								.nav-deep-md  	(default, ununsed class)
+								.nav-deep-sm
+								.nav-deep-lg
+						-->
+						<nav class="nav-deep nav-deep-dark nav-deep-xs pb-5">
+							<ul class="nav flex-column">
+
+								<li class="nav-title mt-3">
+									<h6 class="fs--14 mb-1 font-weight-medium text-warning">
+										HOW DO I START?
+									</h6>
+								</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="index.html">
+											Introduction
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="changelog.html">
+											<span class="badge float-end mt-1">v3.1.2</span>
+											Changelog
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="credits.html">
+											Credits
+										</a>
+									</li>
+
+
+
+
+
+								<li class="nav-title mt-5">
+									<h6 class="fs--14 mb-1 font-weight-medium text-warning">
+										COMPONENTS &amp; BLOCKS
+									</h6>
+								</li>
+
+								<li class="nav-item active">
+									<a class="nav-link" href="#">
+										<span class="group-icon float-end">
+											<i class="fi fi-arrow-end-slim"></i>
+											<i class="fi fi-arrow-down-slim"></i>
+										</span>
+										<b>Components</b>
+									</a>
+								
+									<ul class="nav flex-column">
+
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-alerts.html">
+												Alerts
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-accordions.html">
+												Accordions
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-badges.html">
+												Badges
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-breadcrumbs.html">
+												Breadcrumbs
+											</a>
+										</li>
+										<li class="nav-item active">
+											<a class="nav-link js-ajax" href="components-buttons.html">
+												Buttons
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-cards.html">
+												Cards
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-carousel.html">
+												Carousel
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-collapse.html">
+												Collapse
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-dropdowns.html">
+												Dropdowns
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-forms.html">
+												Forms
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-icons.html">
+												Icons
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-flags.html">
+												Flags
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-lists.html">
+												Lists
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-media.html">
+												Media
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-modals.html">
+												Modals
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-navs.html">
+												Navs
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-navigation.html">
+												Navigation
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-pagination.html">
+												Pagination
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-progress.html">
+												Progress
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-popover.html">
+												Popover
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-scrollspy.html">
+												Scrollspy
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-spinners.html">
+												Spinners
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-tabs.html">
+												Tabs
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-tables.html">
+												Tables
+											</a>
+										</li>
+
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-timeline.html">
+												Timeline
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-thumbnails.html">
+												Thumbnails
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-tooltip.html">
+												Tooltip
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-typography.html">
+												Typography
+											</a>
+										</li>
+
+									</ul>
+								</li>
+
+
+
+
+
+									<li class="nav-item">
+										<a class="nav-link" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											<b>Quick Blocks</b>
+										</a>
+
+										<ul class="nav flex-column">
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-testimonials.html">
+													Testimonials
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-pricing.html">
+													Pricing
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-cta.html">
+													Call to action
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-brands.html">
+													Brands
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-various.html">
+													Various
+												</a>
+											</li>
+										</ul>
+
+									</li>
+
+
+
+									<li class="nav-item">
+										<a class="nav-link" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											<b>Utilities</b>
+										</a>
+
+										<ul class="nav flex-column">
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-text-backgrounds.html">
+													Text &amp; Backgrouns
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-text-color-extended.html">
+													Extended Text Color
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-borders.html">
+													Borders
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-shadows.html">
+													Box Shadows
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-font.html">
+													Font Size / Weight
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-width-height.html">
+													Width / Height
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-padding-margin.html">
+													Paddings / Margins
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-transition.html">
+													Transitions / Transforms
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-position.html">
+													Position
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-visibility.html">
+													Visibility
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-overlays.html">
+													Overlays &amp; Opacity
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-scroll.html">
+													Scroll &amp; Scrollbar
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-misc.html">
+													Miscellaneous
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-responsive.html">
+													Responsive
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-rtl.html">
+													RTL
+												</a>
+											</li>
+
+										</ul>
+									</li>
+
+		
+
+
+
+
+
+
+
+									<li class="nav-item">
+										<a class="nav-link" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											<b>Php / Forms</b>
+										</a>
+
+										<ul class="nav flex-column">
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="php-introduction.html">
+													Introduction
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="php-forms.html">
+													Contact Forms
+												</a>
+											</li>
+										</ul>
+
+									</li>
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+									<li class="nav-item nav-item-extended overlay-dark overlay-opacity-2">
+										<a class="nav-link js-ajax" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-expand"></i>
+												<i class="fi fi-shrink"></i>
+											</span>
+											Predefined Layouts
+										</a>
+
+
+										<!-- extended item -->
+										<div class="aside-item d-flex flex-column bg-white shadow-xs w--350"><!-- .w-100 = full width -->
+											
+											<!-- header -->
+											<h3 class="fs--18 bg-light-soft p--15">
+												<button type="button" class="btn-aside-item-extended-close close fi fi-close fs--20 mt--n4 float-end"></button>
+												<i class="fi fi-heart-slim float-start fs--18"></i> 
+												Ready to start
+											</h3>
+
+											<!-- extended item content -->
+											<div 	id="layout_list" 
+													data-ajax-url="_ajax/layout_list.html" 
+													class="js-ajax p-3 scrollable-vertical scrollable-styled-dark m--1">
+
+												<div class="text-center"><!-- ajax loading icon -->
+													<i class="fi fi-circle-spin fi-spin fs--30 text-muted"></i>
+												</div><!-- /ajax loading icon -->
+
+											</div>
+											<!-- /extended item content -->
+
+										</div>
+										<!-- /extended item -->
+
+									</li>
+
+
+
+
+
+								<li class="nav-title mt-5">
+									<h6 class="fs--14 mb-1 font-weight-medium text-warning">
+										SOW : CORE PLUGINS
+									</h6>
+								</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-introduction.html">
+											Introduction
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-header.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">7Kb</span>
+											SOW : Header
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-search-suggest.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">9Kb</span>
+											SOW : Search Suggest
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-input-suggest.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : Input Suggest
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-navigation.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">10Kb</span>
+											SOW : Ajax : Navigation
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-forms.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4Kb</span>
+											SOW : Ajax : Forms
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-content.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4Kb</span>
+											SOW : Ajax : Content
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-modal.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">3Kb</span>
+											SOW : Ajax : Modals
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-confirm.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">6Kb</span>
+											SOW : Ajax : Confirm
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-select.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4.5Kb</span>
+											SOW : Ajax : Select
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-form-validation.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : Form Validation
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-form-advanced.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">7Kb</span>
+											SOW : Form Advanced
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-file-upload.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">24Kb</span>
+											SOW : File Upload
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-checkall.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Check All
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-checkgroup.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Check Group
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-toasts.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4Kb</span>
+											SOW : Toasts
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-gdpr.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : GDPR Cookies
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-inline-search.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Inline Search
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-dropdown.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">3Kb</span>
+											SOW : Dropdowns
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-deep-navigation.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : Deep Navigation
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-btn-toggle.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2.5Kb</span>
+											SOW : Button Toggle
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-scroll-to.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Scroll To
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-timer-autohide.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Timer Autohide
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-timer-countdown.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : Timer Countdown
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-gfont.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1.5Kb</span>
+											SOW : Google Font
+										</a>
+									</li>
+                                    <li class="nav-item">
+                                        <a class="nav-link js-ajax" href="plugins-sow-lazyload.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+                                            SOW : Lazyload
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link js-ajax" href="plugins-sow-count-animate.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4.1Kb</span>
+                                            SOW : Count Animate
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link js-ajax" href="plugins-sow-utils.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+                                            SOW : Utils
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link js-ajax" href="plugins-sow-service-worker.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+                                            SOW : Service Worker!
+                                        </a>
+                                    </li>
+									<li class="nav-item pl--15 pr--15">
+										<div class="bg-indigo text-gray-500 fs--13 p-2 rounded">
+											SOW Core plugins are developed from scratch. 
+											You can remove, disable or use your own!
+										</div>
+									</li>
+
+
+
+
+
+								<li class="nav-title mt-5">
+									<h6 class="fs--14 mb-1 font-weight-medium text-warning">
+										VENDOR PLUGINS
+									</h6>
+								</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-bootstrap-select.html">
+											Vendor : Bootstrap Select
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-flickity.html">
+											Vendor : Flickity Slider
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-swiper.html">
+											Vendor : Swiper Slider
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-jarallax.html">
+											Vendor : Jaxallax
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-sticky-kit.html">
+											Vendor : Sticky Kit
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-fancybox.html">
+											Vendor : Fancybox
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-photoswipe.html">
+											Vendor : Photoswipe
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="components-map.html">
+											Vendor : Map
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-slimscroll.html">
+											Vendor : Slimscroll
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-nestable.html">
+											Vendor : Nestable
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											Vendor : Pickers
+										</a>
+										<ul class="nav flex-column">
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-datepicker.html">
+													Datepicker
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-rangepicker.html">
+													Rangepicker
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-colorpicker.html">
+													Colorpicker
+												</a>
+											</li>
+										</ul>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											Vendor : Charts
+										</a>
+										<ul class="nav flex-column">
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-chartjs.html">
+													Chart.js
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-flot.html">
+													Flot Chart
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-easypie.html">
+													Easy Pie Chart
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-sparkline.html">
+													Sparkline Charts
+												</a>
+											</li>
+										</ul>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											Vendor : Editors
+										</a>
+										<ul class="nav flex-column">
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-medium-editor.html">
+													Medium Editor
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-markdown.html">
+													Markdown Editor
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-summernote.html">
+													Summernote
+												</a>
+											</li>
+										</ul>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-datatable.html">
+											Vendor : Datatable
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-fullcalendar.html">
+											Vendor : Fullcalendar
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-prismjs.html">
+											Vendor : Prismjs (Highlighter)
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-aos.html">
+											Vendor : AOS
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-typed.html">
+											Vendor : Typed
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-sortablejs.html">
+											Vendor : Sortablejs
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-cocoen.html">
+											Vendor : Cocoen <small>(Img Compare)</small>
+										</a>
+									</li>
+
+
+
+
+
+
+
+
+
+							</ul>
+						</nav>
+
+
+
+					</div>
+				</aside>
+				<!-- /SIDEBAR -->
+
+
+				<!-- MIDDLE -->
+				<div id="middle" class="flex-fill">
+
+
+
+					<header class="mb-5">
+						<h1 class="h2 mb-0 text-gray-700">
+							Components
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--14">
+								<li class="breadcrumb-item active" aria-current="page">
+									Smarty documentation
+								</li>
+							</ol>
+						</nav>
+
+					</header>
+
+
+
+					<div class="row d-flex flex-fill align-items-start">
+
+						<div class="col align-self-start">
+
+
+
+							<section class="shadow-lg">
+
+								<h2 class="h5 mb-5 text-truncate w-100">
+									Notes : Button with Icons
+								</h2>
+
+								<p>
+									When using icons, by default are too close to the text, because there is no margin.
+									<br>
+									To avoid using <code>&amp;nbsp;</code>, Smarty will add required margins to icons and few corrections are needed in some situations:
+								</p>
+
+								<div class="row mt-5">
+
+									<div class="col-12 col-lg-6">
+                                        <h5>1. Icon only, no text</h5>
+                                        <p class="mb-4">class <code>.m-0</code> added directly to the icon</p>
+
+										<a href="#" class="btn btn-warning bg-gradient-warning">
+											<i class="fi fi-check"></i>
+										</a> bad
+
+										&nbsp;&nbsp;
+
+										<a href="#" class="btn btn-warning bg-gradient-warning">
+											<i class="fi fi-check m-0"></i>
+										</a> good
+
+                                        &nbsp;&nbsp;
+
+
+                                        <a href="#" class="btn btn-warning bg-gradient-warning rounded-circle">
+                                            <i class="fi fi-check"></i>
+                                        </a> nothing needed
+
+								<pre class="mt-2 bg-light mt-5"><code class="language-html">&lt;!-- bad -->
+&lt;a href="#" class="btn btn-primary">
+    &lt;i class="fi fi-check">&lt;/i>
+&lt;/a>
+
+&lt;!-- good -->
+&lt;a href="#" class="btn btn-primary">
+    &lt;i class="fi fi-check m-0">&lt;/i>
+&lt;/a>
+
+&lt;!-- nothing needed -->
+&lt;a href="#" class="btn btn-primary rounded-circle">
+    &lt;i class="fi fi-check">&lt;/i>
+&lt;/a></code></pre>
+
+									</div>
+
+									<div class="col-12 col-lg-6">
+                                        
+                                        <h5>2. Icon after text <span class="font-weight-light">only</span></h5>
+                                        <p class="mb-4">text is wrapped inside <code>&lt;span></code></p>
+
+										<a href="#" class="btn btn-primary bg-gradient-primary">
+											Bad
+											<i class="fi fi-arrow-end"></i>
+										</a>
+
+										&nbsp;&nbsp;
+
+										<a href="#" class="btn btn-primary bg-gradient-primary">
+											<span>Good</span>
+											<i class="fi fi-arrow-end"></i>
+										</a>
+
+                                        &nbsp;&nbsp;
+
+                                        <a href="#" class="btn btn-primary bg-gradient-primary">
+                                            <i class="fi fi-arrow-end"></i>
+                                            Nothing needed
+                                        </a>
+
+								<pre class="mt-2 bg-light mt-5"><code class="language-html">&lt;a href="#" class="btn btn-primary">
+    Bad
+    &lt;i class="fi fi-arrow-end">&lt;/i>
+&lt;/a>
+
+&lt;a href="#" class="btn btn-primary">
+    &lt;span>Good&lt;/span>
+    &lt;i class="fi fi-arrow-end">&lt;/i>
+&lt;/a>
+
+&lt;a href="#" class="btn btn-primary">
+    &lt;i class="fi fi-arrow-end">&lt;/i>
+    Nothing needed
+&lt;/a></code></pre>
+
+									</div>
+
+								</div>
+
+
+
+							</section>
+
+
+							<section id="section_1">
+
+								<header class="d-flex b-0">
+
+									<h2 class="h5 text-truncate w-100">
+										Default Buttons
+									</h2>
+
+									<div class="ui-options d-flex">
+
+										<!-- fullscreen -->
+										<a href="#" class="btn-toggle" data-toggle-container-class="fullscreen" data-toggle-body-class="overflow-hidden" data-target="#section_1">
+											<span class="group-icon">
+												<i class="fi fi-expand"></i>
+												<i class="fi fi-shrink"></i>
+											</span>
+										</a>
+
+									</div>
+
+								</header>
+
+
+								<div class="container mt--50">
+
+									<button type="button" class="btn btn-lg btn-primary mb-1">Large</button>
+									<button type="button" class="btn btn-lg btn-outline-primary mb-1">Large</button>
+									<button type="button" class="btn btn-primary mb-1">Base</button>
+									<button type="button" class="btn btn-outline-primary mb-1">Base</button>
+									<button type="button" class="btn btn-sm btn-primary mb-1">Small</button>
+									<button type="button" class="btn btn-sm btn-outline-primary mb-1">Small</button>
+
+									<hr>
+
+									<button type="button" class="btn btn-primary mb-1">Primary</button>
+									<button type="button" class="btn btn-secondary mb-1">Secondary</button>
+									<button type="button" class="btn btn-success mb-1">Success</button>
+									<button type="button" class="btn btn-danger mb-1">Danger</button>
+									<button type="button" class="btn btn-warning mb-1">Warning</button>
+									<button type="button" class="btn btn-info mb-1">Info</button>
+									<button type="button" class="btn btn-light mb-1">Light</button>
+									<button type="button" class="btn btn-dark mb-1">Dark</button>
+									<button type="button" class="btn btn-indigo mb-1">Indigo</button>
+									<button type="button" class="btn btn-purple mb-1">Purple</button>
+									<button type="button" class="btn btn-pink mb-1">Pink</button>
+
+									<button type="button" class="btn btn-link mb-1">Link</button>
+
+									<br>
+
+									<button type="button" class="btn btn-outline-primary mb-1">Primary</button>
+									<button type="button" class="btn btn-outline-secondary mb-1">Secondary</button>
+									<button type="button" class="btn btn-outline-success mb-1">Success</button>
+									<button type="button" class="btn btn-outline-danger mb-1">Danger</button>
+									<button type="button" class="btn btn-outline-warning mb-1">Warning</button>
+									<button type="button" class="btn btn-outline-info mb-1">Info</button>
+									<button type="button" class="btn btn-outline-light mb-1">Light</button>
+									<button type="button" class="btn btn-outline-dark mb-1">Dark</button>
+									<button type="button" class="btn btn-outline-indigo mb-1">Indigo</button>
+									<button type="button" class="btn btn-outline-purple mb-1">Purple</button>
+									<button type="button" class="btn btn-outline-pink mb-1">Pink</button>
+
+									<hr>
+
+									<button type="button" class="btn btn-lg btn-primary mb-1">Primary</button>
+									<button type="button" class="btn btn-lg btn-secondary mb-1">Secondary</button>
+									<button type="button" class="btn btn-lg btn-success mb-1">Success</button>
+									<button type="button" class="btn btn-lg btn-danger mb-1">Danger</button>
+									<button type="button" class="btn btn-lg btn-warning mb-1">Warning</button>
+									<button type="button" class="btn btn-lg btn-info mb-1">Info</button>
+									<button type="button" class="btn btn-lg btn-light mb-1">Light</button>
+									<button type="button" class="btn btn-lg btn-dark mb-1">Dark</button>
+									<button type="button" class="btn btn-lg btn-indigo mb-1">Indigo</button>
+									<button type="button" class="btn btn-lg btn-purple mb-1">Purple</button>
+									<button type="button" class="btn btn-lg btn-pink mb-1">Pink</button>
+
+									<button type="button" class="btn btn-lg btn-link mb-1">Link</button>
+
+								</div>
+
+								<div class="p--15 bg-light mt-5">
+
+									<span class="text-pink">Newly</span> added in bootstrap theme map: <code>.btn-indigo</code>, <code>.btn-purple</code>, <code>.btn-pink</code>.<br>
+									Is generated by boostrap SCSS, so for example: any <code>.*-pink</code> will work (buttons, badges, text, backgrounds, etc).<br>
+									You can also add more theme colors in less than 5 seconds by editing <code>$theme-colors</code> in variables.scss
+
+
+								</div>
+
+
+								<div class="mt--50">
+
+									<a href="#code" class="scroll-to btn btn-sm btn-light" data-toggle="collapse">
+										<i class="fi fi-code"></i> 
+										view code
+									</a>
+
+								</div>
+
+								<div id="code" class="collapse">
+								<pre class="mt-5"><code class="language-html">
+
+&lt;!-- add .btn-sm or .btn-lg class to any -->
+
+
+
+&lt;!-- form buttons -->
+&lt;button type="button" class="btn btn-primary mb-1">Primary&lt;/button>
+&lt;button type="button" class="btn btn-secondary mb-1">Secondary&lt;/button>
+&lt;button type="button" class="btn btn-success mb-1">Success&lt;/button>
+&lt;button type="button" class="btn btn-danger mb-1">Danger&lt;/button>
+&lt;button type="button" class="btn btn-warning mb-1">Warning&lt;/button>
+&lt;button type="button" class="btn btn-info mb-1">Info&lt;/button>
+&lt;button type="button" class="btn btn-light mb-1">Light&lt;/button>
+&lt;button type="button" class="btn btn-dark mb-1">Dark&lt;/button>
+&lt;button type="button" class="btn btn-indigo mb-1">Indigo&lt;/button>
+&lt;button type="button" class="btn btn-purple mb-1">Purple&lt;/button>
+&lt;button type="button" class="btn btn-pink mb-1">Pink&lt;/button>
+
+&lt;button type="button" class="btn btn-link mb-1">Link&lt;/button>
+
+
+&lt;!-- links -->
+&lt;a href="#!" class="btn btn-primary mb-1">Primary&lt;/a>
+&lt;a href="#!" class="btn btn-secondary mb-1">Secondary&lt;/a>
+&lt;a href="#!" class="btn btn-success mb-1">Success&lt;/a>
+&lt;a href="#!" class="btn btn-danger mb-1">Danger&lt;/a>
+&lt;a href="#!" class="btn btn-warning mb-1">Warning&lt;/a>
+&lt;a href="#!" class="btn btn-info mb-1">Info&lt;/a>
+&lt;a href="#!" class="btn btn-light mb-1">Light&lt;/a>
+&lt;a href="#!" class="btn btn-dark mb-1">Dark&lt;/a>
+&lt;a href="#!" class="btn btn-indigo mb-1">Indigo&lt;/a>
+&lt;a href="#!" class="btn btn-purple mb-1">Purple&lt;/a>
+&lt;a href="#!" class="btn btn-pink mb-1">Pink&lt;/a>
+
+&lt;a href="#!" class="btn btn-link mb-1">Link&lt;/a>
+
+								</code></pre>
+								</div>
+
+							</section>
+
+
+
+
+							<section id="section_2">
+
+								<header class="d-flex b-0">
+
+									<h2 class="h5 text-truncate w-100">
+										Soft Buttons
+									</h2>
+
+									<div class="ui-options d-flex">
+
+										<!-- fullscreen -->
+										<a href="#" class="btn-toggle" data-toggle-container-class="fullscreen" data-toggle-body-class="overflow-hidden" data-target="#section_2">
+											<span class="group-icon">
+												<i class="fi fi-expand"></i>
+												<i class="fi fi-shrink"></i>
+											</span>
+										</a>
+
+									</div>
+
+								</header>
+
+
+								<div class="container mt--50">
+
+									<button type="button" class="btn btn-lg btn-primary btn-soft mb-1">Large</button>
+									<button type="button" class="btn btn-primary btn-soft mb-1">Base</button>
+									<button type="button" class="btn btn-sm btn-primary btn-soft mb-1">Small</button>
+
+									<hr>
+
+									<button type="button" class="btn btn-primary btn-soft mb-1">Primary</button>
+									<button type="button" class="btn btn-secondary btn-soft mb-1">Secondary</button>
+									<button type="button" class="btn btn-success btn-soft mb-1">Success</button>
+									<button type="button" class="btn btn-danger btn-soft mb-1">Danger</button>
+									<button type="button" class="btn btn-warning btn-soft mb-1">Warning</button>
+									<button type="button" class="btn btn-info btn-soft mb-1">Info</button>
+									<button type="button" class="btn btn-light btn-soft mb-1">Light</button>
+									<button type="button" class="btn btn-dark btn-soft mb-1">Dark</button>
+									<button type="button" class="btn btn-indigo btn-soft mb-1">Indigo</button>
+									<button type="button" class="btn btn-purple btn-soft mb-1">Purple</button>
+									<button type="button" class="btn btn-pink btn-soft mb-1">Pink</button>
+
+									<hr>
+
+									<button type="button" class="btn btn-primary btn-soft-static mb-1">Primary</button>
+									<button type="button" class="btn btn-secondary btn-soft-static mb-1">Secondary</button>
+									<button type="button" class="btn btn-success btn-soft-static mb-1">Success</button>
+									<button type="button" class="btn btn-danger btn-soft-static mb-1">Danger</button>
+									<button type="button" class="btn btn-warning btn-soft-static mb-1">Warning</button>
+									<button type="button" class="btn btn-info btn-soft-static mb-1">Info</button>
+									<button type="button" class="btn btn-light btn-soft-static mb-1">Light</button>
+									<button type="button" class="btn btn-dark btn-soft-static mb-1">Dark</button>
+									<button type="button" class="btn btn-indigo btn-soft-static mb-1">Indigo</button>
+									<button type="button" class="btn btn-purple btn-soft-static mb-1">Purple</button>
+									<button type="button" class="btn btn-pink btn-soft-static mb-1">Pink</button>
+
+								</div>
+
+								<div class="mt--50">
+
+									<a href="#code_soft" class="scroll-to btn btn-sm btn-light" data-toggle="collapse">
+										<i class="fi fi-code"></i> 
+										view code
+									</a>
+
+								</div>
+
+								<div id="code_soft" class="collapse">
+									<pre class="mt-5"><code class="language-html">
+&lt;!-- buttons : normal on hover -->
+&lt;button type="button" class="btn btn-primary btn-soft mb-1">Primary&lt;/button>
+&lt;button type="button" class="btn btn-secondary btn-soft mb-1">Secondary&lt;/button>
+&lt;button type="button" class="btn btn-success btn-soft mb-1">Success&lt;/button>
+&lt;button type="button" class="btn btn-danger btn-soft mb-1">Danger&lt;/button>
+&lt;button type="button" class="btn btn-warning btn-soft mb-1">Warning&lt;/button>
+&lt;button type="button" class="btn btn-info btn-soft mb-1">Info&lt;/button>
+&lt;button type="button" class="btn btn-light btn-soft mb-1">Light&lt;/button>
+&lt;button type="button" class="btn btn-dark btn-soft mb-1">Dark&lt;/button>
+&lt;button type="button" class="btn btn-indigo btn-soft mb-1">Indigo&lt;/button>
+&lt;button type="button" class="btn btn-purple btn-soft mb-1">Purple&lt;/button>
+&lt;button type="button" class="btn btn-pink btn-soft mb-1">Pink&lt;/button>
+
+&lt;!-- buttons : static on hover -->
+&lt;button type="button" class="btn btn-primary btn-soft-static mb-1">Primary&lt;/button>
+&lt;button type="button" class="btn btn-secondary btn-soft-static mb-1">Secondary&lt;/button>
+&lt;button type="button" class="btn btn-success btn-soft-static mb-1">Success&lt;/button>
+&lt;button type="button" class="btn btn-danger btn-soft-static mb-1">Danger&lt;/button>
+&lt;button type="button" class="btn btn-warning btn-soft-static mb-1">Warning&lt;/button>
+&lt;button type="button" class="btn btn-info btn-soft-static mb-1">Info&lt;/button>
+&lt;button type="button" class="btn btn-light btn-soft-static mb-1">Light&lt;/button>
+&lt;button type="button" class="btn btn-dark btn-soft-static mb-1">Dark&lt;/button>
+&lt;button type="button" class="btn btn-indigo btn-soft-static mb-1">Indigo&lt;/button>
+&lt;button type="button" class="btn btn-purple btn-soft-static mb-1">Purple&lt;/button>
+&lt;button type="button" class="btn btn-pink btn-soft-static mb-1">Pink&lt;/button>
+
+
+
+
+&lt;!-- links : normal on hover -->
+&lt;a href="#" class="btn btn-primary btn-soft mb-1">Primary&lt;/a>
+&lt;a href="#" class="btn btn-secondary btn-soft mb-1">Secondary&lt;/a>
+&lt;a href="#" class="btn btn-success btn-soft mb-1">Success&lt;/a>
+&lt;a href="#" class="btn btn-danger btn-soft mb-1">Danger&lt;/a>
+&lt;a href="#" class="btn btn-warning btn-soft mb-1">Warning&lt;/a>
+&lt;a href="#" class="btn btn-info btn-soft mb-1">Info&lt;/a>
+&lt;a href="#" class="btn btn-light btn-soft mb-1">Light&lt;/a>
+&lt;a href="#" class="btn btn-dark btn-soft mb-1">Dark&lt;/a>
+&lt;a href="#" class="btn btn-indigo btn-soft mb-1">Indigo&lt;/a>
+&lt;a href="#" class="btn btn-purple btn-soft mb-1">Purple&lt;/a>
+&lt;a href="#" class="btn btn-pink btn-soft mb-1">Pink&lt;/a>
+
+&lt;!-- links : static on hover -->
+&lt;a href="#" class="btn btn-primary btn-soft-static mb-1">Primary&lt;/a>
+&lt;a href="#" class="btn btn-secondary btn-soft-static mb-1">Secondary&lt;/a>
+&lt;a href="#" class="btn btn-success btn-soft-static mb-1">Success&lt;/a>
+&lt;a href="#" class="btn btn-danger btn-soft-static mb-1">Danger&lt;/a>
+&lt;a href="#" class="btn btn-warning btn-soft-static mb-1">Warning&lt;/a>
+&lt;a href="#" class="btn btn-info btn-soft-static mb-1">Info&lt;/a>
+&lt;a href="#" class="btn btn-light btn-soft-static mb-1">Light&lt;/a>
+&lt;a href="#" class="btn btn-dark btn-soft-static mb-1">Dark&lt;/a>
+&lt;a href="#" class="btn btn-indigo btn-soft-static mb-1">Indigo&lt;/a>
+&lt;a href="#" class="btn btn-purple btn-soft-static mb-1">Purple&lt;/a>
+&lt;a href="#" class="btn btn-pink btn-soft-static mb-1">Pink&lt;/a>
+
+									</code></pre>
+								</div>
+
+						</section>
+
+
+
+
+							<section id="section_4">
+
+								<header class="d-flex b-0">
+
+									<h2 class="h5 text-truncate w-100">
+										Pill Buttons
+									</h2>
+
+									<div class="ui-options d-flex">
+
+										<!-- fullscreen -->
+										<a href="#" class="btn-toggle" data-toggle-container-class="fullscreen" data-toggle-body-class="overflow-hidden" data-target="#section_4">
+											<span class="group-icon">
+												<i class="fi fi-expand"></i>
+												<i class="fi fi-shrink"></i>
+											</span>
+										</a>
+
+									</div>
+
+								</header>
+
+
+								<div class="container mt--50">
+
+									<button type="button" class="btn btn-lg btn-primary btn-pill mb-1">Large</button>
+									<button type="button" class="btn btn-lg btn-primary btn-pill btn-soft mb-1">Large</button>
+									<button type="button" class="btn btn-primary btn-pill mb-1">Base</button>
+									<button type="button" class="btn btn-primary btn-soft btn-pill mb-1">Base</button>
+									<button type="button" class="btn btn-sm btn-primary btn-pill mb-1">Small</button>
+									<button type="button" class="btn btn-sm btn-primary btn-soft btn-pill mb-1">Small</button>
+
+									<hr>
+
+									<button type="button" class="btn btn-primary btn-pill mb-1">Primary</button>
+									<button type="button" class="btn btn-secondary btn-pill mb-1">Secondary</button>
+									<button type="button" class="btn btn-success btn-pill mb-1">Success</button>
+									<button type="button" class="btn btn-danger btn-pill mb-1">Danger</button>
+									<button type="button" class="btn btn-warning btn-pill mb-1">Warning</button>
+									<button type="button" class="btn btn-info btn-pill mb-1">Info</button>
+									<button type="button" class="btn btn-light btn-pill mb-1">Light</button>
+									<button type="button" class="btn btn-dark btn-pill mb-1">Dark</button>
+
+									<br>
+
+									<button type="button" class="btn btn-outline-primary btn-pill mb-1">Primary</button>
+									<button type="button" class="btn btn-outline-secondary btn-pill mb-1">Secondary</button>
+									<button type="button" class="btn btn-outline-success btn-pill mb-1">Success</button>
+									<button type="button" class="btn btn-outline-danger btn-pill mb-1">Danger</button>
+									<button type="button" class="btn btn-outline-warning btn-pill mb-1">Warning</button>
+									<button type="button" class="btn btn-outline-info btn-pill mb-1">Info</button>
+									<button type="button" class="btn btn-outline-light btn-pill mb-1">Light</button>
+									<button type="button" class="btn btn-outline-dark btn-pill mb-1">Dark</button>
+
+									<hr>
+
+									<button type="button" class="btn btn-primary btn-soft btn-pill mb-1">Primary</button>
+									<button type="button" class="btn btn-secondary btn-soft btn-pill mb-1">Secondary</button>
+									<button type="button" class="btn btn-success btn-soft btn-pill mb-1">Success</button>
+									<button type="button" class="btn btn-danger btn-soft btn-pill mb-1">Danger</button>
+									<button type="button" class="btn btn-warning btn-soft btn-pill mb-1">Warning</button>
+									<button type="button" class="btn btn-info btn-soft btn-pill mb-1">Info</button>
+									<button type="button" class="btn btn-light btn-soft btn-pill mb-1">Light</button>
+									<button type="button" class="btn btn-dark btn-soft btn-pill mb-1">Dark</button>
+
+									<hr>
+
+									<button type="button" class="btn btn-ghost btn-primary btn-pill mb-1">Primary</button>
+									<button type="button" class="btn btn-ghost btn-secondary btn-pill mb-1">Secondary</button>
+									<button type="button" class="btn btn-ghost btn-success btn-pill mb-1">Success</button>
+									<button type="button" class="btn btn-ghost btn-danger btn-pill mb-1">Danger</button>
+									<button type="button" class="btn btn-ghost btn-warning btn-pill mb-1">Warning</button>
+									<button type="button" class="btn btn-ghost btn-info btn-pill mb-1">Info</button>
+									<button type="button" class="btn btn-ghost btn-light btn-pill mb-1">Light</button>
+									<button type="button" class="btn btn-ghost btn-dark btn-pill mb-1">Dark</button>
+
+								</div>
+
+
+								<div class="mt--50">
+
+									<a href="#code_pill" class="scroll-to btn btn-sm btn-light" data-toggle="collapse">
+										<i class="fi fi-code"></i> 
+										view code
+									</a>
+
+								</div>
+
+								<div id="code_pill" class="collapse">
+								<pre class="mt-5"><code class="language-html">
+&lt;!-- pill : default -->
+&lt;button type="button" class="btn btn-primary btn-pill mb-1">Primary&lt;/button>
+&lt;button type="button" class="btn btn-secondary btn-pill mb-1">Secondary&lt;/button>
+&lt;button type="button" class="btn btn-success btn-pill mb-1">Success&lt;/button>
+&lt;button type="button" class="btn btn-danger btn-pill mb-1">Danger&lt;/button>
+&lt;button type="button" class="btn btn-warning btn-pill mb-1">Warning&lt;/button>
+&lt;button type="button" class="btn btn-info btn-pill mb-1">Info&lt;/button>
+&lt;button type="button" class="btn btn-light btn-pill mb-1">Light&lt;/button>
+&lt;button type="button" class="btn btn-dark btn-pill mb-1">Dark&lt;/button>
+
+&lt;!-- pill : outline -->
+&lt;button type="button" class="btn btn-outline-primary btn-pill mb-1">Primary&lt;/button>
+&lt;button type="button" class="btn btn-outline-secondary btn-pill mb-1">Secondary&lt;/button>
+&lt;button type="button" class="btn btn-outline-success btn-pill mb-1">Success&lt;/button>
+&lt;button type="button" class="btn btn-outline-danger btn-pill mb-1">Danger&lt;/button>
+&lt;button type="button" class="btn btn-outline-warning btn-pill mb-1">Warning&lt;/button>
+&lt;button type="button" class="btn btn-outline-info btn-pill mb-1">Info&lt;/button>
+&lt;button type="button" class="btn btn-outline-light btn-pill mb-1">Light&lt;/button>
+&lt;button type="button" class="btn btn-outline-dark btn-pill mb-1">Dark&lt;/button>
+
+&lt;!-- pill : soft -->
+&lt;button type="button" class="btn btn-primary btn-soft btn-pill mb-1">Primary&lt;/button>
+&lt;button type="button" class="btn btn-secondary btn-soft btn-pill mb-1">Secondary&lt;/button>
+&lt;button type="button" class="btn btn-success btn-soft btn-pill mb-1">Success&lt;/button>
+&lt;button type="button" class="btn btn-danger btn-soft btn-pill mb-1">Danger&lt;/button>
+&lt;button type="button" class="btn btn-warning btn-soft btn-pill mb-1">Warning&lt;/button>
+&lt;button type="button" class="btn btn-info btn-soft btn-pill mb-1">Info&lt;/button>
+&lt;button type="button" class="btn btn-light btn-soft btn-pill mb-1">Light&lt;/button>
+&lt;button type="button" class="btn btn-dark btn-soft btn-pill mb-1">Dark&lt;/button>
+
+&lt;!-- pill : ghost -->
+&lt;button type="button" class="btn btn-ghost btn-primary btn-pill mb-1">Primary&lt;/button>
+&lt;button type="button" class="btn btn-ghost btn-secondary btn-pill mb-1">Secondary&lt;/button>
+&lt;button type="button" class="btn btn-ghost btn-success btn-pill mb-1">Success&lt;/button>
+&lt;button type="button" class="btn btn-ghost btn-danger btn-pill mb-1">Danger&lt;/button>
+&lt;button type="button" class="btn btn-ghost btn-warning btn-pill mb-1">Warning&lt;/button>
+&lt;button type="button" class="btn btn-ghost btn-info btn-pill mb-1">Info&lt;/button>
+&lt;button type="button" class="btn btn-ghost btn-light btn-pill mb-1">Light&lt;/button>
+&lt;button type="button" class="btn btn-ghost btn-dark btn-pill mb-1">Dark&lt;/button>
+
+
+
+
+
+&lt;!-- link : pill : default -->
+&lt;a href="#" class="btn btn-primary btn-pill mb-1">Primary&lt;/a>
+&lt;a href="#" class="btn btn-secondary btn-pill mb-1">Secondary&lt;/a>
+&lt;a href="#" class="btn btn-success btn-pill mb-1">Success&lt;/a>
+&lt;a href="#" class="btn btn-danger btn-pill mb-1">Danger&lt;/a>
+&lt;a href="#" class="btn btn-warning btn-pill mb-1">Warning&lt;/a>
+&lt;a href="#" class="btn btn-info btn-pill mb-1">Info&lt;/a>
+&lt;a href="#" class="btn btn-light btn-pill mb-1">Light&lt;/a>
+&lt;a href="#" class="btn btn-dark btn-pill mb-1">Dark&lt;/a>
+
+&lt;!-- link : pill : outline -->
+&lt;a href="#" class="btn btn-outline-primary btn-pill mb-1">Primary&lt;/a>
+&lt;a href="#" class="btn btn-outline-secondary btn-pill mb-1">Secondary&lt;/a>
+&lt;a href="#" class="btn btn-outline-success btn-pill mb-1">Success&lt;/a>
+&lt;a href="#" class="btn btn-outline-danger btn-pill mb-1">Danger&lt;/a>
+&lt;a href="#" class="btn btn-outline-warning btn-pill mb-1">Warning&lt;/a>
+&lt;a href="#" class="btn btn-outline-info btn-pill mb-1">Info&lt;/a>
+&lt;a href="#" class="btn btn-outline-light btn-pill mb-1">Light&lt;/a>
+&lt;a href="#" class="btn btn-outline-dark btn-pill mb-1">Dark&lt;/a>
+
+&lt;!-- link : pill : soft -->
+&lt;a href="#" class="btn btn-primary btn-soft btn-pill mb-1">Primary&lt;/a>
+&lt;a href="#" class="btn btn-secondary btn-soft btn-pill mb-1">Secondary&lt;/a>
+&lt;a href="#" class="btn btn-success btn-soft btn-pill mb-1">Success&lt;/a>
+&lt;a href="#" class="btn btn-danger btn-soft btn-pill mb-1">Danger&lt;/a>
+&lt;a href="#" class="btn btn-warning btn-soft btn-pill mb-1">Warning&lt;/a>
+&lt;a href="#" class="btn btn-info btn-soft btn-pill mb-1">Info&lt;/a>
+&lt;a href="#" class="btn btn-light btn-soft btn-pill mb-1">Light&lt;/a>
+&lt;a href="#" class="btn btn-dark btn-soft btn-pill mb-1">Dark&lt;/a>
+
+&lt;!-- link : pill : ghost -->
+&lt;a href="#" class="btn btn-ghost btn-primary btn-pill mb-1">Primary&lt;/a>
+&lt;a href="#" class="btn btn-ghost btn-secondary btn-pill mb-1">Secondary&lt;/a>
+&lt;a href="#" class="btn btn-ghost btn-success btn-pill mb-1">Success&lt;/a>
+&lt;a href="#" class="btn btn-ghost btn-danger btn-pill mb-1">Danger&lt;/a>
+&lt;a href="#" class="btn btn-ghost btn-warning btn-pill mb-1">Warning&lt;/a>
+&lt;a href="#" class="btn btn-ghost btn-info btn-pill mb-1">Info&lt;/a>
+&lt;a href="#" class="btn btn-ghost btn-light btn-pill mb-1">Light&lt;/a>
+&lt;a href="#" class="btn btn-ghost btn-dark btn-pill mb-1">Dark&lt;/a>
+								</code></pre>
+								</div>
+
+
+							</section>
+
+
+
+
+
+
+
+
+
+
+							<section id="section_5">
+
+								<header class="d-flex b-0">
+
+									<h2 class="h5 text-truncate w-100">
+										Icon Buttons
+									</h2>
+
+									<div class="ui-options d-flex">
+
+										<!-- fullscreen -->
+										<a href="#" class="btn-toggle" data-toggle-container-class="fullscreen" data-toggle-body-class="overflow-hidden" data-target="#section_5">
+											<span class="group-icon">
+												<i class="fi fi-expand"></i>
+												<i class="fi fi-shrink"></i>
+											</span>
+										</a>
+
+									</div>
+
+								</header>
+
+
+								<div class="container mt--50">
+
+									<button type="button" class="btn btn-lg rounded-circle btn-primary mb-2">
+										<i class="fi fi-check"></i>
+									</button>
+
+									<button type="button" class="btn btn-lg rounded-circle btn-outline-primary mb-2">
+										<i class="fi fi-check"></i>
+									</button>
+
+									<button type="button" class="btn btn-lg rounded-circle btn-primary btn-soft mb-2">
+										<i class="fi fi-check"></i>
+									</button>
+
+									&nbsp;&nbsp;
+
+									<button type="button" class="btn rounded-circle btn-primary mb-2">
+										<i class="fi fi-check"></i>
+									</button>
+
+									<button type="button" class="btn rounded-circle btn-outline-primary mb-2">
+										<i class="fi fi-check"></i>
+									</button>
+
+									<button type="button" class="btn rounded-circle btn-primary btn-soft mb-2">
+										<i class="fi fi-check"></i>
+									</button>
+
+									&nbsp;&nbsp;
+
+									<button type="button" class="btn btn-sm rounded-circle btn-primary mb-2">
+										<i class="fi fi-check"></i>
+									</button>
+
+									<button type="button" class="btn btn-sm rounded-circle btn-outline-primary mb-2">
+										<i class="fi fi-check"></i>
+									</button>
+
+									<button type="button" class="btn btn-sm rounded-circle btn-primary btn-soft mb-2">
+										<i class="fi fi-check"></i>
+									</button>
+
+
+									<br><br>
+
+
+									<button type="button" class="btn btn-lg rounded-circle btn-primary mb-2">
+										<i class="fi fi-check"></i>
+									</button>
+
+									<button type="button" class="btn btn-lg rounded-circle btn-secondary mb-2">
+										<i class="fi fi-check"></i>
+									</button>
+
+									<button type="button" class="btn btn-lg rounded-circle btn-danger mb-2">
+										<i class="fi fi-check"></i>
+									</button>
+
+									<button type="button" class="btn btn-lg rounded-circle btn-warning mb-2">
+										<i class="fi fi-check"></i>
+									</button>
+
+									<button type="button" class="btn btn-lg rounded-circle btn-info mb-2">
+										<i class="fi fi-check"></i>
+									</button>
+
+									<button type="button" class="btn btn-lg rounded-circle btn-dark mb-2">
+										<i class="fi fi-check"></i>
+									</button>
+
+									<button type="button" class="btn btn-lg rounded-circle btn-white mb-2">
+										<i class="fi fi-check"></i>
+									</button>
+
+									<button type="button" class="btn btn-lg rounded-circle btn-light mb-2">
+										<i class="fi fi-check"></i>
+									</button>
+
+
+									<br>
+
+									<button type="button" class="btn btn-lg rounded-circle btn-outline-primary mb-2">
+										<i class="fi fi-check"></i>
+									</button>
+
+									<button type="button" class="btn btn-lg rounded-circle btn-outline-secondary mb-2">
+										<i class="fi fi-check"></i>
+									</button>
+
+									<button type="button" class="btn btn-lg rounded-circle btn-outline-danger mb-2">
+										<i class="fi fi-check"></i>
+									</button>
+
+									<button type="button" class="btn btn-lg rounded-circle btn-outline-warning mb-2">
+										<i class="fi fi-check"></i>
+									</button>
+
+									<button type="button" class="btn btn-lg rounded-circle btn-outline-info mb-2">
+										<i class="fi fi-check"></i>
+									</button>
+
+									<button type="button" class="btn btn-lg rounded-circle btn-outline-dark mb-2">
+										<i class="fi fi-check"></i>
+									</button>
+
+									<button type="button" class="btn btn-lg rounded-circle btn-outline-white mb-2">
+										<i class="fi fi-check"></i>
+									</button>
+
+									<button type="button" class="btn btn-lg rounded-circle btn-outline-light mb-2 text-dark">
+										<i class="fi fi-check"></i>
+									</button>
+
+									<br>
+
+									<button type="button" class="btn btn-lg rounded-circle btn-primary btn-soft mb-2">
+										<i class="fi fi-check"></i>
+									</button>
+
+									<button type="button" class="btn btn-lg rounded-circle btn-secondary btn-soft mb-2">
+										<i class="fi fi-check"></i>
+									</button>
+
+									<button type="button" class="btn btn-lg rounded-circle btn-danger btn-soft mb-2">
+										<i class="fi fi-check"></i>
+									</button>
+
+									<button type="button" class="btn btn-lg rounded-circle btn-warning btn-soft mb-2">
+										<i class="fi fi-check"></i>
+									</button>
+
+									<button type="button" class="btn btn-lg rounded-circle btn-info btn-soft mb-2">
+										<i class="fi fi-check"></i>
+									</button>
+
+									<button type="button" class="btn btn-lg rounded-circle btn-dark btn-soft mb-2">
+										<i class="fi fi-check"></i>
+									</button>
+
+									<button type="button" class="btn btn-lg rounded-circle btn-light btn-soft mb-2">
+										<i class="fi fi-check"></i>
+									</button>
+
+								</div>
+
+
+								<div class="mt--50">
+
+									<a href="#code_icon" class="scroll-to btn btn-sm btn-light" data-toggle="collapse">
+										<i class="fi fi-code"></i> 
+										view code
+									</a>
+
+								</div>
+
+								<div id="code_icon" class="collapse">
+								<pre class="mt-5"><code class="language-html">
+&lt;!-- 
+	Add to any button:
+		.btn-primary
+		.btn-secondary
+		.btn-danger
+		.btn-warning
+		.btn-info
+		.btn-dark
+		.btn-light
+ -->
+
+
+&lt;!-- default -->
+&lt;button type="button" class="btn btn-lg rounded-circle btn-primary mb-2">
+	&lt;i class="fi fi-check">&lt;/i>
+&lt;/button>
+
+
+&lt;!-- outline -->
+&lt;button type="button" class="btn btn-lg rounded-circle btn-outline-primary mb-2">
+	&lt;i class="fi fi-check">&lt;/i>
+&lt;/button>
+
+
+&lt;!-- soft -->
+&lt;button type="button" class="btn btn-lg rounded-circle btn-primary btn-soft mb-2">
+	&lt;i class="fi fi-check">&lt;/i>
+&lt;/button>
+
+
+
+
+&lt;!-- link : default -->
+&lt;a href="#" class="btn btn-lg rounded-circle btn-primary mb-2">
+	&lt;i class="fi fi-check">&lt;/i>
+&lt;/a>
+
+
+&lt;!-- link : outline -->
+&lt;a href="#" class="btn btn-lg rounded-circle btn-outline-primary mb-2">
+	&lt;i class="fi fi-check">&lt;/i>
+&lt;/a>
+
+
+&lt;!-- link : soft -->
+&lt;a href="#" class="btn btn-lg rounded-circle btn-primary btn-soft mb-2">
+	&lt;i class="fi fi-check">&lt;/i>
+&lt;/a>
+
+								</code></pre>
+								</div>
+
+
+							</section>
+
+
+
+
+
+
+
+
+
+
+
+
+							<section id="section_6">
+
+								<header class="d-flex b-0">
+
+									<h2 class="h5 text-truncate w-100">
+										Hover Animated
+									</h2>
+
+									<div class="ui-options d-flex">
+
+										<!-- fullscreen -->
+										<a href="#" class="btn-toggle" data-toggle-container-class="fullscreen" data-toggle-body-class="overflow-hidden" data-target="#section_6">
+											<span class="group-icon">
+												<i class="fi fi-expand"></i>
+												<i class="fi fi-shrink"></i>
+											</span>
+										</a>
+
+									</div>
+
+								</header>
+
+
+								<div class="container mt--50">
+
+									<button type="button" class="btn btn-primary transition-hover-top mb-1">Top</button> &nbsp;
+									<button type="button" class="btn btn-primary transition-hover-right mb-1">Right</button> &nbsp;
+									<button type="button" class="btn btn-primary transition-hover-bottom mb-1">Bottom</button> &nbsp;
+									<button type="button" class="btn btn-primary transition-hover-left mb-1">Left</button> &nbsp;
+
+									&nbsp; &nbsp; 
+
+									<button type="button" class="btn btn-primary btn-noshadow mb-1">No hover shadow</button>
+
+									<br><br>
+
+									<a href="#!" class="btn btn-primary transition-hover-zoom mb-1">Zoom</a> &nbsp;
+									<a href="#!" class="btn btn-primary btn-pill transition-hover-zoom mb-1">Zoom</a> &nbsp;
+									<a href="#!" class="btn btn-primary rounded-circle transition-hover-zoom">
+										<i class="fi fi-social-facebook"></i>
+									</a> &nbsp;
+
+								</div>
+
+
+								<div class="mt--50">
+
+									<a href="#code_hover" class="scroll-to btn btn-sm btn-light" data-toggle="collapse">
+										<i class="fi fi-code"></i> 
+										view code
+									</a>
+
+								</div>
+
+								<div id="code_hover" class="collapse">
+								<pre class="mt-5"><code class="language-html">
+&lt;!-- 
+	Add to any button:
+		.btn-primary
+		.btn-secondary
+		.btn-danger
+		.btn-warning
+		.btn-info
+		.btn-dark
+		.btn-light
+ -->
+
+
+&lt;!-- hover transition -->
+&lt;button type="button" class="btn btn-primary transition-hover-top mb-1">Top&lt;/button>
+
+&lt;button type="button" class="btn btn-primary transition-hover-right mb-1">Right&lt;/button>
+
+&lt;button type="button" class="btn btn-primary transition-hover-bottom mb-1">Bottom&lt;/button>
+
+&lt;button type="button" class="btn btn-primary transition-hover-left mb-1">Left&lt;/button>
+
+
+&lt;!-- no shadow -->
+&lt;button type="button" class="btn btn-primary btn-noshadow mb-1">No hover shadow&lt;/button>
+
+
+&lt;!-- hover zoom -->
+&lt;button type="button" class="btn btn-primary transition-hover-zoom mb-1">Zoom&lt;/button>
+
+
+
+
+
+
+&lt;!-- link : hover transition -->
+&lt;a href="#" class="btn btn-primary transition-hover-top mb-1">Top&lt;/a>
+
+&lt;a href="#" class="btn btn-primary transition-hover-right mb-1">Right&lt;/a>
+
+&lt;a href="#" class="btn btn-primary transition-hover-bottom mb-1">Bottom&lt;/a>
+
+&lt;a href="#" class="btn btn-primary transition-hover-left mb-1">Left&lt;/a>
+
+
+&lt;!-- link : no shadow -->
+&lt;a href="#" class="btn btn-primary btn-noshadow mb-1">No hover shadow&lt;/a>
+
+
+&lt;!-- link : hover zoom -->
+&lt;a href="#" class="btn btn-primary transition-hover-zoom mb-1">Zoom&lt;/a>
+
+
+								</code></pre>
+								</div>
+
+
+							</section>
+
+
+
+
+
+
+
+
+
+							<section id="section_7">
+
+								<header class="d-flex b-0">
+
+									<h2 class="h5 text-truncate w-100">
+										Social Buttons
+									</h2>
+
+									<div class="ui-options d-flex">
+
+										<!-- fullscreen -->
+										<a href="#" class="btn-toggle" data-toggle-container-class="fullscreen" data-toggle-body-class="overflow-hidden" data-target="#section_7">
+											<span class="group-icon">
+												<i class="fi fi-expand"></i>
+												<i class="fi fi-shrink"></i>
+											</span>
+										</a>
+
+									</div>
+
+								</header>
+
+
+								<div class="container mt--50">
+
+									<a href="#" class="btn btn-facebook transition-hover-top mb-2" rel="noopener" target="_blank">facebook</a>
+									<a href="#" class="btn btn-twitter transition-hover-top mb-2" rel="noopener" target="_blank">twitter</a>
+									<a href="#" class="btn btn-instagram transition-hover-top mb-2" rel="noopener" target="_blank">instagram</a>
+									<a href="#" class="btn btn-linkedin transition-hover-top mb-2" rel="noopener" target="_blank">linkedin</a>
+									<a href="#" class="btn btn-vimeo transition-hover-top mb-2" rel="noopener" target="_blank">vimeo</a>
+									<a href="#" class="btn btn-youtube transition-hover-top mb-2" rel="noopener" target="_blank">youtube</a>
+									<a href="#" class="btn btn-github transition-hover-top mb-2" rel="noopener" target="_blank">github</a>
+									<a href="#" class="btn btn-email transition-hover-top mb-2" rel="noopener" target="_blank">email</a>
+
+									<br>
+
+									<a href="#" class="btn btn-facebook transition-hover-top mb-2" rel="noopener" target="_blank">
+										<i class="fi fi-social-facebook m-0"></i>
+									</a>
+									<a href="#" class="btn btn-twitter transition-hover-top mb-2" rel="noopener" target="_blank">
+										<i class="fi fi-social-twitter m-0"></i>
+									</a>
+									<a href="#" class="btn btn-linkedin transition-hover-top mb-2" rel="noopener" target="_blank">
+										<i class="fi fi-social-linkedin m-0"></i>
+									</a>
+									<a href="#" class="btn btn-vimeo transition-hover-top mb-2" rel="noopener" target="_blank">
+										<i class="fi fi-social-vimeo m-0"></i>
+									</a>
+									<a href="#" class="btn btn-youtube transition-hover-top mb-2" rel="noopener" target="_blank">
+										<i class="fi fi-social-youtube m-0"></i>
+									</a>
+
+									<br>
+
+									<a href="#" class="btn btn-facebook rounded-circle transition-hover-top mb-2" rel="noopener" target="_blank">
+										<i class="fi fi-social-facebook m-0"></i>
+									</a>
+									<a href="#" class="btn btn-twitter rounded-circle transition-hover-top mb-2" rel="noopener" target="_blank">
+										<i class="fi fi-social-twitter m-0"></i>
+									</a>
+									<a href="#" class="btn btn-linkedin rounded-circle transition-hover-top mb-2" rel="noopener" target="_blank">
+										<i class="fi fi-social-linkedin m-0"></i>
+									</a>
+									<a href="#" class="btn btn-vimeo rounded-circle transition-hover-top mb-2" rel="noopener" target="_blank">
+										<i class="fi fi-social-vimeo m-0"></i>
+									</a>
+									<a href="#" class="btn btn-youtube rounded-circle transition-hover-top mb-2" rel="noopener" target="_blank">
+										<i class="fi fi-social-youtube m-0"></i>
+									</a>
+
+									<br>
+
+									<a href="#" class="btn btn-sm btn-facebook rounded-circle transition-hover-top mb-2" rel="noopener" target="_blank">
+										<i class="fi fi-social-facebook m-0"></i>
+									</a>
+									<a href="#" class="btn btn-sm btn-twitter rounded-circle transition-hover-top mb-2" rel="noopener" target="_blank">
+										<i class="fi fi-social-twitter m-0"></i>
+									</a>
+									<a href="#" class="btn btn-sm btn-linkedin rounded-circle transition-hover-top mb-2" rel="noopener" target="_blank">
+										<i class="fi fi-social-linkedin m-0"></i>
+									</a>
+									<a href="#" class="btn btn-sm btn-vimeo rounded-circle transition-hover-top mb-2" rel="noopener" target="_blank">
+										<i class="fi fi-social-vimeo m-0"></i>
+									</a>
+									<a href="#" class="btn btn-sm btn-youtube rounded-circle transition-hover-top mb-2" rel="noopener" target="_blank">
+										<i class="fi fi-social-youtube m-0"></i>
+									</a>
+
+								</div>
+
+
+								<div class="mt--50">
+
+									<a href="#code_social" class="scroll-to btn btn-sm btn-light" data-toggle="collapse">
+										<i class="fi fi-code"></i> 
+										view code
+									</a>
+
+								</div>
+
+
+								<div id="code_social" class="collapse">
+								<pre class="mt-5"><code class="language-html">
+&lt;a href="#" class="btn btn-facebook transition-hover-top" rel="noopener" target="_blank">facebook&lt;/a>
+&lt;a href="#" class="btn btn-twitter transition-hover-top" rel="noopener" target="_blank">twitter&lt;/a>
+&lt;a href="#" class="btn btn-linkedin transition-hover-top" rel="noopener" target="_blank">linkedin&lt;/a>
+&lt;a href="#" class="btn btn-vimeo transition-hover-top" rel="noopener" target="_blank">vimeo&lt;/a>
+&lt;a href="#" class="btn btn-youtube transition-hover-top" rel="noopener" target="_blank">youtube&lt;/a>
+
+
+&lt;!-- 
+
+	Note:
+		Because of icon spacing inside squared buttons, .m-0 class is required to icons.
+		Not required if .rounded-circle is used. By default is added to avoid confusion.
+-->
+
+&lt;!-- remove .rounded-circle for squared -->
+&lt;a href="#" class="btn btn-facebook rounded-circle transition-hover-top mb-2" rel="noopener" target="_blank">
+	&lt;i class="fi fi-social-facebook m-0">&lt;/i>
+&lt;/a>
+&lt;a href="#" class="btn btn-twitter rounded-circle transition-hover-top mb-2" rel="noopener" target="_blank">
+	&lt;i class="fi fi-social-twitter m-0">&lt;/i>
+&lt;/a>
+&lt;a href="#" class="btn btn-linkedin rounded-circle transition-hover-top mb-2" rel="noopener" target="_blank">
+	&lt;i class="fi fi-social-linkedin m-0">&lt;/i>
+&lt;/a>
+&lt;a href="#" class="btn btn-vimeo rounded-circle transition-hover-top mb-2" rel="noopener" target="_blank">
+	&lt;i class="fi fi-social-vimeo m-0">&lt;/i>
+&lt;/a>
+&lt;a href="#" class="btn btn-youtube rounded-circle transition-hover-top mb-2" rel="noopener" target="_blank">
+	&lt;i class="fi fi-social-youtube m-0">&lt;/i>
+&lt;/a>
+
+
+&lt;!-- small : remove .rounded-circle for squared -->
+&lt;a href="#" class="btn btn-sm btn-facebook rounded-circle transition-hover-top mb-2" rel="noopener" target="_blank">
+	&lt;i class="fi fi-social-facebook m-0">&lt;/i>
+&lt;/a>
+&lt;a href="#" class="btn btn-sm btn-twitter rounded-circle transition-hover-top mb-2" rel="noopener" target="_blank">
+	&lt;i class="fi fi-social-twitter m-0">&lt;/i>
+&lt;/a>
+&lt;a href="#" class="btn btn-sm btn-linkedin rounded-circle transition-hover-top mb-2" rel="noopener" target="_blank">
+	&lt;i class="fi fi-social-linkedin m-0">&lt;/i>
+&lt;/a>
+&lt;a href="#" class="btn btn-sm btn-vimeo rounded-circle transition-hover-top mb-2" rel="noopener" target="_blank">
+	&lt;i class="fi fi-social-vimeo m-0">&lt;/i>
+&lt;/a>
+&lt;a href="#" class="btn btn-sm btn-youtube rounded-circle transition-hover-top mb-2" rel="noopener" target="_blank">
+	&lt;i class="fi fi-social-youtube m-0">&lt;/i>
+&lt;/a>
+
+								</code></pre>
+								</div>
+
+
+							</section>
+
+
+
+
+
+
+
+
+
+							<section id="section_8">
+
+								<header class="d-flex b-0">
+
+									<h2 class="h5 text-truncate w-100">
+										Mobile : Icon Only
+									</h2>
+
+									<div class="ui-options d-flex">
+
+										<!-- fullscreen -->
+										<a href="#" class="btn-toggle" data-toggle-container-class="fullscreen" data-toggle-body-class="overflow-hidden" data-target="#section_8">
+											<span class="group-icon">
+												<i class="fi fi-expand"></i>
+												<i class="fi fi-shrink"></i>
+											</span>
+										</a>
+
+									</div>
+
+								</header>
+
+
+
+								<div class="container mt--50">
+
+									<p>
+										Text is hidden on mobile devices, only the icon visible<br>
+										Using <code>.rounded-circle-xs</code> and text wrapped inside <code>&lt;span></code>, text is hidden on mobile devices, remaining the icon only.
+									</p>
+									<a href="#!" id="ddPrj_demo" class="btn btn-sm rounded-circle-xs btn-primary btn-pill" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+										<span class="group-icon">
+											<i class="fi fi-menu-dots"></i>
+											<i class="fi fi-arrow-down"></i>
+										</span>
+										<span>With Dropdown</span>
+									</a>
+
+									<div aria-labelledby="ddPrj_demo" class="prefix-link-icon prefix-icon-dot dropdown-menu dropdown-menu-clean dropdown-click-ignore shadow-none p-0 mt-0 bg-transparent fs--15 w--200">
+										<div class="list-unstyled shadow-lg mt--20 bg-white rounded">
+											<div class="dropdown-header">
+												My Account
+											</div>
+
+											<div class="dropdown-divider"></div>
+
+											<div class="scrollable-vertical max-h-50vh">
+
+												<a href="#!" class="dropdown-item text-truncate font-weight-light active">
+													Orders <small>(2 pages)</small>
+												</a>
+												<a href="#!" class="dropdown-item text-truncate font-weight-light">
+													My Favourites <small>(3)</small>
+												</a>
+												<a href="#!" class="dropdown-item text-truncate font-weight-light">
+													Account Settings
+												</a>
+
+											</div>
+
+										</div>
+									</div>
+
+
+									<a href="#!" class="btn btn-sm rounded-circle-xs btn-danger btn-pill">
+										<i class="fi fi-print"></i>
+										<span>Simple</span>
+									</a>
+
+
+									<a href="#!" class="btn btn-sm btn-secondary">
+										<i class="fi fi-arrow-download m-0-xs m-0-md"></i>
+										<span class="d-none d-lg-inline-block">Squared</span>
+									</a>
+
+								</div>
+
+
+								<div class="mt--50">
+
+									<a href="#code_special" class="scroll-to btn btn-sm btn-light" data-toggle="collapse">
+										<i class="fi fi-code"></i> 
+										view code
+									</a>
+
+								</div>
+
+
+								<div id="code_special" class="collapse">
+								<pre class="mt-5"><code class="language-html">
+&lt;!--
+
+	1. Using .rounded-circle-xs and a combination of .group-icon,
+	the text will be hidden on mobile deivce, only the icon visible.
+
+-->
+&lt;a href="#" id="ddPrj_demo" class="btn btn-sm rounded-circle-xs btn-primary btn-pill" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+	&lt;span class="group-icon">
+		&lt;i class="fi fi-menu-dots">&lt;/i>
+		&lt;i class="fi fi-arrow-down">&lt;/i>
+	&lt;/span>
+	&lt;span>Projects&lt;/span>
+&lt;/a>
+
+&lt;div aria-labelledby="ddPrj_demo" class="prefix-link-icon prefix-icon-dot dropdown-menu dropdown-menu-clean dropdown-click-ignore shadow-none p-0 mt-0 bg-transparent fs--15 w--200">
+	&lt;div class="list-unstyled shadow-lg mt--20 bg-white rounded">
+		&lt;div class="dropdown-header">
+			My Account
+		&lt;/div>
+
+		&lt;div class="dropdown-divider">&lt;/div>
+
+		&lt;div class="scrollable-vertical max-h-50vh">
+
+			&lt;a href="#!" class="dropdown-item text-truncate font-weight-light active">
+				Orders &lt;small>(2 pages)&lt;/small>
+			&lt;/a>
+			&lt;a href="#!" class="dropdown-item text-truncate font-weight-light">
+				My Favourites &lt;small>(3)&lt;/small>
+			&lt;/a>
+			&lt;a href="#!" class="dropdown-item text-truncate font-weight-light">
+				Account Settings
+			&lt;/a>
+
+		&lt;/div>
+
+	&lt;/div>
+&lt;/div>
+
+
+
+
+&lt;!--
+
+	2. Simple, without dropdown
+
+-->
+&lt;a href="#!" class="btn btn-sm rounded-circle-xs btn-danger btn-pill">
+	&lt;i class="fi fi-print">&lt;/i>
+	&lt;span>Simple&lt;/span>
+&lt;/a>
+
+
+
+&lt;!--
+
+	3. Squared
+
+-->
+&lt;a href="#!" class="btn btn-sm btn-secondary">
+	&lt;i class="fi fi-arrow-download m-0-md">&lt;/i>
+	&lt;span class="d-none d-lg-inline-block">Squared&lt;/span>
+&lt;/a>
+								</code></pre>
+								</div>
+
+							</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+							<section id="section_vars">
+
+								<header class="d-flex b-0">
+
+									<h2 class="h5 text-truncate w-100">
+										Various
+									</h2>
+
+									<div class="ui-options d-flex">
+
+										<!-- fullscreen -->
+										<a href="#" class="btn-toggle" data-toggle-container-class="fullscreen" data-toggle-body-class="overflow-hidden" data-target="#section_vars">
+											<span class="group-icon">
+												<i class="fi fi-expand"></i>
+												<i class="fi fi-shrink"></i>
+											</span>
+										</a>
+
+									</div>
+
+								</header>
+
+
+
+								<div class="container mt--50">
+
+									<!-- App Store -->
+									<a href="#!" class="btn btn-dark rounded-xl transition-hover-top">
+										<i class="float-start">
+											<svg height="32" viewBox="0 0 90 90">
+												<path fill="#ffffff" d="M49.645 6.817c3.232-3.8 8.695-6.627 13.203-6.817.575 5.279-1.541 10.565-4.669 14.374-3.133 3.802-8.261 6.764-13.294 6.369-.684-5.165 1.851-10.551 4.76-13.926zm25.646 72.01c-3.741 5.485-7.61 10.938-13.718 11.053-6.012.114-7.938-3.571-14.799-3.571-6.866 0-9.016 3.457-14.69 3.686-5.897.222-10.382-5.926-14.152-11.387-7.703-11.168-13.585-31.576-5.677-45.35 3.916-6.84 10.934-11.167 18.537-11.282 5.792-.107 11.263 3.917 14.799 3.917 3.544 0 10.185-4.831 17.165-4.122 2.922.121 11.123 1.181 16.391 8.912-.417.274-9.789 5.745-9.676 17.141.114 13.614 11.891 18.137 12.029 18.199-.108.32-1.884 6.459-6.209 12.804z"></path>
+											</svg>
+										</i>
+
+										<span class="float-start text-align-start px-2">
+											<span class="d-block line-height-1 fs--13">Download on the</span>
+											<span class="d-block line-height-1 fs--20 pt-1">App Store</span>
+										</span>
+									</a>
+
+									<!-- Play Store -->
+									<a href="#!" class="btn btn-dark rounded-xl transition-hover-top">
+										<i class="float-start">
+											<svg height="32" viewBox="0 0 512 512">
+												<path fill="#ffffff" d="M99.617 8.057c-11.664-7.537-25.674-9.815-38.815-6.713l230.932 230.933 74.846-74.846-266.963-149.374zM32.139 20.116c-6.441 8.563-10.148 19.077-10.148 30.199v411.358c0 11.123 3.708 21.636 10.148 30.199l235.877-235.877-235.877-235.879zM464.261 212.087l-67.266-37.637-81.544 81.544 81.548 81.548 67.273-37.64c16.117-9.03 25.738-25.442 25.738-43.908s-9.621-34.877-25.749-43.907zM291.733 279.711l-230.918 230.918c3.786.891 7.639 1.371 11.492 1.371 9.522 0 19.011-2.708 27.31-8.07l266.965-149.372-74.849-74.847z"></path>
+											</svg>
+										</i>
+
+										<span class="float-start text-align-start px-2">
+											<span class="d-block line-height-1 fs--13">Download on the</span>
+											<span class="d-block line-height-1 fs--20 pt-1">Play Store</span>
+										</span>
+									</a>
+
+
+								</div>
+
+
+								<div class="mt--50">
+
+									<a href="#code_vars" class="scroll-to btn btn-sm btn-light" data-toggle="collapse">
+										<i class="fi fi-code"></i> 
+										view code
+									</a>
+
+								</div>
+
+
+								<div id="code_vars" class="collapse">
+									<pre class="mt-5"><code class="language-html">
+&lt;!-- App Store -->
+&lt;a href="#!" class="btn btn-dark rounded-xl transition-hover-top">
+	&lt;i class="float-start">
+		&lt;svg height="32" viewBox="0 0 90 90">
+			&lt;path fill="#ffffff" d="M49.645 6.817c3.232-3.8 8.695-6.627 13.203-6.817.575 5.279-1.541 10.565-4.669 14.374-3.133 3.802-8.261 6.764-13.294 6.369-.684-5.165 1.851-10.551 4.76-13.926zm25.646 72.01c-3.741 5.485-7.61 10.938-13.718 11.053-6.012.114-7.938-3.571-14.799-3.571-6.866 0-9.016 3.457-14.69 3.686-5.897.222-10.382-5.926-14.152-11.387-7.703-11.168-13.585-31.576-5.677-45.35 3.916-6.84 10.934-11.167 18.537-11.282 5.792-.107 11.263 3.917 14.799 3.917 3.544 0 10.185-4.831 17.165-4.122 2.922.121 11.123 1.181 16.391 8.912-.417.274-9.789 5.745-9.676 17.141.114 13.614 11.891 18.137 12.029 18.199-.108.32-1.884 6.459-6.209 12.804z">&lt;/path>
+		&lt;/svg>
+	&lt;/i>
+
+	&lt;span class="float-start text-align-start px-2">
+		&lt;span class="d-block line-height-1 fs--13">Download on the&lt;/span>
+		&lt;span class="d-block line-height-1 fs--20 pt-1">App Store&lt;/span>
+	&lt;/span>
+&lt;/a>
+
+&lt;!-- Play Store -->
+&lt;a href="#!" class="btn btn-dark rounded-xl transition-hover-top">
+	&lt;i class="float-start">
+		&lt;svg height="32" viewBox="0 0 512 512">
+			&lt;path fill="#ffffff" d="M99.617 8.057c-11.664-7.537-25.674-9.815-38.815-6.713l230.932 230.933 74.846-74.846-266.963-149.374zM32.139 20.116c-6.441 8.563-10.148 19.077-10.148 30.199v411.358c0 11.123 3.708 21.636 10.148 30.199l235.877-235.877-235.877-235.879zM464.261 212.087l-67.266-37.637-81.544 81.544 81.548 81.548 67.273-37.64c16.117-9.03 25.738-25.442 25.738-43.908s-9.621-34.877-25.749-43.907zM291.733 279.711l-230.918 230.918c3.786.891 7.639 1.371 11.492 1.371 9.522 0 19.011-2.708 27.31-8.07l266.965-149.372-74.849-74.847z">&lt;/path>
+		&lt;/svg>
+	&lt;/i>
+
+	&lt;span class="float-start text-align-start px-2">
+		&lt;span class="d-block line-height-1 fs--13">Download on the&lt;/span>
+		&lt;span class="d-block line-height-1 fs--20 pt-1">Play Store&lt;/span>
+	&lt;/span>
+&lt;/a>
+									</code></pre>
+								</div>
+
+							</section>
+
+
+
+						</div>
+
+						<div class="col w-100 max-w-300 d-none d-xl-flex align-self-md-stretch">
+
+							<div class="w-100">
+								<div class="sticky-kit">
+
+								<h6 class="text-dark">Jump To</h6>
+								<ul class="list-unstyled mb-5">
+									<li class="list-item">
+										<a href="#section_1" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to" data-offset="120">Default Buttons</a>
+									</li>
+									<li class="list-item">
+										<a href="#section_2" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to" data-offset="120">Soft Buttons</a>
+									</li>
+									<li class="list-item">
+										<a href="#section_4" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to" data-offset="120">Pill Buttons</a>
+									</li>
+									<li class="list-item">
+										<a href="#section_5" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to" data-offset="120">Icon Buttons</a>
+									</li>
+									<li class="list-item">
+										<a href="#section_6" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to" data-offset="120">Hover Animated</a>
+									</li>
+									<li class="list-item">
+										<a href="#section_7" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to" data-offset="120">Social Buttons</a>
+									</li>
+									<li class="list-item">
+										<a href="#section_8" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to" data-offset="120">Mobile : Icon Only</a>
+									</li>
+								</ul>
+
+
+
+
+								<!-- AJAX BOX INFO -->
+								<div 	id="boxinfo_v3" 
+										class="js-ajax" 
+										data-ajax-url="_ajax/boxinfo_v3.html">
+
+									<!-- ajax loading icon -->
+									<div class="text-center bg-white rounded shadow-md p--15 mb-5">
+										<i class="fi fi-circle-spin fi-spin fs--30 text-muted"></i>
+									</div><!-- /ajax loading icon -->
+
+								</div>
+								<!-- /AJAX BOX INFO -->
+
+
+								</div>
+
+
+
+							</div>
+
+						</div>
+
+					</div>
+
+
+
+				</div>
+				<!-- /MIDDLE -->
+
+			</div>
+
+
+
+		</div><!-- /#wrapper -->
+
+
+
+
+		<!--
+			
+			Toast On Load
+
+				data-type 			= '', success, danger, warning, info
+				data-title 			= toast title 	(optional)
+				data-body 			= toast body 	(required)
+				data-pos 			= top-left, top-right, bottom-left, bottom-right, top-center, bottom-center
+				data-delay 			= autoclose in ms
+				data-fill 			= background color fill [true|false]
+
+		-->
+		<div class="hide toast-on-load"
+			data-toast-type="pink" 
+			data-toast-title="" 
+			data-toast-body="<i class='fi fi-emoji-cool float-start'></i> Ajax navigation enabled! Yay!" 
+			data-toast-pos="bottom-center" 
+			data-toast-delay="4000" 
+			data-toast-fill="true" 
+		></div>
+
+
+
+
+		<script src="../assets/js/core.min.js"></script>
+		<script src="../assets/js/vendor_bundle.min.js"></script>
+
+
+
+		<!--
+
+			[SOW Ajax Navigation Plugin] [AJAX ONLY, IF USED]
+			If you have specific page js files, wrap them inside #page_js_files 
+			Ajax Navigation will use them for this page! 
+			This way you can load this page in a normal way and/or via ajax.
+			(you can change/add more containers in sow.config.js)
+
+		-->
+		<div id="page_js_files">
+
+
+
+			<!-- 
+
+				CONTENT CLIPBOARD COPY 
+
+					<a href="#clipboard_1" class="btn-clipboard btn btn-sm btn-light float-end">
+						<i class="fi fi-lightning"></i> 
+						copy code
+					</a>
+
+					<div id="clipboard_1">
+						.. code 
+					</div>
+
+			-->
+			<script src="assets/js/sow.clipboard.js"></script>
+			<script>
+
+				$.SOW.core.clipboard.init('#middle a.btn-clipboard');
+
+			</script>
+
+
+		</div>
+
+
+	</body>
+</html>

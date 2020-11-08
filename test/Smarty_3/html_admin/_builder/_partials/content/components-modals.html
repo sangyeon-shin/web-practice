@@ -1,0 +1,551 @@
+﻿					<!-- doc:start -->
+					<div class="page-title bg-transparent b-0">
+
+						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
+							Modals
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--13 pb-2 px-3">
+								<li class="breadcrumb-item">
+									<a href="index.html" class="js-ajax">Dashboard</a>
+								</li>
+								<li class="breadcrumb-item active">
+									Components
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Modals
+								</li>
+							</ol>
+						</nav>
+
+					</div>
+
+
+
+					<!-- ALERT : NOTE -->
+					<div class="bg-white shadow-xs p-2 mb-4 rounded">
+						<div class="clearfix bg-light p-2 rounded d-flex align-items-center">
+							<span class="btn row-pill btn-sm bg-gradient-warning b-0 py-1 mb-0 float-start">
+								<i class="fi fi-round-info-full"></i>
+								Note
+							</span>
+							<span class="d-block px-2 text-muted text-truncate">
+								This is a basic demo! Please see main <a href="../../html_frontend/documentation/" target="smarty" class="link-muted">full documentation here</a>.
+							</span>
+						</div>
+					</div>
+					<!-- /ALERT : NOTE -->
+
+
+
+					<!-- start:row -->
+					<div class="row gutters-sm">
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Ajax Modals (based on SOW Ajax Modals)</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<a 	href="#"
+											data-href="_ajax/modal_contact_md.html" 
+											data-ajax-modal-size="modal-md" 
+											data-ajax-modal-centered="true" 
+											data-ajax-modal-callback-function=""
+											class="js-ajax-modal btn btn-primary btn-soft">
+												<i class="fi fi-heart-slim"></i>
+											Ajax : Centered
+										</a>
+
+										<br>
+										<br>
+
+										<a 	href="#"
+											data-href="_ajax/modal_signin_sm.html" 
+											data-ajax-modal-size="modal-sm" 
+											data-ajax-modal-centered="false" 
+											data-ajax-modal-callback-function=""
+											data-ajax-modal-backdrop="" 
+											class="js-ajax-modal btn btn-danger btn-soft">
+												<i class="fi fi-heart-slim"></i>
+											Ajax : Small
+										</a>
+
+										<br>
+										<br>
+
+										<a 	href="#"
+											data-href="_ajax/modal_signin_md.html" 
+											data-ajax-modal-size="modal-md" 
+											data-ajax-modal-centered="false" 
+											data-ajax-modal-callback-function=""
+											data-ajax-modal-backdrop="" 
+											class="js-ajax-modal btn btn-danger btn-soft">
+												<i class="fi fi-heart-slim"></i>
+											Ajax : Medium
+										</a>
+
+										<br>
+										<br>
+
+										<a 	href="#"
+											data-href="_ajax/modal_signin_lg.html" 
+											data-ajax-modal-size="modal-lg" 
+											data-ajax-modal-centered="false" 
+											data-ajax-modal-callback-function=""
+											data-ajax-modal-backdrop="" 
+											class="js-ajax-modal btn btn-danger btn-soft">
+												<i class="fi fi-heart-slim"></i>
+											Ajax : Large
+										</a>
+
+										<br>
+										<br>
+
+										<a 	href="#"
+											data-href="_ajax/modal_signin_xl.html" 
+											data-ajax-modal-size="modal-xl" 
+											data-ajax-modal-centered="false" 
+											data-ajax-modal-callback-function=""
+											data-ajax-modal-backdrop="" 
+											class="js-ajax-modal btn btn-danger btn-soft">
+												<i class="fi fi-heart-slim"></i>
+											Ajax : Extra Large
+										</a>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Modal Confirm (based on SOW Ajax Confirm)</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<a 	href="#"
+											data-href="index.html?action=delete&amp;item_id=1&amp;confirm=true" 
+											class="js-ajax-confirm btn btn-primary btn-soft"
+
+											data-ajax-confirm-size="modal-md" 
+											data-ajax-confirm-centered="false" 
+
+											data-ajax-confirm-callback-function=""
+											data-ajax-confirm-mode="ajax" 
+											data-ajax-confirm-method="GET" 
+
+											data-ajax-confirm-title="Please Confirm" 
+											data-ajax-confirm-body="Are you sure? Delete this item?" 
+
+											data-ajax-confirm-btn-yes-text="Confirm" 
+											data-ajax-confirm-btn-yes-class="btn-sm btn-danger" 
+											data-ajax-confirm-btn-yes-icon="fi fi-check" 
+
+											data-ajax-confirm-btn-no-text="Cancel" 
+											data-ajax-confirm-btn-no-class="btn-sm btn-light" 
+											data-ajax-confirm-btn-no-icon="fi fi-close"
+
+											rel="nofollow">
+												<i class="fi fi-shield-ok"></i>
+												Ajax : Confirm
+										</a>
+
+										<br>
+										<br>
+
+										<a 	href="#"
+											data-href="THIS-IS-AN-INVALID-URL" 
+											class="js-ajax-confirm btn btn-danger btn-soft"
+
+											data-ajax-confirm-size="modal-md" 
+											data-ajax-confirm-centered="false" 
+
+											data-ajax-confirm-mode="ajax" 
+											data-ajax-confirm-method="GET" 
+
+											data-ajax-confirm-title="Please Confirm" 
+											data-ajax-confirm-body="Are you sure? Delete this item?" 
+
+											data-ajax-confirm-btn-yes-text="Confirm" 
+											data-ajax-confirm-btn-yes-class="btn-sm btn-danger" 
+											data-ajax-confirm-btn-yes-icon="fi fi-check" 
+
+											data-ajax-confirm-btn-no-text="Cancel" 
+											data-ajax-confirm-btn-no-class="btn-sm btn-light" 
+											data-ajax-confirm-btn-no-icon="fi fi-close"
+
+											rel="nofollow">
+												<i class="fi fi-shield-ok"></i>
+												Ajax : Confirm : Invalid Url
+										</a>
+
+										<br>
+										<br>
+
+										<a 	href="#"
+											data-href="components-modals.html?action=delete&amp;item_id=1&amp;confirm=true" 
+											class="js-ajax-confirm btn btn-warning"
+
+											data-ajax-confirm-size="modal-md" 
+											data-ajax-confirm-centered="false" 
+
+											data-ajax-confirm-title="Please Confirm" 
+											data-ajax-confirm-body="Are you sure? Delete this item?" 
+
+											data-ajax-confirm-btn-yes-text="Confirm" 
+											data-ajax-confirm-btn-yes-class="btn-sm btn-danger" 
+											data-ajax-confirm-btn-yes-icon="fi fi-check" 
+
+											data-ajax-confirm-btn-no-text="Cancel" 
+											data-ajax-confirm-btn-no-class="btn-sm btn-light" 
+											data-ajax-confirm-btn-no-icon="fi fi-close"
+
+											rel="nofollow">
+												<i class="fi fi-shield-ok"></i>
+												Non-Ajax : Confirm
+										</a>
+
+										<br>
+										<br>
+
+										<a 	href="#"
+											data-href="index.html?action=delete&amp;item_id=1&amp;confirm=true" 
+											class="js-ajax-confirm btn btn-warning"
+
+											data-ajax-confirm-size="modal-md" 
+											data-ajax-confirm-centered="false" 
+
+											data-ajax-confirm-mode="ajax" 
+											data-ajax-confirm-method="GET" 
+											data-ajax-confirm-callback-function="my_confirm_callback"
+
+											data-ajax-confirm-title="Please Confirm" 
+											data-ajax-confirm-body="Are you sure? Delete this item?" 
+
+											data-ajax-confirm-btn-yes-text="Confirm" 
+											data-ajax-confirm-btn-yes-class="btn-sm btn-danger" 
+											data-ajax-confirm-btn-yes-icon="fi fi-check" 
+
+											data-ajax-confirm-btn-no-text="Cancel" 
+											data-ajax-confirm-btn-no-class="btn-sm btn-light" 
+											data-ajax-confirm-btn-no-icon="fi fi-close">
+												<i class="fi fi-shield-ok"></i>
+												Ajax : Confirm + Callback
+										</a>
+
+										<script>
+
+											var my_confirm_callback = function(el, data) {
+
+												// el = button element
+												// data = ajax result from server
+
+												var _msg_ = '<div class="fs--20 text-center pt--30 pb--30"> <i class="fi fi-emoji-grin fs--30"></i><br> Like it?<br> I am a toast from callback!</div>';
+												$.SOW.core.toast.show('pink', '', _msg_, 'top-center', 4000, true);
+
+											}
+
+										</script>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Regular Modals</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<!-- Button trigger modal -->
+										<button type="button" class="btn btn-primary btn-soft mb-3" data-toggle="modal" data-target="#exampleModalSm">
+											<i class="fi fi-mollecules"></i>
+											Small
+										</button>
+
+										<!-- Modal -->
+										<div class="modal fade" id="exampleModalSm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelSm" aria-hidden="true">
+											<div class="modal-dialog modal-sm" role="document">
+												<div class="modal-content">
+													
+													<div class="modal-header">
+														<h5 class="modal-title" id="exampleModalLabelSm">Modal title</h5>
+														<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+															<span class="fi fi-close fs--18" aria-hidden="true"></span>
+														</button>
+													</div>
+
+													<div class="modal-body">
+														...
+													</div>
+
+													<div class="modal-footer">
+														<button type="button" class="btn btn-primary">
+															<i class="fi fi-check"></i> 
+															Save
+														</button>
+														<button type="button" class="btn btn-secondary" data-dismiss="modal">
+															<i class="fi fi-close"></i> 
+															Close
+														</button>
+													</div>
+
+												</div>
+											</div>
+										</div>
+
+										<br>
+
+										<!-- Button trigger modal -->
+										<button type="button" class="btn btn-primary btn-soft mb-3" data-toggle="modal" data-target="#exampleModalMd">
+											<i class="fi fi-mollecules"></i> 
+											Medium
+										</button>
+
+										<!-- Modal -->
+										<div class="modal fade" id="exampleModalMd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelMd" aria-hidden="true">
+											<div class="modal-dialog" role="document">
+												<div class="modal-content">
+													
+													<div class="modal-header">
+														<h5 class="modal-title" id="exampleModalLabelMd">Modal title</h5>
+														<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+															<span class="fi fi-close fs--18" aria-hidden="true"></span>
+														</button>
+													</div>
+
+													<div class="modal-body">
+														...
+													</div>
+
+													<div class="modal-footer">
+														<button type="button" class="btn btn-primary">
+															<i class="fi fi-check"></i> 
+															Save changes
+														</button>
+														<button type="button" class="btn btn-secondary" data-dismiss="modal">
+															<i class="fi fi-close"></i> 
+															Close
+														</button>
+													</div>
+
+												</div>
+											</div>
+										</div>
+
+										<br>
+
+										<!-- Button trigger modal -->
+										<button type="button" class="btn btn-primary btn-soft mb-3" data-toggle="modal" data-target="#exampleModalLg">
+											<i class="fi fi-mollecules"></i> 
+											Large
+										</button>
+
+										<!-- Modal -->
+										<div class="modal fade" id="exampleModalLg" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLg" aria-hidden="true">
+											<div class="modal-dialog modal-lg" role="document">
+												<div class="modal-content">
+													
+													<div class="modal-header">
+														<h5 class="modal-title" id="exampleModalLabelLg">Modal title</h5>
+														<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+															<span class="fi fi-close fs--18" aria-hidden="true"></span>
+														</button>
+													</div>
+
+													<div class="modal-body">
+														...
+													</div>
+
+													<div class="modal-footer">
+														<button type="button" class="btn btn-primary">
+															<i class="fi fi-check"></i> 
+															Save changes
+														</button>
+														<button type="button" class="btn btn-secondary" data-dismiss="modal">
+															<i class="fi fi-close"></i> 
+															Close
+														</button>
+													</div>
+
+												</div>
+											</div>
+										</div>
+
+										<br>
+
+										<!-- Button trigger modal -->
+										<button type="button" class="btn btn-primary btn-soft mb-3" data-toggle="modal" data-target="#exampleModalXl">
+											<i class="fi fi-mollecules"></i> 
+											Extra Large
+										</button>
+
+										<!-- Modal -->
+										<div class="modal fade" id="exampleModalXl" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelXl" aria-hidden="true">
+											<div class="modal-dialog modal-xl" role="document">
+												<div class="modal-content">
+													
+													<div class="modal-header">
+														<h5 class="modal-title" id="exampleModalLabelXl">Modal title</h5>
+														<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+															<span class="fi fi-close fs--18" aria-hidden="true"></span>
+														</button>
+													</div>
+
+													<div class="modal-body">
+														...
+													</div>
+
+													<div class="modal-footer">
+														<button type="button" class="btn btn-primary">
+															<i class="fi fi-check"></i> 
+															Save changes
+														</button>
+														<button type="button" class="btn btn-secondary" data-dismiss="modal">
+															<i class="fi fi-close"></i> 
+															Close
+														</button>
+													</div>
+
+												</div>
+											</div>
+										</div>
+
+										<br>
+
+										<!-- Button trigger modal -->
+										<button type="button" class="btn btn-primary btn-soft mb-3" data-toggle="modal" data-target="#exampleModalFull">
+											<i class="fi fi-mollecules"></i> 
+											Modal Full
+										</button>
+
+										<!-- Modal -->
+										<div class="modal fade" id="exampleModalFull" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelFull" aria-hidden="true">
+											<div class="modal-dialog modal-full" role="document">
+												<div class="modal-content">
+													
+													<div class="modal-header">
+														<h5 class="modal-title" id="exampleModalLabelFull">Modal title</h5>
+														<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+															<span class="fi fi-close fs--18" aria-hidden="true"></span>
+														</button>
+													</div>
+
+													<div class="modal-body">
+														...
+													</div>
+
+													<div class="modal-footer">
+														<button type="button" class="btn btn-primary">
+															<i class="fi fi-check"></i> 
+															Save changes
+														</button>
+														<button type="button" class="btn btn-secondary" data-dismiss="modal">
+															<i class="fi fi-close"></i> 
+															Close
+														</button>
+													</div>
+
+												</div>
+											</div>
+										</div>
+
+										<br>
+
+										<!-- Button trigger modal -->
+										<button type="button" class="btn btn-warning mb-3" data-toggle="modal" data-target="#exampleModalScrollable">
+											<i class="fi fi-mollecules"></i> 
+											Scrolling Content
+										</button>
+
+										<!-- Modal -->
+										<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+											<div class="modal-dialog modal-dialog-scrollable" role="document">
+												<div class="modal-content">
+
+													<div class="modal-header">
+														<h5 class="modal-title" id="exampleModalScrollableTitle">Modal title</h5>
+														<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+															<span class="fi fi-close fs--18" aria-hidden="true"></span>
+														</button>
+													</div>
+
+													<div class="modal-body">
+
+														<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+														<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+														<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+														<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+														<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+														<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+														<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+														<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+														<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+														<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+														<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+														<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+														<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+														<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+														<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+														<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+														<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+														<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+
+													</div>
+
+													<div class="modal-footer">
+														<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+														<button type="button" class="btn btn-primary">Save changes</button>
+													</div>
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+					</div>
+					<!-- end:row: -->
+					<!-- doc:end -->

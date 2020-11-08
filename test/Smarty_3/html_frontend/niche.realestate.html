@@ -1,0 +1,1566 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Smarty V3</title>
+		<meta name="description" content="...">
+
+        <meta name="viewport" content="width=device-width, maximum-scale=5, initial-scale=1, user-scalable=0">
+        <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+        <!-- up to 10% speed up for external res -->
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+        <link rel="preconnect" href="https://fonts.googleapis.com/">
+        <link rel="preconnect" href="https://fonts.gstatic.com/">
+        <!-- preloading icon font is helping to speed up a little bit -->
+        <link rel="preload" href="assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
+
+        <link rel="stylesheet" href="assets/css/core.min.css">
+        <link rel="stylesheet" href="assets/css/vendor_bundle.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap">
+
+		<!-- favicon -->
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="apple-touch-icon" href="demo.files/logo/icon_512x512.png">
+
+		<link rel="manifest" href="assets/images/manifest/manifest.json">
+		<meta name="theme-color" content="#377dff">
+
+	</head>
+
+	<!--
+
+		Available Body Classes
+			.layout-boxed 					- boxed layout (ignored if any .header-* class is present)
+
+			.header-scroll-reveal  			- header : hide on scroll down and reveal on scroll up
+			.header-sticky  				- header : always visible on top
+			.header-over  					- header : over slider|parallax|image (next section must contain a large image, else will be indistinguishable)
+
+				Possible header combinations:
+					.header-over + .header-scroll-reveal
+					.header-over + .header-sticky
+						* NOTE: if .header-sticky + .header-scroll-reveal are both used, .header-scroll-reveal is ignored
+
+
+			.bg-cover .bg-fixed 			- both classes used with .layout-boxed to set a background image via style="background-image:url(...)"
+	-->
+	<body>
+
+		<div id="wrapper">
+
+
+			<!-- HEADER -->
+			<header id="header" class="shadow-xs">
+
+
+				<!-- NAVBAR -->
+				<div class="container position-relative">
+
+					<nav class="navbar navbar-expand-lg navbar-light justify-content-lg-between justify-content-md-inherit">
+
+						<div class="align-items-start">
+
+							<!-- mobile menu button : show -->
+							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMainNav" aria-controls="navbarMainNav" aria-expanded="false" aria-label="Toggle navigation">
+								<svg width="25" viewBox="0 0 20 20">
+									<path d="M 19.9876 1.998 L -0.0108 1.998 L -0.0108 -0.0019 L 19.9876 -0.0019 L 19.9876 1.998 Z"></path>
+									<path d="M 19.9876 7.9979 L -0.0108 7.9979 L -0.0108 5.9979 L 19.9876 5.9979 L 19.9876 7.9979 Z"></path>
+									<path d="M 19.9876 13.9977 L -0.0108 13.9977 L -0.0108 11.9978 L 19.9876 11.9978 L 19.9876 13.9977 Z"></path>
+									<path d="M 19.9876 19.9976 L -0.0108 19.9976 L -0.0108 17.9976 L 19.9876 17.9976 L 19.9876 19.9976 Z"></path>
+								</svg>
+							</button>
+
+							<!-- 
+								Logo : height: 70px max
+							-->
+							<a class="navbar-brand" href="index.html">
+								<img src="assets/images/logo/logo_dark.svg" width="110" height="70" alt="...">
+							</a>
+
+						</div>
+
+
+
+
+						<!-- Menu -->
+						<div class="collapse navbar-collapse navbar-animate-fadein" id="navbarMainNav">
+
+
+							<!-- MOBILE MENU NAVBAR -->
+							<div class="navbar-xs d-none"><!-- .sticky-top -->
+
+								<!-- mobile menu button : close -->
+								<button class="navbar-toggler pt-0" type="button" data-toggle="collapse" data-target="#navbarMainNav" aria-controls="navbarMainNav" aria-expanded="false" aria-label="Toggle navigation">
+									<svg width="20" viewBox="0 0 20 20">
+										<path d="M 20.7895 0.977 L 19.3752 -0.4364 L 10.081 8.8522 L 0.7869 -0.4364 L -0.6274 0.977 L 8.6668 10.2656 L -0.6274 19.5542 L 0.7869 20.9676 L 10.081 11.679 L 19.3752 20.9676 L 20.7895 19.5542 L 11.4953 10.2656 L 20.7895 0.977 Z"></path>
+									</svg>
+								</button>
+
+								<!-- 
+									Mobile Menu Logo 
+									Logo : height: 70px max
+								-->
+								<a class="navbar-brand" href="index.html">
+									<img src="assets/images/logo/logo_dark.svg" width="110" height="70" alt="...">
+								</a>
+
+							</div>
+							<!-- /MOBILE MENU NAVBAR -->
+
+
+
+							<!-- NAVIGATION -->
+							<ul class="navbar-nav">
+
+								<!-- home -->
+								<li class="nav-item">
+
+									<a class="nav-link" href="niche.realestate.html">
+										Home
+									</a>
+
+								</li>
+
+								<!-- about -->
+								<li class="nav-item">
+
+									<a class="nav-link" href="niche.realestate-about.html">
+										About Us
+									</a>
+
+								</li>
+
+								<!-- pages -->
+								<li class="nav-item dropdown">
+
+									<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="mainNavFeatures">
+										Pages
+									</a>
+
+									<ul class="dropdown-menu dropdown-menu-clean dropdown-menu-hover" aria-labelledby="mainNavFeatures">
+
+										<li class="dropdown-item">
+											<a class="dropdown-link" href="niche.realestate-category.html">Category</a>
+										</li>
+
+										<li class="dropdown-item">
+											<a class="dropdown-link" href="niche.realestate-item.html">Property View</a>
+										</li>
+
+									</ul>
+
+								</li>
+
+
+								<!-- about -->
+								<li class="nav-item">
+
+									<a class="nav-link" href="niche.realestate-contact.html">
+										Contact Us
+									</a>
+
+								</li>
+
+
+								<!-- social : mobile only (d-block d-sm-none)-->
+								<li class="nav-item d-block d-sm-none text-center mb-4">
+
+									<h3 class="h6 text-muted">Follow Us</h3>
+
+									<a href="#!" class="btn btn-sm btn-facebook transition-hover-top mb-2 rounded-circle text-white" rel="noopener">
+										<i class="fi fi-social-facebook"></i> 
+									</a>
+
+									<a href="#!" class="btn btn-sm btn-twitter transition-hover-top mb-2 rounded-circle text-white" rel="noopener">
+										<i class="fi fi-social-twitter"></i> 
+									</a>
+
+									<a href="#!" class="btn btn-sm btn-linkedin transition-hover-top mb-2 rounded-circle text-white" rel="noopener">
+										<i class="fi fi-social-linkedin"></i> 
+									</a>
+
+									<a href="#!" class="btn btn-sm btn-youtube transition-hover-top mb-2 rounded-circle text-white" rel="noopener">
+										<i class="fi fi-social-youtube"></i> 
+									</a>
+
+								</li>
+
+
+							</ul>
+							<!-- /NAVIGATION -->
+
+
+						</div>
+
+
+
+
+
+						<!-- OPTIONS -->
+						<ul class="list-inline list-unstyled mb-0 d-flex align-items-end">
+	
+							<li class="list-inline-item mx-1 dropdown">
+
+
+
+
+								<a href="#" aria-label="Account Sign In" class="js-ajax-modal btn btn-sm btn-primary btn-pill"
+									data-href="_ajax/modal_signin_md.html"
+									    data-ajax-modal-size="modal-md"
+									    data-ajax-modal-centered="true"
+									    data-ajax-modal-backdrop="static">
+									<span class="group-icon">
+										<i class="fi fi-user-male"></i>
+										<i class="fi fi-close"></i>
+									</span> 
+									<span>Account</span>
+								</a>
+
+								<!-- ALREADY SIGNED IN -->
+								<!--
+								<a href="#" aria-label="Account Options" id="dropdownAccountOptions" class="btn btn-sm btn-primary btn-pill" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+									<span class="group-icon">
+										<i class="fi fi-user-male"></i>
+										<i class="fi fi-close"></i>
+									</span> 
+									<span>Account</span>
+								</a>
+
+								<div aria-labelledby="dropdownAccountOptions" class="prefix-link-icon prefix-icon-dot dropdown-menu dropdown-menu-clean dropdown-menu-invert dropdown-click-ignore p-0 mt--18 fs--15">
+									<div class="dropdown-header">
+										John Doe
+									</div>
+									<div class="dropdown-divider"></div>
+									<a href="account-orders.html" title="My Orders" class="dropdown-item text-truncate font-weight-light">
+										My Orders <small>(2)</small>
+									</a>
+									<a href="account-favourites.html" title="My Favourites" class="dropdown-item text-truncate font-weight-light">
+										My Favourites <small>(3)</small>
+									</a>
+									<a href="account-settings.html" title="Account Settings" class="dropdown-item text-truncate font-weight-light">
+										Account Settings
+									</a>
+									<div class="dropdown-divider mb-0"></div>
+									<a href="#!" title="Log Out" class="prefix-icon-ignore dropdown-footer dropdown-custom-ignore">
+										<i class="fi fi-power float-start"></i>
+										Log Out
+									</a>
+								</div>
+								-->
+
+							</li>
+
+						</ul>
+						<!-- /OPTIONS -->
+
+
+
+					</nav>
+
+				</div>
+				<!-- /NAVBAR -->
+
+			</header>
+			<!-- /HEADER -->
+
+
+		
+
+
+			<!-- COVER + SEARCH -->
+			<section class="bg-theme-color-light overlay-dark overlay-opacity-8 bg-cover lazy" 
+				data-background-image="demo.files/images/unsplash/realestate/ialicante-mediterranean-homes-vbSRUrNm3Ik-unsplash.jpg">
+				
+				<div class="container"> 
+
+					<div class="row text-center-md text-center-xs d-middle justify-content-start">
+						
+						<div class="col-12 col-lg-6 mb-5 text-white" data-aos="fade-in" data-aos-delay="0" data-aos-offset="0">
+
+							<!-- main title -->
+							<h1 class="h2-xs display-4 mb-0">
+								<span class="d-inline-block">
+
+									<span class="h6 font-weight-normal d-block text-align-end text-center-xs">
+										Over 28.988 Properties
+									</span>
+
+									<span class="text-danger font-weight-medium">Smarty</span> Real Estate
+								</span>
+							</h1>
+							
+							<!-- slogan -->
+							<p class="h2 h5-xs font-weight-normal mb-0">
+								Your home, one click away
+							</p>
+
+						</div>
+
+						<div class="col-12 col-lg-6 text-align-end text-center-md text-center-xs" data-aos="fade-in" data-aos-delay="50" data-aos-offset="0">
+
+							<div class="d-inline-block bg-white shadow-primary-xs rounded p-5 p-4-xs w-100 max-w-450 text-align-start">
+								
+								<h2 class="h5 mb-5">
+									<i class="fi fi-homeadvisor"></i> 
+									<span class="d-inline-block pl-2 pr-2">Propery Search</span>
+								</h2>
+
+								<form novalidate class="bs-validate" method="get" action="#">
+
+									<div class="clearfix mb-4">
+										<label class="form-radio form-radio-secondary">
+											<input type="radio" name="s_type" value="1" checked>
+											<i></i> Buy
+										</label>
+
+										<label class="form-radio form-radio-secondary">
+											<input type="radio" name="s_type" value="2">
+											<i></i> Rent
+										</label>
+									</div>
+
+									<div class="form-label-group mb-4">
+										<select required id="s_location" class="form-control bs-select" data-live-search="true" title="No City Selected">
+											<option value="">No City Selected</option>
+											<option value="1">New York City</option>
+											<option value="2">Washington, DC Area</option>
+											<option value="3">Miami</option>
+											<option value="4">Greater Boston</option>
+											<option value="5">The Hamptons</option>
+											<option value="6">Los Angeles &amp; Orange County</option>
+											<option value="7">Santa Barbara &amp; Montecito</option>
+											<option value="8">Aspen</option>
+											<option value="9">San Francisco Bay Area</option>
+										</select>
+										<label for="s_location">Select a City</label>
+									</div>
+
+									<div class="form-label-group mb-4">
+										<select id="s_rooms" class="form-control bs-select" title="No. of Rooms">
+											<option value="1">Studio</option>
+											<option value="2">2 Rooms</option>
+											<option value="3">3 Rooms</option>
+											<option value="4">4 Rooms</option>
+											<option value="5">5+ Rooms</option>
+										</select>
+										<label for="s_rooms">No. of Rooms</label>
+									</div>
+
+									<div class="row gutters-xs">
+
+										<div class="col-12 col-lg-6">
+
+											<div class="form-label-group mb-4">
+												<select id="s_baths" class="form-control bs-select" title="Bathrooms">
+													<option value="0" selected="">Any</option>
+													<option value="2">2 Baths</option>
+													<option value="3">3 Baths</option>
+													<option value="4">4 Baths</option>
+													<option value="5">5 Baths</option>
+												</select>
+												<label for="s_baths">Bathrooms</label>
+											</div>
+
+										</div>
+
+										<div class="col-12 col-lg-6">
+
+											<div class="form-label-group mb-4">
+												<input placeholder="Max. Price" id="s_max_price" type="number" value="" class="form-control">
+												<label for="s_max_price">Max. Price</label>
+											</div>
+
+										</div>
+
+									</div>
+
+									<div class="form-label-group mb-4">
+										<input placeholder="Address or Zipcode" id="s_address" type="text" value="" class="form-control">
+										<label for="s_address">Address or Zipcode</label>
+									</div>
+
+
+									<button type="submit" class="btn btn-block btn-lg btn-danger bg-gradient-danger">
+										<i class="fi fi-search"></i>
+										Search
+									</button>
+								</form>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</section>	
+			<!-- /COVER + SEARCH -->
+
+
+
+
+			<!-- 
+
+				SUBSCRIBE
+
+				Class Utils (top/bottom borders, if needed) 
+
+					.border-top 
+					.border-bottom
+
+			-->
+			<section class="py-2 border-bottom">
+				<div class="container">
+
+					<div class="row">
+
+						<div class="col-10 mx-auto col-lg-8 py-5 pb-0-xs text-center-md text-center-xs">
+							<h3 class="m-0">Subscribe and follow the <span class="text-danger">best deals</span>!</h3>
+							<p class="m-0">Never miss a best deal, get 'em all into your own email address!</p>
+						</div>
+
+						<div class="col-10 mx-auto col-lg-4 py-4">
+
+							<form novalidate="" method="post" action="#subscribe_url" class="bs-validate py-3 mt-1 input-group-over input-group-pill"> 
+									
+								<input required="" class="form-control form-control-lg font-weight-light text-center-md text-center-xs" name="subscriber_email" type="email" value="" placeholder="email address..." aria-label="email address...">
+
+								<button aria-label="subscribe" type="submit" class="btn bg-transparent shadow-none"> 
+									<i class="fi fi-send fs--18"></i> 
+								</button>
+
+							</form>
+
+						</div>
+
+					</div>
+
+				</div>
+			</section>
+			<!-- /SUBSCRIBE -->
+							
+
+
+
+			
+
+			<!-- Exclusive -->
+			<section>
+				<div class="container">
+
+					<h1 class="font-weight-light mb-4">
+						<span class="text-danger font-weight-medium">Smarty</span> Exclusive!
+						<small class="d-block h6">Exclusive, Smarty Real Estate!</small>
+					</h1>
+
+					<div class="row">
+
+						<div class="col-12 col-lg-6 mb-5">
+
+							<div class="p-4 p-3-xs rounded shadow-md shadow-3d-hover transition-all-ease-250">
+
+								<a href="niche.realestate-item.html">
+									<figure class="mb-4 text-center overflow-hidden rounded-top bg-cover lazy" data-background-image="demo.files/images/unsplash/realestate/thumb_600/ialicante-mediterranean-homes-2d4lAQAlbDA-unsplash-min.jpg">
+										<!-- squared -->
+										<!-- <img class="w-100" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="...">  -->
+										<!-- landscape -->
+										<img class="w-100" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiA5IiAvPg==" alt="..."> 
+									</figure>
+								</a>
+
+
+								<h2 class="h5">
+									<span class="text-primary">
+										$1,595,000
+									</span>
+
+									<small class="float-end text-muted">
+										Upper West Side
+									</small>
+
+									<span class="h6 d-block text-center text-truncate py-3">
+										15 Central Park West, Unit 14d
+									</span>
+								</h2>
+
+								<ul class="list-inline text-center text-gray-500 fs--14">
+			                        <li class="list-inline-item">354 SqFt</li>
+			                        <li class="list-inline-item">/</li>
+			                        <li class="list-inline-item">4 Beds</li>
+			                        <li class="list-inline-item">/</li>
+			                        <li class="list-inline-item">5 Baths</li>
+			                    </ul>
+
+							</div>
+
+						</div>
+
+						<div class="col-12 col-lg-6 mb-5">
+
+							<div class="p-4 p-3-xs rounded shadow-md shadow-3d-hover transition-all-ease-250">
+
+								<a href="niche.realestate-item.html">
+									<figure class="mb-4 text-center overflow-hidden rounded-top bg-cover lazy" data-background-image="demo.files/images/unsplash/realestate/thumb_600/ialicante-mediterranean-homes-vbSRUrNm3Ik-unsplash.jpg">
+										<!-- squared -->
+										<!-- <img class="w-100" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="...">  -->
+										<!-- landscape -->
+										<img class="w-100" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiA5IiAvPg==" alt="..."> 
+									</figure>
+								</a>
+
+
+								<h2 class="h5">
+									<span class="text-primary">
+										$995,000
+									</span>
+
+									<small class="float-end text-muted">
+										Chelsea
+									</small>
+
+									<span class="h6 d-block text-center text-truncate py-3">
+										560 West 24th Street, Unit Ph1
+									</span>
+								</h2>
+
+								<ul class="list-inline text-center text-gray-500 fs--14">
+			                        <li class="list-inline-item">354 SqFt</li>
+			                        <li class="list-inline-item">/</li>
+			                        <li class="list-inline-item">4 Beds</li>
+			                        <li class="list-inline-item">/</li>
+			                        <li class="list-inline-item">5 Baths</li>
+			                    </ul>
+
+							</div>
+
+						</div>
+
+					</div>
+
+
+					<div class="row">
+
+						<div class="col-12 col-lg-4 mb-5">
+
+							<div class="p-3 rounded shadow-md shadow-3d-hover transition-all-ease-250">
+
+								<a href="niche.realestate-item.html">
+									<figure class="mb-4 text-center overflow-hidden rounded-top bg-cover lazy" data-background-image="demo.files/images/unsplash/realestate/thumb_600/ialicante-mediterranean-homes-8_V45fGyWz4-unsplash-min.jpg">
+										<img class="w-100" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiA5IiAvPg==" alt="..."> 
+									</figure>
+								</a>
+
+
+								<h2 class="h5">
+									<span class="text-primary">
+										$1,595,000
+									</span>
+
+									<small class="float-end text-muted">
+										Upper West Side
+									</small>
+
+									<span class="h6 d-block text-center text-truncate py-3">
+										15 Central Park West, Unit 14d
+									</span>
+								</h2>
+
+								<ul class="list-inline text-center text-gray-500 fs--14">
+			                        <li class="list-inline-item">354 SqFt</li>
+			                        <li class="list-inline-item">/</li>
+			                        <li class="list-inline-item">4 Beds</li>
+			                        <li class="list-inline-item">/</li>
+			                        <li class="list-inline-item">5 Baths</li>
+			                    </ul>
+
+							</div>
+
+						</div>
+
+
+						<div class="col-12 col-lg-4 mb-5">
+
+							<div class="p-3 rounded shadow-md shadow-3d-hover transition-all-ease-250">
+
+								<a href="niche.realestate-item.html">
+									<figure class="mb-4 text-center overflow-hidden rounded-top bg-cover lazy" data-background-image="demo.files/images/unsplash/realestate/thumb_600/ialicante-mediterranean-homes-JDBVXignFdA-unsplash-min.jpg">
+										<img class="w-100" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiA5IiAvPg==" alt="..."> 
+									</figure>
+								</a>
+
+
+								<h2 class="h5">
+									<span class="text-primary">
+										$1,595,000
+									</span>
+
+									<small class="float-end text-muted">
+										Upper West Side
+									</small>
+
+									<span class="h6 d-block text-center text-truncate py-3">
+										15 Central Park West, Unit 14d
+									</span>
+								</h2>
+
+								<ul class="list-inline text-center text-gray-500 fs--14">
+			                        <li class="list-inline-item">354 SqFt</li>
+			                        <li class="list-inline-item">/</li>
+			                        <li class="list-inline-item">4 Beds</li>
+			                        <li class="list-inline-item">/</li>
+			                        <li class="list-inline-item">5 Baths</li>
+			                    </ul>
+
+							</div>
+
+						</div>
+
+
+						<div class="col-12 col-lg-4 mb-5">
+
+							<div class="p-3 rounded shadow-md shadow-3d-hover transition-all-ease-250">
+
+								<a href="niche.realestate-item.html">
+									<figure class="mb-4 text-center overflow-hidden rounded-top bg-cover lazy" data-background-image="demo.files/images/unsplash/realestate/thumb_600/ialicante-mediterranean-homes-FqqiAvJejto-unsplash-min.jpg">
+										<img class="w-100" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiA5IiAvPg==" alt="..."> 
+									</figure>
+								</a>
+
+
+								<h2 class="h5">
+									<span class="text-primary">
+										$1,595,000
+									</span>
+
+									<small class="float-end text-muted">
+										Upper West Side
+									</small>
+
+									<span class="h6 d-block text-center text-truncate py-3">
+										15 Central Park West, Unit 14d
+									</span>
+								</h2>
+
+								<ul class="list-inline text-center text-gray-500 fs--14">
+			                        <li class="list-inline-item">354 SqFt</li>
+			                        <li class="list-inline-item">/</li>
+			                        <li class="list-inline-item">4 Beds</li>
+			                        <li class="list-inline-item">/</li>
+			                        <li class="list-inline-item">5 Baths</li>
+			                    </ul>
+
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="text-align-end">
+						<a href="#!" class="btn btn-light btn-sm">
+							<span>view all</span>
+							<i class="fi fi-arrow-end"></i>
+						</a>
+					</div>
+
+
+				</div>
+			</section>
+			<!-- /Exclusive -->
+
+
+
+
+
+			<!-- Cities -->
+			<section class="bg-light">
+				<div class="container">
+
+					<h2 class="font-weight-light mb-5">
+						<span class="font-weight-medium">Explore</span> Neighborhoods!
+						<small class="d-block h6"><b>Home</b> is not a house! Find your home!</small>
+					</h2>
+
+
+					<!--
+
+						NOTE:	IMAGES ARE SET AS BACKGROUNDS!
+						lazyload plugin used for best performance!
+
+					-->
+					<div class="row gutters-sm gutters-xs--xs">
+
+						<!-- 
+							
+							MAIN/FEATURED
+							please pay attention to how order-* is set!
+							See on mobile how looks like! Play to set as desired!
+
+							You can also insert this "featured" anywhere
+							between them as long .order-2 class is present!
+
+						-->
+						<div class="order-2 col-12 col-lg-6 mb-3 mb-2-xs">
+
+							<a href="#!" class="h-100 position-relative d-flex flex-wrap align-items-center justify-content-center text-decoration-none text-white mb-4 text-center overflow-hidden overlay-dark overlay-opacity-4 rounded shadow-primary-xs transition-hover-top transition-all-ease-150 bg-cover lazy" 
+								data-background-image="demo.files/images/unsplash/realestate/thumb_600/luca-bravo-TaCk3NspYe0-unsplash.jpg">
+
+								<!-- blank svg : autoadjust background image -->
+								<img class="w-100" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiA5IiAvPg==" alt="..."> 
+								<h3 class="position-absolute z-index-2">
+									New York
+									<small class="d-block fs--13">488 properties</small>
+								</h3>
+							</a>
+
+						</div>
+
+						<div class="order-1 col-6 col-lg-3 mb-3 mb-2-xs">
+							<a href="#!" class="h-100 position-relative d-flex flex-wrap align-items-center justify-content-center text-decoration-none text-white mb-4 text-center overflow-hidden overlay-dark overlay-opacity-4 rounded shadow-primary-xs transition-hover-top transition-all-ease-150 bg-cover lazy" 
+								data-background-image="demo.files/images/unsplash/realestate/thumb_600/meric-dagli-DtCEcY1k_qE-unsplash.jpg">
+
+								<!-- blank svg : autoadjust background image -->
+								<img class="w-100" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiA5IiAvPg==" alt="..."> 
+								<h3 class="h5-xs position-absolute z-index-2">
+									San Francisco
+									<small class="d-block fs--13">312 properties</small>
+								</h3>
+							</a>
+						</div>
+
+						<div class="order-lg-2 col-6 col-lg-3 mb-3 mb-2-xs">
+							<a href="#!" class="h-100 position-relative d-flex flex-wrap align-items-center justify-content-center text-decoration-none text-white mb-4 text-center overflow-hidden overlay-dark overlay-opacity-4 rounded shadow-primary-xs transition-hover-top transition-all-ease-150 bg-cover lazy" 
+								data-background-image="demo.files/images/unsplash/realestate/thumb_600/kayle-kaupanger-GqGgPA2swJA-unsplash.jpg">
+
+								<!-- blank svg : autoadjust background image -->
+								<img class="w-100" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiA5IiAvPg==" alt="..."> 
+								<h3 class="h5-xs position-absolute z-index-2">
+									Los Angeles
+									<small class="d-block fs--13">411 properties</small>
+								</h3>
+							</a>
+						</div>
+
+
+
+
+
+						<div class="order-2 col-6 col-lg-3 mb-3 mb-2-xs">
+							<a href="#!" class="h-100 position-relative d-flex flex-wrap align-items-center justify-content-center text-decoration-none text-white mb-4 text-center overflow-hidden overlay-dark overlay-opacity-4 rounded shadow-primary-xs transition-hover-top transition-all-ease-150 bg-cover lazy" 
+								data-background-image="demo.files/images/unsplash/realestate/thumb_600/sawyer-bengtson-tnv84LOjes4-unsplash-min.jpg">
+
+								<!-- blank svg : autoadjust background image -->
+								<img class="w-100" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiA5IiAvPg==" alt="..."> 
+								<h3 class="h5-xs position-absolute z-index-2">
+									Chicago
+									<small class="d-block fs--13">67 properties</small>
+								</h3>
+							</a>
+						</div>
+						<div class="order-2 col-6 col-lg-3 mb-3 mb-2-xs">
+							<a href="#!" class="h-100 position-relative d-flex flex-wrap align-items-center justify-content-center text-decoration-none text-white mb-4 text-center overflow-hidden overlay-dark overlay-opacity-4 rounded shadow-primary-xs transition-hover-top transition-all-ease-150 bg-cover lazy" 
+								data-background-image="demo.files/images/unsplash/realestate/thumb_600/felipe-galvan-NAXwZWYVJPQ-unsplash-min.jpg">
+
+								<!-- blank svg : autoadjust background image -->
+								<img class="w-100" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiA5IiAvPg==" alt="..."> 
+								<h3 class="h5-xs position-absolute z-index-2">
+									Seattle
+									<small class="d-block fs--13">33 properties</small>
+								</h3>
+							</a>
+						</div>
+						<div class="order-2 col-6 col-lg-3 mb-3 mb-2-xs">
+							<a href="#!" class="h-100 position-relative d-flex flex-wrap align-items-center justify-content-center text-decoration-none text-white mb-4 text-center overflow-hidden overlay-dark overlay-opacity-4 rounded shadow-primary-xs transition-hover-top transition-all-ease-150 bg-cover lazy" 
+								data-background-image="demo.files/images/unsplash/realestate/thumb_600/ryan-parker-mqpawAQXRyA-unsplash.jpg">
+
+								<!-- blank svg : autoadjust background image -->
+								<img class="w-100" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiA5IiAvPg==" alt="..."> 
+								<h3 class="h5-xs position-absolute z-index-2">
+									Miami
+									<small class="d-block fs--13">211 properties</small>
+								</h3>
+							</a>
+						</div>
+						<div class="order-2 col-6 col-lg-3 mb-3 mb-2-xs">
+							<a href="#!" class="h-100 position-relative d-flex flex-wrap align-items-center justify-content-center text-decoration-none text-white mb-4 text-center overflow-hidden overlay-dark overlay-opacity-4 rounded shadow-primary-xs transition-hover-top transition-all-ease-150 bg-cover lazy" 
+								data-background-image="demo.files/images/unsplash/realestate/thumb_600/lance-anderson-NrDYqseeAxk-unsplash.jpg">
+
+								<!-- blank svg : autoadjust background image -->
+								<img class="w-100" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiA5IiAvPg==" alt="..."> 
+								<h3 class="h5-xs position-absolute z-index-2">
+									Boston
+									<small class="d-block fs--13">69 properties</small>
+								</h3>
+							</a>
+						</div>
+					</div>
+
+				</div>
+			</section>
+			<!-- Cities -->
+
+
+
+
+
+			<!-- Best Deals + News -->
+			<section>
+				<div class="container">
+
+					<!-- 
+						Sale / Rent 
+					-->
+					<div class="row">
+
+						<div class="col-12 col-md-6 mb-5">
+
+							<h3 class="mb-4 text-secondary">
+								<span class="font-weight-light">Best Deals</span> Sale
+							</h3>
+
+							<a href="niche.realestate-item.html" class="bg-white d-flex p-2 mb-3 shadow-xs shadow-md-hover rounded text-decoration-none transition-hover-top transition-all-ease-250">
+
+								<!-- image -->
+								<div class="text-center bg-light w--100 h--100 rounded bg-cover lazy" data-background-image="demo.files/images/unsplash/realestate/thumb_600/ialicante-mediterranean-homes-2d4lAQAlbDA-unsplash-min.jpg"></div>
+
+								<div class="col px-3">
+
+									<p class="fs--18 pt-2 mb-2 font-weight-light text-danger">
+										15 Central Park West, New York
+										<span class="d-block mt-2 text-dark font-weight-medium fs--18">
+											$689,000
+										</span>
+									</p>
+
+									<ul class="list-inline text-gray-500 fs--14 m-0">
+									    <li class="list-inline-item">4 Beds</li>
+									    <li class="list-inline-item">/</li>
+									    <li class="list-inline-item">5 Baths</li>
+									</ul>
+
+								</div>
+
+							</a>
+
+
+							<a href="niche.realestate-item.html" class="bg-white d-flex p-2 mb-3 shadow-xs shadow-md-hover rounded text-decoration-none transition-hover-top transition-all-ease-250">
+
+								<!-- image -->
+								<div class="text-center bg-light w--100 h--100 rounded bg-cover lazy" data-background-image="demo.files/images/unsplash/realestate/thumb_600/ialicante-mediterranean-homes-8_V45fGyWz4-unsplash-min.jpg"></div>
+
+								<div class="col px-3">
+
+									<p class="fs--18 pt-2 mb-2 font-weight-light text-danger">
+										15 Central Park West, New York
+										<span class="d-block mt-2 text-dark font-weight-medium fs--18">
+											$448,999
+										</span>
+									</p>
+
+									<ul class="list-inline text-gray-500 fs--14 m-0">
+									    <li class="list-inline-item">4 Beds</li>
+									    <li class="list-inline-item">/</li>
+									    <li class="list-inline-item">5 Baths</li>
+									</ul>
+
+								</div>
+
+							</a>
+
+
+							<a href="niche.realestate-item.html" class="bg-white d-flex p-2 mb-3 shadow-xs shadow-md-hover rounded text-decoration-none transition-hover-top transition-all-ease-250">
+
+								<!-- image -->
+								<div class="text-center bg-light w--100 h--100 rounded bg-cover lazy" data-background-image="demo.files/images/unsplash/realestate/thumb_600/ialicante-mediterranean-homes-FqqiAvJejto-unsplash-min.jpg"></div>
+
+								<div class="col px-3">
+
+									<p class="fs--18 pt-2 mb-2 font-weight-light text-danger">
+										15 Central Park West, New York
+										<span class="d-block mt-2 text-dark font-weight-medium fs--18">
+											$50,000
+										</span>
+									</p>
+
+									<ul class="list-inline text-gray-500 fs--14 m-0">
+									    <li class="list-inline-item">4 Beds</li>
+									    <li class="list-inline-item">/</li>
+									    <li class="list-inline-item">5 Baths</li>
+									</ul>
+
+								</div>
+
+							</a>
+
+
+							<div class="text-align-end">
+								<a href="" class="btn btn-light btn-sm">
+									<span>view all</span>
+									<i class="fi fi-arrow-end"></i>
+								</a>
+							</div>
+
+						</div>
+
+						<div class="col-12 col-md-6 mb-5">
+
+							<h3 class="mb-4 text-secondary">
+								<span class="font-weight-light">Best Deals</span> Rent
+							</h3>
+
+							<a href="niche.realestate-item.html" class="bg-white d-flex p-2 mb-3 shadow-xs shadow-md-hover rounded text-decoration-none transition-hover-top transition-all-ease-250">
+
+								<!-- image -->
+								<div class="text-center bg-light w--100 h--100 rounded bg-cover lazy" data-background-image="demo.files/images/unsplash/realestate/thumb_600/ialicante-mediterranean-homes-JDBVXignFdA-unsplash-min.jpg"></div>
+
+								<div class="col px-3">
+
+									<p class="fs--18 pt-2 mb-2 font-weight-light text-danger">
+										15 Central Park West, New York
+										<span class="d-block mt-2 text-dark font-weight-medium fs--18">
+											$1,200/mo
+										</span>
+									</p>
+
+									<ul class="list-inline text-gray-500 fs--14 m-0">
+									    <li class="list-inline-item">4 Beds</li>
+									    <li class="list-inline-item">/</li>
+									    <li class="list-inline-item">5 Baths</li>
+									</ul>
+
+								</div>
+
+							</a>
+
+
+							<a href="niche.realestate-item.html" class="bg-white d-flex p-2 mb-3 shadow-xs shadow-md-hover rounded text-decoration-none transition-hover-top transition-all-ease-250">
+
+								<!-- image -->
+								<div class="text-center bg-light w--100 h--100 rounded bg-cover lazy" data-background-image="demo.files/images/unsplash/realestate/thumb_600/ialicante-mediterranean-homes-RpgxwC1im_A-unsplash-min.jpg"></div>
+
+								<div class="col px-3">
+
+									<p class="fs--18 pt-2 mb-2 font-weight-light text-danger">
+										15 Central Park West, New York
+										<span class="d-block mt-2 text-dark font-weight-medium fs--18">
+											$1,100/mo
+										</span>
+									</p>
+
+									<ul class="list-inline text-gray-500 fs--14 m-0">
+									    <li class="list-inline-item">4 Beds</li>
+									    <li class="list-inline-item">/</li>
+									    <li class="list-inline-item">5 Baths</li>
+									</ul>
+
+								</div>
+
+							</a>
+
+
+							<a href="niche.realestate-item.html" class="bg-white d-flex p-2 mb-3 shadow-xs shadow-md-hover rounded text-decoration-none transition-hover-top transition-all-ease-250">
+
+								<!-- image -->
+								<div class="text-center bg-light w--100 h--100 rounded bg-cover lazy" data-background-image="demo.files/images/unsplash/realestate/thumb_600/ialicante-mediterranean-homes-rXVyRT2aENs-unsplash-min.jpg"></div>
+
+								<div class="col px-3">
+
+									<p class="fs--18 pt-2 mb-2 font-weight-light text-danger">
+										15 Central Park West, New York
+										<span class="d-block mt-2 text-dark font-weight-medium fs--18">
+											$1,500/mo
+										</span>
+									</p>
+
+									<ul class="list-inline text-gray-500 fs--14 m-0">
+									    <li class="list-inline-item">4 Beds</li>
+									    <li class="list-inline-item">/</li>
+									    <li class="list-inline-item">5 Baths</li>
+									</ul>
+
+								</div>
+
+							</a>
+
+
+							<div class="text-align-end">
+								<a href="" class="btn btn-light btn-sm">
+									<span>view all</span>
+									<i class="fi fi-arrow-end"></i>
+								</a>
+							</div>
+
+						</div>
+
+					</div>
+
+
+
+
+					<!-- blog news -->
+					<div class="mt-7">
+
+						<!-- News -->
+						<h2 class="font-weight-light mb-5">
+							<span class="font-weight-medium">Recent</span> News!
+							<small class="d-block h6">Stay informed about real estate market!</small>
+						</h2>
+
+						<!-- sticky article -->
+						<div class="row">
+
+							<a href="blog-page-single-sidebar.html" class="col-12 col-md-4 mb-4">
+								<img class="img-fluid w-100 rounded" src="demo.files/images/unsplash/realestate/thumb_600/ialicante-mediterranean-homes-2d4lAQAlbDA-unsplash-min.jpg" alt="...">
+							</a>
+
+							<div class="col pb-4">
+
+								<!-- title -->
+								<div class="mb-4">
+
+									<h2 class="h4 mb-0">
+										<a href="blog-page-single-sidebar.html" class="text-dark font-weight-medium">
+											We are in 2019, global market will crash in upcoming years!
+										</a>
+									</h2>
+
+									<!-- publish date -->
+									<span class="text-muted">
+										September 18 2019
+									</span>
+
+								</div>
+
+								<!-- content preview -->
+								<div class="mb-4">
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sodales neque sodales ut etiam sit amet nisl purus in. Sed vulputate mi sit amet mauris commodo. Suscipit tellus mauris a diam maecenas sed enim ut. Pretium nibh ipsum consequat nisl vel pretium. Congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar.</p>
+								</div>
+
+								<a href="blog-page-sidebar.html" class="link-muted">Read more</a>
+
+							</div>
+
+						</div>
+						<!-- /sticky article -->
+
+
+						<!-- more articles / blog -->
+						<div class="py-4 mt-3">
+
+							<div class="row">
+
+								<div class="col-12 col-md-6">
+
+									<div class="d-flex mb-3 text-decoration-none">
+
+										<!-- image -->
+										<div class="text-center bg-light w--100 h--100 rounded bg-cover lazy" data-background-image="demo.files/images/unsplash/realestate/thumb_600/ialicante-mediterranean-homes-rXVyRT2aENs-unsplash-min.jpg"></div>
+
+										<div class="col px-3">
+
+											<h3 class="h5">
+												<a href="blog-page-single-sidebar.html" class="text-dark">
+													Lorem ipsum dolor sit amet
+												</a>
+											</h3>
+
+											<p class="font-weight-normal">
+												<strong>(29 December 2019)</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+											</p>
+
+										</div>
+
+									</div>
+
+
+									<div class="d-flex mb-3 text-decoration-none">
+
+										<!-- image -->
+										<div class="text-center bg-light w--100 h--100 rounded bg-cover lazy" data-background-image="demo.files/images/unsplash/realestate/thumb_600/ialicante-mediterranean-homes-8_V45fGyWz4-unsplash-min.jpg"></div>
+
+										<div class="col px-3">
+
+											<h3 class="h5">
+												<a href="blog-page-single-sidebar.html" class="text-dark">
+													Sodales neque sodales ut
+												</a>
+											</h3>
+
+											<p class="font-weight-normal">
+												<strong>(29 December 2019)</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+											</p>
+
+										</div>
+
+									</div>
+
+								</div>
+
+								<div class="col-12 col-md-6">
+
+									<div class="d-flex mb-3 text-decoration-none">
+
+										<!-- image -->
+										<div class="text-center bg-light w--100 h--100 rounded bg-cover lazy" data-background-image="demo.files/images/unsplash/realestate/thumb_600/ialicante-mediterranean-homes-JDBVXignFdA-unsplash-min.jpg"></div>
+
+										<div class="col px-3">
+
+											<h3 class="h5">
+												<a href="blog-page-single-sidebar.html" class="text-dark">
+													Lorem ipsum dolor sit amet
+												</a>
+											</h3>
+
+											<p class="font-weight-normal">
+												<strong>(29 December 2019)</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+											</p>
+
+										</div>
+
+									</div>
+
+
+									<div class="d-flex mb-3 text-decoration-none">
+
+										<!-- image -->
+										<div class="text-center bg-light w--100 h--100 rounded bg-cover lazy" data-background-image="demo.files/images/unsplash/realestate/thumb_600/ialicante-mediterranean-homes-FqqiAvJejto-unsplash-min.jpg"></div>
+
+										<div class="col px-3">
+
+											<h3 class="h5">
+												<a href="blog-page-single-sidebar.html" class="text-dark">
+													Sodales neque sodales ut etiam sit amet
+												</a>
+											</h3>
+
+											<p class="font-weight-normal">
+												<strong>(29 December 2019)</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+											</p>
+
+										</div>
+
+									</div>
+
+								</div>
+
+							</div>
+
+						</div>
+						<!-- /more articles / blog -->
+
+					</div>
+					<!-- /blog news -->
+
+				</div>
+			</section>
+			<!-- /Best Deals + News -->
+
+
+
+
+
+			<!-- block : contact -->
+			<section class="bg-light">
+				<div class="container">
+
+					<div class="row">
+
+						<div class="col-12 col-lg-6 mb-5">
+
+							<h2 class="font-weight-light mb-5">
+								<span class="font-weight-medium">Smarty</span> Contact!
+								<small class="d-block h6">Let us know how can we help you!</small>
+							</h2>
+
+
+							<div class="row">
+
+								<!-- call us -->
+								<div class="col-12 col-sm-6 mb-4">
+									<h3 class="font-weight-light text-primary h5 mb-4">
+										Call Us
+									</h3>
+
+									<p class="m-0">
+										<a href="tel:01555-88978" class="link-muted">+01 785-388-9450</a>
+									</p>
+									<p class="m-0">
+										<a href="email:john.doe@gmail.com" class="link-muted">john.doe@gmail.com</a>
+									</p>
+								</div>
+
+								<!-- address -->
+								<div class="col-12 col-sm-6 mb-4">
+
+									<h3 class="font-weight-light text-primary h5 mb-4">
+										Our Address
+									</h3>
+
+									<p class="m-0">
+										Road 741, No.44, New York <br>
+										United States
+									</p>
+
+								</div>
+							</div>
+
+
+
+							<div class="bg-white shadow-primary-xs rounded p-2 mt-5">
+
+								<!--
+									Map
+								-->
+								<div class="map-leaflet h--350 w-100 rounded" 
+									data-map-tile="voyager" 
+									data-map-zoom="8" 
+									data-map-json='[
+										{ 
+											"map_lat": 40.750765,
+											"map_long": -73.993428,
+											"map_popup": "<b>Smarty Inc.</b> <br> Road 741, No.44,<br> New York / United States <br> <a href=`tel:7853889450`>(01)-785-388-9450</a>"
+										}
+									]'><!-- map container--></div>
+
+							</div>
+
+						</div>
+
+						<div class="col-12 col-lg-6">
+
+							<div class="rounded bg-white shadow-xs d-flex">
+								<div class="m-5 m-4-xs">
+
+									<h2 class="h3-xs font-weight-light mb-5">
+										Send us a message
+									</h2>
+
+
+									<!-- 
+										CONTACT FORM : AJAX 
+
+											Plugin required: SOW Ajax Forms
+
+											In order to work as ajax form, SOW Ajax Forms should be available/enabled
+											Else, SOW Form Validation plugin is used.
+											If none of them are available, normal submit is used and you can remove:
+												.js-ajax
+												.bs-validate
+												novalidate
+												any data-ajax-*
+												any data-error-*
+
+											** Remove data-error-toast-* for no error toast notifications
+
+										+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+										NOTE: method="GET" is used in this demo!
+										Most contact form are using "POST". So change as you need!
+										The URL you post the data, should also return a success message
+										like the one in action="_ajax/ajax_form_test_submit.html"
+										+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+									-->
+									<form 	novalidate 
+											action="_ajax/ajax_form_test_submit.html" 
+											method="GET" 
+
+											data-ajax-container="#ajax_dd_contact_response_container" 
+											data-ajax-update-url="false" 
+											data-ajax-show-loading-icon="true" 
+											data-ajax-callback-function="" 
+											data-error-scroll-up="true" 
+											
+											data-error-toast-text="<i class='fi fi-circle-spin fi-spin float-start'></i> Please, complete all required fields!" 
+											data-error-toast-delay="2000" 
+											data-error-toast-position="bottom-center"
+
+											class="bs-validate js-ajax">
+
+
+										<!-- 1. 
+											optional, hidden action for your backend
+
+											PHP Basic Example
+											if($_POST['action'] == 'contact_form_submit') {
+												... send message
+											}
+										-->
+										<input type="hidden" name="action" value="contact_form_submit" tabindex="-1"> 
+										<!-- -->
+
+
+										<!-- 2. 
+											A very small optional trick (using .hide class instead of type="hidden") for some low spam robots. 
+											If this is not empty, the process should stop. A normal user/visitor should not be able to see this field.
+
+											PHP Basic Example
+											if($_POST['norobot'] != '') {
+												exit;
+											}
+										-->
+										<input type="text" name="norobot" value="" class="hide" tabindex="-1"> 
+										<!-- -->
+										
+										<div id="ajax_dd_contact_response_container"><!-- ajax response container --></div>
+
+										<div class="form-label-group mb-3">
+											<input required placeholder="Name" id="contact_name" type="text" class="form-control">
+											<label for="contact_name">Name</label>
+										</div>
+
+										<div class="form-label-group mb-3">
+											<input required placeholder="Email" id="contact_email" type="email" class="form-control">
+											<label for="contact_email">Email</label>
+										</div>
+
+										<div class="form-label-group mb-3">
+											<input required placeholder="Phone" id="contact_phone" type="text" class="form-control">
+											<label for="contact_phone">Phone</label>
+										</div>
+
+										<div class="form-label-group mb-4">
+											<textarea required placeholder="Message" id="contact_message" class="form-control" rows="3"></textarea>
+											<label for="contact_message">Message</label>
+										</div>
+
+										<!-- GDPR CONSENT -->
+										<div class="clearfix bg-light position-relative rounded p-4 mb-4">
+
+											<span class="text-muted fs--12 d-block position-absolute bottom-0 end-0 m-2">
+												EU GDPR
+											</span>
+
+											<label class="form-checkbox form-checkbox-primary">
+												<input required type="checkbox" name="checkbox">
+												<i></i> 
+												<span> 	
+													I consent that my data is being stored in 
+													line with the guidelines set out in  
+													<a href="page-terms-and-conditions.html" target="_blank">Privacy Policy</a>. 
+												</span>
+											</label>
+
+										</div>
+										<!-- /GDPR CONSENT -->
+
+
+										<button type="submit" class="btn btn-primary btn-block">
+											Send Message
+										</button>
+
+									</form>
+									<!-- /CONTACT FORM : AJAX -->
+
+
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+			</section>
+			<!-- /block : contact -->
+
+
+
+
+			<!-- 
+
+				CALL TO ACTION : APP 
+
+				Class Utils (top/bottom borders, if needed) 
+
+					.border-top 
+					.border-bottom
+
+			-->
+			<section class="py-5">
+				<div class="container">
+					<div class="row text-center-xs">
+
+						<div class="col-12 col-md-6">
+							<h3 class="m-0">Everywhere! Always! Connected!</h3>
+							<p class="m-0">You always want to be the first getting and doing the best deals!</p>
+						</div>
+						
+						<div class="col-12 mb-5 d-block d-md-none"><!-- mobile spacer --></div>
+
+						<div class="col-12 col-md-6 text-align-end text-center-xs">
+
+							<!-- App Store -->
+							<a href="#!" class="btn btn-dark bg-gradient-dark b-0 mx-1 rounded-xl transition-hover-top">
+								<i class="float-start">
+									<svg height="32" viewBox="0 0 90 90">
+										<path fill="#ffffff" d="M49.645 6.817c3.232-3.8 8.695-6.627 13.203-6.817.575 5.279-1.541 10.565-4.669 14.374-3.133 3.802-8.261 6.764-13.294 6.369-.684-5.165 1.851-10.551 4.76-13.926zm25.646 72.01c-3.741 5.485-7.61 10.938-13.718 11.053-6.012.114-7.938-3.571-14.799-3.571-6.866 0-9.016 3.457-14.69 3.686-5.897.222-10.382-5.926-14.152-11.387-7.703-11.168-13.585-31.576-5.677-45.35 3.916-6.84 10.934-11.167 18.537-11.282 5.792-.107 11.263 3.917 14.799 3.917 3.544 0 10.185-4.831 17.165-4.122 2.922.121 11.123 1.181 16.391 8.912-.417.274-9.789 5.745-9.676 17.141.114 13.614 11.891 18.137 12.029 18.199-.108.32-1.884 6.459-6.209 12.804z"></path>
+									</svg>
+								</i>
+
+								<span class="float-start text-align-start px-2">
+									<span class="d-block line-height-1 fs--13">Download on the</span>
+									<span class="d-block line-height-1 fs--20 pt-1">App Store</span>
+								</span>
+							</a>
+
+							<div class="mt-3 d-block d-md-none"><!-- mobile spacer --></div>
+
+							<!-- Play Store -->
+							<a href="#!" class="btn btn-dark bg-gradient-dark b-0 mx-1 rounded-xl transition-hover-top">
+								<i class="float-start">
+									<svg height="32" viewBox="0 0 512 512">
+										<path fill="#ffffff" d="M99.617 8.057c-11.664-7.537-25.674-9.815-38.815-6.713l230.932 230.933 74.846-74.846-266.963-149.374zM32.139 20.116c-6.441 8.563-10.148 19.077-10.148 30.199v411.358c0 11.123 3.708 21.636 10.148 30.199l235.877-235.877-235.877-235.879zM464.261 212.087l-67.266-37.637-81.544 81.544 81.548 81.548 67.273-37.64c16.117-9.03 25.738-25.442 25.738-43.908s-9.621-34.877-25.749-43.907zM291.733 279.711l-230.918 230.918c3.786.891 7.639 1.371 11.492 1.371 9.522 0 19.011-2.708 27.31-8.07l266.965-149.372-74.849-74.847z"></path>
+									</svg>
+								</i>
+
+								<span class="float-start text-align-start px-2">
+									<span class="d-block line-height-1 fs--13">Download on the</span>
+									<span class="d-block line-height-1 fs--20 pt-1">Play Store</span>
+								</span>
+							</a>
+
+						</div>
+
+					</div>
+				</div>
+			</section>
+			<!-- /CALL TO ACTION : APP -->
+							
+
+
+
+			<!-- Footer -->
+			<footer id="footer" class="footer-dark">
+				<div class="container">
+
+					<div class="row">
+						
+						<div class="bg-distinct col-12 col-md-6 col-lg-4 text-center p-0 py-5">
+
+							<div class="footer-svg-shape position-absolute absolute-top z-index-2 mt--n70 w-100 overflow-hidden pt--5">
+								<svg viewBox="0 0 1440 28" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+									<path d="M0 28H1440C1440 28 1154 3.21961e-10 720 1.30487e-09C286 2.28777e-09 0 28 0 28Z"></path>
+								</svg>
+							</div>
+
+							<form method="post" action="#subscribe_url" class="px-4"> 
+
+								<input type="hidden" name="action" value="subscribe" tabindex="-1"> 
+								
+								<p id="btnAriaFooterFormTitle" class="text-muted">
+									Claim your candy now!
+								</p>
+								
+									
+								<div class="input-group-over input-group-pill mb-4"> 
+									
+									<input required class="form-control b-0" name="subscriber_email" type="email" value="" placeholder="email address..." aria-label="email address...">
+									
+									<button type="submit" class="btn bg-transparent shadow-none" aria-label="subscribe" aria-labelledby="btnAriaFooterFormTitle"> 
+										<i class="fi fi-send fs--18"></i> 
+									</button>
+
+								</div>
+
+
+							</form>
+
+							<div class="mt--12"> 
+
+								<a href="#!" class="btn btn-sm btn-facebook transition-hover-top mb-2 rounded-circle" rel="noopener" aria-label="facebook page">
+									<i class="fi fi-social-facebook"></i> 
+								</a>
+
+								<a href="#!" class="btn btn-sm btn-twitter transition-hover-top mb-2 rounded-circle" rel="noopener" aria-label="twitter page">
+									<i class="fi fi-social-twitter"></i> 
+								</a>
+
+								<a href="#!" class="btn btn-sm btn-linkedin transition-hover-top mb-2 rounded-circle" rel="noopener" aria-label="linkedin page">
+									<i class="fi fi-social-linkedin"></i> 
+								</a>
+
+								<a href="#!" class="btn btn-sm btn-youtube transition-hover-top mb-2 rounded-circle" rel="noopener" aria-label="youtube page">
+									<i class="fi fi-social-youtube"></i> 
+								</a>
+
+							</div>
+
+						</div>
+
+
+						<div class="col-12 col-md-6 col-lg-8 py-5 fs--15 text-center-xs">
+
+							<h3 class="fs--15 text-muted">SPY US! WE'VE GOT SECRETS!</h3>
+
+							<ul class="mt--30 mb-0 breadcrumb bg-transparent p-0 block-xs"> 
+								<li class="breadcrumb-item"><a href="contact-1.html">Contact</a></li> 
+								<li class="breadcrumb-item"><a href="about-us-1.html">About Us</a></li> 
+								<li class="breadcrumb-item"><a href="page-terms-and-conditions.html">Terms &amp; Conditions</a></li> 
+								<li class="breadcrumb-item"><a href="page-cookie.html">GDPR &amp; Cookies</a></li> 
+							</ul>
+
+							<div class="text-muted mt--30">
+								<p>
+									Frontend? Admin? What if you don't need anymore to learn and work with two different templates on your projects? 
+									<b>What would you do if time really matter?</b> Both: frontend and admin uses exactly the same core and all elements can be used in both sides because... actually there are no such thing "two sides" with Smarty!
+								</p>
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="bg-distinct py-3 clearfix">
+
+					<div class="container clearfix font-weight-light text-center-xs">
+
+						<div class="fs--14 py-2 float-start float-none-xs m-0-xs">
+							&copy; My Company Inc.
+						</div>
+
+						<ul class="list-inline mb-0 mt-2 float-end float-none-xs m-0-xs"> 
+							<li class="list-inline-item m-0"> 
+								<img width="38" height="24" class="lazy" data-src="assets/images/credit_card/visa.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="visa credit card icon">
+							</li> 
+
+							<li class="list-inline-item m-0"> 
+								<img width="38" height="24" class="lazy" data-src="assets/images/credit_card/mastercard.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="mastercard credit card icon">
+							</li> 
+
+							<li class="list-inline-item m-0"> 
+								<img width="38" height="24" class="lazy" data-src="assets/images/credit_card/discover.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="discover credit card icon">
+							</li>
+
+							<li class="list-inline-item m-0"> 
+								<img width="38" height="24" class="lazy" data-src="assets/images/credit_card/amazon.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="amazon credit card icon">
+							</li>
+							
+							<li class="list-inline-item m-0"> 
+								<img width="38" height="24" class="lazy" data-src="assets/images/credit_card/paypal.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="paypal credit card icon">
+							</li>
+
+							<li class="list-inline-item m-0"> 
+								<img width="38" height="24" class="lazy" data-src="assets/images/credit_card/skrill.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="skrill credit card icon">
+							</li>
+
+							<!-- more vendors on assets/images/credit_card/ -->
+
+						</ul>
+
+					</div>
+				</div>
+
+			</footer>
+			<!-- /Footer -->
+
+
+		</div><!-- /#wrapper -->
+
+
+		<script src="assets/js/core.min.js"></script>
+
+		
+	</body>
+</html>

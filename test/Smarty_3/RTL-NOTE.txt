@@ -1,0 +1,12 @@
+For RTL version, please copy/paste (replace css & js folders):
+	
+	dist/DEBUG_ON/RTL/assets/ 	(for developent - console debug enabled)
+	dist/DEBUG_OFF/RTL/assets/ 	(for production - console debug disabled)
+
+		- TO -
+
+	1. Frontend:
+		html_frontend/assets/
+
+	2. Admin Layouts
+		html_admin/layout_*/assets/

@@ -1,0 +1,1065 @@
+﻿					<!--
+
+						PAGE TITLE
+					-->
+					<div class="page-title bg-transparent b-0">
+
+						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
+							Page Product Add
+						</h1>
+						
+					</div>
+
+
+
+					<form novalidate class="bs-validate" method="post" action="#" enctype="multipart/form-data">
+
+						<!--
+							
+							PRODUCT DETAIL
+
+						-->
+						<section>
+
+							<div class="row gutters-sm">
+
+								<div class="col-12 col-lg-12 col-xl-8 mb-5">
+
+									<!--
+										PRODUCT TITLE
+									-->
+									<div class="form-label-group mb-3">
+										<input required placeholder="Product Title" id="product_title" name="product_title" type="text" value="" class="form-control">
+										<label for="product_title">Product Title</label>
+									</div>
+						
+
+
+									<!--
+									Note: if data-lang is changed, also the javascript 
+									file need to be loaded. You can include the language
+									file from gulp.config__vendors.js and add here!
+
+									+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+									To upload the image, add your server-side script path:
+										data-ajax-url="upload.php" 
+										data-ajax-params="['action','upload']['param2','value2']"
+
+									The upload script should return a valid image full URL
+									like this: https://www.mydomain.com/upload/image.jpg
+									data-ajax-params are optional and used as identifiers by your backend.
+									+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+									-->
+									<textarea name="product_description" class="summernote-editor w-100 h--350" 
+										data-placeholder="Product Description" 
+										data-min-height="350" 
+										data-max-height="2800" 
+										data-focus="false" 
+										data-lang="en-US" 
+
+										data-ajax-url="_ajax/demo.summernote.php" 
+										data-ajax-params="['action','editor:image:upload']" 
+
+										data-toolbar='[
+												["style", ["style"]],
+												["font", ["bold", "italic", "underline", "clear"]],
+												["fontname", ["fontname"]],
+												["color", ["color"]],
+												["para", ["ul", "ol", "paragraph"]],
+												["table", ["table"]],
+												["insert", ["link", "picture", "hr"]],
+												["view", ["codeview"]],
+												["help", ["help"]]
+											]'></textarea>
+									<small class="text-gray-400">* shift + enter = new line</small>
+
+
+
+									<!--
+										SEO
+									-->
+									<div class="mt-5">
+
+										<h6 class="font-weight-light">
+											Search Engine Optimization (Optional)
+										</h6>
+
+										<!--
+											SEO : Meta Title
+										-->
+										<div class="form-label-group mb-3">
+											<input placeholder="SEO : Meta Title" id="product_meta_title" name="product_meta_title" type="text" value="" class="form-control">
+											<label for="product_meta_title"><span class="text-danger">SEO</span> : Meta Title</label>
+										</div>
+
+										<!--
+											SEO : Meta Description
+										-->
+										<div class="form-label-group">
+											<input placeholder="SEO : Meta Description" id="product_meta_description" name="product_meta_description" type="text" value="" class="form-control">
+											<label for="product_meta_description"><span class="text-danger">SEO</span> : Meta Description</label>
+										</div>
+										<small class="d-block text-gray-500">* highly recommended if product has no description</small>
+
+									</div>
+
+								</div>
+
+
+								<div class="col-12 col-lg-12 col-xl-4 mb-5">
+
+									<!--
+										PRODUCT IMAGES
+									-->
+									<div class="clearfix bg-light p-2 mb-2 rounded">
+
+										<label class="btn btn-warning cursor-pointer position-relative">
+
+											<input	name="product_image[]" 
+													multiple="" 
+													type="file" 
+
+													data-file-ext="jpg,jpeg,png" 
+													data-file-max-size-kb-per-file="3072" 
+													data-file-max-size-kb-total="30720" 
+													data-file-max-total-files="10" 
+
+													data-file-ext-err-msg="Allowed:" 
+													data-file-exist-err-msg="File already exists:" 
+													data-file-size-err-item-msg="File too large!" 
+													data-file-size-err-total-msg="Total allowed size exceeded!" 
+													data-file-size-err-max-msg="Maximum allowed files:" 
+													data-file-toast-position="top-center" 
+													data-file-preview-container=".js-file-preview-container" 
+													data-file-preview-img-height="100" 
+													data-file-preview-show-info="true" 
+													data-file-btn-clear="a.js-file-btn-clear" 
+													data-file-preview-img-cover="true" 
+													data-file-preview-class="shadow-md my-2 mr-3 rounded float-start" 
+													class="custom-file-input absolute-full">
+
+												<span class="group-icon">
+													<i class="fi fi-arrow-upload"></i>
+													<i class="fi fi-circle-spin fi-spin"></i>
+												</span>
+
+												<span>Upload Images</span>
+
+										</label>
+
+										<!-- remove button -->
+										<a href="#" title="Clear Files" data-toggle="tooltip" class="js-file-btn-clear hide btn btn-secondary mb-2">
+											<i class="fi fi-close m-0"></i>
+										</a>
+
+										<!-- info -->
+										<small class="d-block text-muted">
+											Upload up to 10 product images (jpg, jpeg, png).
+										</small>
+
+										<!--
+												
+											Container : files are pushed here!
+											.hide-empty = container hidden if empty
+
+										-->
+										<div class="js-file-preview-container d-inline-block position-relative clearfix hide-empty"><!-- container --></div>
+
+									</div>
+
+
+									<div class="clearfix bg-light p-2 mb-2 rounded">
+
+										<!--
+											CATEGORY
+										-->
+										<div class="form-label-group mb-3">
+											<select multiple id="category_id" name="category_id[]" class="form-control bs-select" data-live-search="true" title="Nothing Selected">
+
+												<option value="1" data-subtext="(inactive)" class="font-weight-medium">Category 1</option>
+												<option value="2" class="font-weight-medium">Category 2</option>
+												<option value="3" class="font-weight-medium">Category 3</option>
+												<option value="4" class="font-weight-medium">Category 4</option>
+
+											</select>
+											<label for="category_id">Category</label>
+										</div>
+
+
+
+										<!--
+											BRAND
+										-->
+										<div class="form-label-group">
+											<select id="product_brand_id" name="product_brand_id" class="form-control bs-select" data-live-search="true" title="Nothing Selected">
+												<option value="1">Nike</option>
+												<option value="1">Adidas</option>
+												<option value="1">North Pole</option>
+											</select>
+											<label for="product_brand_id">Brand</label>
+										</div>
+
+									</div>
+
+
+									<div class="clearfix bg-light p-2 mb-2 rounded">
+
+										<!--
+											PRODUCT VAT
+										-->
+										<div class="form-label-group">
+											<input placeholder="VAT %" id="product_vat" name="product_vat" type="number" value="19" class="form-control js-form-advanced-limit" min="0" max="100">
+											<label for="product_vat" class="w-100">
+												VAT 
+												<span class="float-end text-gray-500 fs--13 mt--2">
+													%
+												</span>
+											</label>
+										</div>
+
+
+										<!--
+											VAT INCLUDED
+										-->
+										<label class="form-checkbox form-checkbox-primary d-block mt-3 mb-0">
+											<input type="checkbox" name="product_vat_included" value="1">
+											<i></i> <span>VAT already included</span>
+										</label>
+
+									</div>
+
+
+									<div class="clearfix bg-light p-2 mb-2 rounded">
+
+
+										<!--
+											ALLOW PREORDERS
+										-->
+										<label class="form-checkbox form-checkbox-primary d-block mb-3">
+											<input type="checkbox" name="product_preorder_allow" value="1">
+											<i></i> <span>Allow Preorders (on 0 inventory)</span>
+										</label>
+
+										<!--
+											INVENTORY TRACK
+										-->
+										<label class="form-checkbox form-checkbox-primary d-block mb-3">
+											<input type="checkbox" name="product_inventory_track" value="1">
+											<i></i> <span>Inventory Tracking</span>
+										</label>
+
+
+										<!--
+											PRODUCT QUANTITY LIMIT
+										-->
+										<label class="form-checkbox form-checkbox-primary d-block mb-3">
+											<input type="checkbox" name="product_json[order][quantity][on]" value="1" data-toggle="collapse" data-target="#json_order_limit">
+											<i></i> <span>Quantity Limit / Order</span>
+										</label>
+
+										<div id="json_order_limit" class="collapse">
+											
+											<small class="d-block text-primary mb-1">
+												1. Min/Max quantity allowed per order.
+											</small>
+											
+											<div class="row gutters-xs gutters-lg--xs">
+
+												<div class="col-12 col-lg-6">
+
+													<!--
+														PRODUCT ORDER : MIN
+													-->
+													<div class="form-label-group mb-3">
+														<input placeholder="Minimum" id="product_json_order_qty_min" name="product_json[order][quantity][min]" type="number" value="" class="form-control js-form-advanced-limit" min="0" max="99999">
+														<label for="product_json_order_qty_min" class="w-100">
+															Minimum 
+														</label>
+													</div>
+
+												</div>
+
+												<div class="col-12 col-lg-6">
+
+													<!--
+														PRODUCT ORDER : MAX
+													-->
+													<div class="form-label-group mb-3">
+														<input placeholder="Maximum" id="product_json_order_qty_max" name="product_json[order][quantity][max]" type="number" value="" class="form-control js-form-advanced-limit" min="0" max="99999">
+														<label for="product_json_order_qty_max" class="w-100">
+															Maximum 
+														</label>
+													</div>
+
+												</div>
+
+												<div class="col-12">
+
+													<small class="d-block text-primary mb-1">
+														2. <b>OR:</b> Predefined quantities separated by comma!
+													</small>
+
+													<!--
+														PRODUCT ORDER : PREDEFINED QUANTITIES
+													-->
+													<div class="form-label-group mb-3">
+														<input placeholder="Minimum" id="product_json_order_qty_predefined" name="product_json[order][quantity][predefined]" type="text" value="" class="form-control">
+														<label for="product_json_order_qty_predefined" class="w-100">
+															Example: 4, 8, 16
+														</label>
+													</div>
+
+												</div>
+
+											</div>
+
+
+										</div>
+
+
+										<!--
+											PRODUCT DELIVERY DELAY INFO
+										-->
+										<label class="form-checkbox form-checkbox-primary d-block mb-3">
+											<input type="checkbox" name="product_json[order][delivery_info][on]" value="1" data-toggle="collapse" data-target="#json_order_delivery">
+											<i></i> <span>Delivery Delay Info</span>
+										</label>
+
+										<div id="json_order_delivery" class="collapse js-form-advanced-required">
+
+											<small class="d-block text-muted mb-1">
+												Example: <b>delivered within 5-8 days</b>
+											</small>
+
+											<!--
+												PRODUCT DELIVERY
+											-->
+											<div class="form-label-group mb-3">
+												<input required placeholder="Delivery delay info " id="product_json_delivery_info" name="product_json[order][delivery_info][info]" type="text" value="" class="form-control">
+												<label for="product_json_delivery_info" class="w-100">
+													Delivery delay info 
+												</label>
+											</div>
+
+										</div>
+
+
+										<!--
+											PRODUCT SHIPPING
+										-->
+										<label class="form-checkbox form-checkbox-primary d-block">
+											<input type="checkbox" name="product_json[shipping][on]" value="1" data-toggle="collapse" data-target="#json_shipping">
+											<i></i> <span>Require Shipping</span>
+										</label>
+
+										<div id="json_shipping" class="collapse js-form-advanced-required">
+
+											<!--
+												PRODUCT SHIPPING : WEIGHT
+											-->
+											<div class="form-label-group mb-3">
+												<input required placeholder="Weight (Kg)" id="product_json_shipping_weight" name="product_json[shipping][weight]" type="number" value="" class="form-control js-form-advanced-limit" min="0" max="999999">
+												<label for="product_json_shipping_weight" class="w-100">
+													Weight 
+													<span class="float-end text-gray-500 fs--13 mt--2">
+														Kg
+													</span>
+												</label>
+											</div>
+
+											<div class="row gutters-xs gutters-lg--xs">
+
+												<div class="col-12 col-lg-4">
+
+													<!--
+														PRODUCT SHIPPING : Length
+													-->
+													<div class="form-label-group mb-3">
+														<input placeholder="Length (CM)" id="product_json_shipping_length" name="product_json[shipping][length]" type="number" value="" class="form-control js-form-advanced-limit" min="0" max="999999">
+														<label for="product_json_shipping_length" class="w-100">
+															Length 
+															<span class="float-end text-gray-500 fs--13 mt--2">
+																CM
+															</span>
+														</label>
+													</div>
+
+												</div>
+
+												<div class="col-12 col-lg-4">
+
+													<!--
+														PRODUCT SHIPPING : Width
+													-->
+													<div class="form-label-group mb-3">
+														<input placeholder="Width (CM)" id="product_json_shipping_width" name="product_json[shipping][width]" type="number" value="" class="form-control js-form-advanced-limit" min="0" max="999999">
+														<label for="product_json_shipping_width" class="w-100">
+															Width 
+															<span class="float-end text-gray-500 fs--13 mt--2">
+																CM
+															</span>
+														</label>
+													</div>
+
+												</div>
+
+												<div class="col-12 col-lg-4">
+
+													<!--
+														PRODUCT SHIPPING : Height
+													-->
+													<div class="form-label-group mb-3">
+														<input placeholder="Height (CM)" id="product_json_shipping_height" name="product_json[shipping][height]" type="number" value="" class="form-control js-form-advanced-limit" min="0" max="999999">
+														<label for="product_json_shipping_height" class="w-100">
+															Height 
+															<span class="float-end text-gray-500 fs--13 mt--2">
+																CM
+															</span>
+														</label>
+													</div>
+
+												</div>
+
+											</div>
+
+										</div>
+
+									</div>
+
+
+									<div class="clearfix bg-light p-2 rounded">
+
+										<div class="row gutters-sm">
+
+											<div class="col-12 col-lg-6">
+
+												<!--
+													PRODUCT TYPE
+												-->
+												<div class="form-label-group mb-3">
+													<select id="product_type" name="product_type" class="form-control bs-select" data-live-search="false" title="Nothing Selected">
+														<option value="0" selected="">New</option>
+														<option value="1">Refurbished</option>
+														<option value="2">Used</option>
+														<option value="3">Demaged</option>
+														<option value="4">Downloadable / Software</option>
+														<option value="99">Other</option>
+													</select>
+													<label for="product_type">Product Type</label>
+												</div>
+
+											</div>
+
+											<div class="col-12 col-lg-6">
+
+												<!--
+													INVENTORY METRIC
+												-->
+												<div class="form-label-group mb-3">
+													<select id="product_inventory_metric" name="product_inventory_metric" class="form-control bs-select" data-live-search="false" title="Nothing Selected">
+														<option value="" selected="">Item</option>
+														<option value="g">g</option>
+														<option value="kg">kg</option>
+														<option value="oz">oz</option>
+														<option value="lb">lb</option>
+														<option value="t">t</option>
+														<option data-divider="true" disabled="">-</option>
+														<option value="m">m</option>
+														<option value="foot">foot</option>
+														<option value="yard">yard</option>
+														<option value="inch">inch</option>
+														<option value="cm">cm</option>
+														<option value="mm">mm</option>
+													</select>
+													<label for="product_inventory_metric">Inventory Metric</label>
+												</div>
+
+											</div>
+
+										</div>
+
+
+										<!--
+											PRODUCT STATUS
+										-->
+										<div class="form-label-group">
+											<select id="product_status" name="product_status" class="form-control bs-select" data-live-search="false" title="Nothing Selected">
+												<option value="1" selected="">Active</option>
+												<option value="0">Inactive</option>
+												<option value="2">Unavailable</option>
+											</select>
+											<label for="product_status">Product Status</label>
+										</div>
+
+									</div>
+
+								</div>
+
+							</div>
+
+						</section>
+
+
+
+
+
+
+
+						<!--
+							
+							VARIANTS
+
+						-->
+						<section>
+
+
+							<!-- 
+								VARIANT SWITCHER 
+							-->
+							<div class="py-2 mb-4 border-bottom">
+								<label class="form-switch form-switch-pill form-switch-warning">
+									<input type="checkbox" name="product_variants" value="1" data-toggle="collapse" data-target="#variantLogic, #productSimple" class="js-form-advanced-required-toggler">
+									<i data-on="&#10004;" data-off="&#10005;"></i>
+									<span>Product has variants (color, size, etc)</span>
+								</label>
+							</div>
+
+
+
+							<!-- 
+								VARIANTS 
+							-->
+							<div id="variantLogic" class="collapse js-form-advanced-table js-form-advanced-required" 
+								data-table-column-insert-before=".js-clone-before" 
+								data-table-column-insert-element='<input required type="text" class="form-control form-control-sm" value="">' 
+								data-table-column-delete-button='<span class="btn-table-column-delete fi fi-close fs--15 cursor-pointer px-1 d-inline-block"></span>' 
+								data-table-column-limit="5" 
+								data-table-clone-limit="300" 
+								data-table-clone-method="append">
+
+
+								<!-- 
+									
+									ADD COLUMN
+
+										The name of this input (name="option" in this demo) 
+										is used to generate input fields with names like this:
+											name="option[color]"
+										
+										if no input name used, field name is generated like this:
+											name="color"
+
+								-->
+								<div class="bg-light rounded p-1 mb-4 max-w-300">
+								<div class="js-form-advanced-table-column-add input-group">
+									<input type="text" name="variant" class="form-control form-control-sm text-capitalize input-suggest" 
+										placeholder="Ex: color, size" 
+										aria-label="Table Cloner" 
+										aria-describedby="button-table-cloner"
+										data-input-suggest-type="text" 
+										data-input-suggest-name="variant" 
+										data-input-suggest-ajax-url="_ajax/input_suggest_text.json" 
+										data-input-suggest-ajax-method="GET" 
+										data-input-suggest-ajax-limit="100">
+									<div class="input-group-append">
+										<button class="btn btn-sm btn-secondary" type="button" id="button-table-cloner">Add</button>
+									</div>
+								</div>
+								</div>
+
+								<table class="table table-bordered table-align-middle table-sm m-0">
+									<thead>
+										<tr class="fs--15 font-weight-medium">
+											<th>SKU</th>
+											<th>Barcode</th>
+											<th class="w--150 js-clone-before">Aquisition Price</th>
+											<th class="w--120">Price *</th>
+											<th class="w--120">Sale Price</th>
+											<th class="w--120">Inventory</th>
+											<th class="w--150">Inventory Status</th>
+											<th class="w--60 text-center">
+												<a href="#" class="btn btn-sm btn-primary btn-table-clone rounded-circle">
+													<i class="fi fi-plus"></i>
+												</a>
+											</th>
+										</tr>
+									</thead>
+
+									<tbody class="sortable">
+
+										<tr>
+											<!-- SKU -->
+											<td>
+												<input type="text" name="variant[product_sku][]" class="form-control form-control-sm" value="">
+											</td>
+
+											<!-- Barcode -->
+											<td>
+												<input type="text" name="variant[product_barcode][]" class="form-control form-control-sm" value="">
+											</td>
+
+											<!-- Aquisition Price -->
+											<td class="js-clone-before">
+												<input type="number" name="variant[product_cost][]" class="form-control form-control-sm js-form-advanced-limit" min="0" max="99999" value="" placeholder="USD">
+											</td>
+
+											<!-- Price -->
+											<td>
+												<input required type="number" name="variant[product_price][]" class="form-control form-control-sm js-form-advanced-limit" min="0" max="99999" value="" placeholder="USD">
+											</td>
+
+											<!-- Sale Price -->
+											<td>
+												<input type="number" name="variant[product_price_sale][]" class="form-control form-control-sm js-form-advanced-limit" min="0" max="99999" value="" placeholder="USD">
+											</td>
+
+											<!-- Inventory -->
+											<td>
+												<input type="number" name="variant[product_inventory][]" class="form-control form-control-sm js-form-advanced-limit" min="0" max="99999" value="">
+											</td>
+
+											<!-- Inventory Status -->
+											<td>
+												<select name="variant[product_inventory_status][]" class="form-control form-control-sm bs-select" title="Please Select...">
+													<option value="0">Out of stock</option>
+													<option value="1" selected="">In Stock</option>
+													<option value="2">Preorder</option>
+													<option value="3">Unavailable</option>
+												</select>
+											</td>
+
+											<!-- Option -->
+											<td class="position-relative text-center">
+
+												<!-- direct delete -->
+												<!--
+												<a href="#" class="btn btn-sm btn-light btn-table-clone-remove rounded-circle">
+													<i class="fi fi-thrash"></i>
+												</a>
+												-->
+
+												<!-- remove button (confirm trigger) -->
+												<a href="#" class="btn btn-table-clone-remove-confirm btn-sm btn-light rounded-circle">
+													<i class="fi fi-thrash"></i>
+												</a>
+
+												<!-- confirm -->
+												<div class="position-absolute bg-warning shadow top-0 bottom-0 end-0 w--200 z-index-10 mt--n2 mb--n2 hide">
+													<i class="arrow arrow-lg arrow-start arrow-center border-warning"></i>
+													<label class="d-block fs--13 mb--2">Are you sure?</label>
+													<a href="#!" class="btn btn-table-clone-remove btn-danger shadow-none btn-sm px-2 py-0">Delete</a>
+													<a href="#!" class="btn btn-table-clone-remove-cancel btn-secondary shadow-none btn-sm px-2 py-0">Cancel</a>
+												</div>
+
+											</td>
+
+										</tr>
+
+									</tbody>
+
+								</table>
+								<small class="d-block mt-1 text-gray-500">SKU is generated if left empty!</small>
+
+							</div>
+
+
+
+
+
+							<!-- 
+								SIMPLE 
+							-->
+							<div id="productSimple" class="collapse js-form-advanced-required show row gutters-sm">
+
+								<div class="col-12 col-lg-6">
+
+									<div class="bg-light p-2 rounded">
+
+										<!--
+											PRODUCT SKU
+										-->
+										<div class="form-label-group mb-3">
+											<input placeholder="SKU" id="product_sku" name="product_sku" type="text" value="" class="form-control">
+											<label for="product_sku">SKU</label>
+										</div>
+
+
+										<!--
+											PRODUCT BRACODE
+										-->
+										<div class="form-label-group">
+											<input placeholder="Barcode, ISBN, UPC, GTIN" id="product_barcode" name="product_barcode" type="text" value="" class="form-control">
+											<label for="product_barcode">Barcode, ISBN, UPC, GTIN</label>
+										</div>
+
+									</div>
+
+								</div>
+
+
+								<div class="col-12 col-lg-6">
+
+									<div class="bg-light p-2 rounded">
+
+
+										<div class="row gutters-xs">
+												
+											<div class="col-12 col-md-6">
+
+												<!--
+													PRODUCT AQUISITION COST
+												-->
+												<div class="form-label-group mb-3">
+													<input placeholder="Aquisition Price (USD)" id="product_price_aquisition" name="product_price_aquisition" min="0" max="99999" type="number" value="" class="form-control js-form-advanced-limit" title="Optional, to calculate profits" data-toggle="tooltip">
+													<label for="product_price_aquisition" class="w-100">
+														Aquisition Price 
+														<span class="float-end text-gray-500 fs--13 mt--2">
+															USD
+														</span>
+													</label>
+												</div>
+
+											</div>
+
+
+											<div class="col-12 col-md-6">
+
+												<!--
+													PRODUCT PRICE
+												-->
+												<div class="form-label-group mb-3">
+													<input required placeholder="Price (USD)" id="product_price" name="product_price" type="number" value="" class="form-control js-form-advanced-limit" min="0" max="99999">
+													<label for="product_price_sale" class="w-100">
+														Price 
+														<span class="float-end text-gray-500 fs--13 mt--2">
+															USD
+														</span>
+													</label>
+												</div>
+
+											</div>
+
+										</div>
+
+
+
+										<!--
+											PRICE
+										-->
+										<div class="row gutters-xs">
+
+											<div class="col-12 col-md-6">
+
+												<!--
+													PRODUCT PRICE SALE
+												-->
+												<div class="form-label-group mb-3">
+													<input placeholder="Sale Price (USD)" id="product_price_sale" name="product_price_sale" type="number" value="" class="form-control js-form-advanced-limit" min="0" max="99999">
+													<label for="product_price_sale" class="w-100">
+														Sale Price 
+														<span class="float-end text-gray-500 fs--13 mt--2">
+															USD
+														</span>
+													</label>
+												</div>
+
+
+											</div>
+
+
+											<div class="col-12 col-md-6">
+
+												<!--
+													PRODUCT INVENTORY
+												-->
+												<div class="form-label-group mb-3">
+													<input placeholder="Inventory" id="product_inventory" name="product_inventory" type="number" value="" class="form-control">
+													<label for="product_inventory">Inventory</label>
+												</div>
+
+											</div>
+
+											<div class="col-12">
+
+												<!--
+													INVENTORY STATUS
+												-->
+												<div class="form-label-group">
+													<select id="product_inventory_status" name="product_inventory_status" class="form-control bs-select" data-live-search="false" title="Nothing Selected">
+														<option value="0">Out of stock</option>
+														<option value="1" selected="">In Stock</option>
+														<option value="2">Preorder</option>
+														<option value="3">Unavailable</option>
+													</select>
+													<label for="product_inventory_status">Product Type</label>
+												</div>
+
+											</div>
+										</div>
+
+
+									</div>
+
+								</div>
+
+							</div>
+
+
+
+
+							<!--
+								PRICE SALE : DATE : TRIGGER
+							-->
+							<div class="pt-3 px-3 mt-5 bg-light rounded clearfix">
+								
+								<div class="pb-3">
+
+									<a href="#price_sale_date" class="fs--14 text-decoration-none form-advanced-reset js-ignore" data-toggle="collapse" data-target-reset="#price_sale_date">
+										<span class="group-icon fs--11">
+											<i class="fi fi-arrow-down-slim"></i>
+											<i class="fi fi-close"></i>
+										</span>
+										<span class="d-inline-block px-1">
+											Limit <b>sale price</b> by date.
+										</span>
+									</a>
+
+
+
+									<!--
+										PRICE SALE : DATE
+									-->
+									<div id="price_sale_date" class="collapse js-form-advanced-required max-w-600">
+										<div class="mt-3 row gutters-xs">
+
+											<div class="col-12 col-md-6">
+
+												<div class="form-label-group mb-3">
+													<input placeholder="Date Start" id="product_promo_start" name="product_promo_start" type="text" value="" class="form-control rangepicker" 
+														data-single-datepicker="true" 
+														data-layout-rounded="true" 
+														data-drops="up" 
+														data-placement="right" 
+														data-timepicker="false" 
+														data-timepicker-24h="true" 
+														data-timepicker-show-seconds="false" 
+														data-disable-auto-update-input="true" 
+														data-date-format="YYYY-MM-DD HH:mm:ss" 
+														data-disable-past-dates="true" 
+														data-quick-locale='{
+															"lang_apply"	: "Apply",
+															"lang_cancel"	: "Cancel",
+															"lang_crange"	: "Custom Range",
+															"lang_months"	 : ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+															"lang_weekdays" : ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
+														}'>
+													<label for="product_promo_start">Date Start</label>
+													<a href="#" class="btn btn-rangepicker-clear position-absolute end-0 top-0 z-index-2 fi fi-close"></a>
+												</div>
+
+											</div>
+
+
+											<div class="col-12 col-md-6">
+
+												<div class="form-label-group mb-3">
+													<input placeholder="Date End" id="product_promo_end" name="product_promo_end" type="text" value="" class="form-control rangepicker" 
+														data-single-datepicker="true" 
+														data-layout-rounded="true" 
+														data-drops="up" 
+														data-placement="left" 
+														data-timepicker="false" 
+														data-timepicker-24h="true" 
+														data-timepicker-show-seconds="false" 
+														data-disable-auto-update-input="true" 
+														data-date-format="YYYY-MM-DD HH:mm:ss" 
+														data-disable-past-dates="true" 
+														data-quick-locale='{
+															"lang_apply"	: "Apply",
+															"lang_cancel"	: "Cancel",
+															"lang_crange"	: "Custom Range",
+															"lang_months"	 : ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+															"lang_weekdays" : ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
+														}'>
+													<label for="product_promo_end">Date End</label>
+													<a href="#" class="btn btn-rangepicker-clear position-absolute end-0 top-0 z-index-2 fi fi-close"></a>
+												</div>
+
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+
+
+
+						</section>
+
+
+
+
+
+
+
+						<!--
+							
+							GIFT
+
+						-->
+						<section>
+
+							<!-- 
+								GIFT SWITCHER
+							-->
+							<div class="pt-2 mb-0">
+								<label class="form-switch form-switch-pill form-switch-success">
+									<input type="checkbox" name="product_gift" value="1" data-toggle="collapse" data-target="#productGift" class="js-form-advanced-required-toggler">
+									<i data-on="&#10004;" data-off="&#10005;"></i>
+									<span>Product Gift</span>
+								</label>
+							</div>
+
+							<div id="productGift" class="collapse">
+								<div class="border-top mt-3 pt-3">
+
+									<p>
+										A Gift for this product! <br>
+										If more gifts added, your customer is able to select only one! <br>
+										Gifts are automatically disabled when out of stock!
+									</p>
+
+									<!-- 
+										See the console for Ajax request 
+
+										Params sent to URL:
+											{ajax: "true", action: "input_search", key: "_USER_KEYWORDS_", limit: 20}
+
+										Note: in this demo, there are always the same results
+										because the active search is done by the backend!
+
+									-->
+									<div class="form-label-group mb-3 max-w-500">
+
+										<!--
+											
+											NOTE:
+												data-name="product_id[]"
+												Is used to generate hidden input fields for each item added to the list
+												If not provided, name="..." attribute is used!
+												If none of them found, "item[]" is used by default for input hidden fields!
+										-->
+										<input type="text" class="form-control input-suggest" id="gift_search" value="" 
+											placeholder="Product Search..." 
+											data-name="gift_id[]" 
+											data-input-suggest-mode="append" 
+											data-input-suggest-typing-delay="300" 
+											data-input-suggest-typing-min-char="3" 
+											data-input-suggest-append-container="#giftContainer" 
+											data-input-suggest-ajax-url="_ajax/input_suggest_append.json" 
+											data-input-suggest-ajax-method="GET" 
+											data-input-suggest-ajax-limit="10">
+										<label for="gift_search">Product Search...</label>
+									</div>
+
+									<!-- append data -->
+									<div id="giftContainer" class="sortable"></div>
+
+								</div>
+							</div>
+
+						</section>
+
+
+
+
+
+						<!--
+							
+							CONFIGURATOR
+
+						-->
+						<section>
+
+							<!-- 
+								GIFT SWITCHER
+							-->
+							<div class="pt-2 mb-0">
+								<label class="form-switch form-switch-pill form-switch-primary">
+									<input type="checkbox" name="product_configurator" value="1" data-toggle="collapse" data-target="#productConfigurator" class="js-form-advanced-required-toggler">
+									<i data-on="&#10004;" data-off="&#10005;"></i>
+									<span>Product Configurator</span>
+								</label>
+							</div>
+
+							<div id="productConfigurator" class="collapse">
+								<div class="border-top mt-3 pt-3">
+
+									<p>
+										Example: this product is a computer!<br>
+										Allow customers to upgrade memory, harddisk, etc.
+									</p>
+
+									<div class="form-label-group mb-3 max-w-500">
+										<input type="text" placeholder="Name / Title" class="form-control" id="configurator_name" value="">
+										<label for="configurator_name">Name / Title</label>
+										<small class="d-block text-gray-500">Example: <span class="font-weight-medium">Computer Upgrade</span></small>
+									</div>
+
+									<!-- 
+										See the console for Ajax request 
+
+										Params sent to URL:
+											{ajax: "true", action: "input_search", key: "_USER_KEYWORDS_", limit: 20}
+
+										Note: in this demo, there are always the same results
+										because the active search is done by the backend!
+
+									-->
+									<div class="form-label-group mb-3 max-w-500">
+
+										<!--
+											
+											NOTE:
+												data-name="product_id[]"
+												Is used to generate hidden input fields for each item added to the list
+												If not provided, name="..." attribute is used!
+												If none of them found, "item[]" is used by default for input hidden fields!
+										-->
+										<input type="text" class="form-control input-suggest" id="configurator_search" value="" 
+											placeholder="Product Search..." 
+											data-name="configurator_id[]" 
+											data-input-suggest-mode="append" 
+											data-input-suggest-typing-delay="300" 
+											data-input-suggest-typing-min-char="3" 
+											data-input-suggest-append-container="#configuratorContainer" 
+											data-input-suggest-ajax-url="_ajax/input_suggest_append.json" 
+											data-input-suggest-ajax-method="GET" 
+											data-input-suggest-ajax-limit="10">
+										<label for="configurator_search">Product Search...</label>
+									</div>
+
+									<!-- append data -->
+									<div id="configuratorContainer" class="sortable"></div>
+
+								</div>
+							</div>
+
+						</section>
+
+
+
+
+
+
+						<!-- 
+							SUBMIT BUTTON 
+						-->
+						<button type="submit" class="btn btn-primary">
+							<i class="fi fi-check"></i>
+							Save Changes
+						</button>
+
+					</form>

@@ -1,0 +1,327 @@
+﻿					<!-- doc:start -->
+					<div class="page-title bg-transparent b-0">
+
+						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
+							Borders
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--13 pb-2 px-3">
+								<li class="breadcrumb-item">
+									<a href="index.html" class="js-ajax">Dashboard</a>
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Utils
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Borders
+								</li>
+							</ol>
+						</nav>
+
+					</div>
+
+
+
+
+
+
+
+					<!-- start:row -->
+					<div class="row gutters-sm">
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Borders</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<table class="table table-lg">
+											<thead>
+												<tr>
+													<th scope="col" class="w--300">Class</th>
+													<th scope="col">Description</th>
+													<th scope="col" class="w--300">Quick Example</th>
+												</tr>
+											</thead>
+
+											<tbody>
+
+												<tr>
+													<td>
+														<code class="d-block">.border</code>
+														<br>
+														<code class="d-block">.border-primary</code>
+														<code class="d-block">.border-secondary</code>
+														<code class="d-block">.border-success</code>
+														<code class="d-block">.border-danger</code>
+														<code class="d-block">.border-info</code>
+														<code class="d-block">.border-pink</code>
+														<code class="d-block">.border-indigo</code>
+														<code class="d-block">.border-purple</code>
+														<code class="d-block">.border-dark</code><br>
+														<br>
+														<code class="d-block">.border-*-soft</code>
+														<br>
+														<h6>Responsive only</h6>
+														<code class="d-block">.border-top-lg</code>
+														<code class="d-block">.border-top-md</code>
+														<code class="d-block">.border-top-xs</code>
+														<code class="d-block">.border-bottom-lg</code>
+														<code class="d-block">.border-bottom-md</code>
+														<code class="d-block">.border-bottom-xs</code>
+													</td>
+													<td>
+														<p>
+															Apply a border color.<br>
+															Can be mixed with <code>.bw--*</code> and <code>.border-[dotted|dashed]</code>
+														</p>
+
+														<p>
+															If element has no predefined border, should be added <code>.border</code>
+														</p>
+
+														<p>
+															Responsive classes - apply a border only for specified viewport (lg|md|xs). Used instead of <code>border-top|bottom</code> in some responsive situations.
+														</p>
+													</td>
+													<td>
+														<div class="p-2 border mb-3">
+															.border
+														</div>
+														<div class="p-2 border border-primary mb-3">
+															.border .border-primary
+														</div>
+														<div class="p-2 border border-success mb-3">
+															.border .border-success
+														</div>
+														<div class="p-2 border border-danger border-dashed mb-3">
+															.border .border-danger .border-dashed
+														</div>
+														<div class="p-2 border border-warning border-dashed bw--2 mb-3">
+															.border .border-warning .border-dashed .bw--2
+														</div>
+													</td>
+												</tr>
+
+												<tr>
+													<td>
+														<code class="d-block">.border-top</code>
+														<code class="d-block">.border-right</code>
+														<code class="d-block">.border-bottom</code>
+														<code class="d-block">.border-left</code>
+													</td>
+													<td>
+														Apply a specific border (you can mix them).<br>
+														Also you can mix with <code>.bw--*</code> and any border color (see below).
+													</td>
+													<td>
+														<div class="p-2 bg-light border-dark border-top mb-3">
+															.border-top
+														</div>
+														<div class="p-2 bg-light border-dark border-right mb-3">
+															.border-right
+														</div>
+														<div class="p-2 bg-light border-dark border-left mb-3">
+															.border-left
+														</div>
+														<div class="p-2 bg-light border-dark border-bottom mb-3">
+															.border-bottom
+														</div>
+
+														<div class="p-2 bg-light border-dark border-left border-right mb-3">
+															.border-left .border-right
+														</div>
+
+														<div class="p-2 bg-light border-top border-bottom mb-3">
+															.border-top .border-bottom
+														</div>
+
+														<div class="p-2 border-left border-danger mb-3">
+															.border-left .border-danger
+														</div>
+
+														<div class="p-2 border-left border-warning bw--3 mb-3">
+															.border-left .border-warning .bw--3
+														</div>
+
+													</td>
+												</tr>
+
+
+												<tr>
+													<td>
+														<code class="d-block">.rounded</code>
+														<code class="d-block">.rounded-xl</code>
+														<code class="d-block">.rounded-circle</code><br>
+														<code class="d-block">.row-pill</code>
+													</td>
+													<td>
+														Border radius - can be mixed with almost any block/box/element.
+													</td>
+													<td>
+														<div class="p-2 border border-primary rounded mb-3">
+															.border .border-primary .rounded
+														</div>
+
+														<div class="p-2 border border-primary rounded-xl mb-3">
+															.border .border-primary .rounded-xl
+														</div>
+
+														<div class="p-2 border border-primary row-pill mb-3">
+															.border .border-primary .row-pill 
+														</div>
+
+														<div class="p-2 shadow-lg rounded mb-3">
+															.shadow-lg .rounded
+														</div>
+
+														<div class="p-2 shadow-lg row-pill mb-4">
+															.shadow-lg .row-pill 
+														</div>
+
+														<div class="w--80 h--80 rounded-circle text-center bg-cover mb-3" style="background-image:url('../../html_frontend/demo.files/images/unsplash/brooke-cagle-g1Kr4Ozfoac-unsplash-100px.jpg')"></div>
+														.w--80 .h--80 .rounded-circle
+
+													</td>
+												</tr>
+
+												<tr>
+													<td>
+														<code class="d-block">.bw--1</code>
+														<code class="d-block">.bw--2</code>
+														<code class="d-block">.bw--3</code>
+													</td>
+													<td>
+
+														<p>
+															Change the border width (in pixels) of any bordered element.
+														</p>
+
+														<p>
+															3 border width added by default in <span class="text-gray-500">_core/utils/_variables.scss</span> <br>
+															<code>$util-border-val: 0 1 2 3 !default;</code>
+														</p>
+
+														<p>
+															You can also mix with color borders:<br>
+															<code>.border-[primary|danger|warning|success|pink|indigo|purple]</code> <br>
+															<code>.border-[top|right|left|bottom]</code>
+														</p>
+
+														<p>
+															If element has no predefined border, should be added <code>.border</code>
+														</p>
+
+													</td>
+													<td>
+
+														<div class="p-2 border bw--2 mb-3">
+															.bw--2
+														</div>
+
+														<div class="p-2 border bw--3 mb-3">
+															.bw--3
+														</div>
+
+														<div class="p-2 border border-danger bw--2 mb-3 mt-3">
+															.bw--2 .border-danger
+														</div>
+
+														<div class="p-2 border-left border-warning bw--3 mb-3 mt-3">
+															.bw--3 .border-left border-warning
+														</div>
+
+													</td>
+												</tr>
+
+												<tr>
+													<td>
+														<code class="d-block">.border-solid</code>
+														<code class="d-block">.border-dotted</code>
+														<code class="d-block">.border-dashed</code>
+														<code class="d-block">.border-gray-400</code>
+													</td>
+													<td>
+														Apply a border style. Can also be mixed with border colors &amp; width.<br><br>
+														<code>.border-gray-400</code> is the input/select border color, if any element need looks the same
+													</td>
+													<td>
+														<div class="p-2 border-primary border-solid mb-3">
+															.border-primary .border-solid
+														</div>
+
+														<div class="p-2 border-primary border-dotted mb-3">
+															.border-primary .border-dotted
+														</div>
+
+														<div class="p-2 border-primary border-dashed mb-3">
+															.border-primary .border-dashed
+														</div>
+
+														<div class="p-2 border-primary border-dashed bw--1 mb-3">
+															.border-primary .border-dashed .bw--1
+														</div>
+
+														<div class="p-2 border-gray-400 bw--1 mb-3">
+															.border-gray-400
+														</div>
+
+													</td>
+												</tr>
+
+												<tr>
+													<td>
+														<code class="d-block">.border-transparent</code>
+													</td>
+													<td>
+														Instead of removing a border, there are situations where just transparent is needed, to keep the alingnment in place.
+													</td>
+													<td></td>
+												</tr>
+
+												<tr>
+													<td>
+														<code class="d-block">.b--0</code>
+														<code class="d-block">.bt--0, .bt-0</code>
+														<code class="d-block">.br--0, .br-0</code>
+														<code class="d-block">.bb--0, .bb-0</code>
+														<code class="d-block">.bl--0, .bl-0</code>
+														<code class="d-block">.bx-0, .by-0</code>
+													</td>
+													<td>
+														Remove specific border: <br>
+														.<b>b</b>--0 = all borders (same as bootstrap <code>.border-0</code>) <br>
+														.<b>bt</b>--0 = border top <br>
+														.<b>br</b>--0 = border right <br>
+														.<b>bb</b>--0 = border bottom <br>
+														.<b>bl</b>--0 = border left <br><br>
+														.<b>bx</b>-0 = border left &amp; right (x axis) <br><br>
+														.<b>by</b>-0 = border top &amp; bottom (y axis) <br><br>
+														Added additional b*-0 because bootstrap already use .b-0 so we can have the all "set".
+													</td>
+													<td></td>
+												</tr>
+
+											</tbody>
+										</table>
+										
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+					</div>
+					<!-- end:row: -->
+					<!-- doc:end -->

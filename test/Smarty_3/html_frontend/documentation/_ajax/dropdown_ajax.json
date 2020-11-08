@@ -1,0 +1,59 @@
+[
+	{
+		"label":	"Active",
+		"url":		"#",
+		"active":	true
+	},{
+		"label":	"Disabled",
+		"url":		"#",
+		"disabled":	true
+	},{
+		"label":	"Using Class",
+		"url":		"#",
+		"class":	"js-ajax text-danger other-class",
+		"_comment_delete_this_line": "you can use 'active' and 'disabled' classes instead of active|disabled params"
+	},{
+		"label":	"With Icon",
+		"url":		"#",
+		"icon":		"fi fi-check text-success"
+	},{
+		"divider":	true
+	},{
+		"label":	"Item 1",
+		"url":		"#",
+		"childs":[
+			{
+				"label":	"Item 1.1",
+				"url":		"#",
+				"childs":[
+						{
+							"label":	"Item 2.1",
+							"url":		"#"
+						},{
+							"label":	"Item 2.2",
+							"url":		"#"
+						}
+					]
+			},{
+				"label":	"Item 1.2",
+				"url":		"#"
+			},{
+				"label":	"Item 1.3",
+				"url":		"#"
+			}
+		]
+	},{
+		"label":	"Item 2",
+		"url":		"#"
+	},{
+		"label":	"Item 3",
+		"url":		"#"
+	},{
+		"divider":	true
+	},{
+		"label":	"View Json File",
+		"target":	"_blank",
+		"class":	"font-weight-bold",
+		"url":		"_ajax/dropdown_ajax.json"
+	}
+]

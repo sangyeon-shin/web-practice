@@ -1,0 +1,202 @@
+   
+    <!-- use this instead, for non-ajax -->
+    <!-- <form novalidate class="bs-validate" action="#" method="post"> -->
+
+    <form class="bs-validate js-ajax" novalidate 
+            method="post" 
+            action="../../html_frontend/demo.files/php/demo.ajax_request.php" 
+            method="post" 
+
+            data-modal-autoclose-on-success="true"
+            data-modal-autoclose-on-success-delay="200"
+
+            data-ajax-update-url="false" 
+            data-ajax-show-loading-icon="true" 
+
+            data-success-toast-text="<i class='fi fi-check float-start'></i> Successfully Sent!" 
+            data-error-toast-text="<i class='fi fi-circle-spin fi-spin float-start'></i> Please, complete all required fields!" 
+            data-error-toast-delay="3000" 
+            data-error-toast-position="bottom-center" 
+            data-error-scroll-ignore="true"
+
+            data-ajax-callback-function="">
+
+        
+
+        <!-- 
+
+            hidden action, 
+            used by backend as identifier 
+
+        -->
+        <input type="hidden" name="action" value="send_message">
+
+
+
+        <!-- Header -->
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabelMd">
+                <i class="fi fi-envelope-2 text-muted"></i>
+                <span class="d-inline-block pl-2 pr-2">
+                    Send Message
+                </span>
+            </h5>
+
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span class="fi fi-close fs--18" aria-hidden="true"></span>
+            </button>
+        </div>
+
+        <!-- Content -->
+        <div class="modal-body p--30">
+
+            <!--
+                Message : To
+
+                please pay attention to:  message_to[]
+                is array because multiple selection is enabled.
+                remove [] (brackets) if multiple is not enabled!
+            -->
+            <select required name="message_to[]" multiple class="form-control bs-select hide" title="Send to..." data-header="Select one or more" data-live-search="true" data-actions-box="true">
+                <option value="1" data-icon="fi fi-user-male float-start">Michael Dam</option>
+                <option value="2" data-icon="fi fi-user-male float-start">Joseph Gonzalez</option>
+                <option value="3" data-icon="fi fi-user-male float-start">Erik Mclean</option>
+                <option value="4" data-icon="fi fi-user-female float-start">Felicia doe</option>
+                <option data-divider="true"></option>
+                <option value="5" data-subtext="(owner)" data-icon="fi fi-star-full float-start text-warning">John Doe</option>
+            </select>
+
+
+            <!-- Message : Subject -->
+            <div class="form-label-group mb-3 mt-3">
+                <input name="message_subject" placeholder="Subject" type="text" value="" class="form-control">
+                <label for="title">Subject</label>
+            </div>
+
+
+            <!-- Message : Body -->
+            <div class="form-label-group mb-3">
+                <textarea name="message_body" required class="medium-editor bg-white border p--15 rounded w-100 min-h-150" rows="5"
+                    
+                    data-placeholder="Type your message..." 
+                    data-lng-save="Save" 
+                    data-lng-clear="Clear" 
+                    data-lng-link="Paste or type a link" 
+
+                    data-btn-picker="true" 
+                    data-btn-bold="true" 
+                    data-btn-italic="true" 
+                    data-btn-underline="true" 
+                    data-btn-link="true" 
+                    data-btn-h1="false" 
+                    data-btn-h2="false" 
+                    data-btn-h3="false" 
+                    data-btn-h4="false" 
+                    data-btn-h5="true" 
+                    data-btn-h6="true" 
+                    data-btn-unordered="true" 
+                    data-btn-ordered="true"></textarea>
+            </div>
+
+            <!-- Message : Urgency -->
+            <label class="form-switch form-switch-pill form-switch-danger d-block mb-4">
+                <input name="message_urgency" type="checkbox" value="1">
+                <i data-on="&#10004;" data-off="&#10005;"></i>
+                Mark as urgent message
+            </label>
+
+
+
+
+            <!-- Message : Attachments -->
+            <div class="bg-light border border-dashed rounded p--15 clearfix">
+               
+               <div class="clearfix">
+
+                    <!-- remove button -->
+                    <a href="#" class="js-file-input-btn-multiple-list-static-remove hide btn btn-sm btn-secondary float-end mb-2">
+                        <i class="fi fi-close"></i>
+                        Clear
+                    </a>
+
+                    <!-- upload button -->
+                    <label class="btn btn-primary btn-sm cursor-pointer position-relative m-0 float-start">
+
+                        <!-- 
+                            We use .absolute-full class instead of .viewport-out
+                            Just to make sure the element is working crossbrowser!
+
+                            data-file-preview-img-height="50"   - min. 50
+
+                                Layouts
+                                    data-file-preview-class="show-hover-container shadow-md mb-2 rounded overflow-hidden" 
+                                    data-file-preview-class="show-hover-container shadow-md mb-2 rounded overflow-hidden border" 
+                                    data-file-preview-class="show-hover-container mb-2 rounded border overflow-hidden" 
+                                    data-file-preview-class="show-hover-container border-bottom" 
+                                    data-file-preview-class="show-hover-container border-left bw--2 mb-1" 
+                                    data-file-preview-class="show-hover-container bg-light rounded overflow-hidden p--6 mb-1" 
+                                    data-file-preview-class="show-hover-container bg-light rounded overflow-hidden p--3 mb-1 border" 
+                                    data-file-preview-class="show-hover-container bg-primary-soft rounded overflow-hidden p--3 mb-1" 
+
+                                .show-hover-container   = show delete button only on hover (always visible on mobile)
+
+                         -->
+                        <input  name="message_attachment[]" 
+                                multiple=""
+                                type="file" 
+
+                                data-file-ext="jpg, png, zip, mp3" 
+                                data-file-max-size-kb-per-file=""
+                                data-file-max-size-kb-total="0" 
+                                data-file-max-total-files="5"
+                                data-file-ext-err-msg="Allowed:" 
+                                data-file-exist-err-msg="File already exists:"
+                                data-file-size-err-item-msg="File too large!"
+                                data-file-size-err-total-msg="Total allowed size exceeded!"
+                                data-file-size-err-max-msg="Maximum allowed files:"
+                                data-file-toast-position="bottom-center"
+                                data-file-preview-container=".js-file-input-container-multiple-list-static" 
+                                data-file-preview-img-height="50" 
+                                data-file-btn-clear="a.js-file-input-btn-multiple-list-static-remove"
+                                data-file-preview-show-info="true" 
+                                data-file-preview-list-type="list" 
+                                data-file-preview-class="bg-white mb-1 p--2 rounded border overflow-hidden" 
+
+                                class="custom-file-input absolute-full">
+
+                        <span class="group-icon">
+                            <i class="fi fi-arrow-upload"></i>
+                            <i class="fi fi-circle-spin fi-spin"></i>
+                        </span> 
+
+                        <span>Attachments</span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- preview container -->
+                <div class="js-file-input-container-multiple-list-static position-relative hide-empty mt-3"><!-- container --></div>
+
+            </div>
+            <small class="d-block text-muted mb-3 mt-1">allowed: jpg, png, zip, mp3</small>
+            <!-- /Message : Attachments -->
+
+
+
+        </div>
+
+        <!-- Footer -->
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-sm btn-pill btn-primary btn-soft">
+                <i class="fi fi-check"></i> 
+                Send message
+            </button>
+            <button type="button" class="btn btn-sm btn-pill btn-light" data-dismiss="modal">
+                <i class="fi fi-close"></i> 
+                Cancel
+            </button>
+        </div>
+
+    </form>

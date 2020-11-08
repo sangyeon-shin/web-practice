@@ -1,0 +1,15 @@
+[
+  {
+    "label": "Alabama",
+    "value": "0",
+    "selected": false
+  },{
+    "label": "Arizona",
+    "value": "1",
+    "selected": false
+  },{
+    "label": "California",
+    "value": "2",
+    "selected": false
+  }
+]

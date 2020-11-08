@@ -1,0 +1,884 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Smarty V3</title>
+		<meta name="description" content="...">
+
+        <meta name="viewport" content="width=device-width, maximum-scale=5, initial-scale=1, user-scalable=0">
+        <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+        <!-- up to 10% speed up for external res -->
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+        <link rel="preconnect" href="https://fonts.googleapis.com/">
+        <link rel="preconnect" href="https://fonts.gstatic.com/">
+        <!-- preloading icon font is helping to speed up a little bit -->
+        <link rel="preload" href="assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
+
+        <link rel="stylesheet" href="assets/css/core.min.css">
+        <link rel="stylesheet" href="assets/css/vendor_bundle.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap">
+
+		<!-- favicon -->
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="apple-touch-icon" href="demo.files/logo/icon_512x512.png">
+
+		<link rel="manifest" href="assets/images/manifest/manifest.json">
+		<meta name="theme-color" content="#377dff">
+
+	</head>
+
+	<!--
+
+		Available Body Classes
+			.layout-boxed 					- boxed layout (ignored if any .header-* class is present)
+
+			.header-scroll-reveal  			- header : hide on scroll down and reveal on scroll up
+			.header-sticky  				- header : always visible on top
+			.header-over  					- header : over slider|parallax|image (next section must contain a large image, else will be indistinguishable)
+
+				Possible header combinations:
+					.header-over + .header-scroll-reveal
+					.header-over + .header-sticky
+						* NOTE: if .header-sticky + .header-scroll-reveal are both used, .header-scroll-reveal is ignored
+
+
+			.bg-cover .bg-fixed 			- both classes used with .layout-boxed to set a background image via style="background-image:url(...)"
+	-->
+	<body class="header-scroll-reveal">
+
+		<div id="wrapper">
+
+
+			<!-- HEADER -->
+			<header id="header">
+
+
+				<!-- NAVBAR -->
+				<div class="container position-relative">
+
+					<nav class="navbar navbar-expand-lg navbar-light justify-content-lg-between justify-content-md-inherit">
+
+						<div class="align-items-start">
+
+							<!-- mobile menu button : show -->
+							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMainNav" aria-controls="navbarMainNav" aria-expanded="false" aria-label="Toggle navigation">
+								<svg width="25" viewBox="0 0 20 20">
+									<path d="M 19.9876 1.998 L -0.0108 1.998 L -0.0108 -0.0019 L 19.9876 -0.0019 L 19.9876 1.998 Z"></path>
+									<path d="M 19.9876 7.9979 L -0.0108 7.9979 L -0.0108 5.9979 L 19.9876 5.9979 L 19.9876 7.9979 Z"></path>
+									<path d="M 19.9876 13.9977 L -0.0108 13.9977 L -0.0108 11.9978 L 19.9876 11.9978 L 19.9876 13.9977 Z"></path>
+									<path d="M 19.9876 19.9976 L -0.0108 19.9976 L -0.0108 17.9976 L 19.9876 17.9976 L 19.9876 19.9976 Z"></path>
+								</svg>
+							</button>
+
+							<!-- 
+								Logo : height: 70px max
+							-->
+							<a class="navbar-brand js-ajax" href="fullajax-index.html">
+								<img src="assets/images/logo/logo_dark.svg" width="110" height="70" alt="...">
+							</a>
+
+						</div>
+
+
+
+
+						<!-- Menu -->
+						<div class="collapse navbar-collapse navbar-animate-fadein" id="navbarMainNav">
+
+
+							<!-- MOBILE MENU NAVBAR -->
+							<div class="navbar-xs d-none"><!-- .sticky-top -->
+
+								<!-- mobile menu button : close -->
+								<button class="navbar-toggler pt-0" type="button" data-toggle="collapse" data-target="#navbarMainNav" aria-controls="navbarMainNav" aria-expanded="false" aria-label="Toggle navigation">
+									<svg width="20" viewBox="0 0 20 20">
+										<path d="M 20.7895 0.977 L 19.3752 -0.4364 L 10.081 8.8522 L 0.7869 -0.4364 L -0.6274 0.977 L 8.6668 10.2656 L -0.6274 19.5542 L 0.7869 20.9676 L 10.081 11.679 L 19.3752 20.9676 L 20.7895 19.5542 L 11.4953 10.2656 L 20.7895 0.977 Z"></path>
+									</svg>
+								</button>
+
+								<!-- 
+									Mobile Menu Logo 
+									Logo : height: 70px max
+								-->
+								<a class="navbar-brand js-ajax" href="fullajax-index.html">
+									<img src="assets/images/logo/logo_dark.svg" width="110" height="70" alt="...">
+								</a>
+
+							</div>
+							<!-- /MOBILE MENU NAVBAR -->
+
+
+
+							<!-- NAVIGATION -->
+							<ul class="navbar-nav">
+
+								<!-- Features -->
+								<li class="nav-item dropdown">
+
+									<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="mainNavFeatures">
+										Features
+									</a>
+
+									<div class="dropdown-menu dropdown-menu-clean dropdown-menu-hover w--350 p-0 overflow-hidden" aria-labelledby="mainNavFeatures">
+
+										<div class="row no-gutters bg-gradient-default">
+
+											<div class="col-2 d-none d-lg-block"><!-- empty -->
+												
+												<!-- text-rotate-90 , text-rotate-180 -->
+												<p class="h6 mb-0 text-warning text-rotate-180 text-center position-absolute d-middle">
+													ORIGINAL • AUTHENTIC • 1877
+												</p>
+
+											</div>
+
+											<div class="col bg-white overflow-hidden">
+
+												<ul class="mx-0 px-0 my-2">
+
+													<li class="dropdown-item text-wrap">
+														<a class="js-ajax dropdown-link text-dark transition-hover-start p-3" href="fullajax-page-1.html">
+															<i class="fi fi-recycle float-start fs--25 mt--n2"></i>
+															<span class="h5-xs d-block fs--18">Engage and Convert</span>
+															<span class="fs--15 text-muted">
+																The all in one digital software
+															</span>
+														</a>
+													</li>
+
+													<li class="dropdown-item text-wrap">
+														<a class="js-ajax dropdown-link text-dark transition-hover-start p-3 line-height-1" href="fullajax-page-2.html">
+															<i class="fi fi-shape-abstract-cube float-start fs--25 mt--n2"></i>
+															<span class="h5-xs d-block fs--18">Lead Generation</span>
+															<span class="fs--11 text-muted text-uppercase">
+																Boost your campaigns
+															</span>
+														</a>
+													</li>
+
+													<li class="dropdown-item text-wrap">
+														<a class="js-ajax dropdown-link text-dark transition-hover-start p-3 line-height-1" href="fullajax-page-3.html">
+															<i class="fi fi-target-simple float-start fs--25 mt--n2"></i>
+															<span class="h5-xs d-block fs--18">Complete Sales Solution</span>
+															<span class="fs--15 text-muted">
+																Streamline a complex sales process
+															</span>
+														</a>
+													</li>
+
+												</ul>
+
+												<div class="position-relative bg-theme-color-light py-4 px-3">
+
+													<h6>Enterprise</h6>
+
+
+													<ul class="mx-0 px-0">
+
+														<li class="dropdown-item bg-transparent text-wrap">
+															<a class="js-ajax dropdown-link bg-transparent text-dark px-2 py-1" href="fullajax-page-4.html">
+																<i class="fi fi-arrow-end"></i>
+																QA Testing
+															</a>
+														</li>
+
+														<li class="dropdown-item bg-transparent text-wrap">
+															<a class="js-ajax dropdown-link bg-transparent text-dark px-2 py-1" href="fullajax-page-5.html">
+																<i class="fi fi-arrow-end"></i>
+																API
+															</a>
+														</li>
+
+													</ul>
+
+												</div>
+
+											</div>
+
+										</div>
+
+
+									</div>
+
+								</li>
+
+
+								<li class="nav-item dropdown">
+
+									<a href="#" id="mainNavSolutions" class="nav-link dropdown-toggle" 
+										data-toggle="dropdown" 
+										aria-haspopup="true" 
+										aria-expanded="false">
+										Solutions
+									</a>
+
+									<!--
+										
+										.dropdown-menu-invert = open invert
+
+									-->
+									<div aria-labelledby="mainNavSolutions" class="shadow-none dropdown-menu dropdown-menu-clean dropdown-menu-hover w--600 bg-gradient-default">										
+										
+										<div class="row no-gutters col-border">
+											
+											<div class="col-12 col-lg-4 b-0-xs">
+
+												<!-- Documentation : no container, direct links! -->
+												<a href="fullajax-page-1.html" class="js-ajax dropdown-item transition-hover-top clearfix text-white py-4 fs--14 text-center">
+
+													<span class="d-block mb-4">
+														<i class="fi fi-brain fs--35"></i>
+													</span>
+
+													<b>FULLY MODULAR</b>
+													<span class="d-block text-wrap mt-2 fs--14">
+														Anything is possible!
+													</span>
+												</a>
+
+											</div>
+
+											<div class="col-12 col-lg-4 b-0-xs">
+
+												<!-- Documentation : no container, direct links! -->
+												<a href="fullajax-page-2.html" class="js-ajax dropdown-item transition-hover-top clearfix text-white py-4 fs--14 text-center">
+
+													<span class="d-block mb-4">
+														<i class="fi fi-heart-empty fs--35"></i>
+													</span>
+
+													<b>ADMIN INCLUDED</b>
+													<span class="d-block text-wrap mt-2 fs--14">
+														Same core, same elements!
+													</span>
+												</a>
+
+											</div>
+
+
+											<div class="col-12 col-lg-4 b-0-xs">
+
+												<!-- Documentation : no container, direct links! -->
+												<a href="fullajax-page-3.html" class="js-ajax dropdown-item transition-hover-top clearfix text-white py-4 fs--14 text-center">
+
+													<span class="d-block mb-4">
+														<i class="fi fi-layers fs--35"></i>
+													</span>
+
+													<b>NO SEPARATION</b>
+													<span class="d-block text-wrap mt-2 fs--14">
+														Everything common!
+													</span>
+												</a>
+
+											</div>
+
+										</div>
+
+									</div>
+
+
+								</li>
+
+
+
+								<!-- Pricing -->
+								<li class="nav-item dropdown">
+
+									<a href="fullajax-pricing.html" class="nav-link js-ajax">
+										Pricing
+									</a>
+
+								</li>
+
+
+
+								<!-- How it works -->
+								<li class="nav-item">
+
+									<a class="nav-link js-ajax" href="fullajax-how.html">
+										How it works
+									</a>
+
+								</li>
+
+
+								<!-- Contact -->
+								<li class="nav-item">
+
+									<a class="nav-link js-ajax" href="fullajax-contact.html">
+										Contact Us
+									</a>
+
+								</li>
+
+
+								<!-- social : mobile only (d-block d-sm-none)-->
+								<li class="nav-item d-block d-sm-none text-center mb-4">
+
+									<h3 class="h6 text-muted">Follow Us</h3>
+
+									<a href="#!" class="btn btn-sm btn-facebook transition-hover-top mb-2 rounded-circle text-white" rel="noopener">
+										<i class="fi fi-social-facebook"></i> 
+									</a>
+
+									<a href="#!" class="btn btn-sm btn-twitter transition-hover-top mb-2 rounded-circle text-white" rel="noopener">
+										<i class="fi fi-social-twitter"></i> 
+									</a>
+
+									<a href="#!" class="btn btn-sm btn-linkedin transition-hover-top mb-2 rounded-circle text-white" rel="noopener">
+										<i class="fi fi-social-linkedin"></i> 
+									</a>
+
+									<a href="#!" class="btn btn-sm btn-youtube transition-hover-top mb-2 rounded-circle text-white" rel="noopener">
+										<i class="fi fi-social-youtube"></i> 
+									</a>
+
+								</li>
+
+
+							</ul>
+							<!-- /NAVIGATION -->
+
+
+						</div>
+
+
+
+
+
+						<!-- OPTIONS -->
+						<ul class="list-inline list-unstyled mb-0 d-flex align-items-end">
+	
+							<li class="list-inline-item mx-1 dropdown">
+
+
+
+
+								<a href="#" aria-label="Account Sign In" class="js-ajax-modal btn btn-sm btn-primary"
+									data-href="_ajax/modal_signin_md.html"
+									    data-ajax-modal-size="modal-md"
+									    data-ajax-modal-centered="true"
+									    data-ajax-modal-backdrop="static">
+									<span class="group-icon">
+										<i class="fi fi-user-male"></i>
+										<i class="fi fi-close"></i>
+									</span> 
+									<span>Account</span>
+								</a>
+
+								<!-- ALREADY SIGNED IN -->
+								<!--
+								<a href="#" aria-label="Account Options" id="dropdownAccountOptions" class="btn btn-sm btn-primary" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+									<span class="group-icon">
+										<i class="fi fi-user-male"></i>
+										<i class="fi fi-close"></i>
+									</span> 
+									<span>Account</span>
+								</a>
+
+								<div aria-labelledby="dropdownAccountOptions" class="prefix-link-icon prefix-icon-dot dropdown-menu dropdown-menu-clean dropdown-menu-invert dropdown-click-ignore p-0 mt--18 fs--15">
+									<div class="dropdown-header">
+										John Doe
+									</div>
+									<div class="dropdown-divider"></div>
+									<a href="account-orders.html" title="My Orders" class="dropdown-item text-truncate font-weight-light">
+										My Orders <small>(2)</small>
+									</a>
+									<a href="account-favourites.html" title="My Favourites" class="dropdown-item text-truncate font-weight-light">
+										My Favourites <small>(3)</small>
+									</a>
+									<a href="account-settings.html" title="Account Settings" class="dropdown-item text-truncate font-weight-light">
+										Account Settings
+									</a>
+									<div class="dropdown-divider mb-0"></div>
+									<a href="#!" title="Log Out" class="prefix-icon-ignore dropdown-footer dropdown-custom-ignore">
+										<i class="fi fi-power float-start"></i>
+										Log Out
+									</a>
+								</div>
+								-->
+
+							</li>
+
+						</ul>
+						<!-- /OPTIONS -->
+
+
+
+					</nav>
+
+				</div>
+				<!-- /NAVBAR -->
+
+			</header>
+			<!-- /HEADER -->
+
+
+			<!-- #middle = ajax main container -->
+			<div id="middle">
+
+
+				<!-- INTRO -->
+				<section class="bg-theme-color-light">
+
+					<!-- svg shape -->
+					<svg class="position-absolute top-0 start-0 end-0" viewBox="0 480.469 1000 39.062">
+						<polygon fill="#FFFFFF" points="0,519.531 0,480.469 1000,480.469 "></polygon>
+					</svg>
+
+					<div class="container min-h-50vh pt-5"> 
+
+						<div class="row text-center-xs d-middle">
+							
+							<div class="col-12 col-md-6 order-2 order-md-1 pb-5" data-aos="fade-up" data-aos-delay="0">
+
+								<div class="mb-5">
+									
+									<h1 class="h2-xs font-weight-light mb-0">
+										<span class="text-primary font-weight-medium">Smarty</span> Demo Request
+									</h1>
+									
+									<p class="h4 font-weight-medium mb-4">
+										Test Smarty real Power!
+									</p>
+
+									<p class="lead">
+										In the last three years, We've transitioned from being an auditor at a public accounting firm to a successful franchise owner of a million-dollar business.
+									</p>
+
+								</div>
+
+							</div>
+
+							<div class="col-12 col-md-6 order-1 order-md-2 pb-5" data-aos="fade-up" data-aos-delay="200">
+
+								<!-- svg image -->
+								<img width="600" height="400" class="img-fluid" src="demo.files/svg/premium/production.svg" alt="...">
+
+							</div>
+
+						</div>
+
+
+					</div>
+
+
+					<!-- down arrow -->
+					<i class="arrow arrow-lg arrow-bottom arrow-center border-theme-color-light"></i>
+
+				</section>	
+				<!-- /INTRO -->
+
+
+
+
+
+				<!-- FORM -->
+				<section>
+					<div class="container">
+
+
+						<div class="text-center mb-6">
+							<div class="mx-auto max-w-600">
+								<h2 class="h3-xs">
+									Request a demo and explore the full power of our platform
+								</h2>
+							</div>
+						</div>
+
+
+						<div class="col-md-8 offset-md-2">
+							<!-- 
+								CONTACT FORM : AJAX [TESTED|WORKING AS IT IS]
+
+									Plugin required: SOW Ajax Forms
+
+									In order to work as ajax form, SOW Ajax Forms should be available/enabled
+									Else, SOW Form Validation plugin is used.
+									If none of them are available, normal submit is used and you can remove:
+										.js-ajax
+										.bs-validate
+										novalidate
+										any data-ajax-*
+										any data-error-*
+
+									** Remove data-error-toast-* for no error toast notifications
+
+
+
+
+								Ajax will control success/fail alerts according to server response:
+									
+									1. unexpected error: 		if server response is this string: {:err:unexpected:}
+									2. mising mandatory:		if server response is this string: {:err:required:}
+									3. success:					if server response is this string: {:success:}
+									
+									data-ajax-control-alerts="true"
+									data-ajax-control-alert-succes="#contactSuccess" 
+									data-ajax-control-alert-unexpected="#contactErrorUnexpected" 
+									data-ajax-control-alert-mandaroty="#contactErrorMandatory" 
+
+								+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+									WORKING CONTACT! Edit your php/config.inc.php
+								+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+							-->
+							<form 	novalidate 
+									action="php/contact_form.php" 
+									method="POST" 
+
+									data-ajax-container="#ajax_dd_contact_response_container" 
+									data-ajax-update-url="false" 
+									data-ajax-show-loading-icon="true" 
+									data-ajax-callback-function="" 
+									data-error-scroll-up="false" 
+									
+									data-ajax-control-alerts="true"
+									data-ajax-control-alert-succes="#contactSuccess" 
+									data-ajax-control-alert-unexpected="#contactErrorUnexpected" 
+									data-ajax-control-alert-mandaroty="#contactErrorMandatory" 
+
+									data-error-toast-text="<i class='fi fi-circle-spin fi-spin float-start'></i> Please, complete all required fields!" 
+									data-error-toast-delay="2000" 
+									data-error-toast-position="bottom-center"
+
+									class="bs-validate js-ajax">
+
+
+								<!-- 1. 
+									optional, hidden action for your backend
+
+									PHP Basic Example
+									if($_POST['action'] == 'contact_form_submit') {
+										... send message
+									}
+								-->
+								<input type="hidden" name="action" value="contact_form_submit" tabindex="-1"> 
+								<!-- -->
+
+
+								<!-- 2. 
+									A very small optional trick (using .hide class instead of type="hidden") for some low spam robots. 
+									If this is not empty, the process should stop. A normal user/visitor should not be able to see this field.
+
+									PHP Basic Example
+									if($_POST['norobot'] != '') {
+										exit;
+									}
+								-->
+								<input type="text" name="norobot" value="" class="hide" tabindex="-1"> 
+								<!-- -->
+
+								<div class="form-label-group mb-3">
+									<input required placeholder="Name" id="contact_name" name="contact_name" type="text" class="form-control">
+									<label for="contact_name">Name</label>
+								</div>
+
+								<div class="form-label-group mb-3">
+									<input required placeholder="Email" id="contact_email" name="contact_email" type="email" class="form-control">
+									<label for="contact_email">Email</label>
+								</div>
+
+								<div class="form-label-group mb-3">
+									<input required placeholder="Phone" id="contact_phone" name="contact_phone" type="text" class="form-control">
+									<label for="contact_phone">Phone</label>
+								</div>
+
+								<div class="form-label-group mb-4">
+									<textarea required placeholder="Message" id="contact_message" name="contact_message" class="form-control" rows="3"></textarea>
+									<label for="contact_message">Message</label>
+								</div>
+
+								<!-- GDPR CONSENT -->
+								<div class="clearfix bg-light position-relative rounded p-4 mb-4">
+
+									<span class="text-muted fs--12 d-block position-absolute bottom-0 end-0 m-2">
+										EU GDPR
+									</span>
+
+									<label class="form-checkbox form-checkbox-primary">
+										<input required type="checkbox" name="contact_gdpr">
+										<i></i> 
+										<span> 	
+											I consent that my data is being stored in 
+											line with the guidelines set out in  
+											<a href="page-terms-and-conditions.html" target="_blank">Privacy Policy</a>. 
+										</span>
+									</label>
+
+								</div>
+								<!-- /GDPR CONSENT -->
+
+
+
+
+								<!-- 
+									Server detailed error
+									!ONLY! If debug is enabled!
+									Else, shown ony "Server Error!"
+								-->
+								<div id="ajax_dd_contact_response_container"></div>
+
+								<!-- {:err:unexpected:} internal server error -->
+								<div id="contactErrorUnexpected" class="hide alert alert-danger p-3">
+									Unexpected Error!
+								</div>
+
+								<!-- {:err:required:} mandatory fields -->
+								<div id="contactErrorMandatory" class="hide alert alert-danger p-3">
+									Please, review your data and try again!
+								</div>
+
+								<!-- {:success:} message sent -->
+								<div id="contactSuccess" class="hide alert alert-success p-3">
+									Thank you for your message!
+								</div>
+
+
+
+
+								<button type="submit" class="btn btn-primary btn-block">
+									Request Demo
+								</button>
+
+							</form>
+							<!-- /CONTACT FORM : AJAX -->
+
+
+						</div>
+
+					</div>
+				</section>
+				<!-- /FORM -->
+
+
+
+			</div><!-- /end #middle -->
+
+
+
+
+
+
+
+			<!-- Footer -->
+			<footer id="footer" class="shadow-xs">
+				<div class="container pt-6 pb-1">
+
+					<div class="row gutters-xl gutters-md--xs">
+						
+						<div class="col-12 col-lg-7 mb-5">
+
+							<div class="mb-4">
+								<img src="assets/images/logo/logo_dark.svg" width="120" height="35" alt="...">
+							</div>
+
+							<p class="text-indigo-900">
+								Smarty is fully customizable, able to handle fully ajax that makes it very 
+								unique compared to any frontend template in any marketplace! 
+								Built for speed and customer conversion!
+							</p>
+
+							<p class="text-indigo-900">
+								&copy; Smarty Inc.
+							</p>
+
+						</div>
+
+						<div class="col-12 col-lg-5">
+
+							<div class="row">
+
+								<div class="col-6 fs--18">
+
+									<h4 class="h5">
+										Smarty Company
+									</h4>
+									<ul class="list-unstyled mb-5">
+
+										<li class="list-item">
+											<a class="js-ajax" href="fullajax-about.html">About Us</a>
+										</li>
+
+										<li class="list-item">
+											<a class="js-ajax" href="fullajax-careers.html">Careers</a>
+										</li>
+
+										<li class="list-item">
+											<a class="js-ajax" href="fullajax-contact.html">Contact Us</a>
+										</li>
+
+									</ul>
+
+
+
+									<h4 class="h5">
+										Smarty Support
+									</h4>
+									<ul class="list-unstyled mb-5">
+
+										<li class="list-item">
+											<a href="help-center-2-index.html" target="_blank">Help Center</a>
+										</li>
+
+										<li class="list-item">
+											<a class="js-ajax" href="fullajax-contact.html">Direct Contact</a>
+										</li>
+
+									</ul>
+
+								</div>
+
+								<div class="col-6">
+
+									<h4 class="h5">
+										Smarty Legal
+									</h4>
+									<ul class="list-unstyled mb-5">
+
+										<li class="list-item">
+											<a class="js-ajax" href="fullajax-terms.html">Terms &amp; Conditions</a>
+										</li>
+
+										<li class="list-item">
+											<a class="js-ajax" href="fullajax-privacy.html">Privacy</a>
+										</li>
+
+									</ul>
+
+
+
+									<h4 class="h5">
+										Smarty Social
+									</h4>
+									<ul class="list-unstyled mb-5">
+
+										<li class="list-item">
+											<a href="https://www.facebok.com" target="_blank" rel="noopener">Facebook</a>
+										</li>
+
+										<li class="list-item">
+											<a href="https://www.twitter.com" target="_blank" rel="noopener">Twitter</a>
+										</li>
+
+										<li class="list-item">
+											<a href="https://www.linkedin.com" target="_blank" rel="noopener">Linkedin</a>
+										</li>
+
+									</ul>
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</footer>
+			<!-- /Footer -->
+
+
+
+
+
+
+			<!-- 
+				Reset GDPR:
+					$.SOW.core.gdpr.destroy();
+					OR BY HASH: #del:gdpr
+
+				By hitting 'Accept & Continue' Button, default cookie is set to 0 (all cookies accepted).
+
+				++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+				Extending Consent by level (examples):
+						0 = accept all cookies!
+						1 = website only
+						2 = website + advertising
+						... more if needed
+
+					JS USAGE EXAMPLE:
+						$.SOW.core.gdpr.extend(2); 	// allow website + advertising
+
+					HTML EXAMPLE
+						<a href="#" class="btn-cookie-extend" data-cookie-level="2">Website + Advertising</a>
+
+					BACKEND:
+						Backend should use '__gdpr' cookie.
+
+
+				The following code should be present on all pages:
+			-->
+			<div id="gdpr" class="hide bg-white rounded-lg shadow-lg w-100 max-w-350 p--30 m-3 position-fixed fixed-bottom start-0 z-index-9999">
+				
+				<h3 class="fs--18 mb-4">
+					
+					<a href="#" class="close mt--n3">
+						<span class="fi fi-close fs--18" aria-hidden="true"></span>
+					</a>
+
+					Smarty Cookies
+
+				</h3>
+
+				<hr>
+
+				<p class="lead">
+					We use cookies to improve your experience on our site and to show you personalised ads.
+				</p>
+
+				<a href="#" class="btn btn-primary btn-cookie-accept btn-lg btn-block">
+					Accept &amp; Continue
+				</a>
+				
+				<hr class="mt-4 mb-4">
+				
+				<p class="m-0">
+
+					<span class="d-block">Need to learn more?</span>
+
+					<a href="fullajax-terms.html" class="js-ajax link-muted">Privacy Policy</a> 
+					
+					&ndash; and &ndash; 
+					
+					<a href="fullajax-privacy.html" class="js-ajax link-muted">Cookie Policy</a>
+
+				</p>
+			</div>
+
+
+
+			<!-- page preloader -->
+			<div id="page_preload" class="d-middle fixed-full z-index-9999 bg-white">
+
+				<span class="p-3 shadow-xs rounded">
+					<i class="fi fi-circle-spin fi-spin text-muted float-start"></i>
+					loading...
+				</span>
+
+			</div>
+			<!-- /page preloader -->
+
+
+
+		</div><!-- /#wrapper -->
+
+
+		<script src="assets/js/core.min.js"></script>
+
+
+		<!--
+
+			[SOW Ajax Navigation Plugin] [AJAX ONLY, IF USED]
+			If you have specific page js files, wrap them inside #page_js_files 
+			Ajax Navigation will use them for this page! 
+
+		-->
+		<div id="page_js_files"><!-- additional javascripts inside here --></div>
+		
+	</body>
+</html>

@@ -1,0 +1,78 @@
+/**
+
+		- Margins 					.m--*, .mt--*, .mr--*, .mb--*, .ml--*
+									.m-auto, .m-inherit
+
+**/
+.m-6 {
+	margin: 4.5rem !important;
+}
+.mt-6 {
+	margin-top: 4.5rem !important;
+}
+.mb-6 {
+	margin-bottom: 4.5rem !important;
+}
+.my-6 {
+	margin-top: 4.5rem !important;
+	margin-bottom: 4.5rem !important;
+}
+.ml-6 {
+	margin-left: 4.5rem !important;
+}
+.mr-6 {
+	margin-right: 4.5rem !important;
+}
+.mx-6 {
+	margin-left: 4.5rem !important;
+	margin-right: 4.5rem !important;
+}
+
+.m-7 {
+	margin: 6rem !important;
+}
+.mt-7 {
+	margin-top: 6rem !important;
+}
+.mb-7 {
+	margin-bottom: 6rem !important;
+}
+.my-7 {
+	margin-top: 6rem !important;
+	margin-bottom: 6rem !important;
+}
+.ml-7 {
+	margin-left: 6rem !important;
+}
+.mr-7 {
+	margin-right: 6rem !important;
+}
+.mx-7 {
+	margin-left: 6rem !important;
+	margin-right: 6rem !important;
+}
+
+
+
+@each $val in $util-margin-val {
+
+	.m--#{$val} { margin: #{$val}px !important; }
+
+	.mt--#{$val} { margin-top: #{$val}px !important; }
+	.mb--#{$val} { margin-bottom: #{$val}px !important; }
+	.ml--#{$val} { margin-left: #{$val}px !important; }
+	.mr--#{$val} { margin-right: #{$val}px !important; }
+
+	.mt--n#{$val} { margin-top: -#{$val}px !important; }
+	.mb--n#{$val} { margin-bottom: -#{$val}px !important; }
+	.ml--n#{$val} { margin-left: -#{$val}px !important; }
+	.mr--n#{$val} { margin-right: -#{$val}px !important; }
+
+}
+
+	.m-auto {
+		margin: auto !important;
+	}
+	.m-inherit {
+		margin: inherit !important;
+	}

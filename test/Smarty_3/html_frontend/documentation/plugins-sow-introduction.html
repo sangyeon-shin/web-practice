@@ -1,0 +1,1676 @@
+﻿<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+
+		<meta charset="UTF-8">
+		<title>Smarty</title>
+		<meta name="description" content="Smarty Documentation">
+
+        <meta name="viewport" content="width=device-width, maximum-scale=5, initial-scale=1, user-scalable=0">
+        <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+        <!-- up to 10% speed up for external res -->
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+        <link rel="preconnect" href="https://fonts.googleapis.com/">
+        <link rel="preconnect" href="https://fonts.gstatic.com/">
+        <!-- preloading icon font is helping to speed up a little bit -->
+        <link rel="preload" href="../assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
+
+		<link rel="stylesheet" href="../assets/css/core.min.css">
+		<link rel="stylesheet" href="../assets/css/vendor_bundle.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
+
+		<!-- favicon -->
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="apple-touch-icon" href="../demo.files/logo/icon_512x512.png">
+
+		<link rel="manifest" href="../assets/images/manifest/manifest.json">
+		<meta name="theme-color" content="#377dff">
+
+	</head>
+
+
+	<!--
+
+		Layout Admin
+			.layout-admin 	(required)
+
+			.aside-sticky  					- sidebar : fixed and push header
+			.header-sticky  				- header : always visible on top (acting as old .header-focus)
+			.header-scroll-reveal  			- header : hide on scroll down and reveal on scroll up
+
+	-->
+	<body class="layout-admin aside-sticky header-sticky" data-s2t-class="btn-indigo btn-sm rounded-circle">
+
+		<div id="wrapper">
+
+
+
+			<!-- HEADER -->
+			<header id="header" class="d-flex align-items-center shadow-md">
+
+
+				<!-- NAVBAR -->
+				<div class="container-fluid position-relative">
+
+					<nav class="navbar navbar-expand-lg navbar-dark justify-content-lg-between">
+
+						<div class="align-items-start">
+							
+							<!-- 
+								sidebar toggler 
+							-->
+							<a href="#aside-main" class="btn-sidebar-toggle h-100 d-inline-block d-lg-none justify-content-center align-items-center p-2">
+								<span class="group-icon">
+									<i>
+										<svg width="25" viewBox="0 0 20 20">
+											<path fill="#333333" d="M 19.9876 1.998 L -0.0108 1.998 L -0.0108 -0.0019 L 19.9876 -0.0019 L 19.9876 1.998 Z"></path>
+											<path fill="#333333" d="M 19.9876 7.9979 L -0.0108 7.9979 L -0.0108 5.9979 L 19.9876 5.9979 L 19.9876 7.9979 Z"></path>
+											<path fill="#333333" d="M 19.9876 13.9977 L -0.0108 13.9977 L -0.0108 11.9978 L 19.9876 11.9978 L 19.9876 13.9977 Z"></path>
+											<path fill="#333333" d="M 19.9876 19.9976 L -0.0108 19.9976 L -0.0108 17.9976 L 19.9876 17.9976 L 19.9876 19.9976 Z"></path>
+										</svg>
+									</i>
+
+									<i>
+										<svg width="25" viewBox="0 0 47.971 47.971">
+											<path fill="#333333" d="M28.228,23.986L47.092,5.122c1.172-1.171,1.172-3.071,0-4.242c-1.172-1.172-3.07-1.172-4.242,0L23.986,19.744L5.121,0.88c-1.172-1.172-3.07-1.172-4.242,0c-1.172,1.171-1.172,3.071,0,4.242l18.865,18.864L0.879,42.85c-1.172,1.171-1.172,3.071,0,4.242C1.465,47.677,2.233,47.97,3,47.97s1.535-0.293,2.121-0.879l18.865-18.864L42.85,47.091c0.586,0.586,1.354,0.879,2.121,0.879s1.535-0.293,2.121-0.879c1.172-1.171,1.172-3.071,0-4.242L28.228,23.986z"/>
+										</svg>
+									</i>
+								</span>
+
+							</a>
+
+
+							<!-- 
+								Logo : height: 60px max
+							-->
+							<a class="navbar-brand" href="index.html">
+								<img src="assets/images/logo/logo_dark.svg" width="110" height="70" alt="...">
+							</a>
+
+						</div>
+
+
+
+
+					<!-- 
+
+						[SOW] SEARCH SUGGEST PLUGIN
+						[GULP/src/plugins/sow_search_suggest/sow_search_suggest.js]
+						[SCSS/_plugins/sow_search_suggest.scss]
+						++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++
+
+						PLEASE READ DOCUMENTATION
+						documentation/plugins-sow-search.html
+
+					-->
+					<form 	action="index.html" 
+							method="GET" 
+							data-autosuggest="on" 
+
+							data-mode="json" 
+							data-json-max-results='10'
+							data-json-related-title='Explore Smarty'
+							data-json-related-item-icon='fi fi-star-empty'
+							data-json-suggest-title='Suggestions for you'
+							data-json-suggest-noresult='No results for'
+							data-json-suggest-item-icon='fi fi-search'
+							data-json-suggest-min-score='5'
+							data-json-highlight-term='true'
+							data-contentType='application/json; charset=utf-8'
+							data-dataType='json'
+
+							data-container="#sow-search-container" 
+							data-input-min-length="2" 
+							data-input-delay="100" 
+							data-related-keywords="" 
+							data-related-url="_ajax/search_suggestion_json_related.json" 
+							data-suggest-url="_ajax/search_suggestion_json_suggest.json" 
+							data-related-action="related_get" 
+							data-suggest-action="suggest_get" 
+							class="js-ajax-search sow-search sow-search-mobile-float d-flex-1-1-auto mx-4">
+						<div class="sow-search-input w-100 d-flex align-items-center">
+
+							<div class="input-group-over d-flex align-items-center w-100 h-100 rounded">
+
+								<input placeholder="component search..." name="s" type="text" class="form-control-sow-search form-control form-control-pill b-0 bg-gray-100" value="" autocomplete="off">
+
+								<span class="sow-search-buttons">
+
+									<!-- search button -->
+									<button type="submit" class="btn btn-primary btn-noshadow m-0 px-2 py-1 b-0 bg-transparent text-muted">
+										<i class="fi fi-search fs--20"></i>
+									</button>
+
+									<!-- close : mobile only (d-inline-block d-lg-none) -->
+									<a href="javascript:;" class="btn-sow-search-toggler btn btn-light btn-noshadow m-0 px-2 py-1 d-inline-block d-lg-none">
+										<i class="fi fi-close fs--20"></i>
+									</a>
+
+								</span>
+
+							</div>
+
+						</div>
+
+						<!-- search suggestion container -->
+						<div class="sow-search-container rounded-xl w-100 p-0 hide shadow-md" id="sow-search-container">
+							<div class="sow-search-container-wrapper rounded-xl">
+
+								<!-- main search container -->
+								<div class="sow-search-loader p--15 text-center hide">
+									<i class="fi fi-circle-spin fi-spin text-muted fs--30"></i>
+								</div>
+
+								<!-- 
+									AJAX CONTENT CONTAINER 
+									SHOULD ALWAYS BE AS IT IS : NO COMMENTS OR EVEN SPACES!
+								--><div class="sow-search-content rounded w-100 scrollable-vertical"></div>
+
+							</div>
+						</div>
+						<!-- /search suggestion container -->
+
+						<!-- 
+
+							overlay combinations:
+								overlay-dark opacity-* [1-9]
+								overlay-light opacity-* [1-9]
+
+						-->
+						<div class="sow-search-backdrop overlay-dark opacity-3 hide"></div>
+
+					</form>
+					<!-- /SEARCH -->
+
+
+
+
+					<!-- OPTIONS -->
+					<ul class="list-inline list-unstyled mb-0 d-flex align-items-end">
+
+						<li class="list-inline-item mx-1 dropdown float-start d-inline-block d-lg-none">
+
+							<a href="#" class="btn-sow-search-toggler btn btn-sm rounded-circle btn-warning bg-gradient-warning">
+								<i class="fi fi-search"></i>
+							</a>
+
+						</li>
+
+
+						<li class="list-inline-item mx-1 dropdown float-start d-none d-lg-inline-block">
+
+							<div class="btn-group rounded-xxl overflow-hidden" role="group" aria-label="Basic example">
+								
+								<a href="../index.html" target="layerstore" class="btn btn-sm btn-pills btn-indigo">
+									<span>Front</span>
+								</a>
+
+								<a href="https://wrapbootstrap.com/theme/smarty-website-admin-rtl-WB02DSN1B" target="wrapbootstrap" class="btn btn-sm btn-pills btn-indigo py-1">
+									<i class="fi fi-cart-1 mx-2 fs--20"></i>
+								</a>
+
+								<a href="../../html_admin/layout_1/" target="layerstore" class="btn btn-sm btn-pills btn-indigo">
+									<span>Admin</span>
+								</a>
+
+							</div>
+
+						</li>
+
+						<!-- header toggle : desktop only -->
+						<li class="list-inline-item mx-1 dropdown float-start d-none d-lg-block">
+
+							<a href="#" class="btn-header-toggle btn-toggle btn btn-sm rounded-circle btn-secondary">
+								<span class="group-icon">
+									<i class="fi fi-arrow-up"></i>
+									<i class="fi fi-arrow-down"></i>
+								</span>
+							</a>
+
+						</li>
+
+					</ul>
+					<!-- /OPTIONS -->
+
+
+
+					</nav>
+
+				</div>
+				<!-- /NAVBAR -->
+
+			</header>
+			<!-- /HEADER -->
+
+
+
+
+
+			<div id="wrapper_content" class="d-flex align-items-stretch">
+
+				<!-- SIDEBAR -->
+				<aside id="aside-main" class="aside-start bg-gradient-indigo font-weight-normal aside-hide-xs">
+
+					<div class="aside-wrapper scrollable-vertical scrollable-styled-light">
+
+						<!-- hide on mobile: d-none d-lg-block -->
+						<div class="p-3">
+							<!--<img class="js-ajax-loaded-animate img-fluid" src="assets/svg/artworks/undraw_smiley_face_lmgm.svg" width="300" height="248" alt="...">-->
+							<img class="js-ajax-loaded-animate img-fluid" src="assets/svg/artworks/startup.svg" width="225" height="198" alt="...">
+						</div>
+
+
+						<!--
+
+							All parent open navs are closed on click!
+							To ignore this feature, add .js-ignore to .nav-deep
+
+							Links height (paddings):
+								.nav-deep-xs
+								.nav-deep-md  	(default, ununsed class)
+								.nav-deep-sm
+								.nav-deep-lg
+						-->
+						<nav class="nav-deep nav-deep-dark nav-deep-xs pb-5">
+							<ul class="nav flex-column">
+
+								<li class="nav-title mt-3">
+									<h6 class="fs--14 mb-1 font-weight-medium text-warning">
+										HOW DO I START?
+									</h6>
+								</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="index.html">
+											Introduction
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="changelog.html">
+											<span class="badge float-end mt-1">v3.1.2</span>
+											Changelog
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="credits.html">
+											Credits
+										</a>
+									</li>
+
+
+
+
+
+								<li class="nav-title mt-5">
+									<h6 class="fs--14 mb-1 font-weight-medium text-warning">
+										COMPONENTS &amp; BLOCKS
+									</h6>
+								</li>
+
+								<li class="nav-item">
+									<a class="nav-link" href="#">
+										<span class="group-icon float-end">
+											<i class="fi fi-arrow-end-slim"></i>
+											<i class="fi fi-arrow-down-slim"></i>
+										</span>
+										<b>Components</b>
+									</a>
+								
+									<ul class="nav flex-column">
+
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-alerts.html">
+												Alerts
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-accordions.html">
+												Accordions
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-badges.html">
+												Badges
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-breadcrumbs.html">
+												Breadcrumbs
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-buttons.html">
+												Buttons
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-cards.html">
+												Cards
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-carousel.html">
+												Carousel
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-collapse.html">
+												Collapse
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-dropdowns.html">
+												Dropdowns
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-forms.html">
+												Forms
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-icons.html">
+												Icons
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-flags.html">
+												Flags
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-lists.html">
+												Lists
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-media.html">
+												Media
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-modals.html">
+												Modals
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-navs.html">
+												Navs
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-navigation.html">
+												Navigation
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-pagination.html">
+												Pagination
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-progress.html">
+												Progress
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-popover.html">
+												Popover
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-scrollspy.html">
+												Scrollspy
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-spinners.html">
+												Spinners
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-tabs.html">
+												Tabs
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-tables.html">
+												Tables
+											</a>
+										</li>
+
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-timeline.html">
+												Timeline
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-thumbnails.html">
+												Thumbnails
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-tooltip.html">
+												Tooltip
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-typography.html">
+												Typography
+											</a>
+										</li>
+
+									</ul>
+								</li>
+
+
+
+
+
+									<li class="nav-item">
+										<a class="nav-link" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											<b>Quick Blocks</b>
+										</a>
+
+										<ul class="nav flex-column">
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-testimonials.html">
+													Testimonials
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-pricing.html">
+													Pricing
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-cta.html">
+													Call to action
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-brands.html">
+													Brands
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-various.html">
+													Various
+												</a>
+											</li>
+										</ul>
+
+									</li>
+
+
+
+									<li class="nav-item">
+										<a class="nav-link" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											<b>Utilities</b>
+										</a>
+
+										<ul class="nav flex-column">
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-text-backgrounds.html">
+													Text &amp; Backgrouns
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-text-color-extended.html">
+													Extended Text Color
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-borders.html">
+													Borders
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-shadows.html">
+													Box Shadows
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-font.html">
+													Font Size / Weight
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-width-height.html">
+													Width / Height
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-padding-margin.html">
+													Paddings / Margins
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-transition.html">
+													Transitions / Transforms
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-position.html">
+													Position
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-visibility.html">
+													Visibility
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-overlays.html">
+													Overlays &amp; Opacity
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-scroll.html">
+													Scroll &amp; Scrollbar
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-misc.html">
+													Miscellaneous
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-responsive.html">
+													Responsive
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-rtl.html">
+													RTL
+												</a>
+											</li>
+
+										</ul>
+									</li>
+
+		
+
+
+
+
+
+
+
+									<li class="nav-item">
+										<a class="nav-link" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											<b>Php / Forms</b>
+										</a>
+
+										<ul class="nav flex-column">
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="php-introduction.html">
+													Introduction
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="php-forms.html">
+													Contact Forms
+												</a>
+											</li>
+										</ul>
+
+									</li>
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+									<li class="nav-item nav-item-extended overlay-dark overlay-opacity-2">
+										<a class="nav-link js-ajax" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-expand"></i>
+												<i class="fi fi-shrink"></i>
+											</span>
+											Predefined Layouts
+										</a>
+
+
+										<!-- extended item -->
+										<div class="aside-item d-flex flex-column bg-white shadow-xs w--350"><!-- .w-100 = full width -->
+											
+											<!-- header -->
+											<h3 class="fs--18 bg-light-soft p--15">
+												<button type="button" class="btn-aside-item-extended-close close fi fi-close fs--20 mt--n4 float-end"></button>
+												<i class="fi fi-heart-slim float-start fs--18"></i> 
+												Ready to start
+											</h3>
+
+											<!-- extended item content -->
+											<div 	id="layout_list" 
+													data-ajax-url="_ajax/layout_list.html" 
+													class="js-ajax p-3 scrollable-vertical scrollable-styled-dark m--1">
+
+												<div class="text-center"><!-- ajax loading icon -->
+													<i class="fi fi-circle-spin fi-spin fs--30 text-muted"></i>
+												</div><!-- /ajax loading icon -->
+
+											</div>
+											<!-- /extended item content -->
+
+										</div>
+										<!-- /extended item -->
+
+									</li>
+
+
+
+
+
+								<li class="nav-title mt-5">
+									<h6 class="fs--14 mb-1 font-weight-medium text-warning">
+										SOW : CORE PLUGINS
+									</h6>
+								</li>
+									<li class="nav-item active">
+										<a class="nav-link js-ajax" href="plugins-sow-introduction.html">
+											Introduction
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-header.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">7Kb</span>
+											SOW : Header
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-search-suggest.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">9Kb</span>
+											SOW : Search Suggest
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-input-suggest.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : Input Suggest
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-navigation.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">10Kb</span>
+											SOW : Ajax : Navigation
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-forms.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4Kb</span>
+											SOW : Ajax : Forms
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-content.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4Kb</span>
+											SOW : Ajax : Content
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-modal.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">3Kb</span>
+											SOW : Ajax : Modals
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-confirm.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">6Kb</span>
+											SOW : Ajax : Confirm
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-select.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4.5Kb</span>
+											SOW : Ajax : Select
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-form-validation.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : Form Validation
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-form-advanced.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">7Kb</span>
+											SOW : Form Advanced
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-file-upload.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">24Kb</span>
+											SOW : File Upload
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-checkall.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Check All
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-checkgroup.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Check Group
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-toasts.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4Kb</span>
+											SOW : Toasts
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-gdpr.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : GDPR Cookies
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-inline-search.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Inline Search
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-dropdown.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">3Kb</span>
+											SOW : Dropdowns
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-deep-navigation.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : Deep Navigation
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-btn-toggle.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2.5Kb</span>
+											SOW : Button Toggle
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-scroll-to.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Scroll To
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-timer-autohide.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Timer Autohide
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-timer-countdown.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : Timer Countdown
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-gfont.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1.5Kb</span>
+											SOW : Google Font
+										</a>
+									</li>
+                                    <li class="nav-item">
+                                        <a class="nav-link js-ajax" href="plugins-sow-lazyload.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+                                            SOW : Lazyload
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link js-ajax" href="plugins-sow-count-animate.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4.1Kb</span>
+                                            SOW : Count Animate
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link js-ajax" href="plugins-sow-utils.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+                                            SOW : Utils
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link js-ajax" href="plugins-sow-service-worker.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+                                            SOW : Service Worker!
+                                        </a>
+                                    </li>
+									<li class="nav-item pl--15 pr--15">
+										<div class="bg-indigo text-gray-500 fs--13 p-2 rounded">
+											SOW Core plugins are developed from scratch. 
+											You can remove, disable or use your own!
+										</div>
+									</li>
+
+
+
+
+
+								<li class="nav-title mt-5">
+									<h6 class="fs--14 mb-1 font-weight-medium text-warning">
+										VENDOR PLUGINS
+									</h6>
+								</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-bootstrap-select.html">
+											Vendor : Bootstrap Select
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-flickity.html">
+											Vendor : Flickity Slider
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-swiper.html">
+											Vendor : Swiper Slider
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-jarallax.html">
+											Vendor : Jaxallax
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-sticky-kit.html">
+											Vendor : Sticky Kit
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-fancybox.html">
+											Vendor : Fancybox
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-photoswipe.html">
+											Vendor : Photoswipe
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="components-map.html">
+											Vendor : Map
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-slimscroll.html">
+											Vendor : Slimscroll
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-nestable.html">
+											Vendor : Nestable
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											Vendor : Pickers
+										</a>
+										<ul class="nav flex-column">
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-datepicker.html">
+													Datepicker
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-rangepicker.html">
+													Rangepicker
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-colorpicker.html">
+													Colorpicker
+												</a>
+											</li>
+										</ul>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											Vendor : Charts
+										</a>
+										<ul class="nav flex-column">
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-chartjs.html">
+													Chart.js
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-flot.html">
+													Flot Chart
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-easypie.html">
+													Easy Pie Chart
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-sparkline.html">
+													Sparkline Charts
+												</a>
+											</li>
+										</ul>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											Vendor : Editors
+										</a>
+										<ul class="nav flex-column">
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-medium-editor.html">
+													Medium Editor
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-markdown.html">
+													Markdown Editor
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-summernote.html">
+													Summernote
+												</a>
+											</li>
+										</ul>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-datatable.html">
+											Vendor : Datatable
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-fullcalendar.html">
+											Vendor : Fullcalendar
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-prismjs.html">
+											Vendor : Prismjs (Highlighter)
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-aos.html">
+											Vendor : AOS
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-typed.html">
+											Vendor : Typed
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-sortablejs.html">
+											Vendor : Sortablejs
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-cocoen.html">
+											Vendor : Cocoen <small>(Img Compare)</small>
+										</a>
+									</li>
+
+
+
+
+
+
+
+
+
+							</ul>
+						</nav>
+
+
+
+					</div>
+				</aside>
+				<!-- /SIDEBAR -->
+
+
+				<!-- MIDDLE -->
+				<div id="middle" class="flex-fill">
+
+
+
+					<header class="mb-5">
+						<h1 class="h2 mb-0 text-gray-700">
+							SOW : Introduction
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--14">
+								<li class="breadcrumb-item active" aria-current="page">
+									Smarty documentation
+								</li>
+							</ol>
+						</nav>
+
+					</header>
+
+
+
+					<div class="row d-flex flex-fill align-items-start">
+
+						<div class="col align-self-start">
+
+
+
+
+							<section>
+                                <h5 class="py-3 text-muted">
+                                    <b>SOW</b> = Step Of Web<br>
+                                    <small>www.stepofweb.com</small>
+                                </h5>
+                                <hr>
+
+
+
+                                 <h5 class="mt-5 text-primary">
+                                    1. Smarty Core
+                                </h5>
+
+								<pre><code class=" language-javascript">src/js/sow_core/sow.js</code></pre>
+
+
+								<p class="lead">
+									Everything related to javascript is starting with this single file! Is just an object! Just one! But this is the root of all <del>evil</del> goodness!<br>
+                                    At the very end of this page you can find the structure! Core sructure where everything is happening inside Smarty!
+								</p>
+
+
+                                <p class="lead">
+                                    Despite the fact than right now, Smarty Core has over 25 plugins written from scratch, is incredibily lightweight: under 130Kb minified, all plugins together. 223Kb including jQuery! ~60Kb gzipped!
+                                </p>
+
+                                <p class="lead">
+                                    Smarty is working like a framework. All core plugins (SOW) are linked together, so all of them are working together. 
+                                    You can remove any plugin but is highly recommended to keep the most used ones: <b>toast</b>, <b>bootstrap validation</b>, <b>dropdowns + deep navigation</b> (required by header main navigation), <b>scroll to</b>, <b>button toggle</b>. 
+                                    Of course, because the total size is so small, you can keep all of them! Vendors are the only issue BUT solved by Smarty in an elegant way. Picture this: only, and only datatable PDF export function is using a plugin that is OVER 1Mb in size, MINIFIED! Can you imagine? 10 times larger than entire Smarty Core and is just one single little option! So how Smarty solved these kind of issues without you writing a single line of javascript code?
+                                </p>
+
+
+
+                                	<div class="d-block font-weight-light p-4 bg-warning-soft fs--18">
+	                                	As you my already noticed, Smarty has many plugins (SOW + Vendors).<br> 
+	                                	Each plugin is described in this documentation in this format/order:<br><br>
+
+	                                	1. Short plugin description / vendor link, if available <br>
+	                                	2. How the plugin is installed (vendors mostly) <br>
+	                                	3. How the plugin is loaded/initialized + showing the default config/settings so you can change the defaults later, if needed<br>
+	                                	<span class="badge-warning d-block p-2 my-3 rounded fs--16 font-weight-normal">4. HTML attributes and examples of how you can use the plugin! &ndash; this is what you really need!</span>
+	                                	<br>
+
+	                                	Because Smarty is now using GULP and you are able to bundle only some vendors in a single JS file (most lightweight/most used), the so supposed "GULP - a single easy script file that automates SCSS/JS" becomes a framework because things got too complicated (not for you, for me, the author).
+	                                	Don't worry, you just type a single word: <b>gulp</b> and Voila! All CSS/JS are compiled for you/your project!<br><br>
+
+	                                	<b>So Smarty has 2 config files used by GULP to build the project:</b><br>
+	                                	A. SOW Core Plugins: <code>gulp.config__core.js</code><br>
+	                                	B. Vendors Plugins: <code>gulp.config__vendors.js</code><br>
+	                                	Nothing is mixed, everything is well separated and organized, like this documentation is - plugins are very well separated!<br><br>
+
+	                                	From these two config files used by GULP, each plugin can be enabled or disabled! You might don't want all plugins so you can simply disable and will completely be excluded, including the controller for that specific plugin.<br>
+	                                	Another option you'll see in both config files is to bundle Vendors in a single large JS file (which is not recommended, unless is the end of the world). If are not bundled (as you already figured out), Smarty will load them in a dynamic way, only when/if needed! And you don't need to do a thing! You can simply forget about - just use the examples with copy paste and Smarty will handle everything!<br><br>
+
+	                                	<hr><br>
+
+	                                	In the end, GULP will compile all you need but there are <u><b>only</b> 4 important JS files</u> included in each HTML (all other files must stay where they are - each one of them in its CSS/JS folder):<br>
+	                                	<span class="text-success">
+		                                	1. core.min.js <br>
+		                                	2. core.min.css <br>
+		                                	3. vendor_bundle.js <br>
+		                                	4. vendor_bundle.css <br>
+	                                	</span>
+	                                	<br>
+
+	                                	This is how all your HTML files should looks like (all demos already are like this):<br>
+
+	                                	<b>1. CSS Files &ndash; Inside &lt;head>:</b><br>
+	                                	<span class="text-success">
+	                                		&lt;link rel="stylesheet" href="assets/css/core.min.css"><br>
+											&lt;link rel="stylesheet" href="assets/css/vendor_bundle.min.css"><br><br>
+										</span>
+
+										<b>2. JS Files &ndash; At the bottom of page, just before &lt;/body>:</b><br>
+										<span class="text-success">
+	                                		&lt;script src="assets/js/core.min.js">&lt;/script><br>
+											&lt;script src="assets/js/vendor_bundle.min.js">&lt;/script><br><br>
+										</span>
+
+	                                	vendor_bundle.min.js and vendor_bundle.min.css contains the most used vendors packed together - like bootstrap javascript, AOS, etc.<br><br>
+
+	                                	<b>Please note:</b> there is no absolute requirement to include vendor_bundle.min<b>.js</b> (only the css)! <br>
+	                                	Smarty Core (core.min.js) will load it dinamically before starting to init anything else! You don't need to do anything! <br>
+	                                	The page render/paint speed will be a bit better but all vendor functionalities are starting after the file is loaded and initialized (example: swiper slider).<br>
+	                                	You can play and do tests (simply by removing/adding it to html). <br>
+	                                	If your project is simple, there might be a noticeable difference - depends on many, many factors - so you can test - what can be easier than removing and adding back a single HTML line, isn't it? :) <br>
+	                                	<br>
+
+	                                	So please remember, only these 4 mentioned files (2css + 2js) are included in each HTML page!<br>
+	                                	<u><b class="text-danger">All other files are not! Not a single one! <span class="text-success">Only and only the green ones above!</span></b></u> <br>
+	                                	All other aditional files compiled by GULP (js and css), are loaded by Smarty in a dynamic way, only if/when needed!<br><br>
+	                                	Looks complicated but actually is very-very simple, isn't it?
+                                	</div>
+
+                                	<div class="fs--18 d-block p-4 bg-gradient-warning">
+                                		<b class="fs--25">Reminder:</b> The documentation - each page of each plugin you see here (the left side, yes the sidebar), is starting with Javascript code which <b>is informative only!</b> <br>
+                                		You do not have to deal with any javascript code, if is not said to (which is rare)! You can, if you want to (that's why is there, of course) but you can also 100% ignore it!<br>
+                                		<br>
+                                		To understand better, let's take the GDPR plugin as example. In the image below (click it to enlarge) you see:<br>
+                                		1. plugin source file location - used by GULP only<br>
+                                		2. Basic initialization of this plugin (all of them are similar, as you will see)<br>
+                                		3. How the plugin is used - the default params passed to init function, you can change (if you want/need to) in gulp.config__core.js before compiling the project!<br><br>
+                                		<span class="font-weight-light">
+                                			So anything below this kind of introduction (some are a lot longer, explained in detail but basically same thing) are the examples ready to copy/paste into your own HTML file! 
+                                			Smarty is based on ready to use, just copy/paste!
+                                		</span>
+                                		<br>
+                                		<hr>
+                                		<b>Wait, there is more!</b> You don't even need to edit any JS/GULP files to change the defaults! Most controllers are build in such way so you can pass the variables using HTML Attributes. Like: <b>data-cookie-name="rocketMan"</b>
+                                	</div>
+
+                                	<a href="#" class="btn-toggle" data-target="#plugin_overview" data-toggle-container-class="w--250 animate-bouncein">
+                                		<img id="plugin_overview" class="img-fluid w--250" src="assets/images/screens/plugin_overview.jpg" alt="...">
+                                	</a>
+
+
+
+
+
+
+
+                                <h5 class="mt-5 text-primary">
+                                    2. Vendors
+                                </h5>
+
+                                <p class="lead">
+                                    <b>Vendors</b> are actually plugins, but we call them "vendors" because are third party files, and are not part of Smarty Core.
+                                    Each vendor has it's own controller written from scratch for Smarty - that's why there is no need for 95% of plugins to write a single line of javascript code. Everything works in seconds!
+                                </p>
+
+                                <p class="lead">
+                                    Vendor controllers are working like this:<br>
+                                    1. Check if there is a need for the plugin on that specific page<br>
+                                    2. If the plugin is needed, load it! Load also the CSS if there is any asociated with the plugin!<br>
+                                    3. Initialize the plugin!<br>
+                                    4. Done!
+                                </p>
+
+                                <p class="lead">
+                                    Did you catch the trick? 
+                                    Instead of loading over 5Mb of vendor javascript files, is loaded <u>only and only</u> the vendor is needed for that specific page! Is like you add manually on each page, only the javascript you need!
+                                    So that's why Smarty is fast and lightweight!
+                                    Oh, and unique - no other template in any marketplace has this feature (not yet, but is never too late <i class="fi fi-emoji-smile"></i>). 
+                                </p>
+
+                                <p class="lead">
+                                    Smarty has many plugins you can use but of course, you might want to add a new plugin.<br>
+                                    You can do it in 2 ways:<br>
+                                    1. Creating a Smarty Controller for that plugin - there is a boilerplate or you can inspire from all others.<br>
+                                    2. Using it like you always did. That was easy, isn't it?
+                                </p>
+
+                                <p class="lead">
+                                    Smarty is adding new features on each update but any feature request is more than welcome! 
+                                    Oh, not only requests, also suggestions and/or bad things are welcome! 
+                                    We all know that there is no such thing "perfect" but I am willing to fix and improve my work!
+                                </p>
+
+
+                                <hr>
+
+                                <p class="lead">
+                                    Down below is the Smarty Core Structure I promised in the beggining.
+                                </p>
+
+                                <hr>
+
+                                <a href="https://wrapbootstrap.com/theme/smarty-website-admin-rtl-WB02DSN1B" target="wrapbootstrap">
+                                    Smarty is sold only and only on wrapbootstrap!
+                                </a> Thank you for reading this!
+
+                            </section>
+
+
+
+
+
+
+
+
+                            <section>
+
+								<pre><code class="language-javascript">
+/**
+
+    src/js/sow_core/sow.js
+
+**/
+
+
+
+;(function ($) {
+'use strict';
+
+    $.SOW = {
+
+
+
+        /**
+         *
+         *  @init
+         *
+         *
+         **/
+        init: function () {}
+
+
+
+        /**
+         *
+         *  @globals
+         *  SOW Config
+         *
+         **/
+        globals: {
+
+            direction           : $('body').css('direction'),   /* rtl | ltr */
+            width               : $(window).width(),            /* window width, updated on resize */
+            height              : $(window).height(),           /* window height, updated on resize */
+            is_modern_browser   : ('querySelector' in document &amp;&amp; 'localStorage' in window &amp;&amp; 'addEventListener' in window),    /* `true` if modern */
+            is_mobile           : ($(window).width() &lt; 993)             ? true : false,
+            is_admin            : $('body').hasClass('layout-admin')    ? true : false,
+
+        }
+
+
+        /**
+         *
+         *  @core
+         *  SOW Core Plugins
+         *
+         **/
+        core: {},
+
+
+        /**
+         *
+         *  @vendor
+         *  Vendor Plugins [separated by SOW]
+         *
+         **/
+        vendor: {},
+
+
+        /**
+         *
+         *  @helper
+         *  SOW Helpers
+         *
+         **/
+        helper: {},
+
+
+        /**
+         *
+         *  @custom
+         *  My Custom [optional]
+         *
+         **/
+        custom: {},
+
+
+        /**
+         *
+         *  @reinit
+         *  Ajax Callable
+         *
+         **/
+        reinit: function(ajax_container) {}
+
+
+    /**
+     *
+     *  Init this
+     *
+     *
+     **/
+    $.SOW.init();
+
+})(jQuery);
+
+
+
+
+
+
+/*
+
+    Globals you can get
+    if you need in your js code
+
+*/
+    @globals
+
+        $.SOW.globals.direction                         'ltr|rtl'
+        $.SOW.globals.width                             actual width    (updated on resize)
+        $.SOW.globals.height                            actual height   (updated on resize)
+        $.SOW.globals.is_mobile                         true|false
+        $.SOW.globals.is_modern_browser                 true if modern
+        $.SOW.globals.is_admin                          true|false      (admin layout)
+        $.SOW.globals.breakpoints.[sm|ms|lg|xl]         bootstrap default breakpoints
+        $.SOW.globals.elBody                            body element
+        $.SOW.globals.elHeader                          header element
+        $.SOW.globals.elAside                           main sidebar element
+
+    @functions  
+        $.SOW.reinit('#container')                      reinit plugins for a specific ajax container; see also:
+
+
+								</code></pre>
+
+							</section>
+
+
+
+
+
+
+
+
+
+
+                            <section>
+
+                                <pre><code class="language-javascript">
+/**
+
+    HELPERS YOU CAN USE IN YOUR JS CODE
+    src/js/sow_core/helpers.js
+
+    Please do not modify them, SOW plugins are using them!
+
+**/
+
+
+
+        @loadScript
+        $.SOW.helper.loadScript(script_arr, async[true|false], cache[true|false]).done(function() {
+            // all scripts loaded... do something
+            // * async = false by default (scripts are loaded in order)
+            // * cache = true by default
+        });
+
+
+     *
+        @loadCSS
+        $.SOW.helper.loadCSS("/path/to/file.css", "append|prepend|remove");  "append" is default, if no option passed
+     *
+        @loadingSpinner
+        $.SOW.helper.loadingSpinner('show|hide', "#mycontainer", 'overlay|icon');
+     *
+        @overlay
+        $.SOW.helper.overlay('show|hide|toggle');
+     *
+        @randomStr
+        $.SOW.helper.randomStr(8, 'empty|L|N');
+     *
+        @byte2size
+        $.SOW.helper.byte2size(bytes, precision=2, int_only=false);
+        $.SOW.helper.byte2kb(bytes);
+     *
+        @scrollAnimate
+        $.SOW.helper.scrollAnimate(_el, _offset, _hash_change, _speed);
+            _el             = element to scroll to. #top = page top
+            _offset         = top offset (0 default)
+            _hash_change    = update url hash on click
+            _speed          = scroll speed (400 default)
+
+        $.SOW.helper.scrollAnimate('#top', 0, false, 400);
+     *
+        @removeUrlHash
+        $.SOW.helper.removeUrlHash('https://domain.com/url#hash');
+     *
+        @playSound
+        $.SOW.helper.playSound('path/to/audio.mp3');
+     *
+        @time_from_ms
+        $.SOW.helper.time_from_ms(miliseconds, 's|m|h|d|empty for all');
+     *  
+        @get_browser (unfinished, need improvement, do not use)
+        $.SOW.helper.get_browser();
+     *
+        @params_parse
+        var params = $.SOW.helper.params_parse(params_from_post); // return: array
+            
+            var ajax_params_arr = $.SOW.helper.params_parse(ajax_params);
+            for (var i = 0; i &lt; ajax_params_arr.length; ++i) {
+                formDataDel.append(ajax_params_arr[i][0], ajax_params_arr[i][1]);
+            }
+     *
+        @indexedDB (local database)
+        $.SOW.helper.indexedDB(.. see function ..);
+     *
+        @currencyFormat
+        $.SOW.helper.currencyFormat(1000000); // output: 1,234,567.89
+
+        // 1,234,567.89
+        $.SOW.helper.currencyFormat(1000000, [
+               2, ',', '.' // en
+            // 2, '.', ',' // de
+            // 2, ' ', ',' // fr
+        ]);
+     *
+        @consoleLog (output - only if debug is enabled!)
+        $.SOW.helper.consoleLog('Lorem Ipsum', 'color: #ff0000;');
+
+                                </code></pre>
+
+                            </section>
+
+
+
+
+
+
+
+
+
+                            <section id="page_preloader">
+
+                                <pre><code class="language-javascript">
+&lt;!-- Classic Smarty Preloader 
+Smarty Reborn is not using it anymore but you can, if you want to ;)
+-->
+
+
+&lt;!-- preloader -->
+&lt;div id="page_preload" class="d-middle fixed-full z-index-9999 bg-white">
+
+	&lt;span class="p-3 shadow-xs rounded">
+		&lt;i class="fi fi-circle-spin fi-spin text-muted float-start">&lt;/i>
+		loading...
+	&lt;/span>
+
+&lt;/div>
+&lt;!-- /preloader -->
+
+                                </code></pre>
+
+                            </section>
+
+
+						</div>
+
+						<div class="col w-100 max-w-300 d-none d-xl-flex align-self-md-stretch">
+
+							<!--
+							<div class="w-100">
+								<div class="sticky-kit">
+
+								<h6 class="text-primary">Jump To</h6>
+								<ul class="list-unstyled m-0">
+									<li class="list-item">
+										<a href="#v3_0_0" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											v3.0.1
+										</a>
+									</li>
+
+								</ul>
+							</div>
+							-->
+
+
+							<!-- AJAX BOX INFO -->
+							<div 	id="boxinfo_v3" 
+									class="js-ajax" 
+									data-ajax-url="_ajax/boxinfo_v3.html">
+
+								<!-- ajax loading icon -->
+								<div class="text-center bg-white rounded shadow-md p--15 mb-5">
+									<i class="fi fi-circle-spin fi-spin fs--30 text-muted"></i>
+								</div><!-- /ajax loading icon -->
+
+							</div>
+							<!-- /AJAX BOX INFO -->
+
+
+							</div>
+
+
+					</div>
+
+
+
+				</div>
+				<!-- /MIDDLE -->
+
+			</div>
+
+
+
+		</div><!-- /#wrapper -->
+
+
+		<!--
+			
+			Toast On Load
+
+				data-type 			= '', success, danger, warning, info
+				data-title 			= toast title 	(optional)
+				data-body 			= toast body 	(required)
+				data-pos 			= top-left, top-right, bottom-left, bottom-right, top-center, bottom-center
+				data-delay 			= autoclose in ms
+				data-fill 			= background color fill [true|false]
+
+		-->
+		<div class="hide toast-on-load"
+			data-toast-type="pink" 
+			data-toast-title="" 
+			data-toast-body="<i class='fi fi-emoji-cool float-start'></i> Ajax navigation enabled! Yay!" 
+			data-toast-pos="bottom-center" 
+			data-toast-delay="4000" 
+			data-toast-fill="true" 
+		></div>
+
+
+
+
+		<script src="../assets/js/core.min.js"></script>
+		<script src="../assets/js/vendor_bundle.min.js"></script>
+
+
+
+		<!--
+
+			[SOW Ajax Navigation Plugin] [AJAX ONLY, IF USED]
+			If you have specific page js files, wrap them inside #page_js_files 
+			Ajax Navigation will use them for this page! 
+			This way you can load this page in a normal way and/or via ajax.
+			(you can change/add more containers in sow.config.js)
+
+		-->
+		<div id="page_js_files">
+
+
+
+			<!-- 
+
+				CONTENT CLIPBOARD COPY 
+
+					<a href="#clipboard_1" class="btn-clipboard btn btn-sm btn-light float-end">
+						<i class="fi fi-lightning"></i> 
+						copy code
+					</a>
+
+					<div id="clipboard_1">
+						.. code 
+					</div>
+
+			-->
+			<script src="assets/js/sow.clipboard.js"></script>
+			<script>
+
+				$.SOW.core.clipboard.init('#middle a.btn-clipboard');
+
+			</script>
+
+
+		</div>
+
+
+	</body>
+</html>

@@ -1,0 +1,392 @@
+﻿					<!-- doc:start -->
+					<div class="page-title bg-transparent b-0">
+
+						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
+							Alerts
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--13 pb-2 px-3">
+								<li class="breadcrumb-item">
+									<a href="index.html" class="js-ajax">Dashboard</a>
+								</li>
+								<li class="breadcrumb-item active">
+									Components
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Alerts
+								</li>
+							</ol>
+						</nav>
+
+					</div>
+
+
+
+					<!-- ALERT : NOTE -->
+					<div class="bg-white shadow-xs p-2 mb-4 rounded">
+						<div class="clearfix bg-light p-2 rounded d-flex align-items-center">
+							<span class="btn row-pill btn-sm bg-gradient-warning b-0 py-1 mb-0 float-start">
+								<i class="fi fi-round-info-full"></i>
+								Note
+							</span>
+							<span class="d-block px-2 text-muted text-truncate">
+								This is a basic demo! Please see main <a href="../../html_frontend/documentation/" target="smarty" class="link-muted">full documentation here</a>.
+							</span>
+						</div>
+					</div>
+					<!-- /ALERT : NOTE -->
+
+
+
+					<!-- counter:start: -->
+					<div class="alert bg-danger-soft p-5 mb-5 timer-autohide" role="alert" data-timer-autohide="8000">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span class="fi fi-close" aria-hidden="true"></span>
+						</button>
+
+						<i class="fi fi-time fs--16 mt--n1 float-start"></i> Autohide in: 
+
+						<!-- 
+							+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+							SOW Countdown Timer
+								data-timer-countdown-from="8000" 	
+									if data-timer-countdown-from > 1000, is calculated in seconds (time / 1000)
+									if data-timer-countdown-from < 1000, is considered seconds
+									INSTEAD OF SECONDS/MILLISECONDS, FULL DATE IS SUPPORTED: 	
+										2020-11-21T13:19:11+0000
+										11/21/2020 16:00:00 
+										Fri Jul 14 2020 23:21:03 GMT+0300
+										If date is in the past, callback function is not called!
+
+								data-timer-countdown-end-hide-self="true" 					hide self counter finished
+								data-timer-countdown-end-hide-target="#container" 			hide one (or more separated by space) containers when finished
+									NOTE: in our example, instead of using .timer-autohide, you can use data-timer-countdown-end-hide-target="#my_alert_id"
+
+								Callback Function called when timer hit 00:00:00
+								data-timer-countdown-callback-function="myCallbackFunction"
+									myCallbackFunction = function(el) {
+										// el = countdown element ID. if no #id provided, is added by the plugin
+									}
+
+							.hide class is optional, recommended in case the counter is already 00:00:00 for some reason (depends of your backend code)
+							+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+						-->
+						<b class="hide timer-countdown" data-timer-countdown-from="8000" data-timer-countdown-callback-function="myCallbackFunction"></b>
+						<script>
+							/* timer-countdown : callback function example */
+							myCallbackFunction = function(el) {
+								$.SOW.core.toast.show('success', '', '<i class="fi fi-time float-start"></i> Timer ended! Like it?', 'top-center', 3000, true);
+							}
+						</script>
+
+						<i class="arrow arrow-lg arrow-bottom arrow-center border-danger-soft"></i>
+
+					</div>
+					<!-- counter:end: -->
+
+
+
+					<!-- start:row: -->
+					<div class="row gutters-sm">
+
+						<!-- start:col: -->
+						<div class="col-12 col-xl mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Basic Alerts</span>
+								</div>
+
+								<div class="portlet-body">
+
+									<div class="alert alert-primary" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span class="fi fi-close" aria-hidden="true"></span>
+										</button>
+
+										Alert : Primary
+									</div>
+
+									<div class="alert alert-secondary" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span class="fi fi-close" aria-hidden="true"></span>
+										</button>
+										Alert : Secondary
+									</div>
+
+									<div class="alert alert-danger" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span class="fi fi-close" aria-hidden="true"></span>
+										</button>
+										Alert : Danger
+									</div>
+
+									<div class="alert alert-warning" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span class="fi fi-close" aria-hidden="true"></span>
+										</button>
+										Alert : Warning
+									</div>
+
+									<div class="alert alert-info" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span class="fi fi-close" aria-hidden="true"></span>
+										</button>
+										Alert : Info
+									</div>
+
+									<div class="alert alert-success" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span class="fi fi-close" aria-hidden="true"></span>
+										</button>
+										Alert : Success
+									</div>
+
+									<div class="alert alert-light" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span class="fi fi-close" aria-hidden="true"></span>
+										</button>
+										Alert : Light
+									</div>
+
+									<div class="alert alert-indigo" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span class="fi fi-close" aria-hidden="true"></span>
+										</button>
+										Alert : Indigo
+									</div>
+
+									<div class="alert alert-purple" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span class="fi fi-close" aria-hidden="true"></span>
+										</button>
+										Alert : Purple
+									</div>
+
+									<div class="alert alert-pink" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span class="fi fi-close" aria-hidden="true"></span>
+										</button>
+										Alert : Pink
+									</div>
+
+									<div class="alert alert-dark" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span class="fi fi-close" aria-hidden="true"></span>
+										</button>
+										Alert : Dark
+									</div>
+										
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 col-xl mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Bordered Alerts</span>
+								</div>
+
+								<div class="portlet-body">
+
+									<div class="alert alert-primary bg-transparent bw--2" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span class="fi fi-close" aria-hidden="true"></span>
+										</button>
+
+										Alert : Primary
+									</div>
+
+									<div class="alert alert-secondary bg-transparent bw--2" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span class="fi fi-close" aria-hidden="true"></span>
+										</button>
+										Alert : Secondary
+									</div>
+
+									<div class="alert alert-danger bg-transparent bw--2" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span class="fi fi-close" aria-hidden="true"></span>
+										</button>
+										Alert : Danger
+									</div>
+
+									<div class="alert alert-warning bg-transparent bw--2" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span class="fi fi-close" aria-hidden="true"></span>
+										</button>
+										Alert : Warning
+									</div>
+
+									<div class="alert alert-info bg-transparent bw--2" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span class="fi fi-close" aria-hidden="true"></span>
+										</button>
+										Alert : Info
+									</div>
+
+									<div class="alert alert-success bg-transparent bw--2" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span class="fi fi-close" aria-hidden="true"></span>
+										</button>
+										Alert : Success
+									</div>
+
+									<div class="alert alert-light bg-transparent border bw--2" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span class="fi fi-close" aria-hidden="true"></span>
+										</button>
+										Alert : Light
+									</div>
+
+									<div class="alert alert-indigo bg-transparent bw--2" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span class="fi fi-close" aria-hidden="true"></span>
+										</button>
+										Alert : Indigo
+									</div>
+
+									<div class="alert alert-purple bg-transparent bw--2" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span class="fi fi-close" aria-hidden="true"></span>
+										</button>
+										Alert : Purple
+									</div>
+
+									<div class="alert alert-pink bg-transparent bw--2" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span class="fi fi-close" aria-hidden="true"></span>
+										</button>
+										Alert : Pink
+									</div>
+
+									<div class="alert alert-dark bg-transparent bw--2" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span class="fi fi-close" aria-hidden="true"></span>
+										</button>
+										Alert : Dark
+									</div>
+
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+						<!-- start:col: -->
+						<div class="col-12 col-xl mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Gradient Alerts</span>
+								</div>
+
+								<div class="portlet-body">
+
+									<div class="alert bg-gradient-primary b-0 text-white" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span class="fi fi-close text-white" aria-hidden="true"></span>
+										</button>
+
+										Alert : Primary
+									</div>
+
+									<div class="alert bg-gradient-secondary b-0 text-white" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span class="fi fi-close text-white" aria-hidden="true"></span>
+										</button>
+										Alert : Secondary
+									</div>
+
+									<div class="alert bg-gradient-danger b-0 text-white" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span class="fi fi-close text-white" aria-hidden="true"></span>
+										</button>
+										Alert : Danger
+									</div>
+
+									<div class="alert bg-gradient-warning b-0" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span class="fi fi-close" aria-hidden="true"></span>
+										</button>
+										Alert : Warning
+									</div>
+
+									<div class="alert bg-gradient-info b-0 text-white" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span class="fi fi-close text-white" aria-hidden="true"></span>
+										</button>
+										Alert : Info
+									</div>
+
+									<div class="alert bg-gradient-success b-0 text-white" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span class="fi fi-close text-white" aria-hidden="true"></span>
+										</button>
+										Alert : Success
+									</div>
+
+									<div class="alert bg-gradient-light border" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span class="fi fi-close" aria-hidden="true"></span>
+										</button>
+										Alert : Light
+									</div>
+
+									<div class="alert bg-gradient-indigo b-0 text-white" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span class="fi fi-close text-white" aria-hidden="true"></span>
+										</button>
+										Alert : Indigo
+									</div>
+
+									<div class="alert bg-gradient-purple b-0 text-white" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span class="fi fi-close text-white" aria-hidden="true"></span>
+										</button>
+										Alert : Purple
+									</div>
+
+									<div class="alert bg-gradient-pink b-0 text-white" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span class="fi fi-close text-white" aria-hidden="true"></span>
+										</button>
+										Alert : Pink
+									</div>
+
+									<div class="alert bg-gradient-dark b-0 text-white" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span class="fi fi-close text-white" aria-hidden="true"></span>
+										</button>
+										Alert : Dark
+									</div>
+										
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+					</div>
+					<!-- end:row: -->
+					<!-- doc:end -->

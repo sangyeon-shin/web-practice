@@ -1,0 +1,291 @@
+﻿					<!-- doc:start -->
+					<div class="page-title bg-transparent b-0">
+
+						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
+							SOW : Timer Countdown
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--13 pb-2 px-3">
+								<li class="breadcrumb-item">
+									<a href="index.html" class="js-ajax">Dashboard</a>
+								</li>
+								<li class="breadcrumb-item active">
+									SOW : Core Plugins
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Timer Countdown
+								</li>
+							</ol>
+						</nav>
+
+					</div>
+
+
+
+					<!-- ALERT : NOTE -->
+					<div class="bg-white shadow-xs p-2 mb-4 rounded">
+						<div class="clearfix bg-light p-2 rounded d-flex align-items-center">
+							<span class="btn row-pill btn-sm bg-gradient-warning b-0 py-1 mb-0 float-start">
+								<i class="fi fi-round-info-full"></i>
+								Note
+							</span>
+							<span class="d-block px-2 text-muted text-truncate">
+								This is a basic demo! Please see main <a href="../../html_frontend/documentation/plugins-sow-timer-countdown.html" target="smarty" class="link-muted">full documentation here</a>.
+							</span>
+						</div>
+					</div>
+					<!-- /ALERT : NOTE -->
+
+
+
+					<!-- start:row -->
+					<div class="row gutters-sm">
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Examples</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="py-6">
+
+									<h6>By Seconds/Milliseconds</h6>
+									<div class="row">
+										<div class="col-12 col-lg-5">
+
+											<span class="h3 hide timer-countdown" data-timer-countdown-from="100000"></span>
+
+										</div>
+
+										<div class="col-12 col-lg-7">
+
+											<pre class="bg-gradient-dark rounded p-3"><code>
+&lt;!--
+if data-timer-countdown-from &gt; 1000, calculated in seconds (time / 1000)
+if data-timer-countdown-from &lt; 1000, considered seconds
+
+Other Options
+	data-timer-countdown-end-hide-self="true"
+	data-timer-countdown-end-hide-target="#somecontainer"
+	data-timer-countdown-callback-function=""
+
+	myCallbackFunction = funtion(el) {
+		// el = countdown element ID. if no #id provided, is added by the plugin
+	}
+-->
+&lt;span class="hide timer-countdown" data-timer-countdown-from="100000">&lt;/span>
+											</code></pre>
+
+										</div>
+
+									</div>
+
+
+									<hr class="mt--50 mb--50">
+
+									<h6>By Date (the output is always in hours)!</h6>
+									<div class="row">
+										<div class="col-12 col-lg-5">
+
+<span class="h3 hide timer-countdown" data-timer-countdown-from="11/21/2020 16:00:00"></span>
+
+										</div>
+
+										<div class="col-12 col-lg-7">
+
+											<pre class="bg-gradient-dark rounded p-3"><code>
+&lt;!--
+Any standard date format is supported. Examples:
+2020-11-21T13:19:11+0000
+11/21/2020 16:00:00 
+Fri Jul 14 2020 23:21:03 GMT+0300
+If date is in the past, callback function is not called!
+
+Other Options
+	data-timer-countdown-end-hide-self="true"
+	data-timer-countdown-end-hide-target="#somecontainer"
+	data-timer-countdown-callback-function=""
+
+	myCallbackFunction = funtion(el) {
+		// el = countdown element ID. if no #id provided, is added by the plugin
+	}
+-->
+&lt;span class="hide timer-countdown" data-timer-countdown-from="11/21/2020 16:00:00">&lt;/span>
+											</code></pre>
+
+										</div>
+
+									</div>
+
+
+									<hr class="mt--50 mb--50">
+
+
+									<h6>Full Output</h6>
+									<div class="row">
+										<div class="col-12 col-lg-5">
+
+											<div class="hide timer-countdown timer-countdown-inline" data-timer-countdown-from="11/21/2023 16:00:00">
+												
+												<span class="w--100 py-4 my-1 text-center shadow-xs d-inline-block">
+													<span class="y d-block"></span>
+													year
+												</span>
+
+												<span class="w--100 py-4 my-1 text-center shadow-xs d-inline-block">
+													<span class="d d-block"></span>
+													days
+												</span>
+
+												<span class="w--100 py-4 my-1 text-center shadow-xs d-inline-block">
+													<span class="h d-block"></span>
+													hours
+												</span>
+
+												<span class="w--100 py-4 my-1 text-center shadow-xs d-inline-block">
+													<span class="m d-block"></span>
+													minutes
+												</span>
+
+												<span class="w--100 py-4 my-1 text-center shadow-xs d-inline-block">
+													<span class="s d-block"></span>
+													seconds
+												</span>
+
+											</div>
+
+
+										</div>
+
+										<div class="col-12 col-lg-7">
+
+											<pre class="bg-gradient-dark rounded p-3"><code>
+&lt;div class="hide timer-countdown timer-countdown-inline" data-timer-countdown-from="11/21/2023 16:00:00">
+	
+	&lt;span class="w--100 py-4 my-1 text-center shadow-xs d-inline-block">
+		&lt;span class="y d-block">&lt;/span>
+		year
+	&lt;/span>
+
+	&lt;span class="w--100 py-4 my-1 text-center shadow-xs d-inline-block">
+		&lt;span class="d d-block">&lt;/span>
+		days
+	&lt;/span>
+
+	&lt;span class="w--100 py-4 my-1 text-center shadow-xs d-inline-block">
+		&lt;span class="h d-block">&lt;/span>
+		hours
+	&lt;/span>
+
+	&lt;span class="w--100 py-4 my-1 text-center shadow-xs d-inline-block">
+		&lt;span class="m d-block">&lt;/span>
+		minutes
+	&lt;/span>
+
+	&lt;span class="w--100 py-4 my-1 text-center shadow-xs d-inline-block">
+		&lt;span class="s d-block">&lt;/span>
+		seconds
+	&lt;/span>
+
+&lt;/div>
+											</code></pre>
+
+										</div>
+
+									</div>
+
+
+									<hr class="mt--50 mb--50">
+
+
+									<h6>Same as above, just another markup example</h6>
+									<div class="row">
+										<div class="col-12 col-lg-5">
+
+											<div class="hide timer-countdown timer-countdown-inline py-5 d-inline-block" data-timer-countdown-from="11/21/2022 16:00:00">
+
+												<span class="w--60 text-center d-inline-block">
+													<span class="y d-block text-primary py-2"></span>
+													<span class="fs--12">YEARS</span>
+												</span>
+
+												<span class="w--60 text-center d-inline-block">
+													<span class="d d-block text-primary py-2"></span>
+													<span class="fs--12">DAYS</span>
+												</span>
+
+												<span class="w--60 text-center d-inline-block">
+													<span class="h d-block text-primary py-2"></span>
+													<span class="fs--12">HRS</span>
+												</span>
+
+												<span class="w--60 text-center d-inline-block">
+													<span class="m d-block text-primary py-2"></span>
+													<span class="fs--12">MIN</span>
+												</span>
+
+												<span class="w--60 text-center d-inline-block">
+													<span class="s d-block text-primary py-2"></span>
+													<span class="fs--12">SEC</span>
+												</span>
+
+											</div>
+
+										</div>
+
+										<div class="col-12 col-lg-7">
+
+											<pre class="bg-gradient-dark rounded p-3"><code>
+&lt;div class="hide timer-countdown timer-countdown-inline py-5 d-inline-block" data-timer-countdown-from="11/21/2022 16:00:00">
+
+	&lt;span class="w--60 text-center d-inline-block">
+		&lt;span class="y d-block text-primary py-2">&lt;/span>
+		&lt;span class="fs--12">YEARS&lt;/span>
+	&lt;/span>
+
+	&lt;span class="w--60 text-center d-inline-block">
+		&lt;span class="d d-block text-primary py-2">&lt;/span>
+		&lt;span class="fs--12">DAYS&lt;/span>
+	&lt;/span>
+
+	&lt;span class="w--60 text-center d-inline-block">
+		&lt;span class="h d-block text-primary py-2">&lt;/span>
+		&lt;span class="fs--12">HRS&lt;/span>
+	&lt;/span>
+
+	&lt;span class="w--60 text-center d-inline-block">
+		&lt;span class="m d-block text-primary py-2">&lt;/span>
+		&lt;span class="fs--12">MIN&lt;/span>
+	&lt;/span>
+
+	&lt;span class="w--60 text-center d-inline-block">
+		&lt;span class="s d-block text-primary py-2">&lt;/span>
+		&lt;span class="fs--12">SEC&lt;/span>
+	&lt;/span>
+
+&lt;/div>
+											</code></pre>
+
+
+										</div>
+
+									</div>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+					</div>
+					<!-- end:row: -->
+					<!-- doc:end -->

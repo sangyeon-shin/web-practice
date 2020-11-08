@@ -1,0 +1,228 @@
+﻿					<!-- doc:start -->
+					<div class="page-title bg-transparent b-0">
+
+						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
+							Width &amp; Height
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--13 pb-2 px-3">
+								<li class="breadcrumb-item">
+									<a href="index.html" class="js-ajax">Dashboard</a>
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Utils
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Width &amp; Height
+								</li>
+							</ol>
+						</nav>
+
+					</div>
+
+
+
+
+
+
+
+					<!-- start:row -->
+					<div class="row gutters-sm">
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Width</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<table class="table table-lg">
+											<thead>
+												<tr>
+													<th scope="col" class="w--300">Class</th>
+													<th scope="col">Description</th>
+													<th scope="col" class="w--300">Quick Example</th>
+												</tr>
+											</thead>
+
+											<tbody>
+
+												<tr>
+													<td>
+														<code class="d-block">.w--*</code>
+														<code class="d-block">.max-w-*</code>
+														<br>
+														<code class="d-block">.w-*vh</code>
+														<code class="d-block">.min-w-*vh</code>
+														<code class="d-block">.max-w-*vh</code>
+														<br>
+														<code class="d-block">.w-inherit</code>
+														<code class="d-block">.w-auto</code>
+														<code class="d-block">.mw-100</code>
+														<code class="d-block">.min-w-0</code>
+													</td>
+													<td>
+														<p>
+															Smarty added few width helper classes. In many situations, are pure gold, without writing repeating CSS rules for elements. <br>
+															Widths are in pixels!
+														</p>
+
+														<p>
+															Width variables defined in: _core/utils/_variables.scss <br>
+															
+														</p>
+
+														<p class="bg-light p--15">
+															<code>.w--300</code> (300px fixed width) <br>
+															<code>.max-w-300</code> (300px max. width allowed)
+															<span class="d-block bg-diff p--15 mt-3">
+																<code>$util-width-val: <b>1 2 3 4 5 6 8 10 15 20 25 30 35 40 50 60 70 80 90 100 120 150 180 200 220 250 280 300 350 400 450 500 600 700 800</b> !default;</code>
+															</span>
+														</p>
+
+
+														<p class="bg-light p--15">
+															<code>.w-25vw</code> (25% viewport width) <br>
+															<code>.min-w-25vw</code> (25% min viewport width) <br>
+															<code>.max-w-25vw</code> (25% max viewport width)
+
+															<span class="d-block bg-diff p--15 mt-3">
+																<code>$util-viewport-val:</code> <b>25, 33, 50, 75, 100</b> !default;</code>
+															</span>
+														</p>
+
+														<p class="bg-light p--15">
+															<code>.mw-100</code> (100% max. width) - used as a fix for some elements
+														</p>
+
+														<p class="bg-light p--15">
+															<code>.min-w-0</code> (0 min. width) - used as a "fix" on <code>.d-flex</code> by <code>.text-truncate</code>
+														</p>
+
+													</td>
+													<td>
+														<p class="p-2 border w--80 mb-3">
+															.w--80
+														</p>
+														<p class="p-2 border w--120 mb-3">
+															.w--120
+														</p>
+													</td>
+												</tr>
+
+											</tbody>
+										</table>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Height</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<table class="table table-lg">
+											<thead>
+												<tr>
+													<th scope="col" class="w--300">Class</th>
+													<th scope="col">Description</th>
+													<th scope="col" class="w--300">Quick Example</th>
+												</tr>
+											</thead>
+
+											<tbody>
+
+												<tr>
+													<td>
+														<code class="d-block">.h--*</code>
+														<code class="d-block">.max-h-*</code>
+														<br>
+														<code class="d-block">.h-*vh</code>
+														<code class="d-block">.min-h-*vh</code>
+														<code class="d-block">.max-h-*vh</code>
+														<br>
+														<h6>Mobile helper</h6>
+														<code class="d-block">.max-h-*-xs</code>
+													</td>
+													<td>
+
+														<p>
+															Height variables defined in: _core/utils/_variables.scss <br>
+															Heights are in pixels!
+														</p>
+
+														<p class="bg-light p--15">
+															<code>.h--300</code> (300px fixed height) <br>
+															<code>.max-h-300</code> (300px height max. allowed)<br>
+															<code>.max-h-300-xs</code> (300px height max. allowed on mobile - overwrite <code>.max-h-*</code>)<br>
+															<span class="d-block bg-diff p--15 mt-3">
+																<code>$util-height-val: <b>1 2 3 4 5 6 8 10 15 20 25 30 35 40 50 60 70 80 90 100 120 150 180 200 220 250 280 300 350 400 450 500 600 700 800</b> !default;</code>
+															</span>
+															<small>* Uses the same variables as width!</small>
+														</p>
+
+
+														<p class="bg-light p--15">
+															<code>.h-25vh</code> (25% viewport height) <br>
+															<code>.min-h-25vh</code> (25% min viewport height) <br>
+															<code>.max-h-25vh</code> (25% max viewport height)
+
+															<span class="d-block bg-diff p--15 mt-3">
+																<code>$util-viewport-val:</code> <b>25, 33, 50, 75, 100</b> !default;</code>
+															</span>
+														</p>
+
+													</td>
+													<td>
+														<p class="p-2 border h--50 mb-3">
+															.h--50
+														</p>
+														<p class="p-2 border h--120 mb-3">
+															.h--120
+														</p>
+
+														<p class="p-2 border h--150 w--150 mb-3">
+															.h--150 .w--150
+														</p>
+
+													</td>
+												</tr>
+
+											</tbody>
+										</table>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+					</div>
+					<!-- end:row: -->
+					<!-- doc:end -->

@@ -1,0 +1,278 @@
+﻿					<!-- doc:start -->
+					<div class="page-title bg-transparent b-0">
+
+						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
+							Transitions &amp; Transforms
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--13 pb-2 px-3">
+								<li class="breadcrumb-item">
+									<a href="index.html" class="js-ajax">Dashboard</a>
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Utils
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Transitions &amp; Transforms
+								</li>
+							</ol>
+						</nav>
+
+					</div>
+
+
+
+
+
+
+
+					<!-- start:row -->
+					<div class="row gutters-sm">
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Transitions</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<table class="table table-lg">
+											<thead>
+												<tr>
+													<th scope="col" class="w--300">Class</th>
+													<th scope="col">Description</th>
+													<th scope="col" class="w--300">Quick Example</th>
+												</tr>
+											</thead>
+
+											<tbody>
+
+												<tr>
+													<td>
+														<code class="d-block">.transition-all-ease-*</code>
+														<code class="d-block">.transition-bg-ease-*</code>
+														<br>
+														<code class="d-block">.transition-hover-top</code>
+														<code class="d-block">.transition-hover-right</code>
+														<code class="d-block">.transition-hover-bottom</code>
+														<code class="d-block">.transition-hover-left</code>
+														<br>
+														<code class="d-block">.transition-hover-start</code>
+														<code class="d-block">.transition-hover-end</code>
+														<br>
+														<code class="d-block">.transition-hover-zoom</code>
+													</td>
+													<td>
+
+														<p class="bg-light p--15">
+															<code>.transition-all-ease-150</code> <br>
+															<code>.transition-all-ease-200</code> <br>
+															<code>.transition-all-ease-250</code> <br>
+															<code>.transition-all-ease-500</code> <br>
+															<code class="text-info">CSS: transition: all *ms ease,transform *ms ease;</code> <br>
+														</p>
+
+														<p class="bg-light p--15">
+															<code>.transition-bg-ease-150</code> <br>
+															<code>.transition-bg-ease-200</code> <br>
+															<code>.transition-bg-ease-250</code> <br>
+															<code>.transition-bg-ease-500</code> <br>
+															<code class="text-info">CSS: transition: background-color *ms linear;</code>
+														</p>
+
+
+														<p class="bg-light p--15">
+															<code>.transition-hover-zoom</code> will zoom the entire container<br>
+															<code>.transition-hover-zoom-img</code> can be added directly to image or to a container (will zoom the image inside the container)
+														</p>
+													</td>
+													<td>
+														<small>Without <code>.transition-all-ease-*</code></small>
+														<div class="p-2 shadow-md shadow-3d-hover transition-hover-top mb-3">
+															.shadow-md .shadow-3d-hover .transition-hover-top
+														</div>
+
+														<small>With <code>.transition-all-ease-*</code></small>
+														<div class="p-2 shadow-md shadow-3d-hover transition-hover-top transition-all-ease-250 mb-5">
+															.shadow-md .shadow-3d-hover .transition-hover-top .transition-all-ease-250
+														</div>
+
+														<small>Container zoom</small>
+														<div class="p-2 shadow-md shadow-3d-hover transition-hover-top transition-all-ease-250 transition-hover-zoom mb-3">
+															.shadow-md .shadow-3d-hover .transition-hover-top .transition-all-ease-250
+														</div>
+
+														<small>Image zoom</small>
+														<div class="shadow-md shadow-3d-hover transition-hover-zoom-img overflow-hidden rounded mb-3">
+															<img class="img-fluid" src="../../html_frontend/demo.files/images/unsplash/brooke-cagle-g1Kr4Ozfoac-unsplash.jpg" alt="...">
+														</div>
+
+														<small>Background Transition</small>
+														<div class="h--100 p-3 shadow-xs bg-warning-hover transition-bg-ease-150 rounded mb-3">
+															.bg-warning-hover .transition-bg-ease-150
+														</div>
+														<div class="h--100 p-3 shadow-xs bg-danger-hover transition-bg-ease-150 rounded mb-5">
+															.bg-danger-hover .transition-bg-ease-150
+														</div>
+
+													</td>
+												</tr>
+
+											</tbody>
+										</table>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Transforms</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<table class="table table-lg">
+											<thead>
+												<tr>
+													<th scope="col" class="w--300">Class</th>
+													<th scope="col">Example</th>
+												</tr>
+											</thead>
+
+											<tbody>
+
+												<tr>
+													<td>
+														<code class="d-block">.transform-fixed-center</code>
+														<code class="d-block">.transform-3d-right</code>
+														<code class="d-block">.transform-3d-left</code>
+													</td>
+
+													<td>
+
+														<p>
+															Best for images but also works for content. <br>
+															Apply the class to the container. For a better effect, you can add <code>.shadow-xlg</code> and <code>.rounded-xl</code>
+														</p>
+
+														<div class="row">
+
+															<div class="col-6">
+
+																<div class="d-table mt-3 mb--80">
+																	<div class="d-table-cell align-middle">
+
+																		<div class="transform-3d-left">
+																			<img class="shadow-xlg img-fluid rounded-xl" src="../../html_frontend/demo.files/images/ps_smarty.jpg" width="570" height="357" alt="...">
+																		</div>
+
+																	</div>
+																</div>
+
+															</div>
+
+															<div class="col-6">
+
+																<div class="d-table mt-3 mb--80">
+																	<div class="d-table-cell align-middle">
+
+																		<div class="transform-3d-right">
+																			<img class="shadow-xlg img-fluid rounded-xl" src="../../html_frontend/demo.files/images/ps_smarty.jpg" width="570" height="357" alt="...">
+																		</div>
+
+																	</div>
+																</div>
+
+															</div>
+														</div>
+
+													</td>
+												</tr>
+
+												<tr>
+													<td>
+														<code class="d-block">.text-rotate</code>
+													</td>
+
+													<td>
+
+														<div class="h--200">
+
+															<div class="d-inline-block bg-danger rounded text-rotate text-white p--15 h-100 mh-100">
+																.text-rotate
+															</div>
+
+															<div class="d-inline-block bg-warning rounded text-rotate text-white p--15 h-100 mh-100">
+																.text-rotate (full)
+															</div>
+
+															<div class="d-inline-block bg-primary rounded text-rotate text-white p--15 text-truncate mh-100">
+																.text-truncate for very very very long long long
+															</div>
+
+															<a href="#" class="d-inline-block bg-primary transition-bg-ease-150 rounded text-rotate p--15 text-truncate h-100 mh-100 text-white text-decoration-none">
+																Link
+															</a>
+
+														</div>
+
+													</td>
+												</tr>
+
+												<tr>
+													<td>
+														<code class="d-block">.animate-reveal-up</code>
+														<code class="d-block">.animate-reveal-down</code>
+													</td>
+
+													<td>
+
+														<div class="d-inline-block animate-reveal-up m--15 w--300 text-center">
+															<img class="img-fluid rounded" src="../../html_frontend/demo.files/images/unsplash/brooke-cagle-g1Kr4Ozfoac-unsplash.jpg" alt="...">
+															<h6 class="mt-1">Reaveal Up</h6>
+														</div>
+
+														<div class="d-inline-block animate-reveal-down m--15 w--300 text-center">
+															<img class="img-fluid rounded" src="../../html_frontend/demo.files/images/unsplash/brooke-cagle-g1Kr4Ozfoac-unsplash.jpg" alt="...">
+															<h6 class="mt-1">Reaveal Down</h6>
+														</div>
+
+													</td>
+												</tr>
+
+											</tbody>
+										</table>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+					</div>
+					<!-- end:row: -->
+					<!-- doc:end -->

@@ -1,0 +1,3123 @@
+﻿<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+
+		<meta charset="UTF-8">
+		<title>Smarty</title>
+		<meta name="description" content="Smarty Documentation">
+
+        <meta name="viewport" content="width=device-width, maximum-scale=5, initial-scale=1, user-scalable=0">
+        <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+        <!-- up to 10% speed up for external res -->
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+        <link rel="preconnect" href="https://fonts.googleapis.com/">
+        <link rel="preconnect" href="https://fonts.gstatic.com/">
+        <!-- preloading icon font is helping to speed up a little bit -->
+        <link rel="preload" href="../assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
+
+		<link rel="stylesheet" href="../assets/css/core.min.css">
+		<link rel="stylesheet" href="../assets/css/vendor_bundle.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
+
+		<!-- favicon -->
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="apple-touch-icon" href="../demo.files/logo/icon_512x512.png">
+
+		<link rel="manifest" href="../assets/images/manifest/manifest.json">
+		<meta name="theme-color" content="#377dff">
+
+	</head>
+
+
+	<!--
+
+		Layout Admin
+			.layout-admin 	(required)
+
+			.aside-sticky  					- sidebar : fixed and push header
+			.header-sticky  				- header : always visible on top (acting as old .header-focus)
+			.header-scroll-reveal  			- header : hide on scroll down and reveal on scroll up
+
+	-->
+	<body class="layout-admin aside-sticky header-sticky" data-s2t-class="btn-indigo btn-sm rounded-circle">
+
+		<div id="wrapper">
+
+
+
+			<!-- HEADER -->
+			<header id="header" class="d-flex align-items-center shadow-xs">
+
+
+				<!-- NAVBAR -->
+				<div class="container-fluid position-relative">
+
+					<nav class="navbar navbar-expand-lg navbar-dark justify-content-lg-between">
+
+						<div class="align-items-start">
+							
+							<!-- 
+								sidebar toggler 
+							-->
+							<a href="#aside-main" class="btn-sidebar-toggle h-100 d-inline-block d-lg-none justify-content-center align-items-center p-2">
+								<span class="group-icon">
+									<i>
+										<svg width="25" viewBox="0 0 20 20">
+											<path fill="#333333" d="M 19.9876 1.998 L -0.0108 1.998 L -0.0108 -0.0019 L 19.9876 -0.0019 L 19.9876 1.998 Z"></path>
+											<path fill="#333333" d="M 19.9876 7.9979 L -0.0108 7.9979 L -0.0108 5.9979 L 19.9876 5.9979 L 19.9876 7.9979 Z"></path>
+											<path fill="#333333" d="M 19.9876 13.9977 L -0.0108 13.9977 L -0.0108 11.9978 L 19.9876 11.9978 L 19.9876 13.9977 Z"></path>
+											<path fill="#333333" d="M 19.9876 19.9976 L -0.0108 19.9976 L -0.0108 17.9976 L 19.9876 17.9976 L 19.9876 19.9976 Z"></path>
+										</svg>
+									</i>
+
+									<i>
+										<svg width="25" viewBox="0 0 47.971 47.971">
+											<path fill="#333333" d="M28.228,23.986L47.092,5.122c1.172-1.171,1.172-3.071,0-4.242c-1.172-1.172-3.07-1.172-4.242,0L23.986,19.744L5.121,0.88c-1.172-1.172-3.07-1.172-4.242,0c-1.172,1.171-1.172,3.071,0,4.242l18.865,18.864L0.879,42.85c-1.172,1.171-1.172,3.071,0,4.242C1.465,47.677,2.233,47.97,3,47.97s1.535-0.293,2.121-0.879l18.865-18.864L42.85,47.091c0.586,0.586,1.354,0.879,2.121,0.879s1.535-0.293,2.121-0.879c1.172-1.171,1.172-3.071,0-4.242L28.228,23.986z"/>
+										</svg>
+									</i>
+								</span>
+
+							</a>
+
+
+							<!-- 
+								Logo : height: 60px max
+							-->
+							<a class="navbar-brand" href="index.html">
+								<img src="assets/images/logo/logo_dark.svg" width="110" height="70" alt="...">
+							</a>
+
+						</div>
+
+
+
+
+					<!-- 
+
+						[SOW] SEARCH SUGGEST PLUGIN
+						[GULP/src/plugins/sow_search_suggest/sow_search_suggest.js]
+						[SCSS/_plugins/sow_search_suggest.scss]
+						++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++
+
+						PLEASE READ DOCUMENTATION
+						documentation/plugins-sow-search.html
+
+					-->
+					<form 	action="index.html" 
+							method="GET" 
+							data-autosuggest="on" 
+
+							data-mode="json" 
+							data-json-max-results='10'
+							data-json-related-title='Explore Smarty'
+							data-json-related-item-icon='fi fi-star-empty'
+							data-json-suggest-title='Suggestions for you'
+							data-json-suggest-noresult='No results for'
+							data-json-suggest-item-icon='fi fi-search'
+							data-json-suggest-min-score='5'
+							data-json-highlight-term='true'
+							data-contentType='application/json; charset=utf-8'
+							data-dataType='json'
+
+							data-container="#sow-search-container" 
+							data-input-min-length="2" 
+							data-input-delay="100" 
+							data-related-keywords="" 
+							data-related-url="_ajax/search_suggestion_json_related.json" 
+							data-suggest-url="_ajax/search_suggestion_json_suggest.json" 
+							data-related-action="related_get" 
+							data-suggest-action="suggest_get" 
+							class="js-ajax-search sow-search sow-search-mobile-float d-flex-1-1-auto mx-4">
+						<div class="sow-search-input w-100 d-flex align-items-center">
+
+							<div class="input-group-over d-flex align-items-center w-100 h-100 rounded">
+
+								<input placeholder="component search..." name="s" type="text" class="form-control-sow-search form-control form-control-pill b-0 bg-gray-100" value="" autocomplete="off">
+
+								<span class="sow-search-buttons">
+
+									<!-- search button -->
+									<button type="submit" class="btn btn-primary btn-noshadow m-0 px-2 py-1 b-0 bg-transparent text-muted">
+										<i class="fi fi-search fs--20"></i>
+									</button>
+
+									<!-- close : mobile only (d-inline-block d-lg-none) -->
+									<a href="javascript:;" class="btn-sow-search-toggler btn btn-light btn-noshadow m-0 px-2 py-1 d-inline-block d-lg-none">
+										<i class="fi fi-close fs--20"></i>
+									</a>
+
+								</span>
+
+							</div>
+
+						</div>
+
+						<!-- search suggestion container -->
+						<div class="sow-search-container rounded-xl w-100 p-0 hide shadow-md" id="sow-search-container">
+							<div class="sow-search-container-wrapper rounded-xl">
+
+								<!-- main search container -->
+								<div class="sow-search-loader p--15 text-center hide">
+									<i class="fi fi-circle-spin fi-spin text-muted fs--30"></i>
+								</div>
+
+								<!-- 
+									AJAX CONTENT CONTAINER 
+									SHOULD ALWAYS BE AS IT IS : NO COMMENTS OR EVEN SPACES!
+								--><div class="sow-search-content rounded w-100 scrollable-vertical"></div>
+
+							</div>
+						</div>
+						<!-- /search suggestion container -->
+
+						<!-- 
+
+							overlay combinations:
+								overlay-dark opacity-* [1-9]
+								overlay-light opacity-* [1-9]
+
+						-->
+						<div class="sow-search-backdrop overlay-dark opacity-3 hide"></div>
+
+					</form>
+					<!-- /SEARCH -->
+
+
+
+
+					<!-- OPTIONS -->
+					<ul class="list-inline list-unstyled mb-0 d-flex align-items-end">
+
+						<li class="list-inline-item mx-1 dropdown float-start d-inline-block d-lg-none">
+
+							<a href="#" class="btn-sow-search-toggler btn btn-sm rounded-circle btn-warning bg-gradient-warning">
+								<i class="fi fi-search"></i>
+							</a>
+
+						</li>
+
+
+						<li class="list-inline-item mx-1 dropdown float-start d-none d-lg-inline-block">
+
+							<div class="btn-group rounded-xxl overflow-hidden" role="group" aria-label="Basic example">
+								
+								<a href="../index.html" target="layerstore" class="btn btn-sm btn-pills btn-indigo">
+									<span>Front</span>
+								</a>
+
+								<a href="https://wrapbootstrap.com/theme/smarty-website-admin-rtl-WB02DSN1B" target="wrapbootstrap" class="btn btn-sm btn-pills btn-indigo py-1">
+									<i class="fi fi-cart-1 mx-2 fs--20"></i>
+								</a>
+
+								<a href="../../html_admin/layout_1/" target="layerstore" class="btn btn-sm btn-pills btn-indigo">
+									<span>Admin</span>
+								</a>
+
+							</div>
+
+						</li>
+
+						<!-- header toggle : desktop only -->
+						<li class="list-inline-item mx-1 dropdown float-start d-none d-lg-block">
+
+							<a href="#" class="btn-header-toggle btn-toggle btn btn-sm rounded-circle btn-secondary">
+								<span class="group-icon">
+									<i class="fi fi-arrow-up"></i>
+									<i class="fi fi-arrow-down"></i>
+								</span>
+							</a>
+
+						</li>
+
+					</ul>
+					<!-- /OPTIONS -->
+
+
+
+					</nav>
+
+				</div>
+				<!-- /NAVBAR -->
+
+			</header>
+			<!-- /HEADER -->
+
+
+
+
+
+			<div id="wrapper_content" class="d-flex align-items-stretch">
+
+				<!-- SIDEBAR -->
+				<aside id="aside-main" class="aside-start bg-gradient-indigo font-weight-normal aside-hide-xs">
+
+					<div class="aside-wrapper scrollable-vertical scrollable-styled-light">
+
+						<!-- hide on mobile: d-none d-lg-block -->
+						<div class="p-3">
+							<!--<img class="js-ajax-loaded-animate img-fluid" src="assets/svg/artworks/undraw_smiley_face_lmgm.svg" width="300" height="248" alt="...">-->
+							<img class="js-ajax-loaded-animate img-fluid" src="assets/svg/artworks/startup.svg" width="225" height="198" alt="...">
+						</div>
+
+
+						<!--
+
+							All parent open navs are closed on click!
+							To ignore this feature, add .js-ignore to .nav-deep
+
+							Links height (paddings):
+								.nav-deep-xs
+								.nav-deep-md  	(default, ununsed class)
+								.nav-deep-sm
+								.nav-deep-lg
+						-->
+						<nav class="nav-deep nav-deep-dark nav-deep-xs pb-5">
+							<ul class="nav flex-column">
+
+								<li class="nav-title mt-3">
+									<h6 class="fs--14 mb-1 font-weight-medium text-warning">
+										HOW DO I START?
+									</h6>
+								</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="index.html">
+											Introduction
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="changelog.html">
+											<span class="badge float-end mt-1">v3.1.2</span>
+											Changelog
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="credits.html">
+											Credits
+										</a>
+									</li>
+
+
+
+
+
+								<li class="nav-title mt-5">
+									<h6 class="fs--14 mb-1 font-weight-medium text-warning">
+										COMPONENTS &amp; BLOCKS
+									</h6>
+								</li>
+
+								<li class="nav-item active">
+									<a class="nav-link" href="#">
+										<span class="group-icon float-end">
+											<i class="fi fi-arrow-end-slim"></i>
+											<i class="fi fi-arrow-down-slim"></i>
+										</span>
+										<b>Components</b>
+									</a>
+								
+									<ul class="nav flex-column">
+
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-alerts.html">
+												Alerts
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-accordions.html">
+												Accordions
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-badges.html">
+												Badges
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-breadcrumbs.html">
+												Breadcrumbs
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-buttons.html">
+												Buttons
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-cards.html">
+												Cards
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-carousel.html">
+												Carousel
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-collapse.html">
+												Collapse
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-dropdowns.html">
+												Dropdowns
+											</a>
+										</li>
+										<li class="nav-item active">
+											<a class="nav-link js-ajax" href="components-forms.html">
+												Forms
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-icons.html">
+												Icons
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-flags.html">
+												Flags
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-lists.html">
+												Lists
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-media.html">
+												Media
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-modals.html">
+												Modals
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-navs.html">
+												Navs
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-navigation.html">
+												Navigation
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-pagination.html">
+												Pagination
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-progress.html">
+												Progress
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-popover.html">
+												Popover
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-scrollspy.html">
+												Scrollspy
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-spinners.html">
+												Spinners
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-tabs.html">
+												Tabs
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-tables.html">
+												Tables
+											</a>
+										</li>
+
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-timeline.html">
+												Timeline
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-thumbnails.html">
+												Thumbnails
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-tooltip.html">
+												Tooltip
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-typography.html">
+												Typography
+											</a>
+										</li>
+
+									</ul>
+								</li>
+
+
+
+
+
+									<li class="nav-item">
+										<a class="nav-link" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											<b>Quick Blocks</b>
+										</a>
+
+										<ul class="nav flex-column">
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-testimonials.html">
+													Testimonials
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-pricing.html">
+													Pricing
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-cta.html">
+													Call to action
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-brands.html">
+													Brands
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-various.html">
+													Various
+												</a>
+											</li>
+										</ul>
+
+									</li>
+
+
+
+									<li class="nav-item">
+										<a class="nav-link" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											<b>Utilities</b>
+										</a>
+
+										<ul class="nav flex-column">
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-text-backgrounds.html">
+													Text &amp; Backgrouns
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-text-color-extended.html">
+													Extended Text Color
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-borders.html">
+													Borders
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-shadows.html">
+													Box Shadows
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-font.html">
+													Font Size / Weight
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-width-height.html">
+													Width / Height
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-padding-margin.html">
+													Paddings / Margins
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-transition.html">
+													Transitions / Transforms
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-position.html">
+													Position
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-visibility.html">
+													Visibility
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-overlays.html">
+													Overlays &amp; Opacity
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-scroll.html">
+													Scroll &amp; Scrollbar
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-misc.html">
+													Miscellaneous
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-responsive.html">
+													Responsive
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-rtl.html">
+													RTL
+												</a>
+											</li>
+
+										</ul>
+									</li>
+
+		
+
+
+
+
+
+
+
+									<li class="nav-item">
+										<a class="nav-link" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											<b>Php / Forms</b>
+										</a>
+
+										<ul class="nav flex-column">
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="php-introduction.html">
+													Introduction
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="php-forms.html">
+													Contact Forms
+												</a>
+											</li>
+										</ul>
+
+									</li>
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+									<li class="nav-item nav-item-extended overlay-dark overlay-opacity-2">
+										<a class="nav-link js-ajax" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-expand"></i>
+												<i class="fi fi-shrink"></i>
+											</span>
+											Predefined Layouts
+										</a>
+
+
+										<!-- extended item -->
+										<div class="aside-item d-flex flex-column bg-white shadow-xs w--350"><!-- .w-100 = full width -->
+											
+											<!-- header -->
+											<h3 class="fs--18 bg-light-soft p--15">
+												<button type="button" class="btn-aside-item-extended-close close fi fi-close fs--20 mt--n4 float-end"></button>
+												<i class="fi fi-heart-slim float-start fs--18"></i> 
+												Ready to start
+											</h3>
+
+											<!-- extended item content -->
+											<div 	id="layout_list" 
+													data-ajax-url="_ajax/layout_list.html" 
+													class="js-ajax p-3 scrollable-vertical scrollable-styled-dark m--1">
+
+												<div class="text-center"><!-- ajax loading icon -->
+													<i class="fi fi-circle-spin fi-spin fs--30 text-muted"></i>
+												</div><!-- /ajax loading icon -->
+
+											</div>
+											<!-- /extended item content -->
+
+										</div>
+										<!-- /extended item -->
+
+									</li>
+
+
+
+
+
+								<li class="nav-title mt-5">
+									<h6 class="fs--14 mb-1 font-weight-medium text-warning">
+										SOW : CORE PLUGINS
+									</h6>
+								</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-introduction.html">
+											Introduction
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-header.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">7Kb</span>
+											SOW : Header
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-search-suggest.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">9Kb</span>
+											SOW : Search Suggest
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-input-suggest.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : Input Suggest
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-navigation.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">10Kb</span>
+											SOW : Ajax : Navigation
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-forms.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4Kb</span>
+											SOW : Ajax : Forms
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-content.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4Kb</span>
+											SOW : Ajax : Content
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-modal.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">3Kb</span>
+											SOW : Ajax : Modals
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-confirm.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">6Kb</span>
+											SOW : Ajax : Confirm
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-select.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4.5Kb</span>
+											SOW : Ajax : Select
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-form-validation.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : Form Validation
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-form-advanced.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">7Kb</span>
+											SOW : Form Advanced
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-file-upload.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">24Kb</span>
+											SOW : File Upload
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-checkall.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Check All
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-checkgroup.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Check Group
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-toasts.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4Kb</span>
+											SOW : Toasts
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-gdpr.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : GDPR Cookies
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-inline-search.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Inline Search
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-dropdown.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">3Kb</span>
+											SOW : Dropdowns
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-deep-navigation.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : Deep Navigation
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-btn-toggle.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2.5Kb</span>
+											SOW : Button Toggle
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-scroll-to.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Scroll To
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-timer-autohide.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Timer Autohide
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-timer-countdown.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : Timer Countdown
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-gfont.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1.5Kb</span>
+											SOW : Google Font
+										</a>
+									</li>
+                                    <li class="nav-item">
+                                        <a class="nav-link js-ajax" href="plugins-sow-lazyload.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+                                            SOW : Lazyload
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link js-ajax" href="plugins-sow-count-animate.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4.1Kb</span>
+                                            SOW : Count Animate
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link js-ajax" href="plugins-sow-utils.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+                                            SOW : Utils
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link js-ajax" href="plugins-sow-service-worker.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+                                            SOW : Service Worker!
+                                        </a>
+                                    </li>
+									<li class="nav-item pl--15 pr--15">
+										<div class="bg-indigo text-gray-500 fs--13 p-2 rounded">
+											SOW Core plugins are developed from scratch. 
+											You can remove, disable or use your own!
+										</div>
+									</li>
+
+
+
+
+
+								<li class="nav-title mt-5">
+									<h6 class="fs--14 mb-1 font-weight-medium text-warning">
+										VENDOR PLUGINS
+									</h6>
+								</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-bootstrap-select.html">
+											Vendor : Bootstrap Select
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-flickity.html">
+											Vendor : Flickity Slider
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-swiper.html">
+											Vendor : Swiper Slider
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-jarallax.html">
+											Vendor : Jaxallax
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-sticky-kit.html">
+											Vendor : Sticky Kit
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-fancybox.html">
+											Vendor : Fancybox
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-photoswipe.html">
+											Vendor : Photoswipe
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="components-map.html">
+											Vendor : Map
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-slimscroll.html">
+											Vendor : Slimscroll
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-nestable.html">
+											Vendor : Nestable
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											Vendor : Pickers
+										</a>
+										<ul class="nav flex-column">
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-datepicker.html">
+													Datepicker
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-rangepicker.html">
+													Rangepicker
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-colorpicker.html">
+													Colorpicker
+												</a>
+											</li>
+										</ul>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											Vendor : Charts
+										</a>
+										<ul class="nav flex-column">
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-chartjs.html">
+													Chart.js
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-flot.html">
+													Flot Chart
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-easypie.html">
+													Easy Pie Chart
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-sparkline.html">
+													Sparkline Charts
+												</a>
+											</li>
+										</ul>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											Vendor : Editors
+										</a>
+										<ul class="nav flex-column">
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-medium-editor.html">
+													Medium Editor
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-markdown.html">
+													Markdown Editor
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-summernote.html">
+													Summernote
+												</a>
+											</li>
+										</ul>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-datatable.html">
+											Vendor : Datatable
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-fullcalendar.html">
+											Vendor : Fullcalendar
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-prismjs.html">
+											Vendor : Prismjs (Highlighter)
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-aos.html">
+											Vendor : AOS
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-typed.html">
+											Vendor : Typed
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-sortablejs.html">
+											Vendor : Sortablejs
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-cocoen.html">
+											Vendor : Cocoen <small>(Img Compare)</small>
+										</a>
+									</li>
+
+
+
+
+
+
+
+
+
+							</ul>
+						</nav>
+
+
+
+					</div>
+				</aside>
+				<!-- /SIDEBAR -->
+
+
+				<!-- MIDDLE -->
+				<div id="middle" class="flex-fill">
+
+
+
+					<header class="mb-5">
+						<h1 class="h2 mb-0 text-gray-700">
+							Components
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--14">
+								<li class="breadcrumb-item active" aria-current="page">
+									Smarty documentation
+								</li>
+							</ol>
+						</nav>
+
+					</header>
+
+
+					<div class="row d-flex flex-fill align-items-start">
+
+						<div class="col align-self-start">
+
+
+
+
+							<section id="section_1">
+
+								<header class="d-flex b-0">
+
+									<h2 class="h5 text-truncate w-100">
+										Default Bootstrap
+									</h2>
+
+									<div class="ui-options d-flex">
+
+										<!-- fullscreen -->
+										<a href="#" class="btn-toggle" data-toggle-container-class="fullscreen" data-toggle-body-class="overflow-hidden" data-target="#section_1">
+											<span class="group-icon">
+												<i class="fi fi-expand"></i>
+												<i class="fi fi-shrink"></i>
+											</span>
+										</a>
+
+									</div>
+
+								</header>
+
+
+								<div class="container mt--50">
+
+
+									<form>
+									  <div class="form-group">
+									    <label for="exampleInputEmail1">Email address</label>
+									    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+									    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+									  </div>
+									  <div class="form-group">
+									    <label for="exampleInputPassword1">Password</label>
+									    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+									  </div>
+									  <div class="form-group form-check">
+									    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+									    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+									  </div>
+									  <button type="submit" class="btn btn-primary">Submit</button>
+									</form>
+
+
+								</div>
+
+
+
+								<div class="mt--50">
+
+									<a href="#code_1basic" class="scroll-to btn btn-sm btn-light" data-toggle="collapse">
+										<i class="fi fi-code"></i> 
+										view code
+									</a>
+
+								</div>
+
+								<div id="code_1basic" class="collapse">
+								<pre class="mt-5"><code class="language-html">
+&lt;form>
+  &lt;div class="form-group">
+    &lt;label for="exampleInputEmail1">Email address&lt;/label>
+    &lt;input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    &lt;small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.&lt;/small>
+  &lt;/div>
+  &lt;div class="form-group">
+    &lt;label for="exampleInputPassword1">Password&lt;/label>
+    &lt;input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  &lt;/div>
+  &lt;div class="form-group form-check">
+    &lt;input type="checkbox" class="form-check-input" id="exampleCheck1">
+    &lt;label class="form-check-label" for="exampleCheck1">Check me out&lt;/label>
+  &lt;/div>
+  &lt;button type="submit" class="btn btn-primary">Submit&lt;/button>
+&lt;/form>
+								</code></pre>
+								</div>
+
+							</section>
+
+
+
+
+
+
+
+
+							<section id="section_2">
+
+								<header class="d-flex b-0">
+
+									<h2 class="h5 text-truncate w-100">
+										Input size
+									</h2>
+
+									<div class="ui-options d-flex">
+
+										<!-- fullscreen -->
+										<a href="#" class="btn-toggle" data-toggle-container-class="fullscreen" data-toggle-body-class="overflow-hidden" data-target="#section_2">
+											<span class="group-icon">
+												<i class="fi fi-expand"></i>
+												<i class="fi fi-shrink"></i>
+											</span>
+										</a>
+
+									</div>
+
+								</header>
+
+
+								<div class="container mt--50">
+
+									<input type="text" class="form-control form-control-sm mb-3" placeholder=".form-control-sm">
+									<input type="text" class="form-control mb-3" placeholder=".form-control">
+									<input type="text" class="form-control form-control-lg mb-3" placeholder=".form-control-lg">
+
+								</div>
+
+
+
+								<div class="mt--50">
+
+									<a href="#code_2" class="scroll-to btn btn-sm btn-light" data-toggle="collapse">
+										<i class="fi fi-code"></i> 
+										view code
+									</a>
+
+								</div>
+
+								<div id="code_2" class="collapse">
+									<pre class="mt-5"><code class="language-html">
+&lt;!-- small -->
+&lt;input type="text" class="form-control form-control-sm" placeholder="">
+
+&lt;!-- medium -->
+&lt;input type="text" class="form-control" placeholder="">
+
+&lt;!-- large -->
+&lt;input type="text" class="form-control form-control-lg" placeholder="">
+
+									</code></pre>
+								</div>
+
+							</section>
+
+
+
+
+
+
+
+							<section id="section_3">
+
+								<header class="d-flex b-0">
+
+									<h2 class="h5 text-truncate w-100">
+										Form States
+									</h2>
+
+									<div class="ui-options d-flex">
+
+										<!-- fullscreen -->
+										<a href="#" class="btn-toggle" data-toggle-container-class="fullscreen" data-toggle-body-class="overflow-hidden" data-target="#section_3">
+											<span class="group-icon">
+												<i class="fi fi-expand"></i>
+												<i class="fi fi-shrink"></i>
+											</span>
+										</a>
+
+									</div>
+
+								</header>
+
+
+								<div class="container mt--50">
+
+									<input type="text" class="form-control is-valid mb-3" placeholder=".is-valid">
+									<input type="text" class="form-control is-invalid mb-3" placeholder=".is-invalid">
+
+								</div>
+
+
+
+								<div class="mt--50">
+
+									<a href="#code_3" class="scroll-to btn btn-sm btn-light" data-toggle="collapse">
+										<i class="fi fi-code"></i> 
+										view code
+									</a>
+
+								</div>
+
+								<div id="code_3" class="collapse">
+									<pre class="mt-5"><code class="language-html">
+&lt;!-- valid -->
+&lt;input type="text" class="form-control is-valid" placeholder="">
+
+&lt;!-- invalid -->
+&lt;input type="text" class="form-control is-invalid" placeholder="">
+									</code></pre>
+								</div>
+
+							</section>
+
+
+
+
+
+							<section id="section_4">
+
+								<header class="d-flex b-0">
+
+									<h2 class="h5 text-truncate w-100">
+										Clean
+									</h2>
+
+									<div class="ui-options d-flex">
+
+										<!-- fullscreen -->
+										<a href="#" class="btn-toggle" data-toggle-container-class="fullscreen" data-toggle-body-class="overflow-hidden" data-target="#section_4">
+											<span class="group-icon">
+												<i class="fi fi-expand"></i>
+												<i class="fi fi-shrink"></i>
+											</span>
+										</a>
+
+									</div>
+
+								</header>
+
+
+								<div class="container mt--50">
+
+									<input type="text" class="form-control form-control-clean mb-3" placeholder=".form-control-clean">
+
+								</div>
+
+
+
+								<div class="mt--50">
+
+									<a href="#code_4" class="scroll-to btn btn-sm btn-light" data-toggle="collapse">
+										<i class="fi fi-code"></i> 
+										view code
+									</a>
+
+								</div>
+
+								<div id="code_4" class="collapse">
+									<pre class="mt-5"><code class="language-html">
+&lt;input type="text" class="form-control form-control-clean" placeholder="">
+									</code></pre>
+								</div>
+
+							</section>
+
+
+
+
+
+							<section id="section_5">
+
+								<header class="d-flex b-0">
+
+									<h2 class="h5 text-truncate w-100">
+										Material Style
+									</h2>
+
+									<div class="ui-options d-flex">
+
+										<!-- fullscreen -->
+										<a href="#" class="btn-toggle" data-toggle-container-class="fullscreen" data-toggle-body-class="overflow-hidden" data-target="#section_5">
+											<span class="group-icon">
+												<i class="fi fi-expand"></i>
+												<i class="fi fi-shrink"></i>
+											</span>
+										</a>
+
+									</div>
+
+								</header>
+
+
+								<div class="container mt--50">
+
+
+									<div class="form-label-group mb-3">
+										<select id="select_options" class="form-control bs-select">
+											<option value="1">Option 1</option>
+											<option value="2">Option 2</option>
+											<option value="3">Option 3</option>
+										</select>
+										<label for="select_options">Bootstrap Select Vendor</label>
+									</div>
+
+									<div class="form-label-group mb-3">
+										<select id="select_options2" class="form-control">
+											<option value="1">Option 1</option>
+											<option value="2">Option 2</option>
+											<option value="3">Option 3</option>
+										</select>
+										<label for="select_options2">Regular Select</label>
+									</div>
+
+									<div class="form-label-group mb-3">
+										<input placeholder="First Name" id="first_name" type="text" value="" class="form-control">
+										<label for="first_name">First Name</label>
+									</div>
+
+
+									<div class="form-label-group mb-3">
+										<input placeholder="First Name" id="first_name2" type="text" value="" class="form-control">
+										<label for="first_name2">First Name</label>
+									</div>
+
+									<div class="form-label-group mb-3">
+										<input placeholder="First Name" type="text" id="first_name3" value="" class="form-control form-control-clean">
+										<label for="first_name3">First Name</label>
+									</div>
+
+
+									<div class="form-label-group mb-3">
+										<textarea placeholder="Textarea" id="description" class="form-control" rows="3"></textarea>
+										<label for="description">Textarea</label>
+									</div>
+
+								</div>
+
+
+
+								<div class="mt--50">
+
+									<a href="#code_5" class="scroll-to btn btn-sm btn-light" data-toggle="collapse">
+										<i class="fi fi-code"></i> 
+										view code
+									</a>
+
+								</div>
+
+								<div id="code_5" class="collapse">
+									<pre class="mt-5"><code class="language-html">
+&lt;!-- 
+	Note: pay attention to placeholder and label 
+	The text should be the same!
+-->
+
+&lt;!-- regular : input -->
+&lt;div class="form-label-group mb-3">
+	&lt;input placeholder="First Name" id="first_name" type="text" value="" class="form-control">
+	&lt;label for="first_name">First Name&lt;/label>
+&lt;/div>
+
+
+&lt;!-- clean : input -->
+&lt;div class="form-label-group mb-3">
+	&lt;input placeholder="Last Name" id="last_name" type="text" value="" class="form-control form-control-clean">
+	&lt;label for="last_name">Last Name&lt;/label>
+&lt;/div>
+
+
+&lt;!-- textarea -->
+&lt;div class="form-label-group mb-3">
+	&lt;textarea placeholder="Textarea" id="description" class="form-control" rows="3">&lt;/textarea>
+	&lt;label for="description">Textarea&lt;/label>
+&lt;/div>
+
+
+
+&lt;!-- select : bootstrap select vendor -->
+&lt;div class="form-label-group mb-3">
+	&lt;select id="select_options" class="form-control bs-select">
+		&lt;option value="1">Option 1&lt;/option>
+		&lt;option value="2">Option 2&lt;/option>
+		&lt;option value="3">Option 3&lt;/option>
+	&lt;/select>
+	&lt;label for="select_options">Bootstrap Select Vendor&lt;/label>
+&lt;/div>
+
+
+&lt;!-- select : regular -->
+&lt;div class="form-label-group mb-3">
+	&lt;select id="select_options2" class="form-control">
+		&lt;option value="1">Option 1&lt;/option>
+		&lt;option value="2">Option 2&lt;/option>
+		&lt;option value="3">Option 3&lt;/option>
+	&lt;/select>
+	&lt;label for="select_options2">Regular Select&lt;/label>
+&lt;/div>
+
+									</code></pre>
+								</div>
+
+							</section>
+
+
+
+
+							<section id="section_6">
+
+								<header class="d-flex b-0">
+
+									<h2 class="h5 text-truncate w-100">
+										Checkbox &amp; Radio
+									</h2>
+
+									<div class="ui-options d-flex">
+
+										<!-- fullscreen -->
+										<a href="#" class="btn-toggle" data-toggle-container-class="fullscreen" data-toggle-body-class="overflow-hidden" data-target="#section_6">
+											<span class="group-icon">
+												<i class="fi fi-expand"></i>
+												<i class="fi fi-shrink"></i>
+											</span>
+										</a>
+
+									</div>
+
+								</header>
+
+
+								<div class="container mt--50">
+
+
+									<div class="row">
+
+										<div class="col-12 col-md-6 mb-4">
+											<h2 class="h5 text-muted mb-4">Checkbox</h2>
+
+											<div class="row">
+												<div class="col-6">
+
+													<label class="form-checkbox form-checkbox-primary">
+														<input type="checkbox" name="checkbox_p" checked>
+														<i></i> Primary
+													</label>
+
+													<br>
+
+													<label class="form-checkbox form-checkbox-danger">
+														<input type="checkbox" name="checkbox_d" checked>
+														<i></i> Danger
+													</label>
+													
+													<br>
+
+													<label class="form-checkbox form-checkbox-warning">
+														<input type="checkbox" name="checkbox_w" checked>
+														<i></i> Warning
+													</label>
+
+													<br>
+
+													<label class="form-checkbox form-checkbox-info">
+														<input type="checkbox" name="checkbox_i" checked>
+														<i></i> Info
+													</label>
+
+													<br>
+
+													<label class="form-checkbox form-checkbox-success">
+														<input type="checkbox" name="checkbox_s" checked>
+														<i></i> Success
+													</label>
+
+													<br>
+
+													<label class="form-checkbox form-checkbox-purple">
+														<input type="checkbox" name="checkbox_pu" checked>
+														<i></i> Purple
+													</label>
+
+													<br>
+
+													<label class="form-checkbox form-checkbox-indigo">
+														<input type="checkbox" name="checkbox_in" checked>
+														<i></i> Indigo
+													</label>
+
+													<br>
+
+													<label class="form-checkbox form-checkbox-pink">
+														<input type="checkbox" name="checkbox_pi" checked>
+														<i></i> Pink
+													</label>
+
+													<br>
+
+													<label class="form-checkbox form-checkbox-dark">
+														<input type="checkbox" name="checkbox_da" checked>
+														<i></i> Dark
+													</label>
+
+													<br>
+
+													<label class="form-checkbox form-checkbox-primary">
+														<input type="checkbox" name="checkbox_da" checked disabled>
+														<i></i> Disabled
+													</label>
+
+												</div>
+
+												<div class="col-6">
+
+													<label class="form-checkbox form-checkbox-primary form-checkbox-bordered">
+														<input type="checkbox" name="checkbox_p">
+														<i></i> Primary
+													</label>
+
+													<br>
+
+													<label class="form-checkbox form-checkbox-danger form-checkbox-bordered">
+														<input type="checkbox" name="checkbox_d">
+														<i></i> Danger
+													</label>
+
+													<br>
+
+													<label class="form-checkbox form-checkbox-warning form-checkbox-bordered">
+														<input type="checkbox" name="checkbox_w">
+														<i></i> Warning
+													</label>
+
+													<br>
+
+													<label class="form-checkbox form-checkbox-info form-checkbox-bordered">
+														<input type="checkbox" name="checkbox_i">
+														<i></i> Info
+													</label>
+
+													<br>
+
+													<label class="form-checkbox form-checkbox-success form-checkbox-bordered">
+														<input type="checkbox" name="checkbox_s">
+														<i></i> Success
+													</label>
+
+													<br>
+
+													<label class="form-checkbox form-checkbox-purple form-checkbox-bordered">
+														<input type="checkbox" name="checkbox_pu">
+														<i></i> Purple
+													</label>
+
+													<br>
+
+													<label class="form-checkbox form-checkbox-indigo form-checkbox-bordered">
+														<input type="checkbox" name="checkbox_in">
+														<i></i> Indigo
+													</label>
+
+													<br>
+
+													<label class="form-checkbox form-checkbox-pink form-checkbox-bordered">
+														<input type="checkbox" name="checkbox_pi">
+														<i></i> Pink
+													</label>
+
+													<br>
+
+													<label class="form-checkbox form-checkbox-dark form-checkbox-bordered">
+														<input type="checkbox" name="checkbox_da">
+														<i></i> Dark
+													</label>
+
+													<br>
+
+													<label class="form-checkbox form-checkbox-dark form-checkbox-bordered">
+														<input type="checkbox" name="checkbox_da" disabled>
+														<i></i> Disabled
+													</label>
+
+												</div>
+
+											</div>
+
+										</div>
+
+										<div class="col-12 col-md-6 mb-4">
+											<h2 class="h5 text-muted mb-4">Radio</h2>
+
+											<div class="row">
+												<div class="col-6">
+
+													<label class="form-radio form-radio-primary">
+														<input type="radio" name="radio" checked>
+														<i></i> Primary
+													</label>
+
+													<br>
+
+													<label class="form-radio form-radio-danger">
+														<input type="radio" name="radio">
+														<i></i> Danger
+													</label>
+
+													<br>
+
+													<label class="form-radio form-radio-warning">
+														<input type="radio" name="radio">
+														<i></i> Warning
+													</label>
+
+													<br>
+
+													<label class="form-radio form-radio-info">
+														<input type="radio" name="radio">
+														<i></i> Info
+													</label>
+
+													<br>
+
+													<label class="form-radio form-radio-success">
+														<input type="radio" name="radio">
+														<i></i> Success
+													</label>
+
+													<br>
+
+													<label class="form-radio form-radio-purple">
+														<input type="radio" name="radio">
+														<i></i> Purple
+													</label>
+
+													<br>
+
+													<label class="form-radio form-radio-indigo">
+														<input type="radio" name="radio">
+														<i></i> Indigo
+													</label>
+
+													<br>
+
+													<label class="form-radio form-radio-pink">
+														<input type="radio" name="radio">
+														<i></i> Pink
+													</label>
+
+													<br>
+
+													<label class="form-radio form-radio-dark">
+														<input type="radio" name="radio">
+														<i></i> Dark
+													</label>
+
+													<br>
+
+													<label class="form-radio form-radio-dark disabled">
+														<input type="radio" name="radio_dis" checked disabled>
+														<i></i> Disabled
+													</label>
+
+												</div>
+												<div class="col-6">
+
+													<label class="form-radio form-radio-primary form-radio-bordered">
+														<input type="radio" name="radio2">
+														<i></i> Primary
+													</label>
+
+													<br>
+
+													<label class="form-radio form-radio-danger form-radio-bordered">
+														<input type="radio" name="radio2">
+														<i></i> Danger
+													</label>
+
+													<br>
+
+													<label class="form-radio form-radio-warning form-radio-bordered">
+														<input type="radio" name="radio2">
+														<i></i> Warning
+													</label>
+
+													<br>
+
+													<label class="form-radio form-radio-info form-radio-bordered">
+														<input type="radio" name="radio2">
+														<i></i> Info
+													</label>
+
+													<br>
+
+													<label class="form-radio form-radio-success form-radio-bordered">
+														<input type="radio" name="radio2">
+														<i></i> Success
+													</label>
+
+													<br>
+
+													<label class="form-radio form-radio-purple form-radio-bordered">
+														<input type="radio" name="radio2">
+														<i></i> Purple
+													</label>
+
+													<br>
+
+													<label class="form-radio form-radio-indigo form-radio-bordered">
+														<input type="radio" name="radio2">
+														<i></i> Indigo
+													</label>
+
+													<br>
+
+													<label class="form-radio form-radio-pink form-radio-bordered">
+														<input type="radio" name="radio2">
+														<i></i> Pink
+													</label>
+
+													<br>
+
+													<label class="form-radio form-radio-dark form-radio-bordered">
+														<input type="radio" name="radio2">
+														<i></i> Dark
+													</label>
+
+													<br>
+
+													<label class="form-radio form-radio-dark form-radio-bordered disabled">
+														<input type="radio" name="radio_dis_3" disabled>
+														<i></i> Disabled
+													</label>
+
+												</div>
+											</div>
+
+										</div>
+
+									</div>
+
+
+								</div>
+
+
+
+								<div class="mt--50">
+
+									<a href="#code_cr" class="scroll-to btn btn-sm btn-light" data-toggle="collapse">
+										<i class="fi fi-code"></i> 
+										view code
+									</a>
+
+								</div>
+
+								<div id="code_cr" class="collapse">
+								<pre class="mt-5"><code class="language-html">
+&lt;!-- 
+
+	Change any *.primary to:
+		.form-checkbox-primary 			.form-radio-primary
+		.form-checkbox-secondary 		.form-radio-secondary
+		.form-checkbox-success			.form-radio-success
+		.form-checkbox-danger 			.form-radio-danger
+		.form-checkbox-warning 			.form-radio-warning
+		.form-checkbox-pink			.form-radio-pink
+		.form-checkbox-indigo 			.form-radio-indigo
+		.form-checkbox-purple 			.form-radio-purple
+
+		Color bordered:
+		.form-checkbox-bordered			.form-radio-bordered
+
+		No special class for disabled - use `&lt;input disabled` , like usual.
+
+		* text is wrapped inside &lt;span> so form validation be able to add red color!
+-->
+
+
+&lt;!-- Checkbox -->
+&lt;label class="form-checkbox form-checkbox-primary">
+	&lt;input type="checkbox" name="checkbox" checked>
+	&lt;i>&lt;/i> &lt;span>Primary&lt;/span>
+&lt;/label>
+
+&lt;!-- Checkbox : Bordered -->
+&lt;label class="form-checkbox form-checkbox-primary form-checkbox-bordered">
+	&lt;input type="checkbox" name="checkbox">
+	&lt;i>&lt;/i> &lt;span>Primary&lt;/span>
+&lt;/label>
+
+
+&lt;!-- Radio -->
+&lt;label class="form-radio form-radio-primary">
+	&lt;input type="radio" name="radio" checked>
+	&lt;i>&lt;/i> &lt;span>Primary&lt;/span>
+&lt;/label>
+
+&lt;!-- Radio : Bordered -->
+&lt;label class="form-radio form-radio-primary form-radio-bordered">
+	&lt;input type="radio" name="radio">
+	&lt;i>&lt;/i> &lt;span>Primary&lt;/span>
+&lt;/label>
+								</code></pre>
+								</div>
+
+							</section>
+
+
+
+
+
+
+
+
+							<section id="section_7">
+
+								<header class="d-flex b-0">
+
+									<h2 class="h5 text-truncate w-100">
+										Switches
+									</h2>
+
+									<div class="ui-options d-flex">
+
+										<!-- fullscreen -->
+										<a href="#" class="btn-toggle" data-toggle-container-class="fullscreen" data-toggle-body-class="overflow-hidden" data-target="#section_7">
+											<span class="group-icon">
+												<i class="fi fi-expand"></i>
+												<i class="fi fi-shrink"></i>
+											</span>
+										</a>
+
+									</div>
+
+								</header>
+
+
+								<div class="container mt--50">
+
+									<div class="row">
+										
+										<div class="col-12 col-md-6 mb-4">
+											<h2 class="h5 text-muted mb-4">Switch : Checkbox</h2>
+
+											<div class="row">
+												<div class="col-6">
+
+													<label class="form-switch form-switch-pill form-switch-primary d-block">
+														<input type="checkbox" value="1" checked="">
+														<i data-on="ON" data-off="OFF"></i>
+														Using Text
+													</label>
+
+													<label class="form-switch form-switch-pill form-switch-primary d-block">
+														<input type="checkbox" value="1" checked="">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Primary
+													</label>
+
+													<label class="form-switch form-switch-pill form-switch-success d-block">
+														<input type="checkbox" value="1" checked="">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Success
+													</label>
+
+													<label class="form-switch form-switch-pill form-switch-info d-block">
+														<input type="checkbox" value="1" checked="">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Info
+													</label>
+
+													<label class="form-switch form-switch-pill form-switch-danger d-block">
+														<input type="checkbox" value="1" checked="">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Danger
+													</label>
+
+													<label class="form-switch form-switch-pill form-switch-warning d-block">
+														<input type="checkbox" value="1" checked="">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Warning
+													</label>
+
+													<label class="form-switch form-switch-pill form-switch-purple d-block">
+														<input type="checkbox" value="1" checked="">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Purple
+													</label>
+
+													<label class="form-switch form-switch-pill form-switch-indigo d-block">
+														<input type="checkbox" value="1" checked="">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Indigo
+													</label>
+
+													<label class="form-switch form-switch-pill form-switch-pink d-block">
+														<input type="checkbox" value="1" checked="">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														pink
+													</label>
+
+													<label class="form-switch form-switch-pill form-switch-dark d-block">
+														<input type="checkbox" value="1" checked="">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Dark
+													</label>
+
+													<label class="form-switch form-switch-pill form-switch-primary d-block">
+														<input type="checkbox" value="1" checked="" disabled>
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Disabled
+													</label>
+
+												</div>
+
+												<div class="col-6">
+
+													<label class="form-switch form-switch-primary d-block">
+														<input type="checkbox" value="1" checked="">
+														<i data-on="ON" data-off="OFF"></i>
+														Using Text
+													</label>
+
+													<label class="form-switch form-switch-primary d-block">
+														<input type="checkbox" value="1" checked="">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Primary
+													</label>
+
+													<label class="form-switch form-switch-success d-block">
+														<input type="checkbox" value="1">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Success
+													</label>
+
+													<label class="form-switch form-switch-info d-block">
+														<input type="checkbox" value="1" checked="">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Info
+													</label>
+
+													<label class="form-switch form-switch-danger d-block">
+														<input type="checkbox" value="1">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Danger
+													</label>
+
+													<label class="form-switch form-switch-warning d-block">
+														<input type="checkbox" value="1">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Warning
+													</label>
+
+													<label class="form-switch form-switch-purple d-block">
+														<input type="checkbox" value="1">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Purple
+													</label>
+
+													<label class="form-switch form-switch-indigo d-block">
+														<input type="checkbox" value="1">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Indigo
+													</label>
+
+													<label class="form-switch form-switch-pink d-block">
+														<input type="checkbox" value="1" checked="">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														pink
+													</label>
+
+													<label class="form-switch form-switch-dark d-block">
+														<input type="checkbox" value="1">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Dark
+													</label>
+
+													<label class="form-switch form-switch-primary d-block">
+														<input type="checkbox" value="1" disabled>
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Disabled
+													</label>
+
+												</div>
+
+											</div>
+
+										</div>
+
+										<div class="col-12 col-md-6 mb-4">
+											<h2 class="h5 text-muted mb-4">Switch : Radio</h2>
+
+											<div class="row">
+												<div class="col-6">
+
+													<label class="form-switch form-switch-pill form-switch-primary d-block">
+														<input type="radio" name="-" value="1" checked="">
+														<i data-on="ON" data-off="OFF"></i>
+														Using Text
+													</label>
+
+													<label class="form-switch form-switch-pill form-switch-primary d-block">
+														<input type="radio" name="-" value="1" checked="">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Primary
+													</label>
+
+													<label class="form-switch form-switch-pill form-switch-success d-block">
+														<input type="radio" name="-" value="1">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Success
+													</label>
+
+													<label class="form-switch form-switch-pill form-switch-info d-block">
+														<input type="radio" name="-" value="1">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Info
+													</label>
+
+													<label class="form-switch form-switch-pill form-switch-danger d-block">
+														<input type="radio" name="-" value="1">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Danger
+													</label>
+
+													<label class="form-switch form-switch-pill form-switch-warning d-block">
+														<input type="radio" name="-" value="1">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Warning
+													</label>
+
+													<label class="form-switch form-switch-pill form-switch-purple d-block">
+														<input type="radio" name="-" value="1">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Purple
+													</label>
+
+													<label class="form-switch form-switch-pill form-switch-indigo d-block">
+														<input type="radio" name="-" value="1">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Indigo
+													</label>
+
+													<label class="form-switch form-switch-pill form-switch-pink d-block">
+														<input type="radio" name="-" value="1">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Pink
+													</label>
+
+													<label class="form-switch form-switch-pill form-switch-dark d-block">
+														<input type="radio" name="-" value="1">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Dark
+													</label>
+
+													<label class="form-switch form-switch-pill form-switch-primary d-block">
+														<input type="radio" name="-" value="1" disabled>
+														<i data-on="ON" data-off="OFF"></i>
+														Disabled
+													</label>
+
+												</div>
+												<div class="col-6">
+
+													<label class="form-switch form-switch-primary d-block clearfix">
+														<input type="radio" name="--" value="1" checked="">
+														<i data-on="ON" data-off="OFF"></i>
+														Using Text
+													</label>
+
+													<label class="form-switch form-switch-primary d-block">
+														<input type="radio" name="--" value="1" checked="">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Primary
+													</label>
+
+													<label class="form-switch form-switch-success d-block">
+														<input type="radio" name="--" value="1">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Success
+													</label>
+
+													<label class="form-switch form-switch-info d-block">
+														<input type="radio" name="--" value="1">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Info
+													</label>
+
+													<label class="form-switch form-switch-danger d-block">
+														<input type="radio" name="--" value="1">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Danger
+													</label>
+
+													<label class="form-switch form-switch-warning d-block">
+														<input type="radio" name="--" value="1">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Warning
+													</label>
+
+													<label class="form-switch form-switch-purple d-block">
+														<input type="radio" name="--" value="1">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Purple
+													</label>
+
+													<label class="form-switch form-switch-indigo d-block">
+														<input type="radio" name="--" value="1">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Indigo
+													</label>
+
+													<label class="form-switch form-switch-pink d-block">
+														<input type="radio" name="--" value="1">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Pink
+													</label>
+
+													<label class="form-switch form-switch-dark d-block">
+														<input type="radio" name="--" value="1">
+														<i data-on="&#10004;" data-off="&#10005;"></i>
+														Dark
+													</label>
+
+													<label class="form-switch form-switch-primary d-block">
+														<input type="radio" name="--" value="1" disabled>
+														<i data-on="ON" data-off="OFF"></i>
+														Disabled
+													</label>
+
+												</div>
+											</div>
+
+										</div>
+
+									</div>
+
+								</div>
+
+
+
+								<div class="mt--50">
+
+									<a href="#code_sw" class="scroll-to btn btn-sm btn-light" data-toggle="collapse">
+										<i class="fi fi-code"></i> 
+										view code
+									</a>
+
+								</div>
+
+								<div id="code_sw" class="collapse">
+								<pre class="mt-5"><code class="language-html">
+&lt;!-- 
+
+	Change any *.primary to:
+		.form-switch-primary
+		.form-switch-secondary
+		.form-switch-success
+		.form-switch-danger
+		.form-switch-warning
+		.form-switch-pink
+		.form-switch-indigo
+		.form-switch-purple
+
+		No special class for disabled - use `&lt;input disabled` , like usual.
+
+		* text is wrapped inside &lt;span> so form validation be able to add red color!
+-->
+
+
+&lt;!-- Switch : Checkbox : Pill -->
+&lt;label class="form-switch form-switch-pill form-switch-primary d-block">
+	&lt;input type="checkbox" value="1" checked="">
+	&lt;i data-on="&amp;#10004;" data-off="&amp;#10005;">&lt;/i>
+	&lt;span>Primary&lt;/span>
+&lt;/label>
+
+&lt;!-- Switch : Checkbox : Squared -->
+&lt;label class="form-switch form-switch-primary d-block">
+	&lt;input type="checkbox" value="1" checked="">
+	&lt;i data-on="&amp;#10004;" data-off="&amp;#10005;">&lt;/i>
+	&lt;span>Primary&lt;/span>
+&lt;/label>
+
+
+&lt;!-- Switch : Radio : Pill -->
+&lt;label class="form-switch form-switch-pill form-switch-primary d-block">
+	&lt;input type="radio" value="1" checked="">
+	&lt;i data-on="&amp;#10004;" data-off="&amp;#10005;">&lt;/i>
+	&lt;span>Primary&lt;/span>
+&lt;/label>
+
+&lt;!-- Switch : Radio : Squared -->
+&lt;label class="form-switch form-switch-primary d-block">
+	&lt;input type="radio" name="--" value="1" checked="">
+	&lt;i data-on="&amp;#10004;" data-off="&amp;#10005;">&lt;/i>
+	&lt;span>Primary&lt;/span>
+&lt;/label>
+	
+								</code></pre>
+								</div>
+
+							</section>
+
+
+
+
+
+
+
+
+							<section id="section_s">
+
+								<header class="d-flex b-0">
+
+									<h2 class="h5 text-truncate w-100">
+										Special Selectors
+									</h2>
+
+									<div class="ui-options d-flex">
+
+										<!-- fullscreen -->
+										<a href="#" class="btn-toggle" data-toggle-container-class="fullscreen" data-toggle-body-class="overflow-hidden" data-target="#section_s">
+											<span class="group-icon">
+												<i class="fi fi-expand"></i>
+												<i class="fi fi-shrink"></i>
+											</span>
+										</a>
+
+									</div>
+
+								</header>
+
+
+								<div class="container mt--50">
+
+									<div class="row">
+										
+										<div class="col-6">
+
+											<label class="form-selector">
+												<input type="checkbox" name="checkbox">
+												<span>26</span>
+											</label>
+
+											<label class="form-selector">
+												<input type="checkbox" name="checkbox">
+												<span>27</span>
+											</label>
+
+											<label class="form-selector">
+												<input type="checkbox" name="checkbox">
+												<span>XL</span>
+											</label>
+
+
+											<label class="form-selector">
+												<input type="checkbox" name="checkbox">
+												<span>XXL</span>
+											</label>
+
+											<hr>
+
+											<label class="form-selector form-selector-lg">
+												<input type="checkbox" name="checkbox">
+												<span>26</span>
+											</label>
+
+											<label class="form-selector form-selector-lg">
+												<input type="checkbox" name="checkbox">
+												<span>27</span>
+											</label>
+
+											<label class="form-selector form-selector-lg">
+												<input type="checkbox" name="checkbox">
+												<span>XL</span>
+											</label>
+
+
+											<label class="form-selector form-selector-lg">
+												<input type="checkbox" name="checkbox">
+												<span>XXL</span>
+											</label>
+
+
+											<hr>
+
+
+											<label class="form-selector rounded-circle">
+												<input type="checkbox" name="checkbox">
+												<span>26</span>
+											</label>
+
+											<label class="form-selector rounded-circle">
+												<input type="checkbox" name="checkbox">
+												<span>27</span>
+											</label>
+
+											<label class="form-selector rounded-circle">
+												<input type="checkbox" name="checkbox">
+												<span>28</span>
+											</label>
+
+											<hr>
+
+
+											<label class="form-selector form-selector-lg rounded-circle">
+												<input type="checkbox" name="checkbox">
+												<span>26</span>
+											</label>
+
+											<label class="form-selector form-selector-lg rounded-circle">
+												<input type="checkbox" name="checkbox">
+												<span>27</span>
+											</label>
+
+											<label class="form-selector form-selector-lg rounded-circle">
+												<input type="checkbox" name="checkbox">
+												<span>28</span>
+											</label>
+
+
+										</div>
+
+
+										<div class="col-6">
+
+
+											<label class="form-selector">
+												<input type="checkbox" name="checkbox">
+												<i class="bg-primary"></i>
+											</label>
+
+											<label class="form-selector">
+												<input type="checkbox" name="checkbox">
+												<i class="bg-danger"></i>
+											</label>
+
+											<label class="form-selector rounded-circle">
+												<input type="checkbox" name="checkbox">
+												<i class="bg-warning"></i>
+											</label>
+
+											<label class="form-selector rounded-circle">
+												<input type="checkbox" name="checkbox">
+												<i class="bg-info"></i>
+											</label>
+
+											<label class="form-selector rounded-circle">
+												<input type="checkbox" name="checkbox">
+												<i class="bg-dark"></i>
+											</label>
+
+											<hr>
+
+											<label class="form-selector form-selector-lg">
+												<input type="checkbox" name="checkbox">
+												<i class="bg-primary"></i>
+											</label>
+
+											<label class="form-selector form-selector-lg">
+												<input type="checkbox" name="checkbox">
+												<i class="bg-danger"></i>
+											</label>
+
+											<label class="form-selector form-selector-lg rounded-circle">
+												<input type="checkbox" name="checkbox">
+												<i class="bg-warning"></i>
+											</label>
+
+											<label class="form-selector form-selector-lg rounded-circle">
+												<input type="checkbox" name="checkbox">
+												<i class="bg-info"></i>
+											</label>
+
+											<label class="form-selector form-selector-lg rounded-circle">
+												<input type="checkbox" name="checkbox">
+												<i class="bg-dark"></i>
+											</label>
+
+											<hr>
+
+											<label class="form-selector form-selector-xl">
+												<input type="radio" name="radio_selector">
+												<i class="bg-cover" style="background-image:url('../demo.files/images/unsplash/products/thumb_330/imani-clovis-LxVxPA1LOVM-unsplash-min.jpg')"></i>
+											</label>
+
+											<label class="form-selector form-selector-xl">
+												<input type="radio" name="radio_selector">
+												<i class="bg-cover" style="background-image:url('../demo.files/images/unsplash/products/thumb_330/barrett-ward-BsxlZgY4jMM-unsplash-min.jpg')"></i>
+											</label>
+
+											<label class="form-selector form-selector-xl">
+												<input type="radio" name="radio_selector">
+												<i class="bg-cover" style="background-image:url('../demo.files/images/unsplash/products/thumb_330/aidan-hancock-UtzrcidfCsk-unsplash-min.jpg')"></i>
+											</label>
+
+											<hr>
+
+											<label class="form-selector form-selector-xl rounded-circle">
+												<input type="radio" name="radio_selector">
+												<i class="bg-cover" style="background-image:url('../demo.files/images/unsplash/products/thumb_330/imani-clovis-LxVxPA1LOVM-unsplash-min.jpg')"></i>
+											</label>
+
+											<label class="form-selector form-selector-xl rounded-circle">
+												<input type="radio" name="radio_selector">
+												<i class="bg-cover" style="background-image:url('../demo.files/images/unsplash/products/thumb_330/barrett-ward-BsxlZgY4jMM-unsplash-min.jpg')"></i>
+											</label>
+
+											<label class="form-selector form-selector-xl rounded-circle">
+												<input type="radio" name="radio_selector">
+												<i class="bg-cover" style="background-image:url('../demo.files/images/unsplash/products/thumb_330/aidan-hancock-UtzrcidfCsk-unsplash-min.jpg')"></i>
+											</label>
+
+
+										</div>
+
+									</div>
+
+								</div>
+
+
+
+								<div class="mt--50">
+
+									<a href="#code_sw2" class="scroll-to btn btn-sm btn-light" data-toggle="collapse">
+										<i class="fi fi-code"></i> 
+										view code
+									</a>
+
+								</div>
+
+								<div id="code_sw2" class="collapse">
+								<pre class="mt-5"><code class="language-html">&lt;!--
+	Add to any label: .rounded-circle
+	for circle layout
+
+	Both type working: checkbox &amp; radio
+-->
+
+
+&lt;!-- size/etc example -->
+&lt;label class="form-selector">
+	&lt;input type="checkbox" name="checkbox">
+	&lt;span>XL&lt;/span>
+&lt;/label>
+
+&lt;!-- size/etc : lg -->
+&lt;label class="form-selector form-selector-lg">
+	&lt;input type="checkbox" name="checkbox">
+	&lt;span>XL&lt;/span>
+&lt;/label>
+
+
+
+
+
+
+&lt;!-- color -->
+&lt;label class="form-selector">
+	&lt;input type="checkbox" name="checkbox">
+	&lt;i class="bg-primary">&lt;/i>
+&lt;/label>
+
+
+&lt;!-- color : lg -->
+&lt;label class="form-selector form-selector-lg">
+	&lt;input type="checkbox" name="checkbox">
+	&lt;i class="bg-primary">&lt;/i>
+&lt;/label>
+
+
+
+
+
+&lt;!-- image : squared -->
+&lt;label class="form-selector form-selector-xl">
+	&lt;input type="radio" name="radio_selector">
+	&lt;i class="bg-cover" style="background-image:url('demo.files/images/unsplash/products/thumb_330/imani-clovis-LxVxPA1LOVM-unsplash-min.jpg')">&lt;/i>
+&lt;/label>
+
+								</code></pre>
+								</div>
+
+							</section>
+
+
+
+
+
+							<section id="section_8">
+
+								<header class="d-flex b-0">
+
+									<h2 class="h5 text-truncate w-100">
+										Basic File Input
+									</h2>
+
+									<div class="ui-options d-flex">
+
+										<!-- fullscreen -->
+										<a href="#" class="btn-toggle" data-toggle-container-class="fullscreen" data-toggle-body-class="overflow-hidden" data-target="#section_8">
+											<span class="group-icon">
+												<i class="fi fi-expand"></i>
+												<i class="fi fi-shrink"></i>
+											</span>
+										</a>
+
+									</div>
+
+								</header>
+
+
+								<div class="container mt--50">
+
+									<div class="lead alert alert-warning mb-5 pt--30 pb--30">
+										For a lot more file uploads (including ajax), please see <a href="plugins-sow-file-upload.html" class="js-ajax">SOW : File Upload</a> plugin.
+									</div>
+
+
+									<div class="input-group mb-3">
+										<div class="custom-file custom-file-primary">
+
+											<input name="file_input_name" type="file" class="custom-file-input" id="inputGroupFile01">
+											<label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+
+										</div>
+									</div>
+
+
+									<div class="input-group mb-3">
+										<div class="custom-file custom-file-secondary">
+
+											<input name="file_input_name" type="file" class="custom-file-input" id="inputGroupFile02">
+											<label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+
+										</div>
+									</div>
+
+
+									<div class="input-group mb-3">
+										<div class="custom-file custom-file-danger">
+
+											<input name="file_input_name" type="file" class="custom-file-input" id="inputGroupFile03">
+											<label class="custom-file-label" for="inputGroupFile03">Choose file</label>
+
+										</div>
+									</div>
+
+
+									<div class="input-group mb-3">
+										<div class="custom-file custom-file-warning">
+
+											<input name="file_input_name" type="file" class="custom-file-input" id="inputGroupFile04">
+											<label class="custom-file-label" for="inputGroupFile04">Choose file</label>
+
+										</div>
+									</div>
+
+
+									<div class="input-group mb-3">
+										<div class="custom-file custom-file-info">
+
+											<input name="file_input_name" type="file" class="custom-file-input" id="inputGroupFile05">
+											<label class="custom-file-label" for="inputGroupFile05">Choose file</label>
+
+										</div>
+									</div>
+
+
+									<div class="input-group mb-3">
+										<div class="custom-file custom-file-dark">
+
+											<input name="file_input_name" type="file" class="custom-file-input" id="inputGroupFile06">
+											<label class="custom-file-label" for="inputGroupFile06">Choose file</label>
+
+										</div>
+									</div>
+
+
+									<div class="input-group mb-3">
+										<div class="custom-file custom-file-indigo">
+
+											<input name="file_input_name" type="file" class="custom-file-input" id="inputGroupFile07">
+											<label class="custom-file-label" for="inputGroupFile07">Choose file</label>
+
+										</div>
+									</div>
+
+
+									<div class="input-group mb-3">
+										<div class="custom-file custom-file-purple">
+
+											<input name="file_input_name" type="file" class="custom-file-input" id="inputGroupFile08">
+											<label class="custom-file-label" for="inputGroupFile08">Choose file</label>
+
+										</div>
+									</div>
+
+
+									<div class="input-group mb-3">
+										<div class="custom-file custom-file-pink">
+
+											<input name="file_input_name" type="file" class="custom-file-input" id="inputGroupFile09">
+											<label class="custom-file-label" for="inputGroupFile09">Choose file</label>
+
+										</div>
+									</div>
+
+									<h6 class="mt--50">Disabled Example</h6>
+									<div class="input-group mb-3">
+										<div class="custom-file custom-file-primary">
+
+											<input disabled name="file_input_name" type="file" class="custom-file-input" id="inputGroupFile10">
+											<label class="custom-file-label disabled" for="inputGroupFile10">Choose file</label>
+
+										</div>
+									</div>
+
+
+
+									<h6 class="mt--50">Small Example</h6>
+									<div class="input-group mb-3">
+										<div class="custom-file custom-file-sm custom-file-primary">
+
+											<input name="file_input_name" type="file" class="custom-file-input" id="inputGroupFile11">
+											<label class="custom-file-label" for="inputGroupFile11">Choose file</label>
+
+										</div>
+									</div>
+
+								</div>
+
+
+
+								<div class="mt--50">
+
+									<a href="#code_inp" class="scroll-to btn btn-sm btn-light" data-toggle="collapse">
+										<i class="fi fi-code"></i> 
+										view code
+									</a>
+
+								</div>
+
+								<div id="code_inp" class="collapse">
+								<pre class="mt-5"><code class="language-html">&lt;!-- 
+Available classes:
+	.custom-file-primary
+	.custom-file-secondary
+	.custom-file-danger
+	.custom-file-warning
+	.custom-file-info
+	.custom-file-dark
+	.custom-file-purple
+	.custom-file-indigo
+	.custom-file-pink
+-->
+
+&lt;div class="input-group mb-3">
+	&lt;div class="custom-file custom-file-primary">
+
+		&lt;input name="file_input_name" type="file" class="custom-file-input" id="inputGroupFile01">
+		&lt;label class="custom-file-label" for="inputGroupFile01">Choose file&lt;/label>
+
+	&lt;/div>
+&lt;/div>
+
+
+
+&lt;!-- disabled example -->
+&lt;div class="input-group mb-3">
+	&lt;div class="custom-file custom-file-primary">
+
+		&lt;input disabled name="file_input_name" type="file" class="custom-file-input" id="inputGroupFile10">
+		&lt;label class="custom-file-label disabled" for="inputGroupFile10">Choose file&lt;/label>
+
+	&lt;/div>
+&lt;/div>
+
+
+
+&lt;!-- small example -->
+&lt;div class="input-group mb-3">
+	&lt;div class="custom-file custom-file-sm custom-file-primary">
+
+		&lt;input name="file_input_name" type="file" class="custom-file-input" id="inputGroupFile11">
+		&lt;label class="custom-file-label" for="inputGroupFile11">Choose file&lt;/label>
+
+	&lt;/div>
+&lt;/div>
+								</code></pre>
+								</div>
+
+							</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+						</div>
+
+						<div class="col w-100 max-w-300 d-none d-xl-flex align-self-md-stretch">
+
+							<div class="w-100">
+								<div class="sticky-kit">
+
+								<h6 class="text-dark">Jump To</h6>
+								<ul class="list-unstyled mb-5">
+									<li class="list-item">
+										<a href="#section_1" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											Default Bootstrap
+										</a>
+									</li>
+									<li class="list-item">
+										<a href="#section_2" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											Input size
+										</a>
+									</li>
+									<li class="list-item">
+										<a href="#section_3" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											Form States
+										</a>
+									</li>
+									<li class="list-item">
+										<a href="#section_4" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											Clean
+										</a>
+									</li>
+									<li class="list-item">
+										<a href="#section_5" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											Material Style
+										</a>
+									</li>
+									<li class="list-item">
+										<a href="#section_6" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											Checkbox &amp; Radio
+										</a>
+									</li>
+									<li class="list-item">
+										<a href="#section_7" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											Switches
+										</a>
+									</li>
+									<li class="list-item">
+										<a href="#section_s" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											Special selectors
+										</a>
+									</li>
+									<li class="list-item">
+										<a href="#section_8" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											Basic File Input
+										</a>
+									</li>
+								</ul>
+
+
+
+								<!-- AJAX BOX INFO -->
+								<div 	id="boxinfo_v3" 
+										class="js-ajax" 
+										data-ajax-url="_ajax/boxinfo_v3.html">
+
+									<!-- ajax loading icon -->
+									<div class="text-center bg-white rounded shadow-md p--15 mb-5">
+										<i class="fi fi-circle-spin fi-spin fs--30 text-muted"></i>
+									</div><!-- /ajax loading icon -->
+
+								</div>
+								<!-- /AJAX BOX INFO -->
+
+
+								</div>
+
+
+
+							</div>
+
+						</div>
+
+					</div>
+
+
+
+				</div>
+				<!-- /MIDDLE -->
+
+			</div>
+
+
+
+		</div><!-- /#wrapper -->
+
+
+
+
+		<!--
+			
+			Toast On Load
+
+				data-type 			= '', success, danger, warning, info
+				data-title 			= toast title 	(optional)
+				data-body 			= toast body 	(required)
+				data-pos 			= top-left, top-right, bottom-left, bottom-right, top-center, bottom-center
+				data-delay 			= autoclose in ms
+				data-fill 			= background color fill [true|false]
+
+		-->
+		<div class="hide toast-on-load"
+			data-toast-type="pink" 
+			data-toast-title="" 
+			data-toast-body="<i class='fi fi-emoji-cool float-start'></i> Ajax navigation enabled! Yay!" 
+			data-toast-pos="bottom-center" 
+			data-toast-delay="4000" 
+			data-toast-fill="true" 
+		></div>
+
+
+
+
+		<script src="../assets/js/core.min.js"></script>
+		<script src="../assets/js/vendor_bundle.min.js"></script>
+
+
+
+		<!--
+
+			[SOW Ajax Navigation Plugin] [AJAX ONLY, IF USED]
+			If you have specific page js files, wrap them inside #page_js_files 
+			Ajax Navigation will use them for this page! 
+			This way you can load this page in a normal way and/or via ajax.
+			(you can change/add more containers in sow.config.js)
+
+		-->
+		<div id="page_js_files">
+
+
+
+			<!-- 
+
+				CONTENT CLIPBOARD COPY 
+
+					<a href="#clipboard_1" class="btn-clipboard btn btn-sm btn-light float-end">
+						<i class="fi fi-lightning"></i> 
+						copy code
+					</a>
+
+					<div id="clipboard_1">
+						.. code 
+					</div>
+
+			-->
+			<script src="assets/js/sow.clipboard.js"></script>
+			<script>
+
+				$.SOW.core.clipboard.init('#middle a.btn-clipboard');
+
+			</script>
+
+
+
+
+			<!-- 
+				DO NOT USE - IS THE AVATAR SWITCHER (border and width)
+				FOR THIS DEMO ONLY 
+			-->
+			<script>
+
+				var avatar_first_switch = true;
+
+				function avatar_demo_switcher() {
+
+					avatar_demo_border();
+					avatar_demo_px();
+					avatar_demo_bg();
+					avatar_demo_shadow();
+
+					/* destroy and reinit advanced file for elements in #avatar_container */
+					$.SOW.core.file_upload.file_upload__destroy('#avatar_container');
+					$.SOW.core.file_upload.file_upload__init('#avatar_container input[type=file].custom-file-input');
+
+					if(avatar_first_switch == true) {
+
+					}
+
+					var avatar_first_switch = false;
+
+				}
+
+				avatar_demo_px = function() {
+
+					var _val = jQuery('#avatar_demo_px').val();
+
+					jQuery('#avatar_container label').removeClass('w--50 w--80 w--100 w--120 w--150 w--180 w--200 h--50 h--80 h--100 h--120 h--150 h--180 h--200');
+					jQuery('#avatar_container label').addClass('w--'+_val+' h--'+_val);
+					
+					__m = 'm--25';
+
+					if(_val == 50)
+						var __m = 'm--10';
+
+					else if(_val == 80)
+						var __m = 'm--15';
+
+					else if(_val == 100)
+						var __m = 'm--20';
+
+					else if(_val == 120)
+						var __m = 'm--25';
+
+					else if(_val == 150)
+						var __m = 'm--35';
+
+					else if(_val == 180)
+						var __m = 'm--45';
+
+					else if(_val == 200)
+						var __m = 'm--50';
+
+					jQuery('#avatar_container label svg').removeClass('m--10 m--15 m--20 m--25 m--30 m--35 m--40 m--45 m--50').addClass(__m);
+
+
+					var _diff = 2;
+
+					if(jQuery('#avatar_container label').hasClass('bw--2'))
+						var _diff = 4;
+
+					else if(jQuery('#avatar_container label').hasClass('bw--3'))
+						var _diff = 6;
+
+					if(!jQuery('#avatar_container label').hasClass('border'))
+						var _diff = 0;
+
+					jQuery('#avatar_container label input').attr('data-file-preview-img-height', (_val - _diff));
+
+
+					/* reset */
+					jQuery('#avatar_container .js-advanced-form-avatar-circle-remove, #avatar_container .js-advanced-form-avatar-squared-remove').trigger('click');
+					jQuery('#avatar_container .js-advanced-form-avatar-ajax-circle-remove, #avatar_container .js-advanced-form-avatar-ajax-squared-remove').trigger('click');
+
+				}
+
+
+				avatar_demo_border = function() {
+
+					var _val = jQuery('#avatar_demo_border').val();
+
+					jQuery('#avatar_container label').removeClass('border border-secondary border-dashed bw--2 bw--3');
+
+					if(_val == 1)
+						jQuery('#avatar_container label').addClass('border border-secondary border-dashed');
+
+					else if(_val == 2)
+						jQuery('#avatar_container label').addClass('border border-secondary border-dashed bw--2');
+
+					else if(_val == 3)
+						jQuery('#avatar_container label').addClass('border border-secondary border-dashed bw--3');
+
+				}
+
+
+
+				avatar_demo_bg = function() {
+
+					var _val = jQuery('#avatar_demo_bg').val();
+
+					jQuery('#avatar_container label svg').removeClass('fill-gray-600 fill-white fill-dark fill-light fill-primary fill-secondary fill-warning fill-success fill-danger fill-pink fill-indigo fill-purple fill-gradient-dark');
+					
+					// jQuery('#avatar_container label svg').removeClass('fill-gray-500').addClass('fill-gray-600');
+					jQuery('#avatar_container label').removeClass('bg-white bg-gradient-dark bg-primary-soft bg-success-soft bg-warning-soft bg-danger-soft bg-pink-soft bg-purple-soft bg-indigo-soft bg-light');
+					jQuery('#avatar_container label').addClass(_val);
+
+					var _border = 'border-secondary';
+					switch(_val) {
+
+						case '': 
+						case 'bg-gradient-dark': 	var _fill 		= 'fill-gray-600';
+													var _border 	= 'border-dark';
+													break;
+
+						case 'bg-light': 			var _fill 		= 'fill-gray-300';
+													var _border 	= 'border-secondary';
+													break;
+
+						case 'bg-white': 			var _fill 		= 'fill-gray-300';
+													var _border 	= 'border-light';
+													break;
+
+						default: 					var _fill 		= _val.replace('bg-', 'fill-').replace('-soft', '');
+													var _border 	= _val.replace('bg-', 'border-').replace('-soft', '');
+					
+					}
+
+
+					jQuery('#avatar_container label svg').addClass(_fill);
+					if(jQuery('#avatar_container label').hasClass('border')) {
+						jQuery('#avatar_container label').removeClass('border-secondary border-white border-dark border-light border-primary border-secondary border-warning border-success border-danger border-pink border-indigo border-purple border-gradient-dark').addClass(_border);
+					}
+						
+				}
+
+
+				avatar_demo_shadow = function() {
+
+					var _val = jQuery('#avatar_demo_shadow').val();
+					jQuery('#avatar_container label').removeClass('shadow shadow-xs shadow-md shadow-lg shadow-xlg').addClass(_val);
+
+				}
+
+
+			</script>
+
+		</div>
+
+
+	</body>
+</html>

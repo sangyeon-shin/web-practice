@@ -1,0 +1,432 @@
+﻿					<!-- doc:start -->
+					<div class="page-title bg-transparent b-0">
+
+						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
+							SOW : Search Suggest
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--13 pb-2 px-3">
+								<li class="breadcrumb-item">
+									<a href="index.html" class="js-ajax">Dashboard</a>
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									SOW : Core Plugins
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Search Suggest
+								</li>
+							</ol>
+						</nav>
+
+					</div>
+
+
+
+					<!-- ALERT : NOTE -->
+					<div class="bg-white shadow-xs p-2 mb-4 rounded">
+						<div class="clearfix bg-light p-2 rounded d-flex align-items-center">
+							<span class="btn row-pill btn-sm bg-gradient-warning b-0 py-1 mb-0 float-start">
+								<i class="fi fi-round-info-full"></i>
+								Note
+							</span>
+							<span class="d-block px-2 text-muted text-truncate">
+								This is a basic demo! Please see main <a href="../../html_frontend/documentation/plugins-sow-search-suggest.html" target="smarty" class="link-muted">full documentation here</a>.
+							</span>
+						</div>
+					</div>
+					<!-- /ALERT : NOTE -->
+
+
+
+					<!-- counter:start: -->
+					<div class="row gutters-sm">
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>SOW : Search Suggest</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<p>
+											Optional plugin, used to activate ajax search functionalities.<br>
+											Designed to be used as a primary search!
+										</p>
+
+										<hr>
+
+										<p>
+											1. <b>serving html content through ajax</b> &ndash; advantage: create a custom layout (product images, promotions, etc); <br>
+											<span class="text-success font-weight-medium">Dependencies: None</span>
+										</p>
+										
+										<hr>
+
+										<p>
+											2. <b>serving a json through ajax</b> &ndash; the plugin will create the html layout as a simple list (this documentation is using this way). <a href="../../html_frontend/documentation/_ajax/search_suggestion_json_suggest.json" target="smarty" rel="nofollow">See json file.</a><br>
+											Json is also seful for static html website, adding a search functionality.<br>
+											<span class="text-success font-weight-medium">Dependencies: <code><b>fuzzy.js</b></code> vendor.</span> <br> 
+											<a href="https://github.com/bripkens/fuzzy.js" target="smarty" class="link-muted">fuzzy.js</a> vendor is required &ndash; is a library for approximate (fuzzy) string matching. Fuzzy.js is aimed at providing an experience which you may know from editors such as Sublime Text, Atom, TextMate and others. 
+											It's lightweight (2Kb without gzip), fast and very good for this purpose.<br>
+										</p>
+
+
+
+										<pre class="rounded bg-gradient-dark d-block p-4 mt-6"><code>
+/* 
+	:: Plugin File
+	src/js/sow.core/sow.search_suggest.js
+
+	:: Plugin Init 
+*/	$.SOW.core.search_suggest.init('form.js-ajax-search');
+
+
+
+
+/* 
+	:: Plugin Options|Defaults
+*/	$.SOW.core.search_suggest.init('form.js-ajax-search', {
+
+		enable 					: true,
+		method 					: '', 			// [GET|POST] WARNING! THIS IS PRIMARY! Leave empty to use the form method (usualy is GET)
+		container 				: '#sow-search-container',
+		input_min_length 			: 2,
+		input_delay 				: 100, 			// ms
+		related_kw 				: '',			// default keywords on load (leave empty to control from your backend)
+		related_url 				: '',
+		related_action 				: 'related_get',
+		suggest_url 				: '',
+		suggest_action 				: 'suggest_get',
+		// --
+		contentType 				: '', 			// example: 'application/json; charset=utf-8'
+		dataType 				: '',			// example: json
+		forceStringify 				: false,		// stringify requests - data sent as JSON;  data: JSON.stringify(...)
+
+	});
+										</code></pre>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>1. Serving <span class="text-success">HTML</span> content through ajax </span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+									<pre class="rounded bg-gradient-dark d-block p-4 mt-6"><code>
+&lt;!-- 
+
+	[SOW] SEARCH SUGGEST PLUGIN [HTML]
+	[GULP: _src/js/sow.core/sow.search_suggest.js]
+	[SCSS: src/scss/_vendors/sow/sow_search_suggest.scss]
+	++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++
+	
+	action="..." 					is not used by the plugin. Is the regular form action - the search result page when user click the search button (or press enter key).
+
+	data-autosuggest="on" 				"off" = turn off autosuggest
+
+	data-related-url="..." 				what user see first when click the search input (request url)
+	data-related-action="related_get"  		backend identifier for related
+	data-related-keywords="" 			optional, might be used according to user history, to send to the server favourite/predefined keywords so the first suggestion to be related. 
+							This function is usually handled by the backed, so this is optional, in case there is no backend access for changes!
+
+	data-suggest-url="..." 				what user see when type (request url). Might be the same as data-related-url and controlled according to data-suggest-action.
+	data-suggest-action="suggest_get" 		backend identifier for autosuggest
+	data-input-min-length="2"  			minimum length/characters to activate autosuggest before sendint requests to the server
+	data-input-delay="300"  			user typing/keyup delay in ms, before sending the request to the server. usualy, 500ms is the average -  so give a decent delay for typing before sending the request to the server.
+
+	data-container="..." 				the container where results are pushed by ajax (present in this html markup). Should remain as it is, if there is no reason to change the predefined id.
+
+	
+
+	Related Format:
+		{"ajax":"true","action":"related_get","related_keywords":""}
+
+	Suggest Format:
+		{"ajax":"true","action":"suggest_get","user_keywords":"user keywords"}
+
+
+	NOTE: "ajax":"true" is added by the plugin so you can check as an extra param, if needed - like this:
+		if($_GET['ajax'] == 'true') {
+			// serve ajax results
+		} else {
+			// serve regular page results
+		}
+
+	If $.SOW.sow__debug_enable is set to 'true' in sow.config.js, the process is visible in browser console.
+	Debug is on in this demo, you can check your console while typing in the search box to see the request format sent to the server.
+
+
+-->
+&lt;form 	action="index.html" 
+		method="GET" 
+		data-autosuggest="on" 
+		data-container="#sow-search-container" 
+		data-input-min-length="2" 
+		data-input-delay="300" 
+		data-related-keywords="" 
+		data-related-url="_ajax/search_suggest_related.html" 
+		data-suggest-url="_ajax/search_suggest_input.html" 
+		data-related-action="related_get" 
+		data-suggest-action="suggest_get" 
+		class="js-ajax-search sow-search sow-search-over hide d-inline-flex">
+	&lt;div class="sow-search-input w-100">
+
+		&lt;div class="input-group-over d-flex align-items-center w-100 h-100 rounded shadow-md">
+
+			&lt;input placeholder="what are you looking today?" name="s" type="text" class="form-control-sow-search form-control form-control-lg shadow-xs" value="" autocomplete="off">
+
+			&lt;span class="sow-search-buttons">
+
+				&lt;!-- search button -->
+				&lt;button type="submit" class="btn btn-primary btn-noshadow m-0 pl-2 pr-2 pt--3 pb--3 b-0 bg-transparent text-muted">
+					&lt;i class="fi fi-search fs--20">&lt;/i>
+				&lt;/button>
+
+				&lt;!-- close : mobile only (d-inline-block d-lg-none) -->
+				&lt;a href="javascript:;" class="btn-sow-search-toggler btn btn-light btn-noshadow m-0 pl-2 pr-2 pt--3 pb--3 d-inline-block d-lg-none">
+					&lt;i class="fi fi-close fs--20">&lt;/i>
+				&lt;/a>
+
+			&lt;/span>
+
+		&lt;/div>
+
+	&lt;/div>
+
+	&lt;!-- search suggestion container -->
+	&lt;div class="sow-search-container w-100 p-0 hide shadow-md" id="sow-search-container">
+		&lt;div class="sow-search-container-wrapper">
+
+			&lt;!-- main search container -->
+			&lt;div class="sow-search-loader p--15 text-center hide">
+				&lt;i class="fi fi-circle-spin fi-spin text-muted fs--30">&lt;/i>
+			&lt;/div>
+
+			&lt;!-- 
+				AJAX CONTENT CONTAINER 
+				SHOULD ALWAYS BE AS IT IS : NO COMMENTS OR EVEN SPACES!
+			-->&lt;div class="sow-search-content rounded w-100 scrollable-vertical">&lt;/div>
+
+		&lt;/div>
+	&lt;/div>
+	&lt;!-- /search suggestion container -->
+
+	&lt;!-- 
+
+		overlay combinations:
+			overlay-dark opacity-* [1-9]
+			overlay-light opacity-* [1-9]
+
+	-->
+	&lt;div class="sow-search-backdrop overlay-dark opacity-3 hide">&lt;/div>
+
+&lt;/form>
+&lt;!-- /SEARCH -->
+									</code></pre>
+
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>2. Serving <span class="text-success">JSON</span> through ajax </span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+									<pre class="rounded bg-gradient-dark d-block p-4 mt-6"><code>
+&lt;!-- 
+
+	[SOW] SEARCH SUGGEST PLUGIN [JSON]
+	[GULP: sow.core/sow.search_suggest.js]
+	[SCSS: _plugins/sow_search_suggest.scss]
+	++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++
+	
+	action="..." 					is not used by the plugin. Is the regular form action - the search result page when user click the search button (or press enter key).
+
+	data-autosuggest="on" 				"off" = turn off autosuggest
+
+	data-related-url="..." 				what user see first when click the search input (request url)
+	data-related-action="related_get"  		backend identifier for related
+	data-related-keywords="" 			optional, might be used according to user history, to send to the server favourite/predefined keywords so the first suggestion to be related. 
+							This function is usually handled by the backed, so this is optional, in case there is no backend access for changes!
+
+	data-suggest-url="..." 				what user see when type (request url). Might be the same as data-related-url and controlled according to data-suggest-action.
+	data-suggest-action="suggest_get" 		backend identifier for autosuggest
+	data-input-min-length="2"  			minimum length/characters to activate autosuggest before sendint requests to the server
+	data-input-delay="300"  			user typing/keyup delay in ms, before sending the request to the server. usualy, 500ms is the average -  so give a decent delay for typing before sending the request to the server.
+
+	data-container="..." 				the container where results are pushed by ajax (present in this html markup). Should remain as it is, if there is no reason to change the predefined id.
+
+	Related Format:
+		{"ajax":"true","action":"related_get","related_keywords":""}
+
+	Suggest Format:
+		{"ajax":"true","action":"suggest_get","user_keywords":"user keywords"}
+
+
+	NOTE: "ajax":"true" is added by the plugin so you can check as an extra param, if needed - like this:
+		if($_GET['ajax'] == 'true') {
+			// serve ajax results
+		} else {
+			// serve regular page results
+		}
+
+	If $.SOW.sow__debug_enable is set to 'true' in sow.config.js, the process is visible in browser console.
+	Debug is on in this demo, you can check your console while typing in the search box to see the request format sent to the server.
+
+
+
+	JSON mode require few more params:
+	+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		data-mode="json"  					required for json mode
+		data-json-max-results='10' 				max results to display
+		data-json-related-title='Explore Smarty' 		title of first window (related) when user click the search input
+		data-json-related-item-icon='fi fi-star-empty' 		optional icon of each related item
+		data-json-suggest-title='Suggestions for you' 		title of second window (suggestions) when user type
+		data-json-suggest-noresult='No results for' 		"no results" text message
+		data-json-suggest-item-icon='fi fi-search' 		optional icon of each suggested item
+		data-json-suggest-min-score='5' 			is the score to fine tune the search matching between 1 and 10. You can play to find the best fit. This documentation uses 5. 0 is equivalent to "exact match".
+		data-json-highlight-term='true' 			false = do not highlight matched letters/words
+		data-contentType='application/json; charset=utf-8' 	default ajax contentType
+		data-dataType='json' 					default ajax dataType
+	+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	optional; and useful for json only - change title color
+		data-theme-class="danger" 
+
+-->
+&lt;form 	action="index.html" 
+		method="GET" 
+		data-autosuggest="on" 
+
+		data-mode="json" 
+		data-json-max-results='10'
+		data-json-related-title='Explore Smarty'
+		data-json-related-item-icon='fi fi-star-empty'
+		data-json-suggest-title='Suggestions for you'
+		data-json-suggest-noresult='No results for'
+		data-json-suggest-item-icon='fi fi-search'
+		data-json-suggest-min-score='5'
+		data-json-highlight-term='true'
+		data-contentType='application/json; charset=utf-8'
+		data-dataType='json'
+
+		data-container="#sow-search-container" 
+		data-input-min-length="2" 
+		data-input-delay="300" 
+		data-related-keywords="" 
+		data-related-url="_ajax/search_suggestion_json_related.json" 
+		data-suggest-url="_ajax/search_suggestion_json_suggest.json" 
+		data-related-action="related_get" 
+		data-suggest-action="suggest_get" 
+		class="js-ajax-search sow-search sow-search-over hide d-inline-flex">
+	&lt;div class="sow-search-input w-100">
+
+		&lt;div class="input-group-over d-flex align-items-center w-100 h-100 rounded shadow-md">
+
+			&lt;input placeholder="what are you looking today?" name="s" type="text" class="form-control-sow-search form-control form-control-lg shadow-xs" value="" autocomplete="off">
+
+			&lt;span class="sow-search-buttons">
+
+				&lt;!-- search button -->
+				&lt;button type="submit" class="btn btn-primary btn-noshadow m-0 pl-2 pr-2 pt--3 pb--3 b-0 bg-transparent text-muted">
+					&lt;i class="fi fi-search fs--20">&lt;/i>
+				&lt;/button>
+
+				&lt;!-- close : mobile only (d-inline-block d-lg-none) -->
+				&lt;a href="javascript:;" class="btn-sow-search-toggler btn btn-light btn-noshadow m-0 pl-2 pr-2 pt--3 pb--3 d-inline-block d-lg-none">
+					&lt;i class="fi fi-close fs--20">&lt;/i>
+				&lt;/a>
+
+			&lt;/span>
+
+		&lt;/div>
+
+	&lt;/div>
+
+	&lt;!-- search suggestion container -->
+	&lt;div class="sow-search-container w-100 p-0 hide shadow-md" id="sow-search-container">
+		&lt;div class="sow-search-container-wrapper">
+
+			&lt;!-- main search container -->
+			&lt;div class="sow-search-loader p--15 text-center hide">
+				&lt;i class="fi fi-circle-spin fi-spin text-muted fs--30">&lt;/i>
+			&lt;/div>
+
+			&lt;!-- 
+				AJAX CONTENT CONTAINER 
+				SHOULD ALWAYS BE AS IT IS : NO COMMENTS OR EVEN SPACES!
+			-->&lt;div class="sow-search-content rounded w-100 scrollable-vertical">&lt;/div>
+
+		&lt;/div>
+	&lt;/div>
+	&lt;!-- /search suggestion container -->
+
+	&lt;!-- 
+
+		overlay combinations:
+			overlay-dark opacity-* [1-9]
+			overlay-light opacity-* [1-9]
+
+	-->
+	&lt;div class="sow-search-backdrop overlay-dark opacity-3 hide">&lt;/div>
+
+&lt;/form>
+&lt;!-- /SEARCH -->
+									</code></pre>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+					</div>
+					<!-- end:row: -->
+					<!-- doc:end -->

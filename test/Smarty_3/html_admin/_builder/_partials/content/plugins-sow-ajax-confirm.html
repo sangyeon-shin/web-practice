@@ -1,0 +1,211 @@
+﻿					<!-- doc:start -->
+					<div class="page-title bg-transparent b-0">
+
+						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
+							SOW : Ajax Confirm
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--13 pb-2 px-3">
+								<li class="breadcrumb-item">
+									<a href="index.html" class="js-ajax">Dashboard</a>
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									SOW : Core Plugins
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Ajax Confirm
+								</li>
+							</ol>
+						</nav>
+
+					</div>
+
+
+
+					<!-- ALERT : NOTE -->
+					<div class="bg-white shadow-xs p-2 mb-4 rounded">
+						<div class="clearfix bg-light p-2 rounded d-flex align-items-center">
+							<span class="btn row-pill btn-sm bg-gradient-warning b-0 py-1 mb-0 float-start">
+								<i class="fi fi-round-info-full"></i>
+								Note
+							</span>
+							<span class="d-block px-2 text-muted text-truncate">
+								This is a basic demo! Please see main <a href="../../html_frontend/documentation/plugins-sow-ajax-confirm.html" target="smarty" class="link-muted">full documentation here</a>.
+							</span>
+						</div>
+					</div>
+					<!-- /ALERT : NOTE -->
+
+
+
+					<!-- start:row -->
+					<div class="row gutters-sm">
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Color Header Types</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<a 	href="#"
+											data-href="plugins-sow-ajax-confirm.html" 
+											class="js-ajax-confirm btn btn-primary btn-soft mb-3"
+											data-ajax-confirm-btn-yes-class="btn-sm btn-primary" 
+											data-ajax-confirm-body="How are you today, my friend?" 
+											data-ajax-confirm-btn-yes-text="I'm Great!" 
+											data-ajax-confirm-btn-yes-icon="fi fi-like" 
+											data-ajax-confirm-mode="ajax" 
+											data-ajax-confirm-type="primary"
+											data-ajax-confirm-callback-function="callback_i_am_great">
+												<i class="fi fi-emoji-happy"></i>
+												Primary
+										</a>
+										<!--
+											Indeed, not wrapped inside #page_js_files because it's just a simple inline
+											script and the browser is not throwing the deprecation notice!
+										-->
+										<script>
+											callback_i_am_great = function(el, data) {
+												$.SOW.core.toast.show('pink', '', '<div class="pt--50 pb--50 text-center fs--25">Cool! Nice to hear!<br>Me too!<br> <i class="fi fi-emoji-happy fs--30"></i></div>', 'top-center', 0, true);
+											}
+										</script>
+
+										<a 	href="#"
+											data-href="plugins-sow-ajax-confirm.html" 
+											class="js-ajax-confirm btn btn-secondary btn-soft mb-3"
+											data-ajax-confirm-btn-yes-class="btn-sm btn-secondary" 
+											data-ajax-confirm-body="Smarty, fully ajax!" 
+											data-ajax-confirm-btn-yes-text="Cool" 
+											data-ajax-confirm-btn-yes-icon="fi fi-emoji-evil" 
+											data-ajax-confirm-mode="ajax" 
+											data-ajax-confirm-type="secondary">
+												<i class="fi fi-shield-ok"></i>
+												Secondary
+										</a>
+
+										<a 	href="#"
+											data-href="plugins-sow-ajax-confirm.html" 
+											class="js-ajax-confirm btn btn-success btn-soft mb-3"
+											data-ajax-confirm-btn-yes-class="btn-sm btn-success" 
+											data-ajax-confirm-body="Are you sure? Set this item active?" 
+											data-ajax-confirm-btn-yes-text="Set Active" 
+											data-ajax-confirm-mode="ajax" 
+											data-ajax-confirm-type="success">
+												<i class="fi fi-shield-ok"></i>
+												Success
+										</a>
+
+										<br>
+
+										<a 	href="#"
+											data-href="plugins-sow-ajax-confirm.html" 
+											class="js-ajax-confirm btn btn-danger btn-soft mb-3"
+											data-ajax-confirm-btn-yes-class="btn-sm btn-danger" 
+											data-ajax-confirm-body="Are you sure? Delete this item?" 
+											data-ajax-confirm-btn-yes-text="Yes, delete" 
+											data-ajax-confirm-mode="ajax" 
+											data-ajax-confirm-type="danger">
+												<i class="fi fi-shield-ok"></i>
+												Danger
+										</a>
+
+										<a 	href="#"
+											data-href="plugins-sow-ajax-confirm.html" 
+											class="js-ajax-confirm btn btn-warning btn-soft mb-3"
+											data-ajax-confirm-btn-yes-class="btn-sm btn-warning" 
+											data-ajax-confirm-body="Are you sure? Set this item inactive?" 
+											data-ajax-confirm-btn-yes-text="Set Inctive" 
+											data-ajax-confirm-mode="ajax" 
+											data-ajax-confirm-type="warning">
+												<i class="fi fi-shield-ok"></i>
+												Warning
+										</a>
+
+										<a 	href="#"
+											data-href="plugins-sow-ajax-confirm.html" 
+											class="js-ajax-confirm btn btn-info btn-soft mb-3"
+											data-ajax-confirm-btn-yes-class="btn-sm btn-info" 
+											data-ajax-confirm-body="Psst! 'pink' type is also working but we keep it secret!" 
+											data-ajax-confirm-btn-yes-text="Haha! Thnks!" 
+											data-ajax-confirm-mode="ajax" 
+											data-ajax-confirm-type="info">
+												<i class="fi fi-shield-ok"></i>
+												Info
+										</a>
+
+
+										<hr>
+
+
+											<a 	href="#"
+												data-href="plugins-sow-ajax-confirm.html?action=delete&amp;item_id=1" 
+												class="js-ajax-confirm btn btn-success btn-soft"
+
+												data-ajax-confirm-mode="ajax" 
+												data-ajax-confirm-method="GET" 
+
+												data-ajax-confirm-size="modal-md" 
+												data-ajax-confirm-centered="false" 
+
+												data-ajax-confirm-title="Please Confirm" 
+												data-ajax-confirm-body="Are you sure? Delete this item?" 
+
+												data-ajax-confirm-btn-yes-class="btn-sm btn-danger" 
+												data-ajax-confirm-btn-yes-text="Confirm" 
+												data-ajax-confirm-btn-yes-icon="fi fi-check" 
+
+												data-ajax-confirm-btn-no-class="btn-sm btn-light" 
+												data-ajax-confirm-btn-no-text="Cancel" 
+												data-ajax-confirm-btn-no-icon="fi fi-close"
+
+												data-ajax-confirm-callback-function="">
+													<i class="fi fi-shield-ok"></i>
+													Mode : Ajax Confirm
+											</a>
+
+
+											<a 	href="#"
+												data-href="plugins-sow-ajax-confirm.html?action=delete&amp;item_id=1" 
+												class="js-ajax-confirm btn btn-primary btn-soft"
+
+												data-ajax-confirm-mode="regular" 
+
+												data-ajax-confirm-size="modal-md" 
+												data-ajax-confirm-centered="false" 
+
+												data-ajax-confirm-title="Please Confirm" 
+												data-ajax-confirm-body="Are you sure? Delete this item?" 
+
+												data-ajax-confirm-btn-yes-class="btn-sm btn-danger" 
+												data-ajax-confirm-btn-yes-text="Confirm" 
+												data-ajax-confirm-btn-yes-icon="fi fi-check" 
+
+												data-ajax-confirm-btn-no-class="btn-sm btn-light" 
+												data-ajax-confirm-btn-no-text="Cancel" 
+												data-ajax-confirm-btn-no-icon="fi fi-close"
+
+												data-ajax-confirm-callback-function="">
+													<i class="fi fi-shield-ok"></i>
+													Mode : Regular Confirm
+											</a>
+											
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+					</div>
+					<!-- end:row: -->
+					<!-- doc:end -->

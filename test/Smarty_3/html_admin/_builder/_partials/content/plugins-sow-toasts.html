@@ -1,0 +1,173 @@
+﻿					<!-- doc:start -->
+					<div class="page-title bg-transparent b-0">
+
+						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
+							SOW : Toasts
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--13 pb-2 px-3">
+								<li class="breadcrumb-item">
+									<a href="index.html" class="js-ajax">Dashboard</a>
+								</li>
+								<li class="breadcrumb-item active">
+									SOW : Core Plugins
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Toasts
+								</li>
+							</ol>
+						</nav>
+
+					</div>
+
+
+
+					<!-- ALERT : NOTE -->
+					<div class="bg-white shadow-xs p-2 mb-4 rounded">
+						<div class="clearfix bg-light p-2 rounded d-flex align-items-center">
+							<span class="btn row-pill btn-sm bg-gradient-warning b-0 py-1 mb-0 float-start">
+								<i class="fi fi-round-info-full"></i>
+								Note
+							</span>
+							<span class="d-block px-2 text-muted text-truncate">
+								This is a basic demo! Please see main <a href="../../html_frontend/documentation/plugins-sow-toasts.html" target="smarty" class="link-muted">full documentation here</a>.
+							</span>
+						</div>
+					</div>
+					<!-- /ALERT : NOTE -->
+
+
+
+					<!-- start:row -->
+					<div class="row gutters-sm">
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Examples</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+									<div class="row">
+
+										<div class="col-md-6">
+
+											<select id="t_type" name="t_type" class="form-control form-control-sm mb-3">
+												<option value="default">Default</option>
+												<option value="danger" selected="">Danger</option>
+												<option value="success">Success</option>
+												<option value="warning">Warning</option>
+												<option value="info">Info</option>
+												<option value="pink">Pink</option>
+												<option value="indigo">Indigo</option>
+
+												<option value="danger-soft">[Soft] Danger</option>
+												<option value="success-soft">[Soft] Success</option>
+												<option value="warning-soft">[Soft] Warning</option>
+												<option value="info-soft">[Soft] Info</option>
+												<option value="pink-soft">[Soft] Pink</option>
+												<option value="indigo-soft">[Soft] Indigo</option>
+
+											</select>
+
+											<select id="t_pos" name="t_pos" class="form-control form-control-sm mb-3">
+												<option value="top-right">Top Right</option>
+												<option value="top-left">Top Left</option>
+												<option value="top-center" selected="">Top Center</option>
+												<option value="bottom-right">Bottom Right</option>
+												<option value="bottom-left">Bottom Left</option>
+												<option value="bottom-center">Bottom Center</option>
+											</select>
+
+											<select id="t_fill"  name="t_fill" class="form-control form-control-sm mb-3">
+												<option value="false">No Fill</option>
+												<option value="true" selected="">Fill (background color)</option>
+											</select>
+
+											<input type="text" id="t_title" name="t_title" class="form-control form-control-sm mb-3" placeholder="Title (optional)">
+											<input type="text" id="t_body" name="t_body" class="form-control form-control-sm mb-3" placeholder="Message" value="Body Text Here">
+											<input type="text" id="t_delay" name="t_delay" class="form-control form-control-sm mb-3" placeholder="Autoclose Delay in ms (optional)">
+
+										</div>
+
+										<div class="col-md-6">
+											
+											<a href="javascript:;" class="btn btn-primary btn-sm btn-soft"
+												onclick="
+
+
+													var t_type 		= jQuery('#t_type').val() 		|| '',
+														t_pos 		= jQuery('#t_pos').val() 		|| 'top-right',
+														t_fill 		= jQuery('#t_fill').val() 		|| false,
+														t_title 	= jQuery('#t_title').val() 		|| '',
+														t_body 		= jQuery('#t_body').val() 		|| '',
+														t_delay 	= jQuery('#t_delay').val() 		|| 0,
+
+														t_delay 	= Number(t_delay);
+														t_fill 		= (t_fill == 'true') ? true : false;
+
+													/* preview */
+													$.SOW.core.toast.show(t_type, t_title, t_body, t_pos, t_delay, t_fill);
+
+													/* code : vars */
+													jQuery('.tc_type').html(t_type);
+													jQuery('.tc_pos').html(t_pos);
+													jQuery('.tc_fill').html(t_fill);
+													jQuery('.tc_title').html(t_title);
+													jQuery('.tc_body').html(t_body);
+													jQuery('.tc_delay').html(t_delay);
+
+													/* show reset button */
+													jQuery('#t_reset').removeClass('hide');
+												" 
+											>
+												<i class="fi fi-check"></i>
+												Test &amp; Generate
+											</a>
+
+											<a id="t_reset" href="javascript:;" class="hide btn btn-secondary btn-sm btn-soft" onclick="jQuery('#wrapper_toast_tr, #wrapper_toast_tl, #wrapper_toast_bl, #wrapper_toast_br, #wrapper_toast_tc, #wrapper_toast_bc').remove(); jQuery(this).addClass('hide');">
+												<i class="fi fi-close"></i>
+												Clear
+											</a>
+
+											<label class="d-block text-muted fs--13 mb-0 mt-5">YOUR GENERATED CODE</label>
+											<pre class="rounded bg-gradient-dark p-4"><code>
+// JS Code<span id="t_code">
+$.SOW.core.toast.show('<span class="tc_type">danger</span>', '<span class="tc_title"></span>', '<span class="tc_body">Body Text Here</span>', '<span class="tc_pos">top-center</span>', <span class="tc_delay">0</span>, <span class="tc_fill">true</span>);
+</span>
+</code></pre>
+									<pre class="rounded bg-gradient-dark p-4"><code>
+&lt;!-- on page load, via html code -->
+&lt;div class="hide toast-on-load" 
+	data-toast-type="<span class="tc_type">danger</span>" 
+	data-toast-title="<span class="tc_title"></span>" 
+	data-toast-body="<span class="tc_body">Body Text Here</span>" 
+	data-toast-pos="<span class="tc_pos">top-center</span>" 
+	data-toast-delay="<span class="tc_delay">0</span>" 
+	data-toast-fill="<span class="tc_fill">true</span>" 
+>&lt;/div>
+											</code></pre>
+
+										</div>
+
+									</div>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+					</div>
+					<!-- end:row: -->
+					<!-- doc:end -->

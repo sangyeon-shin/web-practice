@@ -1,0 +1,1330 @@
+﻿					<!-- doc:start -->
+					<div class="page-title bg-transparent b-0">
+
+						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
+							Vendor : Flot Chart
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--13 pb-2 px-3">
+								<li class="breadcrumb-item">
+									<a href="index.html" class="js-ajax">Dashboard</a>
+								</li>
+								<li class="breadcrumb-item active">
+									Vendor Plugins
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Flot Chart
+								</li>
+							</ol>
+						</nav>
+
+					</div>
+
+
+
+					<!-- ALERT : NOTE -->
+					<div class="bg-white shadow-xs p-2 mb-4 rounded">
+						<div class="clearfix bg-light p-2 rounded d-flex align-items-center">
+							<span class="btn row-pill btn-sm bg-gradient-warning b-0 py-1 mb-0 float-start">
+								<i class="fi fi-round-info-full"></i>
+								Note
+							</span>
+							<span class="d-block px-2 text-muted text-truncate">
+								This is a basic demo! Please see main <a href="../../html_frontend/documentation/plugins-vendor-flot.html" target="smarty" class="link-muted">full documentation here</a>.
+							</span>
+						</div>
+					</div>
+					<!-- /ALERT : NOTE -->
+
+
+
+					<!-- start:row -->
+					<div class="row gutters-sm">
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Examples</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<p class="lead">
+											Attractive JavaScript charts for jQuery 
+										</p>
+
+										<ul class="mt-3">
+											<li class="mt-3">
+												<a href="https://github.com/flot/flot" target="smarty" class="link-muted">
+													https://github.com/flot/flot
+												</a>
+											</li>
+											<li>
+												License: IOLA and Ole Laursen
+											</li>
+										</ul>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Json Ajax Flot </span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<div class="clearfix fs--18 pt-2 pb-2 mb-0">
+											
+											<!-- save image -->
+											<a href="#" data-flot-id="flot_json_example" data-file-name="json-flot" class="btn btn-sm btn-light rounded-circle flot-save float-end m-0">
+												<i class="fi fi-arrow-download m-0"></i>
+											</a>
+											<!-- /save image -->
+
+											Json Ajax Flot 
+											<small class="fs--11 text-muted d-block mt-1">GET DATA VIA AJAX</small>
+
+										</div>
+										
+										<hr>
+
+										<!--
+			
+											data-flot-type="bar|fill" 
+											data-flot-click="modal|url|callback"		
+													empty 		= no click, 
+													url 		= redirect to url, 
+													modal 		= open ajax modal if SOW : Modal plugin is present!
+													callback 	= data is send to callback function only
+																	flot_callback = function(event, pos, item) { ... }
+
+											modal attributes (?demo=true. is added to avoid error on local .html)
+												data-flot-click-url="_ajax/modal_flot.html?demo=true"
+												data-flot-modal-size="modal-lg" 
+												data-flot-modal-backdrop="static" 
+												data-flot-modal-centered="true" 
+
+
+											Note: 	is dinamically added to URL val_x, val_y, pos_x, pos_y
+													Example: &val_x=5&val_y=17168&pos_x=5.069341808617234&pos_y=15708.968144044322
+													Debug is on, url is visible in browser console.
+
+										-->
+										<div class="bg-light p-5 mt-5 fs--14 rounded-xl">
+											<div class="flot-chart h--400"
+												data-flot-id="flot_json_example" 
+												data-flot-border-color="#eaeaea" 
+
+												data-flot-type="fill" 
+												data-flot-legend-show="true" 
+
+												data-ajax-url="../../html_frontend/documentation/_ajax/flot_chart_data.json" 
+												data-ajax-update-interval="0" 
+												data-ajax-params="['action','graph_data']['param2','value2']"
+												data-ajax-method="GET" 
+												data-ajax-dataType="json" 
+
+												data-flot-click="modal" 
+												data-flot-click-url="_ajax/modal_flot.html?demo=true" 
+												data-flot-modal-size="modal-lg" 
+												data-flot-modal-backdrop="static" 
+												data-flot-modal-centered="true" 
+
+												data-flot-ticks='[
+												    [1, "Jan"], 
+												    [2, "Feb"], 
+												    [3, "Mar"], 
+												    [4, "Apr"], 
+												    [5, "May"], 
+												    [6, "Jun"],
+												    [7, "Jul"], 
+												    [8, "Aug"], 
+												    [9, "Sep"], 
+												    [10, "Oct"], 
+												    [11, "Nov"], 
+												    [12, "Dec"]
+												]'
+											>
+												
+											</div>
+										</div>
+
+										<div class="alert alert-warning mt-4">
+											Click the graph to see the modal. On click you can open: an ajax modal, go to URL or only pass data to a callback! See <code>data-flot-click</code> variables.
+										</div>
+
+										<div class="alert alert-secondary mt-4">
+											Using <code>data-ajax-update-interval="1000"</code> (or more, in ms), graph is realtime updated! <a href="_ajax/flot_chart_data.json" target="smarty">View json format</a>.
+										</div>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Bar</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<div class="clearfix fs--18 pt-2 pb-2 mb-0">
+											
+											<!-- save image -->
+											<a href="#" data-flot-id="flot_yearly" data-file-name="monthly-visits" class="btn btn-sm btn-light rounded-circle flot-save float-end m-0">
+												<i class="fi fi-arrow-download m-0"></i>
+											</a>
+											<!-- /save image -->
+
+											Year: 
+
+											<a class="text-decoration-none" href="javascript:;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												2019 <i class="fi fi-arrow-down fs--13"></i>
+											</a>
+											<div class="dropdown-menu">
+												<a class="dropdown-item" href="#!">2018</a>
+												<a class="dropdown-item text-primary" href="#!">2019</a>
+											</div> 
+
+											<small class="fs--11 text-muted d-block mt-1">GLOBAL MONTHLY VISITS</small>
+
+										</div>
+										
+										<hr>
+
+										<!--
+			
+											data-flot-type="bar|fill" 
+											data-flot-click="modal|url|callback"		
+													empty 		= no click, 
+													url 		= redirect to url, 
+													modal 		= open ajax modal if SOW : Modal plugin is present!
+													callback 	= data is send to callback function only
+																	flot_callback = function(event, pos, item) { ... }
+
+											modal attributes (?demo=true. is added to avoid error on local .html)
+												data-flot-click-url="_ajax/modal_flot.html?demo=true"
+												data-flot-modal-size="modal-lg" 
+												data-flot-modal-backdrop="static" 
+												data-flot-modal-centered="true" 
+
+
+											Note: 	is dinamically added to URL val_x, val_y, pos_x, pos_y
+													Example: &val_x=5&val_y=17168&pos_x=5.069341808617234&pos_y=15708.968144044322
+													Debug is on, url is visible in browser console.
+
+										-->
+										<div class="bg-light p-5 mt-5 fs--14 rounded-xl">
+											<div class="flot-chart h--400"
+												data-flot-id="flot_yearly" 
+												data-flot-border-color="#eaeaea" 
+
+												data-flot-type="bar" 
+												data-flot-legend-show="true" 
+
+												data-flot-click="modal" 
+												data-flot-click-url="_ajax/modal_flot.html?demo=true" 
+												data-flot-modal-size="modal-lg" 
+												data-flot-modal-backdrop="static" 
+												data-flot-modal-centered="true" 
+
+												data-flot-color-1="#6595b4" 
+												data-flot-label-1="Visits" 
+												data-flot-data-1="[
+													[1, 0], 
+													[2, 0], 
+													[3, 0],
+													[4, 7881], 
+													[5, 17168], 
+													[6, 18596],
+													[7, 27374], 
+													[8, 19294], 
+													[9, 0],
+													[10, 0], 
+													[11, 0], 
+													[12, 0]
+												]"
+												data-flot-ticks='[
+								                    [1, "Jan"], 
+								                    [2, "Feb"], 
+								                    [3, "Mar"], 
+								                    [4, "Apr"], 
+								                    [5, "May"], 
+								                    [6, "Jun"],
+								                    [7, "Jul"], 
+								                    [8, "Aug"], 
+								                    [9, "Sep"], 
+								                    [10, "Oct"], 
+								                    [11, "Nov"], 
+								                    [12, "Dec"]
+								               ]'
+											>
+												
+											</div>
+										</div>
+
+										<div class="alert alert-warning mt-4">
+											Click the graph to see the modal. On click you can open: an ajax modal, go to URL or only pass data to a callback! See <code>data-flot-click</code> variables.
+										</div>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Fill</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<div class="clearfix fs--18 pt-2 pb-2 mb-0">
+											
+											<!-- save image -->
+											<a href="#" data-flot-id="flot_yearly" data-file-name="monthly-visits" class="btn btn-sm btn-light rounded-circle flot-save float-end m-0">
+												<i class="fi fi-arrow-download m-0"></i>
+											</a>
+											<!-- /save image -->
+
+											Year: 
+
+											<a class="text-decoration-none" href="javascript:;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												2019 <i class="fi fi-arrow-down fs--13"></i>
+											</a>
+											<div class="dropdown-menu">
+												<a class="dropdown-item" href="#!">2018</a>
+												<a class="dropdown-item text-primary" href="#!">2019</a>
+											</div> 
+
+											<small class="fs--11 text-muted d-block mt-1">GLOBAL MONTHLY VISITS</small>
+
+										</div>
+										
+										<hr>
+
+										<!--
+			
+											data-flot-type="bar|fill" 
+											data-flot-click="modal|url|callback"		
+													empty 		= no click, 
+													url 		= redirect to url, 
+													modal 		= open ajax modal if SOW : Modal plugin is present!
+													callback 	= data is send to callback function only
+																	flot_callback = function(event, pos, item) { ... }
+
+											modal attributes (?demo=true. is added to avoid error on local .html)
+												data-flot-click-url="_ajax/modal_flot.html?demo=true"
+												data-flot-modal-size="modal-lg" 
+												data-flot-modal-backdrop="static" 
+												data-flot-modal-centered="true" 
+
+
+											Note: 	is dinamically added to URL val_x, val_y, pos_x, pos_y
+													Example: &val_x=5&val_y=17168&pos_x=5.069341808617234&pos_y=15708.968144044322
+													Debug is on, url is visible in browser console.
+
+										-->
+										<div class="bg-light p-5 mt-5 fs--14 rounded-xl">
+											<div class="flot-chart h--400"
+												data-flot-id="flot_yearly" 
+												data-flot-border-color="#eaeaea" 
+
+												data-flot-type="fill" 
+												data-flot-legend-show="true" 
+
+												data-flot-click="modal" 
+												data-flot-click-url="_ajax/modal_flot.html?demo=true" 
+												data-flot-modal-size="modal-lg" 
+												data-flot-modal-backdrop="static" 
+												data-flot-modal-centered="true" 
+
+												data-flot-color-1="#6595b4" 
+												data-flot-label-1="Visits" 
+												data-flot-data-1="[
+													[1, 0], 
+													[2, 0], 
+													[3, 0],
+													[4, 7881], 
+													[5, 17168], 
+													[6, 18596],
+													[7, 27374], 
+													[8, 19294], 
+													[9, 0],
+													[10, 0], 
+													[11, 0], 
+													[12, 0]
+												]"
+												data-flot-ticks='[
+								                    [1, "Jan"], 
+								                    [2, "Feb"], 
+								                    [3, "Mar"], 
+								                    [4, "Apr"], 
+								                    [5, "May"], 
+								                    [6, "Jun"],
+								                    [7, "Jul"], 
+								                    [8, "Aug"], 
+								                    [9, "Sep"], 
+								                    [10, "Oct"], 
+								                    [11, "Nov"], 
+								                    [12, "Dec"]
+								               ]'
+											>
+												
+											</div>
+										</div>
+
+										<div class="alert alert-warning mt-4">
+											Click the graph to see the modal. On click you can open: an ajax modal, go to URL or only pass data to a callback! See <code>data-flot-click</code> variables.
+										</div>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Examples</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<div class="clearfix fs--18 pt-2 pb-2 mb-0">
+											
+											<!-- save image -->
+											<a href="#" data-flot-id="flot_monthly" data-file-name="daily-visits" class="btn btn-sm btn-light rounded-circle flot-save float-end m-0">
+												<i class="fi fi-arrow-download m-0"></i>
+											</a>
+											<!-- /save image -->
+
+											2019: 
+
+											<a class="text-decoration-none" href="javascript:;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												August <i class="fi fi-arrow-down fs--13"></i>
+											</a>
+											<div class="dropdown-menu">
+												<a class="dropdown-item" href="#!">January</a>
+												<a class="dropdown-item" href="#!">February</a>
+												<a class="dropdown-item" href="#!">March</a>
+												<a class="dropdown-item" href="#!">Apryl</a>
+												<a class="dropdown-item" href="#!">May</a>
+												<a class="dropdown-item" href="#!">June</a>
+												<a class="dropdown-item" href="#!">July</a>
+												<a class="dropdown-item text-primary" href="#!">August</a>
+												<a class="dropdown-item" href="#!">September</a>
+												<a class="dropdown-item" href="#!">October</a>
+												<a class="dropdown-item" href="#!">November</a>
+												<a class="dropdown-item" href="#!">December</a>
+											</div> 
+
+											<small class="fs--11 text-muted d-block mt-1">GLOBAL DAILY VISITS</small>
+
+										</div>
+										
+										<hr>
+
+										<div class="bg-light p-5 mt-5 fs--14 rounded-xl">
+											<div data-gid="201908" class="flot-chart flot-daily h--400" 
+												data-flot-id="flot_monthly" 
+												data-flot-border-color="#eaeaea" 
+												
+												data-flot-type="bar" 
+												data-flot-legend-show="true" 
+
+												data-flot-color-1="#FF9F01" 
+												data-flot-label-1="August, 2019" 
+												data-flot-data-1="[
+													[1, 871], 
+													[2, 938], 
+													[3, 957],
+													[4, 946], 
+													[5, 837], 
+													[6, 895],
+													[7, 881], 
+													[8, 978], 
+													[9, 882],
+													[10, 891], 
+													[11, 781], 
+													[12, 852],
+													[13, 857],
+													[14, 978],
+													[15, 1199],
+													[16, 881],
+													[17, 908],
+													[18, 1024],
+													[19, 811],
+													[20, 842],
+													[21, 802],
+													[22, 343],
+													[23, 0],
+													[24, 0],
+													[25, 0],
+													[26, 0],
+													[27, 0],
+													[28, 0]
+													,[29, 0]
+													,[30, 0]
+													,[31, 0]
+												]"
+												data-flot-ticks='[
+								                    [1, "01"],  [2, "02"],  
+								                    [3, "03"],  [4, "04"],  
+								                    [5, "05"],  [6, "06"],
+								                    [7, "07"],  [8, "08"],  
+								                    [9, "09"],  [10, "10"], 
+								                    [11, "11"], [12, "12"],
+								                    [13, "13"], [14, "14"], 
+								                    [15, "15"], [16, "16"], 
+								                    [17, "17"], [18, "18"],
+								                    [19, "19"], [20, "20"], 
+								                    [21, "21"], [22, "22"], 
+								                    [23, "23"], [24, "24"],
+								                    [25, "25"], [26, "26"], 
+								                    [27, "27"], [28, "28"],
+								                    [29, "29"],[30, "30"],
+								                    [31, "31"]
+								                ]'
+											><!-- FLOT CONTAINER --></div>
+										</div>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Examples</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<div class="clearfix fs--18 pt-2 pb-2 mb-0">
+											
+											<!-- save image -->
+											<a href="#" data-flot-id="flot_monthly" data-file-name="daily-visits" class="btn btn-sm btn-light rounded-circle flot-save float-end m-0">
+												<i class="fi fi-arrow-download m-0"></i>
+											</a>
+											<!-- /save image -->
+
+											2019: 
+
+											<a class="text-decoration-none" href="javascript:;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												August <i class="fi fi-arrow-down fs--13"></i>
+											</a>
+											<div class="dropdown-menu">
+												<a class="dropdown-item" href="#!">January</a>
+												<a class="dropdown-item" href="#!">February</a>
+												<a class="dropdown-item" href="#!">March</a>
+												<a class="dropdown-item" href="#!">Apryl</a>
+												<a class="dropdown-item" href="#!">May</a>
+												<a class="dropdown-item" href="#!">June</a>
+												<a class="dropdown-item" href="#!">July</a>
+												<a class="dropdown-item text-primary" href="#!">August</a>
+												<a class="dropdown-item" href="#!">September</a>
+												<a class="dropdown-item" href="#!">October</a>
+												<a class="dropdown-item" href="#!">November</a>
+												<a class="dropdown-item" href="#!">December</a>
+											</div> 
+
+											<small class="fs--11 text-muted d-block mt-1">GLOBAL DAILY VISITS</small>
+
+										</div>
+										
+										<hr>
+
+										<div class="bg-light p-5 mt-5 fs--14 rounded-xl">
+											<div data-gid="201908" class="flot-chart flot-daily h--400" 
+												data-flot-id="flot_monthly" 
+												data-flot-border-color="#eaeaea" 
+												
+												data-flot-type="fill" 
+												data-flot-legend-show="true" 
+
+												data-flot-color-1="#FF9F01" 
+												data-flot-label-1="August, 2019" 
+												data-flot-data-1="[
+													[1, 871], 
+													[2, 938], 
+													[3, 957],
+													[4, 946], 
+													[5, 837], 
+													[6, 895],
+													[7, 881], 
+													[8, 978], 
+													[9, 882],
+													[10, 891], 
+													[11, 781], 
+													[12, 852],
+													[13, 857],
+													[14, 978],
+													[15, 1199],
+													[16, 881],
+													[17, 908],
+													[18, 1024],
+													[19, 811],
+													[20, 842],
+													[21, 802],
+													[22, 343],
+													[23, 0],
+													[24, 0],
+													[25, 0],
+													[26, 0],
+													[27, 0],
+													[28, 0]
+													,[29, 0]
+													,[30, 0]
+													,[31, 0]
+												]"
+												data-flot-ticks='[
+								                    [1, "01"],  [2, "02"],  
+								                    [3, "03"],  [4, "04"],  
+								                    [5, "05"],  [6, "06"],
+								                    [7, "07"],  [8, "08"],  
+								                    [9, "09"],  [10, "10"], 
+								                    [11, "11"], [12, "12"],
+								                    [13, "13"], [14, "14"], 
+								                    [15, "15"], [16, "16"], 
+								                    [17, "17"], [18, "18"],
+								                    [19, "19"], [20, "20"], 
+								                    [21, "21"], [22, "22"], 
+								                    [23, "23"], [24, "24"],
+								                    [25, "25"], [26, "26"], 
+								                    [27, "27"], [28, "28"],
+								                    [29, "29"],[30, "30"],
+								                    [31, "31"]
+								                ]'
+											><!-- FLOT CONTAINER --></div>
+										</div>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Examples</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<div class="clearfix fs--18 pt-2 pb-2 mb-0">
+											
+											<!-- save image -->
+											<a href="#" data-flot-id="flot_duo" data-file-name="monthly-visits" class="btn btn-sm btn-light rounded-circle flot-save float-end m-0">
+												<i class="fi fi-arrow-download m-0"></i>
+											</a>
+											<!-- /save image -->
+
+											TWO GRAPHS: 
+
+											<a class="text-decoration-none" href="javascript:;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												2019 <i class="fi fi-arrow-down fs--13"></i>
+											</a>
+											<div class="dropdown-menu">
+												<a class="dropdown-item" href="#!">2018</a>
+												<a class="dropdown-item text-primary" href="#!">2019</a>
+											</div> 
+
+											<small class="fs--11 text-muted d-block mt-1">GLOBAL MONTHLY VISITS</small>
+
+										</div>
+										
+										<hr>
+
+										<!--
+			
+											data-flot-type="bar|fill" 
+											data-flot-click="modal|url|callback"		
+													empty 		= no click, 
+													url 		= redirect to url, 
+													modal 		= open ajax modal if SOW : Modal plugin is present!
+													callback 	= data is send to callback function only
+																	flot_callback = function(event, pos, item) { ... }
+
+											modal attributes (?demo=true. is added to avoid error on local .html)
+												data-flot-click-url="_ajax/modal_flot.html?demo=true"
+												data-flot-modal-size="modal-lg" 
+												data-flot-modal-backdrop="static" 
+												data-flot-modal-centered="true" 
+
+
+											Note: 	is dinamically added to URL val_x, val_y, pos_x, pos_y
+													Example: &val_x=5&val_y=17168&pos_x=5.069341808617234&pos_y=15708.968144044322
+													Debug is on, url is visible in browser console.
+
+										-->
+										<div class="bg-light p-5 mt-5 fs--14 rounded-xl">
+											<div class="flot-chart h--400"
+												data-flot-id="flot_duo" 
+												data-flot-border-color="#eaeaea" 
+
+												data-flot-type="fill" 
+												data-flot-legend-show="true" 
+
+												data-flot-click="modal" 
+												data-flot-click-url="_ajax/modal_flot.html?demo=true" 
+												data-flot-modal-size="modal-lg" 
+												data-flot-modal-backdrop="static" 
+												data-flot-modal-centered="true" 
+
+												data-flot-color-1="#6595b4" 
+												data-flot-label-1="Visits" 
+												data-flot-data-1="[
+													[1, 0], 
+													[2, 0], 
+													[3, 0],
+													[4, 7881], 
+													[5, 17168], 
+													[6, 18596],
+													[7, 27374], 
+													[8, 19294], 
+													[9, 0],
+													[10, 0], 
+													[11, 0], 
+													[12, 0]
+												]"
+
+												data-flot-color-2="#FF9F01" 
+												data-flot-label-2="Orders" 
+												data-flot-fill-2="false" 
+												data-flot-data-2="[
+													[1, 0], 
+													[2, 0], 
+													[3, 0],
+													[4, 3881], 
+													[5, 3168], 
+													[6, 1596],
+													[7, 2774], 
+													[8, 1924], 
+													[9, 0],
+													[10, 0], 
+													[11, 0], 
+													[12, 0]
+												]"
+
+												data-flot-ticks='[
+								                    [1, "Jan"], 
+								                    [2, "Feb"], 
+								                    [3, "Mar"], 
+								                    [4, "Apr"], 
+								                    [5, "May"], 
+								                    [6, "Jun"],
+								                    [7, "Jul"], 
+								                    [8, "Aug"], 
+								                    [9, "Sep"], 
+								                    [10, "Oct"], 
+								                    [11, "Nov"], 
+								                    [12, "Dec"]
+								               ]'
+											>
+												
+											</div>
+										</div>
+
+										<div class="alert alert-warning mt-4">
+											Click the graph to see the modal. On click you can open: an ajax modal, go to URL or only pass data to a callback! See <code>data-flot-click</code> variables.
+										</div>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Examples</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<div class="clearfix fs--18 pt-2 pb-2 mb-0">
+											
+											<!-- save image -->
+											<a href="#" data-flot-id="flot_three" data-file-name="monthly-visits" class="btn btn-sm btn-light rounded-circle flot-save float-end m-0">
+												<i class="fi fi-arrow-download m-0"></i>
+											</a>
+											<!-- /save image -->
+
+											THREE GRAPHS: 
+
+											<a class="text-decoration-none" href="javascript:;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												2019 <i class="fi fi-arrow-down fs--13"></i>
+											</a>
+											<div class="dropdown-menu">
+												<a class="dropdown-item" href="#!">2018</a>
+												<a class="dropdown-item text-primary" href="#!">2019</a>
+											</div> 
+
+											<small class="fs--11 text-muted d-block mt-1">GLOBAL MONTHLY VISITS</small>
+
+										</div>
+										
+										<hr>
+
+										<!--
+			
+											data-flot-type="bar|fill" 
+											data-flot-click="modal|url|callback"		
+													empty 		= no click, 
+													url 		= redirect to url, 
+													modal 		= open ajax modal if SOW : Modal plugin is present!
+													callback 	= data is send to callback function only
+																	flot_callback = function(event, pos, item) { ... }
+
+											modal attributes (?demo=true. is added to avoid error on local .html)
+												data-flot-click-url="_ajax/modal_flot.html?demo=true"
+												data-flot-modal-size="modal-lg" 
+												data-flot-modal-backdrop="static" 
+												data-flot-modal-centered="true" 
+
+
+											Note: 	is dinamically added to URL val_x, val_y, pos_x, pos_y
+													Example: &val_x=5&val_y=17168&pos_x=5.069341808617234&pos_y=15708.968144044322
+													Debug is on, url is visible in browser console.
+
+										-->
+										<div class="bg-light p-5 mt-5 fs--14 rounded-xl">
+											<div class="flot-chart h--400"
+												data-flot-id="flot_three" 
+												data-flot-border-color="#eaeaea" 
+
+												data-flot-type="fill" 
+												data-flot-legend-show="true" 
+
+												data-flot-click="modal" 
+												data-flot-click-url="_ajax/modal_flot.html?demo=true" 
+												data-flot-modal-size="modal-lg" 
+												data-flot-modal-backdrop="static" 
+												data-flot-modal-centered="true" 
+
+												data-flot-color-1="#6595b4" 
+												data-flot-label-1="Visits" 
+												data-flot-data-1="[
+													[1, 0], 
+													[2, 0], 
+													[3, 0],
+													[4, 7881], 
+													[5, 17168], 
+													[6, 18596],
+													[7, 27374], 
+													[8, 19294], 
+													[9, 0],
+													[10, 0], 
+													[11, 0], 
+													[12, 0]
+												]"
+
+												data-flot-color-2="#FF9F01" 
+												data-flot-label-2="Orders" 
+												data-flot-fill-2="false" 
+												data-flot-data-2="[
+													[1, 0], 
+													[2, 0], 
+													[3, 0],
+													[4, 3881], 
+													[5, 3168], 
+													[6, 1596],
+													[7, 2774], 
+													[8, 1924], 
+													[9, 0],
+													[10, 0], 
+													[11, 0], 
+													[12, 0]
+												]"
+
+												data-flot-color-3="#6DBB30" 
+												data-flot-label-3="Conversions" 
+												data-flot-fill-3="true" 
+												data-flot-data-3="[
+													[1, 3588], 
+													[2, 1897], 
+													[3, 4888],
+													[4, 1881], 
+													[5, 2168], 
+													[6, 596],
+													[7, 6774], 
+													[8, 924], 
+													[9, 4877],
+													[10, 3211], 
+													[11, 2100], 
+													[12, 8900]
+												]"
+
+												data-flot-ticks='[
+								                    [1, "Jan"], 
+								                    [2, "Feb"], 
+								                    [3, "Mar"], 
+								                    [4, "Apr"], 
+								                    [5, "May"], 
+								                    [6, "Jun"],
+								                    [7, "Jul"], 
+								                    [8, "Aug"], 
+								                    [9, "Sep"], 
+								                    [10, "Oct"], 
+								                    [11, "Nov"], 
+								                    [12, "Dec"]
+								               ]'
+											>
+												
+											</div>
+										</div>
+
+										<div class="alert alert-warning mt-4">
+											Click the graph to see the modal. On click you can open: an ajax modal, go to URL or only pass data to a callback! See <code>data-flot-click</code> variables.
+										</div>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Examples</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<div class="clearfix fs--18 pt-2 pb-2 mb-0">
+											
+											<!-- save image -->
+											<a href="#" data-flot-id="my_flot_id" data-file-name="monthly-visits" class="btn btn-sm btn-light rounded-circle flot-save float-end m-0">
+												<i class="fi fi-arrow-download m-0"></i>
+											</a>
+											<!-- /save image -->
+
+											Custom 
+
+											<a class="text-decoration-none" href="javascript:;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												Inline Javascript <i class="fi fi-arrow-down fs--13"></i>
+											</a>
+											<div class="dropdown-menu">
+												<a class="dropdown-item" href="#!">Option 1</a>
+												<a class="dropdown-item text-primary" href="#!">Option 2</a>
+												<a class="dropdown-item" href="#!">Option 3</a>
+												<a class="dropdown-item" href="#!">Option 4</a>
+												<a class="dropdown-item" href="#!">Option N</a>
+											</div> 
+
+											<small class="fs--11 text-muted d-block mt-1">INLINE CUSTOM JAVASCRIPT</small>
+
+										</div>
+
+										<hr>
+
+										<div class="bg-light p-5 mt-5 fs--14 rounded-xl">
+											<div class="flot-chart h--400" 
+												data-flot-id="my_flot_id"
+												data-flot-custom-data="my_flot_data"
+												data-flot-custom-options="my_flot_options">
+											</div>
+										</div>
+
+										<script>
+
+											/* 
+												define only once, 
+												if multiple graphs are on the same page 
+											*/	
+											var flot_custom = {};
+
+
+											flot_custom['my_flot_data'] = [
+													{ /* data */
+														data: 		[
+															[1, 871], 
+															[2, 938], 
+															[3, 957],
+															[4, 946], 
+															[5, 837], 
+															[6, 895],
+															[7, 881], 
+															[8, 978], 
+															[9, 882],
+															[10, 891]
+														],
+														label: 		'My Custom Flot',
+														lines: 		{ show: true },
+														points: 	{ show: true },
+														color: 		'#6dbb30'
+													}
+										        ];
+
+
+									       	flot_custom['my_flot_options'] =  {
+
+									            grid: {
+									                mouseActiveRadius 	: 	30,
+													hoverable 			: true,
+													borderWidth 		: 0,
+													tickColor 			: '#ebebeb',
+													borderColor 		: '#ebebeb',
+
+									            },
+
+												tooltip : true,
+												tooltipOpts : {
+													content : function(label, xval, yval, flotItem) {
+														return "Value: "+yval;
+													},
+
+													dateFormat : "%y-%0m-%0d"
+												},
+
+												legend: {
+													show: true,
+													noColumns: 1,
+												},
+
+												// https://github.com/flot/flot/blob/master/API.md#customizing-the-axes
+									            xaxis:{
+													ticks: [
+									                    [1, "01"],  [2, "02"],  
+									                    [3, "03"],  [4, "04"],  
+									                    [5, "05"],  [6, "06"],
+									                    [7, "07"],  [8, "08"],  
+									                    [9, "09"],  [10, "10"]
+									                ],
+													tickLength : 5,
+													mode: "time"
+									            },
+
+												series : {
+
+													/* bars */
+													bars: {
+														show: true, 
+														lineWidth:0,
+														align: "center",
+														barWidth: 0.5
+													},
+
+													/* lines */
+													lines : {
+														show : true,
+														lineWidth : 1,
+														fill : true,
+														fillColor : {
+															colors : [{
+																opacity : 0.1
+															}, {
+																opacity : 0.15
+															}]
+														}
+													},
+
+												}
+
+								        	};
+
+
+										</script>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Examples</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+									<div class="row">
+										<div class="col-12 col-lg-6 mb-4">
+
+											<div class="clearfix fs--18 pt-2 pb-2 mb-0">
+												
+												<!-- save image -->
+												<a href="#" data-flot-id="pie_example1" data-file-name="pie-1" class="btn btn-sm btn-light rounded-circle flot-save float-end m-0">
+													<i class="fi fi-arrow-download m-0"></i>
+												</a>
+												<!-- /save image -->
+
+												Pie 1 
+
+												<a class="text-decoration-none" href="javascript:;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+													Dropdown <i class="fi fi-arrow-down fs--13"></i>
+												</a>
+												<div class="dropdown-menu">
+													<a class="dropdown-item" href="#!">Option 1</a>
+													<a class="dropdown-item text-primary" href="#!">Option 2</a>
+													<a class="dropdown-item" href="#!">Option 3</a>
+													<a class="dropdown-item" href="#!">Option 4</a>
+													<a class="dropdown-item" href="#!">Option N</a>
+												</div> 
+
+												<small class="fs--11 text-muted d-block mt-1">PIE CHART WITH LEGEND</small>
+
+											</div>
+
+											<hr>
+
+
+											<div class="bg-light p-5 mt-5 fs--14 rounded-xl">
+												<div class="flot-chart h--400" 
+													
+													data-flot-type="pie" 
+													data-flot-legend-show="true" 
+
+													data-flot-click="modal" 
+													data-flot-click-url="_ajax/modal_flot.html?demo=true" 
+													data-flot-modal-size="modal-lg" 
+													data-flot-modal-backdrop="static" 
+													data-flot-modal-centered="true" 
+
+													data-flot-id="pie_example1"
+													data-flot-pie-data='[
+														{
+															"label": "Asia",
+															"data": "4119630000",
+															"color": "#007bff"
+														},
+														{
+															"label": "Latin America",
+															"data": "590950000",
+															"color": "#dc3545"
+														},
+														{
+															"label": "Africa",
+															"data": "1012960000",
+															"color": "#ffc107"
+														},
+														{
+															"label": "Oceania",
+															"data": "95100000",
+															"color": "#28a745"
+														},
+														{
+															"label": "Europe",
+															"data": "727080000",
+															"color": "#6610f2"
+														},
+														{
+															"label": "North America",
+															"data": "344120000",
+															"color": "#e83e8c"
+														}
+													]'
+													>
+												</div>
+											</div>
+
+										</div>
+
+										<div class="col-12 col-lg-6 mb-4">
+
+											<div class="clearfix fs--18 pt-2 pb-2 mb-0">
+												
+												<!-- save image -->
+												<a href="#" data-flot-id="pie_example2" data-file-name="pie-2" class="btn btn-sm btn-light rounded-circle flot-save float-end m-0">
+													<i class="fi fi-arrow-download m-0"></i>
+												</a>
+												<!-- /save image -->
+
+												Pie 2 
+
+												<a class="text-decoration-none" href="javascript:;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+													Dropdown <i class="fi fi-arrow-down fs--13"></i>
+												</a>
+												<div class="dropdown-menu">
+													<a class="dropdown-item" href="#!">Option 1</a>
+													<a class="dropdown-item text-primary" href="#!">Option 2</a>
+													<a class="dropdown-item" href="#!">Option 3</a>
+													<a class="dropdown-item" href="#!">Option 4</a>
+													<a class="dropdown-item" href="#!">Option N</a>
+												</div> 
+
+												<small class="fs--11 text-muted d-block mt-1">PIE CHART WITHOUT LEGEND</small>
+
+											</div>
+
+											<hr>
+
+											<div class="bg-light p-5 mt-5 fs--14 rounded-xl">
+												<div class="flot-chart h--400" 
+													
+													data-flot-type="pie" 
+													data-flot-legend-show="false" 
+
+													data-flot-click="modal" 
+													data-flot-click-url="_ajax/modal_flot.html?demo=true" 
+													data-flot-modal-size="modal-lg" 
+													data-flot-modal-backdrop="static" 
+													data-flot-modal-centered="true" 
+
+													data-flot-id="pie_example2"
+													data-flot-pie-data='[
+														{
+															"label": "Asia",
+															"data": "4119630000",
+															"color": "#007bff"
+														},
+														{
+															"label": "Latin America",
+															"data": "590950000",
+															"color": "#dc3545"
+														},
+														{
+															"label": "Africa",
+															"data": "1012960000",
+															"color": "#ffc107"
+														},
+														{
+															"label": "Oceania",
+															"data": "95100000",
+															"color": "#28a745"
+														},
+														{
+															"label": "Europe",
+															"data": "727080000",
+															"color": "#6610f2"
+														},
+														{
+															"label": "North America",
+															"data": "344120000",
+															"color": "#e83e8c"
+														}
+													]'
+													>
+												</div>
+											</div>
+
+										</div>
+
+									</div>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+					</div>
+					<!-- end:row: -->
+					<!-- doc:end -->

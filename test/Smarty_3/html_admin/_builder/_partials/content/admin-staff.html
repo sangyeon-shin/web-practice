@@ -1,0 +1,453 @@
+﻿					<!--
+
+						PAGE TITLE
+					-->
+					<div class="page-title bg-transparent b-0">
+
+						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
+							Admin Staff
+						</h1>
+						
+					</div>
+
+
+
+
+					<!-- INVITATION -->
+					<div class="row gutters-sm">
+						
+						<div class="col-12 mb-3">
+
+
+							<!-- portlet -->
+							<div class="portlet">
+								
+								<!-- portlet : header -->
+								<div class="portlet-header border-bottom mb-3">
+									<span class="d-block text-dark text-truncate font-weight-medium">
+										Add Admin
+									</span>
+									<p class="mb-0">
+										If user is not found in the system, an invitation is sent via email to create an account!
+									</p>
+								</div>
+								<!-- /portlet : header -->
+
+
+								<!-- portlet : body -->
+								<div class="portlet-body">
+
+									<form novalidate method="post" action="/admin_user/admin_staff/" class="bs-validate row"
+										data-error-scroll-up="false">
+
+										<!-- CSRF -->
+										<input type="text" name="csrf_token" value="{: $csrf_token :}" tabindex="-1" class="form-control hide-force">
+										<input type="hidden" name="action" value="process:invitation:add" tabindex="-1">
+
+										<div class="col-12 col-md-6 mb-3">
+
+											<!-- email address -->
+											<div class="form-label-group max-w-500">
+												<input required placeholder="Email Address" id="user_email" name="user_email" type="email" class="form-control">
+												<label for="user_email">
+													Email Address
+												</label>
+											</div>
+											<!-- /email address -->
+
+
+											<div class="clearfix py-4">
+
+												<label class="form-checkbox form-checkbox-warning form-checkbox-bordered d-block sow-util-action" data-util-self-ignore="true" data-util-target-class-toggle="#role_list" data-util-target-class-toggle-val="hide">
+													<input required type="checkbox" name="user_roles" checked="" value="1">
+													<i></i> 
+													<span class="font-weight-medium">
+														Full Permission <span class="font-weight-light">(roles)</span>
+													</span>
+												</label>
+
+												<div id="role_list" class="hide py-3">
+
+													<label class="form-checkbox form-checkbox-success d-block">
+														<input required type="checkbox" name="admin_orders" value="1">
+														<i></i> <span>Orders</span>
+													</label>
+
+													<label class="form-checkbox form-checkbox-success d-block">
+														<input required type="checkbox" name="admin_products" value="1">
+														<i></i> <span>Products</span>
+													</label>
+
+													<label class="form-checkbox form-checkbox-success d-block">
+														<input required type="checkbox" name="admin_marketing" value="1">
+														<i></i> <span>Marketing</span>
+													</label>
+
+													<label class="form-checkbox form-checkbox-success d-block">
+														<input required type="checkbox" name="admin_user" value="1">
+														<i></i> <span>Users</span>
+													</label>
+
+													<label class="form-checkbox form-checkbox-success d-block">
+														<input required type="checkbox" name="admin_pages" value="1">
+														<i></i> <span>Pages</span>
+													</label>
+
+													<label class="form-checkbox form-checkbox-success d-block">
+														<input required type="checkbox" name="admin_blog" value="1">
+														<i></i> <span>Blog</span>
+													</label>
+
+													<label class="form-checkbox form-checkbox-success d-block">
+														<input required type="checkbox" name="admin_settings" value="1">
+														<i></i> <span>Settings</span>
+													</label>
+
+													<label class="form-checkbox form-checkbox-success d-block">
+														<input required type="checkbox" name="admin_reports" value="1">
+														<i></i> <span>Reports</span>
+													</label>
+
+												</div>
+
+											</div>
+
+											<button type="submit" class="btn btn-warning mb-3 d-block-xs w-100-xs">
+												<i class="fi fi-check"></i>
+												Send Invitation
+											</button>
+
+										</div>
+
+										<div class="col-12 col-md-6 mb-3">
+
+											<h6>Pending Invitations</h6>
+
+											<!-- Aero List -->
+											<ul class="list-group list-group-flush rounded overflow-hidden">
+												
+												<li id="item_1" class="list-group-item">
+													<div class="d-flex">
+
+														<a href="#!" class="js-ajax-confirm badge badge-danger badge-soft badge-ico-sm rounded-circle float-start"
+															data-href="/admin_user/admin_staff/?action=process:invitation:cancel&amp;user_email=john.doe@gmail.com" 
+															data-ajax-confirm-body="<div class='fs--13'>john.doe@gmail.com</div> Are you sure? Cancel Invitation?" 
+
+															data-ajax-confirm-mode="ajax" 
+															data-ajax-confirm-method="GET" 
+
+															data-ajax-confirm-btn-yes-class="btn-sm btn-danger" 
+															data-ajax-confirm-btn-yes-text="Yes" 
+															data-ajax-confirm-btn-yes-icon="fi fi-check" 
+
+															data-ajax-confirm-btn-no-class="btn-sm btn-light" 
+															data-ajax-confirm-btn-no-text="Cancel" 
+															data-ajax-confirm-btn-no-icon="fi fi-close"
+
+															data-ajax-confirm-success-target="#item_1" 
+															data-ajax-confirm-success-target-action="remove">
+															<i class="fi fi-close"></i>
+														</a>
+
+														<div class="pl--12 pr--12">
+															<p class="text-dark font-weight-medium m-0">
+																john.doe@gmail.com
+															</p>
+
+															<small>
+																12 Jun. 2019 / 17:44
+															</small>
+														</div>
+
+													</div>
+												</li>
+
+												<li id="item_2" class="list-group-item">
+													<div class="d-flex">
+
+														<a href="#!" class="js-ajax-confirm badge badge-danger badge-soft badge-ico-sm rounded-circle float-start"
+															data-href="/admin_user/admin_staff/?action=process:invitation:cancel&amp;user_email=melissa.doe@gmail.com" 
+															data-ajax-confirm-body="<div class='fs--13'>john.doe@gmail.com</div> Are you sure? Cancel Invitation?" 
+															
+															data-ajax-confirm-mode="ajax" 
+															data-ajax-confirm-method="GET" 
+
+															data-ajax-confirm-btn-yes-class="btn-sm btn-danger" 
+															data-ajax-confirm-btn-yes-text="Yes" 
+															data-ajax-confirm-btn-yes-icon="fi fi-check" 
+
+															data-ajax-confirm-btn-no-class="btn-sm btn-light" 
+															data-ajax-confirm-btn-no-text="Cancel" 
+															data-ajax-confirm-btn-no-icon="fi fi-close"
+
+															data-ajax-confirm-success-target="#item_2" 
+															data-ajax-confirm-success-target-action="remove">
+															<i class="fi fi-close"></i>
+														</a>
+
+														<div class="pl--12 pr--12">
+															<p class="text-dark font-weight-medium m-0">
+																melissa.doe@gmail.com
+															</p>
+
+															<small>
+																12 Jun. 2019 / 17:44
+															</small>
+														</div>
+
+													</div>
+												</li>
+
+											</ul>
+											<!-- /Aero List -->
+
+										</div>
+
+									</form>
+
+								</div>
+								<!-- /portlet : body -->
+
+							</div>
+							<!-- /portlet -->
+
+
+						</div>
+
+					</div>
+					<!-- /INVITATION -->
+
+
+
+					<!-- ADMIN LIST -->
+					<div class="row gutters-sm">
+						<div class="col-12">
+
+							<!-- portlet -->
+							<div class="portlet">
+								
+								<!-- portlet : header -->
+								<div class="portlet-header border-bottom mb-3">
+									<span class="d-block text-dark text-truncate font-weight-medium">
+										Admin List <span class="font-weight-light">(3)</span>
+									</span>
+								</div>
+								<!-- /portlet : header -->
+
+
+								<!-- portlet : body -->
+								<div class="portlet-body">
+
+
+
+									<!-- 
+										LIST START 
+									-->
+									<div class="table-responsive">
+									
+										<table class="table">
+
+											<thead>
+												<tr class="text-muted fs--13">
+													<th class="w--100">&nbsp;</th>
+													<th>ADMIN</th>
+													<th class="w--250">ROLES</th>
+													<th class="w--250">LAST LOGIN</th>
+													<th class="w--150">&nbsp;</th>
+												</tr>
+											</thead>
+
+											<tbody id="group_list">
+
+												<!-- ITEM -->
+												<tr id="admin_user_1">
+													<td class="text-center">
+
+														<!-- no avatar image -->
+														<span data-initials="John Doe" data-assign-color="true" class="sow-util-initials h6 m-0 w--50 h--50 rounded-circle d-inline-flex justify-content-center align-items-center"></span>
+
+														<!-- avatar image -->
+														<!--
+														<span class="w--50 h--50 rounded-circle d-inline-block bg-light bg-cover lazy" data-background-image="avatar.jpg"></span>
+														-->
+
+													</td>
+
+													<td>
+
+														John Doe
+														
+														<span class="d-block text-muted fs--12">
+															<a href="mailto:john.doe@gmail.com" class="text-muted">john.doe@gmail.com</a>
+														
+															<span class="d-block text-muted">
+																Joined: Sep 01, 2019 / 03:14
+															</span>
+
+														</span>
+													</td>
+
+
+													<td class="text-danger">
+														OWNER
+													</td>
+
+
+													<td class="text-muted">
+														Nov 09, 2019 / 09:12
+													</td>
+
+													<td class="text-align-end">
+
+														<a href="#!" class="btn btn-sm rounded-circle btn-light mb-2 js-ajax-modal"
+															 data-href="_ajax/admin_modal_message_write.html" 
+															 data-ajax-modal-size="modal-md" 
+															 data-ajax-modal-centered="false" 
+															 data-ajax-modal-backdrop="static">
+															<i class="fi fi-envelope-2"></i>
+														</a>
+
+													</td>
+												</tr>
+												<!-- /ITEM -->
+
+
+
+												<!-- ITEM -->
+												<tr id="admin_user_2">
+													<td class="text-center">
+
+														<!-- no avatar image -->
+														<span data-initials="Melissa Doe" data-assign-color="true" class="sow-util-initials h6 m-0 w--50 h--50 rounded-circle d-inline-flex justify-content-center align-items-center"></span>
+
+														<!-- avatar image -->
+														<!--
+														<span class="w--50 h--50 rounded-circle d-inline-block bg-light bg-cover lazy" data-background-image="avatar.jpg"></span>
+														-->
+
+													</td>
+
+													<td>
+
+														Melissa Doe
+														
+														<span class="d-block text-muted fs--12">
+															<a href="mailto:melissa.doe@gmail.com" class="text-muted">melissa.doe@gmail.com</a>
+														
+															<span class="d-block text-muted">
+																Joined: Sep 01, 2019 / 03:14
+															</span>
+
+														</span>
+													</td>
+
+
+													<td class="text-muted fs--16">
+														
+														<ul class="list-unstyled p-0 m-0">
+															<li class="list-item">
+																<i class="fi mdi-check text-success"></i> Orders
+															</li>
+															<li class="list-item">
+																<i class="fi mdi-check text-success"></i> Products
+															</li>
+															<li class="list-item">
+																<i class="fi mdi-check text-success"></i> Marketing
+															</li>
+															<li class="list-item">
+																<i class="fi mdi-check text-success"></i> Users
+															</li>
+															<li class="list-item">
+																<i class="fi mdi-check text-success"></i> Pages
+															</li>
+															<li class="list-item">
+																<i class="fi mdi-check text-success"></i> Blog
+															</li>
+															<li class="list-item">
+																<i class="fi mdi-close text-danger"></i> Settings
+															</li>
+															<li class="list-item">
+																<i class="fi mdi-close text-danger"></i> Reports
+															</li>
+														</ul>
+
+													</td>
+
+
+													<td class="text-muted">
+														Nov 09, 2019 / 09:12
+													</td>
+
+													<td class="text-align-end">
+														
+														<div class="dropdown">
+														
+															<!-- Message -->
+															<a href="#!" class="btn btn-sm rounded-circle btn-light mb-2 js-ajax-modal"
+																 data-href="_ajax/admin_modal_message_write.html" 
+																 data-ajax-modal-size="modal-md" 
+																 data-ajax-modal-centered="false" 
+																 data-ajax-modal-backdrop="static">
+																<i class="fi fi-envelope-2"></i>
+															</a>
+
+															<!-- Options -->
+															<a href="#!" class="btn btn-sm rounded-circle btn-light mb-2 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																<i class="fi fi-dots-vertical-full"></i>
+															</a>
+
+															<div class="prefix-link-icon prefix-icon-dot dropdown-menu">
+																
+																<h6 class="dropdown-header">
+																	Options
+																</h6>
+																
+																<a class="dropdown-item" href="#">
+																	Edit Roles
+																</a>
+
+																<a href="#!" class="js-ajax-confirm dropdown-item text-danger"
+																	data-href="/admin_user/admin_staff/?action=process:user:del&amp;user_id=1" 
+																	data-ajax-confirm-body="Are you sure? Remove User?" 
+
+																	data-ajax-confirm-mode="ajax" 
+																	data-ajax-confirm-method="GET" 
+
+																	data-ajax-confirm-btn-yes-class="btn-sm btn-danger" 
+																	data-ajax-confirm-btn-yes-text="Yes" 
+																	data-ajax-confirm-btn-yes-icon="fi fi-check" 
+
+																	data-ajax-confirm-btn-no-class="btn-sm btn-light" 
+																	data-ajax-confirm-btn-no-text="Cancel" 
+																	data-ajax-confirm-btn-no-icon="fi fi-close"
+
+																	data-ajax-confirm-success-target="#admin_user_2" 
+																	data-ajax-confirm-success-target-action="remove">
+																	Remove
+																</a>
+
+															</div>
+
+														</div>
+
+													</td>
+												</tr>
+												<!-- /ITEM -->
+
+
+											</tbody>
+
+										</table>
+
+									</div>
+
+
+								</div>
+								<!-- /portlet : body -->
+
+							</div>
+							<!-- /portlet -->
+
+						</div>
+					</div>
+					<!-- /ADMIN LIST -->

@@ -1,0 +1,172 @@
+﻿					<!-- doc:start -->
+					<div class="page-title bg-transparent b-0">
+
+						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
+							SOW : Service Worker
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--13 pb-2 px-3">
+								<li class="breadcrumb-item">
+									<a href="index.html" class="js-ajax">Dashboard</a>
+								</li>
+								<li class="breadcrumb-item active">
+									SOW : Core Plugins
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Service Worker
+								</li>
+							</ol>
+						</nav>
+
+					</div>
+
+
+
+					<!-- ALERT : NOTE -->
+					<div class="bg-white shadow-xs p-2 mb-4 rounded">
+						<div class="clearfix bg-light p-2 rounded d-flex align-items-center">
+							<span class="btn row-pill btn-sm bg-gradient-warning b-0 py-1 mb-0 float-start">
+								<i class="fi fi-round-info-full"></i>
+								Note
+							</span>
+							<span class="d-block px-2 text-muted text-truncate">
+								This is a basic demo! Please see main <a href="../../html_frontend/documentation/plugins-sow-service-worker.html" target="smarty" class="link-muted">full documentation here</a>.
+							</span>
+						</div>
+					</div>
+					<!-- /ALERT : NOTE -->
+
+
+
+					<!-- start:row -->
+					<div class="row gutters-sm">
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>About</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<div class="alert alert-warning">
+											Plugin not recommended for admin panels due to highly cachable ability!
+										</div>
+
+										<div class="text-center p-4 bg-light rounded mb-5">
+
+											<p class="h5 mb-4">
+												Usual stuff, your website will work without internet connection!
+											</p>
+
+											<p class="h1">
+												Wait! What?
+											</p>
+
+										</div>
+
+
+
+										<p class="lead">
+											For sure you already know about Service Workers from your Developer Console - is that greyish icon "PWA" (Progressive Web Apps) in Google Chrome Audits and you get extra points if your site is capable of being available offline.<br>
+										</p>
+										
+										<p class="lead">
+											Not much (to make a huge case from this), but it does matter a little bit for SEO because Google care about your users/visitors (not really because your website is faster than speed of light).
+											Service Workers are able to give you some kind of "super powers" - is a very strong cache for your website and is able to serve from cache even if the internet connection goes down.
+										</p>
+
+										<p class="lead">
+											Smarty include all you need to activate it in seconds <del class="font-weight-light">and forget about paying your internet connection</del>. <i class="fi fi-emoji-smile"></i> <br>
+											The `brain` of all this is that little js file called "<b>sw.js</b>" you might already noticed it (or you might will) in your project folder. If you are a begginer, might look a little bit scary but it's not! 
+											<i>`Smarty`</i> lost hours to test/retest, write/rewrite <del>throwing PC's out of the window</del> and all this cool stuff to work for you in seconds!
+											 If you changed the assets folder location, you have to edit that file to set the new location. After that, activate the Controller from gulp.config__core.js. And that's it!
+										</p>
+
+										<p class="lead">
+											<b class="text-danger">Please, note!</b><br>
+											<u>The good</u>: will increase a lot the site speed because of a <b>very strong cache</b>. <br>
+											<u>The "bad"</u>: if you are a developer, even if you deactivate it, the cache is sometimes still there without noticing it, even using an icognito window, it's like cockroaches! 
+											
+											<br><br>So please keep this in mind when you test it, as a developer. Or when your customer test it (uh!)! <br>
+											Better approach: don't let your customer to test with SW active! Surprise your customer at the end! <i class="fi fi-emoji-smile"></i> <br><br>
+
+											To stop the worker, open your browser console (assuming you are using Google Chrome) -> Application -> Service Workers. Unregister and stop it! And of course, hard refresh your browser. Smarty Debugger will show you in the console if the Service Worker is still active!
+										</p>
+
+										<p class="alert alert-primary bg-primary-soft m-0">
+											Additional note: a valid SSL certificate is required (localhost self signed are also working)!<br>
+											<a href="https://developers.google.com/web/ilt/pwa/introduction-to-service-worker" target="google" rel="noopener">https://developers.google.com/web/ilt/pwa/introduction-to-service-worker</a><br>
+											<a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Offline_Service_workers" target="mozilla" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Offline_Service_workers</a>
+										</p>
+
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Usage</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<pre class="bg-gradient-dark rounded p-3"><code>
+1. <b>Edit sw.js</b>
+  * Open sw.js file from your document root
+  * Edit in <b>cacheFiles</b>: the homepage (default is index.html) and the assets paths (if changed)
+  * Save
+
+
+2. <b>Activate Smarty Controller</b>
+  * Open gulp.config__core.js
+  * Enable Smarty Service Worker Controller
+    sow_service_worker: { enable: <u><b>true</b></u>, autoinit: true, bundle: true }
+-----
+  * Rebuild the project using GULP
+  * Thats it!
+
+
+-----
+Note: sw.js cannot be moved from document root!
+-----
+
+
+/* 
+     :: SOW Controller
+     src/js/sow.core/sow.service_worker.js
+*/
+										</code></pre>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+					</div>
+					<!-- end:row: -->
+					<!-- doc:end -->

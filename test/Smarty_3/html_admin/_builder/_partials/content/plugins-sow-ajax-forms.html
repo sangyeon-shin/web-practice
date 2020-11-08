@@ -1,0 +1,165 @@
+﻿					<!-- doc:start -->
+					<div class="page-title bg-transparent b-0">
+
+						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
+							SOW : Ajax Forms
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--13 pb-2 px-3">
+								<li class="breadcrumb-item">
+									<a href="index.html" class="js-ajax">Dashboard</a>
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									SOW : Core Plugins
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Ajax Forms
+								</li>
+							</ol>
+						</nav>
+
+					</div>
+
+
+
+					<!-- ALERT : NOTE -->
+					<div class="bg-white shadow-xs p-2 mb-4 rounded">
+						<div class="clearfix bg-light p-2 rounded d-flex align-items-center">
+							<span class="btn row-pill btn-sm bg-gradient-warning b-0 py-1 mb-0 float-start">
+								<i class="fi fi-round-info-full"></i>
+								Note
+							</span>
+							<span class="d-block px-2 text-muted text-truncate">
+								This is a basic demo! Please see main <a href="../../html_frontend/documentation/plugins-sow-ajax-forms.html" target="smarty" class="link-muted">full documentation here</a>.
+							</span>
+						</div>
+					</div>
+					<!-- /ALERT : NOTE -->
+
+
+
+					<!-- start:row -->
+					<div class="row gutters-sm">
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Examples</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+									<div class="row">
+										<div class="col-12 col-lg-6">
+			
+											<h2 class="h5 text-truncate w-100">
+												Using toast!
+											</h2>
+
+											<!-- 
+
+												1. AJAX
+
+													:: Params:
+													ajax-callback-function="" 	custom JS function, instead of appending the response to a container
+													data-ajax-container="#ajax_response_container" - not used if ajax-callback-function is set
+													data-ajax-update-url="false" - false = will update URL (history push state). default : true
+
+												2. TOAST ERROR 
+
+													:: Params:
+													data-error-toast-text="<i class='fi fi-circle-spin fi-spin float-start'></i> Please, complete all required fields!" 
+													data-error-toast-delay="3000" 
+													data-error-toast-position="top-center|top-left|top-right|bottom-center|bottom-left|bottom-right"
+
+												Files are supported using the regular: 
+												enctype="multipart/form-data"
+											-->
+											<div id="ajax_response_container"><!-- ajax response container --></div>
+
+											<!--
+												NOTE: WE USE method="GET" insted of "POST" because this is a pure html demo
+											-->
+											<form 	class="js-ajax bs-validate" novalidate 
+													action="_ajax/ajax_form_test_submit.html" 
+													method="GET" 
+
+													data-ajax-container="#ajax_response_container" 
+													data-ajax-update-url="false" 
+													data-ajax-show-loading-icon="true" 
+
+													data-error-scroll-up="true" 
+													data-error-toast-text="<i class='fi fi-circle-spin fi-spin float-start'></i> Please, complete all required fields!" 
+													data-error-toast-delay="3000" 
+													data-error-toast-position="top-center" 
+
+													data-error-scroll-up="false" 
+													data-ajax-callback-function="">
+
+												<input required type="text" name="test_required" value="" placeholder="required field" class="form-control mb-4">
+												<input type="text" name="test_optional" value="" placeholder="optional field" class="form-control mb-4">
+												<button type="submit" class="btn btn-primary">Submit</button>
+											</form>
+
+
+										</div>
+
+										<div class="col-12 col-lg-6">
+
+											<h2 class="h5 text-truncate w-100">
+												Using inline alerts!
+											</h2>
+									
+											<div id="alert_success" class="alert alert-success hide-force">
+												Thank you! Data Sumbmited!
+											</div>
+
+											<div id="alert_error" class="alert alert-danger hide-force">
+												Please, review your data and try again!
+											</div>
+
+											<!--
+												NOTE: WE USE method="GET" insted of "POST" because this is a pure html demo
+											-->
+											<form 	class="js-ajax bs-validate" novalidate 
+													action="../../html_frontend/demo.files/php/demo.ajax_request.php" 
+													method="POST" 
+
+													data-ajax-inline-alert-succes="#alert_success" 
+													data-ajax-inline-alert-error="#alert_error" 
+
+													data-ajax-update-url="false" 
+													data-ajax-show-loading-icon="true" 
+													data-error-scroll-up="false" 
+
+													data-error-scroll-up="false" 
+													data-ajax-callback-function="">
+
+												<input required type="text" name="test_required" value="" placeholder="required field" class="form-control mb-4">
+												<input type="text" name="test_optional" value="" placeholder="optional field" class="form-control mb-4">
+												<button type="submit" class="btn btn-primary">Submit</button>
+											</form>
+
+
+										</div>
+
+									</div>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+					</div>
+					<!-- end:row: -->
+					<!-- doc:end -->

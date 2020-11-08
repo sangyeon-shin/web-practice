@@ -1,0 +1,142 @@
+﻿					<!-- doc:start -->
+					<div class="page-title bg-transparent b-0">
+
+						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
+							Vendor : Openstreet Map
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--13 pb-2 px-3">
+								<li class="breadcrumb-item">
+									<a href="index.html" class="js-ajax">Dashboard</a>
+								</li>
+								<li class="breadcrumb-item active">
+									Vendor Plugins
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Openstreet Map
+								</li>
+							</ol>
+						</nav>
+
+					</div>
+
+
+
+					<!-- ALERT : NOTE -->
+					<div class="bg-white shadow-xs p-2 mb-4 rounded">
+						<div class="clearfix bg-light p-2 rounded d-flex align-items-center">
+							<span class="btn row-pill btn-sm bg-gradient-warning b-0 py-1 mb-0 float-start">
+								<i class="fi fi-round-info-full"></i>
+								Note
+							</span>
+							<span class="d-block px-2 text-muted text-truncate">
+								This is a basic demo! Please see main <a href="../../html_frontend/documentation/components-map.html" target="smarty" class="link-muted">full documentation here</a>.
+							</span>
+						</div>
+					</div>
+					<!-- /ALERT : NOTE -->
+
+
+
+					<!-- start:row -->
+					<div class="row gutters-sm">
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Examples</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<p class="lead">
+											OpenStreetMap: is a map of the world, created by people like you and free to use under an open license. <br>
+											<a href="https://www.openstreetmap.org/about" target="smarty" class="link-muted fs--18">
+												https://www.openstreetmap.org/about
+											</a>
+											<br><br>
+											Leaflet: JavaScript library for mobile-friendly interactive maps<br>
+											<a href="https://github.com/Leaflet/Leaflet" target="smarty" class="link-muted fs--18">
+												https://github.com/Leaflet/Leaflet
+											</a>
+										</p>
+
+										<p class="mt-4">
+											License: Free, public contributors.
+										</p>
+
+										<p class="mt-4">
+											You can get map coordinates from <a href="https://support.google.com/maps/answer/18539?co=GENIE.Platform%3DDesktop&amp;hl=en" target="smarty">Google Map</a> or any other map software.
+										</p>
+
+										<p>
+											Note: Leflet javascript is 141Kb minified. Basically, is larger than entire Smarty core, including SOW plugins.<br>
+											141Kb is not really much but because is not frequently used (mostly on contact pages), there is no reason to load it all the time. We load it via attributes, only when maps are needed.
+										</p>
+
+
+
+
+										<h6 class="mt-7">Single Marker</h6>
+										<!--
+											Available Classes
+												.map-grayscale
+
+										-->
+										<div class="map-leaflet h--500 w-100 rounded" 
+											data-map-tile="voyager" 
+											data-map-zoom="7" 
+											data-map-json='[
+												{ 
+													"map_lat": 40.750765,
+													"map_long": -73.993428,
+													"map_popup": "<b>Smarty Inc.</b> <br> Road 741, No.44,<br> New York / United States <br> <a href=`tel:015555555`>(01)-555-5555</a>"
+												}
+											]'
+										><!-- map container--></div>
+
+
+
+
+										<h6 class="mt-7">Multiple Markers</h6>
+										<!--
+											Available Classes
+												.map-grayscale
+
+										-->
+										<div class="map-leaflet h--500 w-100 rounded"
+											data-map-zoom="9" 
+											data-map-json='[
+												{ 
+													"map_lat": 40.750765,
+													"map_long": -73.993428,
+													"map_popup": "<b>Smarty Inc.</b> <br> Road 741, No.44,<br> New York / United States <br> <a href=`tel:015555555`>(01)-555-5555</a>"
+												},
+												{ 
+													"map_lat": 40.750765,
+													"map_long": -73.093428,
+													"map_popup": "Smarty Inc2."
+												}
+											]'
+										><!-- map container--></div>
+
+									
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+					</div>
+					<!-- end:row: -->
+					<!-- doc:end -->

@@ -1,0 +1,309 @@
+﻿					<!-- doc:start -->
+					<div class="page-title bg-transparent b-0">
+
+						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
+							Shadows
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--13 pb-2 px-3">
+								<li class="breadcrumb-item">
+									<a href="index.html" class="js-ajax">Dashboard</a>
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Utils
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Shadows
+								</li>
+							</ol>
+						</nav>
+
+					</div>
+
+
+
+
+
+
+
+					<!-- start:row -->
+					<div class="row gutters-sm">
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Box Shadow</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<table class="table table-lg">
+											<thead>
+												<tr>
+													<th scope="col" class="w--300">Class</th>
+													<th scope="col">Description</th>
+													<th scope="col" class="w--300">Quick Example</th>
+												</tr>
+											</thead>
+
+											<tbody>
+
+												<tr>
+													<td>
+														<code class="d-block">.shadow</code><br>
+														<code class="d-block">.shadow-xs</code>
+														<code class="d-block">.shadow-sm</code>
+														<code class="d-block">.shadow-md</code>
+														<code class="d-block">.shadow-lg</code>
+														<code class="d-block">.shadow-xlg</code>
+														<code class="d-block">.shadow-3d</code>
+														<code class="d-block">.shadow-none</code>
+													</td>
+													<td>
+														<p>
+															Box shadows for any block element.
+														</p>
+
+														<p>
+															Shadows are defined in main variables.scss <br>
+
+															<span class="d-block pl--15 pr--15 text-gray-500">
+																$box-shadow <br>
+																$box-shadow-xs <br>
+																$box-shadow-sm <br>
+																$box-shadow-lg <br>
+																$box-shadow-xlg <br>
+															</span>
+
+														</p>
+
+													</td>
+													<td>
+														<div class="p-2 shadow mb-3">
+															.shadow (default)
+														</div>
+
+														<div class="p-2 shadow row-pill mb-5">
+															.shadow .row-pill
+														</div>
+
+														<div class="p-2 shadow-xs mb-3">
+															.shadow-xs
+														</div>
+
+														<div class="p-2 shadow-sm mb-3">
+															.shadow-sm
+														</div>
+
+														<div class="p-2 shadow-md mb-3">
+															.shadow-md
+														</div>
+
+														<div class="p-2 shadow-lg mb-3">
+															.shadow-lg
+														</div>
+
+														<div class="p-2 shadow-xlg mb-5">
+															.shadow-xlg
+														</div>
+
+														<div class="p-2 shadow-3d mb-5">
+															.shadow-3d
+														</div>
+
+														<div class="p-2 shadow-md row-pill mb-3">
+															.shadow-md .row-pill
+														</div>
+
+													</td>
+												</tr>
+
+												<tr>
+													<td>
+														<code class="d-block">.shadow-hover</code><br>
+														<code class="d-block">.shadow-xs-hover</code>
+														<code class="d-block">.shadow-sm-hover</code>
+														<code class="d-block">.shadow-md-hover</code>
+														<code class="d-block">.shadow-lg-hover</code>
+														<code class="d-block">.shadow-xlg-hover</code>
+														<code class="d-block">.shadow-3d-hover</code>
+													</td>
+													<td>
+														<p>
+															On mouse hover, apply a shadow. You can mix with any shadow (without hover) for a nice effect.
+														</p>
+
+														<p>
+															For a nice transition effect, mix with: <br>
+																<code>.transition-all-ease-150</code><br>
+																<code>.transition-all-ease-200</code><br>
+																<code>.transition-all-ease-250</code><br>
+																<code>.transition-all-ease-500</code><br>
+															predefined by <a href="util-transition.html" class="link-muted js-ajax">_core/utils/_transition.scss</a><br>
+															<br>
+															And/or:<br>
+																<code>.transition-hover-top</code><br>
+																<code>.transition-hover-right</code><br>
+																<code>.transition-hover-bottom</code><br>
+																<code>.transition-hover-left</code><br>
+
+
+														</p>
+													</td>
+													<td>
+
+														<div class="p-2 shadow-xs shadow-lg-hover transition-all-ease-250 mb-3">
+															.shadow-xs .shadow-lg-hover .transition-all-ease-250
+														</div>
+
+														<div class="p-2 shadow-md shadow-lg-hover transition-all-ease-250 mb-4">
+															.shadow-md .shadow-xlg-hover .transition-all-ease-250
+														</div>
+
+														<div class="p-2 shadow-md shadow-3d-hover transition-all-ease-250 mb-3">
+															.shadow-md .shadow-3d-hover .transition-all-ease-250
+														</div>
+
+														<div class="p-2 shadow-md shadow-3d-hover transition-hover-top transition-all-ease-250 mb-3">
+															.shadow-md .shadow-3d-hover .transition-hover-top .transition-all-ease-250
+														</div>
+
+													</td>
+												</tr>
+
+											</tbody>
+										</table>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Color Box Shadow</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<table class="table table-lg">
+											<thead>
+												<tr>
+													<th scope="col" class="w--300">Class</th>
+													<th scope="col">Description</th>
+													<th scope="col" class="w--300">Quick Example</th>
+												</tr>
+											</thead>
+
+											<tbody>
+
+												<tr>
+													<td>
+														<code class="d-block">.shadow-*-xs</code>
+														<code class="d-block">.shadow-*-sm</code>
+														<code class="d-block">.shadow-*-md</code>
+														<code class="d-block">.shadow-*-lg</code>
+														<code class="d-block">.shadow-*-xlg</code><br>
+														* = primary, success, danger, warning, info, pink, indigo, purple
+													</td>
+													<td>
+														<p>
+															Color shadows.
+														</p>
+													</td>
+													<td>
+
+														<div class="p-2 shadow-danger-xs mb-5">
+															.shadow-danger-xs
+														</div>
+
+														<div class="p-2 shadow-info-sm mb-5">
+															.shadow-info-sm
+														</div>
+
+														<div class="p-2 shadow-success-md mb-5">
+															.shadow-success-md
+														</div>
+
+														<div class="p-2 shadow-pink-lg mb-5">
+															.shadow-pink-lg
+														</div>
+
+														<div class="p-2 shadow-warning-xlg mb-5">
+															.shadow-warning-xlg
+														</div>
+
+														<div class="p-2 shadow-indigo-md row-pill mb-5">
+															.shadow-pink-md .row-pill
+														</div>
+
+													</td>
+												</tr>
+
+
+
+												<tr>
+													<td>
+														<code class="d-block">.shadow-*-xs-hover</code>
+														<code class="d-block">.shadow-*-sm-hover</code>
+														<code class="d-block">.shadow-*-md-hover</code>
+														<code class="d-block">.shadow-*-lg-hover</code>
+														<code class="d-block">.shadow-*-xlg-hover</code><br>
+														* = primary, success, danger, warning, info, pink, indigo, purple
+													</td>
+													<td>
+														<p>
+															And of course, using hover for color backgrounds. You can also mix them.
+														</p>
+													</td>
+													<td>
+
+														<div class="p-2 shadow-success-md shadow-danger-md-hover transition-all-ease-250 mb-5 mt-4">
+															.shadow-success-md .shadow-danger-md-hover .transition-all-ease-250
+														</div>
+
+														<div class="p-2 shadow-md shadow-danger-md-hover transition-all-ease-250 mb-5 mt-4">
+															.shadow-md .shadow-danger-md-hover .transition-all-ease-250
+														</div>
+
+														<div class="p-2 shadow-md shadow-danger-md-hover transition-hover-top transition-all-ease-250 mb-5 mt-4">
+															.shadow-md .shadow-danger-md-hover .transition-hover-top .transition-all-ease-250
+														</div>
+
+
+													</td>
+												</tr>
+
+											</tbody>
+										</table>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+					</div>
+					<!-- end:row: -->
+					<!-- doc:end -->

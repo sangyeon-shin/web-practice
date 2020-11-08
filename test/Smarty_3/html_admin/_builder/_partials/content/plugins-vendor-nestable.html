@@ -1,0 +1,718 @@
+﻿					<!-- doc:start -->
+					<div class="page-title bg-transparent b-0">
+
+						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
+							Vendor : Nestable
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--13 pb-2 px-3">
+								<li class="breadcrumb-item">
+									<a href="index.html" class="js-ajax">Dashboard</a>
+								</li>
+								<li class="breadcrumb-item active">
+									Vendor Plugins
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Nestable
+								</li>
+							</ol>
+						</nav>
+
+					</div>
+
+
+
+					<!-- ALERT : NOTE -->
+					<div class="bg-white shadow-xs p-2 mb-4 rounded">
+						<div class="clearfix bg-light p-2 rounded d-flex align-items-center">
+							<span class="btn row-pill btn-sm bg-gradient-warning b-0 py-1 mb-0 float-start">
+								<i class="fi fi-round-info-full"></i>
+								Note
+							</span>
+							<span class="d-block px-2 text-muted text-truncate">
+								This is a basic demo! Please see main <a href="../../html_frontend/documentation/plugins-vendor-nestable.html" target="smarty" class="link-muted">full documentation here</a>.
+							</span>
+						</div>
+					</div>
+					<!-- /ALERT : NOTE -->
+
+
+
+					<!-- start:row -->
+					<div class="row gutters-sm">
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Examples</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<p class="lead">
+											Drag &amp; drop hierarchical list with mouse and touch compatibility
+											<br>
+											Is an old nestable plugin but is one of the most used. So Smarty extended it, ajax supported! <i class="fi fi-emoji-smile"></i>
+										</p>
+
+
+										<ul class="mt-3">
+											<li class="mt-3">
+												<a href="https://github.com/dbushell/Nestable" target="smarty" class="link-muted">
+													https://github.com/dbushell/Nestable
+												</a>
+											</li>
+											<li>
+												License: BSD &amp; MIT license
+											</li>
+										</ul>
+
+
+										<div class="row">
+											<div class="col-12 col-lg-6">
+
+												<h6 class="mt-7">Without Handler</h6>
+										        <div class="nestable dd">
+										            <ol class="dd-list">
+										                <li class="dd-item" data-id="1">
+										                    <div class="dd-handle">Item 1</div>
+										                </li>
+										                <li class="dd-item" data-id="2">
+										                    <div class="dd-handle">Item 2</div>
+										                    <ol class="dd-list">
+										                        <li class="dd-item" data-id="3"><div class="dd-handle">Item 3</div></li>
+										                        <li class="dd-item" data-id="4"><div class="dd-handle">Item 4</div></li>
+										                        <li class="dd-item" data-id="5">
+										                            <div class="dd-handle">Item 5</div>
+										                            <ol class="dd-list">
+										                                <li class="dd-item" data-id="6"><div class="dd-handle">Item 6</div></li>
+										                                <li class="dd-item" data-id="7"><div class="dd-handle">Item 7</div></li>
+										                                <li class="dd-item" data-id="8"><div class="dd-handle">Item 8</div></li>
+										                            </ol>
+										                        </li>
+										                        <li class="dd-item" data-id="9"><div class="dd-handle">Item 9</div></li>
+										                        <li class="dd-item" data-id="10"><div class="dd-handle">Item 10</div></li>
+										                    </ol>
+										                </li>
+										                <li class="dd-item" data-id="11">
+										                    <div class="dd-handle">Item 11</div>
+										                </li>
+										                <li class="dd-item" data-id="12">
+										                    <div class="dd-handle">Item 12</div>
+										                </li>
+										            </ol>
+
+										            <textarea class="form-control"></textarea>
+										        </div>
+
+									        </div>
+
+
+									        <div class="col-12 col-lg-6">
+
+										        <h6 class="mt-7">With Handler</h6>
+										        <div class="nestable dd">
+										            <ol class="dd-list">
+										                <li class="dd-item dd-handle-custom" data-id="1">
+										                    <div class="dd-content">Item 1</div>
+										                    <div class="dd-handle fi fi-list"></div>
+										                </li>
+										                <li class="dd-item dd-handle-custom" data-id="2">
+										                    
+										                    <div class="dd-content">Item 2</div>
+										                    <div class="dd-handle fi fi-list"></div>
+
+										                    <ol class="dd-list">
+										                        <li class="dd-item dd-handle-custom" data-id="3">
+												                    <div class="dd-content">Item 3</div>
+												                    <div class="dd-handle fi fi-list"></div>
+										                        </li>
+										                        <li class="dd-item dd-handle-custom" data-id="4">
+												                    <div class="dd-content">Item 4</div>
+												                    <div class="dd-handle fi fi-list"></div>
+										                        </li>
+										                        <li class="dd-item dd-handle-custom" data-id="5">
+												                    <div class="dd-content">Item 5</div>
+												                    <div class="dd-handle fi fi-list"></div>
+										                            <ol class="dd-list">
+										                                <li class="dd-item dd-handle-custom" data-id="6">
+														                    <div class="dd-content">Item 6</div>
+														                    <div class="dd-handle fi fi-list"></div>
+										                                </li>
+										                                <li class="dd-item dd-handle-custom" data-id="7">
+														                    <div class="dd-content">Item 7</div>
+														                    <div class="dd-handle fi fi-list"></div>
+										                                </li>
+										                                <li class="dd-item dd-handle-custom" data-id="8">
+														                    <div class="dd-content">Item 6</div>
+														                    <div class="dd-handle fi fi-list"></div>
+										                                </li>
+										                            </ol>
+										                        </li>
+										                        <li class="dd-item dd-handle-custom" data-id="9">
+												                    <div class="dd-content">Item 9</div>
+												                    <div class="dd-handle fi fi-list"></div>
+										                        </li>
+										                        <li class="dd-item dd-handle-custom" data-id="10">
+												                    <div class="dd-content">Item 10</div>
+												                    <div class="dd-handle fi fi-list"></div>
+										                        </li>
+										                    </ol>
+										                </li>
+										                <li class="dd-item dd-handle-custom" data-id="11">
+										                    <div class="dd-content">Item 11</div>
+										                    <div class="dd-handle fi fi-list"></div>
+										                </li>
+										                <li class="dd-item dd-handle-custom" data-id="12">
+										                    <div class="dd-content">Item 12</div>
+										                    <div class="dd-handle fi fi-list"></div>
+										                </li>
+										            </ol>
+
+										            <textarea class="form-control"></textarea>
+										        </div>
+
+										    </div>
+
+										</div>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Ajax : Smarty Extended</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<div class="row">
+											<div class="col-12 col-lg-6 mb-7">
+
+												<h6>Without Handler</h6>
+												<div class="nestable dd"
+													data-nestable-max-depth="3" 
+
+													data-update-delete-with-childs="false"
+													data-update-delete-with-childs-error="Please move or delete childs first!" 
+													data-update-delete-params="['action','delete']['section','shop_category']" 
+													data-update-delete-confirm-first="true" 
+
+													data-update-delete-confirm-first="true" 
+													data-ajax-confirm-type="danger"
+													data-ajax-confirm-mode="ajax" 
+													data-ajax-confirm-centered="false"
+													data-ajax-confirm-body="Are you sure? Delete this item?" 
+													data-ajax-confirm-btn-yes-text="Confirm" 
+													data-ajax-confirm-btn-no-text="Cancel" 
+													data-ajax-confirm-btn-yes-class="btn-sm btn-danger"
+
+													data-ajax-update-url="../../html_frontend/demo.files/php/demo.ajax_request.php" 
+													data-ajax-update-params="['action','reorder']['section','shop_category']" 
+
+													data-update-toast-success="Order Saved!" 
+													data-update-toast-position="top-center">
+
+										            <ol class="dd-list">
+
+														<li class="dd-item dd-has-options" data-id="1">
+
+															<div class="dd-handle text-truncate">Item 1</div>
+
+															<div class="nestable-options">
+																<a href="#" class="nestable-edit js-ajax-modal"
+																	data-href="_ajax/nestable_edit.html" 
+																	data-ajax-modal-size="modal-md" 
+																	data-ajax-modal-centered="false">
+																	<i class="fi fi-pencil"></i>
+																</a>
+																<a href="#" class="nestable-del">
+																	<i class="fi fi-thrash"></i>
+																</a>
+															</div>
+
+														</li>
+														<li class="dd-item dd-has-options" data-id="2">
+
+															<div class="dd-handle text-truncate">Item 2</div>
+
+															<div class="nestable-options">
+																<a href="#" class="nestable-edit js-ajax-modal"
+																	data-href="_ajax/nestable_edit.html" 
+																	data-ajax-modal-size="modal-md" 
+																	data-ajax-modal-centered="false">
+																	<i class="fi fi-pencil"></i>
+																</a>
+																<a href="#" class="nestable-del">
+																	<i class="fi fi-thrash"></i>
+																</a>
+															</div>
+
+															<ol class="dd-list">
+																<li class="dd-item dd-has-options" data-id="3">
+
+																	<div class="dd-handle text-truncate">Item 3</div>
+
+																	<div class="nestable-options">
+																		<a href="#" class="nestable-edit js-ajax-modal"
+																			data-href="_ajax/nestable_edit.html" 
+																			data-ajax-modal-size="modal-md" 
+																			data-ajax-modal-centered="false">
+																			<i class="fi fi-pencil"></i>
+																		</a>
+																		<a href="#" class="nestable-del">
+																			<i class="fi fi-thrash"></i>
+																		</a>
+																	</div>
+
+																</li>
+																<li class="dd-item dd-has-options" data-id="4">
+
+																	<div class="dd-handle text-truncate">Item 4</div>
+
+																	<div class="nestable-options">
+																		<a href="#" class="nestable-edit js-ajax-modal"
+																			data-href="_ajax/nestable_edit.html" 
+																			data-ajax-modal-size="modal-md" 
+																			data-ajax-modal-centered="false">
+																			<i class="fi fi-pencil"></i>
+																		</a>
+																		<a href="#" class="nestable-del">
+																			<i class="fi fi-thrash"></i>
+																		</a>
+																	</div>
+
+																</li>
+																<li class="dd-item dd-has-options" data-id="5">
+
+																	<div class="dd-handle text-truncate">Item 5</div>
+
+																	<div class="nestable-options">
+																		<a href="#" class="nestable-edit js-ajax-modal"
+																			data-href="_ajax/nestable_edit.html" 
+																			data-ajax-modal-size="modal-md" 
+																			data-ajax-modal-centered="false">
+																			<i class="fi fi-pencil"></i>
+																		</a>
+																		<a href="#" class="nestable-del">
+																			<i class="fi fi-thrash"></i>
+																		</a>
+																	</div>
+
+																	<ol class="dd-list">
+										                                <li class="dd-item dd-has-options" data-id="6">
+
+																			<div class="dd-handle text-truncate">Item 6</div>
+
+																			<div class="nestable-options">
+																				<a href="#" class="nestable-edit js-ajax-modal"
+																					data-href="_ajax/nestable_edit.html" 
+																					data-ajax-modal-size="modal-md" 
+																					data-ajax-modal-centered="false">
+																					<i class="fi fi-pencil"></i>
+																				</a>
+																				<a href="#" class="nestable-del">
+																					<i class="fi fi-thrash"></i>
+																				</a>
+																			</div>
+
+																		</li>
+																		<li class="dd-item dd-has-options" data-id="7">
+
+																			<div class="dd-handle text-truncate">Item 7</div>
+
+																			<div class="nestable-options">
+																				<a href="#" class="nestable-edit js-ajax-modal"
+																					data-href="_ajax/nestable_edit.html" 
+																					data-ajax-modal-size="modal-md" 
+																					data-ajax-modal-centered="false">
+																					<i class="fi fi-pencil"></i>
+																				</a>
+																				<a href="#" class="nestable-del">
+																					<i class="fi fi-thrash"></i>
+																				</a>
+																			</div>
+
+																		</li>
+																		<li class="dd-item dd-has-options" data-id="8">
+
+																			<div class="dd-handle text-truncate">Item 8</div>
+
+																			<div class="nestable-options">
+																				<a href="#" class="nestable-edit js-ajax-modal"
+																					data-href="_ajax/nestable_edit.html" 
+																					data-ajax-modal-size="modal-md" 
+																					data-ajax-modal-centered="false">
+																					<i class="fi fi-pencil"></i>
+																				</a>
+																				<a href="#" class="nestable-del">
+																					<i class="fi fi-thrash"></i>
+																				</a>
+																			</div>
+
+																		</li>
+																	</ol>
+																</li>
+																<li class="dd-item dd-has-options" data-id="9">
+
+																	<div class="dd-handle text-truncate">Item 9</div>
+
+																	<div class="nestable-options">
+																		<a href="#" class="nestable-edit js-ajax-modal"
+																			data-href="_ajax/nestable_edit.html" 
+																			data-ajax-modal-size="modal-md" 
+																			data-ajax-modal-centered="false">
+																			<i class="fi fi-pencil"></i>
+																		</a>
+																		<a href="#" class="nestable-del">
+																			<i class="fi fi-thrash"></i>
+																		</a>
+																	</div>
+
+																</li>
+																<li class="dd-item dd-has-options" data-id="10">
+
+																	<div class="dd-handle text-truncate">Item 10</div>
+
+																	<div class="nestable-options">
+																		<a href="#" class="nestable-edit js-ajax-modal"
+																			data-href="_ajax/nestable_edit.html" 
+																			data-ajax-modal-size="modal-md" 
+																			data-ajax-modal-centered="false">
+																			<i class="fi fi-pencil"></i>
+																		</a>
+																		<a href="#" class="nestable-del">
+																			<i class="fi fi-thrash"></i>
+																		</a>
+																	</div>
+
+																</li>
+															</ol>
+														</li>
+														<li class="dd-item dd-has-options" data-id="11">
+
+															<div class="dd-handle text-truncate">Item 11</div>
+
+															<div class="nestable-options">
+																<a href="#" class="nestable-edit js-ajax-modal"
+																	data-href="_ajax/nestable_edit.html" 
+																	data-ajax-modal-size="modal-md" 
+																	data-ajax-modal-centered="false">
+																	<i class="fi fi-pencil"></i>
+																</a>
+																<a href="#" class="nestable-del">
+																	<i class="fi fi-thrash"></i>
+																</a>
+															</div>
+
+														</li>
+														<li class="dd-item dd-has-options" data-id="12">
+
+															<div class="dd-handle text-truncate">Item 12</div>
+
+															<div class="nestable-options">
+																<a href="#" class="nestable-edit js-ajax-modal"
+																	data-href="_ajax/nestable_edit.html" 
+																	data-ajax-modal-size="modal-md" 
+																	data-ajax-modal-centered="false">
+																	<i class="fi fi-pencil"></i>
+																</a>
+																<a href="#" class="nestable-del">
+																<i class="fi fi-thrash"></i>
+																</a>
+															</div>
+
+														</li>
+													</ol>
+										        </div>
+
+									        </div>
+
+
+									        <div class="col-12 col-lg-6">
+
+												<h6>With Handler</h6>
+										        <div class="nestable dd"
+										        	data-nestable-max-depth="3" 
+
+										        	data-update-delete-with-childs="false"
+										        	data-update-delete-with-childs-error="Please move or delete childs first!" 
+										        	data-update-delete-params="['action','delete']['section','shop_category']" 
+
+										        	data-update-delete-confirm-first="true" 
+													data-ajax-confirm-type="danger"
+													data-ajax-confirm-mode="ajax" 
+													data-ajax-confirm-centered="false"
+													data-ajax-confirm-body="Are you sure? Delete this item?" 
+													data-ajax-confirm-btn-yes-text="Confirm" 
+													data-ajax-confirm-btn-no-text="Cancel" 
+													data-ajax-confirm-btn-yes-class="btn-sm btn-danger"
+
+										        	data-ajax-update-url="../../html_frontend/demo.files/php/demo.ajax_request.php" 
+										        	data-ajax-update-params="['action','reorder']['section','shop_category']" 
+
+										        	data-update-toast-success="Order Saved!" 
+										        	data-update-toast-position="top-center">
+										        	
+													<ol class="dd-list">
+														<li class="dd-item dd-has-options dd-handle-custom" data-id="1">
+
+															<div class="dd-content text-truncate">Item 1</div>
+															<div class="dd-handle fi fi-list"></div>
+
+															<div class="nestable-options">
+																<a href="#" class="nestable-edit js-ajax-modal"
+																	data-href="_ajax/nestable_edit.html" 
+																	data-ajax-modal-size="modal-md" 
+																	data-ajax-modal-centered="false">
+																	<i class="fi fi-pencil"></i>
+																</a>
+																<a href="../../html_frontend/demo.files/php/demo.ajax_request.php" class="nestable-del">
+																	<i class="fi fi-thrash"></i>
+																</a>
+															</div>
+
+														</li>
+														<li class="dd-item dd-has-options dd-handle-custom" data-id="2">
+										                    
+															<div class="dd-content text-truncate">Item 2</div>
+															<div class="dd-handle fi fi-list"></div>
+
+															<div class="nestable-options">
+																<a href="#" class="nestable-edit js-ajax-modal"
+																	data-href="_ajax/nestable_edit.html" 
+																	data-ajax-modal-size="modal-md" 
+																	data-ajax-modal-centered="false">
+																	<i class="fi fi-pencil"></i>
+																</a>
+																<a href="#" class="nestable-del">
+																	<i class="fi fi-thrash"></i>
+																</a>
+															</div>
+
+															<ol class="dd-list">
+										                        <li class="dd-item dd-has-options dd-handle-custom" data-id="3">
+																	
+																	<div class="dd-content text-truncate">Item 3</div>
+																	<div class="dd-handle fi fi-list"></div>
+
+																	<div class="nestable-options">
+																		<a href="#" class="nestable-edit js-ajax-modal"
+																			data-href="_ajax/nestable_edit.html" 
+																			data-ajax-modal-size="modal-md" 
+																			data-ajax-modal-centered="false">
+																			<i class="fi fi-pencil"></i>
+																		</a>
+																		<a href="#" class="nestable-del">
+																			<i class="fi fi-thrash"></i>
+																		</a>
+																	</div>
+
+																</li>
+																<li class="dd-item dd-has-options dd-handle-custom" data-id="4">
+
+																	<div class="dd-content text-truncate">Item 4</div>
+																	<div class="dd-handle fi fi-list"></div>
+
+																	<div class="nestable-options">
+																		<a href="#" class="nestable-edit js-ajax-modal"
+																			data-href="_ajax/nestable_edit.html" 
+																			data-ajax-modal-size="modal-md" 
+																			data-ajax-modal-centered="false">
+																			<i class="fi fi-pencil"></i>
+																		</a>
+																			<a href="#" class="nestable-del">
+																				<i class="fi fi-thrash"></i>
+																			</a>
+																		</a>
+																	</div>
+
+																</li>
+																<li class="dd-item dd-has-options dd-handle-custom" data-id="5">
+
+																	<div class="dd-content text-truncate">Item 5</div>
+																	<div class="dd-handle fi fi-list"></div>
+
+																	<div class="nestable-options">
+																		<a href="#" class="nestable-edit js-ajax-modal"
+																			data-href="_ajax/nestable_edit.html" 
+																			data-ajax-modal-size="modal-md" 
+																			data-ajax-modal-centered="false">
+																			<i class="fi fi-pencil"></i>
+																		</a>
+																		<a href="#" class="nestable-del">
+																			<i class="fi fi-thrash"></i>
+																		</a>
+																	</div>
+
+																	<ol class="dd-list">
+										                                <li class="dd-item dd-has-options dd-handle-custom" data-id="6">
+
+																			<div class="dd-content text-truncate">Item 6</div>
+																			<div class="dd-handle fi fi-list"></div>
+
+																			<div class="nestable-options">
+																				<a href="#" class="nestable-edit js-ajax-modal"
+																					data-href="_ajax/nestable_edit.html" 
+																					data-ajax-modal-size="modal-md" 
+																					data-ajax-modal-centered="false">
+																					<i class="fi fi-pencil"></i>
+																				</a>
+																				<a href="#" class="nestable-del">
+																					<i class="fi fi-thrash"></i>
+																				</a>
+																			</div>
+
+																		</li>
+																		<li class="dd-item dd-has-options dd-handle-custom" data-id="7">
+
+																			<div class="dd-content text-truncate">Item 7</div>
+																			<div class="dd-handle fi fi-list"></div>
+
+																			<div class="nestable-options">
+																				<a href="#" class="nestable-edit js-ajax-modal"
+																					data-href="_ajax/nestable_edit.html" 
+																					data-ajax-modal-size="modal-md" 
+																					data-ajax-modal-centered="false">
+																					<i class="fi fi-pencil"></i>
+																				</a>
+																				<a href="#" class="nestable-del">
+																					<i class="fi fi-thrash"></i>
+																				</a>
+																			</div>
+
+																		</li>
+																		<li class="dd-item dd-has-options dd-handle-custom" data-id="8">
+
+																			<div class="dd-content text-truncate">Item 8</div>
+																			<div class="dd-handle fi fi-list"></div>
+
+																			<div class="nestable-options">
+																				<a href="#" class="nestable-edit js-ajax-modal"
+																					data-href="_ajax/nestable_edit.html" 
+																					data-ajax-modal-size="modal-md" 
+																					data-ajax-modal-centered="false">
+																					<i class="fi fi-pencil"></i>
+																				</a>
+																				<a href="#" class="nestable-del">
+																					<i class="fi fi-thrash"></i>
+																				</a>
+																			</div>
+
+																		</li>
+																	</ol>
+																</li>
+																<li class="dd-item dd-has-options dd-handle-custom" data-id="9">
+
+																	<div class="dd-content text-truncate">Item 9</div>
+																	<div class="dd-handle fi fi-list"></div>
+
+																	<div class="nestable-options">
+																		<a href="#" class="nestable-edit js-ajax-modal"
+																			data-href="_ajax/nestable_edit.html" 
+																			data-ajax-modal-size="modal-md" 
+																			data-ajax-modal-centered="false">
+																			<i class="fi fi-pencil"></i>
+																		</a>
+																		<a href="#" class="nestable-del">
+																			<i class="fi fi-thrash"></i>
+																		</a>
+																	</div>
+
+																</li>
+																<li class="dd-item dd-has-options dd-handle-custom" data-id="10">
+
+																	<div class="dd-content text-truncate">Item 10</div>
+																	<div class="dd-handle fi fi-list"></div>
+
+																	<div class="nestable-options">
+																		<a href="#" class="nestable-edit js-ajax-modal"
+																			data-href="_ajax/nestable_edit.html" 
+																			data-ajax-modal-size="modal-md" 
+																			data-ajax-modal-centered="false">
+																			<i class="fi fi-pencil"></i>
+																		</a>
+																		<a href="#" class="nestable-del">
+																			<i class="fi fi-thrash"></i>
+																		</a>
+																	</div>
+
+																</li>
+															</ol>
+														</li>
+														<li class="dd-item dd-has-options dd-handle-custom" data-id="11">
+
+															<div class="dd-content text-truncate">Item 11</div>
+															<div class="dd-handle fi fi-list"></div>
+
+															<div class="nestable-options">
+																<a href="#" class="nestable-edit js-ajax-modal"
+																	data-href="_ajax/nestable_edit.html" 
+																	data-ajax-modal-size="modal-md" 
+																	data-ajax-modal-centered="false">
+																	<i class="fi fi-pencil"></i>
+																</a>
+																<a href="#" class="nestable-del">
+																	<i class="fi fi-thrash"></i>
+																</a>
+															</div>
+
+														</li>
+														<li class="dd-item dd-has-options dd-handle-custom" data-id="12">
+
+															<div class="dd-content text-truncate">Item 12</div>
+															<div class="dd-handle fi fi-list"></div>
+
+															<div class="nestable-options">
+																<a href="#" class="nestable-edit js-ajax-modal"
+																	data-href="_ajax/nestable_edit.html" 
+																	data-ajax-modal-size="modal-md" 
+																	data-ajax-modal-centered="false">
+																	<i class="fi fi-pencil"></i>
+																</a>
+																<a href="#" class="nestable-del">
+																	<i class="fi fi-thrash"></i>
+																</a>
+															</div>
+
+														</li>
+													</ol>
+										        </div>
+
+									        </div>
+
+										</div>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+					</div>
+					<!-- end:row: -->
+					<!-- doc:end -->

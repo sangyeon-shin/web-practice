@@ -1,0 +1,120 @@
+﻿					<!-- doc:start -->
+					<div class="page-title bg-transparent b-0">
+
+						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
+							SOW : Button Toggle
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--13 pb-2 px-3">
+								<li class="breadcrumb-item">
+									<a href="index.html" class="js-ajax">Dashboard</a>
+								</li>
+								<li class="breadcrumb-item active">
+									SOW : Core Plugins
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Button Toggle
+								</li>
+							</ol>
+						</nav>
+
+					</div>
+
+
+
+					<!-- ALERT : NOTE -->
+					<div class="bg-white shadow-xs p-2 mb-4 rounded">
+						<div class="clearfix bg-light p-2 rounded d-flex align-items-center">
+							<span class="btn row-pill btn-sm bg-gradient-warning b-0 py-1 mb-0 float-start">
+								<i class="fi fi-round-info-full"></i>
+								Note
+							</span>
+							<span class="d-block px-2 text-muted text-truncate">
+								This is a basic demo! Please see main <a href="../../html_frontend/documentation/plugins-sow-btn-toggle.html" target="smarty" class="link-muted">full documentation here</a>.
+							</span>
+						</div>
+					</div>
+					<!-- /ALERT : NOTE -->
+
+
+
+					<!-- start:row -->
+					<div class="row gutters-sm">
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Examples</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+											<a href="#!" class="btn btn-primary btn-soft btn-toggle">
+												<span class="group-icon">
+													<i class="fi fi fi-arrow-end-slim"></i>
+													<i class="fi fi-close"></i>
+												</span>
+
+												<span>Click Me</span>
+											</a>
+
+
+											<h6 class="mt-6">Temporized</h6>
+											<a href="#!" class="btn btn-primary btn-soft btn-toggle" data-toggle-temporized="1000">
+												<span class="group-icon">
+													<i class="fi fi fi-arrow-end-slim"></i>
+													<i class="fi fi-close"></i>
+												</span>
+
+												<span>Click Me</span>
+											</a>
+
+
+											<h6 class="mt-6">Ajax Request : 2 way</h6>
+											<a 	href="#" 
+												class="btn-toggle btn btn-sm btn-outline-secondary"
+												data-toggle-ajax-url-on="../../html_frontend/demo.files/php/demo.ajax_file_upload.php?item_id=1&amp;favourite=1"
+												data-toggle-ajax-url-off="../../html_frontend/demo.files/php/demo.ajax_file_upload.php?item_id=1&amp;favourite=0"
+												data-toast-success-message="Yay! Clicked me!"
+												data-toast-success-position="bottom-center">
+												<span class="group-icon">
+													<i class="fi fi-star-empty text-muted"></i>
+													<i class="fi fi-star-full text-warning"></i>
+												</span>
+												<span>Click</span>
+											</a>
+
+
+											<h6 class="mt-6">Ajax Request : 1 way &amp; disable</h6>
+											<a href="javascript:;" class="btn-toggle btn btn-primary py-1 px-2 fs--14"
+												data-toggle-ajax-url-on="../../html_frontend/demo.files/php/demo.ajax_request.php?comment_id=1&amp;vote=1"
+												data-toast-success-message="Yay! Clicked me!"
+												data-toast-success-position="bottom-center">
+												
+												<span class="group-icon">
+													<i class="fi fi-like"></i>
+													<i class="fi fi-like text-warning"></i>
+												</span>
+
+												<span>like</span>
+											</a>
+
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+					</div>
+					<!-- end:row: -->
+					<!-- doc:end -->

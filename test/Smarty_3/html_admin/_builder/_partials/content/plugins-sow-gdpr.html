@@ -1,0 +1,182 @@
+﻿					<!-- doc:start -->
+					<div class="page-title bg-transparent b-0">
+
+						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
+							SOW : GDPR
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--13 pb-2 px-3">
+								<li class="breadcrumb-item">
+									<a href="index.html" class="js-ajax">Dashboard</a>
+								</li>
+								<li class="breadcrumb-item active">
+									SOW : Core Plugins
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									GDPR
+								</li>
+							</ol>
+						</nav>
+
+					</div>
+
+
+
+					<!-- ALERT : NOTE -->
+					<div class="bg-white shadow-xs p-2 mb-4 rounded">
+						<div class="clearfix bg-light p-2 rounded d-flex align-items-center">
+							<span class="btn row-pill btn-sm bg-gradient-warning b-0 py-1 mb-0 float-start">
+								<i class="fi fi-round-info-full"></i>
+								Note
+							</span>
+							<span class="d-block px-2 text-muted text-truncate">
+								This is a basic demo! Please see main <a href="../../html_frontend/documentation/plugins-sow-gdpr.html" target="smarty" class="link-muted">full documentation here</a>.
+							</span>
+						</div>
+					</div>
+					<!-- /ALERT : NOTE -->
+
+
+
+					<!-- start:row -->
+					<div class="row gutters-sm">
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Examples</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<p>
+											Simple GDPR Accept Cookies! <br>
+											Able to extend the consent level - see below! <br>
+											<b class="text-danger">Reload this page to see the example.</b>
+										</p>
+
+
+									<pre class="bg-gradient-dark rounded p-4"><code>
+&lt;!-- 
+	Reset GDPR:
+		$.SOW.core.gdpr.destroy();
+		OR BY HASH: #del:gdpr
+
+	By hitting 'Accept &amp; Continue' Button, default cookie is set to 0 (all cookies accepted).
+
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	Extending Consent by level (examples):
+			0 = accept all cookies!
+			1 = website only
+			2 = website + advertising
+			... more if needed
+
+		JS USAGE EXAMPLE:
+			$.SOW.core.gdpr.extend(2); 	// allow website + advertising
+
+		HTML EXAMPLE
+			&lt;a href="#" class="btn-cookie-extend" data-cookie-level="2">Website + Advertising&lt;/a>
+
+		BACKEND:
+			Backend should use '__gdpr' cookie.
+
+
+	The following code should be present on all pages:
+-->
+&lt;div id="gdpr" class="hide bg-white rounded-lg shadow-lg w-100 max-w-350 p--30 m--15 position-fixed fixed-bottom right-0 z-index-9999">
+	
+	&lt;h3 class="fs--18 mb-4">
+		
+		&lt;a href="#" class="close mt--n3">
+			&lt;span class="fi fi-close fs--18" aria-hidden="true">&lt;/span>
+		&lt;/a>
+
+		Smarty Cookies
+
+	&lt;/h3>
+
+	&lt;hr>
+
+	&lt;p class="lead">
+		We use cookies to improve your experience on our site and to show you personalised ads.
+	&lt;/p>
+
+	&lt;a href="#" class="btn btn-primary btn-cookie-accept btn-lg btn-block">
+		Accept &amp;amp; Continue
+	&lt;/a>
+	
+	&lt;hr class="mt-4 mb-4">
+	
+	&lt;p class="m-0">
+
+		&lt;span class="d-block">Need to learn more?&lt;/span>
+
+		&lt;a href="#" class="link-muted">Privacy Policy&lt;/a> 
+		
+		&amp;ndash; and &amp;ndash; 
+		
+		&lt;a href="#" class="link-muted">Cookie Policy&lt;/a>
+
+	&lt;/p>
+&lt;/div>
+									</code></pre>
+
+
+
+										<div id="gdpr" class="hide bg-white rounded-lg shadow-lg w-100 max-w-350 p--30 m--15 position-fixed fixed-bottom right-0 z-index-9999">
+											
+											<h3 class="fs--18 mb-4">
+												
+												<a href="#" class="close mt--n3">
+													<span class="fi fi-close fs--18" aria-hidden="true"></span>
+												</a>
+
+												Smarty Cookies
+
+											</h3>
+
+											<hr>
+
+											<p class="lead">
+												We use cookies to improve your experience on our site and to show you personalised ads.
+											</p>
+
+											<a href="#" class="btn btn-primary btn-cookie-accept btn-lg btn-block">
+												Accept &amp; Continue
+											</a>
+											
+											<hr class="mt-4 mb-4">
+											
+											<p class="m-0">
+
+												<span class="d-block">Need to learn more?</span>
+
+												<a href="#" class="link-muted">Privacy Policy</a> 
+												
+												&ndash; and &ndash; 
+												
+												<a href="#" class="link-muted">Cookie Policy</a>
+
+											</p>
+										</div>
+
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+					</div>
+					<!-- end:row: -->
+					<!-- doc:end -->

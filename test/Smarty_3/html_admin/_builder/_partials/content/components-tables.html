@@ -1,0 +1,1086 @@
+﻿					<!-- doc:start -->
+					<div class="page-title bg-transparent b-0">
+
+						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
+							Tables
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--13 pb-2 px-3">
+								<li class="breadcrumb-item">
+									<a href="index.html" class="js-ajax">Dashboard</a>
+								</li>
+								<li class="breadcrumb-item active">
+									Components
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Tables
+								</li>
+							</ol>
+						</nav>
+
+					</div>
+
+
+
+					<!-- ALERT : NOTE -->
+					<div class="bg-white shadow-xs p-2 mb-4 rounded">
+						<div class="clearfix bg-light p-2 rounded d-flex align-items-center">
+							<span class="btn row-pill btn-sm bg-gradient-warning b-0 py-1 mb-0 float-start">
+								<i class="fi fi-round-info-full"></i>
+								Note
+							</span>
+							<span class="d-block px-2 text-muted text-truncate">
+								This is a basic demo! Please see main <a href="../../html_frontend/documentation/" target="smarty" class="link-muted">full documentation here</a>.
+							</span>
+						</div>
+					</div>
+					<!-- /ALERT : NOTE -->
+
+
+
+					<!-- start:row -->
+					<div class="row gutters-sm">
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Advanced Table</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<form class="bs-validate" novalidate="" id="form_id" method="post" action="#">
+
+											<!-- 
+
+												IMPORTANT
+												The "action" hidden input is updated by javascript according to button params/action:
+													data-js-form-advanced-hidden-action-id="#action"
+													data-js-form-advanced-hidden-action-value="delete"
+
+												In your backend, should process data like this (PHP example):
+
+													if($_POST['action'] === 'delete') {
+
+														foreach($_POST['item_id'] as $item_id) {
+															// ... delete $item_id from database
+														}
+
+													}
+
+											-->
+											<input type="hidden" id="action" name="action" value=""><!-- value populated by js -->
+
+
+											<div class="table-responsive">
+												<table class="table table-framed">
+													<thead>
+														<tr>
+															<th class="text-gray-500 w--50">
+																<label class="form-checkbox form-checkbox-primary float-start">
+																	<input class="checkall" data-checkall-container="#item_list" type="checkbox" name="checkbox">
+																	<i></i>
+																</label>
+															</th>
+															<th class="text-gray-500 font-weight-normal fs--14 w--120">&nbsp;</th>
+															<th class="text-gray-500 font-weight-normal fs--14 min-w-300">PRODUCT NAME</th>
+															<th class="text-gray-500 font-weight-normal fs--14 w--200">PRICE</th>
+															<th class="text-gray-500 font-weight-normal fs--14 w--120 text-center">BRAND</th>
+															<th class="text-gray-500 font-weight-normal fs--14 w--100 text-center">STATUS</th>
+															<th class="text-gray-500 font-weight-normal fs--14 w--60 text-align-end">&nbsp;</th>
+														</tr>
+													</thead>
+
+													<!-- #item_list used by checkall: data-checkall-container="#item_list" -->
+													<tbody id="item_list">
+														
+														<!-- product -->
+														<tr>
+															<!-- check item -->
+															<th>
+																<label class="form-checkbox form-checkbox-primary float-start">
+																	<input type="checkbox" name="item_id[]" value="1">
+																	<i></i>
+																</label>
+															</th>
+
+															<!-- image -->
+															<td>
+																<img src="../../html_frontend/demo.files/images/unsplash/brooke-cagle-g1Kr4Ozfoac-unsplash-100px.jpg" class="img-fluid" alt="...">
+															</td>
+
+															<!-- product name -->
+															<td>
+																<a href="#">
+																	Nike Air Max Thea Glitter
+																</a>
+																<span class="d-block text-muted fs--13">SKU-123456</span>
+				
+																<span class="d-block text-muted fs--13 mt--10">Sales: 233, Visits: 987, Reviews: 5</span>
+																<span class="d-block text-gray-500 fs--13">Last Edit:  Sep 26 2019 / 11:51am</span>
+
+															</td>
+
+															<!-- price -->
+															<td>
+
+																<span class="d-block text-danger fs--15">
+																	<sup>*</sup>Price: 10.00 
+																	<sup class="text-muted fs--10">USD</sup>
+																</span>
+
+																<span class="d-block text-success fs--15">
+																	Promo:  9.99 
+																	<sup class="text-muted fs--10">USD</sup>
+																</span>
+
+																<span class="d-block fs--13 mt--10 text-muted">
+																	<sup>**</sup> Inventory: 210
+																</span>
+
+																<span class="d-block text-muted fs--13">
+																	Variants: 6
+																</span>
+
+															</td>
+
+															<!-- brand -->
+															<td class="text-muted text-center">
+																Nike
+															</td>
+
+															<!-- status -->
+															<td class="text-center">
+																<a href="#" class="text-success btn btn-sm p-0">
+																	Active
+																</a>
+															</td>
+
+															<!-- options -->
+															<td class="text-align-end">
+
+																<div class="clearfix"><!-- using .dropdown, autowidth not working -->
+
+																	<a href="#" class="btn btn-sm btn-light rounded-circle" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+																		<span class="group-icon">
+																			<i class="fi fi-dots-vertical-full"></i>
+																			<i class="fi fi-close"></i>
+																		</span>
+																	</a>
+
+																	<div class="dropdown-menu dropdown-menu-clean dropdown-click-ignore max-w-220">
+																		
+																		<div class="scrollable-vertical max-h-50vh">
+
+																			<a class="dropdown-item text-truncate" href="#">
+																				<i class="fi fi-pencil"></i>
+																				Edit
+																			</a>
+																			<a 	href="#" 
+																				class="dropdown-item text-truncate js-ajax-confirm" 
+																				data-href="components-tables.html"
+																				data-ajax-confirm-method="GET" 
+																				data-ajax-confirm-mode="ajax" 
+																				data-ajax-confirm-size="modal-md" 
+																				data-ajax-confirm-centered="false" 
+																				data-ajax-confirm-callback-function="" 
+																				data-ajax-confirm-title="Please Confirm" 
+																				data-ajax-confirm-body="Set this product to active?" 
+																				data-ajax-confirm-btn-yes-text="Confirm" 
+																				data-ajax-confirm-btn-yes-class="btn-sm btn-success" 
+																				data-ajax-confirm-btn-yes-icon="fi fi-check" 
+																				data-ajax-confirm-btn-no-text="Cancel" 
+																				data-ajax-confirm-btn-no-class="btn-sm btn-light" 
+																				data-ajax-confirm-btn-no-icon="fi fi-close">
+																				<i class="fi fi-check"></i>
+																				Set : Active
+																			</a>
+																			<a 	href="#" 
+																				class="dropdown-item text-truncate js-ajax-confirm" 
+																				data-href="components-tables.html"
+																				data-ajax-confirm-method="GET" 
+																				data-ajax-confirm-mode="ajax" 
+																				data-ajax-confirm-size="modal-md" 
+																				data-ajax-confirm-centered="false" 
+																				data-ajax-confirm-callback-function="" 
+																				data-ajax-confirm-title="Please Confirm" 
+																				data-ajax-confirm-body="Are you sure? Set this product to inactive?" 
+																				data-ajax-confirm-btn-yes-text="Confirm" 
+																				data-ajax-confirm-btn-yes-class="btn-sm btn-warning" 
+																				data-ajax-confirm-btn-yes-icon="fi fi-check" 
+																				data-ajax-confirm-btn-no-text="Cancel" 
+																				data-ajax-confirm-btn-no-class="btn-sm btn-light" 
+																				data-ajax-confirm-btn-no-icon="fi fi-close">
+																				<i class="fi fi-close"></i>
+																				Set : Inactive
+																			</a>
+
+																			<!--
+																				
+																				The request is sent by ajax to data-href="..."
+																				To change to regular submit, change:
+																					data-ajax-confirm-mode="regular" 	(or simply remove this param)
+
+																			-->
+																			<a 	href="#" 
+																				class="dropdown-item text-truncate js-ajax-confirm" 
+																				data-href="components-tables.html"
+																				data-ajax-confirm-method="GET" 
+																				data-ajax-confirm-mode="ajax" 
+																				data-ajax-confirm-size="modal-md" 
+																				data-ajax-confirm-centered="false" 
+																				data-ajax-confirm-callback-function="" 
+																				data-ajax-confirm-title="Please Confirm" 
+																				data-ajax-confirm-body="Are you sure? Delete this product? <span class='d-block fs--12 mt--3'>Please note: this is a permanent action!</span>" 
+																				data-ajax-confirm-btn-yes-text="Confirm" 
+																				data-ajax-confirm-btn-yes-class="btn-sm btn-danger" 
+																				data-ajax-confirm-btn-yes-icon="fi fi-check" 
+																				data-ajax-confirm-btn-no-text="Cancel" 
+																				data-ajax-confirm-btn-no-class="btn-sm btn-light" 
+																				data-ajax-confirm-btn-no-icon="fi fi-close">
+																				<i class="fi fi-thrash text-danger"></i>
+																				Set : Delete
+																			</a>
+
+
+
+																		</div>
+
+																	</div>
+
+																</div>
+
+															</td>
+
+														</tr>
+														<!-- /product -->
+
+
+														<!-- product -->
+														<tr>
+
+															<!-- check item -->
+															<th>
+																<label class="form-checkbox form-checkbox-primary float-start">
+																	<input type="checkbox" name="item_id[]" value="2">
+																	<i></i>
+																</label>
+															</th>
+
+															<!-- image -->
+															<td>
+																<img src="../../html_frontend/demo.files/images/unsplash/brooke-cagle-g1Kr4Ozfoac-unsplash-100px.jpg" class="img-fluid" alt="...">
+															</td>
+
+															<!-- product name -->
+															<td>
+																<a href="#">
+																	Adidas - running faster than you can
+																</a>
+																<span class="d-block text-muted fs--13">SKU-123456</span>
+				
+																<span class="d-block text-muted fs--13 mt--10">Sales: 233, Visits: 987, Reviews: 5</span>
+																<span class="d-block text-gray-500 fs--13">Last Edit:  Sep 26 2019 / 11:51am</span>
+
+															</td>
+
+															<!-- price -->
+															<td>
+
+																<span class="d-block text-danger fs--15">
+																	Price: 59.00 
+																	<sup class="text-muted fs--10">USD</sup>
+																</span>
+
+																<span class="d-block fs--13 mt--10 text-muted">
+																	Inventory: 19
+																</span>
+
+															</td>
+
+															<!-- brand -->
+															<td class="text-muted text-center">
+																Adidas
+															</td>
+
+															<!-- status -->
+															<td class="text-center">
+																<a href="#" class="text-success btn btn-sm p-0">
+																	Active
+																</a>
+															</td>
+
+															<!-- options -->
+															<td class="text-align-end">
+
+																<div class="clearfix"><!-- using .dropdown, autowidth not working -->
+
+																	<a href="#" class="btn btn-sm btn-light rounded-circle" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+																		<span class="group-icon">
+																			<i class="fi fi-dots-vertical-full"></i>
+																			<i class="fi fi-close"></i>
+																		</span>
+																	</a>
+
+																	<div class="dropdown-menu dropdown-menu-clean dropdown-click-ignore max-w-220">
+																		
+																		<div class="scrollable-vertical max-h-50vh">
+
+																			<a class="dropdown-item text-truncate" href="#">
+																				<i class="fi fi-pencil"></i>
+																				Edit
+																			</a>
+																			<a 	href="#" 
+																				class="dropdown-item text-truncate js-ajax-confirm" 
+																				data-href="components-tables.html"
+																				data-ajax-confirm-method="GET" 
+																				data-ajax-confirm-mode="ajax" 
+																				data-ajax-confirm-size="modal-md" 
+																				data-ajax-confirm-centered="false" 
+																				data-ajax-confirm-callback-function="" 
+																				data-ajax-confirm-title="Please Confirm" 
+																				data-ajax-confirm-body="Set this product to active?" 
+																				data-ajax-confirm-btn-yes-text="Confirm" 
+																				data-ajax-confirm-btn-yes-class="btn-sm btn-success" 
+																				data-ajax-confirm-btn-yes-icon="fi fi-check" 
+																				data-ajax-confirm-btn-no-text="Cancel" 
+																				data-ajax-confirm-btn-no-class="btn-sm btn-light" 
+																				data-ajax-confirm-btn-no-icon="fi fi-close">
+																				<i class="fi fi-check"></i>
+																				Set : Active
+																			</a>
+																			<a 	href="#" 
+																				class="dropdown-item text-truncate js-ajax-confirm" 
+																				data-href="components-tables.html"
+																				data-ajax-confirm-method="GET" 
+																				data-ajax-confirm-mode="ajax" 
+																				data-ajax-confirm-size="modal-md" 
+																				data-ajax-confirm-centered="false" 
+																				data-ajax-confirm-callback-function="" 
+																				data-ajax-confirm-title="Please Confirm" 
+																				data-ajax-confirm-body="Are you sure? Set this product to inactive?" 
+																				data-ajax-confirm-btn-yes-text="Confirm" 
+																				data-ajax-confirm-btn-yes-class="btn-sm btn-warning" 
+																				data-ajax-confirm-btn-yes-icon="fi fi-check" 
+																				data-ajax-confirm-btn-no-text="Cancel" 
+																				data-ajax-confirm-btn-no-class="btn-sm btn-light" 
+																				data-ajax-confirm-btn-no-icon="fi fi-close">
+																				<i class="fi fi-close"></i>
+																				Set : Inactive
+																			</a>
+
+																			<!--
+																				
+																				The request is sent by ajax to data-href="..."
+																				To change to regular submit, change:
+																					data-ajax-confirm-mode="regular" 	(or simply remove this param)
+
+																			-->
+																			<a 	href="#" 
+																				class="dropdown-item text-truncate js-ajax-confirm" 
+																				data-href="components-tables.html"
+																				data-ajax-confirm-method="GET" 
+																				data-ajax-confirm-mode="ajax" 
+																				data-ajax-confirm-size="modal-md" 
+																				data-ajax-confirm-centered="false" 
+																				data-ajax-confirm-callback-function="" 
+																				data-ajax-confirm-title="Please Confirm" 
+																				data-ajax-confirm-body="Are you sure? Delete this product? <span class='d-block fs--12 mt--3'>Please note: this is a permanent action!</span>" 
+																				data-ajax-confirm-btn-yes-text="Confirm" 
+																				data-ajax-confirm-btn-yes-class="btn-sm btn-danger" 
+																				data-ajax-confirm-btn-yes-icon="fi fi-check" 
+																				data-ajax-confirm-btn-no-text="Cancel" 
+																				data-ajax-confirm-btn-no-class="btn-sm btn-light" 
+																				data-ajax-confirm-btn-no-icon="fi fi-close">
+																				<i class="fi fi-thrash text-danger"></i>
+																				Set : Delete
+																			</a>
+
+
+
+																		</div>
+
+																	</div>
+
+																</div>
+
+															</td>
+
+														</tr>
+														<!-- /product -->
+
+													</tbody>
+
+													<tfoot>
+														<tr>
+															<th class="text-gray-500 w--50">
+																<label class="form-checkbox form-checkbox-primary float-start">
+																	<input class="checkall" data-checkall-container="#item_list" type="checkbox" name="checkbox">
+																	<i></i>
+																</label>
+															</th>
+															<th class="text-gray-500 font-weight-normal fs--14 w--120">&nbsp;</th>
+															<th class="text-gray-500 font-weight-normal fs--14">PRODUCT NAME</th>
+															<th class="text-gray-500 font-weight-normal fs--14 w--200">PRICE</th>
+															<th class="text-gray-500 font-weight-normal fs--14 w--120 text-center">BRAND</th>
+															<th class="text-gray-500 font-weight-normal fs--14 w--100 text-center">STATUS</th>
+															<th class="text-gray-500 font-weight-normal fs--14 w--60 text-align-end">&nbsp;</th>
+														</tr>
+													</tfoot>
+
+												</table>
+											</div>
+
+
+
+											<!-- options and pagination -->
+											<div class="mt-4 text-center-xs">
+
+												<div class="row">
+
+													<div class="col-12 col-md-6 mt-4">
+
+
+														<!-- SELECTED ITEMS -->
+														<div class="clearfix"><!-- using .dropdown, autowidth not working -->
+
+															<a href="#" class="btn btn-sm btn-pill btn-light" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+																<span class="group-icon">
+																	<i class="fi fi-dots-vertical-full"></i>
+																	<i class="fi fi-close"></i>
+																</span>
+																<span>Selected Products</span>
+															</a>
+
+															<div class="dropdown-menu dropdown-menu-clean dropdown-click-ignore max-w-250">
+																
+																<div class="scrollable-vertical max-h-50vh">
+
+																	<a 	href="#" 
+																		class="dropdown-item text-truncate js-form-advanced-bulk"
+																		data-js-form-advanced-bulk-hidden-action-id="#action" 
+																		data-js-form-advanced-bulk-hidden-action-value="active" 
+																		data-js-form-advanced-bulk-container-items="#item_list" 
+																		data-js-form-advanced-bulk-required-selected="true" 
+																		data-js-form-advanced-bulk-required-txt-error="No Products Selected!" 
+																		data-js-form-advanced-bulk-required-txt-position="top-center" 
+																		data-js-form-advanced-bulk-required-custom-modal="" 
+																		data-js-form-advanced-bulk-required-custom-modal-content-ajax="" 
+																		data-js-form-advanced-bulk-required-modal-type="success" 
+																		data-js-form-advanced-bulk-required-modal-size="modal-md" 
+																		data-js-form-advanced-bulk-required-modal-txt-title="Please Confirm" 
+																		data-js-form-advanced-bulk-required-modal-txt-subtitle="Selected Products: {{no_selected}}" 
+																		data-js-form-advanced-bulk-required-modal-txt-body-txt="Set active {{no_selected}} selected products?" 
+																		data-js-form-advanced-bulk-required-modal-txt-body-info="" 
+																		data-js-form-advanced-bulk-required-modal-btn-text-yes="Confirm" 
+																		data-js-form-advanced-bulk-required-modal-btn-text-no="Cancel" 
+																		data-js-form-advanced-bulk-submit-without-confirmation="false" 
+																		data-js-form-advanced-form-id="#form_id">
+																		<i class="fi fi-check"></i>
+																		Set : Active
+																	</a>
+																	<a 	href="#" 
+																		class="dropdown-item text-truncate js-form-advanced-bulk" 
+																		data-js-form-advanced-bulk-hidden-action-id="#action" 
+																		data-js-form-advanced-bulk-hidden-action-value="inactive" 
+																		data-js-form-advanced-bulk-container-items="#item_list" 
+																		data-js-form-advanced-bulk-required-selected="true" 
+																		data-js-form-advanced-bulk-required-txt-error="No Products Selected!" 
+																		data-js-form-advanced-bulk-required-txt-position="top-center" 
+																		data-js-form-advanced-bulk-required-custom-modal="" 
+																		data-js-form-advanced-bulk-required-custom-modal-content-ajax="" 
+																		data-js-form-advanced-bulk-required-modal-type="warning" 
+																		data-js-form-advanced-bulk-required-modal-size="modal-md" 
+																		data-js-form-advanced-bulk-required-modal-txt-title="Please Confirm" 
+																		data-js-form-advanced-bulk-required-modal-txt-subtitle="Selected Products: {{no_selected}}" 
+																		data-js-form-advanced-bulk-required-modal-txt-body-txt="Set inactive {{no_selected}} selected products?" 
+																		data-js-form-advanced-bulk-required-modal-txt-body-info="" 
+																		data-js-form-advanced-bulk-required-modal-btn-text-yes="Confirm" 
+																		data-js-form-advanced-bulk-required-modal-btn-text-no="Cancel" 
+																		data-js-form-advanced-bulk-submit-without-confirmation="false" 
+																		data-js-form-advanced-form-id="#form_id">
+																		<i class="fi fi-close"></i>
+																		Set : Inactive
+																	</a>
+
+																	<a 	href="#" 
+																		class="dropdown-item text-truncate js-form-advanced-bulk" 
+																		data-js-form-advanced-bulk-hidden-action-id="#action" 
+																		data-js-form-advanced-bulk-hidden-action-value="delete" 
+																		data-js-form-advanced-bulk-container-items="#item_list" 
+																		data-js-form-advanced-bulk-required-selected="true" 
+																		data-js-form-advanced-bulk-required-txt-error="No Products Selected!" 
+																		data-js-form-advanced-bulk-required-txt-position="top-center" 
+																		data-js-form-advanced-bulk-required-custom-modal="" 
+																		data-js-form-advanced-bulk-required-custom-modal-content-ajax="" 
+																		data-js-form-advanced-bulk-required-modal-type="danger" 
+																		data-js-form-advanced-bulk-required-modal-size="modal-md" 
+																		data-js-form-advanced-bulk-required-modal-txt-title="Please Confirm" 
+																		data-js-form-advanced-bulk-required-modal-txt-subtitle="Selected Products: {{no_selected}}" 
+																		data-js-form-advanced-bulk-required-modal-txt-body-txt="Are you sure? Delete {{no_selected}} selected products?" 
+																		data-js-form-advanced-bulk-required-modal-txt-body-info="Please note: this is a permanent action!" 
+																		data-js-form-advanced-bulk-required-modal-btn-text-yes="Yes, Delete" 
+																		data-js-form-advanced-bulk-required-modal-btn-text-no="Cancel" 
+																		data-js-form-advanced-bulk-submit-without-confirmation="false" 
+																		data-js-form-advanced-form-id="#form_id">
+																		<i class="fi fi-thrash text-danger"></i>
+																		Set : Delete
+																	</a>
+
+																	<div class="dropdown-divider"></div>
+
+																	<a 	href="#" 
+																		class="dropdown-item text-truncate js-form-advanced-bulk" 
+																		data-js-form-advanced-bulk-hidden-action-id="#action" 
+																		data-js-form-advanced-bulk-hidden-action-value="myactionhere3" 
+																		data-js-form-advanced-bulk-container-items="#item_list" 
+																		data-js-form-advanced-bulk-required-selected="true" 
+																		data-js-form-advanced-bulk-required-txt-error="No Products Selected!" 
+																		data-js-form-advanced-bulk-required-txt-position="top-center" 
+																		data-js-form-advanced-bulk-submit-without-confirmation="true" 
+																		data-js-form-advanced-form-id="#form_id">
+																		<i class="fi fi-mollecules text-danger"></i>
+																		Submit : No Confirm.
+																	</a>
+
+																	<div class="dropdown-divider"></div>
+
+																	<a 	href="#" 
+																		class="dropdown-item text-truncate js-form-advanced-bulk" 
+																		data-js-form-advanced-bulk-hidden-action-id="#action" 
+																		data-js-form-advanced-bulk-hidden-action-value="myactionhere1" 
+																		data-js-form-advanced-bulk-container-items="#item_list" 
+																		data-js-form-advanced-bulk-required-selected="true" 
+																		data-js-form-advanced-bulk-required-txt-error="No Products Selected!" 
+																		data-js-form-advanced-bulk-required-custom-modal="#my_custom_modal" 
+																		data-js-form-advanced-bulk-required-custom-modal-content-ajax="" 
+																		data-js-form-advanced-bulk-submit-without-confirmation="false" 
+																		data-js-form-advanced-form-id="#form_id">
+																		<i class="fi fi-heart-slim text-success"></i>
+																		Inline Custom Modal
+																	</a>
+
+
+
+																</div>
+
+															</div>
+
+														</div>
+														<!-- /SELECTED ITEMS -->
+
+
+														<!-- Inline custom modal (should stay inside <form> to be able to post data) -->
+														<div class="modal fade show" id="my_custom_modal" role="dialog" tabindex="-1" aria-labelledby="modal-title-confirm" aria-hidden="true">
+															<div class="modal-dialog" role="document">
+																<div class="modal-content">
+
+																	<!--
+
+																		Header color - optional
+																			.bg-[primary|danger|warning|success|info|pink|indigo]-soft
+																	-->
+																	<div class="modal-header b-0 bg-primary-soft">
+																		<h5 id="modal-title-confirm" class="modal-title font-weight-light fs--18">
+																			Inline custom modal
+																		</h5>
+
+																		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+																			<span class="fi fi-close fs--18" aria-hidden="true"></span>
+																		</button>
+
+																	</div>
+																	<!-- /header -->
+
+																	<!-- body -->
+																	<div class="modal-body pt--30 pb--30">
+
+																		Selected items: <span class="js-form-advanced-selected-items">0</span>
+
+
+																		<div class="fs--18">
+																			Customize as you like! <br><br>
+
+																			<!-- FILE UPLOADER -->
+																			<div class="clearfix">
+																				<!--
+
+																					2. AJAX UPLOAD : DYNAMIC PROGRESS UNDER BUTTON
+																					No any extra html code needed for the progress bar.
+
+																				-->
+																				<label class="btn btn-warning btn-sm cursor-pointer position-relative">
+
+																					<!-- 
+																						We use .absolute-full class instead of .viewport-out
+																						Just to make sure the element is working crossbrowser!
+
+																						.show-hover-container  	= show delete button only on hover (always visible on mobile)
+
+																					 -->
+																				    <input 	name="ajax_files_progress_dynamic[]" 
+																				    		multiple=""
+																				    		type="file" 
+
+																				    		data-file-ext="jpg,png,gif"
+																				    		data-file-max-size-kb-per-file="3000"
+																				    		data-file-max-size-kb-total="5000" 
+																				    		data-file-max-total-files="3"
+																				    		data-file-ext-err-msg="Allowed:" 
+																				    		data-file-exist-err-msg="File already exists:"
+																				    		data-file-size-err-item-msg="File too large!"
+																				    		data-file-size-err-total-msg="Total allowed size exceeded!"
+																				    		data-file-size-err-max-msg="Maximum allowed files:"
+																				    		data-file-toast-position="bottom-center"
+																				    		data-file-preview-container=".js-form-advanced-container-table-form-test" 
+																				    		data-file-preview-img-height="120" 
+																				    		data-file-preview-show-info="true" 
+																				    		data-file-preview-class="show-hover-container shadow-md m-2 rounded float-start" 
+																				    		data-file-preview-img-cover="false" 
+																				    		data-file-btn-clear="a.js-form-advanced-btn-multiple-ajax-remove"
+
+																				    		data-file-ajax-upload-enable="true"
+																				    		data-file-ajax-upload-url="../../html_frontend/demo.files/php/demo.ajax_file_upload.php"
+																				    		data-file-ajax-upload-params="['action','upload']['param2','value2']"
+
+																				    		data-file-ajax-delete-enable="true"
+																				    		data-file-ajax-delete-url="../../html_frontend/demo.files/php/demo.ajax_file_upload.php"
+																				    		data-file-ajax-delete-params="['action','delete_file']"
+
+																				    		data-file-ajax-reorder-enable="true"
+																				    		data-file-ajax-reorder-url="../../html_frontend/demo.files/php/demo.ajax_file_upload.php"
+																				    		data-file-ajax-reorder-params="['action','reorder']"
+																							data-file-ajax-reorder-toast-success="Order Saved!" 
+																							data-file-ajax-reorder-toast-position="bottom-center" 
+
+																				    		data-file-ajax-toast-success-txt="Successfully Uploaded!"
+																				    		data-file-ajax-toast-error-txt="One or more files not uploaded!"
+																				    		data-file-ajax-callback-function=""
+																				    		data-file-ajax-progressbar-custom=""
+																				    		data-file-ajax-progressbar-disable="false"
+
+
+																				    		class="custom-file-input absolute-full">
+
+																					<span class="group-icon">
+																						<i class="fi fi-arrow-upload"></i>
+																						<i class="fi fi-circle-spin fi-spin"></i>
+																		    		</span> 
+
+																					<span>Ajax Uploader</span>
+
+																				</label>
+
+																				<div class="js-form-advanced-container-table-form-test position-relative mt-3 clearfix hide-empty"></div>
+																				<small class="d-block text-gray-400">Upload few images and then... reorder them :)</small>
+																			</div>	
+																			<!-- /FILE UPLOADER -->
+
+																			<br>
+																			<small>Yes, ajax content for modals also supported!</small><br>
+																			<small>Check <a href="plugins-sow-form-advanced.html" class="js-ajax link-muted">SOW : Form Advanced</a> for more &amp; documentation!</small>
+																		</div>
+
+																	</div>
+																	<!-- /body -->
+
+																	<!-- footer ; buttons -->
+																	<div class="modal-footer">
+
+																		<!-- submit button - actually submitting the form -->
+																		<button type="submit" class="btn pt--10 pb--10 fs--16 btn-primary">
+																			<i class="fi fi-check"></i> Oh, Great!
+																		</button>
+
+																		<!-- cancel|close button -->
+																		<a href="#" class="btn pt--10 pb--10 fs--16 btn-light" data-dismiss="modal">
+																			<i class="fi fi-close"></i> Close
+																		</a>
+
+																	</div>
+																	<!-- /footer ; buttons -->
+
+																</div>
+
+															</div>
+														</div>
+														<!-- /Inline custom modal -->
+
+
+													</div>
+													
+													<div class="col-12 col-md-6 mt-4">
+
+														<!-- pagination -->
+														<nav aria-label="pagination">
+															<ul class="pagination pagination-pill justify-content-end justify-content-center justify-content-md-end">
+
+																<li class="page-item disabled btn-pill ">
+																	<a class="page-link" href="#" tabindex="-1" aria-disabled="true">Prev</a>
+																</li>
+																
+																<li class="page-item active" aria-current="page">
+																	<a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
+																</li>
+																
+																<li class="page-item">
+																	<a class="page-link" href="#">2</a>
+																</li>
+																
+																<li class="page-item">
+																	<a class="page-link" href="#">3</a>
+																</li>
+																
+																<li class="page-item">
+																	<a class="page-link" href="#">Next</a>
+																</li>
+
+															</ul>
+														</nav>
+														<!-- pagination -->
+													</div>
+
+												</div>
+
+											</div>
+											<!-- /options and pagination -->
+
+										</form>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Standard Tables</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+
+										<h5 class="mb-4 mt-5 text-gray-400">Small</h5>
+										<div id="clipboard_0" class="p--15 bg-white rounded">
+											
+											<div class="table-responsive">
+												<table class="table table-sm">
+													<thead>
+														<tr>
+															<th scope="col">#</th>
+															<th scope="col">First</th>
+																<th scope="col">Last</th>
+														<th scope="col">Handle</th>
+														</tr>
+													</thead>
+
+													<tbody>
+														<tr>
+															<th scope="row">1</th>
+															<td>Mark</td>
+															<td>Otto</td>
+															<td>@mdo</td>
+															</tr>
+														<tr>
+															<th scope="row">2</th>
+															<td>Jacob</td>
+															<td>Thornton</td>
+															<td>@fat</td>
+														</tr>
+														<tr>
+															<th scope="row">3</th>
+															<td>Larry</td>
+															<td>the Bird</td>
+															<td>@twitter</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+
+										</div>
+
+
+										<h5 class="mb-4 mt-5 text-gray-400">Large</h5>
+										<div id="clipboard_1" class="p--15 bg-white rounded">
+											
+											<div class="table-responsive">
+												<table class="table table-lg">
+													<thead>
+														<tr>
+															<th scope="col">#</th>
+															<th scope="col">First</th>
+																<th scope="col">Last</th>
+														<th scope="col">Handle</th>
+														</tr>
+													</thead>
+
+													<tbody>
+														<tr>
+															<th scope="row">1</th>
+															<td>Mark</td>
+															<td>Otto</td>
+															<td>@mdo</td>
+															</tr>
+														<tr>
+															<th scope="row">2</th>
+															<td>Jacob</td>
+															<td>Thornton</td>
+															<td>@fat</td>
+														</tr>
+														<tr>
+															<th scope="row">3</th>
+															<td>Larry</td>
+															<td>the Bird</td>
+															<td>@twitter</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+
+										</div>
+
+
+										<h5 class="mb-4 text-gray-400">Regular</h5>
+										<div id="clipboard_2" class="p--15 bg-white rounded">
+											<table class="table">
+												<thead>
+													<tr>
+														<th scope="col">#</th>
+														<th scope="col">First</th>
+															<th scope="col">Last</th>
+													<th scope="col">Handle</th>
+													</tr>
+												</thead>
+
+												<tbody>
+													<tr>
+														<th scope="row">1</th>
+														<td>Mark</td>
+														<td>Otto</td>
+														<td>@mdo</td>
+														</tr>
+													<tr>
+														<th scope="row">2</th>
+														<td>Jacob</td>
+														<td>Thornton</td>
+														<td>@fat</td>
+													</tr>
+													<tr>
+														<th scope="row">3</th>
+														<td>Larry</td>
+														<td>the Bird</td>
+														<td>@twitter</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+
+
+										<h5 class="mb-4 mt-5 text-gray-400">Bordered</h5>
+										<div id="clipboard_3" class="p--15 bg-white rounded">
+											<table class="table table-bordered">
+												<thead>
+													<tr>
+														<th scope="col">#</th>
+														<th scope="col">First</th>
+															<th scope="col">Last</th>
+													<th scope="col">Handle</th>
+													</tr>
+												</thead>
+
+												<tbody>
+													<tr>
+														<th scope="row">1</th>
+														<td>Mark</td>
+														<td>Otto</td>
+														<td>@mdo</td>
+														</tr>
+													<tr>
+														<th scope="row">2</th>
+														<td>Jacob</td>
+														<td>Thornton</td>
+														<td>@fat</td>
+													</tr>
+													<tr>
+														<th scope="row">3</th>
+														<td>Larry</td>
+														<td>the Bird</td>
+														<td>@twitter</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+
+
+										<h5 class="mb-4 mt-5 text-gray-400">Borderless</h5>
+										<div id="clipboard_4" class="p--15 bg-white rounded">
+											<table class="table table-borderless">
+												<thead>
+													<tr>
+														<th scope="col">#</th>
+														<th scope="col">First</th>
+															<th scope="col">Last</th>
+													<th scope="col">Handle</th>
+													</tr>
+												</thead>
+
+												<tbody>
+													<tr>
+														<th scope="row">1</th>
+														<td>Mark</td>
+														<td>Otto</td>
+														<td>@mdo</td>
+														</tr>
+													<tr>
+														<th scope="row">2</th>
+														<td>Jacob</td>
+														<td>Thornton</td>
+														<td>@fat</td>
+													</tr>
+													<tr>
+														<th scope="row">3</th>
+														<td>Larry</td>
+														<td>the Bird</td>
+														<td>@twitter</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+
+
+										<h5 class="mb-4 mt-5 text-gray-400">Striped</h5>
+										<div id="clipboard_5" class="p--15 bg-white rounded">
+											<table class="table table-striped">
+												<thead>
+													<tr>
+														<th scope="col">#</th>
+														<th scope="col">First</th>
+															<th scope="col">Last</th>
+													<th scope="col">Handle</th>
+													</tr>
+												</thead>
+
+												<tbody>
+													<tr>
+														<th scope="row">1</th>
+														<td>Mark</td>
+														<td>Otto</td>
+														<td>@mdo</td>
+														</tr>
+													<tr>
+														<th scope="row">2</th>
+														<td>Jacob</td>
+														<td>Thornton</td>
+														<td>@fat</td>
+													</tr>
+													<tr>
+														<th scope="row">3</th>
+														<td>Larry</td>
+														<td>the Bird</td>
+														<td>@twitter</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+
+
+										<h5 class="mb-4 mt-5 text-gray-400">Hover</h5>
+										<div id="clipboard_6" class="p--15 bg-white rounded">
+											<table class="table table-hover">
+												<thead>
+													<tr>
+														<th scope="col">#</th>
+														<th scope="col">First</th>
+															<th scope="col">Last</th>
+													<th scope="col">Handle</th>
+													</tr>
+												</thead>
+
+												<tbody>
+													<tr>
+														<th scope="row">1</th>
+														<td>Mark</td>
+														<td>Otto</td>
+														<td>@mdo</td>
+														</tr>
+													<tr>
+														<th scope="row">2</th>
+														<td>Jacob</td>
+														<td>Thornton</td>
+														<td>@fat</td>
+													</tr>
+													<tr>
+														<th scope="row">3</th>
+														<td>Larry</td>
+														<td>the Bird</td>
+														<td>@twitter</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+
+										<h5 class="mb-4 mt-5 text-gray-400">Dark</h5>
+										<div id="clipboard_7" class="p--15 bg-white rounded">
+											<table class="table table-striped table-dark">
+												<thead>
+													<tr>
+														<th scope="col">#</th>
+														<th scope="col">First</th>
+															<th scope="col">Last</th>
+													<th scope="col">Handle</th>
+													</tr>
+												</thead>
+
+												<tbody>
+													<tr>
+														<th scope="row">1</th>
+														<td>Mark</td>
+														<td>Otto</td>
+														<td>@mdo</td>
+														</tr>
+													<tr>
+														<th scope="row">2</th>
+														<td>Jacob</td>
+														<td>Thornton</td>
+														<td>@fat</td>
+													</tr>
+													<tr>
+														<th scope="row">3</th>
+														<td>Larry</td>
+														<td>the Bird</td>
+														<td>@twitter</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+					</div>
+					<!-- end:row: -->
+					<!-- doc:end -->

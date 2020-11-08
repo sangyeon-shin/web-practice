@@ -1,0 +1,179 @@
+		<div class="modal-header">
+			<h2 class="modal-title fs--18 m-0">
+				Contact
+			</h2>
+
+			<button type="button" class="close pointer" data-dismiss="modal" aria-label="Close">
+				<span class="fi fi-close fs--18" aria-hidden="true"></span>
+			</button>
+		</div>
+
+		<div class="modal-body p--30">
+
+			<div class="accordion" id="accordionDropdownContact">
+
+
+				<!-- 
+					CONTACT FORM : AJAX 
+
+						Plugin required: SOW Ajax Forms
+
+						In order to work as ajax form, SOW Ajax Forms should be available/enabled
+						Else, SOW Form Validation plugin is used.
+						If none of them are available, normal submit is used and you can remove:
+							.js-ajax
+							.bs-validate
+							novalidate
+							any data-ajax-*
+							any data-error-*
+
+						** Remove data-error-toast-* for no error toast notifications
+
+					+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+					NOTE: method="GET" is used in this demo!
+					Most contact form are using "POST". So change as you need!
+					The URL you post the data, should also return a success message
+					like the one in action="_ajax/ajax_form_test_submit.html"
+					+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+				-->
+				<form 	novalidate 
+						action="_ajax/ajax_form_test_submit.html" 
+						method="GET" 
+
+						data-ajax-container="#ajax_dd_contact_response_container" 
+						data-ajax-update-url="false" 
+						data-ajax-show-loading-icon="true" 
+						data-ajax-callback-function="" 
+						data-error-scroll-up="true" 
+						
+						data-error-toast-text="<i class='fi fi-circle-spin fi-spin float-start'></i> Please, complete all required fields!" 
+						data-error-toast-delay="2000" 
+						data-error-toast-position="bottom-center"
+
+						data-parent="#accordionDropdownContact"
+						class="collapse bs-validate js-ajax show" 
+						id="accordionDropdownContactForm">
+
+
+					<!-- 1. 
+						optional, hidden action for your backend
+
+						PHP Basic Example
+						if($_POST['action'] == 'contact_form_submit') {
+							... send message
+						}
+					-->
+					<input type="hidden" name="action" value="contact_form_submit" tabindex="-1"> 
+					<!-- -->
+
+
+					<!-- 2. 
+						A very small optional trick (using .hide class instead of type="hidden") for some low spam robots. 
+						If this is not empty, the process should stop. A normal user/visitor should not be able to see this field.
+
+						PHP Basic Example
+						if($_POST['norobot'] != '') {
+							exit;
+						}
+					-->
+					<input type="text" name="norobot" value="" class="hide" tabindex="-1"> 
+					<!-- -->
+					
+					<div class="p--30 pt--0">
+
+						<h3 class="h5 text-center pt-4 pb-3">
+							Contact Us
+						</h3>
+
+						<div id="ajax_dd_contact_response_container"><!-- ajax response container --></div>
+
+						<div class="form-label-group mb-3">
+							<input required placeholder="Name" id="contact_name" type="text" class="form-control form-control-clean">
+							<label for="contact_name">Name</label>
+						</div>
+
+						<div class="form-label-group mb-3">
+							<input required placeholder="Email" id="contact_email" type="email" class="form-control form-control-clean">
+							<label for="contact_email">Email</label>
+						</div>
+
+						<div class="form-label-group mb-3">
+							<input required placeholder="Phone" id="contact_phone" type="text" class="form-control form-control-clean">
+							<label for="contact_phone">Phone</label>
+						</div>
+
+						<div class="form-label-group mb-4">
+							<textarea required placeholder="Message" id="contact_message" class="form-control form-control-clean" rows="3"></textarea>
+							<label for="contact_message">Message</label>
+						</div>
+
+						<button type="submit" class="btn btn-primary btn-soft btn-block">
+							Send Message
+						</button>
+
+						<div class="text-center mt--30">
+							<a href="#accordionDropdownContactDetail" class="d-block text-success text-decoration-none" data-toggle="collapse" aria-expanded="true" aria-controls="accordionDropdownContactDetail">
+								Contact Detail
+							</a>
+						</div>
+
+					</div>
+				</form>
+				<!-- /CONTACT FORM : AJAX -->
+
+				<!-- 
+					DETAIL 
+
+					Note: 	form is empty but required by bootstrap 
+							to keep the dropdown open on click.
+				-->
+				<form action="#" method="get" class="collapse" id="accordionDropdownContactDetail" data-parent="#accordionDropdownContact">
+
+					<div class="p--30 pt--0">
+
+						<h3 class="h5 text-center pt-4 pb-3">
+							Contact Detail
+						</h3>
+
+						<p class="font-weight-light fs--15">
+							Thank you very much for your interest in Smarty. If you have questions, please contact us using our form or by adress/phone.
+						</p>
+
+						<div class="h5 font-weight-medium pb-2 pt-3">
+							My Company Inc
+						</div>
+
+						<div class="clearfix pb-1">
+							Address: <span class="text-muted">Lorem iptum dolor sit amet</span>
+						</div>
+						
+						<div class="clearfix pb-1">
+							Phone: <a href="tel:+01-555-5555" class="d-inline-block link-muted">(+01) 555-5555</a>
+						</div>
+
+						<div class="clearfix pb-1">
+							Email: <a href="email:me@mycompany.com" class="d-inline-block link-muted">me@mycompany.com</a>
+						</div>
+
+						<div class="py-3">
+							<img src="../demo.files/logo/logo_dark.svg" width="110" height="60" alt="...">
+						</div>
+
+						<div class="text-center mt--30">
+							<a href="#accordionDropdownContactForm" class="d-block text-muted text-decoration-none" data-toggle="collapse" aria-expanded="true" aria-controls="accordionDropdownContactForm">
+								Back to contact form
+							</a>
+						</div>
+
+					</div>
+				</form>
+				<!-- /DETAIL -->
+
+
+			</div>
+
+		</div>
+
+		<div class="border-top text-muted p--15 fs--13 bg-light rounded-bottom pl--30 pr--30 pt--20 pb--20">
+			<b>Privacy:</b> All data is secure, never transfered to a third party provider/service.
+		</div>

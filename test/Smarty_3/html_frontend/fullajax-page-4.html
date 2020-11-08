@@ -1,0 +1,940 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Smarty V3</title>
+		<meta name="description" content="...">
+
+        <meta name="viewport" content="width=device-width, maximum-scale=5, initial-scale=1, user-scalable=0">
+        <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+        <!-- up to 10% speed up for external res -->
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+        <link rel="preconnect" href="https://fonts.googleapis.com/">
+        <link rel="preconnect" href="https://fonts.gstatic.com/">
+        <!-- preloading icon font is helping to speed up a little bit -->
+        <link rel="preload" href="assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
+
+        <link rel="stylesheet" href="assets/css/core.min.css">
+        <link rel="stylesheet" href="assets/css/vendor_bundle.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap">
+
+		<!-- favicon -->
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="apple-touch-icon" href="demo.files/logo/icon_512x512.png">
+
+		<link rel="manifest" href="assets/images/manifest/manifest.json">
+		<meta name="theme-color" content="#377dff">
+
+	</head>
+
+	<!--
+
+		Available Body Classes
+			.layout-boxed 					- boxed layout (ignored if any .header-* class is present)
+
+			.header-scroll-reveal  			- header : hide on scroll down and reveal on scroll up
+			.header-sticky  				- header : always visible on top
+			.header-over  					- header : over slider|parallax|image (next section must contain a large image, else will be indistinguishable)
+
+				Possible header combinations:
+					.header-over + .header-scroll-reveal
+					.header-over + .header-sticky
+						* NOTE: if .header-sticky + .header-scroll-reveal are both used, .header-scroll-reveal is ignored
+
+
+			.bg-cover .bg-fixed 			- both classes used with .layout-boxed to set a background image via style="background-image:url(...)"
+	-->
+	<body class="header-scroll-reveal">
+
+		<div id="wrapper">
+
+
+			<!-- HEADER -->
+			<header id="header">
+
+
+				<!-- NAVBAR -->
+				<div class="container position-relative">
+
+					<nav class="navbar navbar-expand-lg navbar-light justify-content-lg-between justify-content-md-inherit">
+
+						<div class="align-items-start">
+
+							<!-- mobile menu button : show -->
+							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMainNav" aria-controls="navbarMainNav" aria-expanded="false" aria-label="Toggle navigation">
+								<svg width="25" viewBox="0 0 20 20">
+									<path d="M 19.9876 1.998 L -0.0108 1.998 L -0.0108 -0.0019 L 19.9876 -0.0019 L 19.9876 1.998 Z"></path>
+									<path d="M 19.9876 7.9979 L -0.0108 7.9979 L -0.0108 5.9979 L 19.9876 5.9979 L 19.9876 7.9979 Z"></path>
+									<path d="M 19.9876 13.9977 L -0.0108 13.9977 L -0.0108 11.9978 L 19.9876 11.9978 L 19.9876 13.9977 Z"></path>
+									<path d="M 19.9876 19.9976 L -0.0108 19.9976 L -0.0108 17.9976 L 19.9876 17.9976 L 19.9876 19.9976 Z"></path>
+								</svg>
+							</button>
+
+							<!-- 
+								Logo : height: 70px max
+							-->
+							<a class="navbar-brand js-ajax" href="fullajax-index.html">
+								<img src="assets/images/logo/logo_dark.svg" width="110" height="70" alt="...">
+							</a>
+
+						</div>
+
+
+
+
+						<!-- Menu -->
+						<div class="collapse navbar-collapse navbar-animate-fadein" id="navbarMainNav">
+
+
+							<!-- MOBILE MENU NAVBAR -->
+							<div class="navbar-xs d-none"><!-- .sticky-top -->
+
+								<!-- mobile menu button : close -->
+								<button class="navbar-toggler pt-0" type="button" data-toggle="collapse" data-target="#navbarMainNav" aria-controls="navbarMainNav" aria-expanded="false" aria-label="Toggle navigation">
+									<svg width="20" viewBox="0 0 20 20">
+										<path d="M 20.7895 0.977 L 19.3752 -0.4364 L 10.081 8.8522 L 0.7869 -0.4364 L -0.6274 0.977 L 8.6668 10.2656 L -0.6274 19.5542 L 0.7869 20.9676 L 10.081 11.679 L 19.3752 20.9676 L 20.7895 19.5542 L 11.4953 10.2656 L 20.7895 0.977 Z"></path>
+									</svg>
+								</button>
+
+								<!-- 
+									Mobile Menu Logo 
+									Logo : height: 70px max
+								-->
+								<a class="navbar-brand js-ajax" href="fullajax-index.html">
+									<img src="assets/images/logo/logo_dark.svg" width="110" height="70" alt="...">
+								</a>
+
+							</div>
+							<!-- /MOBILE MENU NAVBAR -->
+
+
+
+							<!-- NAVIGATION -->
+							<ul class="navbar-nav">
+
+								<!-- Features -->
+								<li class="nav-item dropdown">
+
+									<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="mainNavFeatures">
+										Features
+									</a>
+
+									<div class="dropdown-menu dropdown-menu-clean dropdown-menu-hover w--350 p-0 overflow-hidden" aria-labelledby="mainNavFeatures">
+
+										<div class="row no-gutters bg-gradient-default">
+
+											<div class="col-2 d-none d-lg-block"><!-- empty -->
+												
+												<!-- text-rotate-90 , text-rotate-180 -->
+												<p class="h6 mb-0 text-warning text-rotate-180 text-center position-absolute d-middle">
+													ORIGINAL • AUTHENTIC • 1877
+												</p>
+
+											</div>
+
+											<div class="col bg-white overflow-hidden">
+
+												<ul class="mx-0 px-0 my-2">
+
+													<li class="dropdown-item text-wrap">
+														<a class="js-ajax dropdown-link text-dark transition-hover-start p-3" href="fullajax-page-1.html">
+															<i class="fi fi-recycle float-start fs--25 mt--n2"></i>
+															<span class="h5-xs d-block fs--18">Engage and Convert</span>
+															<span class="fs--15 text-muted">
+																The all in one digital software
+															</span>
+														</a>
+													</li>
+
+													<li class="dropdown-item text-wrap">
+														<a class="js-ajax dropdown-link text-dark transition-hover-start p-3 line-height-1" href="fullajax-page-2.html">
+															<i class="fi fi-shape-abstract-cube float-start fs--25 mt--n2"></i>
+															<span class="h5-xs d-block fs--18">Lead Generation</span>
+															<span class="fs--11 text-muted text-uppercase">
+																Boost your campaigns
+															</span>
+														</a>
+													</li>
+
+													<li class="dropdown-item text-wrap">
+														<a class="js-ajax dropdown-link text-dark transition-hover-start p-3 line-height-1" href="fullajax-page-3.html">
+															<i class="fi fi-target-simple float-start fs--25 mt--n2"></i>
+															<span class="h5-xs d-block fs--18">Complete Sales Solution</span>
+															<span class="fs--15 text-muted">
+																Streamline a complex sales process
+															</span>
+														</a>
+													</li>
+
+												</ul>
+
+												<div class="position-relative bg-theme-color-light py-4 px-3">
+
+													<h6>Enterprise</h6>
+
+
+													<ul class="mx-0 px-0">
+
+														<li class="dropdown-item bg-transparent text-wrap">
+															<a class="js-ajax dropdown-link bg-transparent text-dark px-2 py-1" href="fullajax-page-4.html">
+																<i class="fi fi-arrow-end"></i>
+																QA Testing
+															</a>
+														</li>
+
+														<li class="dropdown-item bg-transparent text-wrap">
+															<a class="js-ajax dropdown-link bg-transparent text-dark px-2 py-1" href="fullajax-page-5.html">
+																<i class="fi fi-arrow-end"></i>
+																API
+															</a>
+														</li>
+
+													</ul>
+
+												</div>
+
+											</div>
+
+										</div>
+
+
+									</div>
+
+								</li>
+
+
+								<li class="nav-item dropdown">
+
+									<a href="#" id="mainNavSolutions" class="nav-link dropdown-toggle" 
+										data-toggle="dropdown" 
+										aria-haspopup="true" 
+										aria-expanded="false">
+										Solutions
+									</a>
+
+									<!--
+										
+										.dropdown-menu-invert = open invert
+
+									-->
+									<div aria-labelledby="mainNavSolutions" class="shadow-none dropdown-menu dropdown-menu-clean dropdown-menu-hover w--600 bg-gradient-default">										
+										
+										<div class="row no-gutters col-border">
+											
+											<div class="col-12 col-lg-4 b-0-xs">
+
+												<!-- Documentation : no container, direct links! -->
+												<a href="fullajax-page-1.html" class="js-ajax dropdown-item transition-hover-top clearfix text-white py-4 fs--14 text-center">
+
+													<span class="d-block mb-4">
+														<i class="fi fi-brain fs--35"></i>
+													</span>
+
+													<b>FULLY MODULAR</b>
+													<span class="d-block text-wrap mt-2 fs--14">
+														Anything is possible!
+													</span>
+												</a>
+
+											</div>
+
+											<div class="col-12 col-lg-4 b-0-xs">
+
+												<!-- Documentation : no container, direct links! -->
+												<a href="fullajax-page-2.html" class="js-ajax dropdown-item transition-hover-top clearfix text-white py-4 fs--14 text-center">
+
+													<span class="d-block mb-4">
+														<i class="fi fi-heart-empty fs--35"></i>
+													</span>
+
+													<b>ADMIN INCLUDED</b>
+													<span class="d-block text-wrap mt-2 fs--14">
+														Same core, same elements!
+													</span>
+												</a>
+
+											</div>
+
+
+											<div class="col-12 col-lg-4 b-0-xs">
+
+												<!-- Documentation : no container, direct links! -->
+												<a href="fullajax-page-3.html" class="js-ajax dropdown-item transition-hover-top clearfix text-white py-4 fs--14 text-center">
+
+													<span class="d-block mb-4">
+														<i class="fi fi-layers fs--35"></i>
+													</span>
+
+													<b>NO SEPARATION</b>
+													<span class="d-block text-wrap mt-2 fs--14">
+														Everything common!
+													</span>
+												</a>
+
+											</div>
+
+										</div>
+
+									</div>
+
+
+								</li>
+
+
+
+								<!-- Pricing -->
+								<li class="nav-item dropdown">
+
+									<a href="fullajax-pricing.html" class="nav-link js-ajax">
+										Pricing
+									</a>
+
+								</li>
+
+
+
+								<!-- How it works -->
+								<li class="nav-item">
+
+									<a class="nav-link js-ajax" href="fullajax-how.html">
+										How it works
+									</a>
+
+								</li>
+
+
+								<!-- Contact -->
+								<li class="nav-item">
+
+									<a class="nav-link js-ajax" href="fullajax-contact.html">
+										Contact Us
+									</a>
+
+								</li>
+
+
+								<!-- social : mobile only (d-block d-sm-none)-->
+								<li class="nav-item d-block d-sm-none text-center mb-4">
+
+									<h3 class="h6 text-muted">Follow Us</h3>
+
+									<a href="#!" class="btn btn-sm btn-facebook transition-hover-top mb-2 rounded-circle text-white" rel="noopener">
+										<i class="fi fi-social-facebook"></i> 
+									</a>
+
+									<a href="#!" class="btn btn-sm btn-twitter transition-hover-top mb-2 rounded-circle text-white" rel="noopener">
+										<i class="fi fi-social-twitter"></i> 
+									</a>
+
+									<a href="#!" class="btn btn-sm btn-linkedin transition-hover-top mb-2 rounded-circle text-white" rel="noopener">
+										<i class="fi fi-social-linkedin"></i> 
+									</a>
+
+									<a href="#!" class="btn btn-sm btn-youtube transition-hover-top mb-2 rounded-circle text-white" rel="noopener">
+										<i class="fi fi-social-youtube"></i> 
+									</a>
+
+								</li>
+
+
+							</ul>
+							<!-- /NAVIGATION -->
+
+
+						</div>
+
+
+
+
+
+						<!-- OPTIONS -->
+						<ul class="list-inline list-unstyled mb-0 d-flex align-items-end">
+	
+							<li class="list-inline-item mx-1 dropdown">
+
+
+
+
+								<a href="#" aria-label="Account Sign In" class="js-ajax-modal btn btn-sm btn-primary"
+									data-href="_ajax/modal_signin_md.html"
+									    data-ajax-modal-size="modal-md"
+									    data-ajax-modal-centered="true"
+									    data-ajax-modal-backdrop="static">
+									<span class="group-icon">
+										<i class="fi fi-user-male"></i>
+										<i class="fi fi-close"></i>
+									</span> 
+									<span>Account</span>
+								</a>
+
+								<!-- ALREADY SIGNED IN -->
+								<!--
+								<a href="#" aria-label="Account Options" id="dropdownAccountOptions" class="btn btn-sm btn-primary" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+									<span class="group-icon">
+										<i class="fi fi-user-male"></i>
+										<i class="fi fi-close"></i>
+									</span> 
+									<span>Account</span>
+								</a>
+
+								<div aria-labelledby="dropdownAccountOptions" class="prefix-link-icon prefix-icon-dot dropdown-menu dropdown-menu-clean dropdown-menu-invert dropdown-click-ignore p-0 mt--18 fs--15">
+									<div class="dropdown-header">
+										John Doe
+									</div>
+									<div class="dropdown-divider"></div>
+									<a href="account-orders.html" title="My Orders" class="dropdown-item text-truncate font-weight-light">
+										My Orders <small>(2)</small>
+									</a>
+									<a href="account-favourites.html" title="My Favourites" class="dropdown-item text-truncate font-weight-light">
+										My Favourites <small>(3)</small>
+									</a>
+									<a href="account-settings.html" title="Account Settings" class="dropdown-item text-truncate font-weight-light">
+										Account Settings
+									</a>
+									<div class="dropdown-divider mb-0"></div>
+									<a href="#!" title="Log Out" class="prefix-icon-ignore dropdown-footer dropdown-custom-ignore">
+										<i class="fi fi-power float-start"></i>
+										Log Out
+									</a>
+								</div>
+								-->
+
+							</li>
+
+						</ul>
+						<!-- /OPTIONS -->
+
+
+
+					</nav>
+
+				</div>
+				<!-- /NAVBAR -->
+
+			</header>
+			<!-- /HEADER -->
+
+
+			<!-- #middle = ajax main container -->
+			<div id="middle">
+
+
+				<!-- INTRO -->
+				<section class="bg-gradient-dark">
+
+					<!-- svg shape -->
+					<svg class="position-absolute top-0 start-0 end-0" viewBox="0 480.469 1000 39.062">
+						<polygon fill="#ffffff" points="0,519.531 0,480.469 1000,480.469 "></polygon>
+					</svg>
+
+					<div class="container min-h-50vh pt-5"> 
+
+						<div class="row text-center-xs d-middle">
+							
+							<div class="col-12 col-md-6 order-2 order-md-1 pb-5" data-aos="fade-up" data-aos-delay="0">
+
+								<div class="mb-5">
+									
+									<h1 class="h2-xs font-weight-light mb-0">
+										QA <span class="text-warning font-weight-medium">Testing</span>
+									</h1>
+									
+									<p class="h4 font-weight-medium mb-4">
+										Why should you choose us?
+									</p>
+
+									<p class="lead">
+										In the last three years, We've transitioned from being an auditor at a public accounting firm to a successful franchise owner of a million-dollar business.
+									</p>
+
+								</div>
+
+							</div>
+
+							<div class="col-12 col-md-6 order-1 order-md-2 pb-5" data-aos="fade-up" data-aos-delay="200">
+
+								<!-- svg image -->
+								<img width="600" height="400" class="img-fluid" src="demo.files/svg/premium/using_product.svg" alt="...">
+
+							</div>
+
+						</div>
+
+
+					</div>
+
+				</section>	
+				<!-- /INTRO -->
+
+
+
+
+				<!-- block : txt+img : start -->
+				<section>
+					<div class="container">
+
+						<!-- title -->
+						<div class="max-w-600 mx-auto text-center mb-6">
+							<p class="fs--14 text-monospace font-weight-medium">MORE THAN A TEMPLATE</p>
+							<h1>Build Powerful Bootstrap Websites in Minutes</h1>
+						</div>
+
+
+						<div class="row">
+						
+							<div class="order-2 col-12 col-lg-6 col-xl-4">
+
+								<!-- 1 -->
+								<div class="d-flex align-items-center">
+									<div class="w--45">
+										<i class="fs--40 fi fi-code text-primary"></i>
+									</div>
+									<div class="col">
+										<h3 class="h5 px-1">
+											No Javascript Coding
+										</h3>
+									</div>
+								</div>
+
+								<p class="mb-5">
+									Answering those questions and more is a tall order, but one you should approach with enthusiasm. After all, this is the one place you can and should sing your own praises.
+								</p>
+
+
+								<!-- 2 -->
+								<div class="d-flex align-items-center">
+									<div class="w--45">
+										<i class="fs--40 fi fi-layers text-primary"></i>
+									</div>
+									<div class="col">
+										<h3 class="h5 px-1">
+											Fully Modular
+										</h3>
+									</div>
+								</div>
+
+								<p class="mb-5">
+									Answering those questions and more is a tall order, but one you should approach with enthusiasm. After all, this is the one place you can and should sing your own praises.
+								</p>
+
+
+								<!-- 3 -->
+								<div class="d-flex align-items-center">
+									<div class="w--45">
+										<i class="fs--40 fi fi-product-tag text-primary"></i>
+									</div>
+									<div class="col">
+										<h3 class="h5 px-1">
+											Conversion Oriented
+										</h3>
+									</div>
+								</div>
+
+								<p class="mb-5">
+									Answering those questions and more is a tall order, but one you should approach with enthusiasm. After all, this is the one place you can and should sing your own praises.
+								</p>
+
+							</div>
+
+							<div class="order-1 col-12 col-lg-6 col-xl-6 offset-xl-1 text-center mb-5">
+
+								<picture class="d-block mt-3">
+									<img class="w-100 rounded lazy" data-src="demo.files/images/unsplash/portfolio/boxed-water-is-better--McsV04u7LA-unsplash-min.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="...">
+								</picture>
+
+							</div>
+
+						</div>
+
+					</div>
+				</section>
+				<!-- /block : txt+img : start -->
+
+
+
+
+
+
+				<!-- images block -->
+				<section class="bg-light">
+					<div class="container">
+
+						<div class="row">
+
+
+							<!-- 1 -->
+							<div class="col-12 col-lg-5 offset-lg-1">
+
+								<div class="position-relative bg-white rounded overflow-hidden">
+									
+									<div class="position-relative z-index-3 px-4 text-center pt-5">
+
+										<!-- svg top icon -->
+										<figure class="mb-3">
+											<svg width="80" viewBox="0 0 512 512" enable-background="new 0 0 512 512"><circle cx="256" cy="160.28" r="147.28" fill="#43A3F9"/><circle cx="147.28" cy="351.72" r="147.28" fill="#FC3E81"/><path d="M286.755 304.338c-9.919 2.108-20.204 3.218-30.755 3.218-64.761 0-119.758-41.794-139.473-99.887 9.919-2.108 20.204-3.218 30.755-3.218 64.76 0 119.757 41.806 139.473 99.887z" fill="#4C60E1"/><circle cx="364.72" cy="351.72" r="147.28" fill="#FDB659"/><path d="M294.555 351.724c0 38.288-14.612 73.159-38.555 99.343-23.943-26.184-38.555-61.055-38.555-99.343s14.612-73.159 38.555-99.343c23.943 26.184 38.555 61.055 38.555 99.343z" fill="#FD8724"/><path d="M395.473 207.669c-19.716 58.092-74.713 99.887-139.473 99.887-10.551 0-20.836-1.109-30.755-3.218 19.715-58.081 74.713-99.887 139.473-99.887 10.551 0 20.836 1.11 30.755 3.218z" fill="#5BE167"/><path d="M286.755 304.338c-9.919 2.108-20.204 3.218-30.755 3.218s-20.836-1.109-30.755-3.218c6.601-19.471 17.175-37.112 30.755-51.957 13.58 14.845 24.153 32.485 30.755 51.957z" fill="#385F82"/><path d="M236.025 129.759h-44.981c-4.267 0-7.726-3.459-7.726-7.726s3.459-7.726 7.726-7.726h44.981c4.267 0 7.726 3.459 7.726 7.726 0 4.267-3.459 7.726-7.726 7.726zM201.8 106.291h-10.757c-4.267 0-7.726-3.459-7.726-7.726s3.459-7.726 7.726-7.726h10.757c4.267 0 7.726 3.459 7.726 7.726 0 4.266-3.459 7.726-7.726 7.726zM243.848 147.361h-52.804c-4.267 0-7.726-3.459-7.726-7.726s3.459-7.726 7.726-7.726h52.804c4.267 0 7.726 3.459 7.726 7.726s-3.459 7.726-7.726 7.726zM89.346 356.072h-44.982c-4.267 0-7.726-3.459-7.726-7.726s3.459-7.726 7.726-7.726h44.982c4.267 0 7.726 3.459 7.726 7.726 0 4.267-3.459 7.726-7.726 7.726zM55.12 332.604h-10.756c-4.267 0-7.726-3.459-7.726-7.726s3.459-7.726 7.726-7.726h10.756c4.267 0 7.726 3.459 7.726 7.726.001 4.266-3.459 7.726-7.726 7.726zM97.169 373.674h-52.805c-4.267 0-7.726-3.459-7.726-7.726s3.459-7.726 7.726-7.726h52.805c4.267 0 7.726 3.459 7.726 7.726s-3.459 7.726-7.726 7.726zM383.303 356.072h-44.981c-4.267 0-7.726-3.459-7.726-7.726s3.459-7.726 7.726-7.726h44.981c4.267 0 7.726 3.459 7.726 7.726 0 4.267-3.459 7.726-7.726 7.726zM349.077 332.604h-10.756c-4.267 0-7.726-3.459-7.726-7.726s3.459-7.726 7.726-7.726h10.756c4.267 0 7.726 3.459 7.726 7.726.001 4.266-3.458 7.726-7.726 7.726zM391.126 373.674h-52.804c-4.267 0-7.726-3.459-7.726-7.726s3.459-7.726 7.726-7.726h52.804c4.267 0 7.726 3.459 7.726 7.726 0 4.267-3.459 7.726-7.726 7.726z" fill="#E3F4FF"/></svg>
+										</figure>
+
+										<h2 class="h4 font-weight-light">
+											Lead Generation
+										</h2>
+
+										<p class="mb-5">
+											Boost your campaigns
+										</p>
+									
+										<a href="fullajax-page-2.html" class="js-ajax btn btn-dark btn-sm transition-hover-top text-monospace">
+											SEE MORE
+										</a>
+
+									</div>
+
+
+									<!-- background image container -->
+									<div class="w-100 position-relative bg-cover lazy" data-background-image="demo.files/images/unsplash/covers/room-7DzpP1IVo8Y-unsplash.jpg">
+
+										<!-- svg shape -->
+										<svg width="110%" class="b-0 nt--n30 ml--n3 mr--n3" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,192L48,208C96,224,192,256,288,256C384,256,480,224,576,202.7C672,181,768,171,864,181.3C960,192,1056,224,1152,234.7C1248,245,1344,235,1392,229.3L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+
+
+										<!-- blank img -->
+										<img class="w-100" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiA5IiAvPg==" alt="...">
+										
+									</div>
+
+									<!-- 
+										corner leaf 
+										.rtl-scalex-n1 class = horizontal flip for RTL -->
+									<img class="w-75 position-absolute bottom-0 start-0 rtl-scalex-n1 lazy" data-src="demo.files/images/unsplash/card_corners/ant_corner_h500.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="...">
+
+								</div>
+
+							</div>
+							<!-- /1 -->
+
+
+
+							<!-- 2 -->
+							<div class="col-12 col-lg-5">
+
+								<div class="position-relative bg-white rounded overflow-hidden">
+									
+									<div class="position-relative z-index-3 px-4 text-center pt-5">
+
+										<!-- svg top icon -->
+										<figure class="mb-3">
+											<svg width="80" class="opacity-8" viewBox="0 0 488 488" xmlns="http://www.w3.org/2000/svg"><path d="M223.879 158.652c-14.738 12.516-36.52 6.016-37.668-16.746 1.148-22.754 22.93-29.258 37.176-17.391 1.262 1.109 2.625 1.922 4.016 2.57l.246-46.785c0-10.895-9.336-19.992-20.145-19.992h-36.031c-14.742-.488-18.016-12.516-10.316-21.133 11.957-14.145 5.402-35.766-17.523-36.898-23.422.488-29.973 22.27-17.523 36.898 7.695 8.617 4.418 20.645-10.973 20.645h-36.031c-10.973 0-19.652 8.617-19.652 19.508v35.762c0 15.117-13.102 18.367-21.785 10.891-14.246-13.004-36.52-6.016-37.668 16.742 1.148 22.758 22.93 29.262 37.668 16.746 8.68-7.641 21.785-4.391 21.785 10.891v35.762c0 10.891 8.68 19.508 19.652 19.508h36.031c14.738-.488 18.016 12.516 10.316 21.133-11.957 14.141-5.406 35.758 17.523 36.898 22.926-1.141 29.48-22.758 16.867-37.387-7.695-8.617-4.91-21.133 10.316-21.133h37.176c10.973 0 19.652-8.617 19.652-19.508l.254-49.324c-1.152.621-2.289 1.398-3.363 2.344zm0 0" fill="#f16953"/><path d="M450.313 327.395c-8.68 7.477-21.785 4.23-21.785-10.891v-35.762c0-10.891-8.68-19.508-19.652-19.508h-36.031c-15.23 0-18.508-13.004-10.316-21.129 12.449-14.629 5.898-36.414-17.523-36.902-22.93 1.141-29.973 23.246-16.867 37.391 7.695 8.613 4.422 21.617-10.316 21.129h-37.176c-10.973 0-19.652 8.617-19.652 19.508v49.977c1.301-.652 2.57-1.461 3.77-2.512 14.738-12.516 36.52-6.016 37.668 16.746-1.148 22.754-22.93 29.258-37.176 17.391-1.332-1.172-2.781-2-4.258-2.656v47.684c0 10.73 9.172 19.996 20.145 19.996h36.027c15.23 0 18.508 11.867 10.316 21.133-12.449 14.629-5.895 36.41 17.523 36.898 22.93-1.141 30.137-23.406 17.523-36.898-7.531-8.781-4.254-20.645 10.973-20.645h36.031c10.973 0 19.652-8.617 19.652-19.508l-.656-37.063c0-15.281 13.102-18.535 21.785-10.895 14.738 12.516 36.52 6.016 37.668-16.742-1.148-22.758-23.422-29.746-37.672-16.742zm0 0" fill="#32b0e2"/><path d="M248.941 328.695c-8.68 7.641-21.293 4.875-21.293-10.238v-36.902c0-10.891-8.68-19.508-19.652-19.508h-48.496l.344.488c12.613 14.633 6.059 36.25-16.867 37.391-22.93-1.141-29.48-22.758-17.523-36.902.273-.309.43-.656.68-.977h-45.723c-10.969 0-20.141 9.266-20.141 19.996v35.762c-.492 14.633-12.613 17.879-21.293 10.238-14.25-11.867-36.031-5.363-37.176 17.395.492 23.242 22.434 29.746 37.176 17.391 8.68-7.641 20.801-4.387 20.801 10.891v35.766c0 10.891 8.68 19.508 19.652 19.508h36.027c15.23 0 18.508 13.004 10.973 21.621-13.102 14.145-6.063 36.246 16.867 37.387 22.926-1.141 29.48-22.758 16.867-37.387-7.859-8.777-4.586-21.785 12.285-22.273h36.031c10.973 0 19.652-8.617 19.652-19.508v-35.766c-.492-14.625 12.609-17.879 21.293-10.238 14.246 11.867 36.031 5.363 37.176-17.391-1.141-22.758-22.926-29.258-37.66-16.742zm0 0" fill="#fdbe4a"/><path d="M260.992 205.797c0 10.891 8.68 19.508 19.652 19.508h48.172c-.25-.32-.406-.668-.68-.977-13.102-14.145-6.063-36.25 16.867-37.387 23.422.488 29.973 22.27 17.523 36.898-.461.461-.754.977-1.145 1.465h46.836c10.973 0 20.145-9.266 20.145-19.992l-1.313-35.113c.492-14.629 12.613-17.879 21.293-10.238 14.25 11.867 36.031 5.363 37.176-17.395-.492-23.242-22.434-29.746-37.176-17.391-8.68 7.641-20.801 4.387-20.801-10.891v-35.762c0-10.891-8.68-19.508-19.652-19.508h-36.027c-15.23 0-18.508-13.004-10.973-21.621 13.105-14.152 6.063-36.254-16.867-37.395-22.926 1.141-29.48 22.758-16.867 37.387 7.695 8.617 4.418 21.621-10.973 21.621h-36.031c-10.973 0-19.652 8.617-19.652 19.508v35.762c.492 14.629-12.613 17.879-21.293 10.238-14.246-11.867-36.027-5.363-37.176 17.391 1.148 22.758 22.93 29.262 37.668 16.746 8.68-7.641 21.293-4.875 21.293 10.238zm0 0" fill="#78af42"/><path d="M383.793 244c0-76.637-62.59-138.762-139.801-138.762-77.211 0-139.801 62.125-139.801 138.762s62.59 138.762 139.801 138.762c77.211 0 139.801-62.125 139.801-138.762zm0 0" fill="#fff"/><g fill="#e85aa0"><path d="M299.145 251.746l-33.148-14.578-17.5 32.297c-1.934 3.559-7.074 3.559-9.008 0l-17.496-32.297-32.797 12.984c-3.453 1.367-5.672 4.383-5.672 7.715v75.602h120.938v-74.156c0-3.203-2.059-6.133-5.316-7.566zm0 0M208.707 185.531v-11.676c0-19.289 15.852-35.023 35.285-35.023 19.434 0 35.285 15.734 35.285 35.023v11.676c0 19.289-15.852 35.023-35.285 35.023-19.434 0-35.285-15.734-35.285-35.023zm0 0"/></g></svg>
+										</figure>
+
+										<h2 class="h4 font-weight-light">
+											Complete Sales Solution
+										</h2>
+
+										<p class="mb-5">
+											Streamline a complex sales process
+										</p>
+									
+										<a href="fullajax-page-3.html" class="js-ajax btn btn-dark btn-sm transition-hover-top text-monospace">
+											SEE MORE
+										</a>
+
+									</div>
+
+									<!-- background image container -->
+									<div class="w-100 position-relative bg-cover lazy" data-background-image="demo.files/images/unsplash/covers/room-3m9132_mMSQ-unsplash.jpg">
+
+										<!-- svg shape -->
+										<svg width="110%" class="b-0 nt--n30 ml--n3 mr--n3" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,288L34.3,272C68.6,256,137,224,206,192C274.3,160,343,128,411,133.3C480,139,549,181,617,176C685.7,171,754,117,823,117.3C891.4,117,960,171,1029,208C1097.1,245,1166,267,1234,245.3C1302.9,224,1371,160,1406,128L1440,96L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z"></path></svg>
+
+										<!-- blank img -->
+										<img class="w-100" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiA5IiAvPg==" alt="...">
+										
+									</div>
+
+									<!-- 
+										corner leaf 
+										.rtl-scalex-n1 class = horizontal flip for RTL -->
+									<img class="w-75 position-absolute bottom-0 end-0 rtl-scalex-n1 lazy" data-src="demo.files/images/unsplash/card_corners/leaf1_corner_h500.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="...">
+
+								</div>
+
+							</div>
+							<!-- /2 -->
+
+						</div>
+
+					</div>
+				</section>
+
+
+
+
+				<!-- Request a Demo -->
+				<section class="bg-gradient-default text-white">
+
+					<!-- svg shape -->
+					<svg class="position-absolute top-0 start-0 end-0" viewBox="0 480.469 1000 39.062">
+						<polygon fill="#f8f9fa" points="0,519.531 0,480.469 1000,480.469 "></polygon>
+					</svg>
+
+
+					<!-- svg image over -->
+					<div class="d-flex justify-content-center position-relative">
+						<svg class="position-absolute top-0 mt--n180" width="300" viewBox="0 0 1153.45 845.67"><path d="M1169.66 414.15l-129.94 300.63-44.46 102.85c-14.44 33.39-48.57 55.18-86.46 55.18h-617.6c-37.89 0-72-21.79-86.46-55.18l-6.2-14.35-168.2-389.13c-17.89-41.4-.79-89 40-111.3l40.8-22.28 23.34-12.75 117.02-63.92 34.08-18.62 43.94-24 50.07-27.35 35.74-19.51 87-47.54 19.96-10.88 30.38-16.6.85-.45a97.46 97.46 0 0 1 93 0l154.48 84.41 49.58 27.09 50.88 27.79 35.29 19.27 81.67 44.59 65.4 35.73 45.8 25c40.83 22.29 57.93 69.92 40.04 111.32z" transform="translate(-23.28 -27.16)" fill="#6c63ff" opacity=".1"/><path d="M320.62 137.45c-3.75-.9-8.75-2-14.38-3.32l50.07-27.35c27.81 7.08 54.56 12.28 70.49 11.33 0 0 4.78 8.72-8.74 8.72s-.41 12.14-8.76 12.9-15.11 5.68-21.87 0-11.13-8.72-19.48-7.59-19.89 7.2-23.87 0-1.19 10.61-23.46 5.31zM725.52 103.15c12.38.73 31.34-2.25 52.24-7l49.58 27.09c-17.55 2.11-15.41-12.8-19.1-6.11-4 7.2-15.52 1.13-23.87 0s-12.72 1.89-19.48 7.59-13.52.75-21.87 0 4.76-12.9-8.76-12.9l-8.74-8.67z" fill="#6c63ff" opacity=".1"/><path d="M1097.15 395.52c13.52 0 8.75-8.73 8.75-8.73-36.9 2.21-132.09-28.69-163.53-39.31l-3.37-90.69c17.09 11.28 42.85 16 55.11 19 22.27 5.3 19.49-12.52 23.46-5.31s15.51 1.13 23.87 0 12.72 1.89 19.48 7.58 13.52.75 21.87 0a5.22 5.22 0 0 0 1.09-.19l-65.4-35.73c-32.5-8.74-64.63-19.24-80.93-24.75l-.74-19.84-35.29-19.27.79 42.2c-38.18 12.61-119.92 38-153.5 36 0 0-4.78 8.72 8.74 8.72s.41 12.14 8.76 12.9 15.11 5.69 21.87 0 11.13-8.72 19.48-7.58 19.89 7.2 23.87 0 1.19 10.61 23.46 5.31c10.68-2.55 31.57-6.49 48.09-14.91l1.63 87.31c-33.3 11.2-125.34 40.79-161.51 38.63 0 0-4.77 8.73 8.75 8.73s.4 12.14 8.75 12.89 15.11 5.69 21.87 0 11.14-8.72 19.49-7.58 19.88 7.2 23.86 0 1.19 10.61 23.47 5.31c12.49-3 39-7.87 56-19.6l1.75 93c-35.61 11.88-123.28 39.68-158.38 37.59 0 0-4.78 8.72 8.74 8.72s.5 12.08 8.8 12.88 15.11 5.68 21.87 0 11.13-8.73 19.48-7.59 19.89 7.2 23.87 0 1.19 10.61 23.46 5.31c11.75-2.8 35.9-7.3 52.94-17.6l3.87 205.22c-40.23 13.11-78.93 31.66-121 37.33-70.26 9.47-142-18-211.95-17.3l-5.52-148.49c16 7.47 35.16 11.11 45.22 13.51 22.28 5.3 19.5-12.51 23.47-5.31s15.51 1.13 23.86 0 12.73 1.89 19.49 7.59 13.52.75 21.87 0-4.76-12.9 8.76-12.9l8.74-8.72c-33.42 2-114.54-23.13-153-35.79l-3.52-94.74c17.09 11.66 43.45 16.52 55.9 19.49 22.27 5.3 19.49-12.51 23.46-5.31s15.52 1.13 23.87 0 12.72 1.89 19.48 7.59 13.52.74 21.88 0-4.77-12.9 8.75-12.9l8.74-8.72c-36.92 2.2-132.08-28.7-163.52-39.32l-3.38-90.69c17.1 11.28 42.86 16 55.11 19 22.28 5.3 19.5-12.52 23.47-5.31s15.51 1.13 23.86 0 12.73 1.89 19.49 7.58 13.52.75 21.87 0-4.76-12.89 8.76-12.89l8.74-8.72c-36.59 2.16-130.52-28.24-162.69-39.12l-3.36-90.23c16.66 13.88 46.45 19.32 59.92 22.53 22.28 5.3 19.5-12.51 23.47-5.31s15.51 1.13 23.86 0 12.73 1.89 19.49 7.59 13.52.75 21.87 0-4.76-12.9 8.76-12.9l8.74-8.72c-38.65 2.31-141.11-31.66-167.5-40.67l-2.1-56.75c16.25 7.92 36.24 11.7 46.6 14.17 22.27 5.3 19.49-12.52 23.46-5.31s15.52 1.13 23.87 0 12.72 1.89 19.48 7.58 13.52.75 21.87 0-4.76-12.9 8.76-12.9l8.74-8.72c-33.83 2-116.51-23.73-154.33-36.24l-.92-24.73-30.39 16.61.08 4.24c-4.86 1.65-11.73 4-20 6.64l-87 47.54c8.35 1.14 19.85 7.18 23.82 0s1.19 10.61 23.47 5.31c13.6-3.25 43.87-8.77 60.43-23l1.34 71c-39.14 12.89-118.28 37.27-151.19 35.27 0 0-4.77 8.72 8.75 8.72s.4 12.14 8.75 12.9 15.12 5.68 21.88 0 11.13-8.72 19.48-7.59 19.89 7.2 23.87 0 1.19 10.61 23.46 5.31c10.17-2.42 29.63-6.12 45.73-13.74l1.59 84.53c-38.18 12.61-119.92 38-153.51 36 0 0-4.77 8.72 8.75 8.72s.4 12.14 8.75 12.89 15.12 5.69 21.88 0 11.13-8.72 19.48-7.58 19.89 7.2 23.87 0 1.19 10.61 23.46 5.31c10.67-2.54 31.57-6.49 48.08-14.91l1.64 87.31c-33.31 11.13-125.35 40.75-161.51 38.6 0 0-4.78 8.72 8.74 8.72s.41 12.14 8.76 12.9 15.11 5.68 21.87 0 11.13-8.72 19.48-7.59 19.89 7.2 23.87 0 1.19 10.61 23.47 5.31c12.48-3 39-7.87 56.05-19.6l1.75 93.05c-35.63 11.89-123.28 39.68-158.39 37.59 0 0-4.77 8.72 8.75 8.72s.4 12.14 8.75 12.9 15.12 5.68 21.88 0 11.13-8.72 19.48-7.59 19.89 7.2 23.87 0 1.19 10.61 23.46 5.31c11.75-2.8 35.9-7.3 52.94-17.6l3 157.29-1.27.28c-28.35 6.47-54.6 19.84-83.1 25.39-46.5 9.09-96.38-2.78-143.7-4.66l-8.63-231.89c16 7.47 35.16 11.11 45.23 13.51 22.27 5.3 19.49-12.51 23.46-5.31s15.51 1.13 23.87 0 12.72 1.89 19.48 7.59 13.52.75 21.87 0-4.76-12.9 8.76-12.9l8.74-8.72c-33.42 2-114.54-23.13-152.95-35.79l-3.52-94.74c17.08 11.66 43.45 16.52 55.89 19.49 22.28 5.3 19.5-12.51 23.46-5.31s15.52 1.13 23.87 0 12.73 1.89 19.49 7.59 13.52.74 21.87 0-4.77-12.9 8.75-12.9l8.75-8.72c-36.93 2.2-132.09-28.7-163.53-39.32l-3.38-90.69c17.1 11.29 42.86 16 55.12 19 22.27 5.3 19.49-12.52 23.46-5.31s15.51 1.13 23.87 0 12.77 1.83 19.48 7.53 13.52.74 21.87 0-4.76-12.9 8.76-12.9l8.74-8.72c-36.63 2.19-130.57-28.21-162.75-39.07l-1.75-47-34.08 18.59.59 31.5c-27.89 9.22-79 25.24-117.64 32.42l-23.34 12.75c6.92 2.26-2.38 11.75 5 12.43 8.35.74 15.11 5.68 21.87 0s11.13-8.73 19.48-7.59 19.89 7.2 23.87 0 1.19 10.61 23.46 5.31c10.68-2.54 31.57-6.49 48.09-14.91l1.63 87.31c-33.3 11.2-125.34 40.8-161.51 38.64 0 0-4.77 8.72 8.75 8.72s.4 12.14 8.75 12.9 15.11 5.68 21.87 0 11.14-8.72 19.49-7.59 19.88 7.2 23.86 0 1.19 10.61 23.47 5.31c12.49-3 39-7.87 56.05-19.6l1.76 93.05c-35.61 11.89-123.28 39.68-158.38 37.59 0 0-4.78 8.72 8.74 8.72s.4 12.14 8.76 12.9 15.11 5.68 21.87 0 11.13-8.72 19.48-7.59 19.89 7.2 23.87 0 1.19 10.61 23.46 5.31c11.75-2.8 35.9-7.3 52.94-17.6l4.49 238.4a128.79 128.79 0 0 0-34.67 11 122.92 122.92 0 0 0-29 20l6.2 14.35c14.44 33.39 48.57 55.18 86.46 55.18h617.58c37.89 0 72-21.79 86.46-55.18l44.46-102.85a233.66 233.66 0 0 0-83.79-1.78l-7-190c16 7.47 35.16 11.1 45.23 13.51 22.27 5.3 19.49-12.52 23.46-5.31s15.51 1.13 23.87 0 12.72 1.89 19.48 7.59 13.52.74 21.87 0-4.76-12.9 8.76-12.9l8.74-8.72c-33.42 2-114.54-23.13-152.95-35.79l-3.52-94.74c17.08 11.65 43.45 16.52 55.89 19.49 22.28 5.3 19.5-12.52 23.46-5.31s15.52 1.13 23.87 0 12.73 1.89 19.49 7.58 13.52.75 21.87 0-4.82-12.88 8.7-12.88z" transform="translate(-23.28 -27.16)" fill="#6c63ff" opacity=".1"/><path d="M897.09 183.97c6.76 44.56-12 84.37-12 84.37s-29.77-32.44-36.53-77l12.05-84.37s29.72 32.44 36.48 77zM1022.79 254.99c24.53-.27 44.56 12.88 44.56 12.88s-19.74 13.59-44.27 13.86l-44.56-12.89s19.74-13.59 44.27-13.85zM953.81 187.25c-22.83 25.09-27.66 57.88-27.66 57.88s32.18-7.9 55-33l27.66-57.88s-32.17 7.9-55 33z" fill="#6c63ff"/><rect x="303.76" y="219.67" width="699" height="626" rx="16.37" fill="#464353"/><path d="M945.86 571.54l-17.58 8.46-142 68.46-12.53 6a7 7 0 0 1-9.47-3.67 6.87 6.87 0 0 1-.5-2.59v-40.44a7 7 0 0 0-6.95-7h-346.6a7 7 0 0 1-7-6.95v-57.1a7 7 0 0 1 7-7h346.6a7 7 0 0 0 6.95-6.95v-41.34a6.87 6.87 0 0 1 .5-2.59 7 7 0 0 1 9.49-3.65l12.51 6.09 142 69.18 17.61 8.55a7 7 0 0 1-.03 12.54z" transform="translate(-23.28 -27.16)" opacity=".1"/><path d="M945.86 566.54l-17.58 8.46-142 68.46-12.53 6a7 7 0 0 1-9.47-3.67 6.87 6.87 0 0 1-.5-2.59v-40.44a7 7 0 0 0-6.95-7h-346.6a7 7 0 0 1-7-6.95v-57.1a7 7 0 0 1 7-7h346.6a7 7 0 0 0 6.95-6.95v-41.34a6.87 6.87 0 0 1 .5-2.59 7 7 0 0 1 9.49-3.65l12.51 6.09 142 69.18 17.61 8.55a7 7 0 0 1-.03 12.54z" transform="translate(-23.28 -27.16)" fill="#6c63ff"/><path d="M198.11 703.13c.34 8.36-5 15.77-10 22.43a84 84 0 0 0-6.15 9.8c-5.5 9.8-17.32 14.46-23.72 23.7-1.55 2.24-2.75 4.7-4.1 7.07a94.47 94.47 0 0 1-17.28 22l-11.57 10.84c-3.29 3.08-6.65 6.25-8.6 10.32-2.23 4.69-2.35 10-2.22 15.25v2.91c.2 6.35.49 12.73 2 18.88.5 2 1.12 4.1.34 6-.83 2-3 3.11-5.11 3.81-2.26.75-4.74 1.26-7 .47s-3.82-2.74-5.21-4.66c-6.75-9.3-9.49-20.78-13.51-31.55-.84-2.24.06-4.8 1.54-6.67a38.39 38.39 0 0 1 5.28-4.82c8-7 11.69-17.5 14.75-27.64s6-20.75 12.95-28.71c4.52-5.17 10.45-8.87 15.49-13.53 12.55-11.62 18.82-28.58 22.1-45.38a34.3 34.3 0 0 1 11.7-.15l20.63 2.74c2.23.3 4.67.71 6.12 2.42a7.43 7.43 0 0 1 1.57 4.47zM286.17 720.17a21.93 21.93 0 0 1-3.23 8.76 78.75 78.75 0 0 1-8.46 10.75c-7.88 9-9.21 21.92-14.23 32.81-1.63 3.54-3.65 6.88-5.3 10.4-4.33 9.26-5.92 19.45-6.86 29.69-.12 1.32-.23 2.64-.33 3.95-.14 1.63-.25 3.26-.37 4.88-.31 4.29-.58 8.8 1.23 12.7.93 2 2.45 3.66 2.51 5.87-3.1 3-8.42 2.66-12 .22s-5.81-6.4-7.62-10.35a95.21 95.21 0 0 1-7.15-22.71c-.55-3-.8-6.47 1.33-8.63 1.07-1.08 2.56-1.62 3.76-2.56 2.63-2.06 3.39-5.66 4-9q3-17 6.07-34a82.55 82.55 0 0 1 1.77-8.23c1.71-5.99 4.31-12.72 9.23-16.72a5.11 5.11 0 0 0 1.55-4.69 14.23 14.23 0 0 0-1.92-4.76c-3.67-6.56-8.05-13.14-14.65-16.74a75.69 75.69 0 0 1 23.07-13.22 9.16 9.16 0 0 1 4.75-.81 8.07 8.07 0 0 1 2.46 1c4.53 2.54 8 6.54 11.32 10.54 4.95 6.02 9.9 13.1 9.07 20.85z" transform="translate(-23.28 -27.16)" fill="#efb7b9"/><path d="M125.64 854.09a24.68 24.68 0 0 0-7-4.65 4.85 4.85 0 0 0-1.9-.63c-1.61-.08-2.82 1.37-4.2 2.21a7.76 7.76 0 0 1-7.34 0 15 15 0 0 1-5.47-5.24c-2.94-4.34-3.52-8.67-4.74-13.43l12.82-2.42a27 27 0 0 0 6.7-2.52v-2.91c-2.37.71-7.4 3-8.59 3.31a89.32 89.32 0 0 1-11.72 1.86c-.61-1.21-1.49-2.26-2.2-3.45a19.66 19.66 0 0 1-2.67-7.83 9.89 9.89 0 0 0-.63-3.2 2.54 2.54 0 0 0-2.7-1.59 3.44 3.44 0 0 0-1.15.57 22.3 22.3 0 0 0-8 10c-2.41 6-2.06 12.74-3 19.15-.72 4.8-2.2 9.56-1.94 14.41a1 1 0 0 0 1 1.13c2.67.59 5.74 1.1 7.91-.56s2.48-4.8 2.9-7.53a37 37 0 0 1 3.28-10.5 21.73 21.73 0 0 1 4.89 14.41c0 2.89-.36 6.17 1.62 8.28a8.35 8.35 0 0 0 3.45 2 34.43 34.43 0 0 0 8.14 1.78c5 .48 10.09-.15 15.1-.78 1.58-.2 3.17-.4 4.74-.75a5 5 0 0 0 2.21-.92 4.07 4.07 0 0 0 1.3-2.53 9.22 9.22 0 0 0-2.81-7.67zM257.92 838a16.44 16.44 0 0 0-4.1-2.72 9.32 9.32 0 0 0-4-1.35c-1.63 0-3.12.8-4.63 1.42s-3.28 1-4.7.2a6.37 6.37 0 0 1-2.33-3.31c-1.8-4.3-3.16-8.78-4.73-13.16a3.3 3.3 0 0 1 1.55-1.29 4.87 4.87 0 0 1 1.52-.18c2 0 8.08 0 11.31-1.12.1-1.31.21-2.63.33-3.95-2.5-.52-6.79.38-7.92.69-1.85.47-3.74 1.16-5.61.76-1.3-.27-2.53-1.06-3.8-1.23-.6-1.11-1.25-2.18-1.87-3.27-1.58-2.8-2.07-6.06-3.61-8.77a3 3 0 0 0-2.48-1.67 4.32 4.32 0 0 0-2.82 1.66c-2.55 2.59-5.17 5.27-6.63 8.6a26.17 26.17 0 0 0-1.44 4.66 113.68 113.68 0 0 0-3 27.32 17 17 0 0 0 7.2.68q1.86-9.28 4.55-18.37a.92.92 0 0 1 .35-.57c.39-.21.8.22 1 .6a46.77 46.77 0 0 1 5.26 10.45c.81 2.63 1.18 5.48 2.71 7.77a11.9 11.9 0 0 0 6.71 4.54 35.7 35.7 0 0 0 8.19 1.06l4.1.2a17.12 17.12 0 0 0 6.62-.52c2.1-.73 4-2.52 4.16-4.74a5.82 5.82 0 0 0-1.89-4.39zM277.15 696.08c-1.68 1.72-4.15 2.37-6.49 2.94l-7.11 1.73a2.91 2.91 0 0 0-2 1.13c-.41.74-.12 1.67-.32 2.49a2.11 2.11 0 0 1-.45.88 5.18 5.18 0 0 1-3.66 1.31 9.38 9.38 0 0 0-3.45.51 2.79 2.79 0 0 0-1.16.94c-.36.52-.51 1.16-.89 1.66a4.12 4.12 0 0 1-2.46 1.28 21.32 21.32 0 0 1-3 .46 22 22 0 0 1-11.5-2.17 4.11 4.11 0 0 0-2.88-.69 2.78 2.78 0 0 0-1.43 1.15 18.09 18.09 0 0 1-1.19 1.64c-1.84 2-5 1.46-7.65.9-1.63-.35-3.27-.65-4.91-.92-9.8-1.6-19.79-1.92-29.77-2.21-12.9-.39-25.8-.74-38.29-3.79-2.72-.66-6-2.22-5.87-5 .09-1.59 1.35-3 1.34-4.56 0-2.72-3.33-4.18-6-4.63 1-14.86 9.89-27.87 14.54-42 1.16-3.51 2-7.11 3.31-10.58 5.66-15.64 18.09-27.64 28.43-40.66a24.32 24.32 0 0 0 3.86-6.09 26.55 26.55 0 0 0 1.37-8.23l.57-9.79c15.33-.72 30.22-.43 45.22 2.81a3.07 3.07 0 0 1 3.16 3q.87 5.37 1.22 10.79a8.91 8.91 0 0 0 .34 2.36 9.79 9.79 0 0 0 1.62 2.67c8.68 11.38 14 25 18.2 38.64s7.54 27.66 12.82 41c1.82 4.6 4.2 9.77 4.68 14.7 1.9 1.41 1.48 4.6-.2 6.33z" transform="translate(-23.28 -27.16)" fill="#464353"/><path d="M216.61 711.32c-9.8-1.6-19.79-1.92-29.77-2.21q.41-13.8.83-27.6c.19-6.12.37-12.25 1.1-18.32 1-8.64 3.14-17.11 4.2-25.74a114.11 114.11 0 0 0 .83-14.9c-.05-5.07-.41-10.17.42-15.17.68-4.11 2.48-9.93 6.28-12.18 2.54 3.48-1.36 13.2-1.82 17.36-.94 8.66 1.4 17.29 3.41 25.76 2.42 10.17 4.4 20.44 6.37 30.71q4.08 21.14 8.15 42.29zM246.17 711.41a22 22 0 0 1-11.5-2.17 4.11 4.11 0 0 0-2.88-.69 2.78 2.78 0 0 0-1.43 1.15c-3.38-16.05-3.2-32.75-5.87-49-1-5.78-2.28-11.68-1.16-17.43 1.2-6.14 5.07-11.47 6.58-17.54 1-4 .92-8.13.85-12.22s-1.27-6.84-2.61-10.49c3.56.59 6.46 4.08 7.89 7.23 1.75 3.84 2.08 8.15 2.31 12.37.56 10.19.65 20.39.5 30.59a113.2 113.2 0 0 0 .32 14.27c.52 4.67 1.67 9.26 2.05 13.94.44 5.62-.22 11.37 1.15 16.84 1.1 4.41 3.49 8.81 3.8 13.15zM260.76 705.25a5.18 5.18 0 0 1-3.66 1.31 9.38 9.38 0 0 0-3.45.51q-3-18.3-5.93-36.58a124.18 124.18 0 0 1-1.72-13.57c-.26-5.27.15-10.55-.22-15.81-.45-6.47-2.07-12.77-3.62-19-.92-3.73-5.14-14.85-2.78-18 3.68 2.38 5.92 7.47 7.17 11.53a73.55 73.55 0 0 1 2.45 14.36l2.82 28.22c1.56 15.61 3.17 31.42 8.62 46.14l.32.89z" transform="translate(-23.28 -27.16)" opacity=".1"/><path d="M291.72 532.1c2.64-2.23 5.28-4.47 7.7-6.93a105.55 105.55 0 0 0 9.44-11.54c3.06-4.17 6.1-8.44 8-13.26 2.15-5.52 2.81-11.8 6.55-16.38a3.75 3.75 0 0 1 1.69-1.32c2.13-.67 3.72 2 4.13 4.21 2 10.82-2.77 21.62-7.41 31.6-1.53 3.29-3.13 6.67-5.78 9.16-1.4 1.31-3 2.32-4.55 3.49a47.63 47.63 0 0 0-6.44 6.34q-5 5.68-9.51 11.77c-3.73 5-7.23 10.24-11.65 14.65s-9.95 8-16.14 8.87c1.77-.24 1.19-10.63 1-11.94-.27-1.9-1.57-4.14-1.61-6-.05-2.28.88-2.61 2.76-4.21z" transform="translate(-23.28 -27.16)" fill="#efb7b9"/><path d="M291.72 532.1c2.64-2.23 5.28-4.47 7.7-6.93a105.55 105.55 0 0 0 9.44-11.54c3.06-4.17 6.1-8.44 8-13.26 2.15-5.52 2.81-11.8 6.55-16.38a3.75 3.75 0 0 1 1.69-1.32c2.13-.67 3.72 2 4.13 4.21 2 10.82-2.77 21.62-7.41 31.6-1.53 3.29-3.13 6.67-5.78 9.16-1.4 1.31-3 2.32-4.55 3.49a47.63 47.63 0 0 0-6.44 6.34q-5 5.68-9.51 11.77c-3.73 5-7.23 10.24-11.65 14.65s-9.95 8-16.14 8.87c1.77-.24 1.19-10.63 1-11.94-.27-1.9-1.57-4.14-1.61-6-.05-2.28.88-2.61 2.76-4.21z" transform="translate(-23.28 -27.16)" opacity=".1"/><path d="M194.22 439.5s-6 30-13 35l38 11s1-24 13-35l-38-11z" fill="#efb7b9"/><path d="M205.56 498.71a12.54 12.54 0 0 0-7.68 4.1c-4.72 5.08-5.66 12.81-4 19.55s5.47 12.71 9.43 18.4c5.16 7.42 10.71 14.73 17.88 20.24a134.78 134.78 0 0 0 12.06 7.79 197 197 0 0 1 19.87 14 16.7 16.7 0 0 0 4.7 3 13.4 13.4 0 0 0 4.59.6 36 36 0 0 0 15.16-3.53 2.79 2.79 0 0 0 1.14-.82 3.06 3.06 0 0 0 .05-2.45c-2.82-11.4 2.62-24.33-2.78-34.75-5.87 1.91-12.31 4-18.18 5.86a6.65 6.65 0 0 1-2.84.48 6 6 0 0 1-3.06-1.67c-6.36-5.5-10.37-13.16-14-20.73s-7.19-15.38-12.91-21.54-11.07-9.42-19.43-8.53z" transform="translate(-23.28 -27.16)" fill="#6c63ff"/><path d="M205.56 498.71a12.54 12.54 0 0 0-7.68 4.1c-4.72 5.08-5.66 12.81-4 19.55s5.47 12.71 9.43 18.4c5.16 7.42 10.71 14.73 17.88 20.24a134.78 134.78 0 0 0 12.06 7.79 197 197 0 0 1 19.87 14 16.7 16.7 0 0 0 4.7 3 13.4 13.4 0 0 0 4.59.6 36 36 0 0 0 15.16-3.53 2.79 2.79 0 0 0 1.14-.82 3.06 3.06 0 0 0 .05-2.45c-2.82-11.4 2.62-24.33-2.78-34.75-5.87 1.91-12.31 4-18.18 5.86a6.65 6.65 0 0 1-2.84.48 6 6 0 0 1-3.06-1.67c-6.36-5.5-10.37-13.16-14-20.73s-7.19-15.38-12.91-21.54-11.07-9.42-19.43-8.53z" transform="translate(-23.28 -27.16)" opacity=".1"/><circle cx="217.72" cy="432" r="30" fill="#efb7b9"/><path d="M253 545.5l-.07.13c-1.73 3.21-4.32 5.91-6.1 9.11-2 3.62-2.93 7.75-3.73 11.82q-.83 4.1-1.53 8.21c-.48 2.78-.93 5.56-1.34 8.36-9.06-3.07-19.1 2.08-28.48.2-2.81-.56-5.5-1.74-8.36-1.87-2.09-.1-4.19.37-6.28.17-3.47-.33-6.91-2.51-10.22-1.4-1.48.5-3.31 1.56-4.37.41a3.17 3.17 0 0 1-.54-1c-.86-2.37-1.74-4.92-1.12-7.36.53-2.08 2.06-3.73 3.12-5.6 1.83-3.25 2.2-7.1 2.44-10.83.61-9.64.59-19.35 2.17-28.88s4.91-19 11.35-26.24c3.16-3.54 7.29-6.55 12-6.94 17.33-1.4 31.35 8.16 38.92 23.34 4.4 8.8 6.74 19.66 2.14 28.37z" transform="translate(-23.28 -27.16)" fill="#6c63ff"/><path d="M303.72 536.1c2.64-2.23 5.28-4.47 7.7-6.93a105.55 105.55 0 0 0 9.44-11.54c3.06-4.17 6.1-8.44 8-13.26 2.15-5.52 2.81-11.8 6.55-16.38a3.75 3.75 0 0 1 1.69-1.32c2.13-.67 3.72 2 4.13 4.21 2 10.82-2.77 21.62-7.41 31.6-1.53 3.29-3.13 6.67-5.78 9.16-1.4 1.31-3 2.32-4.55 3.49a47.63 47.63 0 0 0-6.44 6.34q-5 5.68-9.51 11.77c-3.73 5-7.23 10.24-11.65 14.65s-9.95 8-16.14 8.87c1.77-.24 1.19-10.63 1-11.94-.27-1.9-1.57-4.14-1.61-6-.05-2.28.88-2.61 2.76-4.21z" transform="translate(-23.28 -27.16)" fill="#efb7b9"/><path d="M250 546.5l-.07.13c-1.73 3.21-4.32 5.91-6.1 9.11-2 3.62-2.93 7.75-3.73 11.82q-.83 4.1-1.53 8.21a110.29 110.29 0 0 1-10.4-6.77c-7.17-5.51-12.72-12.82-17.88-20.25-4-5.69-7.8-11.66-9.43-18.39s-.68-14.47 4-19.55a12.56 12.56 0 0 1 7.68-4.11c8.36-.89 13.64 2.34 19.36 8.49s9.26 14 12.91 21.54c1.62 3.27 3.28 6.62 5.19 9.77z" transform="translate(-23.28 -27.16)" opacity=".1"/><path d="M217.56 502.71a12.54 12.54 0 0 0-7.68 4.1c-4.72 5.08-5.66 12.81-4 19.55s5.47 12.71 9.43 18.4c5.16 7.42 10.71 14.73 17.88 20.24a134.78 134.78 0 0 0 12.06 7.79 197 197 0 0 1 19.87 14 16.7 16.7 0 0 0 4.7 3 13.4 13.4 0 0 0 4.59.6 36 36 0 0 0 15.16-3.53 2.79 2.79 0 0 0 1.14-.82 3.06 3.06 0 0 0 .05-2.45c-2.82-11.4 2.62-24.33-2.78-34.75-5.87 1.91-12.31 4-18.18 5.86a6.65 6.65 0 0 1-2.84.48 6 6 0 0 1-3.06-1.67c-6.36-5.5-10.37-13.16-14-20.73s-7.19-15.38-12.91-21.54-11.07-9.42-19.43-8.53z" transform="translate(-23.28 -27.16)" fill="#6c63ff"/><path d="M260.4 438.21c2.91-3.31 2.29-8.65-.25-12.25s-6.54-5.86-10.43-7.92c-6.19-3.29-13.31-6.47-20-4.3-2.61.85-4.89 2.46-7.29 3.8-4.42 2.46-9.29 4-13.79 6.3s-8.8 5.58-10.74 10.25-1.3 9.7-.8 14.61c.76 7.6 1.2 15.31.14 22.88s-3.69 15.06-8.52 21c-3.38 4.16-7.86 7.62-9.89 12.58a29.89 29.89 0 0 0-1.66 8.87l-1.09 12.89c-.43 5.14-1.08 10.76-4.79 14.34 4.76-1.1 9.65-2.26 13.67-5a39.15 39.15 0 0 0 6.49-6.12c3.8-4.19 7.75-8.66 8.89-14.2.85-4.14.14-8.84 2.66-12.23 3-4 9.27-4 13.48-1.39s6.78 7.19 9 11.61 4.52 9.07 8.4 12.17a23.82 23.82 0 0 0 10.88 4.58c2.66.49 5.68.63 7.78-1.07 2.87-2.32 2.58-6.74 1.65-10.31-1.23-4.73-3.14-9.66-1.81-14.37.44-1.57 1.23-3 1.72-4.58a25.51 25.51 0 0 0 .81-6.92c.28-11.73.81-24.36-3-35.64-1.22-3.61-4.49-7.05-2.81-11 2.09-4.79 8.12-4.96 11.3-8.58z" transform="translate(-23.28 -27.16)" fill="#464353"/><g opacity=".1"><path d="M197.81 458.27a117.66 117.66 0 0 0-.69-16.57c-.11-1.08-.23-2.17-.32-3.27a46 46 0 0 0 .32 10.27c.32 3.18.57 6.38.69 9.57zM252.54 522.61c-2.1 1.7-5.12 1.56-7.78 1.07a23.82 23.82 0 0 1-10.88-4.58c-3.85-3.14-6.08-7.78-8.34-12.21s-4.83-9-9-11.61-10.54-2.6-13.54 1.39c-2.52 3.39-1.81 8.09-2.66 12.23-1.14 5.54-5.09 10-8.89 14.2a39.15 39.15 0 0 1-6.49 6.12 30.58 30.58 0 0 1-9.72 4.07 15.05 15.05 0 0 1-3.95 8c4.76-1.1 9.65-2.26 13.67-5a39.15 39.15 0 0 0 6.49-6.12c3.8-4.19 7.75-8.66 8.89-14.2.85-4.14.14-8.84 2.66-12.23 3-4 9.27-4 13.48-1.39s6.78 7.19 9 11.61 4.52 9.04 8.4 12.14a23.82 23.82 0 0 0 10.88 4.58c2.66.49 5.68.63 7.78-1.07 2.69-2.17 2.6-6.2 1.81-9.63a5.66 5.66 0 0 1-1.81 2.63zM260.4 431.21c-3.18 3.62-9.21 3.8-11.28 8.62-.91 2.11-.37 4.09.51 6 2.42-3.89 7.82-4.29 10.77-7.65 2.15-2.45 2.37-6 1.31-9.15a7.35 7.35 0 0 1-1.31 2.18zM254.91 486.43a25.51 25.51 0 0 1-.81 6.92c-.49 1.56-1.28 3-1.72 4.58a15.41 15.41 0 0 0 0 7.21v-.21c.44-1.57 1.23-3 1.72-4.58a25.51 25.51 0 0 0 .81-6.92c.11-4.67.26-9.47.16-14.28-.07 2.45-.07 4.85-.16 7.28z" transform="translate(-23.28 -27.16)"/></g></svg>
+					</div>
+
+					<div class="container text-center mt-7 mb-5">
+
+						<div class="text-center mb-6 pt-5">
+
+							<div class="mx-auto max-w-600">
+								<h2 class="h3-xs">
+									Request a Demo
+								</h2>
+
+								<p class="lead">
+									Curious about how Smarty can improve your business? 
+									Request a demo and we'll prepare one just for you!
+								</p>
+							</div>
+						
+						</div>
+
+						<a href="fullajax-demo-request.html" class="js-ajax btn btn-purple rounded-xl transition-hover-top">
+							Request a Demo
+						</a>
+
+					</div>
+				</section>
+
+
+
+			</div><!-- /end #middle -->
+
+
+
+
+
+
+
+			<!-- Footer -->
+			<footer id="footer" class="shadow-xs">
+				<div class="container pt-6 pb-1">
+
+					<div class="row gutters-xl gutters-md--xs">
+						
+						<div class="col-12 col-lg-7 mb-5">
+
+							<div class="mb-4">
+								<img src="assets/images/logo/logo_dark.svg" width="120" height="35" alt="...">
+							</div>
+
+							<p class="text-indigo-900">
+								Smarty is fully customizable, able to handle fully ajax that makes it very 
+								unique compared to any frontend template in any marketplace! 
+								Built for speed and customer conversion!
+							</p>
+
+							<p class="text-indigo-900">
+								&copy; Smarty Inc.
+							</p>
+
+						</div>
+
+						<div class="col-12 col-lg-5">
+
+							<div class="row">
+
+								<div class="col-6 fs--18">
+
+									<h4 class="h5">
+										Smarty Company
+									</h4>
+									<ul class="list-unstyled mb-5">
+
+										<li class="list-item">
+											<a class="js-ajax" href="fullajax-about.html">About Us</a>
+										</li>
+
+										<li class="list-item">
+											<a class="js-ajax" href="fullajax-careers.html">Careers</a>
+										</li>
+
+										<li class="list-item">
+											<a class="js-ajax" href="fullajax-contact.html">Contact Us</a>
+										</li>
+
+									</ul>
+
+
+
+									<h4 class="h5">
+										Smarty Support
+									</h4>
+									<ul class="list-unstyled mb-5">
+
+										<li class="list-item">
+											<a href="help-center-2-index.html" target="_blank">Help Center</a>
+										</li>
+
+										<li class="list-item">
+											<a class="js-ajax" href="fullajax-contact.html">Direct Contact</a>
+										</li>
+
+									</ul>
+
+								</div>
+
+								<div class="col-6">
+
+									<h4 class="h5">
+										Smarty Legal
+									</h4>
+									<ul class="list-unstyled mb-5">
+
+										<li class="list-item">
+											<a class="js-ajax" href="fullajax-terms.html">Terms &amp; Conditions</a>
+										</li>
+
+										<li class="list-item">
+											<a class="js-ajax" href="fullajax-privacy.html">Privacy</a>
+										</li>
+
+									</ul>
+
+
+
+									<h4 class="h5">
+										Smarty Social
+									</h4>
+									<ul class="list-unstyled mb-5">
+
+										<li class="list-item">
+											<a href="https://www.facebok.com" target="_blank" rel="noopener">Facebook</a>
+										</li>
+
+										<li class="list-item">
+											<a href="https://www.twitter.com" target="_blank" rel="noopener">Twitter</a>
+										</li>
+
+										<li class="list-item">
+											<a href="https://www.linkedin.com" target="_blank" rel="noopener">Linkedin</a>
+										</li>
+
+									</ul>
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</footer>
+			<!-- /Footer -->
+
+
+
+
+
+
+			<!-- 
+				Reset GDPR:
+					$.SOW.core.gdpr.destroy();
+					OR BY HASH: #del:gdpr
+
+				By hitting 'Accept & Continue' Button, default cookie is set to 0 (all cookies accepted).
+
+				++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+				Extending Consent by level (examples):
+						0 = accept all cookies!
+						1 = website only
+						2 = website + advertising
+						... more if needed
+
+					JS USAGE EXAMPLE:
+						$.SOW.core.gdpr.extend(2); 	// allow website + advertising
+
+					HTML EXAMPLE
+						<a href="#" class="btn-cookie-extend" data-cookie-level="2">Website + Advertising</a>
+
+					BACKEND:
+						Backend should use '__gdpr' cookie.
+
+
+				The following code should be present on all pages:
+			-->
+			<div id="gdpr" class="hide bg-white rounded-lg shadow-lg w-100 max-w-350 p--30 m-3 position-fixed fixed-bottom start-0 z-index-9999">
+				
+				<h3 class="fs--18 mb-4">
+					
+					<a href="#" class="close mt--n3">
+						<span class="fi fi-close fs--18" aria-hidden="true"></span>
+					</a>
+
+					Smarty Cookies
+
+				</h3>
+
+				<hr>
+
+				<p class="lead">
+					We use cookies to improve your experience on our site and to show you personalised ads.
+				</p>
+
+				<a href="#" class="btn btn-primary btn-cookie-accept btn-lg btn-block">
+					Accept &amp; Continue
+				</a>
+				
+				<hr class="mt-4 mb-4">
+				
+				<p class="m-0">
+
+					<span class="d-block">Need to learn more?</span>
+
+					<a href="fullajax-terms.html" class="js-ajax link-muted">Privacy Policy</a> 
+					
+					&ndash; and &ndash; 
+					
+					<a href="fullajax-privacy.html" class="js-ajax link-muted">Cookie Policy</a>
+
+				</p>
+			</div>
+
+
+
+			<!-- page preloader -->
+			<div id="page_preload" class="d-middle fixed-full z-index-9999 bg-white">
+
+				<span class="p-3 shadow-xs rounded">
+					<i class="fi fi-circle-spin fi-spin text-muted float-start"></i>
+					loading...
+				</span>
+
+			</div>
+			<!-- /page preloader -->
+
+
+
+		</div><!-- /#wrapper -->
+
+
+		<script src="assets/js/core.min.js"></script>
+
+
+		<!--
+
+			[SOW Ajax Navigation Plugin] [AJAX ONLY, IF USED]
+			If you have specific page js files, wrap them inside #page_js_files 
+			Ajax Navigation will use them for this page! 
+
+		-->
+		<div id="page_js_files"><!-- additional javascripts inside here --></div>
+
+		
+	</body>
+</html>

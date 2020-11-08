@@ -1,0 +1,1918 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="UTF-8">
+		<title>Smarty V3</title>
+		<meta name="description" content="...">
+
+        <meta name="viewport" content="width=device-width, maximum-scale=5, initial-scale=1, user-scalable=0">
+        <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+        <!-- up to 10% speed up for external res -->
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+        <link rel="preconnect" href="https://fonts.googleapis.com/">
+        <link rel="preconnect" href="https://fonts.gstatic.com/">
+        <!-- preloading icon font is helping to speed up a little bit -->
+        <link rel="preload" href="assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
+
+        <!-- non block rendering : page speed : js = polyfill for old browsers missing `preload` -->
+        <link rel="stylesheet" href="assets/css/core.min.css">
+        <link rel="stylesheet" href="assets/css/vendor_bundle.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap">
+
+		<!-- favicon -->
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="apple-touch-icon" href="demo.files/logo/icon_512x512.png">
+
+		<link rel="manifest" href="assets/images/manifest/manifest.json">
+		<meta name="theme-color" content="#377dff">
+
+	</head>
+
+
+	<!--
+
+		Layout Admin
+			.layout-admin 	(required)
+
+			.aside-sticky  					- sidebar : fixed and push header
+			.header-sticky  				- header : always visible on top (acting as old .header-focus)
+
+
+		****************************************************************************************************
+
+			NOTES
+
+				1. 	LOGO TO REPLACE
+						- logo_light.svg 	: sidebar
+						- logo_dark.svg 	: header navbar
+
+		****************************************************************************************************
+
+
+		++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++
+
+		SCROLL TO TOP BUTTON [optional styling]
+
+			data-s2t-disable="true"
+			data-s2t-position="start|end"
+			data-s2t-class="btn-secondary btn-sm" 	(default)
+			data-s2t-class="btn-secondary rounded-circle"
+			data-s2t-class="btn-warning rounded-circle"
+
+		++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++
+
+	-->
+	<body class="layout-admin header-sticky" data-s2t-class="btn-primary btn-sm bg-gradient-default rounded-circle b-0">
+
+		<div id="wrapper" class="d-flex align-items-stretch flex-column">
+
+
+
+			<!-- 
+				HEADER 
+				
+				.header-match-aside-primary
+			-->
+			<header id="header">
+
+				<!-- NAVBAR -->
+				<div class="container-fluid p-0-xs position-relative">
+
+					<nav class="navbar navbar-expand-lg navbar-light justify-content-lg-between justify-content-md-inherit h--70">
+
+						<div class="align-items-start">
+							
+							<!-- 
+								sidebar toggler 
+							-->
+							<a href="#aside-main" class="navbar-toggler h-100 d-inline-block d-lg-none justify-content-center align-items-center text-center p-2" data-toggle="collapse" data-target="#navbarMainNav" aria-controls="navbarMainNav" aria-expanded="false" aria-label="Toggle navigation">
+								<span class="group-icon">
+									<i>
+										<svg width="25" viewBox="0 0 20 20">
+											<path d="M 19.9876 1.998 L -0.0108 1.998 L -0.0108 -0.0019 L 19.9876 -0.0019 L 19.9876 1.998 Z"></path>
+											<path d="M 19.9876 7.9979 L -0.0108 7.9979 L -0.0108 5.9979 L 19.9876 5.9979 L 19.9876 7.9979 Z"></path>
+											<path d="M 19.9876 13.9977 L -0.0108 13.9977 L -0.0108 11.9978 L 19.9876 11.9978 L 19.9876 13.9977 Z"></path>
+											<path d="M 19.9876 19.9976 L -0.0108 19.9976 L -0.0108 17.9976 L 19.9876 17.9976 L 19.9876 19.9976 Z"></path>
+										</svg>
+									</i>
+
+									<i>
+										<svg width="25" viewBox="0 0 47.971 47.971">
+											<path d="M28.228,23.986L47.092,5.122c1.172-1.171,1.172-3.071,0-4.242c-1.172-1.172-3.07-1.172-4.242,0L23.986,19.744L5.121,0.88c-1.172-1.172-3.07-1.172-4.242,0c-1.172,1.171-1.172,3.071,0,4.242l18.865,18.864L0.879,42.85c-1.172,1.171-1.172,3.071,0,4.242C1.465,47.677,2.233,47.97,3,47.97s1.535-0.293,2.121-0.879l18.865-18.864L42.85,47.091c0.586,0.586,1.354,0.879,2.121,0.879s1.535-0.293,2.121-0.879c1.172-1.171,1.172-3.071,0-4.242L28.228,23.986z"/>
+										</svg>
+									</i>
+								</span>
+							</a>
+
+
+							<!-- 
+								Logo : height: 60px max
+								visibility : mobile only
+							-->
+							<a class="navbar-brand" href="index.html">
+								<img src="assets/images/logo/logo_dark.svg" width="110" height="60" alt="...">
+							</a>
+
+
+						</div>
+
+
+
+
+						<!-- NAVIGATION -->
+						<div class="collapse navbar-collapse px-5 pl-0-xs pr-0-xs" id="navbarMainNav">
+
+
+
+							<!-- MOBILE MENU NAVBAR -->
+							<div class="navbar-xs d-none">
+
+								<!-- mobile menu button : close -->
+								<button class="navbar-toggler pt-0" type="button" data-toggle="collapse" data-target="#navbarMainNav" aria-controls="navbarMainNav" aria-expanded="false" aria-label="Toggle navigation">
+									<svg width="20" viewBox="0 0 20 20">
+										<path d="M 20.7895 0.977 L 19.3752 -0.4364 L 10.081 8.8522 L 0.7869 -0.4364 L -0.6274 0.977 L 8.6668 10.2656 L -0.6274 19.5542 L 0.7869 20.9676 L 10.081 11.679 L 19.3752 20.9676 L 20.7895 19.5542 L 11.4953 10.2656 L 20.7895 0.977 Z"></path>
+									</svg>
+								</button>
+
+								<!-- 
+									Optional Mobile Menu Logo 
+									Logo : height: 70px max
+								-->
+								<a class="navbar-brand" href="index.html">
+									<img src="assets/images/logo/logo_dark.svg" width="110" height="70" alt="...">
+								</a>
+
+							</div>
+							<!-- /MOBILE MENU NAVBAR -->
+
+
+
+							<!-- Dropdowns -->
+							<ul class="navbar-nav align-items-center">
+
+								<!-- Features -->
+								<li class="nav-item dropdown">
+
+									<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="mainNavFeatures">
+										Features
+									</a>
+
+									<div class="dropdown-menu dropdown-menu-clean dropdown-menu-hover w--450 p-0 overflow-hidden" aria-labelledby="mainNavFeatures">
+
+										<div class="row no-gutters bg-gradient-default">
+
+											<div class="col-2 d-none d-lg-block"><!-- empty --></div>
+
+											<div class="col bg-white">
+
+												<ul class="mx-0 px-0 mt-4">
+
+													<li class="dropdown-item">
+														<a class="dropdown-link text-dark transition-hover-start" href="../layout_1/index.html">
+															<i class="fi fi-recycle fs--30 float-start"></i>
+															<span class="h5-xs d-block fs--20">Admin Layout 1</span>
+															<span>The all in one digital software</span>
+														</a>
+													</li>
+
+													<li class="dropdown-item">
+														<a class="dropdown-link text-dark transition-hover-start" href="../layout_2/index.html">
+															<i class="fi fi-shape-abstract-cube fs--30 float-start"></i>
+															<span class="h5-xs d-block fs--20">Admin Layout 2</span>
+															<span>Boost your campaigns</span>
+														</a>
+													</li>
+
+													<li class="dropdown-item">
+														<a class="dropdown-link text-dark transition-hover-start" href="../layout_3/index.html">
+															<i class="fi fi-target-simple fs--30 float-start"></i>
+															<span class="h5-xs d-block fs--20">Admin Layout 3</span>
+															<span>Streamline a complex sales process</span>
+														</a>
+													</li>
+
+												</ul>
+
+												<div class="bg-light py-4 px-3 mt-4">
+
+													<h5 class="font-weight-light">
+														Other Products
+													</h5>
+
+													<ul class="mx-0 px-0">
+
+														<li class="dropdown-item">
+															<a class="dropdown-link text-dark px-2 py-1" href="#!">
+																<i class="fi fi-arrow-end"></i>
+																QA Testing
+															</a>
+														</li>
+
+														<li class="dropdown-item">
+															<a class="dropdown-link text-dark px-2 py-1" href="#!">
+																<i class="fi fi-arrow-end"></i>
+																API
+															</a>
+														</li>
+
+													</ul>
+
+												</div>
+
+											</div>
+
+										</div>
+
+
+									</div>
+
+								</li>
+
+								<!--  -->
+								<li class="nav-item dropdown">
+
+									<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="mainNavHome">
+										Shortcuts
+									</a>
+
+									<ul class="dropdown-menu dropdown-menu-clean" aria-labelledby="mainNavHome">
+
+										<li class="dropdown-item dropdown">
+											<a class="dropdown-link" href="#!" data-toggle="dropdown">
+												<i class="fi fi-cart-1"></i>
+												Components
+											</a>
+
+											<ul class="dropdown-menu dropdown-menu-hover shadow-lg b-0 m-0">
+												<li class="dropdown-item">
+													<a class="dropdown-link" href="components-alerts.html">
+														<i class="fi fi-plus"></i>
+														Alerts
+													</a>
+												</li>
+												<li class="dropdown-item">
+													<a class="dropdown-link" href="components-accordions.html">
+														<i class="fi fi-list-checked"></i>
+														Accordions
+													</a>
+												</li>
+												<li class="dropdown-item">
+													<a class="dropdown-link" href="components-badges.html">
+														<i class="fi fi-box"></i>
+														Badges
+													</a>
+												</li>
+												<li class="dropdown-item">
+													<a class="dropdown-link" href="components-buttons.html">
+														<i class="fi fi-close"></i>
+														Buttons
+													</a>
+												</li>
+												<li class="dropdown-item">
+													<a class="dropdown-link" target="_blank" href="../../html_frontend/documentation/plugins-sow-ajax-forms.html">
+														<i class="fi fi-close"></i>
+														Documentation
+													</a>
+												</li>
+											</ul>
+
+										</li>
+										<li class="dropdown-item">
+											<a class="dropdown-link" href="account-signin.html">
+												<i class="fi fi-user-plus"></i>
+												Sign In/Up
+											</a>
+										</li>
+										<li class="dropdown-item">
+											<a class="dropdown-link" href="account-settings.html">
+												<i class="fi fi-users"></i>
+												Account Settings
+											</a>
+										</li>
+										<li class="dropdown-item">
+											<a class="dropdown-link" href="admin-staff.html">
+												<i class="fi fi-graph"></i>
+												Admin Staff
+											</a>
+										</li>
+										<li class="dropdown-item">
+											<a class="dropdown-link" href="page-list.html">
+												<i class="fi fi-task-list"></i>
+												Page List
+											</a>
+										</li>
+										<li class="dropdown-item">
+											<a class="dropdown-link" href="page-product-add.html">
+												<i class="fi fi-task-list"></i>
+												Product Add
+											</a>
+										</li>
+										<li class="dropdown-item">
+											<a class="dropdown-link" href="message-inbox.html">
+												<i class="fi fi-task-list"></i>
+												Message Inbox
+											</a>
+										</li>
+										<li class="dropdown-item">
+											<a class="dropdown-link" target="_blank" href="../../html_frontend/documentation/plugins-sow-ajax-forms.html">
+												<i class="fi fi-task-list"></i>
+												Documentation
+											</a>
+										</li>
+									</ul>
+
+								</li>
+
+								<li class="nav-item dropdown dropdown-mega">
+
+									<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="mainMegaNav">
+										Mega
+									</a>
+
+									<ul class="dropdown-menu" aria-labelledby="mainMegaNav">
+										<li class="dropdown-item bg-transparent">
+											
+											<!-- 
+												for 5 columns:  
+												.col-md-5th   -instead of-   .col-md-3 
+											-->
+											<div class="row col-border-md">
+
+												<div class="col-12 col-md-3">
+
+													<h3 class="h6 text-muted text-uppercase fs--14 mb-3">ACCOUNT OPTIONS</h3>
+													<ul>
+
+														<li class="dropdown-item">
+															<a class="dropdown-link" href="#!">Option 1</a>
+														</li>
+
+														<li class="dropdown-item">
+															<a class="dropdown-link" href="#!">Option 2</a>
+														</li>
+
+														<li class="dropdown-item">
+															<a class="dropdown-link" href="#!">Option 3</a>
+														</li>
+
+														<li class="dropdown-item">
+															<a class="dropdown-link" href="#!">Option 4</a>
+														</li>
+
+														<li class="dropdown-item">
+															<a class="dropdown-link" href="#!">Option 5</a>
+														</li>
+
+													</ul>
+
+												</div>
+
+												<div class="col-12 col-md-3">
+
+													<h3 class="h6 text-muted text-uppercase fs--14 mb-3">ECOMMERCE SETTINGS</h3>
+													<ul>
+
+														<li class="dropdown-item">
+															<a class="dropdown-link" href="#!">Option 1</a>
+														</li>
+
+														<li class="dropdown-item">
+															<a class="dropdown-link" href="#!">Option 2</a>
+														</li>
+
+														<li class="dropdown-item">
+															<a class="dropdown-link" href="#!">Option 3</a>
+														</li>
+
+														<li class="dropdown-item">
+															<a class="dropdown-link" href="#!">Option 4</a>
+														</li>
+
+														<li class="dropdown-item">
+															<a class="dropdown-link" href="#!">Option 5</a>
+														</li>
+
+													</ul>
+
+												</div>
+
+												<div class="col-12 col-md-3">
+
+													<h3 class="h6 text-muted text-uppercase fs--14 mb-3">QUICK TOOLS</h3>
+													<ul>
+
+														<li class="dropdown-item">
+															<a class="dropdown-link" href="#!">Option 1</a>
+														</li>
+
+														<li class="dropdown-item">
+															<a class="dropdown-link" href="#!">Option 2</a>
+														</li>
+
+														<li class="dropdown-item">
+															<a class="dropdown-link" href="#!">Option 3</a>
+														</li>
+
+														<li class="dropdown-item">
+															<a class="dropdown-link" href="#!">Option 4</a>
+														</li>
+
+														<li class="dropdown-item">
+															<a class="dropdown-link" href="#!">Option 5</a>
+														</li>
+
+													</ul>
+
+												</div>
+
+												<div class="col-12 col-md-3">
+
+													<h3 class="h6 text-muted text-uppercase fs--14 mb-3">ACCOUNT OPTIONS</h3>
+													<ul>
+
+														<li class="dropdown-item">
+															<a class="dropdown-link" href="#!">Option 1</a>
+														</li>
+
+														<li class="dropdown-item">
+															<a class="dropdown-link" href="#!">Option 2</a>
+														</li>
+
+														<li class="dropdown-item">
+															<a class="dropdown-link" href="#!">Option 3</a>
+														</li>
+
+														<li class="dropdown-item">
+															<a class="dropdown-link" href="#!">Option 4</a>
+														</li>
+
+														<li class="dropdown-item">
+															<a class="dropdown-link" href="#!">Option 5</a>
+														</li>
+
+													</ul>
+
+												</div>
+
+											</div>
+
+										</li>
+									</ul>
+
+								</li>
+
+
+								<!--  -->
+								<li class="nav-item">
+									
+									<a class="nav-link px-1" href="#!">
+										<span class="py-2 px-3 rounded">
+											<i class="fi fi-squared-dots"></i>
+											<span>Apps</span>
+										</span>
+									</a>
+
+								</li>
+
+
+							</ul>
+							<!-- /Dropdowns -->
+
+						</div>
+						<!-- /NAVIGATION -->
+
+
+
+
+						<!-- OPTIONS -->
+						<ul class="list-inline list-unstyled mb-0 d-flex align-items-end">
+
+							<!-- notifications -->
+							<li class="list-inline-item ml--6 mr--6 dropdown">
+
+								<a href="#" id="dropdownNotificationOptions" class="btn btn-sm rounded-circle btn-light dropdown-toggle" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+									
+									<!-- badge -->
+									<span class="badge badge-danger fs--10 p--3 mt--n3 position-absolute end-0">2</span>
+
+									<span class="group-icon">
+										<i class="fi fi-bell-full"></i>
+										<!-- <i class="fi fi-bell-full-active"></i> -->
+										<i class="fi fi-close"></i>
+									</span>
+
+								</a>
+
+								<div aria-labelledby="dropdownNotificationOptions" class="dropdown-menu dropdown-menu-clean dropdown-menu-navbar-autopos dropdown-menu-invert dropdown-click-ignore p-0 mt--18 fs--15 w--300">
+									
+									<div class="dropdown-header fs--14 py-3">
+
+										2 UNREAD NOTIFICATIONS
+
+									</div>
+
+									<div class="dropdown-divider"></div>
+
+									<div class="max-h-50vh scrollable-vertical">
+									
+										<!-- NOTIFICATION -->
+										<a href="#!" class="clearfix dropdown-item font-weight-medium p-3 border-bottom border-light overflow-hidden shadow-md-hover bg-theme-color-light">
+
+											<!-- badge -->
+											<span class="badge badge-success float-end font-weight-normal mt-1">new</span>
+
+											<!-- icon -->
+											<i class="fi fi-cart-1 d-middle float-start fs--20 bg-light w--40 h--40 rounded-circle text-center"></i>
+
+											<!-- NOTIFICATION -->
+											<p class="fs--14 m-0 text-truncate font-weight-normal">
+												2 new orders
+											</p>
+
+											<!-- date -->
+											<small class="d-block fs--11 text-muted">
+												Oct 22, 2019 / 02:21:46pm
+											</small>
+
+										</a>
+										<!-- /NOTIFICATION -->
+
+
+										<!-- NOTIFICATION -->
+										<a href="#!" class="clearfix dropdown-item font-weight-medium p-3 border-bottom border-light overflow-hidden shadow-md-hover bg-theme-color-light">
+
+											<!-- badge -->
+											<span class="badge badge-success float-end font-weight-normal mt-1">new</span>
+											<span class="badge badge-danger float-end font-weight-normal mt-1">urgent</span>
+
+											<!-- icon -->
+											<i class="fi fi-round-close d-middle text-danger float-start fs--20 bg-light w--40 h--40 rounded-circle text-center"></i>
+
+											<!-- NOTIFICATION -->
+											<p class="fs--14 m-0 text-truncate font-weight-normal">
+												CRM API update required!
+											</p>
+
+											<!-- date -->
+											<small class="d-block fs--11 text-muted">
+												Oct 22, 2019 / 02:21:46pm
+											</small>
+
+										</a>
+										<!-- /NOTIFICATION -->
+
+
+
+										<!-- NOTIFICATION -->
+										<a href="#!" class="clearfix dropdown-item font-weight-medium p-3 border-bottom border-light overflow-hidden shadow-md-hover">
+
+											<!-- badge -->
+											<span class="badge badge-warning float-end font-weight-normal mt-1">system</span>
+
+											<!-- icon -->
+											<i class="fi fi-shield-ok d-middle text-success float-start fs--20 bg-light w--40 h--40 rounded-circle text-center"></i>
+
+											<!-- NOTIFICATION -->
+											<p class="fs--14 m-0 text-truncate font-weight-normal">
+												AI self repair success!
+											</p>
+
+											<!-- date -->
+											<small class="d-block fs--11 text-muted">
+												Oct 22, 2019 / 02:21:46pm
+											</small>
+
+										</a>
+										<!-- /NOTIFICATION -->
+
+
+										<!-- NOTIFICATION -->
+										<a href="#!" class="clearfix dropdown-item font-weight-medium p-3 border-bottom border-light overflow-hidden shadow-md-hover">
+
+											<!-- icon -->
+											<i class="fi fi-check d-middle text-success float-start fs--18 bg-light w--40 h--40 rounded-circle text-center"></i>
+
+											<!-- NOTIFICATION -->
+											<p class="fs--14 m-0 text-truncate font-weight-normal">
+												Not really a heaven but good!
+											</p>
+
+											<!-- date -->
+											<small class="d-block fs--11 text-muted">
+												Oct 22, 2019 / 02:21:46pm
+											</small>
+
+										</a>
+										<!-- /NOTIFICATION -->
+
+
+										<!-- NOTIFICATION -->
+										<a href="#!" class="clearfix dropdown-item font-weight-medium p-3 border-bottom border-light overflow-hidden shadow-md-hover">
+
+											<!-- icon -->
+											<i class="fi fi-close d-middle text-danger float-start fs--18 bg-light w--40 h--40 rounded-circle text-center"></i>
+
+											<!-- NOTIFICATION -->
+											<p class="fs--14 m-0 text-truncate font-weight-normal">
+												Not the end of the world!
+											</p>
+
+											<!-- date -->
+											<small class="d-block fs--11 text-muted">
+												Oct 22, 2019 / 02:21:46pm
+											</small>
+
+										</a>
+										<!-- /NOTIFICATION -->
+
+
+
+										<!-- NOTIFICATION -->
+										<a href="#!" class="clearfix dropdown-item font-weight-medium p-3 border-bottom border-light overflow-hidden shadow-md-hover">
+
+											<!-- icon -->
+											<i class="fi fi-check d-middle text-white float-start fs--18 bg-success w--40 h--40 rounded-circle text-center"></i>
+
+											<!-- NOTIFICATION -->
+											<p class="fs--14 m-0 text-truncate font-weight-normal">
+												This is good! Very good!
+											</p>
+
+											<!-- date -->
+											<small class="d-block fs--11 text-muted">
+												Oct 22, 2019 / 02:21:46pm
+											</small>
+
+										</a>
+										<!-- /NOTIFICATION -->
+
+
+										<!-- NOTIFICATION -->
+										<a href="#!" class="clearfix dropdown-item font-weight-medium p-3 border-bottom border-light overflow-hidden shadow-md-hover">
+
+											<!-- icon -->
+											<i class="fi fi-close d-middle text-white float-start fs--18 bg-danger w--40 h--40 rounded-circle text-center"></i>
+
+											<!-- NOTIFICATION -->
+											<p class="fs--14 m-0 text-truncate font-weight-normal">
+												The end of the world is here!
+											</p>
+
+											<!-- date -->
+											<small class="d-block fs--11 text-muted">
+												Oct 22, 2019 / 02:21:46pm
+											</small>
+
+										</a>
+										<!-- /NOTIFICATION -->
+
+
+										<!-- NOTIFICATION -->
+										<a href="#!" class="clearfix dropdown-item font-weight-medium p-3 border-bottom border-light overflow-hidden shadow-md-hover">
+
+											<!-- icon -->
+											<i class="fi fi-user-male d-middle float-start fs--18 bg-light w--40 h--40 rounded-circle text-center"></i>
+
+											<!-- NOTIFICATION -->
+											<p class="fs--14 m-0 text-truncate font-weight-normal">
+												A Spartan joined the team!
+											</p>
+
+											<!-- date -->
+											<small class="d-block fs--11 text-muted">
+												Oct 22, 2019 / 02:21:46pm
+											</small>
+
+										</a>
+										<!-- /NOTIFICATION -->
+
+
+
+										<!-- NOTIFICATION -->
+										<a href="#!" class="clearfix dropdown-item font-weight-medium p-3 border-bottom border-light overflow-hidden shadow-md-hover">
+
+											<!-- icon -->
+											<i class="fi fi-user-female d-middle float-start fs--18 bg-light w--40 h--40 rounded-circle text-center"></i>
+
+											<!-- NOTIFICATION -->
+											<p class="fs--14 m-0 text-truncate font-weight-normal">
+												Pssst! We have girls in our team!
+											</p>
+
+											<!-- date -->
+											<small class="d-block fs--11 text-muted">
+												Oct 22, 2019 / 02:21:46pm
+											</small>
+
+										</a>
+										<!-- /NOTIFICATION -->
+
+
+
+										<!-- NOTIFICATION -->
+										<a href="#!" class="clearfix dropdown-item font-weight-medium p-3 border-bottom border-light overflow-hidden shadow-md-hover">
+
+											<!-- icon -->
+											<i class="fi fi-star text-warning d-middle float-start fs--18 bg-light w--40 h--40 rounded-circle text-center"></i>
+
+											<!-- NOTIFICATION -->
+											<p class="fs--14 m-0 text-truncate font-weight-normal">
+												This is something good?
+											</p>
+
+											<!-- date -->
+											<small class="d-block fs--11 text-muted">
+												Oct 22, 2019 / 02:21:46pm
+											</small>
+
+										</a>
+										<!-- /NOTIFICATION -->
+
+
+
+
+										<!-- NOTIFICATION -->
+										<a href="#!" class="clearfix dropdown-item font-weight-medium p-3 border-bottom border-light overflow-hidden shadow-md-hover">
+
+											<!-- icon -->
+											<i class="fi fi-star-full text-warning d-middle float-start fs--18 bg-light w--40 h--40 rounded-circle text-center"></i>
+
+											<!-- NOTIFICATION -->
+											<p class="fs--14 m-0 text-truncate font-weight-normal">
+												Or maybe this?
+											</p>
+
+											<!-- date -->
+											<small class="d-block fs--11 text-muted">
+												Oct 22, 2019 / 02:21:46pm
+											</small>
+
+										</a>
+										<!-- /NOTIFICATION -->
+
+
+
+
+										<!-- NOTIFICATION -->
+										<a href="#!" class="clearfix dropdown-item font-weight-medium p-3 border-bottom border-light overflow-hidden shadow-md-hover">
+
+											<!-- icon -->
+											<i class="fi fi-round-info-full text-muted d-middle float-start fs--18 bg-light w--40 h--40 rounded-circle text-center"></i>
+
+											<!-- NOTIFICATION -->
+											<p class="fs--14 m-0 text-truncate font-weight-normal">
+												Simple short information...
+											</p>
+
+											<!-- date -->
+											<small class="d-block fs--11 text-muted">
+												Oct 22, 2019 / 02:21:46pm
+											</small>
+
+										</a>
+										<!-- /NOTIFICATION -->
+
+
+
+
+										<!-- NOTIFICATION -->
+										<a href="#!" class="clearfix dropdown-item font-weight-medium p-3 border-bottom border-light overflow-hidden shadow-md-hover">
+
+											<!-- icon -->
+											<i class="fi fi-database text-muted d-middle float-start fs--18 bg-light w--40 h--40 rounded-circle text-center"></i>
+
+											<!-- NOTIFICATION -->
+											<p class="fs--14 m-0 text-truncate font-weight-normal">
+												Database related
+											</p>
+
+											<!-- date -->
+											<small class="d-block fs--11 text-muted">
+												Oct 22, 2019 / 02:21:46pm
+											</small>
+
+										</a>
+										<!-- /NOTIFICATION -->
+
+
+
+										<!-- NOTIFICATION -->
+										<a href="#!" class="clearfix dropdown-item font-weight-medium p-3 border-bottom border-light overflow-hidden shadow-md-hover">
+
+											<!-- icon -->
+											<i class="fi fi-chat text-muted d-middle float-start fs--18 bg-light w--40 h--40 rounded-circle text-center"></i>
+
+											<!-- NOTIFICATION -->
+											<p class="fs--14 m-0 text-truncate font-weight-normal">
+												Customer chat lost...
+											</p>
+
+											<!-- date -->
+											<small class="d-block fs--11 text-muted">
+												Oct 22, 2019 / 02:21:46pm
+											</small>
+
+										</a>
+										<!-- /NOTIFICATION -->
+
+
+
+										<!-- NOTIFICATION -->
+										<a href="#!" class="clearfix dropdown-item font-weight-medium p-3 border-bottom border-light overflow-hidden shadow-md-hover">
+
+											<!-- icon -->
+											<i class="fi fi-hourglass text-muted d-middle float-start fs--18 bg-light w--40 h--40 rounded-circle text-center"></i>
+
+											<!-- NOTIFICATION -->
+											<p class="fs--14 m-0 text-truncate font-weight-normal">
+												Pending approval
+											</p>
+
+											<!-- date -->
+											<small class="d-block fs--11 text-muted">
+												Oct 22, 2019 / 02:21:46pm
+											</small>
+
+										</a>
+										<!-- /NOTIFICATION -->
+
+
+
+										<!-- NOTIFICATION -->
+										<a href="#!" class="clearfix dropdown-item font-weight-medium p-3 border-bottom border-light overflow-hidden shadow-md-hover">
+
+											<!-- icon -->
+											<i class="fi fi-shape-abstract-dots text-muted d-middle float-start fs--18 bg-light w--40 h--40 rounded-circle text-center"></i>
+
+											<!-- NOTIFICATION -->
+											<p class="fs--14 m-0 text-truncate font-weight-normal">
+												Various notifications...
+											</p>
+
+											<!-- date -->
+											<small class="d-block fs--11 text-muted">
+												Oct 22, 2019 / 02:21:46pm
+											</small>
+
+										</a>
+										<!-- /NOTIFICATION -->
+
+
+
+										<!-- NOTIFICATION -->
+										<a href="https://wrapbootstrap.com/theme/smarty-website-admin-rtl-WB02DSN1B" target="wrapbootstrap" class="clearfix dropdown-item font-weight-medium px-3 rounded overflow-hidden shadow-md-hover">
+
+											<!-- badge -->
+											<span class="badge badge-pink float-end font-weight-normal mt-1">{wrapbootstrap}</span>
+
+											<!-- icon -->
+											<i class="fi fi-emoji-evil text-pink d-middle float-start fs--18 bg-light w--40 h--40 rounded-circle text-center"></i>
+
+											<!-- NOTIFICATION -->
+											<p class="fs--14 m-0 text-truncate font-weight-normal">
+												THIS IS <del>Spar..</del> Smarty!
+											</p>
+
+											<!-- date -->
+											<small class="d-block fs--11 text-muted">
+												Oct 22, 2019 / 02:21:46pm
+											</small>
+
+										</a>
+										<!-- /NOTIFICATION -->
+
+
+									</div>
+
+									<div class="dropdown-divider mb-0"></div>
+
+									<a href="#!" class="prefix-icon-ignore dropdown-footer dropdown-custom-ignore font-weight-medium pt-3 pb-3">
+										<i class="fi fi-arrow-end fs--11"></i>
+										<span class="d-inline-block pl-2 pr-2">View all</span>
+									</a>
+								</div>
+
+							</li>
+
+							<!-- messages  d-none d-md-inline-block -->
+							<li class="list-inline-item ml--6 mr--6 dropdown">
+
+								<a href="#" id="dropdownMessageOptions" class="btn btn-sm rounded-circle btn-light dropdown-toggle" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+									
+									<!-- badge -->
+									<span class="badge badge-danger shadow-danger-md animate-pulse fs--10 p--3 mt--n3 position-absolute end-0">1</span>
+
+									<span class="group-icon">
+										<i class="fi fi-envelope-2"></i>
+										<i class="fi fi-close"></i>
+									</span>
+								</a>
+
+								<div aria-labelledby="dropdownMessageOptions" class="dropdown-menu dropdown-menu-clean dropdown-menu-navbar-autopos dropdown-menu-invert dropdown-click-ignore p-0 mt--18 fs--15 w--300">
+									
+									<div class="dropdown-header fs--14 py-3">
+
+										<a href="#!" class="js-ajax-modal btn btn-sm btn-primary btn-soft b-0 px-2 py-1 m-0 fs--12 mt--n3 float-end"
+											data-href="_ajax/admin_modal_message_write.html" 
+											data-ajax-modal-size="modal-md" 
+											data-ajax-modal-centered="false" 
+											data-ajax-modal-backdrop="static">
+											+ WRITE
+										</a>
+
+										1 NEW MESSAGE
+
+									</div>
+
+									<div class="dropdown-divider"></div>
+
+									<div class="max-h-50vh scrollable-vertical">
+									
+										<!-- MESSAGE -->
+										<a href="#!" class="clearfix dropdown-item font-weight-medium px-3 border-bottom border-light overflow-hidden shadow-md-hover bg-theme-color-light">
+
+											<span class="badge badge-success float-end font-weight-normal mt-1">new</span>
+											<span class="badge badge-danger float-end font-weight-normal mt-1">urgent</span>
+
+											<!-- image -->
+											<div class="w--50 h--50 mb-2 mt-1 rounded-circle bg-cover bg-light float-start" style="background-image:url('../../html_frontend/demo.files/images/icons/user80.png')"></div>
+
+											<!-- author -->
+											<strong class="d-block text-truncate">John Doe</strong>
+
+											<!-- subject -->
+											<p class="fs--14 m-0 text-truncate font-weight-normal">
+												Spartans has no weekends, so neither you!
+											</p>
+
+											<!-- date -->
+											<small class="d-block fs--11 text-muted">
+												Jan 22, 2019 / 02:21:46pm
+											</small>
+
+										</a>
+										<!-- /MESSAGE -->
+
+										<!-- MESSAGE -->
+										<a href="#!" class="clearfix dropdown-item font-weight-medium px-3 border-bottom border-light overflow-hidden shadow-md-hover">
+
+											<!-- image -->
+											<div class="w--50 h--50 mb-2 mt-1 rounded-circle bg-cover bg-light float-start" style="background-image:url('../../html_frontend/demo.files/images/unsplash/team/michael-dam-mEZ3PoFGs_k-unsplash.jpg')"></div>
+
+											<!-- author -->
+											<strong class="d-block text-truncate">Michael Dam</strong>
+
+											<!-- subject -->
+											<p class="fs--14 m-0 text-truncate font-weight-normal">
+												Go with Smarty, you can't go wrong, trust me
+											</p>
+
+											<!-- date -->
+											<small class="d-block fs--11 text-muted">
+												Jan 22, 2019 / 02:21:46pm
+											</small>
+
+										</a>
+										<!-- /MESSAGE -->
+
+										<!-- MESSAGE -->
+										<a href="#!" class="clearfix dropdown-item font-weight-medium px-3 border-bottom border-light overflow-hidden shadow-md-hover">
+
+											<!-- image -->
+											<div class="w--50 h--50 mb-2 mt-1 rounded-circle bg-cover bg-light float-start" style="background-image:url('../../html_frontend/demo.files/images/unsplash/team/joseph-gonzalez-iFgRcqHznqg-unsplash.jpg')"></div>
+
+											<!-- author -->
+											<strong class="d-block text-truncate">Joseph Gonzalez</strong>
+
+											<!-- subject -->
+											<p class="fs--14 m-0 text-truncate font-weight-normal">
+												RE: No Subject
+											</p>
+
+											<!-- date -->
+											<small class="d-block fs--11 text-muted">
+												Jan 22, 2019 / 02:21:46pm
+											</small>
+
+										</a>
+										<!-- /MESSAGE -->
+
+										<!-- MESSAGE -->
+										<a href="#!" class="clearfix dropdown-item font-weight-medium px-3 border-bottom border-light overflow-hidden shadow-md-hover">
+
+											<!-- image -->
+											<div class="w--50 h--50 mb-2 mt-1 rounded-circle bg-cover bg-light float-start" style="background-image:url('../../html_frontend/demo.files/images/unsplash/team/erik-mclean-06vpBIHmiYc-unsplash.jpg')"></div>
+
+											<!-- author -->
+											<strong class="d-block text-truncate">Erik Mclean</strong>
+
+											<!-- subject -->
+											<p class="fs--14 m-0 text-truncate font-weight-normal">
+												Indeed, this is unbeliveable
+											</p>
+
+											<!-- date -->
+											<small class="d-block fs--11 text-muted">
+												Jan 22, 2019 / 02:21:46pm
+											</small>
+
+										</a>
+										<!-- /MESSAGE -->
+
+										<!-- MESSAGE -->
+										<a href="#!" class="clearfix dropdown-item font-weight-medium px-3 border-bottom border-light overflow-hidden shadow-md-hover">
+
+											<!-- image -->
+											<div class="w--50 h--50 mb-2 mt-1 rounded-circle bg-cover bg-light float-start" style="background-image:url('../../html_frontend/demo.files/images/unsplash/team/valerie-elash-9IL_stSpvOU-unsplash.jpg')"></div>
+
+											<!-- author -->
+											<strong class="d-block text-truncate">Valerie Elash</strong>
+
+											<!-- subject -->
+											<p class="fs--14 m-0 text-truncate font-weight-normal">
+												RE: No Subject
+											</p>
+
+											<!-- date -->
+											<small class="d-block fs--11 text-muted">
+												Jan 22, 2019 / 02:21:46pm
+											</small>
+
+										</a>
+										<!-- /MESSAGE -->
+
+									</div>
+
+									<div class="dropdown-divider mb-0"></div>
+
+									<a href="#!" class="prefix-icon-ignore dropdown-footer dropdown-custom-ignore font-weight-medium pt-3 pb-3">
+										<i class="fi fi-arrow-end fs--11"></i>
+										<span class="d-inline-block pl-2 pr-2">View all</span>
+									</a>
+								</div>
+
+							</li>
+
+							<!-- account -->
+							<li class="list-inline-item ml--6 mr--6 dropdown">
+
+								<a href="#" id="dropdownAccountOptions" class="btn btn-sm btn-light dropdown-toggle btn-pill pl--12 pr--12" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+									
+									<span class="group-icon m-0">
+										<!-- <i class="fi fi-user-female"></i> -->
+										<i class="fi w--15 fi-user-male"></i>
+										<i class="fi w--15 fi-close"></i>
+									</span>
+
+									<span class="fs--14 d-none d-sm-inline-block font-weight-medium">John D.</span>
+								</a>
+
+
+								<!--
+									
+									Dropdown Classes
+										.dropdown-menu-dark 		- dark dropdown (desktop only, will be white on mobile)
+										.dropdown-menu-hover 		- open on hover
+										.dropdown-menu-clean 		- no background color on hover
+										.dropdown-menu-invert 		- open dropdown in oposite direction (left|right, according to RTL|LTR)
+										.dropdown-click-ignore 		- keep dropdown open on inside click (useful on forms inside dropdown)
+
+										Dropdown prefix icon (optional, if enabled in variables.scss)
+											.prefix-link-icon .prefix-icon-dot 		- link prefix
+											.prefix-link-icon .prefix-icon-line 	- link prefix
+											.prefix-link-icon .prefix-icon-ico 		- link prefix
+											.prefix-link-icon .prefix-icon-arrow 	- link prefix
+
+											.prefix-icon-ignore 					- ignore, do not use on a specific link
+
+								-->
+								<div aria-labelledby="dropdownAccountOptions" class="prefix-link-icon prefix-icon-dot dropdown-menu dropdown-menu-clean dropdown-menu-navbar-autopos dropdown-menu-invert dropdown-click-ignore p-0 mt--18 fs--15 w--300">
+									
+									<div class="dropdown-header fs--14 py-4">
+
+										<!-- profile image -->
+										<div class="w--60 h--60 rounded-circle bg-light bg-cover float-start" style="background-image:url('../../html_frontend/demo.files/images/icons/user80.png')"></div>
+										
+										<!-- initials - no image -->
+										<!--
+										<div data-initials="John Doe" data-assign-color="true" class="sow-util-initials bg-light rounded h5 w--60 h--60 d-inline-flex justify-content-center align-items-center rounded-circle float-start">
+											<i class="fi fi-circle-spin fi-spin"></i>
+										</div>
+										-->
+
+										<!-- user detail -->
+										<span class="d-block font-weight-medium text-truncate fs--16">John Doe</span>
+										<span class="d-block text-muted font-weight-medium text-truncate">john.doe@gmail.com</span>
+										<small class="d-block text-muted"><b>Last Login:</b> 2019-09-03 01:48</small>
+
+									</div>
+
+									<div class="dropdown-divider"></div>
+
+									<a href="#!" target="_blank" class="dropdown-item text-truncate font-weight-medium">
+										Notes
+										<small class="d-block text-muted">personal encypted notes</small>
+									</a>
+
+									<a href="#!" target="_blank" class="dropdown-item text-truncate font-weight-medium">
+										<span class="badge badge-success float-end font-weight-normal mt-1">3 new</span>
+										Messages
+										<small class="d-block text-muted">internal messaging system</small>
+									</a>
+
+									<a href="#!" target="_blank" class="dropdown-item text-truncate font-weight-medium">
+										<span class="badge badge-danger float-end font-weight-normal mt-1">1 unpaid</span>
+										Invoices
+										<small class="d-block text-muted">montly billing</small>
+									</a>
+
+									<a href="#!" class="dropdown-item text-truncate font-weight-medium">
+										Account Settings
+										<small class="d-block text-muted">profile, password and more...</small>
+									</a>
+
+									<a href="#!" class="dropdown-item text-truncate font-weight-medium">
+										Upgrade
+										<small class="d-block text-muted">upgrade your account</small>
+									</a>
+
+									<div class="dropdown-divider mb-0"></div>
+
+									<a href="#!" class="prefix-icon-ignore dropdown-footer dropdown-custom-ignore font-weight-medium pt-3 pb-3">
+										<i class="fi fi-power float-start"></i>
+										Log Out
+									</a>
+								</div>
+
+							</li>
+
+						</ul>
+						<!-- /OPTIONS -->
+
+
+					</nav>
+
+				</div>
+				<!-- /NAVBAR -->
+
+			</header>
+			<!-- /HEADER -->
+
+
+
+
+
+			<div id="wrapper_content" class="mx-0 d-flex flex-fill">
+
+				<!-- MIDDLE -->
+				<div id="middle" class="flex-fill">
+
+
+					<!-- doc:start -->
+					<div class="page-title bg-transparent b-0">
+
+						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
+							Vendor : Datatables
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--13 pb-2 px-3">
+								<li class="breadcrumb-item">
+									<a href="index.html" class="js-ajax">Dashboard</a>
+								</li>
+								<li class="breadcrumb-item active">
+									Vendor Plugins
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Datatables
+								</li>
+							</ol>
+						</nav>
+
+					</div>
+
+
+
+					<!-- ALERT : NOTE -->
+					<div class="bg-white shadow-xs p-2 mb-4 rounded">
+						<div class="clearfix bg-light p-2 rounded d-flex align-items-center">
+							<span class="btn row-pill btn-sm bg-gradient-warning b-0 py-1 mb-0 float-start">
+								<i class="fi fi-round-info-full"></i>
+								Note
+							</span>
+							<span class="d-block px-2 text-muted text-truncate">
+								This is a basic demo! Please see main <a href="../../html_frontend/documentation/plugins-vendor-datatable.html" target="smarty" class="link-muted">full documentation here</a>.
+							</span>
+						</div>
+					</div>
+					<!-- /ALERT : NOTE -->
+
+
+
+					<!-- start:row -->
+					<div class="row gutters-sm">
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Info</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<p class="lead">
+											DataTables is a plug-in for the jQuery Javascript library. It is a highly flexible tool, built upon the foundations of progressive enhancement, that adds all of these advanced features to any HTML table.
+										</p>
+
+										<ul class="mt-3">
+											<li class="mt-3">
+												<a href="https://datatables.net/" target="smarty" class="link-muted">
+													https://datatables.net/
+												</a>
+											</li>
+											<li>
+												License: MIT
+											</li>
+										</ul>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Datatable <span class="badge badge-danger float-end">Smarty Beta</span> </span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<p class="alert alert-warning mb-7">
+											NOTE: Smarty Datatable using HTML attributes only is curently in Beta!<br>
+											You can create your own datatable by passing this attribute: <code>data-custom="true"</code> <br>
+											From this point, you handle the entire script - plugin is loaded as long you keep <code>.table-datatable</code> class!
+										</p>
+
+										<!--
+											
+											data-autofill="false|hover|click" 
+											data-enable-paging="true" 			false = show all, no pagination
+											data-items-per-page="10|15|30|50|100" 
+
+										-->
+										<table class="table-datatable table table-bordered table-hover table-striped"
+											data-lng-empty="No data available in table" 
+											data-lng-page-info="Showing _START_ to _END_ of _TOTAL_ entries" 
+											data-lng-filtered="(filtered from _MAX_ total entries)" 
+											data-lng-loading="Loading..." 
+											data-lng-processing="Processing..." 
+											data-lng-search="Search..." 
+											data-lng-norecords="No matching records found" 
+											data-lng-sort-ascending=": activate to sort column ascending" 
+											data-lng-sort-descending=": activate to sort column descending" 
+
+											data-lng-column-visibility="Column Visibility" 
+											data-lng-csv="CSV" 
+											data-lng-pdf="PDF" 
+											data-lng-xls="XLS" 
+											data-lng-copy="Copy" 
+											data-lng-print="Print" 
+											data-lng-all="All" 
+
+											data-main-search="true" 
+											data-column-search="false" 
+											data-row-reorder="false" 
+											data-col-reorder="true" 
+											data-responsive="true" 
+											data-header-fixed="true" 
+											data-select-onclick="true" 
+											data-enable-paging="true" 
+											data-enable-col-sorting="true" 
+											data-autofill="false" 
+											data-group="false" 
+											data-items-per-page="10" 
+
+											data-lng-export="<i class='fi fi-squared-dots fs--18 line-height-1'></i>" 
+											dara-export-pdf-disable-mobile="true" 
+											data-export='["csv", "pdf", "xls"]' 
+											data-options='["copy", "print"]' 
+										>
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Position</th>
+													<th>Office</th>
+													<th>Age</th>
+													<th>Start date</th>
+													<th>Salary</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Tiger Nixon</td>
+													<td>System Architect</td>
+													<td>Edinburgh</td>
+													<td>61</td>
+													<td>2011/04/25</td>
+													<td>$320,800</td>
+												</tr>
+												<tr>
+													<td>Garrett Winters</td>
+													<td>Accountant</td>
+													<td>Tokyo</td>
+													<td>63</td>
+													<td>2011/07/25</td>
+													<td>$170,750</td>
+												</tr>
+												<tr>
+													<td>Ashton Cox</td>
+													<td>Junior Technical Author</td>
+													<td>San Francisco</td>
+													<td>66</td>
+													<td>2009/01/12</td>
+													<td>$86,000</td>
+												</tr>
+												<tr>
+													<td>Cedric Kelly</td>
+													<td>Senior Javascript Developer</td>
+													<td>Edinburgh</td>
+													<td>22</td>
+													<td>2012/03/29</td>
+													<td>$433,060</td>
+												</tr>
+												<tr>
+													<td>Airi Satou</td>
+													<td>Accountant</td>
+													<td>Tokyo</td>
+													<td>33</td>
+													<td>2008/11/28</td>
+													<td>$162,700</td>
+												</tr>
+												<tr>
+													<td>Brielle Williamson</td>
+													<td>Integration Specialist</td>
+													<td>New York</td>
+													<td>61</td>
+													<td>2012/12/02</td>
+													<td>$372,000</td>
+												</tr>
+												<tr>
+													<td>Herrod Chandler</td>
+													<td>Sales Assistant</td>
+													<td>San Francisco</td>
+													<td>59</td>
+													<td>2012/08/06</td>
+													<td>$137,500</td>
+												</tr>
+												<tr>
+													<td>Rhona Davidson</td>
+													<td>Integration Specialist</td>
+													<td>Tokyo</td>
+													<td>55</td>
+													<td>2010/10/14</td>
+													<td>$327,900</td>
+												</tr>
+												<tr>
+													<td>Colleen Hurst</td>
+													<td>Javascript Developer</td>
+													<td>San Francisco</td>
+													<td>39</td>
+													<td>2009/09/15</td>
+													<td>$205,500</td>
+												</tr>
+												<tr>
+													<td>Sonya Frost</td>
+													<td>Software Engineer</td>
+													<td>Edinburgh</td>
+													<td>23</td>
+													<td>2008/12/13</td>
+													<td>$103,600</td>
+												</tr>
+												<tr>
+													<td>Jena Gaines</td>
+													<td>Office Manager</td>
+													<td>London</td>
+													<td>30</td>
+													<td>2008/12/19</td>
+													<td>$90,560</td>
+												</tr>
+												<tr>
+													<td>Quinn Flynn</td>
+													<td>Support Lead</td>
+													<td>Edinburgh</td>
+													<td>22</td>
+													<td>2013/03/03</td>
+													<td>$342,000</td>
+												</tr>
+												<tr>
+													<td>Charde Marshall</td>
+													<td>Regional Director</td>
+													<td>San Francisco</td>
+													<td>36</td>
+													<td>2008/10/16</td>
+													<td>$470,600</td>
+												</tr>
+												<tr>
+													<td>Haley Kennedy</td>
+													<td>Senior Marketing Designer</td>
+													<td>London</td>
+													<td>43</td>
+													<td>2012/12/18</td>
+													<td>$313,500</td>
+												</tr>
+												<tr>
+													<td>Tatyana Fitzpatrick</td>
+													<td>Regional Director</td>
+													<td>London</td>
+													<td>19</td>
+													<td>2010/03/17</td>
+													<td>$385,750</td>
+												</tr>
+												<tr>
+													<td>Michael Silva</td>
+													<td>Marketing Designer</td>
+													<td>London</td>
+													<td>66</td>
+													<td>2012/11/27</td>
+													<td>$198,500</td>
+												</tr>
+												<tr>
+													<td>Paul Byrd</td>
+													<td>Chief Financial Officer (CFO)</td>
+													<td>New York</td>
+													<td>64</td>
+													<td>2010/06/09</td>
+													<td>$725,000</td>
+												</tr>
+												<tr>
+													<td>Gloria Little</td>
+													<td>Systems Administrator</td>
+													<td>New York</td>
+													<td>59</td>
+													<td>2009/04/10</td>
+													<td>$237,500</td>
+												</tr>
+												<tr>
+													<td>Bradley Greer</td>
+													<td>Software Engineer</td>
+													<td>London</td>
+													<td>41</td>
+													<td>2012/10/13</td>
+													<td>$132,000</td>
+												</tr>
+												<tr>
+													<td>Dai Rios</td>
+													<td>Personnel Lead</td>
+													<td>Edinburgh</td>
+													<td>35</td>
+													<td>2012/09/26</td>
+													<td>$217,500</td>
+												</tr>
+												<tr>
+													<td>Jenette Caldwell</td>
+													<td>Development Lead</td>
+													<td>New York</td>
+													<td>30</td>
+													<td>2011/09/03</td>
+													<td>$345,000</td>
+												</tr>
+												<tr>
+													<td>Yuri Berry</td>
+													<td>Chief Marketing Officer (CMO)</td>
+													<td>New York</td>
+													<td>40</td>
+													<td>2009/06/25</td>
+													<td>$675,000</td>
+												</tr>
+												<tr>
+													<td>Caesar Vance</td>
+													<td>Pre-Sales Support</td>
+													<td>New York</td>
+													<td>21</td>
+													<td>2011/12/12</td>
+													<td>$106,450</td>
+												</tr>
+												<tr>
+													<td>Doris Wilder</td>
+													<td>Sales Assistant</td>
+													<td>Sidney</td>
+													<td>23</td>
+													<td>2010/09/20</td>
+													<td>$85,600</td>
+												</tr>
+												<tr>
+													<td>Angelica Ramos</td>
+													<td>Chief Executive Officer (CEO)</td>
+													<td>London</td>
+													<td>47</td>
+													<td>2009/10/09</td>
+													<td>$1,200,000</td>
+												</tr>
+												<tr>
+													<td>Gavin Joyce</td>
+													<td>Developer</td>
+													<td>Edinburgh</td>
+													<td>42</td>
+													<td>2010/12/22</td>
+													<td>$92,575</td>
+												</tr>
+												<tr>
+													<td>Jennifer Chang</td>
+													<td>Regional Director</td>
+													<td>Singapore</td>
+													<td>28</td>
+													<td>2010/11/14</td>
+													<td>$357,650</td>
+												</tr>
+												<tr>
+													<td>Brenden Wagner</td>
+													<td>Software Engineer</td>
+													<td>San Francisco</td>
+													<td>28</td>
+													<td>2011/06/07</td>
+													<td>$206,850</td>
+												</tr>
+												<tr>
+													<td>Fiona Green</td>
+													<td>Chief Operating Officer (COO)</td>
+													<td>San Francisco</td>
+													<td>48</td>
+													<td>2010/03/11</td>
+													<td>$850,000</td>
+												</tr>
+												<tr>
+													<td>Shou Itou</td>
+													<td>Regional Marketing</td>
+													<td>Tokyo</td>
+													<td>20</td>
+													<td>2011/08/14</td>
+													<td>$163,000</td>
+												</tr>
+												<tr>
+													<td>Michelle House</td>
+													<td>Integration Specialist</td>
+													<td>Sidney</td>
+													<td>37</td>
+													<td>2011/06/02</td>
+													<td>$95,400</td>
+												</tr>
+												<tr>
+													<td>Suki Burks</td>
+													<td>Developer</td>
+													<td>London</td>
+													<td>53</td>
+													<td>2009/10/22</td>
+													<td>$114,500</td>
+												</tr>
+												<tr>
+													<td>Prescott Bartlett</td>
+													<td>Technical Author</td>
+													<td>London</td>
+													<td>27</td>
+													<td>2011/05/07</td>
+													<td>$145,000</td>
+												</tr>
+												<tr>
+													<td>Gavin Cortez</td>
+													<td>Team Leader</td>
+													<td>San Francisco</td>
+													<td>22</td>
+													<td>2008/10/26</td>
+													<td>$235,500</td>
+												</tr>
+												<tr>
+													<td>Martena Mccray</td>
+													<td>Post-Sales support</td>
+													<td>Edinburgh</td>
+													<td>46</td>
+													<td>2011/03/09</td>
+													<td>$324,050</td>
+												</tr>
+												<tr>
+													<td>Unity Butler</td>
+													<td>Marketing Designer</td>
+													<td>San Francisco</td>
+													<td>47</td>
+													<td>2009/12/09</td>
+													<td>$85,675</td>
+												</tr>
+												<tr>
+													<td>Howard Hatfield</td>
+													<td>Office Manager</td>
+													<td>San Francisco</td>
+													<td>51</td>
+													<td>2008/12/16</td>
+													<td>$164,500</td>
+												</tr>
+												<tr>
+													<td>Hope Fuentes</td>
+													<td>Secretary</td>
+													<td>San Francisco</td>
+													<td>41</td>
+													<td>2010/02/12</td>
+													<td>$109,850</td>
+												</tr>
+												<tr>
+													<td>Vivian Harrell</td>
+													<td>Financial Controller</td>
+													<td>San Francisco</td>
+													<td>62</td>
+													<td>2009/02/14</td>
+													<td>$452,500</td>
+												</tr>
+												<tr>
+													<td>Timothy Mooney</td>
+													<td>Office Manager</td>
+													<td>London</td>
+													<td>37</td>
+													<td>2008/12/11</td>
+													<td>$136,200</td>
+												</tr>
+												<tr>
+													<td>Jackson Bradshaw</td>
+													<td>Director</td>
+													<td>New York</td>
+													<td>65</td>
+													<td>2008/09/26</td>
+													<td>$645,750</td>
+												</tr>
+												<tr>
+													<td>Olivia Liang</td>
+													<td>Support Engineer</td>
+													<td>Singapore</td>
+													<td>64</td>
+													<td>2011/02/03</td>
+													<td>$234,500</td>
+												</tr>
+												<tr>
+													<td>Bruno Nash</td>
+													<td>Software Engineer</td>
+													<td>London</td>
+													<td>38</td>
+													<td>2011/05/03</td>
+													<td>$163,500</td>
+												</tr>
+												<tr>
+													<td>Sakura Yamamoto</td>
+													<td>Support Engineer</td>
+													<td>Tokyo</td>
+													<td>37</td>
+													<td>2009/08/19</td>
+													<td>$139,575</td>
+												</tr>
+												<tr>
+													<td>Thor Walton</td>
+													<td>Developer</td>
+													<td>New York</td>
+													<td>61</td>
+													<td>2013/08/11</td>
+													<td>$98,540</td>
+												</tr>
+												<tr>
+													<td>Finn Camacho</td>
+													<td>Support Engineer</td>
+													<td>San Francisco</td>
+													<td>47</td>
+													<td>2009/07/07</td>
+													<td>$87,500</td>
+												</tr>
+												<tr>
+													<td>Serge Baldwin</td>
+													<td>Data Coordinator</td>
+													<td>Singapore</td>
+													<td>64</td>
+													<td>2012/04/09</td>
+													<td>$138,575</td>
+												</tr>
+												<tr>
+													<td>Zenaida Frank</td>
+													<td>Software Engineer</td>
+													<td>New York</td>
+													<td>63</td>
+													<td>2010/01/04</td>
+													<td>$125,250</td>
+												</tr>
+												<tr>
+													<td>Zorita Serrano</td>
+													<td>Software Engineer</td>
+													<td>San Francisco</td>
+													<td>56</td>
+													<td>2012/06/01</td>
+													<td>$115,000</td>
+												</tr>
+												<tr>
+													<td>Jennifer Acosta</td>
+													<td>Junior Javascript Developer</td>
+													<td>Edinburgh</td>
+													<td>43</td>
+													<td>2013/02/01</td>
+													<td>$75,650</td>
+												</tr>
+												<tr>
+													<td>Cara Stevens</td>
+													<td>Sales Assistant</td>
+													<td>New York</td>
+													<td>46</td>
+													<td>2011/12/06</td>
+													<td>$145,600</td>
+												</tr>
+												<tr>
+													<td>Hermione Butler</td>
+													<td>Regional Director</td>
+													<td>London</td>
+													<td>47</td>
+													<td>2011/03/21</td>
+													<td>$356,250</td>
+												</tr>
+												<tr>
+													<td>Lael Greer</td>
+													<td>Systems Administrator</td>
+													<td>London</td>
+													<td>21</td>
+													<td>2009/02/27</td>
+													<td>$103,500</td>
+												</tr>
+												<tr>
+													<td>Jonas Alexander</td>
+													<td>Developer</td>
+													<td>San Francisco</td>
+													<td>30</td>
+													<td>2010/07/14</td>
+													<td>$86,500</td>
+												</tr>
+												<tr>
+													<td>Shad Decker</td>
+													<td>Regional Director</td>
+													<td>Edinburgh</td>
+													<td>51</td>
+													<td>2008/11/13</td>
+													<td>$183,000</td>
+												</tr>
+												<tr>
+													<td>Michael Bruce</td>
+													<td>Javascript Developer</td>
+													<td>Singapore</td>
+													<td>29</td>
+													<td>2011/06/27</td>
+													<td>$183,000</td>
+												</tr>
+												<tr>
+													<td>Donna Snider</td>
+													<td>Customer Support</td>
+													<td>New York</td>
+													<td>27</td>
+													<td>2011/01/25</td>
+													<td>$112,000</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<th>Name</th>
+													<th>Position</th>
+													<th>Office</th>
+													<th>Age</th>
+													<th>Start date</th>
+													<th>Salary</th>
+												</tr>
+											</tfoot>
+										</table>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+					</div>
+					<!-- end:row: -->
+					<!-- doc:end -->
+
+
+				</div>
+				<!-- /MIDDLE -->
+
+			</div>
+
+
+
+			<!-- FOOTER -->
+			<footer id="footer" class="aside-primary text-white">
+				<div class="p-3 fs--14">
+					&copy; My Company LLC
+
+
+
+					<div class="d-inline-block float-end dropdown">
+						<ul class="list-inline m-0">
+
+							<!-- LANGUAGE -->
+							<li class="dropdown list-inline-item m-0">
+
+								<a id="topDDLanguage" href="#!" class="d-inline-block" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+									<i class="flag flag-us"></i> 
+									<span class="pl-2 pr-2">ENGLISH</span>
+								</a>
+
+								<div aria-labelledby="topDDLanguage" class="dropdown-menu fs--13 px-1 pt-1 pb-0 m-0 max-h-50vh scrollable-vertical dropdown-menu-right">
+									<a href="#!" class="active dropdown-item text-muted text-truncate line-height-1 rounded p--12 mb-1">
+										<i class="flag flag-us"></i> 
+										ENGLISH
+									</a>
+									<a href="#!" class="dropdown-item text-muted text-truncate line-height-1 rounded p--12 mb-1">
+										<i class="flag flag-de"></i> 
+										GERMAN
+									</a>
+									<a href="#!" class="dropdown-item text-muted text-truncate line-height-1 rounded p--12 mb-1">
+										<i class="flag flag-fr"></i> 
+										FRANCAISE
+									</a>
+								</div>
+
+							</li>
+							<!-- /LANGUAGE -->
+
+
+							<!-- CURRENCY -->
+							<li class="dropdown list-inline-item m-0">
+
+								<span class="text-muted">/</span><!-- optional separator -->
+
+								<a id="topDDCurrency" href="#" class="d-inline-block" data-toggle="dropdown" aria-expanded="false">
+									<span class="pl-2 pr-2">USD</span>
+								</a>
+
+								<div aria-labelledby="topDDCurrency" class="dropdown-menu text-center fs--13 px-1 pt-1 pb-0 m-0 max-h-50vh w-auto scrollable-vertical dropdown-menu-right">
+									<a href="#!" class="active dropdown-item text-muted text-truncate line-height-1 rounded pt--12 pb--12 mb-1">
+										USD
+									</a>
+									<a href="#!" class="dropdown-item text-muted text-truncate line-height-1 rounded pt--12 pb--12 mb-1">
+										EUR
+									</a>
+									<a href="#!" class="dropdown-item text-muted text-truncate line-height-1 rounded pt--12 pb--12 mb-1">
+										GBP
+									</a>
+								</div>
+
+							</li>
+							<!-- /CURRENCY -->
+
+						</ul>
+					</div>
+
+
+				</div>
+			</footer>
+			<!-- /FOOTER -->
+
+
+		</div><!-- /#wrapper -->
+
+
+
+		<script src="assets/js/core.min.js"></script>
+
+
+		<!--
+
+			[SOW Ajax Navigation Plugin] [AJAX ONLY, IF USED]
+			If you have specific page js files, wrap them inside #page_js_files 
+			Ajax Navigation will use them for this page! 
+			This way you can load this page in a normal way and/or via ajax.
+			(you can change/add more containers in sow.config.js)
+
+			+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+			NOTE: This is mostly for frontend, full ajax navigation!
+			Admin Panels use a backend, so the content should be served without
+			menu, header, etc! Else, the ajax has no reason to be used because will
+			not minimize server load!
+
+			/documentation/plugins-sow-ajax-navigation.html
+			+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+		-->
+		<div id="page_js_files"><!-- specific page javascript files here --></div>
+
+	</body>
+</html>

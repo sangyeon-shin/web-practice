@@ -1,0 +1,476 @@
+﻿					<!-- doc:start -->
+					<div class="page-title bg-transparent b-0">
+
+						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
+							Tabs
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--13 pb-2 px-3">
+								<li class="breadcrumb-item">
+									<a href="index.html" class="js-ajax">Dashboard</a>
+								</li>
+								<li class="breadcrumb-item active">
+									Components
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Tabs
+								</li>
+							</ol>
+						</nav>
+
+					</div>
+
+
+
+					<!-- ALERT : NOTE -->
+					<div class="bg-white shadow-xs p-2 mb-4 rounded">
+						<div class="clearfix bg-light p-2 rounded d-flex align-items-center">
+							<span class="btn row-pill btn-sm bg-gradient-warning b-0 py-1 mb-0 float-start">
+								<i class="fi fi-round-info-full"></i>
+								Note
+							</span>
+							<span class="d-block px-2 text-muted text-truncate">
+								This is a basic demo! Please see main <a href="../../html_frontend/documentation/" target="smarty" class="link-muted">full documentation here</a>.
+							</span>
+						</div>
+					</div>
+					<!-- /ALERT : NOTE -->
+
+
+
+					<!-- start:row -->
+					<div class="row gutters-sm">
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Tab : Ajax Content <small>(based on <a href="plugins-sow-ajax-content.html" class="link-muted js-ajax">SOW Ajax Content</a>)</small></span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<!-- ajax tabs -->
+										<ul class="nav nav-tabs" id="myTab" role="tablist">
+											<li class="nav-item">
+												<a class="nav-link active" id="tab-ajax1" data-toggle="tab" href="#tab-ajax-content-1" role="tab" aria-controls="tab-ajax1" aria-selected="true">
+													Home
+												</a>
+											</li>
+											
+											<li class="nav-item">
+												<a class="nav-link" id="tab-ajax2" data-toggle="tab" href="#tab-ajax-content-2" role="tab" aria-controls="tab-ajax2" aria-selected="false">
+													Why Us?
+												</a>
+											</li>
+											
+											<li class="nav-item">
+												<a class="nav-link" id="tab-ajax3" data-toggle="tab" href="#tab-ajax-content-3" role="tab" aria-controls="tab-ajax3" aria-selected="false">
+													Contact
+												</a>
+											</li>
+										</ul>
+
+
+										<div class="tab-content" id="myTabContent">
+											<div id="tab-ajax-content-1" data-ajax-url="_ajax/dummy_text1.html" class="js-ajax tab-pane fade show active" role="tabpanel" aria-labelledby="tab-ajax1">
+
+												<!-- ajax loading icon -->
+												<div class="text-center p--30">
+													<i class="fi fi-circle-spin fi-spin fs--30 text-muted"></i>
+												</div><!-- /ajax loading icon -->
+
+											</div>
+											<div id="tab-ajax-content-2" data-ajax-url="../../html_frontend/documentation/_ajax/dummy_text2.html" class="js-ajax tab-pane fade" role="tabpanel" aria-labelledby="tab-ajax2">
+
+												<!-- ajax loading icon -->
+												<div class="text-center p--30">
+													<i class="fi fi-circle-spin fi-spin fs--30 text-muted"></i>
+												</div><!-- /ajax loading icon -->
+
+											</div>
+											<div id="tab-ajax-content-3" data-ajax-url="../../html_frontend/documentation/_ajax/dummy_text3.html" class="js-ajax tab-pane fade" role="tabpanel" aria-labelledby="tab-ajax3">
+
+												<!-- ajax loading icon -->
+												<div class="text-center p--30">
+													<i class="fi fi-circle-spin fi-spin fs--30 text-muted"></i>
+												</div><!-- /ajax loading icon -->
+
+											</div>
+										</div>
+										<!-- /ajax tabs -->
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Tabs : Regular</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<div class="row">
+
+											<ul class="nav nav-tabs" id="myTab" role="tablist">
+												<li class="nav-item">
+													<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
+														Home
+													</a>
+												</li>
+												
+												<li class="nav-item">
+													<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
+														Profile
+													</a>
+												</li>
+												
+												<li class="nav-item">
+													<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">
+														Contact
+													</a>
+												</li>
+											</ul>
+
+											<div class="tab-content" id="myTabContent">
+											
+												<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+													<div class="p--15">
+														<p>Quis anim sit do amet fugiat dolor velit sit ea ea do reprehenderit culpa duis. Nostrud aliqua ipsum fugiat minim proident occaecat excepteur aliquip culpa aute tempor reprehenderit. Deserunt tempor mollit elit ex pariatur dolore velit fugiat mollit culpa irure ullamco est ex ullamco excepteur.</p>
+													</div>
+												</div>
+
+												<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+													<div class="p--15">
+														<p>Ex consequat commodo adipisicing exercitation aute excepteur occaecat ullamco duis aliqua id magna ullamco eu. Do aute ipsum ipsum ullamco cillum consectetur ut et aute consectetur labore. Fugiat laborum incididunt tempor eu consequat enim dolore proident. Qui laborum do non excepteur nulla magna eiusmod consectetur in. Aliqua et aliqua officia quis et incididunt voluptate non anim reprehenderit adipisicing dolore ut consequat deserunt mollit dolore. Aliquip nulla enim veniam non fugiat id cupidatat nulla elit cupidatat commodo velit ut eiusmod cupidatat elit dolore.</p>
+													</div>
+												</div>
+												
+												<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+													<div class="p--15">
+														<p>Quis anim sit do amet fugiat dolor velit sit ea ea do reprehenderit culpa duis. Nostrud aliqua ipsum fugiat minim proident occaecat excepteur aliquip culpa aute tempor reprehenderit. Deserunt tempor mollit elit ex pariatur dolore velit fugiat mollit culpa irure ullamco est ex ullamco excepteur.</p>
+													</div>
+												</div>
+											
+											</div>
+
+										</div>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Tabs : Bordered</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<div class="row">
+											
+											<div class="col-12 col-lg-6">
+
+												<ul class="nav nav-tabs nav-tabs-border-bottom" id="myTabBordered" role="tablist">
+													<li class="nav-item">
+														<a class="nav-link active" id="home-btab" data-toggle="tab" href="#bhome" role="tab" aria-controls="home" aria-selected="true">
+															Home
+														</a>
+													</li>
+													
+													<li class="nav-item">
+														<a class="nav-link" id="profile-btab" data-toggle="tab" href="#bprofile" role="tab" aria-controls="profile" aria-selected="false">
+															Profile
+														</a>
+													</li>
+													
+													<li class="nav-item">
+														<a class="nav-link" id="contact-btab" data-toggle="tab" href="#bcontact" role="tab" aria-controls="contact" aria-selected="false">
+															Contact
+														</a>
+													</li>
+												</ul>
+
+												<div class="tab-content" id="myTabBorderedContent">
+												
+													<div class="tab-pane fade show active" id="bhome" role="tabpanel" aria-labelledby="home-btab">
+														<div class="p--15">
+															<p>Quis anim sit do amet fugiat dolor velit sit ea ea do reprehenderit culpa duis. Nostrud aliqua ipsum fugiat minim proident occaecat excepteur aliquip culpa aute tempor reprehenderit. Deserunt tempor mollit elit ex pariatur dolore velit fugiat mollit culpa irure ullamco est ex ullamco excepteur.</p>
+														</div>
+													</div>
+
+													<div class="tab-pane fade" id="bprofile" role="tabpanel" aria-labelledby="profile-btab">
+														<div class="p--15">
+															<p>Ex consequat commodo adipisicing exercitation aute excepteur occaecat ullamco duis aliqua id magna ullamco eu. Do aute ipsum ipsum ullamco cillum consectetur ut et aute consectetur labore. Fugiat laborum incididunt tempor eu consequat enim dolore proident. Qui laborum do non excepteur nulla magna eiusmod consectetur in. Aliqua et aliqua officia quis et incididunt voluptate non anim reprehenderit adipisicing dolore ut consequat deserunt mollit dolore. Aliquip nulla enim veniam non fugiat id cupidatat nulla elit cupidatat commodo velit ut eiusmod cupidatat elit dolore.</p>
+														</div>
+													</div>
+													
+													<div class="tab-pane fade" id="bcontact" role="tabpanel" aria-labelledby="contact-btab">
+														<div class="p--15">
+															<p>Quis anim sit do amet fugiat dolor velit sit ea ea do reprehenderit culpa duis. Nostrud aliqua ipsum fugiat minim proident occaecat excepteur aliquip culpa aute tempor reprehenderit. Deserunt tempor mollit elit ex pariatur dolore velit fugiat mollit culpa irure ullamco est ex ullamco excepteur.</p>
+														</div>
+													</div>
+												
+												</div>
+
+											</div>
+
+											<div class="col-12 col-lg-6">
+
+												<ul class="nav nav-tabs nav-tabs-border-top" id="myTabBorderedTop" role="tablist">
+													<li class="nav-item">
+														<a class="nav-link active" id="home-ttab" data-toggle="tab" href="#thome" role="tab" aria-controls="home" aria-selected="true">
+															Home
+														</a>
+													</li>
+													
+													<li class="nav-item">
+														<a class="nav-link" id="profile-ttab" data-toggle="tab" href="#tprofile" role="tab" aria-controls="profile" aria-selected="false">
+															Profile
+														</a>
+													</li>
+													
+													<li class="nav-item">
+														<a class="nav-link" id="contact-ttab" data-toggle="tab" href="#tcontact" role="tab" aria-controls="contact" aria-selected="false">
+															Contact
+														</a>
+													</li>
+												</ul>
+
+												<div class="tab-content" id="myTabBorderedContentTop">
+												
+													<div class="tab-pane fade show active" id="thome" role="tabpanel" aria-labelledby="home-ttab">
+														<div class="p--15">
+															<p>Quis anim sit do amet fugiat dolor velit sit ea ea do reprehenderit culpa duis. Nostrud aliqua ipsum fugiat minim proident occaecat excepteur aliquip culpa aute tempor reprehenderit. Deserunt tempor mollit elit ex pariatur dolore velit fugiat mollit culpa irure ullamco est ex ullamco excepteur.</p>
+														</div>
+													</div>
+
+													<div class="tab-pane fade" id="tprofile" role="tabpanel" aria-labelledby="profile-ttab">
+														<div class="p--15">
+															<p>Ex consequat commodo adipisicing exercitation aute excepteur occaecat ullamco duis aliqua id magna ullamco eu. Do aute ipsum ipsum ullamco cillum consectetur ut et aute consectetur labore. Fugiat laborum incididunt tempor eu consequat enim dolore proident. Qui laborum do non excepteur nulla magna eiusmod consectetur in. Aliqua et aliqua officia quis et incididunt voluptate non anim reprehenderit adipisicing dolore ut consequat deserunt mollit dolore. Aliquip nulla enim veniam non fugiat id cupidatat nulla elit cupidatat commodo velit ut eiusmod cupidatat elit dolore.</p>
+														</div>
+													</div>
+													
+													<div class="tab-pane fade" id="tcontact" role="tabpanel" aria-labelledby="contact-ttab">
+														<div class="p--15">
+															<p>Quis anim sit do amet fugiat dolor velit sit ea ea do reprehenderit culpa duis. Nostrud aliqua ipsum fugiat minim proident occaecat excepteur aliquip culpa aute tempor reprehenderit. Deserunt tempor mollit elit ex pariatur dolore velit fugiat mollit culpa irure ullamco est ex ullamco excepteur.</p>
+														</div>
+													</div>
+												
+												</div>
+
+											</div>
+
+										</div>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Tabs : Pills</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<div class="row">
+											<div class="col-12 col-lg-6 mb-5">
+
+
+												<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+													<li class="nav-item">
+														<a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+													</li>
+													
+													<li class="nav-item">
+														<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
+													</li>
+													
+													<li class="nav-item">
+														<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
+													</li>
+												</ul>
+
+												<div class="tab-content" id="pills-tabContent">
+													
+													<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+														<p>Quis anim sit do amet fugiat dolor velit sit ea ea do reprehenderit culpa duis. Nostrud aliqua ipsum fugiat minim proident occaecat excepteur aliquip culpa aute tempor reprehenderit. Deserunt tempor mollit elit ex pariatur dolore velit fugiat mollit culpa irure ullamco est ex ullamco excepteur.</p>
+													</div>
+
+													<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+														<p>Ex consequat commodo adipisicing exercitation aute excepteur occaecat ullamco duis aliqua id magna ullamco eu. Do aute ipsum ipsum ullamco cillum consectetur ut et aute consectetur labore. Fugiat laborum incididunt tempor eu consequat enim dolore proident. Qui laborum do non excepteur nulla magna eiusmod consectetur in. Aliqua et aliqua officia quis et incididunt voluptate non anim reprehenderit adipisicing dolore ut consequat deserunt mollit dolore. Aliquip nulla enim veniam non fugiat id cupidatat nulla elit cupidatat commodo velit ut eiusmod cupidatat elit dolore.</p>
+													</div>
+
+													<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+														<p>Quis anim sit do amet fugiat dolor velit sit ea ea do reprehenderit culpa duis. Nostrud aliqua ipsum fugiat minim proident occaecat excepteur aliquip culpa aute tempor reprehenderit. Deserunt tempor mollit elit ex pariatur dolore velit fugiat mollit culpa irure ullamco est ex ullamco excepteur.</p>
+													</div>
+												
+												</div>
+
+
+											</div>
+
+											<div class="col-12 col-lg-6 mb-5">
+
+
+												<ul class="nav nav-pills mb-3" id="pills-icon-tab" role="tablist">
+													<li class="nav-item mx-1">
+														<a class="nav-link btn btn-primary b-0 shadow-md btn-noshadow text-center active" id="pills-icon-home-tab" data-toggle="pill" href="#pills-icon-home" role="tab" aria-controls="pills-icon-home" aria-selected="true">
+															<span class="d-block">
+																<i class="fi fi-home"></i>
+															</span>
+															Home
+														</a>
+													</li>
+													
+													<li class="nav-item mx-1">
+														<a class="nav-link btn btn-primary b-0 shadow-md btn-noshadow text-center" id="pills-icon-profile-tab" data-toggle="pill" href="#pills-icon-profile" role="tab" aria-controls="pills-icon-profile" aria-selected="false">
+															<span class="d-block">
+																<i class="fi fi-user-male"></i>
+															</span>
+															Profile
+														</a>
+													</li>
+													
+													<li class="nav-item mx-1">
+														<a class="nav-link btn btn-primary b-0 shadow-md btn-noshadow text-center" id="pills-icon-contact-tab" data-toggle="pill" href="#pills-icon-contact" role="tab" aria-controls="pills-icon-contact" aria-selected="false">
+															<span class="d-block">
+																<i class="fi fi-envelope-2"></i>
+															</span>
+															Contact
+														</a>
+													</li>
+												</ul>
+
+												<div class="tab-content" id="pills-icon-tabContent">
+													
+													<div class="tab-pane fade show active" id="pills-icon-home" role="tabpanel" aria-labelledby="pills-icon-home-tab">
+														<p>Quis anim sit do amet fugiat dolor velit sit ea ea do reprehenderit culpa duis. Nostrud aliqua ipsum fugiat minim proident occaecat excepteur aliquip culpa aute tempor reprehenderit. Deserunt tempor mollit elit ex pariatur dolore velit fugiat mollit culpa irure ullamco est ex ullamco excepteur.</p>
+													</div>
+
+													<div class="tab-pane fade" id="pills-icon-profile" role="tabpanel" aria-labelledby="pills-icon-profile-tab">
+														<p>Ex consequat commodo adipisicing exercitation aute excepteur occaecat ullamco duis aliqua id magna ullamco eu. Do aute ipsum ipsum ullamco cillum consectetur ut et aute consectetur labore. Fugiat laborum incididunt tempor eu consequat enim dolore proident. Qui laborum do non excepteur nulla magna eiusmod consectetur in. Aliqua et aliqua officia quis et incididunt voluptate non anim reprehenderit adipisicing dolore ut consequat deserunt mollit dolore. Aliquip nulla enim veniam non fugiat id cupidatat nulla elit cupidatat commodo velit ut eiusmod cupidatat elit dolore.</p>
+													</div>
+
+													<div class="tab-pane fade" id="pills-icon-contact" role="tabpanel" aria-labelledby="pills-icon-contact-tab">
+														<p>Quis anim sit do amet fugiat dolor velit sit ea ea do reprehenderit culpa duis. Nostrud aliqua ipsum fugiat minim proident occaecat excepteur aliquip culpa aute tempor reprehenderit. Deserunt tempor mollit elit ex pariatur dolore velit fugiat mollit culpa irure ullamco est ex ullamco excepteur.</p>
+													</div>
+												
+												</div>
+
+
+											</div>
+										</div>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Tabs : Pills : Vertical</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+									<div class="row">
+
+										<div class="col-3">
+											<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+												<a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
+												<a class="nav-link bg-primary-active" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
+												<a class="nav-link bg-success-active" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
+												<a class="nav-link bg-danger-active" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+											</div>
+										</div>
+
+										<div class="col-9">
+											<div class="tab-content" id="v-pills-tabContent">
+												<div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+													<p>Ex consequat commodo adipisicing exercitation aute excepteur occaecat ullamco duis aliqua id magna ullamco eu. Do aute ipsum ipsum ullamco cillum consectetur ut et aute consectetur labore. Fugiat laborum incididunt tempor eu consequat enim dolore proident. Qui laborum do non excepteur nulla magna eiusmod consectetur in. Aliqua et aliqua officia quis et incididunt voluptate non anim reprehenderit adipisicing dolore ut consequat deserunt mollit dolore. Aliquip nulla enim veniam non fugiat id cupidatat nulla elit cupidatat commodo velit ut eiusmod cupidatat elit dolore.</p>
+												</div>
+												<div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+													<p>Quis anim sit do amet fugiat dolor velit sit ea ea do reprehenderit culpa duis. Nostrud aliqua ipsum fugiat minim proident occaecat excepteur aliquip culpa aute tempor reprehenderit. Deserunt tempor mollit elit ex pariatur dolore velit fugiat mollit culpa irure ullamco est ex ullamco excepteur.</p>
+												</div>
+												<div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+													<p>Ex consequat commodo adipisicing exercitation aute excepteur occaecat ullamco duis aliqua id magna ullamco eu. Do aute ipsum ipsum ullamco cillum consectetur ut et aute consectetur labore. Fugiat laborum incididunt tempor eu consequat enim dolore proident. Qui laborum do non excepteur nulla magna eiusmod consectetur in. Aliqua et aliqua officia quis et incididunt voluptate non anim reprehenderit adipisicing dolore ut consequat deserunt mollit dolore. Aliquip nulla enim veniam non fugiat id cupidatat nulla elit cupidatat commodo velit ut eiusmod cupidatat elit dolore.</p>
+												</div>
+												<div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+													<p>Quis anim sit do amet fugiat dolor velit sit ea ea do reprehenderit culpa duis. Nostrud aliqua ipsum fugiat minim proident occaecat excepteur aliquip culpa aute tempor reprehenderit. Deserunt tempor mollit elit ex pariatur dolore velit fugiat mollit culpa irure ullamco est ex ullamco excepteur.</p>
+												</div>
+											</div>
+										</div>
+
+									</div>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+					</div>
+					<!-- end:row: -->
+					<!-- doc:end -->

@@ -1,0 +1,76 @@
+/**
+
+		- Paddings 					.p--*, .pt--*, .pr--*, .pb--*, .pl--*
+									.p-auto, .p-inherit
+
+**/
+@each $val in $util-padding-val {
+	.p--#{$val} { padding: #{$val}px !important; }
+}
+	@each $val in $util-padding-val {
+		.pt--#{$val} { padding-top: #{$val}px !important; }
+	}
+	@each $val in $util-padding-val {
+		.pr--#{$val} { padding-right: #{$val}px !important; }
+	}
+	@each $val in $util-padding-val {
+		.pb--#{$val} { padding-bottom: #{$val}px !important; }
+	}
+	@each $val in $util-padding-val {
+		.pl--#{$val} { padding-left: #{$val}px !important; }
+	}
+
+	.p-auto {
+		padding: auto !important;
+	}
+	.p-inherit {
+		padding: inherit !important;
+	}
+
+	.p-6 {
+		padding: 4.5rem !important;
+	}
+	.pt-6 {
+		padding-top: 4.5rem !important;
+	}
+	.pb-6 {
+		padding-bottom: 4.5rem !important;
+	}
+	.py-6 {
+		padding-top: 4.5rem !important;
+		padding-bottom: 4.5rem !important;
+	}
+	.pl-6 {
+		padding-left: 4.5rem !important;
+	}
+	.pr-6 {
+		padding-right: 4.5rem !important;
+	}
+	.px-6 {
+		padding-left: 4.5rem !important;
+		padding-right: 4.5rem !important;
+	}
+
+	.p-7 {
+		padding: 6rem !important;
+	}
+	.pt-7 {
+		padding-top: 6rem !important;
+	}
+	.pb-7 {
+		padding-bottom: 6rem !important;
+	}
+	.py-7 {
+		padding-top: 6rem !important;
+		padding-bottom: 6rem !important;
+	}
+	.pl-7 {
+		padding-left: 6rem !important;
+	}
+	.pr-7 {
+		padding-right: 6rem !important;
+	}
+	.px-7 {
+		padding-left: 6rem !important;
+		padding-right: 6rem !important;
+	}

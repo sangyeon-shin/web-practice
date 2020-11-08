@@ -1,0 +1,52 @@
+/**
+
+		- Height 					.h--*, .mh--*, .h-inherit, .h-auto, .mh-* (> 90)
+									.h-*vh, .min-h-*vh, .max-h-*vh
+
+**/
+@each $val in $util-height-val {
+	.h--#{$val} { height: #{$val}px !important; }
+	.max-h-#{$val} { max-height: #{$val}px !important; }
+}
+
+	// predefined
+	.min-h-100 { min-height: 100px !important; }
+	.min-h-150 { min-height: 150px !important; }
+	.min-h-200 { min-height: 200px !important; }
+	.min-h-250 { min-height: 250px !important; }
+	.min-h-300 { min-height: 300px !important; }
+
+
+	.h-inherit {
+		height: inherit !important;
+	}
+	.h-auto {
+		min-height: auto !important;
+	}
+
+	@each $val in $util-viewport-val {
+
+		.h-#{$val}vh {
+			height: #{$val}vh !important;
+		}
+
+		.min-h-#{$val}vh {
+			min-height: #{$val}vh !important;
+		}
+
+		.max-h-#{$val}vh {
+			max-height: #{$val}vh !important;
+		}
+
+	}
+
+// Mobile Only
+@media only screen and (max-width: map-get($grid-breakpoints, "md")) {
+
+	@each $val in $util-height-val {
+
+		.max-h-#{$val}-xs { max-height: #{$val}px !important; }
+
+	}
+
+}

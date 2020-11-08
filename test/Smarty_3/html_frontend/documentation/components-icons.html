@@ -1,0 +1,3007 @@
+﻿<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+
+		<meta charset="UTF-8">
+		<title>Smarty</title>
+		<meta name="description" content="Smarty Documentation">
+
+        <meta name="viewport" content="width=device-width, maximum-scale=5, initial-scale=1, user-scalable=0">
+        <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+        <!-- up to 10% speed up for external res -->
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+        <link rel="preconnect" href="https://fonts.googleapis.com/">
+        <link rel="preconnect" href="https://fonts.gstatic.com/">
+        <!-- preloading icon font is helping to speed up a little bit -->
+        <link rel="preload" href="../assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
+
+		<link rel="stylesheet" href="../assets/css/core.min.css">
+		<link rel="stylesheet" href="../assets/css/vendor_bundle.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
+
+		<!-- favicon -->
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="apple-touch-icon" href="../demo.files/logo/icon_512x512.png">
+
+		<link rel="manifest" href="../assets/images/manifest/manifest.json">
+		<meta name="theme-color" content="#377dff">
+
+	</head>
+
+
+	<!--
+
+		Layout Admin
+			.layout-admin 	(required)
+
+			.aside-sticky  					- sidebar : fixed and push header
+			.header-sticky  				- header : always visible on top (acting as old .header-focus)
+			.header-scroll-reveal  			- header : hide on scroll down and reveal on scroll up
+
+	-->
+	<body class="layout-admin aside-sticky header-sticky" data-s2t-class="btn-indigo btn-sm rounded-circle">
+
+		<div id="wrapper">
+
+
+
+			<!-- HEADER -->
+			<header id="header" class="d-flex align-items-center shadow-xs">
+
+
+				<!-- NAVBAR -->
+				<div class="container-fluid position-relative">
+
+					<nav class="navbar navbar-expand-lg navbar-dark justify-content-lg-between">
+
+						<div class="align-items-start">
+							
+							<!-- 
+								sidebar toggler 
+							-->
+							<a href="#aside-main" class="btn-sidebar-toggle h-100 d-inline-block d-lg-none justify-content-center align-items-center p-2">
+								<span class="group-icon">
+									<i>
+										<svg width="25" viewBox="0 0 20 20">
+											<path fill="#333333" d="M 19.9876 1.998 L -0.0108 1.998 L -0.0108 -0.0019 L 19.9876 -0.0019 L 19.9876 1.998 Z"></path>
+											<path fill="#333333" d="M 19.9876 7.9979 L -0.0108 7.9979 L -0.0108 5.9979 L 19.9876 5.9979 L 19.9876 7.9979 Z"></path>
+											<path fill="#333333" d="M 19.9876 13.9977 L -0.0108 13.9977 L -0.0108 11.9978 L 19.9876 11.9978 L 19.9876 13.9977 Z"></path>
+											<path fill="#333333" d="M 19.9876 19.9976 L -0.0108 19.9976 L -0.0108 17.9976 L 19.9876 17.9976 L 19.9876 19.9976 Z"></path>
+										</svg>
+									</i>
+
+									<i>
+										<svg width="25" viewBox="0 0 47.971 47.971">
+											<path fill="#333333" d="M28.228,23.986L47.092,5.122c1.172-1.171,1.172-3.071,0-4.242c-1.172-1.172-3.07-1.172-4.242,0L23.986,19.744L5.121,0.88c-1.172-1.172-3.07-1.172-4.242,0c-1.172,1.171-1.172,3.071,0,4.242l18.865,18.864L0.879,42.85c-1.172,1.171-1.172,3.071,0,4.242C1.465,47.677,2.233,47.97,3,47.97s1.535-0.293,2.121-0.879l18.865-18.864L42.85,47.091c0.586,0.586,1.354,0.879,2.121,0.879s1.535-0.293,2.121-0.879c1.172-1.171,1.172-3.071,0-4.242L28.228,23.986z"/>
+										</svg>
+									</i>
+								</span>
+
+							</a>
+
+
+							<!-- 
+								Logo : height: 60px max
+							-->
+							<a class="navbar-brand" href="index.html">
+								<img src="assets/images/logo/logo_dark.svg" width="110" height="70" alt="...">
+							</a>
+
+						</div>
+
+
+
+
+					<!-- 
+
+						[SOW] SEARCH SUGGEST PLUGIN
+						[GULP/src/plugins/sow_search_suggest/sow_search_suggest.js]
+						[SCSS/_plugins/sow_search_suggest.scss]
+						++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++
+
+						PLEASE READ DOCUMENTATION
+						documentation/plugins-sow-search.html
+
+					-->
+					<form 	action="index.html" 
+							method="GET" 
+							data-autosuggest="on" 
+
+							data-mode="json" 
+							data-json-max-results='10'
+							data-json-related-title='Explore Smarty'
+							data-json-related-item-icon='fi fi-star-empty'
+							data-json-suggest-title='Suggestions for you'
+							data-json-suggest-noresult='No results for'
+							data-json-suggest-item-icon='fi fi-search'
+							data-json-suggest-min-score='5'
+							data-json-highlight-term='true'
+							data-contentType='application/json; charset=utf-8'
+							data-dataType='json'
+
+							data-container="#sow-search-container" 
+							data-input-min-length="2" 
+							data-input-delay="100" 
+							data-related-keywords="" 
+							data-related-url="_ajax/search_suggestion_json_related.json" 
+							data-suggest-url="_ajax/search_suggestion_json_suggest.json" 
+							data-related-action="related_get" 
+							data-suggest-action="suggest_get" 
+							class="js-ajax-search sow-search sow-search-mobile-float d-flex-1-1-auto mx-4">
+						<div class="sow-search-input w-100 d-flex align-items-center">
+
+							<div class="input-group-over d-flex align-items-center w-100 h-100 rounded">
+
+								<input placeholder="component search..." name="s" type="text" class="form-control-sow-search form-control form-control-pill b-0 bg-gray-100" value="" autocomplete="off">
+
+								<span class="sow-search-buttons">
+
+									<!-- search button -->
+									<button type="submit" class="btn btn-primary btn-noshadow m-0 px-2 py-1 b-0 bg-transparent text-muted">
+										<i class="fi fi-search fs--20"></i>
+									</button>
+
+									<!-- close : mobile only (d-inline-block d-lg-none) -->
+									<a href="javascript:;" class="btn-sow-search-toggler btn btn-light btn-noshadow m-0 px-2 py-1 d-inline-block d-lg-none">
+										<i class="fi fi-close fs--20"></i>
+									</a>
+
+								</span>
+
+							</div>
+
+						</div>
+
+						<!-- search suggestion container -->
+						<div class="sow-search-container rounded-xl w-100 p-0 hide shadow-md" id="sow-search-container">
+							<div class="sow-search-container-wrapper rounded-xl">
+
+								<!-- main search container -->
+								<div class="sow-search-loader p--15 text-center hide">
+									<i class="fi fi-circle-spin fi-spin text-muted fs--30"></i>
+								</div>
+
+								<!-- 
+									AJAX CONTENT CONTAINER 
+									SHOULD ALWAYS BE AS IT IS : NO COMMENTS OR EVEN SPACES!
+								--><div class="sow-search-content rounded w-100 scrollable-vertical"></div>
+
+							</div>
+						</div>
+						<!-- /search suggestion container -->
+
+						<!-- 
+
+							overlay combinations:
+								overlay-dark opacity-* [1-9]
+								overlay-light opacity-* [1-9]
+
+						-->
+						<div class="sow-search-backdrop overlay-dark opacity-3 hide"></div>
+
+					</form>
+					<!-- /SEARCH -->
+
+
+
+
+					<!-- OPTIONS -->
+					<ul class="list-inline list-unstyled mb-0 d-flex align-items-end">
+
+						<li class="list-inline-item mx-1 dropdown float-start d-inline-block d-lg-none">
+
+							<a href="#" class="btn-sow-search-toggler btn btn-sm rounded-circle btn-warning bg-gradient-warning">
+								<i class="fi fi-search"></i>
+							</a>
+
+						</li>
+
+
+						<li class="list-inline-item mx-1 dropdown float-start d-none d-lg-inline-block">
+
+							<div class="btn-group rounded-xxl overflow-hidden" role="group" aria-label="Basic example">
+								
+								<a href="../index.html" target="layerstore" class="btn btn-sm btn-pills btn-indigo">
+									<span>Front</span>
+								</a>
+
+								<a href="https://wrapbootstrap.com/theme/smarty-website-admin-rtl-WB02DSN1B" target="wrapbootstrap" class="btn btn-sm btn-pills btn-indigo py-1">
+									<i class="fi fi-cart-1 mx-2 fs--20"></i>
+								</a>
+
+								<a href="../../html_admin/layout_1/" target="layerstore" class="btn btn-sm btn-pills btn-indigo">
+									<span>Admin</span>
+								</a>
+
+							</div>
+
+						</li>
+
+						<!-- header toggle : desktop only -->
+						<li class="list-inline-item mx-1 dropdown float-start d-none d-lg-block">
+
+							<a href="#" class="btn-header-toggle btn-toggle btn btn-sm rounded-circle btn-secondary">
+								<span class="group-icon">
+									<i class="fi fi-arrow-up"></i>
+									<i class="fi fi-arrow-down"></i>
+								</span>
+							</a>
+
+						</li>
+
+					</ul>
+					<!-- /OPTIONS -->
+
+
+
+					</nav>
+
+				</div>
+				<!-- /NAVBAR -->
+
+			</header>
+			<!-- /HEADER -->
+
+
+
+
+
+			<div id="wrapper_content" class="d-flex align-items-stretch">
+
+				<!-- SIDEBAR -->
+				<aside id="aside-main" class="aside-start bg-gradient-indigo font-weight-normal aside-hide-xs">
+
+					<div class="aside-wrapper scrollable-vertical scrollable-styled-light">
+
+						<!-- hide on mobile: d-none d-lg-block -->
+						<div class="p-3">
+							<!--<img class="js-ajax-loaded-animate img-fluid" src="assets/svg/artworks/undraw_smiley_face_lmgm.svg" width="300" height="248" alt="...">-->
+							<img class="js-ajax-loaded-animate img-fluid" src="assets/svg/artworks/startup.svg" width="225" height="198" alt="...">
+						</div>
+
+
+						<!--
+
+							All parent open navs are closed on click!
+							To ignore this feature, add .js-ignore to .nav-deep
+
+							Links height (paddings):
+								.nav-deep-xs
+								.nav-deep-md  	(default, ununsed class)
+								.nav-deep-sm
+								.nav-deep-lg
+						-->
+						<nav class="nav-deep nav-deep-dark nav-deep-xs pb-5">
+							<ul class="nav flex-column">
+
+								<li class="nav-title mt-3">
+									<h6 class="fs--14 mb-1 font-weight-medium text-warning">
+										HOW DO I START?
+									</h6>
+								</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="index.html">
+											Introduction
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="changelog.html">
+											<span class="badge float-end mt-1">v3.1.2</span>
+											Changelog
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="credits.html">
+											Credits
+										</a>
+									</li>
+
+
+
+
+
+								<li class="nav-title mt-5">
+									<h6 class="fs--14 mb-1 font-weight-medium text-warning">
+										COMPONENTS &amp; BLOCKS
+									</h6>
+								</li>
+
+								<li class="nav-item active">
+									<a class="nav-link" href="#">
+										<span class="group-icon float-end">
+											<i class="fi fi-arrow-end-slim"></i>
+											<i class="fi fi-arrow-down-slim"></i>
+										</span>
+										<b>Components</b>
+									</a>
+								
+									<ul class="nav flex-column">
+
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-alerts.html">
+												Alerts
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-accordions.html">
+												Accordions
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-badges.html">
+												Badges
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-breadcrumbs.html">
+												Breadcrumbs
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-buttons.html">
+												Buttons
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-cards.html">
+												Cards
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-carousel.html">
+												Carousel
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-collapse.html">
+												Collapse
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-dropdowns.html">
+												Dropdowns
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-forms.html">
+												Forms
+											</a>
+										</li>
+										<li class="nav-item active">
+											<a class="nav-link js-ajax" href="components-icons.html">
+												Icons
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-flags.html">
+												Flags
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-lists.html">
+												Lists
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-media.html">
+												Media
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-modals.html">
+												Modals
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-navs.html">
+												Navs
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-navigation.html">
+												Navigation
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-pagination.html">
+												Pagination
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-progress.html">
+												Progress
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-popover.html">
+												Popover
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-scrollspy.html">
+												Scrollspy
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-spinners.html">
+												Spinners
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-tabs.html">
+												Tabs
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-tables.html">
+												Tables
+											</a>
+										</li>
+
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-timeline.html">
+												Timeline
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-thumbnails.html">
+												Thumbnails
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-tooltip.html">
+												Tooltip
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-typography.html">
+												Typography
+											</a>
+										</li>
+
+									</ul>
+								</li>
+
+
+
+
+
+									<li class="nav-item">
+										<a class="nav-link" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											<b>Quick Blocks</b>
+										</a>
+
+										<ul class="nav flex-column">
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-testimonials.html">
+													Testimonials
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-pricing.html">
+													Pricing
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-cta.html">
+													Call to action
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-brands.html">
+													Brands
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-various.html">
+													Various
+												</a>
+											</li>
+										</ul>
+
+									</li>
+
+
+
+									<li class="nav-item">
+										<a class="nav-link" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											<b>Utilities</b>
+										</a>
+
+										<ul class="nav flex-column">
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-text-backgrounds.html">
+													Text &amp; Backgrouns
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-text-color-extended.html">
+													Extended Text Color
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-borders.html">
+													Borders
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-shadows.html">
+													Box Shadows
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-font.html">
+													Font Size / Weight
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-width-height.html">
+													Width / Height
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-padding-margin.html">
+													Paddings / Margins
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-transition.html">
+													Transitions / Transforms
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-position.html">
+													Position
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-visibility.html">
+													Visibility
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-overlays.html">
+													Overlays &amp; Opacity
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-scroll.html">
+													Scroll &amp; Scrollbar
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-misc.html">
+													Miscellaneous
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-responsive.html">
+													Responsive
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-rtl.html">
+													RTL
+												</a>
+											</li>
+
+										</ul>
+									</li>
+
+		
+
+
+
+
+
+
+
+									<li class="nav-item">
+										<a class="nav-link" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											<b>Php / Forms</b>
+										</a>
+
+										<ul class="nav flex-column">
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="php-introduction.html">
+													Introduction
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="php-forms.html">
+													Contact Forms
+												</a>
+											</li>
+										</ul>
+
+									</li>
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+									<li class="nav-item nav-item-extended overlay-dark overlay-opacity-2">
+										<a class="nav-link js-ajax" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-expand"></i>
+												<i class="fi fi-shrink"></i>
+											</span>
+											Predefined Layouts
+										</a>
+
+
+										<!-- extended item -->
+										<div class="aside-item d-flex flex-column bg-white shadow-xs w--350"><!-- .w-100 = full width -->
+											
+											<!-- header -->
+											<h3 class="fs--18 bg-light-soft p--15">
+												<button type="button" class="btn-aside-item-extended-close close fi fi-close fs--20 mt--n4 float-end"></button>
+												<i class="fi fi-heart-slim float-start fs--18"></i> 
+												Ready to start
+											</h3>
+
+											<!-- extended item content -->
+											<div 	id="layout_list" 
+													data-ajax-url="_ajax/layout_list.html" 
+													class="js-ajax p-3 scrollable-vertical scrollable-styled-dark m--1">
+
+												<div class="text-center"><!-- ajax loading icon -->
+													<i class="fi fi-circle-spin fi-spin fs--30 text-muted"></i>
+												</div><!-- /ajax loading icon -->
+
+											</div>
+											<!-- /extended item content -->
+
+										</div>
+										<!-- /extended item -->
+
+									</li>
+
+
+
+
+
+								<li class="nav-title mt-5">
+									<h6 class="fs--14 mb-1 font-weight-medium text-warning">
+										SOW : CORE PLUGINS
+									</h6>
+								</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-introduction.html">
+											Introduction
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-header.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">7Kb</span>
+											SOW : Header
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-search-suggest.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">9Kb</span>
+											SOW : Search Suggest
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-input-suggest.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : Input Suggest
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-navigation.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">10Kb</span>
+											SOW : Ajax : Navigation
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-forms.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4Kb</span>
+											SOW : Ajax : Forms
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-content.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4Kb</span>
+											SOW : Ajax : Content
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-modal.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">3Kb</span>
+											SOW : Ajax : Modals
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-confirm.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">6Kb</span>
+											SOW : Ajax : Confirm
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-select.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4.5Kb</span>
+											SOW : Ajax : Select
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-form-validation.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : Form Validation
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-form-advanced.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">7Kb</span>
+											SOW : Form Advanced
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-file-upload.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">24Kb</span>
+											SOW : File Upload
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-checkall.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Check All
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-checkgroup.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Check Group
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-toasts.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4Kb</span>
+											SOW : Toasts
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-gdpr.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : GDPR Cookies
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-inline-search.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Inline Search
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-dropdown.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">3Kb</span>
+											SOW : Dropdowns
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-deep-navigation.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : Deep Navigation
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-btn-toggle.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2.5Kb</span>
+											SOW : Button Toggle
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-scroll-to.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Scroll To
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-timer-autohide.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Timer Autohide
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-timer-countdown.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : Timer Countdown
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-gfont.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1.5Kb</span>
+											SOW : Google Font
+										</a>
+									</li>
+                                    <li class="nav-item">
+                                        <a class="nav-link js-ajax" href="plugins-sow-lazyload.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+                                            SOW : Lazyload
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link js-ajax" href="plugins-sow-count-animate.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4.1Kb</span>
+                                            SOW : Count Animate
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link js-ajax" href="plugins-sow-utils.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+                                            SOW : Utils
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link js-ajax" href="plugins-sow-service-worker.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+                                            SOW : Service Worker!
+                                        </a>
+                                    </li>
+									<li class="nav-item pl--15 pr--15">
+										<div class="bg-indigo text-gray-500 fs--13 p-2 rounded">
+											SOW Core plugins are developed from scratch. 
+											You can remove, disable or use your own!
+										</div>
+									</li>
+
+
+
+
+
+								<li class="nav-title mt-5">
+									<h6 class="fs--14 mb-1 font-weight-medium text-warning">
+										VENDOR PLUGINS
+									</h6>
+								</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-bootstrap-select.html">
+											Vendor : Bootstrap Select
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-flickity.html">
+											Vendor : Flickity Slider
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-swiper.html">
+											Vendor : Swiper Slider
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-jarallax.html">
+											Vendor : Jaxallax
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-sticky-kit.html">
+											Vendor : Sticky Kit
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-fancybox.html">
+											Vendor : Fancybox
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-photoswipe.html">
+											Vendor : Photoswipe
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="components-map.html">
+											Vendor : Map
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-slimscroll.html">
+											Vendor : Slimscroll
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-nestable.html">
+											Vendor : Nestable
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											Vendor : Pickers
+										</a>
+										<ul class="nav flex-column">
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-datepicker.html">
+													Datepicker
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-rangepicker.html">
+													Rangepicker
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-colorpicker.html">
+													Colorpicker
+												</a>
+											</li>
+										</ul>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											Vendor : Charts
+										</a>
+										<ul class="nav flex-column">
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-chartjs.html">
+													Chart.js
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-flot.html">
+													Flot Chart
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-easypie.html">
+													Easy Pie Chart
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-sparkline.html">
+													Sparkline Charts
+												</a>
+											</li>
+										</ul>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											Vendor : Editors
+										</a>
+										<ul class="nav flex-column">
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-medium-editor.html">
+													Medium Editor
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-markdown.html">
+													Markdown Editor
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-summernote.html">
+													Summernote
+												</a>
+											</li>
+										</ul>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-datatable.html">
+											Vendor : Datatable
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-fullcalendar.html">
+											Vendor : Fullcalendar
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-prismjs.html">
+											Vendor : Prismjs (Highlighter)
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-aos.html">
+											Vendor : AOS
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-typed.html">
+											Vendor : Typed
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-sortablejs.html">
+											Vendor : Sortablejs
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-cocoen.html">
+											Vendor : Cocoen <small>(Img Compare)</small>
+										</a>
+									</li>
+
+
+
+
+
+
+
+
+
+							</ul>
+						</nav>
+
+
+
+					</div>
+				</aside>
+				<!-- /SIDEBAR -->
+
+
+				<!-- MIDDLE -->
+				<div id="middle" class="flex-fill">
+
+
+
+					<header class="mb-5">
+						<h1 class="h2 mb-0 text-gray-700">
+							Components
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--14">
+								<li class="breadcrumb-item active" aria-current="page">
+									Smarty documentation
+								</li>
+							</ol>
+						</nav>
+
+					</header>
+
+
+
+					<div class="row d-flex flex-fill align-items-start">
+
+						<div class="col align-self-start">
+
+
+							<section id="section_1">
+
+								<header class="d-flex b-0">
+
+									<h2 class="h5 text-truncate w-100">
+										Icons
+									</h2>
+
+									<div class="ui-options d-flex">
+
+										<!-- fullscreen -->
+										<a href="#" class="btn-toggle" data-toggle-container-class="fullscreen" data-toggle-body-class="overflow-hidden" data-target="#section_1">
+											<span class="group-icon">
+												<i class="fi fi-expand"></i>
+												<i class="fi fi-shrink"></i>
+											</span>
+										</a>
+
+									</div>
+
+								</header>
+
+
+
+
+								<div class="mb-5 bg-light p-3 rounded">
+									<input class="form-control" type="text" id="inline-search" placeholder="Icon search...">
+
+									<code class="text-muted mb-0 mt--4 fs--13 rounded fs--14">usage: &lt;i class="fi fi-heart-empty"&gt;&lt;/i&gt;</code>
+								</div>
+
+
+
+
+								<div class="row iconsPreview mt--30">
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-check fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-check</span>
+										</a>
+									</div>
+
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-close fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-close</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-search fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-search</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-user-male fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-user-male</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-user-female fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-user-female</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-users fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-users</span>
+										</a>
+									</div>
+
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-star fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-star</span>
+										</a>
+									</div>
+									
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-star-empty-radius fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-star-empty-radius</span>
+										</a>
+									</div>
+									
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-star-empty fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-star-empty</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-start-half fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-start-half</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-star-full fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-star-full</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-heart-slim fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-heart-slim</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-heart-empty fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-heart-empty</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-heart-half fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-heart-half</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-heart-full fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-heart-full</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-arrow-up fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-arrow-up</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-arrow-down fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-arrow-down</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-arrow-left fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-arrow-left</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-arrow-right fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-arrow-right</span>
+										</a>
+									</div>
+									<!-- -->
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-arrow-up-slim fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-arrow-up-slim</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-arrow-down-slim fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-arrow-down-slim</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-arrow-left-slim fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-arrow-left-slim</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-arrow-right-slim fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-arrow-right-slim</span>
+										</a>
+									</div>
+									<!-- -->
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-arrow-up-full fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-arrow-up-full</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-arrow-down-full fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-arrow-down-full</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-arrow-left-full fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-arrow-left-full</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-arrow-right-full fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-arrow-right-full</span>
+										</a>
+									</div>
+									<!-- -->
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-arrow-right-3 fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-arrow-right-3</span>
+										</a>
+									</div>
+
+
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-arrow-download fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-arrow-download</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-arrow-upload fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-arrow-upload</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-envelope fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-envelope</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-envelope-2 fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-envelope-2</span>
+										</a>
+									</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-eq-vertical fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-eq-vertical</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-eye fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-eye</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-shape-hexa fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-shape-hexa</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-layers fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-layers</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-drop fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-drop</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-colors fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-colors</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-menu-dots fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-menu-dots</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-percent fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-percent</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-mic-disabled fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-mic-disabled</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-thrash fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-thrash</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-eye-disabled fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-eye-disabled</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-round-close fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-round-close</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-brand-apple fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-brand-apple</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-mollecules fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-mollecules</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-minus fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-minus</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-support-1 fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-support-1</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-shield-ok fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-shield-ok</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-task-list fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-task-list</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-print fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-print</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-chat fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-chat</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-dots-vertical fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-dots-vertical</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-direction fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-direction</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-cart-1 fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-cart-1</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-layers-middle fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-layers-middle</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-circle-spin fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-circle-spin</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-play-empty fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-play-empty</span>
+										</a>
+									</div>
+
+
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-expand fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-expand</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-cog-full fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-cog-full</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-pencil fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-pencil</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-graduate fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-graduate</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-smartphone fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-smartphone</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-like fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-like</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-folder-full fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-folder-full</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-smartphone-chat fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-smartphone-chat</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-squared-info fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-squared-info</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-eco fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-eco</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-cog fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-cog</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-round-target fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-round-target</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-bell fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-bell</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-squared-minus fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-squared-minus</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-share fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-share</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-recycle fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-recycle</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-hourglass fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-hourglass</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-power fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-power</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-phone-24 fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-phone-24</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-plus fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-plus</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-shape-abstract-cube fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-shape-abstract-cube</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-round-info-full fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-round-info-full</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-layerstore fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-layerstore</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-database fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-database</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-sound-on fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-sound-on</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-unlink fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-unlink</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-home fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-home</span>
+										</a>
+									</div>
+
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-box fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-box</span>
+										</a>
+									</div>
+
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-phone fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-phone</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-orbit fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-orbit</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-bell-full-active fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-bell-full-active</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-brand-android fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-brand-android</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-smart-devices fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-smart-devices</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-pin-2 fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-pin-2</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-box-checked fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-box-checked</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-atom fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-atom</span>
+										</a>
+									</div>
+
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-loading-dots fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-loading-dots</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-eq-horizontal fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-eq-horizontal</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-round-play fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-round-play</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-list-checked fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-list-checked</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-target-simple fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-target-simple</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-road fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-road</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-mic fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-mic</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-round-list fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-round-list</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-brand-windows fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-brand-windows</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-cart-2 fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-cart-2</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-product-tag fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-product-tag</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-globe fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-globe</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-cart-3 fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-cart-3</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-colors-2 fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-colors-2</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-lightbulb fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-lightbulb</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-round-question-full fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-round-question-full</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-bars-2 fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-bars-2</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-attachment fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-attachment</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-checklist-squared fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-checklist-squared</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-graph fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-graph</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-selectable fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-selectable</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-cloud-upload fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-cloud-upload</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-mdeal fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-mdeal</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-24 fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-24</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-cart-4 fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-cart-4</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-list fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-list</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-user-plus fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-user-plus</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-truck-speed fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-truck-speed</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-cogs fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-cogs</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-dashboard fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-dashboard</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-lightning fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-lightning</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-dots-horizontal fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-dots-horizontal</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-loading fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-loading</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-exit fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-exit</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-plus-slim fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-plus-slim</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-umbrella fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-umbrella</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-gps fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-gps</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-locked fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-locked</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-link fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-link</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-shape-3dots fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-shape-3dots</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-round-question fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-round-question</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-image fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-image</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-round-plus fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-round-plus</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-support fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-support</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-go-back fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-go-back</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-play fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-play</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-dislike fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-dislike</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-chart-up fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-chart-up</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-map fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-map</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-dots-triangle fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-dots-triangle</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-dots-horizontal-full fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-dots-horizontal-full</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-reload fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-reload</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-bookmark fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-bookmark</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-shape-abstract-dots fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-shape-abstract-dots</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-bars fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-bars</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-speaker-mute fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-speaker-mute</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-send fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-send</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-brain fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-brain</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-bell-active fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-bell-active</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-folder-empty fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-folder-empty</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-cart-5 fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-cart-5</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-shrink fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-shrink</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-pin fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-pin</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-squares fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-squares</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-bell-full fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-bell-full</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-squared-graph fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-squared-graph</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-squared-dots fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-squared-dots</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-gift fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-gift</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-time fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-time</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-cloud-download fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-cloud-download</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-shape-star fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-shape-star</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-loud fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-loud</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-dots-vertical-full fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-dots-vertical-full</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-help fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-help</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-fingerprint fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-fingerprint</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-plus-squared fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-plus-squared</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-round-lightning fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-round-lightning</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-pie-chart fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-pie-chart</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-calendar fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-calendar</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-shape-squared-unequal fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-shape-squared-unequal</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-cart-6 fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-cart-6</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-support-headphones fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-support-headphones</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-code fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-code</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-brand-amazon fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-brand-amazon</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-brand-paypal fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-brand-paypal</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-social-facebook fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-social-facebook</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-social-linkedin fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-social-linkedin</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-social-instagram fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-social-instagram</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-social-twitch fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-social-twitch</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-social-github fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-social-github</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-social-spotify fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-social-spotify</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-social-soundcloud fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-social-soundcloud</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-social-pinterest fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-social-pinterest</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-social-rss fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-social-rss</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-social-snapchat fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-social-snapchat</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-social-twitter fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-social-twitter</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-social-vimeo fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-social-vimeo</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-social-youtube fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-social-youtube</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-social-unsplash fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-social-unsplash</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-homeadvisor fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-homeadvisor</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-movie fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-movie</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-cart-7 fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-cart-7</span>
+										</a>
+									</div>
+
+
+
+
+
+
+
+
+
+									<div class="core-icon col-12 mt--60"></div>
+									
+
+
+
+
+
+
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi mdi-check fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">mdi-check</span>
+										</a>
+									</div>
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi mdi-close fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">mdi-close</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi mdi-format_align_center fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">mdi-format_align_center</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi mdi-format_align_justify fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">mdi-format_align_justify</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi mdi-format_align_left fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">mdi-format_align_left</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi mdi-format_align_right fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">mdi-format_align_right</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi mdi-format_bold fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">mdi-format_bold</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi mdi-format_clear fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">mdi-format_clear</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi mdi-format_color_fill fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">mdi-format_color_fill</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi mdi-format_color_reset fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">mdi-format_color_reset</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi mdi-format_color_text fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">mdi-format_color_text</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi mdi-format_indent_decrease fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">mdi-format_indent_decrease</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi mdi-format_indent_increase fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">mdi-format_indent_increase</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi mdi-format_italic fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">mdi-format_italic</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi mdi-format_line_spacing fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">mdi-format_line_spacing</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi mdi-format_list_bulleted fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">mdi-format_list_bulleted</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi mdi-format_list_numbered fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">mdi-format_list_numbered</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi mdi-filter_1 fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">mdi-filter_1</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi mdi-filter_2 fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">mdi-filter_2</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi mdi-filter_3 fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">mdi-filter_3</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi mdi-filter_4 fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">mdi-filter_4</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi mdi-filter_5 fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">mdi-filter_5</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi mdi-filter_6 fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">mdi-filter_6</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi mdi-filter_7 fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">mdi-filter_7</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi mdi-filter_8 fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">mdi-filter_8</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi mdi-filter_9 fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">mdi-filter_9</span>
+										</a>
+									</div>
+
+
+
+
+
+
+
+
+
+									<div class="core-icon col-12 mt--60"></div>
+
+
+
+
+
+
+
+
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-emoji-happy fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-emoji-happy</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-emoji-smile fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-emoji-smile</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-emoji-tongue fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-emoji-tongue</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-emoji-sad fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-emoji-sad</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-emoji-wink fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-emoji-wink</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-emoji-grin fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-emoji-grin</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-emoji-cool fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-emoji-cool</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-emoji-angry fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-emoji-angry</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-emoji-evil fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-emoji-evil</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-emoji-shocked fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-emoji-shocked</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-emoji-baffled fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-emoji-baffled</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-emoji-confused fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-emoji-confused</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-emoji-neutral fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-emoji-neutral</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-emoji-hipster fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-emoji-hipster</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-emoji-wondering fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-emoji-wondering</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-emoji-sleepy fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-emoji-sleepy</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-emoji-frustrated fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-emoji-frustrated</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="fi fi-emoji-crying fs--20"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">fi-emoji-crying</span>
+										</a>
+									</div>
+
+
+								</div>
+
+
+								<hr>
+
+								<div id="rtl_arros" class="my-4">
+									<b>RTL ARROWS</b>
+									<p>Will turn the oposite direction on RTL, without a need to edit the html code</p>
+
+									<i class="fi fi-arrow-start"></i> &nbsp; &lt;i class="fi fi-arrow-start">&lt;/i> <br>
+									<i class="fi fi-arrow-end"></i> &nbsp; &lt;i class="fi fi-arrow-end">&lt;/i> <br>
+									
+									<i class="fi fi-arrow-start-slim"></i> &nbsp; &lt;i class="fi fi-arrow-start-slim">&lt;/i> <br>
+									<i class="fi fi-arrow-end-slim"></i> &nbsp; &lt;i class="fi fi-arrow-end-slim">&lt;/i> <br>
+
+									<i class="fi fi-arrow-start-full"></i> &nbsp; &lt;i class="fi fi-arrow-start-full">&lt;/i> <br>
+									<i class="fi fi-arrow-end-full"></i> &nbsp; &lt;i class="fi fi-arrow-end-full">&lt;/i> <br>
+
+								</div>
+
+								<div id="spinners" class="my-4">
+									<span class="text-muted d-block">Example: &lt;i class="fi fi-orbit <code>fi-spin</code>">&lt;/i></span>
+									<i class="fi fi-orbit fi-spin"></i> &nbsp; 
+									<i class="fi fi-circle-spin fi-spin"></i> &nbsp; 
+									<i class="fi fi-loading-dots fi-spin"></i> &nbsp; 
+									<i class="fi fi-loading fi-spin"></i> &nbsp; 
+								</div>
+
+								<hr>
+
+								<div class="my-4">
+									Please see Utilities for available classes (font size &amp; colors).<br>
+									<span class="text-muted d-block">Example: &lt;i class="fi fi-star-empty <code>fs--13 text-danger</code>">&lt;/i></span>
+									<i class="fi fi-star-empty fs--13"></i> &nbsp; 
+									<i class="fi fi-star-empty fs--15 text-primary"></i> &nbsp; 
+									<i class="fi fi-star-empty fs--20 text-info"></i> &nbsp; 
+									<i class="fi fi-star-empty fs--25 text-warning"></i> &nbsp; 
+									<i class="fi fi-star-empty fs--30 text-danger"></i> &nbsp; 
+									<i class="fi fi-star-empty fs--35 text-indigo"></i> &nbsp; 
+									<i class="fi fi-star-empty fs--40 text-pink"></i> &nbsp; 
+									<i class="fi fi-star-empty fs--50"></i> &nbsp; 
+									<i class="fi fi-star-empty fs--60"></i> &nbsp; 
+								</div>
+
+
+
+
+
+
+
+
+							</section>
+
+
+							<section id="social_bgs" class="bg-white rounded border-top border-primary bw--2 shadow-xs">
+								
+								<header class="d-flex b-0">
+
+									<h2 class="h5 text-truncate w-100">
+										Social Background Colors
+									</h2>
+
+									<div class="ui-options d-flex">
+
+										<!-- fullscreen -->
+										<a href="#" class="btn-toggle" data-toggle-container-class="fullscreen" data-toggle-body-class="overflow-hidden" data-target="#section_1">
+											<span class="group-icon">
+												<i class="fi fi-expand"></i>
+												<i class="fi fi-shrink"></i>
+											</span>
+										</a>
+
+									</div>
+
+								</header>
+						
+								<div class="row">
+
+									<div class="col-sm-3 social-color">
+										<div data-class="bg-facebook"><span class="w--15 h--15 bg-facebook d-inline-block"></span> &nbsp; bg-facebook </div>
+										<div data-class="bg-paypal"><span class="w--15 h--15 bg-paypal d-inline-block"></span> &nbsp; bg-paypal </div>
+										<div data-class="bg-linkedin"><span class="w--15 h--15 bg-linkedin d-inline-block"></span> &nbsp; bg-linkedin </div>
+										<div data-class="bg-skype"><span class="w--15 h--15 bg-skype d-inline-block"></span> &nbsp; bg-skype </div>
+										<div data-class="bg-twitter"><span class="w--15 h--15 bg-twitter d-inline-block"></span> &nbsp; bg-twitter </div>
+										<div data-class="bg-youtube"><span class="w--15 h--15 bg-youtube d-inline-block"></span> &nbsp; bg-youtube </div>
+										<div data-class="bg-vimeo"><span class="w--15 h--15 bg-vimeo d-inline-block"></span> &nbsp; bg-vimeo </div>
+										<div data-class="bg-googleplay"><span class="w--15 h--15 bg-googleplay d-inline-block"></span> &nbsp; bg-googleplay </div>
+										<div data-class="bg-instagram"><span class="w--15 h--15 bg-instagram d-inline-block"></span> &nbsp; bg-instagram </div>
+										<div data-class="bg-pinterest"><span class="w--15 h--15 bg-pinterest d-inline-block"></span> &nbsp; bg-pinterest </div>
+										<div data-class="bg-snapchat"><span class="w--15 h--15 bg-snapchat d-inline-block"></span> &nbsp; bg-snapchat </div>
+									</div>
+									
+								</div>
+
+
+								<hr>
+
+
+								<a href="#" class="btn btn-sm btn-facebook transition-hover-top mb-2">
+									<i class="fi fi-social-facebook"></i> 
+									<span>facebook</span>
+								</a>
+
+								<a href="#" class="btn btn-sm btn-twitter transition-hover-top mb-2">
+									<i class="fi fi-social-twitter"></i> 
+									<span>twitter</span>
+								</a>
+
+								<a href="#" class="btn btn-sm btn-linkedin transition-hover-top mb-2">
+									<i class="fi fi-social-linkedin"></i> 
+									<span>linkedin</span>
+								</a>
+
+								<a href="#" class="btn btn-sm btn-vimeo transition-hover-top mb-2">
+									<i class="fi fi-social-vimeo"></i> 
+									<span>vimeo</span>
+								</a>
+
+								<a href="#" class="btn btn-sm btn-youtube transition-hover-top mb-2">
+									<i class="fi fi-social-youtube"></i> 
+									<span>youtube</span>
+								</a>
+
+								<a href="#" class="btn btn-sm btn-snapchat transition-hover-top mb-2 text-dark">
+									<i class="fi fi-social-snapchat"></i> 
+									<span>snapchat</span>
+								</a>
+
+								<a href="#" class="btn btn-sm btn-email transition-hover-top mb-2">
+									<i class="fi fi-envelope-2"></i> 
+									<span>email</span>
+								</a>
+
+
+							</section>
+
+
+
+						</div>
+
+						<div class="col w-100 max-w-300 d-none d-xl-flex align-self-md-stretch">
+
+							<div class="w-100">
+								<div class="sticky-kit">
+
+								<!--
+								<h6 class="text-dark">Jump To</h6>
+								<ul class="list-unstyled mb-5">
+									<li class="list-item">
+										<a href="#section" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											--
+										</a>
+									</li>
+								</ul>
+								-->
+
+
+
+								<!-- AJAX BOX INFO -->
+								<div 	id="boxinfo_v3" 
+										class="js-ajax" 
+										data-ajax-url="_ajax/boxinfo_v3.html">
+
+									<!-- ajax loading icon -->
+									<div class="text-center bg-white rounded shadow-md p--15 mb-5">
+										<i class="fi fi-circle-spin fi-spin fs--30 text-muted"></i>
+									</div><!-- /ajax loading icon -->
+
+								</div>
+								<!-- /AJAX BOX INFO -->
+
+
+								</div>
+
+
+
+							</div>
+
+						</div>
+
+					</div>
+
+
+
+				</div>
+				<!-- /MIDDLE -->
+
+			</div>
+
+
+
+		</div><!-- /#wrapper -->
+
+
+
+
+		<!--
+			
+			Toast On Load
+
+				data-type 			= '', success, danger, warning, info
+				data-title 			= toast title 	(optional)
+				data-body 			= toast body 	(required)
+				data-pos 			= top-left, top-right, bottom-left, bottom-right, top-center, bottom-center
+				data-delay 			= autoclose in ms
+				data-fill 			= background color fill [true|false]
+
+		-->
+		<div class="hide toast-on-load"
+			data-toast-type="pink" 
+			data-toast-title="" 
+			data-toast-body="<i class='fi fi-emoji-cool float-start'></i> Ajax navigation enabled! Yay!" 
+			data-toast-pos="bottom-center" 
+			data-toast-delay="4000" 
+			data-toast-fill="true" 
+		></div>
+
+
+
+
+		<script src="../assets/js/core.min.js"></script>
+		<script src="../assets/js/vendor_bundle.min.js"></script>
+
+
+
+		<!--
+
+			[SOW Ajax Navigation Plugin] [AJAX ONLY, IF USED]
+			If you have specific page js files, wrap them inside #page_js_files 
+			Ajax Navigation will use them for this page! 
+			This way you can load this page in a normal way and/or via ajax.
+			(you can change/add more containers in sow.config.js)
+
+		-->
+		<div id="page_js_files">
+
+			<script src="assets/plugins/clipboard/clipboard.min.js"></script>
+			<script>
+
+				var clipboard = new Clipboard(".iconsPreview a", {
+				    text: function(e) {
+
+						// bootstrap tooltip
+						setTimeout(function(){ 
+
+							jQuery(e)
+								.attr('data-original-title', 'Copied to Clipboard').tooltip('show')
+								.on('hidden.bs.tooltip', function () {
+
+								// destroy tooltip
+								jQuery(this).tooltip('dispose');
+
+							});
+
+						}, 30);
+
+
+				    	// get class & return
+				        _iconClass = jQuery("span.preview-copy-clipboard", e).html();
+						return _iconClass;
+						
+				    }
+				});
+
+			
+				/* 
+					Inline Search 
+				*/
+				jQuery("#inline-search").keyup(function() {
+					var keywords = jQuery.trim(this.value);
+					if (keywords == "") {
+						_unfilter();
+					}
+					else {
+						_filter(keywords);
+					}
+				});
+
+				function _filter(keywords) {
+					jQuery(".core-icon").hide(); 
+					jQuery('.core-icon a span>i[class*="'+keywords+'"]').parent().parent().parent().show();
+				}
+
+				function _unfilter() {
+					jQuery(".core-icon").show()
+				}
+
+			</script>
+
+		</div>
+
+
+	</body>
+</html>

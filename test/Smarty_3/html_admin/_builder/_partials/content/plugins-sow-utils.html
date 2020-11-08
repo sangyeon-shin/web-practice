@@ -1,0 +1,345 @@
+﻿					<!-- doc:start -->
+					<div class="page-title bg-transparent b-0">
+
+						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
+							SOW : Utils
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--13 pb-2 px-3">
+								<li class="breadcrumb-item">
+									<a href="index.html" class="js-ajax">Dashboard</a>
+								</li>
+								<li class="breadcrumb-item active">
+									SOW : Core Plugins
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Utils
+								</li>
+							</ol>
+						</nav>
+
+					</div>
+
+
+
+					<!-- ALERT : NOTE -->
+					<div class="bg-white shadow-xs p-2 mb-4 rounded">
+						<div class="clearfix bg-light p-2 rounded d-flex align-items-center">
+							<span class="btn row-pill btn-sm bg-gradient-warning b-0 py-1 mb-0 float-start">
+								<i class="fi fi-round-info-full"></i>
+								Note
+							</span>
+							<span class="d-block px-2 text-muted text-truncate">
+								This is a basic demo! Please see main <a href="../../html_frontend/documentation/plugins-sow-utils.html" target="smarty" class="link-muted">full documentation here</a>.
+							</span>
+						</div>
+					</div>
+					<!-- /ALERT : NOTE -->
+
+
+
+					<!-- start:row -->
+					<div class="row gutters-sm">
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Simple Background Slideshow</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<div class="clearfix">
+											<div class="float-start mx-3">
+												<div class="sow-util-slideshow position-relative w--300 h--300 overlay-dark overlay-opacity-3" 
+													data-sow-slideshow-interval="3000" 
+													data-sow-slideshow-fade-delay="1500" 
+													data-sow-slideshow="
+														../html_frontend/demo.files/images/unsplash/restaurant/thumb_600/jade-wulfraat-sIzym-INcvk-unsplash-min-min.jpg,
+														../html_frontend/demo.files/images/unsplash/restaurant/thumb_600/jade-wulfraat-UaOPeqfdW1c-unsplash-min-min.jpg,
+														../html_frontend/demo.files/images/unsplash/restaurant/thumb_600/jade-wulfraat-yXnPoTkkY94-unsplash-min-min.jpg
+													">
+												</div>
+												<code class="fs--13">
+													data-sow-slideshow-interval="3000" 
+												<br>
+													data-sow-slideshow-fade-delay="1500" 
+												</code>
+											</div>
+
+											<div class="float-start mx-3">
+												<div class="sow-util-slideshow position-relative w--500 h--300 overlay-dark overlay-opacity-3" 
+													data-sow-slideshow-interval="8000" 
+													data-sow-slideshow-fade-delay="3000" 
+													data-sow-slideshow="
+														../html_frontend/demo.files/images/unsplash/restaurant/thumb_600/jade-wulfraat-sIzym-INcvk-unsplash-min-min.jpg,
+														../html_frontend/demo.files/images/unsplash/restaurant/thumb_600/jade-wulfraat-UaOPeqfdW1c-unsplash-min-min.jpg,
+														../html_frontend/demo.files/images/unsplash/restaurant/thumb_600/jade-wulfraat-yXnPoTkkY94-unsplash-min-min.jpg
+													">
+												</div>
+												<code class="fs--13">
+													data-sow-slideshow-interval="8000" 
+												<br>
+													data-sow-slideshow-fade-delay="3000" 
+												</code>
+											</div>
+										</div>
+
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Initials by attribute</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<div class="row">
+
+											<div class="col-12 col-lg-6">
+
+												<h6>Manual/static color</h6>
+												<span data-initials="John Doe" class="sow-util-initials bg-danger-soft h5 w--40 h--40 rounded d-inline-flex justify-content-center align-items-center">
+													<i class="fi fi-circle-spin fi-spin"></i>
+												</span>
+
+												<span data-initials="Felicia M. Doe" class="sow-util-initials bg-warning-soft h5 w--50 h--50 rounded d-inline-flex justify-content-center align-items-center">
+													<i class="fi fi-circle-spin fi-spin"></i>
+												</span>
+
+												<span data-initials="Mellisa Cordell" class="sow-util-initials bg-primary-soft h5 w--60 h--60 rounded d-inline-flex justify-content-center align-items-center">
+													<i class="fi fi-circle-spin fi-spin"></i>
+												</span>
+
+												<span data-initials="Peter Sam" class="sow-util-initials bg-secondary-soft h5 w--70 h--70 rounded d-inline-flex justify-content-center align-items-center">
+													<i class="fi fi-circle-spin fi-spin"></i>
+												</span>
+
+												<span data-initials="Simba Lowell" class="sow-util-initials bg-info-soft h5 w--80 h--80 rounded d-inline-flex justify-content-center align-items-center">
+													<i class="fi fi-circle-spin fi-spin"></i>
+												</span>
+
+												<hr>
+
+												<h6>Asign color by name</h6>
+												<span data-initials="John Doe" data-assign-color="true" class="sow-util-initials bg-light h5 w--40 h--40 rounded d-inline-flex justify-content-center align-items-center">
+													<i class="fi fi-circle-spin fi-spin"></i>
+												</span>
+
+												<span data-initials="Felicia M. Doe" data-assign-color="true" class="sow-util-initials bg-light h5 w--50 h--50 rounded d-inline-flex justify-content-center align-items-center">
+													<i class="fi fi-circle-spin fi-spin"></i>
+												</span>
+
+												<span data-initials="Mellisa Cordell" data-assign-color="true" class="sow-util-initials bg-light h5 w--60 h--60 rounded d-inline-flex justify-content-center align-items-center">
+													<i class="fi fi-circle-spin fi-spin"></i>
+												</span>
+
+												<span data-initials="Peter Sam" data-assign-color="true" class="sow-util-initials bg-light h5 w--70 h--70 rounded d-inline-flex justify-content-center align-items-center">
+													<i class="fi fi-circle-spin fi-spin"></i>
+												</span>
+
+												<span data-initials="Simba Lowell" data-assign-color="true" class="sow-util-initials bg-light h5 w--80 h--80 rounded d-inline-flex justify-content-center align-items-center">
+													<i class="fi fi-circle-spin fi-spin"></i>
+												</span>
+
+											</div>
+
+											<div class="col-12 col-lg-6">
+
+												<h6>Manual/static color</h6>
+												<span data-initials="John Doe" class="sow-util-initials bg-danger-soft h5 w--40 h--40 rounded-circle d-inline-flex justify-content-center align-items-center">
+													<i class="fi fi-circle-spin fi-spin"></i>
+												</span>
+
+												<span data-initials="Felicia M. Doe" class="sow-util-initials bg-warning-soft h5 w--50 h--50 rounded-circle d-inline-flex justify-content-center align-items-center">
+													<i class="fi fi-circle-spin fi-spin"></i>
+												</span>
+
+												<span data-initials="Mellisa Cordell" class="sow-util-initials bg-primary-soft h5 w--60 h--60 rounded-circle d-inline-flex justify-content-center align-items-center">
+													<i class="fi fi-circle-spin fi-spin"></i>
+												</span>
+
+												<span data-initials="Peter Sam" class="sow-util-initials bg-secondary-soft h5 w--70 h--70 rounded-circle d-inline-flex justify-content-center align-items-center">
+													<i class="fi fi-circle-spin fi-spin"></i>
+												</span>
+
+												<span data-initials="Simba Lowell" class="sow-util-initials bg-info-soft h5 w--80 h--80 rounded-circle d-inline-flex justify-content-center align-items-center">
+													<i class="fi fi-circle-spin fi-spin"></i>
+												</span>
+
+												<hr>
+
+												<h6>Asign color by name</h6>
+												<span data-initials="John Doe" data-assign-color="true" class="sow-util-initials bg-light h5 w--40 h--40 rounded-circle d-inline-flex justify-content-center align-items-center">
+													<i class="fi fi-circle-spin fi-spin"></i>
+												</span>
+
+												<span data-initials="Felicia M. Doe" data-assign-color="true" class="sow-util-initials bg-light h5 w--50 h--50 rounded-circle d-inline-flex justify-content-center align-items-center">
+													<i class="fi fi-circle-spin fi-spin"></i>
+												</span>
+
+												<span data-initials="Mellisa Cordell" data-assign-color="true" class="sow-util-initials bg-light h5 w--60 h--60 rounded-circle d-inline-flex justify-content-center align-items-center">
+													<i class="fi fi-circle-spin fi-spin"></i>
+												</span>
+
+												<span data-initials="Peter Sam" data-assign-color="true" class="sow-util-initials bg-light h5 w--70 h--70 rounded-circle d-inline-flex justify-content-center align-items-center">
+													<i class="fi fi-circle-spin fi-spin"></i>
+												</span>
+
+												<span data-initials="Simba Lowell" data-assign-color="true" class="sow-util-initials bg-light h5 w--80 h--80 rounded-circle d-inline-flex justify-content-center align-items-center">
+													<i class="fi fi-circle-spin fi-spin"></i>
+												</span>
+
+											</div>
+
+										</div>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Cookies by attribute</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<a href="#" class="sow-util-cookie btn btn-primary btn-sm btn-soft"
+											data-cookie-set="_test_" 
+											data-cookie-val="1" 
+											data-cookie-expire="1" 
+
+											data-toast-msg-set="Set: _test_" 
+											data-toast-msg-pos="top-center" 
+											data-toast-msg-type-set="success-soft">
+											Set Cookie
+										</a>
+
+
+										<a href="#" class="sow-util-cookie btn btn-danger btn-sm btn-soft"
+											data-cookie-del="_test_" 
+
+											data-toast-msg-del="Deleted: _test_" 
+											data-toast-msg-pos="top-center" 
+											data-toast-msg-type-del="danger-soft">
+											Set Delete
+										</a>
+
+
+										<a href="#" class="sow-util-cookie btn btn-warning btn-sm btn-soft"
+											data-cookie-toggle="_test_" 
+											data-cookie-val="1" 
+											data-cookie-expire="1" 
+
+											data-toast-msg-set="Set: _test_" 
+											data-toast-msg-del="Deleted: _test_" 
+											data-toast-msg-pos="top-center"
+											data-toast-msg-type-set="success-soft" 
+											data-toast-msg-type-del="danger-soft">
+											Toggle
+										</a>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Time ago</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<abbr class="sow-util-timeago" data-time="2011-12-17T09:24:17Z"></abbr> 
+
+										<hr>
+
+										<abbr class="sow-util-timeago" data-time="December 17, 2012"></abbr>
+
+										<hr>
+
+										<time class="sow-util-timeago" 
+											datetime="2019-09-17T23:59:17" 
+											data-live="true" 
+											data-lang='{
+												"seconds" 		: "less than a minute ago",
+												"minute" 		: "about a minute ago",
+												"minutes" 		: "%d minutes ago",
+												"hour" 			: "about an hour ago",
+												"hours" 		: "about %d hours ago",
+												"day" 			: "a day ago",
+												"days" 			: "%d days ago",
+												"month" 		: "about a month ago",
+												"months" 		: "%d months ago",
+												"year" 			: "about a year ago",
+												"years" 		: "%d years ago"
+											}'></time>
+
+										<hr>
+
+										<time class="sow-util-timeago" datetime="2013-01-17T09:24:17Z"></time>
+
+										<hr>
+
+										<span class="sow-util-timeago" data-time="1372218564"></span>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+					</div>
+					<!-- end:row: -->
+					<!-- doc:end -->

@@ -1,0 +1,17 @@
+[
+  {
+    "label": "Select Option...",
+    "value": "",
+    "selected": true
+  },{
+    "label": "Container 1",
+    "value": "1",
+    "selected": false,
+    "show_container": "#container__1"
+  },{
+    "label": "Container 2",
+    "value": "2",
+    "selected": false,
+    "show_container": "#container__2"
+  }
+]

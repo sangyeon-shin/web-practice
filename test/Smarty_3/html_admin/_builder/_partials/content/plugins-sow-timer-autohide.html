@@ -1,0 +1,116 @@
+﻿					<!-- doc:start -->
+					<div class="page-title bg-transparent b-0">
+
+						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
+							SOW : Timer Autohide
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--13 pb-2 px-3">
+								<li class="breadcrumb-item">
+									<a href="index.html" class="js-ajax">Dashboard</a>
+								</li>
+								<li class="breadcrumb-item active">
+									SOW : Core Plugins
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Timer Autohide
+								</li>
+							</ol>
+						</nav>
+
+					</div>
+
+
+
+					<!-- ALERT : NOTE -->
+					<div class="bg-white shadow-xs p-2 mb-4 rounded">
+						<div class="clearfix bg-light p-2 rounded d-flex align-items-center">
+							<span class="btn row-pill btn-sm bg-gradient-warning b-0 py-1 mb-0 float-start">
+								<i class="fi fi-round-info-full"></i>
+								Note
+							</span>
+							<span class="d-block px-2 text-muted text-truncate">
+								This is a basic demo! Please see main <a href="../../html_frontend/documentation/plugins-sow-timer-autohide.html" target="smarty" class="link-muted">full documentation here</a>.
+							</span>
+						</div>
+					</div>
+					<!-- /ALERT : NOTE -->
+
+
+
+					<!-- start:row -->
+					<div class="row gutters-sm">
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Examples</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<div class="row">
+											<div class="col-12 col-lg-5">
+
+												<div class="h5 timer-autohide" data-timer-autohide="15000">
+													This container will autohide in 15 seconds.
+												</div>
+
+											</div>
+
+											<div class="col-12 col-lg-7">
+
+												<pre class="bg-gradient-dark rounded p-3"><code>
+&lt;div class="timer-autohide" data-timer-autohide="15000">
+	This container will autohide in 15 seconds.
+&lt;/div>
+												</code></pre>
+
+											</div>
+
+										</div>
+
+
+										<hr>
+
+										<h6>Used together with SOW : Timer Countdown</h6>
+										<div class="row">
+											<div class="col-12 col-lg-5">
+
+												<div class="h3 timer-autohide" data-timer-autohide="10000">
+													This container will autohide in: <span class="hide text-danger timer-countdown" data-timer-countdown-from="10000"></span>
+												</div>
+
+											</div>
+
+											<div class="col-12 col-lg-7">
+
+												<pre class="bg-gradient-dark rounded p-3"><code>
+&lt;div class="timer-autohide" data-timer-autohide="10000">
+	This container will autohide in: &lt;span class="hide timer-countdown" data-timer-countdown-from="10000">&lt;/span>
+&lt;/div>
+												</code></pre>
+
+											</div>
+
+										</div>
+
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+					</div>
+					<!-- end:row: -->
+					<!-- doc:end -->

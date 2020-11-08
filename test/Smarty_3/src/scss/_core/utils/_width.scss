@@ -1,0 +1,54 @@
+/**
+
+		- Width 					.w--*, .w-inherit, .w-auto
+									.mw-100, .min-w-0, 
+									.w-*vh, .min-w-*vh, .max-w-*vh
+
+**/
+@each $val in $util-width-val {
+	.w--#{$val} { width: #{$val}px !important; }
+	
+	@if $val > 90 {
+		.max-w-#{$val} { max-width: #{$val}px !important; }
+	}
+}
+	.w-inherit {
+		width: inherit !important;
+	}
+	.w-auto { // bootstrap already added width: auto;
+		min-width: auto !important;
+	}
+	.mw-100 {
+		max-width: 100% !important;
+	}
+	.min-w-0 { /* used on .d-flex by text-truncate */
+		min-width: 0;
+	}
+
+	// missing from bootstrap
+	.w-33 {
+		width: 33% !important;
+	}
+
+
+
+	/*
+
+		Viewport
+
+	*/
+	@each $val in $util-viewport-val {
+
+		.w-#{$val}vw {
+			width: #{$val}vw !important;
+		}
+
+		.min-w-#{$val}vh {
+			min-width: #{$val}vw !important;
+		}
+
+		.max-w-#{$val}vh {
+			max-width: #{$val}vw !important;
+		}
+
+	}

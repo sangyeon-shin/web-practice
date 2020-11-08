@@ -1,0 +1,41 @@
+		<div class="modal-header">
+			<h2 class="modal-title fs--18 m-0">
+				New Project
+			</h2>
+
+			<button type="button" class="close pointer" data-dismiss="modal" aria-label="Close">
+				<span class="fi fi-close fs--18" aria-hidden="true"></span>
+			</button>
+		</div>
+
+		<div class="modal-body p--30">
+						
+			<form class="bs-validate" novalidate method="post" action="#!">
+
+				<input required="" class="form-control mb-4" name="project_name" type="text" value="" placeholder="Project name">
+
+				<!-- Switch : Checkbox : Squared -->
+				<label class="form-switch form-switch-pill form-switch-primary d-block mb-4">
+					<input type="checkbox" value="1" checked="" data-toggle="collapse" data-target="#public_info">
+					<i data-on="&#10004;" data-off="&#10005;"></i>
+					Public Project
+				</label>
+				<div id="public_info" class="collapse show">
+					<p class="mb-4 text-muted bg-light p--15 fs--14 rounded">
+						<span class="d-block fs--12 font-weight-medium text-primary">PUBLIC PROJECT</span>
+						Visible to Stepofweb comunity &ndash; a great way to get ideas, feedback and inspire others!
+					</p>
+				</div>
+
+				<!-- submit -->
+				<button type="submit" class="btn btn-primary btn-block">
+					CREATE
+				</button>
+
+			</form>
+
+		</div>
+
+		<div class="border-top text-muted p--15 fs--13 bg-light rounded-bottom pl--30 pr--30 pt--20 pb--20">
+			<b>Reminder:</b> Each new published project require a new <a href="https://www.wrapbootstrap.com/theme/smarty-website-admin-rtl-WB02DSN1B" target="_blank">wrapbootstrap license</a>!
+		</div>

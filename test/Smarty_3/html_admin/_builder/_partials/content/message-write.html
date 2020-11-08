@@ -1,0 +1,171 @@
+﻿					<!--
+
+						PAGE TITLE
+					-->
+					<div class="page-title bg-transparent b-0">
+
+						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
+							Messages
+						</h1>
+
+					</div>
+
+
+
+					<div class="row gutters-sm">
+
+						<!-- navigation -->
+						<div class="col-12 col-lg-3 col-xl-2">
+
+							<nav class="nav-deep nav-deep-light mb-2">
+
+								<!-- mobile only -->
+								<button class="clearfix btn btn-toggle btn-sm btn-block text-align-left shadow-md border rounded mb-1 d-block d-lg-none" data-target="#nav_responsive" data-toggle-container-class="d-none d-sm-block bg-white shadow-md border animate-fadein rounded p-3">
+									<span class="group-icon px-2 py-2 float-start">
+										<i class="fi fi-bars-2"></i>
+										<i class="fi fi-close"></i>
+									</span>
+
+									<span class="h5 py-2 m-0 float-start font-weight-light">
+										Inbox
+									</span>
+								</button>
+
+
+								<!-- navigation -->
+								<ul id="nav_responsive" class="nav flex-column d-none d-lg-block">
+
+									<li class="nav-item">
+										<a class="nav-link px-0" href="message-inbox.html">
+											<i class="fi fi-arrow-end m-0 fs--12"></i> 
+											<span class="px-2 d-inline-block">
+												Inbox
+											</span>
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link px-0" href="message-inbox.html">
+											<i class="fi fi-arrow-end m-0 fs--12"></i> 
+											<span class="px-2 d-inline-block">
+												Sent
+											</span>
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link px-0" href="message-inbox.html">
+											<i class="fi fi-arrow-end m-0 fs--12"></i> 
+											<span class="px-2 d-inline-block">
+												Archived
+											</span>
+										</a>
+									</li>
+
+								</ul>
+
+							</nav>
+
+						</div>
+						<!-- /navigation -->
+
+
+						<!-- inbox list -->
+						<div class="col-12 col-lg-9 col-xl-10">
+
+
+							<!-- portlet -->
+							<div class="portlet">
+								
+								<!-- portlet : header -->
+								<div class="portlet-header border-bottom">
+
+									<div class="container">
+										<span class="d-block text-truncate font-weight-medium py-2">
+											New Message
+										</span>
+									</div>
+
+								</div>
+								<!-- /portlet : header -->
+
+
+								<!-- portlet : body -->
+								<div class="portlet-body">
+
+									<div class="container">
+
+
+							            <!--
+							                Message : To
+
+							                please pay attention to:  message_to[]
+							                is array because multiple selection is enabled.
+							                remove [] (brackets) if multiple is not enabled!
+							            -->
+							            <div class="form-label-group mt-3 mb-4">
+								            <select required multiple name="message_to[]" id="message_to" class="form-control bs-select hide" title="Send to..." data-header="Select one or more" data-live-search="true" data-actions-box="true">
+								                <option value="" disabled data-divider="true">Select one or more</option>
+								                <option value="1" data-icon="fi fi-user-male float-start">Michael Dam</option>
+								                <option value="2" data-icon="fi fi-user-male float-start">Joseph Gonzalez</option>
+								                <option value="3" data-icon="fi fi-user-male float-start">Erik Mclean</option>
+								                <option value="4" data-icon="fi fi-user-female float-start">Felicia doe</option>
+								                <option value="" disabled data-divider="true">-</option>
+								                <option value="5" data-subtext="(owner)" data-icon="fi fi-star-full float-start text-warning">John Doe</option>
+								            </select>
+								            <label for="message_to">Send To</label>
+							            </div>
+
+
+										<div class="form-label-group mb-4">
+											<input placeholder="Subject" id="message_subject" type="text" value="" class="form-control">
+											<label for="message_subject">Subject</label>
+										</div>
+
+										<textarea class="medium-editor bg-white border rounded p-3 w-100 min-h-300" 
+
+											data-placeholder="Type your message..."
+											data-lng-save="Save" 
+											data-lng-clear="Clear" 
+											data-lng-link="Paste or type a link" 
+
+											data-btn-picker="true" 
+											data-btn-bold="true" 
+											data-btn-italic="true" 
+											data-btn-underline="true" 
+											data-btn-link="true" 
+											data-btn-h1="false" 
+											data-btn-h2="false" 
+											data-btn-h3="true" 
+											data-btn-h4="true" 
+											data-btn-h5="true" 
+											data-btn-h6="true" 
+											data-btn-unordered="true" 
+											data-btn-ordered="true">
+										</textarea>
+										<small class="text-muted">* Shift + Enter = no spaced line</small>
+
+									</div>
+
+
+
+									<div class="clearfix container my-5">
+
+										<a href="#!" class="btn btn-sm btn-primary btn-pill">
+											<i class="fi fi-check"></i>
+											Send message
+										</a>
+
+									</div>
+
+								</div>
+								<!-- /portlet : body -->
+
+							</div>
+							<!-- /portlet -->
+
+
+						</div>
+						<!-- /inbox list -->
+
+					</div>

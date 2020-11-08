@@ -1,0 +1,3671 @@
+﻿<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+
+		<meta charset="UTF-8">
+		<title>Smarty</title>
+		<meta name="description" content="Smarty Documentation">
+
+        <meta name="viewport" content="width=device-width, maximum-scale=5, initial-scale=1, user-scalable=0">
+        <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+        <!-- up to 10% speed up for external res -->
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+        <link rel="preconnect" href="https://fonts.googleapis.com/">
+        <link rel="preconnect" href="https://fonts.gstatic.com/">
+        <!-- preloading icon font is helping to speed up a little bit -->
+        <link rel="preload" href="../assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
+
+		<link rel="stylesheet" href="../assets/css/core.min.css">
+		<link rel="stylesheet" href="../assets/css/vendor_bundle.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
+
+		<!-- favicon -->
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="apple-touch-icon" href="../demo.files/logo/icon_512x512.png">
+
+		<link rel="manifest" href="../assets/images/manifest/manifest.json">
+		<meta name="theme-color" content="#377dff">
+
+	</head>
+
+
+	<!--
+
+		Layout Admin
+			.layout-admin 	(required)
+
+			.aside-sticky  					- sidebar : fixed and push header
+			.header-sticky  				- header : always visible on top (acting as old .header-focus)
+			.header-scroll-reveal  			- header : hide on scroll down and reveal on scroll up
+
+	-->
+	<body class="layout-admin aside-sticky header-sticky" data-s2t-class="btn-indigo btn-sm rounded-circle">
+
+		<div id="wrapper">
+
+
+
+			<!-- HEADER -->
+			<header id="header" class="d-flex align-items-center shadow-xs">
+
+
+				<!-- NAVBAR -->
+				<div class="container-fluid position-relative">
+
+					<nav class="navbar navbar-expand-lg navbar-dark justify-content-lg-between">
+
+						<div class="align-items-start">
+							
+							<!-- 
+								sidebar toggler 
+							-->
+							<a href="#aside-main" class="btn-sidebar-toggle h-100 d-inline-block d-lg-none justify-content-center align-items-center p-2">
+								<span class="group-icon">
+									<i>
+										<svg width="25" viewBox="0 0 20 20">
+											<path fill="#333333" d="M 19.9876 1.998 L -0.0108 1.998 L -0.0108 -0.0019 L 19.9876 -0.0019 L 19.9876 1.998 Z"></path>
+											<path fill="#333333" d="M 19.9876 7.9979 L -0.0108 7.9979 L -0.0108 5.9979 L 19.9876 5.9979 L 19.9876 7.9979 Z"></path>
+											<path fill="#333333" d="M 19.9876 13.9977 L -0.0108 13.9977 L -0.0108 11.9978 L 19.9876 11.9978 L 19.9876 13.9977 Z"></path>
+											<path fill="#333333" d="M 19.9876 19.9976 L -0.0108 19.9976 L -0.0108 17.9976 L 19.9876 17.9976 L 19.9876 19.9976 Z"></path>
+										</svg>
+									</i>
+
+									<i>
+										<svg width="25" viewBox="0 0 47.971 47.971">
+											<path fill="#333333" d="M28.228,23.986L47.092,5.122c1.172-1.171,1.172-3.071,0-4.242c-1.172-1.172-3.07-1.172-4.242,0L23.986,19.744L5.121,0.88c-1.172-1.172-3.07-1.172-4.242,0c-1.172,1.171-1.172,3.071,0,4.242l18.865,18.864L0.879,42.85c-1.172,1.171-1.172,3.071,0,4.242C1.465,47.677,2.233,47.97,3,47.97s1.535-0.293,2.121-0.879l18.865-18.864L42.85,47.091c0.586,0.586,1.354,0.879,2.121,0.879s1.535-0.293,2.121-0.879c1.172-1.171,1.172-3.071,0-4.242L28.228,23.986z"/>
+										</svg>
+									</i>
+								</span>
+
+							</a>
+
+
+							<!-- 
+								Logo : height: 60px max
+							-->
+							<a class="navbar-brand" href="index.html">
+								<img src="assets/images/logo/logo_dark.svg" width="110" height="70" alt="...">
+							</a>
+
+						</div>
+
+
+
+
+					<!-- 
+
+						[SOW] SEARCH SUGGEST PLUGIN
+						[GULP/src/plugins/sow_search_suggest/sow_search_suggest.js]
+						[SCSS/_plugins/sow_search_suggest.scss]
+						++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++
+
+						PLEASE READ DOCUMENTATION
+						documentation/plugins-sow-search.html
+
+					-->
+					<form 	action="index.html" 
+							method="GET" 
+							data-autosuggest="on" 
+
+							data-mode="json" 
+							data-json-max-results='10'
+							data-json-related-title='Explore Smarty'
+							data-json-related-item-icon='fi fi-star-empty'
+							data-json-suggest-title='Suggestions for you'
+							data-json-suggest-noresult='No results for'
+							data-json-suggest-item-icon='fi fi-search'
+							data-json-suggest-min-score='5'
+							data-json-highlight-term='true'
+							data-contentType='application/json; charset=utf-8'
+							data-dataType='json'
+
+							data-container="#sow-search-container" 
+							data-input-min-length="2" 
+							data-input-delay="100" 
+							data-related-keywords="" 
+							data-related-url="_ajax/search_suggestion_json_related.json" 
+							data-suggest-url="_ajax/search_suggestion_json_suggest.json" 
+							data-related-action="related_get" 
+							data-suggest-action="suggest_get" 
+							class="js-ajax-search sow-search sow-search-mobile-float d-flex-1-1-auto mx-4">
+						<div class="sow-search-input w-100 d-flex align-items-center">
+
+							<div class="input-group-over d-flex align-items-center w-100 h-100 rounded">
+
+								<input placeholder="component search..." name="s" type="text" class="form-control-sow-search form-control form-control-pill b-0 bg-gray-100" value="" autocomplete="off">
+
+								<span class="sow-search-buttons">
+
+									<!-- search button -->
+									<button type="submit" class="btn btn-primary btn-noshadow m-0 px-2 py-1 b-0 bg-transparent text-muted">
+										<i class="fi fi-search fs--20"></i>
+									</button>
+
+									<!-- close : mobile only (d-inline-block d-lg-none) -->
+									<a href="javascript:;" class="btn-sow-search-toggler btn btn-light btn-noshadow m-0 px-2 py-1 d-inline-block d-lg-none">
+										<i class="fi fi-close fs--20"></i>
+									</a>
+
+								</span>
+
+							</div>
+
+						</div>
+
+						<!-- search suggestion container -->
+						<div class="sow-search-container rounded-xl w-100 p-0 hide shadow-md" id="sow-search-container">
+							<div class="sow-search-container-wrapper rounded-xl">
+
+								<!-- main search container -->
+								<div class="sow-search-loader p--15 text-center hide">
+									<i class="fi fi-circle-spin fi-spin text-muted fs--30"></i>
+								</div>
+
+								<!-- 
+									AJAX CONTENT CONTAINER 
+									SHOULD ALWAYS BE AS IT IS : NO COMMENTS OR EVEN SPACES!
+								--><div class="sow-search-content rounded w-100 scrollable-vertical"></div>
+
+							</div>
+						</div>
+						<!-- /search suggestion container -->
+
+						<!-- 
+
+							overlay combinations:
+								overlay-dark opacity-* [1-9]
+								overlay-light opacity-* [1-9]
+
+						-->
+						<div class="sow-search-backdrop overlay-dark opacity-3 hide"></div>
+
+					</form>
+					<!-- /SEARCH -->
+
+
+
+
+					<!-- OPTIONS -->
+					<ul class="list-inline list-unstyled mb-0 d-flex align-items-end">
+
+						<li class="list-inline-item mx-1 dropdown float-start d-inline-block d-lg-none">
+
+							<a href="#" class="btn-sow-search-toggler btn btn-sm rounded-circle btn-warning bg-gradient-warning">
+								<i class="fi fi-search"></i>
+							</a>
+
+						</li>
+
+
+						<li class="list-inline-item mx-1 dropdown float-start d-none d-lg-inline-block">
+
+							<div class="btn-group rounded-xxl overflow-hidden" role="group" aria-label="Basic example">
+								
+								<a href="../index.html" target="layerstore" class="btn btn-sm btn-pills btn-indigo">
+									<span>Front</span>
+								</a>
+
+								<a href="https://wrapbootstrap.com/theme/smarty-website-admin-rtl-WB02DSN1B" target="wrapbootstrap" class="btn btn-sm btn-pills btn-indigo py-1">
+									<i class="fi fi-cart-1 mx-2 fs--20"></i>
+								</a>
+
+								<a href="../../html_admin/layout_1/" target="layerstore" class="btn btn-sm btn-pills btn-indigo">
+									<span>Admin</span>
+								</a>
+
+							</div>
+
+						</li>
+
+						<!-- header toggle : desktop only -->
+						<li class="list-inline-item mx-1 dropdown float-start d-none d-lg-block">
+
+							<a href="#" class="btn-header-toggle btn-toggle btn btn-sm rounded-circle btn-secondary">
+								<span class="group-icon">
+									<i class="fi fi-arrow-up"></i>
+									<i class="fi fi-arrow-down"></i>
+								</span>
+							</a>
+
+						</li>
+
+					</ul>
+					<!-- /OPTIONS -->
+
+
+
+					</nav>
+
+				</div>
+				<!-- /NAVBAR -->
+
+			</header>
+			<!-- /HEADER -->
+
+
+
+
+
+			<div id="wrapper_content" class="d-flex align-items-stretch">
+
+				<!-- SIDEBAR -->
+				<aside id="aside-main" class="aside-start bg-gradient-indigo font-weight-normal aside-hide-xs">
+
+					<div class="aside-wrapper scrollable-vertical scrollable-styled-light">
+
+						<!-- hide on mobile: d-none d-lg-block -->
+						<div class="p-3">
+							<!--<img class="js-ajax-loaded-animate img-fluid" src="assets/svg/artworks/undraw_smiley_face_lmgm.svg" width="300" height="248" alt="...">-->
+							<img class="js-ajax-loaded-animate img-fluid" src="assets/svg/artworks/startup.svg" width="225" height="198" alt="...">
+						</div>
+
+
+						<!--
+
+							All parent open navs are closed on click!
+							To ignore this feature, add .js-ignore to .nav-deep
+
+							Links height (paddings):
+								.nav-deep-xs
+								.nav-deep-md  	(default, ununsed class)
+								.nav-deep-sm
+								.nav-deep-lg
+						-->
+						<nav class="nav-deep nav-deep-dark nav-deep-xs pb-5">
+							<ul class="nav flex-column">
+
+								<li class="nav-title mt-3">
+									<h6 class="fs--14 mb-1 font-weight-medium text-warning">
+										HOW DO I START?
+									</h6>
+								</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="index.html">
+											Introduction
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="changelog.html">
+											<span class="badge float-end mt-1">v3.1.2</span>
+											Changelog
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="credits.html">
+											Credits
+										</a>
+									</li>
+
+
+
+
+
+								<li class="nav-title mt-5">
+									<h6 class="fs--14 mb-1 font-weight-medium text-warning">
+										COMPONENTS &amp; BLOCKS
+									</h6>
+								</li>
+
+								<li class="nav-item active">
+									<a class="nav-link" href="#">
+										<span class="group-icon float-end">
+											<i class="fi fi-arrow-end-slim"></i>
+											<i class="fi fi-arrow-down-slim"></i>
+										</span>
+										<b>Components</b>
+									</a>
+								
+									<ul class="nav flex-column">
+
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-alerts.html">
+												Alerts
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-accordions.html">
+												Accordions
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-badges.html">
+												Badges
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-breadcrumbs.html">
+												Breadcrumbs
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-buttons.html">
+												Buttons
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-cards.html">
+												Cards
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-carousel.html">
+												Carousel
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-collapse.html">
+												Collapse
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-dropdowns.html">
+												Dropdowns
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-forms.html">
+												Forms
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-icons.html">
+												Icons
+											</a>
+										</li>
+										<li class="nav-item active">
+											<a class="nav-link js-ajax" href="components-flags.html">
+												Flags
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-lists.html">
+												Lists
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-media.html">
+												Media
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-modals.html">
+												Modals
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-navs.html">
+												Navs
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-navigation.html">
+												Navigation
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-pagination.html">
+												Pagination
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-progress.html">
+												Progress
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-popover.html">
+												Popover
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-scrollspy.html">
+												Scrollspy
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-spinners.html">
+												Spinners
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-tabs.html">
+												Tabs
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-tables.html">
+												Tables
+											</a>
+										</li>
+
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-timeline.html">
+												Timeline
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-thumbnails.html">
+												Thumbnails
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-tooltip.html">
+												Tooltip
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-typography.html">
+												Typography
+											</a>
+										</li>
+
+									</ul>
+								</li>
+
+
+
+
+
+									<li class="nav-item">
+										<a class="nav-link" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											<b>Quick Blocks</b>
+										</a>
+
+										<ul class="nav flex-column">
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-testimonials.html">
+													Testimonials
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-pricing.html">
+													Pricing
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-cta.html">
+													Call to action
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-brands.html">
+													Brands
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-various.html">
+													Various
+												</a>
+											</li>
+										</ul>
+
+									</li>
+
+
+
+									<li class="nav-item">
+										<a class="nav-link" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											<b>Utilities</b>
+										</a>
+
+										<ul class="nav flex-column">
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-text-backgrounds.html">
+													Text &amp; Backgrouns
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-text-color-extended.html">
+													Extended Text Color
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-borders.html">
+													Borders
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-shadows.html">
+													Box Shadows
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-font.html">
+													Font Size / Weight
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-width-height.html">
+													Width / Height
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-padding-margin.html">
+													Paddings / Margins
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-transition.html">
+													Transitions / Transforms
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-position.html">
+													Position
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-visibility.html">
+													Visibility
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-overlays.html">
+													Overlays &amp; Opacity
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-scroll.html">
+													Scroll &amp; Scrollbar
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-misc.html">
+													Miscellaneous
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-responsive.html">
+													Responsive
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-rtl.html">
+													RTL
+												</a>
+											</li>
+
+										</ul>
+									</li>
+
+		
+
+
+
+
+
+
+
+									<li class="nav-item">
+										<a class="nav-link" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											<b>Php / Forms</b>
+										</a>
+
+										<ul class="nav flex-column">
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="php-introduction.html">
+													Introduction
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="php-forms.html">
+													Contact Forms
+												</a>
+											</li>
+										</ul>
+
+									</li>
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+									<li class="nav-item nav-item-extended overlay-dark overlay-opacity-2">
+										<a class="nav-link js-ajax" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-expand"></i>
+												<i class="fi fi-shrink"></i>
+											</span>
+											Predefined Layouts
+										</a>
+
+
+										<!-- extended item -->
+										<div class="aside-item d-flex flex-column bg-white shadow-xs w--350"><!-- .w-100 = full width -->
+											
+											<!-- header -->
+											<h3 class="fs--18 bg-light-soft p--15">
+												<button type="button" class="btn-aside-item-extended-close close fi fi-close fs--20 mt--n4 float-end"></button>
+												<i class="fi fi-heart-slim float-start fs--18"></i> 
+												Ready to start
+											</h3>
+
+											<!-- extended item content -->
+											<div 	id="layout_list" 
+													data-ajax-url="_ajax/layout_list.html" 
+													class="js-ajax p-3 scrollable-vertical scrollable-styled-dark m--1">
+
+												<div class="text-center"><!-- ajax loading icon -->
+													<i class="fi fi-circle-spin fi-spin fs--30 text-muted"></i>
+												</div><!-- /ajax loading icon -->
+
+											</div>
+											<!-- /extended item content -->
+
+										</div>
+										<!-- /extended item -->
+
+									</li>
+
+
+
+
+
+								<li class="nav-title mt-5">
+									<h6 class="fs--14 mb-1 font-weight-medium text-warning">
+										SOW : CORE PLUGINS
+									</h6>
+								</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-introduction.html">
+											Introduction
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-header.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">7Kb</span>
+											SOW : Header
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-search-suggest.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">9Kb</span>
+											SOW : Search Suggest
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-input-suggest.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : Input Suggest
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-navigation.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">10Kb</span>
+											SOW : Ajax : Navigation
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-forms.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4Kb</span>
+											SOW : Ajax : Forms
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-content.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4Kb</span>
+											SOW : Ajax : Content
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-modal.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">3Kb</span>
+											SOW : Ajax : Modals
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-confirm.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">6Kb</span>
+											SOW : Ajax : Confirm
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-select.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4.5Kb</span>
+											SOW : Ajax : Select
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-form-validation.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : Form Validation
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-form-advanced.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">7Kb</span>
+											SOW : Form Advanced
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-file-upload.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">24Kb</span>
+											SOW : File Upload
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-checkall.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Check All
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-checkgroup.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Check Group
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-toasts.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4Kb</span>
+											SOW : Toasts
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-gdpr.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : GDPR Cookies
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-inline-search.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Inline Search
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-dropdown.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">3Kb</span>
+											SOW : Dropdowns
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-deep-navigation.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : Deep Navigation
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-btn-toggle.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2.5Kb</span>
+											SOW : Button Toggle
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-scroll-to.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Scroll To
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-timer-autohide.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Timer Autohide
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-timer-countdown.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : Timer Countdown
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-gfont.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1.5Kb</span>
+											SOW : Google Font
+										</a>
+									</li>
+                                    <li class="nav-item">
+                                        <a class="nav-link js-ajax" href="plugins-sow-lazyload.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+                                            SOW : Lazyload
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link js-ajax" href="plugins-sow-count-animate.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4.1Kb</span>
+                                            SOW : Count Animate
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link js-ajax" href="plugins-sow-utils.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+                                            SOW : Utils
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link js-ajax" href="plugins-sow-service-worker.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+                                            SOW : Service Worker!
+                                        </a>
+                                    </li>
+									<li class="nav-item pl--15 pr--15">
+										<div class="bg-indigo text-gray-500 fs--13 p-2 rounded">
+											SOW Core plugins are developed from scratch. 
+											You can remove, disable or use your own!
+										</div>
+									</li>
+
+
+
+
+
+								<li class="nav-title mt-5">
+									<h6 class="fs--14 mb-1 font-weight-medium text-warning">
+										VENDOR PLUGINS
+									</h6>
+								</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-bootstrap-select.html">
+											Vendor : Bootstrap Select
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-flickity.html">
+											Vendor : Flickity Slider
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-swiper.html">
+											Vendor : Swiper Slider
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-jarallax.html">
+											Vendor : Jaxallax
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-sticky-kit.html">
+											Vendor : Sticky Kit
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-fancybox.html">
+											Vendor : Fancybox
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-photoswipe.html">
+											Vendor : Photoswipe
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="components-map.html">
+											Vendor : Map
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-slimscroll.html">
+											Vendor : Slimscroll
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-nestable.html">
+											Vendor : Nestable
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											Vendor : Pickers
+										</a>
+										<ul class="nav flex-column">
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-datepicker.html">
+													Datepicker
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-rangepicker.html">
+													Rangepicker
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-colorpicker.html">
+													Colorpicker
+												</a>
+											</li>
+										</ul>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											Vendor : Charts
+										</a>
+										<ul class="nav flex-column">
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-chartjs.html">
+													Chart.js
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-flot.html">
+													Flot Chart
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-easypie.html">
+													Easy Pie Chart
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-sparkline.html">
+													Sparkline Charts
+												</a>
+											</li>
+										</ul>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											Vendor : Editors
+										</a>
+										<ul class="nav flex-column">
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-medium-editor.html">
+													Medium Editor
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-markdown.html">
+													Markdown Editor
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-summernote.html">
+													Summernote
+												</a>
+											</li>
+										</ul>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-datatable.html">
+											Vendor : Datatable
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-fullcalendar.html">
+											Vendor : Fullcalendar
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-prismjs.html">
+											Vendor : Prismjs (Highlighter)
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-aos.html">
+											Vendor : AOS
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-typed.html">
+											Vendor : Typed
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-sortablejs.html">
+											Vendor : Sortablejs
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-cocoen.html">
+											Vendor : Cocoen <small>(Img Compare)</small>
+										</a>
+									</li>
+
+
+
+
+
+
+
+
+
+							</ul>
+						</nav>
+
+
+
+					</div>
+				</aside>
+				<!-- /SIDEBAR -->
+
+
+				<!-- MIDDLE -->
+				<div id="middle" class="flex-fill">
+
+
+
+					<header class="mb-5">
+						<h1 class="h2 mb-0 text-gray-700">
+							Components
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--14">
+								<li class="breadcrumb-item active" aria-current="page">
+									Smarty documentation
+								</li>
+							</ol>
+						</nav>
+
+					</header>
+
+
+					<!-- scss path -->
+					<div class="alert border p--20">
+						<span class="font-weight-medium">File:</span> <span class="text-muted">src/scss/_vendors/_sow/flags/main.scss</span>
+						<span class="d-block text-gray-500">
+							can be disabled fom src/scss/main.scss
+						</span>
+					</div>
+					<!-- /scss path -->
+
+
+					<div class="row d-flex flex-fill align-items-start">
+
+						<div class="col align-self-start">
+
+
+							<section id="section_1">
+
+								<header class="d-flex b-0">
+
+									<h2 class="h5 text-truncate w-100">
+										Country Flags
+									</h2>
+
+									<div class="ui-options d-flex">
+
+										<!-- fullscreen -->
+										<a href="#" class="btn-toggle" data-toggle-container-class="fullscreen" data-toggle-body-class="overflow-hidden" data-target="#section_1">
+											<span class="group-icon">
+												<i class="fi fi-expand"></i>
+												<i class="fi fi-shrink"></i>
+											</span>
+										</a>
+
+									</div>
+
+								</header>
+
+
+								<p>
+									Based on <a href="https://flag-sprites.com/" target="smarty" rel="nofollow">flag-sprites.com</a>, added as Smarty Core!
+									Only 13Kb CSS (unminified) and a png sprite (26Kb optimized) located in assets/images/ directory<br>
+									This way is userful for language switchers!<br>
+									Please note: are not scallable using font size classes because is a PNG (single png with all flags - sprite)!
+								</p>
+								<p>
+									See at the bottom some examples.
+								</p>
+
+
+								<div class="mb-5 bg-light p-3 rounded">
+									<input class="form-control" type="text" id="inline-search" placeholder="Icon search...">
+
+									<code class="text-muted mb-0 mt--4 fs--13 rounded fs--14">usage: &lt;i class="flag flag-us"&gt;&lt;/i&gt;</code>
+								</div>
+
+
+
+
+								<div class="row iconsPreview mt--30">
+
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ad"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ad</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ae"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ae</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-af"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-af</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ag"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ag</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ai"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ai</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-al"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-al</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-am"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-am</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-an"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-an</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ao"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ao</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ar"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ar</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-as"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-as</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-at"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-at</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-au"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-au</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-aw"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-aw</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-az"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-az</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ba"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ba</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-bb"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-bb</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-bd"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-bd</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-be"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-be</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-bf"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-bf</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-bg"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-bg</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-bh"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-bh</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-bi"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-bi</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-bj"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-bj</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-bm"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-bm</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-bn"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-bn</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-bo"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-bo</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-br"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-br</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-bs"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-bs</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-bt"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-bt</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-bv"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-bv</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-bw"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-bw</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-by"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-by</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-bz"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-bz</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ca"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ca</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-catalonia"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-catalonia</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-cd"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-cd</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-cf"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-cf</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-cg"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-cg</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ch"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ch</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ci"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ci</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ck"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ck</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-cl"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-cl</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-cm"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-cm</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-cn"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-cn</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-co"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-co</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-cr"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-cr</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-cu"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-cu</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-cv"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-cv</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-cw"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-cw</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-cy"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-cy</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-cz"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-cz</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-de"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-de</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-dj"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-dj</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-dk"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-dk</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-dm"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-dm</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-do"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-do</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-dz"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-dz</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ec"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ec</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ee"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ee</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-eg"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-eg</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-eh"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-eh</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-england"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-england</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-er"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-er</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-es"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-es</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-et"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-et</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-eu"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-eu</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-fi"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-fi</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-fj"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-fj</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-fk"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-fk</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-fm"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-fm</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-fo"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-fo</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-fr"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-fr</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ga"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ga</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-gb"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-gb</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-gd"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-gd</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ge"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ge</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-gf"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-gf</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-gg"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-gg</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-gh"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-gh</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-gi"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-gi</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-gl"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-gl</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-gm"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-gm</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-gn"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-gn</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-gp"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-gp</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-gq"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-gq</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-gr"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-gr</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-gs"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-gs</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-gt"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-gt</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-gu"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-gu</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-gw"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-gw</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-gy"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-gy</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-hk"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-hk</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-hm"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-hm</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-hn"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-hn</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-hr"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-hr</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ht"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ht</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-hu"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-hu</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ic"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ic</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-id"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-id</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ie"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ie</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-il"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-il</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-im"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-im</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-in"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-in</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-io"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-io</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-iq"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-iq</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ir"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ir</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-is"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-is</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-it"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-it</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-je"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-je</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-jm"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-jm</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-jo"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-jo</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-jp"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-jp</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ke"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ke</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-kg"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-kg</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-kh"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-kh</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ki"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ki</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-km"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-km</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-kn"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-kn</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-kp"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-kp</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-kr"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-kr</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-kurdistan"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-kurdistan</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-kw"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-kw</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ky"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ky</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-kz"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-kz</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-la"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-la</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-lb"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-lb</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-lc"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-lc</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-li"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-li</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-lk"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-lk</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-lr"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-lr</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ls"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ls</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-lt"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-lt</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-lu"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-lu</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-lv"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-lv</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ly"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ly</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ma"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ma</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-mc"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-mc</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-md"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-md</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-me"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-me</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-mg"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-mg</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-mh"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-mh</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-mk"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-mk</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ml"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ml</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-mm"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-mm</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-mn"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-mn</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-mo"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-mo</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-mp"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-mp</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-mq"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-mq</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-mr"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-mr</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ms"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ms</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-mt"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-mt</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-mu"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-mu</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-mv"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-mv</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-mw"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-mw</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-mx"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-mx</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-my"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-my</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-mz"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-mz</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-na"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-na</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-nc"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-nc</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ne"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ne</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-nf"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-nf</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ng"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ng</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ni"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ni</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-nl"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-nl</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-no"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-no</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-np"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-np</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-nr"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-nr</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-nu"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-nu</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-nz"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-nz</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-om"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-om</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-pa"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-pa</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-pe"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-pe</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-pf"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-pf</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-pg"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-pg</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ph"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ph</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-pk"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-pk</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-pl"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-pl</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-pm"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-pm</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-pn"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-pn</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-pr"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-pr</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ps"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ps</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-pt"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-pt</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-pw"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-pw</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-py"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-py</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-qa"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-qa</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-re"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-re</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ro"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ro</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-rs"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-rs</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ru"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ru</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-rw"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-rw</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-sa"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-sa</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-sb"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-sb</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-sc"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-sc</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-scotland"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-scotland</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-sd"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-sd</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-se"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-se</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-sg"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-sg</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-sh"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-sh</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-si"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-si</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-sk"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-sk</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-sl"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-sl</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-sm"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-sm</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-sn"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-sn</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-so"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-so</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-somaliland"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-somaliland</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-sr"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-sr</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ss"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ss</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-st"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-st</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-sv"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-sv</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-sx"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-sx</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-sy"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-sy</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-sz"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-sz</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-tc"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-tc</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-td"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-td</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-tf"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-tf</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-tg"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-tg</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-th"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-th</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-tibet"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-tibet</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-tj"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-tj</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-tk"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-tk</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-tl"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-tl</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-tm"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-tm</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-tn"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-tn</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-to"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-to</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-tr"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-tr</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-tt"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-tt</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-tv"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-tv</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-tw"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-tw</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-tz"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-tz</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ua"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ua</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ug"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ug</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-um"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-um</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-us"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-us</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-uy"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-uy</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-uz"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-uz</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-va"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-va</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-vc"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-vc</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ve"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ve</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-vg"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-vg</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-vi"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-vi</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-vn"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-vn</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-vu"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-vu</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-wales"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-wales</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-wf"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-wf</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ws"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ws</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-xk"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-xk</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-ye"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-ye</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-yt"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-yt</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-za"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-za</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-zanzibar"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-zanzibar</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-zm"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-zm</span>
+										</a>
+									</div>
+									<div class="core-icon col-md-3 col-sm-4">
+										<a class="py-2 d-block clearfix text-dark text-decoration-none" href="javascript:;">
+											<span class="float-start"><i class="flag flag-zw"></i></span>
+											<span class="preview-copy-clipboard float-start fs--13">flag-zw</span>
+										</a>
+									</div>
+
+								</div>
+
+
+								<hr>
+
+								<div class="p-5">
+
+									<div class="row">
+
+										<div class="col-12 col-lg-6">
+
+											<select class="form-control bs-select" data-live-search="true">
+
+												<option val="ad" data-icon="flag flag-ad">ad</option>
+												<option val="ae" data-icon="flag flag-ae">ae</option>
+												<option val="af" data-icon="flag flag-af">af</option>
+												<option val="ag" data-icon="flag flag-ag">ag</option>
+												<option val="ai" data-icon="flag flag-ai">ai</option>
+												<option val="al" data-icon="flag flag-al">al</option>
+												<option val="am" data-icon="flag flag-am">am</option>
+												<option val="an" data-icon="flag flag-an">an</option>
+												<option val="ao" data-icon="flag flag-ao">ao</option>
+												<option val="ar" data-icon="flag flag-ar">ar</option>
+												<option val="as" data-icon="flag flag-as">as</option>
+												<option val="at" data-icon="flag flag-at">at</option>
+												<option val="au" data-icon="flag flag-au">au</option>
+												<option val="aw" data-icon="flag flag-aw">aw</option>
+												<option val="az" data-icon="flag flag-az">az</option>
+												<option val="ba" data-icon="flag flag-ba">ba</option>
+												<option val="bb" data-icon="flag flag-bb">bb</option>
+												<option val="bd" data-icon="flag flag-bd">bd</option>
+												<option val="be" data-icon="flag flag-be">be</option>
+												<option val="bf" data-icon="flag flag-bf">bf</option>
+												<option val="bg" data-icon="flag flag-bg">bg</option>
+												<option val="bh" data-icon="flag flag-bh">bh</option>
+												<option val="bi" data-icon="flag flag-bi">bi</option>
+												<option val="bj" data-icon="flag flag-bj">bj</option>
+												<option val="bm" data-icon="flag flag-bm">bm</option>
+												<option val="bn" data-icon="flag flag-bn">bn</option>
+												<option val="bo" data-icon="flag flag-bo">bo</option>
+												<option val="br" data-icon="flag flag-br">br</option>
+												<option val="bs" data-icon="flag flag-bs">bs</option>
+												<option val="bt" data-icon="flag flag-bt">bt</option>
+												<option val="bv" data-icon="flag flag-bv">bv</option>
+												<option val="bw" data-icon="flag flag-bw">bw</option>
+												<option val="by" data-icon="flag flag-by">by</option>
+												<option val="bz" data-icon="flag flag-bz">bz</option>
+												<option val="ca" data-icon="flag flag-ca">ca</option>
+												<option val="catalonia" data-icon="flag flag-catalonia">catalonia</option>
+												<option val="cd" data-icon="flag flag-cd">cd</option>
+												<option val="cf" data-icon="flag flag-cf">cf</option>
+												<option val="cg" data-icon="flag flag-cg">cg</option>
+												<option val="ch" data-icon="flag flag-ch">ch</option>
+												<option val="ci" data-icon="flag flag-ci">ci</option>
+												<option val="ck" data-icon="flag flag-ck">ck</option>
+												<option val="cl" data-icon="flag flag-cl">cl</option>
+												<option val="cm" data-icon="flag flag-cm">cm</option>
+												<option val="cn" data-icon="flag flag-cn">cn</option>
+												<option val="co" data-icon="flag flag-co">co</option>
+												<option val="cr" data-icon="flag flag-cr">cr</option>
+												<option val="cu" data-icon="flag flag-cu">cu</option>
+												<option val="cv" data-icon="flag flag-cv">cv</option>
+												<option val="cw" data-icon="flag flag-cw">cw</option>
+												<option val="cy" data-icon="flag flag-cy">cy</option>
+												<option val="cz" data-icon="flag flag-cz">cz</option>
+												<option val="de" data-icon="flag flag-de">de</option>
+												<option val="dj" data-icon="flag flag-dj">dj</option>
+												<option val="dk" data-icon="flag flag-dk">dk</option>
+												<option val="dm" data-icon="flag flag-dm">dm</option>
+												<option val="do" data-icon="flag flag-do">do</option>
+												<option val="dz" data-icon="flag flag-dz">dz</option>
+												<option val="ec" data-icon="flag flag-ec">ec</option>
+												<option val="ee" data-icon="flag flag-ee">ee</option>
+												<option val="eg" data-icon="flag flag-eg">eg</option>
+												<option val="eh" data-icon="flag flag-eh">eh</option>
+												<option val="england" data-icon="flag flag-england">england</option>
+												<option val="er" data-icon="flag flag-er">er</option>
+												<option val="es" data-icon="flag flag-es">es</option>
+												<option val="et" data-icon="flag flag-et">et</option>
+												<option val="eu" data-icon="flag flag-eu">eu</option>
+												<option val="fi" data-icon="flag flag-fi">fi</option>
+												<option val="fj" data-icon="flag flag-fj">fj</option>
+												<option val="fk" data-icon="flag flag-fk">fk</option>
+												<option val="fm" data-icon="flag flag-fm">fm</option>
+												<option val="fo" data-icon="flag flag-fo">fo</option>
+												<option val="fr" data-icon="flag flag-fr">fr</option>
+												<option val="ga" data-icon="flag flag-ga">ga</option>
+												<option val="gb" data-icon="flag flag-gb">gb</option>
+												<option val="gd" data-icon="flag flag-gd">gd</option>
+												<option val="ge" data-icon="flag flag-ge">ge</option>
+												<option val="gf" data-icon="flag flag-gf">gf</option>
+												<option val="gg" data-icon="flag flag-gg">gg</option>
+												<option val="gh" data-icon="flag flag-gh">gh</option>
+												<option val="gi" data-icon="flag flag-gi">gi</option>
+												<option val="gl" data-icon="flag flag-gl">gl</option>
+												<option val="gm" data-icon="flag flag-gm">gm</option>
+												<option val="gn" data-icon="flag flag-gn">gn</option>
+												<option val="gp" data-icon="flag flag-gp">gp</option>
+												<option val="gq" data-icon="flag flag-gq">gq</option>
+												<option val="gr" data-icon="flag flag-gr">gr</option>
+												<option val="gs" data-icon="flag flag-gs">gs</option>
+												<option val="gt" data-icon="flag flag-gt">gt</option>
+												<option val="gu" data-icon="flag flag-gu">gu</option>
+												<option val="gw" data-icon="flag flag-gw">gw</option>
+												<option val="gy" data-icon="flag flag-gy">gy</option>
+												<option val="hk" data-icon="flag flag-hk">hk</option>
+												<option val="hm" data-icon="flag flag-hm">hm</option>
+												<option val="hn" data-icon="flag flag-hn">hn</option>
+												<option val="hr" data-icon="flag flag-hr">hr</option>
+												<option val="ht" data-icon="flag flag-ht">ht</option>
+												<option val="hu" data-icon="flag flag-hu">hu</option>
+												<option val="ic" data-icon="flag flag-ic">ic</option>
+												<option val="id" data-icon="flag flag-id">id</option>
+												<option val="ie" data-icon="flag flag-ie">ie</option>
+												<option val="il" data-icon="flag flag-il">il</option>
+												<option val="im" data-icon="flag flag-im">im</option>
+												<option val="in" data-icon="flag flag-in">in</option>
+												<option val="io" data-icon="flag flag-io">io</option>
+												<option val="iq" data-icon="flag flag-iq">iq</option>
+												<option val="ir" data-icon="flag flag-ir">ir</option>
+												<option val="is" data-icon="flag flag-is">is</option>
+												<option val="it" data-icon="flag flag-it">it</option>
+												<option val="je" data-icon="flag flag-je">je</option>
+												<option val="jm" data-icon="flag flag-jm">jm</option>
+												<option val="jo" data-icon="flag flag-jo">jo</option>
+												<option val="jp" data-icon="flag flag-jp">jp</option>
+												<option val="ke" data-icon="flag flag-ke">ke</option>
+												<option val="kg" data-icon="flag flag-kg">kg</option>
+												<option val="kh" data-icon="flag flag-kh">kh</option>
+												<option val="ki" data-icon="flag flag-ki">ki</option>
+												<option val="km" data-icon="flag flag-km">km</option>
+												<option val="kn" data-icon="flag flag-kn">kn</option>
+												<option val="kp" data-icon="flag flag-kp">kp</option>
+												<option val="kr" data-icon="flag flag-kr">kr</option>
+												<option val="kurdistan" data-icon="flag flag-kurdistan">kurdistan</option>
+												<option val="kw" data-icon="flag flag-kw">kw</option>
+												<option val="ky" data-icon="flag flag-ky">ky</option>
+												<option val="kz" data-icon="flag flag-kz">kz</option>
+												<option val="la" data-icon="flag flag-la">la</option>
+												<option val="lb" data-icon="flag flag-lb">lb</option>
+												<option val="lc" data-icon="flag flag-lc">lc</option>
+												<option val="li" data-icon="flag flag-li">li</option>
+												<option val="lk" data-icon="flag flag-lk">lk</option>
+												<option val="lr" data-icon="flag flag-lr">lr</option>
+												<option val="ls" data-icon="flag flag-ls">ls</option>
+												<option val="lt" data-icon="flag flag-lt">lt</option>
+												<option val="lu" data-icon="flag flag-lu">lu</option>
+												<option val="lv" data-icon="flag flag-lv">lv</option>
+												<option val="ly" data-icon="flag flag-ly">ly</option>
+												<option val="ma" data-icon="flag flag-ma">ma</option>
+												<option val="mc" data-icon="flag flag-mc">mc</option>
+												<option val="md" data-icon="flag flag-md">md</option>
+												<option val="me" data-icon="flag flag-me">me</option>
+												<option val="mg" data-icon="flag flag-mg">mg</option>
+												<option val="mh" data-icon="flag flag-mh">mh</option>
+												<option val="mk" data-icon="flag flag-mk">mk</option>
+												<option val="ml" data-icon="flag flag-ml">ml</option>
+												<option val="mm" data-icon="flag flag-mm">mm</option>
+												<option val="mn" data-icon="flag flag-mn">mn</option>
+												<option val="mo" data-icon="flag flag-mo">mo</option>
+												<option val="mp" data-icon="flag flag-mp">mp</option>
+												<option val="mq" data-icon="flag flag-mq">mq</option>
+												<option val="mr" data-icon="flag flag-mr">mr</option>
+												<option val="ms" data-icon="flag flag-ms">ms</option>
+												<option val="mt" data-icon="flag flag-mt">mt</option>
+												<option val="mu" data-icon="flag flag-mu">mu</option>
+												<option val="mv" data-icon="flag flag-mv">mv</option>
+												<option val="mw" data-icon="flag flag-mw">mw</option>
+												<option val="mx" data-icon="flag flag-mx">mx</option>
+												<option val="my" data-icon="flag flag-my">my</option>
+												<option val="mz" data-icon="flag flag-mz">mz</option>
+												<option val="na" data-icon="flag flag-na">na</option>
+												<option val="nc" data-icon="flag flag-nc">nc</option>
+												<option val="ne" data-icon="flag flag-ne">ne</option>
+												<option val="nf" data-icon="flag flag-nf">nf</option>
+												<option val="ng" data-icon="flag flag-ng">ng</option>
+												<option val="ni" data-icon="flag flag-ni">ni</option>
+												<option val="nl" data-icon="flag flag-nl">nl</option>
+												<option val="no" data-icon="flag flag-no">no</option>
+												<option val="np" data-icon="flag flag-np">np</option>
+												<option val="nr" data-icon="flag flag-nr">nr</option>
+												<option val="nu" data-icon="flag flag-nu">nu</option>
+												<option val="nz" data-icon="flag flag-nz">nz</option>
+												<option val="om" data-icon="flag flag-om">om</option>
+												<option val="pa" data-icon="flag flag-pa">pa</option>
+												<option val="pe" data-icon="flag flag-pe">pe</option>
+												<option val="pf" data-icon="flag flag-pf">pf</option>
+												<option val="pg" data-icon="flag flag-pg">pg</option>
+												<option val="ph" data-icon="flag flag-ph">ph</option>
+												<option val="pk" data-icon="flag flag-pk">pk</option>
+												<option val="pl" data-icon="flag flag-pl">pl</option>
+												<option val="pm" data-icon="flag flag-pm">pm</option>
+												<option val="pn" data-icon="flag flag-pn">pn</option>
+												<option val="pr" data-icon="flag flag-pr">pr</option>
+												<option val="ps" data-icon="flag flag-ps">ps</option>
+												<option val="pt" data-icon="flag flag-pt">pt</option>
+												<option val="pw" data-icon="flag flag-pw">pw</option>
+												<option val="py" data-icon="flag flag-py">py</option>
+												<option val="qa" data-icon="flag flag-qa">qa</option>
+												<option val="re" data-icon="flag flag-re">re</option>
+												<option val="ro" data-icon="flag flag-ro">ro</option>
+												<option val="rs" data-icon="flag flag-rs">rs</option>
+												<option val="ru" data-icon="flag flag-ru">ru</option>
+												<option val="rw" data-icon="flag flag-rw">rw</option>
+												<option val="sa" data-icon="flag flag-sa">sa</option>
+												<option val="sb" data-icon="flag flag-sb">sb</option>
+												<option val="sc" data-icon="flag flag-sc">sc</option>
+												<option val="scotland" data-icon="flag flag-scotland">scotland</option>
+												<option val="sd" data-icon="flag flag-sd">sd</option>
+												<option val="se" data-icon="flag flag-se">se</option>
+												<option val="sg" data-icon="flag flag-sg">sg</option>
+												<option val="sh" data-icon="flag flag-sh">sh</option>
+												<option val="si" data-icon="flag flag-si">si</option>
+												<option val="sk" data-icon="flag flag-sk">sk</option>
+												<option val="sl" data-icon="flag flag-sl">sl</option>
+												<option val="sm" data-icon="flag flag-sm">sm</option>
+												<option val="sn" data-icon="flag flag-sn">sn</option>
+												<option val="so" data-icon="flag flag-so">so</option>
+												<option val="somaliland" data-icon="flag flag-somaliland">somaliland</option>
+												<option val="sr" data-icon="flag flag-sr">sr</option>
+												<option val="ss" data-icon="flag flag-ss">ss</option>
+												<option val="st" data-icon="flag flag-st">st</option>
+												<option val="sv" data-icon="flag flag-sv">sv</option>
+												<option val="sx" data-icon="flag flag-sx">sx</option>
+												<option val="sy" data-icon="flag flag-sy">sy</option>
+												<option val="sz" data-icon="flag flag-sz">sz</option>
+												<option val="tc" data-icon="flag flag-tc">tc</option>
+												<option val="td" data-icon="flag flag-td">td</option>
+												<option val="tf" data-icon="flag flag-tf">tf</option>
+												<option val="tg" data-icon="flag flag-tg">tg</option>
+												<option val="th" data-icon="flag flag-th">th</option>
+												<option val="tibet" data-icon="flag flag-tibet">tibet</option>
+												<option val="tj" data-icon="flag flag-tj">tj</option>
+												<option val="tk" data-icon="flag flag-tk">tk</option>
+												<option val="tl" data-icon="flag flag-tl">tl</option>
+												<option val="tm" data-icon="flag flag-tm">tm</option>
+												<option val="tn" data-icon="flag flag-tn">tn</option>
+												<option val="to" data-icon="flag flag-to">to</option>
+												<option val="tr" data-icon="flag flag-tr">tr</option>
+												<option val="tt" data-icon="flag flag-tt">tt</option>
+												<option val="tv" data-icon="flag flag-tv">tv</option>
+												<option val="tw" data-icon="flag flag-tw">tw</option>
+												<option val="tz" data-icon="flag flag-tz">tz</option>
+												<option val="ua" data-icon="flag flag-ua">ua</option>
+												<option val="ug" data-icon="flag flag-ug">ug</option>
+												<option val="um" data-icon="flag flag-um">um</option>
+												<option val="us" data-icon="flag flag-us">us</option>
+												<option val="uy" data-icon="flag flag-uy">uy</option>
+												<option val="uz" data-icon="flag flag-uz">uz</option>
+												<option val="va" data-icon="flag flag-va">va</option>
+												<option val="vc" data-icon="flag flag-vc">vc</option>
+												<option val="ve" data-icon="flag flag-ve">ve</option>
+												<option val="vg" data-icon="flag flag-vg">vg</option>
+												<option val="vi" data-icon="flag flag-vi">vi</option>
+												<option val="vn" data-icon="flag flag-vn">vn</option>
+												<option val="vu" data-icon="flag flag-vu">vu</option>
+												<option val="wales" data-icon="flag flag-wales">wales</option>
+												<option val="wf" data-icon="flag flag-wf">wf</option>
+												<option val="ws" data-icon="flag flag-ws">ws</option>
+												<option val="xk" data-icon="flag flag-xk">xk</option>
+												<option val="ye" data-icon="flag flag-ye">ye</option>
+												<option val="yt" data-icon="flag flag-yt">yt</option>
+												<option val="za" data-icon="flag flag-za">za</option>
+												<option val="zanzibar" data-icon="flag flag-zanzibar">zanzibar</option>
+												<option val="zm" data-icon="flag flag-zm">zm</option>
+												<option val="zw" data-icon="flag flag-zw">zw</option>
+
+											</select>
+
+										</div>
+
+										<div class="col-12 col-lg-6">
+
+											<!-- flag icon only -->
+											<a href="#!" class="btn btn-primary btn-soft">
+												<i class="flag flag-us m-0"></i>
+											</a>
+
+											<!-- flag icon only : rounded -->
+											<a href="#!" class="btn btn-primary btn-soft rounded-circle">
+												<i>
+													<span class="flag flag-us"></span>
+												</i>
+											</a>
+
+											<!-- dropdown -->
+											<a href="#!" class="btn btn-primary btn-soft" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true" class="d-inline-block text-center text-dark">
+												<i>
+													<span class="flag flag-us"></span>
+												</i>
+												<span>dropdown</span>
+											</a>
+
+											<div class="dropdown-menu max-h-50vh scrollable-vertical">
+												<a href="#?lang=ad" arial-label="lang: ad" class="dropdown-item"><i><span class="flag flag-ad"></span></i> ad</a>
+												<a href="#?lang=ae" arial-label="lang: ae" class="dropdown-item"><i><span class="flag flag-ae"></span></i> ae</a>
+												<a href="#?lang=af" arial-label="lang: af" class="dropdown-item"><i><span class="flag flag-af"></span></i> af</a>
+												<a href="#?lang=ag" arial-label="lang: ag" class="dropdown-item"><i><span class="flag flag-ag"></span></i> ag</a>
+												<a href="#?lang=ai" arial-label="lang: ai" class="dropdown-item"><i><span class="flag flag-ai"></span></i> ai</a>
+												<a href="#?lang=al" arial-label="lang: al" class="dropdown-item"><i><span class="flag flag-al"></span></i> al</a>
+												<a href="#?lang=am" arial-label="lang: am" class="dropdown-item"><i><span class="flag flag-am"></span></i> am</a>
+												<a href="#?lang=an" arial-label="lang: an" class="dropdown-item"><i><span class="flag flag-an"></span></i> an</a>
+												<a href="#?lang=ao" arial-label="lang: ao" class="dropdown-item"><i><span class="flag flag-ao"></span></i> ao</a>
+												<a href="#?lang=ar" arial-label="lang: ar" class="dropdown-item"><i><span class="flag flag-ar"></span></i> ar</a>
+												<a href="#?lang=as" arial-label="lang: as" class="dropdown-item"><i><span class="flag flag-as"></span></i> as</a>
+												<a href="#?lang=at" arial-label="lang: at" class="dropdown-item"><i><span class="flag flag-at"></span></i> at</a>
+												<a href="#?lang=au" arial-label="lang: au" class="dropdown-item"><i><span class="flag flag-au"></span></i> au</a>
+												<a href="#?lang=aw" arial-label="lang: aw" class="dropdown-item"><i><span class="flag flag-aw"></span></i> aw</a>
+												<a href="#?lang=az" arial-label="lang: az" class="dropdown-item"><i><span class="flag flag-az"></span></i> az</a>
+												<a href="#?lang=ba" arial-label="lang: ba" class="dropdown-item"><i><span class="flag flag-ba"></span></i> ba</a>
+												<a href="#?lang=bb" arial-label="lang: bb" class="dropdown-item"><i><span class="flag flag-bb"></span></i> bb</a>
+												<a href="#?lang=bd" arial-label="lang: bd" class="dropdown-item"><i><span class="flag flag-bd"></span></i> bd</a>
+												<a href="#?lang=be" arial-label="lang: be" class="dropdown-item"><i><span class="flag flag-be"></span></i> be</a>
+												<a href="#?lang=bf" arial-label="lang: bf" class="dropdown-item"><i><span class="flag flag-bf"></span></i> bf</a>
+												<a href="#?lang=bg" arial-label="lang: bg" class="dropdown-item"><i><span class="flag flag-bg"></span></i> bg</a>
+												<a href="#?lang=bh" arial-label="lang: bh" class="dropdown-item"><i><span class="flag flag-bh"></span></i> bh</a>
+												<a href="#?lang=bi" arial-label="lang: bi" class="dropdown-item"><i><span class="flag flag-bi"></span></i> bi</a>
+												<a href="#?lang=bj" arial-label="lang: bj" class="dropdown-item"><i><span class="flag flag-bj"></span></i> bj</a>
+												<a href="#?lang=bm" arial-label="lang: bm" class="dropdown-item"><i><span class="flag flag-bm"></span></i> bm</a>
+												<a href="#?lang=bn" arial-label="lang: bn" class="dropdown-item"><i><span class="flag flag-bn"></span></i> bn</a>
+												<a href="#?lang=bo" arial-label="lang: bo" class="dropdown-item"><i><span class="flag flag-bo"></span></i> bo</a>
+												<a href="#?lang=br" arial-label="lang: br" class="dropdown-item"><i><span class="flag flag-br"></span></i> br</a>
+												<a href="#?lang=bs" arial-label="lang: bs" class="dropdown-item"><i><span class="flag flag-bs"></span></i> bs</a>
+												<a href="#?lang=bt" arial-label="lang: bt" class="dropdown-item"><i><span class="flag flag-bt"></span></i> bt</a>
+												<a href="#?lang=bv" arial-label="lang: bv" class="dropdown-item"><i><span class="flag flag-bv"></span></i> bv</a>
+												<a href="#?lang=bw" arial-label="lang: bw" class="dropdown-item"><i><span class="flag flag-bw"></span></i> bw</a>
+												<a href="#?lang=by" arial-label="lang: by" class="dropdown-item"><i><span class="flag flag-by"></span></i> by</a>
+												<a href="#?lang=bz" arial-label="lang: bz" class="dropdown-item"><i><span class="flag flag-bz"></span></i> bz</a>
+												<a href="#?lang=ca" arial-label="lang: ca" class="dropdown-item"><i><span class="flag flag-ca"></span></i> ca</a>
+												<a href="#?lang=catalonia" arial-label="lang: catalonia" class="dropdown-item"><i><span class="flag flag-catalonia"></span></i> catalonia</a>
+												<a href="#?lang=cd" arial-label="lang: cd" class="dropdown-item"><i><span class="flag flag-cd"></span></i> cd</a>
+												<a href="#?lang=cf" arial-label="lang: cf" class="dropdown-item"><i><span class="flag flag-cf"></span></i> cf</a>
+												<a href="#?lang=cg" arial-label="lang: cg" class="dropdown-item"><i><span class="flag flag-cg"></span></i> cg</a>
+												<a href="#?lang=ch" arial-label="lang: ch" class="dropdown-item"><i><span class="flag flag-ch"></span></i> ch</a>
+												<a href="#?lang=ci" arial-label="lang: ci" class="dropdown-item"><i><span class="flag flag-ci"></span></i> ci</a>
+												<a href="#?lang=ck" arial-label="lang: ck" class="dropdown-item"><i><span class="flag flag-ck"></span></i> ck</a>
+												<a href="#?lang=cl" arial-label="lang: cl" class="dropdown-item"><i><span class="flag flag-cl"></span></i> cl</a>
+												<a href="#?lang=cm" arial-label="lang: cm" class="dropdown-item"><i><span class="flag flag-cm"></span></i> cm</a>
+												<a href="#?lang=cn" arial-label="lang: cn" class="dropdown-item"><i><span class="flag flag-cn"></span></i> cn</a>
+												<a href="#?lang=co" arial-label="lang: co" class="dropdown-item"><i><span class="flag flag-co"></span></i> co</a>
+												<a href="#?lang=cr" arial-label="lang: cr" class="dropdown-item"><i><span class="flag flag-cr"></span></i> cr</a>
+												<a href="#?lang=cu" arial-label="lang: cu" class="dropdown-item"><i><span class="flag flag-cu"></span></i> cu</a>
+												<a href="#?lang=cv" arial-label="lang: cv" class="dropdown-item"><i><span class="flag flag-cv"></span></i> cv</a>
+												<a href="#?lang=cw" arial-label="lang: cw" class="dropdown-item"><i><span class="flag flag-cw"></span></i> cw</a>
+												<a href="#?lang=cy" arial-label="lang: cy" class="dropdown-item"><i><span class="flag flag-cy"></span></i> cy</a>
+												<a href="#?lang=cz" arial-label="lang: cz" class="dropdown-item"><i><span class="flag flag-cz"></span></i> cz</a>
+												<a href="#?lang=de" arial-label="lang: de" class="dropdown-item"><i><span class="flag flag-de"></span></i> de</a>
+												<a href="#?lang=dj" arial-label="lang: dj" class="dropdown-item"><i><span class="flag flag-dj"></span></i> dj</a>
+												<a href="#?lang=dk" arial-label="lang: dk" class="dropdown-item"><i><span class="flag flag-dk"></span></i> dk</a>
+												<a href="#?lang=dm" arial-label="lang: dm" class="dropdown-item"><i><span class="flag flag-dm"></span></i> dm</a>
+												<a href="#?lang=do" arial-label="lang: do" class="dropdown-item"><i><span class="flag flag-do"></span></i> do</a>
+												<a href="#?lang=dz" arial-label="lang: dz" class="dropdown-item"><i><span class="flag flag-dz"></span></i> dz</a>
+												<a href="#?lang=ec" arial-label="lang: ec" class="dropdown-item"><i><span class="flag flag-ec"></span></i> ec</a>
+												<a href="#?lang=ee" arial-label="lang: ee" class="dropdown-item"><i><span class="flag flag-ee"></span></i> ee</a>
+												<a href="#?lang=eg" arial-label="lang: eg" class="dropdown-item"><i><span class="flag flag-eg"></span></i> eg</a>
+												<a href="#?lang=eh" arial-label="lang: eh" class="dropdown-item"><i><span class="flag flag-eh"></span></i> eh</a>
+												<a href="#?lang=england" arial-label="lang: england" class="dropdown-item"><i><span class="flag flag-england"></span></i> england</a>
+												<a href="#?lang=er" arial-label="lang: er" class="dropdown-item"><i><span class="flag flag-er"></span></i> er</a>
+												<a href="#?lang=es" arial-label="lang: es" class="dropdown-item"><i><span class="flag flag-es"></span></i> es</a>
+												<a href="#?lang=et" arial-label="lang: et" class="dropdown-item"><i><span class="flag flag-et"></span></i> et</a>
+												<a href="#?lang=eu" arial-label="lang: eu" class="dropdown-item"><i><span class="flag flag-eu"></span></i> eu</a>
+												<a href="#?lang=fi" arial-label="lang: fi" class="dropdown-item"><i><span class="flag flag-fi"></span></i> fi</a>
+												<a href="#?lang=fj" arial-label="lang: fj" class="dropdown-item"><i><span class="flag flag-fj"></span></i> fj</a>
+												<a href="#?lang=fk" arial-label="lang: fk" class="dropdown-item"><i><span class="flag flag-fk"></span></i> fk</a>
+												<a href="#?lang=fm" arial-label="lang: fm" class="dropdown-item"><i><span class="flag flag-fm"></span></i> fm</a>
+												<a href="#?lang=fo" arial-label="lang: fo" class="dropdown-item"><i><span class="flag flag-fo"></span></i> fo</a>
+												<a href="#?lang=fr" arial-label="lang: fr" class="dropdown-item"><i><span class="flag flag-fr"></span></i> fr</a>
+												<a href="#?lang=ga" arial-label="lang: ga" class="dropdown-item"><i><span class="flag flag-ga"></span></i> ga</a>
+												<a href="#?lang=gb" arial-label="lang: gb" class="dropdown-item"><i><span class="flag flag-gb"></span></i> gb</a>
+												<a href="#?lang=gd" arial-label="lang: gd" class="dropdown-item"><i><span class="flag flag-gd"></span></i> gd</a>
+												<a href="#?lang=ge" arial-label="lang: ge" class="dropdown-item"><i><span class="flag flag-ge"></span></i> ge</a>
+												<a href="#?lang=gf" arial-label="lang: gf" class="dropdown-item"><i><span class="flag flag-gf"></span></i> gf</a>
+												<a href="#?lang=gg" arial-label="lang: gg" class="dropdown-item"><i><span class="flag flag-gg"></span></i> gg</a>
+												<a href="#?lang=gh" arial-label="lang: gh" class="dropdown-item"><i><span class="flag flag-gh"></span></i> gh</a>
+												<a href="#?lang=gi" arial-label="lang: gi" class="dropdown-item"><i><span class="flag flag-gi"></span></i> gi</a>
+												<a href="#?lang=gl" arial-label="lang: gl" class="dropdown-item"><i><span class="flag flag-gl"></span></i> gl</a>
+												<a href="#?lang=gm" arial-label="lang: gm" class="dropdown-item"><i><span class="flag flag-gm"></span></i> gm</a>
+												<a href="#?lang=gn" arial-label="lang: gn" class="dropdown-item"><i><span class="flag flag-gn"></span></i> gn</a>
+												<a href="#?lang=gp" arial-label="lang: gp" class="dropdown-item"><i><span class="flag flag-gp"></span></i> gp</a>
+												<a href="#?lang=gq" arial-label="lang: gq" class="dropdown-item"><i><span class="flag flag-gq"></span></i> gq</a>
+												<a href="#?lang=gr" arial-label="lang: gr" class="dropdown-item"><i><span class="flag flag-gr"></span></i> gr</a>
+												<a href="#?lang=gs" arial-label="lang: gs" class="dropdown-item"><i><span class="flag flag-gs"></span></i> gs</a>
+												<a href="#?lang=gt" arial-label="lang: gt" class="dropdown-item"><i><span class="flag flag-gt"></span></i> gt</a>
+												<a href="#?lang=gu" arial-label="lang: gu" class="dropdown-item"><i><span class="flag flag-gu"></span></i> gu</a>
+												<a href="#?lang=gw" arial-label="lang: gw" class="dropdown-item"><i><span class="flag flag-gw"></span></i> gw</a>
+												<a href="#?lang=gy" arial-label="lang: gy" class="dropdown-item"><i><span class="flag flag-gy"></span></i> gy</a>
+												<a href="#?lang=hk" arial-label="lang: hk" class="dropdown-item"><i><span class="flag flag-hk"></span></i> hk</a>
+												<a href="#?lang=hm" arial-label="lang: hm" class="dropdown-item"><i><span class="flag flag-hm"></span></i> hm</a>
+												<a href="#?lang=hn" arial-label="lang: hn" class="dropdown-item"><i><span class="flag flag-hn"></span></i> hn</a>
+												<a href="#?lang=hr" arial-label="lang: hr" class="dropdown-item"><i><span class="flag flag-hr"></span></i> hr</a>
+												<a href="#?lang=ht" arial-label="lang: ht" class="dropdown-item"><i><span class="flag flag-ht"></span></i> ht</a>
+												<a href="#?lang=hu" arial-label="lang: hu" class="dropdown-item"><i><span class="flag flag-hu"></span></i> hu</a>
+												<a href="#?lang=ic" arial-label="lang: ic" class="dropdown-item"><i><span class="flag flag-ic"></span></i> ic</a>
+												<a href="#?lang=id" arial-label="lang: id" class="dropdown-item"><i><span class="flag flag-id"></span></i> id</a>
+												<a href="#?lang=ie" arial-label="lang: ie" class="dropdown-item"><i><span class="flag flag-ie"></span></i> ie</a>
+												<a href="#?lang=il" arial-label="lang: il" class="dropdown-item"><i><span class="flag flag-il"></span></i> il</a>
+												<a href="#?lang=im" arial-label="lang: im" class="dropdown-item"><i><span class="flag flag-im"></span></i> im</a>
+												<a href="#?lang=in" arial-label="lang: in" class="dropdown-item"><i><span class="flag flag-in"></span></i> in</a>
+												<a href="#?lang=io" arial-label="lang: io" class="dropdown-item"><i><span class="flag flag-io"></span></i> io</a>
+												<a href="#?lang=iq" arial-label="lang: iq" class="dropdown-item"><i><span class="flag flag-iq"></span></i> iq</a>
+												<a href="#?lang=ir" arial-label="lang: ir" class="dropdown-item"><i><span class="flag flag-ir"></span></i> ir</a>
+												<a href="#?lang=is" arial-label="lang: is" class="dropdown-item"><i><span class="flag flag-is"></span></i> is</a>
+												<a href="#?lang=it" arial-label="lang: it" class="dropdown-item"><i><span class="flag flag-it"></span></i> it</a>
+												<a href="#?lang=je" arial-label="lang: je" class="dropdown-item"><i><span class="flag flag-je"></span></i> je</a>
+												<a href="#?lang=jm" arial-label="lang: jm" class="dropdown-item"><i><span class="flag flag-jm"></span></i> jm</a>
+												<a href="#?lang=jo" arial-label="lang: jo" class="dropdown-item"><i><span class="flag flag-jo"></span></i> jo</a>
+												<a href="#?lang=jp" arial-label="lang: jp" class="dropdown-item"><i><span class="flag flag-jp"></span></i> jp</a>
+												<a href="#?lang=ke" arial-label="lang: ke" class="dropdown-item"><i><span class="flag flag-ke"></span></i> ke</a>
+												<a href="#?lang=kg" arial-label="lang: kg" class="dropdown-item"><i><span class="flag flag-kg"></span></i> kg</a>
+												<a href="#?lang=kh" arial-label="lang: kh" class="dropdown-item"><i><span class="flag flag-kh"></span></i> kh</a>
+												<a href="#?lang=ki" arial-label="lang: ki" class="dropdown-item"><i><span class="flag flag-ki"></span></i> ki</a>
+												<a href="#?lang=km" arial-label="lang: km" class="dropdown-item"><i><span class="flag flag-km"></span></i> km</a>
+												<a href="#?lang=kn" arial-label="lang: kn" class="dropdown-item"><i><span class="flag flag-kn"></span></i> kn</a>
+												<a href="#?lang=kp" arial-label="lang: kp" class="dropdown-item"><i><span class="flag flag-kp"></span></i> kp</a>
+												<a href="#?lang=kr" arial-label="lang: kr" class="dropdown-item"><i><span class="flag flag-kr"></span></i> kr</a>
+												<a href="#?lang=kurdistan" arial-label="lang: kurdistan" class="dropdown-item"><i><span class="flag flag-kurdistan"></span></i> kurdistan</a>
+												<a href="#?lang=kw" arial-label="lang: kw" class="dropdown-item"><i><span class="flag flag-kw"></span></i> kw</a>
+												<a href="#?lang=ky" arial-label="lang: ky" class="dropdown-item"><i><span class="flag flag-ky"></span></i> ky</a>
+												<a href="#?lang=kz" arial-label="lang: kz" class="dropdown-item"><i><span class="flag flag-kz"></span></i> kz</a>
+												<a href="#?lang=la" arial-label="lang: la" class="dropdown-item"><i><span class="flag flag-la"></span></i> la</a>
+												<a href="#?lang=lb" arial-label="lang: lb" class="dropdown-item"><i><span class="flag flag-lb"></span></i> lb</a>
+												<a href="#?lang=lc" arial-label="lang: lc" class="dropdown-item"><i><span class="flag flag-lc"></span></i> lc</a>
+												<a href="#?lang=li" arial-label="lang: li" class="dropdown-item"><i><span class="flag flag-li"></span></i> li</a>
+												<a href="#?lang=lk" arial-label="lang: lk" class="dropdown-item"><i><span class="flag flag-lk"></span></i> lk</a>
+												<a href="#?lang=lr" arial-label="lang: lr" class="dropdown-item"><i><span class="flag flag-lr"></span></i> lr</a>
+												<a href="#?lang=ls" arial-label="lang: ls" class="dropdown-item"><i><span class="flag flag-ls"></span></i> ls</a>
+												<a href="#?lang=lt" arial-label="lang: lt" class="dropdown-item"><i><span class="flag flag-lt"></span></i> lt</a>
+												<a href="#?lang=lu" arial-label="lang: lu" class="dropdown-item"><i><span class="flag flag-lu"></span></i> lu</a>
+												<a href="#?lang=lv" arial-label="lang: lv" class="dropdown-item"><i><span class="flag flag-lv"></span></i> lv</a>
+												<a href="#?lang=ly" arial-label="lang: ly" class="dropdown-item"><i><span class="flag flag-ly"></span></i> ly</a>
+												<a href="#?lang=ma" arial-label="lang: ma" class="dropdown-item"><i><span class="flag flag-ma"></span></i> ma</a>
+												<a href="#?lang=mc" arial-label="lang: mc" class="dropdown-item"><i><span class="flag flag-mc"></span></i> mc</a>
+												<a href="#?lang=md" arial-label="lang: md" class="dropdown-item"><i><span class="flag flag-md"></span></i> md</a>
+												<a href="#?lang=me" arial-label="lang: me" class="dropdown-item"><i><span class="flag flag-me"></span></i> me</a>
+												<a href="#?lang=mg" arial-label="lang: mg" class="dropdown-item"><i><span class="flag flag-mg"></span></i> mg</a>
+												<a href="#?lang=mh" arial-label="lang: mh" class="dropdown-item"><i><span class="flag flag-mh"></span></i> mh</a>
+												<a href="#?lang=mk" arial-label="lang: mk" class="dropdown-item"><i><span class="flag flag-mk"></span></i> mk</a>
+												<a href="#?lang=ml" arial-label="lang: ml" class="dropdown-item"><i><span class="flag flag-ml"></span></i> ml</a>
+												<a href="#?lang=mm" arial-label="lang: mm" class="dropdown-item"><i><span class="flag flag-mm"></span></i> mm</a>
+												<a href="#?lang=mn" arial-label="lang: mn" class="dropdown-item"><i><span class="flag flag-mn"></span></i> mn</a>
+												<a href="#?lang=mo" arial-label="lang: mo" class="dropdown-item"><i><span class="flag flag-mo"></span></i> mo</a>
+												<a href="#?lang=mp" arial-label="lang: mp" class="dropdown-item"><i><span class="flag flag-mp"></span></i> mp</a>
+												<a href="#?lang=mq" arial-label="lang: mq" class="dropdown-item"><i><span class="flag flag-mq"></span></i> mq</a>
+												<a href="#?lang=mr" arial-label="lang: mr" class="dropdown-item"><i><span class="flag flag-mr"></span></i> mr</a>
+												<a href="#?lang=ms" arial-label="lang: ms" class="dropdown-item"><i><span class="flag flag-ms"></span></i> ms</a>
+												<a href="#?lang=mt" arial-label="lang: mt" class="dropdown-item"><i><span class="flag flag-mt"></span></i> mt</a>
+												<a href="#?lang=mu" arial-label="lang: mu" class="dropdown-item"><i><span class="flag flag-mu"></span></i> mu</a>
+												<a href="#?lang=mv" arial-label="lang: mv" class="dropdown-item"><i><span class="flag flag-mv"></span></i> mv</a>
+												<a href="#?lang=mw" arial-label="lang: mw" class="dropdown-item"><i><span class="flag flag-mw"></span></i> mw</a>
+												<a href="#?lang=mx" arial-label="lang: mx" class="dropdown-item"><i><span class="flag flag-mx"></span></i> mx</a>
+												<a href="#?lang=my" arial-label="lang: my" class="dropdown-item"><i><span class="flag flag-my"></span></i> my</a>
+												<a href="#?lang=mz" arial-label="lang: mz" class="dropdown-item"><i><span class="flag flag-mz"></span></i> mz</a>
+												<a href="#?lang=na" arial-label="lang: na" class="dropdown-item"><i><span class="flag flag-na"></span></i> na</a>
+												<a href="#?lang=nc" arial-label="lang: nc" class="dropdown-item"><i><span class="flag flag-nc"></span></i> nc</a>
+												<a href="#?lang=ne" arial-label="lang: ne" class="dropdown-item"><i><span class="flag flag-ne"></span></i> ne</a>
+												<a href="#?lang=nf" arial-label="lang: nf" class="dropdown-item"><i><span class="flag flag-nf"></span></i> nf</a>
+												<a href="#?lang=ng" arial-label="lang: ng" class="dropdown-item"><i><span class="flag flag-ng"></span></i> ng</a>
+												<a href="#?lang=ni" arial-label="lang: ni" class="dropdown-item"><i><span class="flag flag-ni"></span></i> ni</a>
+												<a href="#?lang=nl" arial-label="lang: nl" class="dropdown-item"><i><span class="flag flag-nl"></span></i> nl</a>
+												<a href="#?lang=no" arial-label="lang: no" class="dropdown-item"><i><span class="flag flag-no"></span></i> no</a>
+												<a href="#?lang=np" arial-label="lang: np" class="dropdown-item"><i><span class="flag flag-np"></span></i> np</a>
+												<a href="#?lang=nr" arial-label="lang: nr" class="dropdown-item"><i><span class="flag flag-nr"></span></i> nr</a>
+												<a href="#?lang=nu" arial-label="lang: nu" class="dropdown-item"><i><span class="flag flag-nu"></span></i> nu</a>
+												<a href="#?lang=nz" arial-label="lang: nz" class="dropdown-item"><i><span class="flag flag-nz"></span></i> nz</a>
+												<a href="#?lang=om" arial-label="lang: om" class="dropdown-item"><i><span class="flag flag-om"></span></i> om</a>
+												<a href="#?lang=pa" arial-label="lang: pa" class="dropdown-item"><i><span class="flag flag-pa"></span></i> pa</a>
+												<a href="#?lang=pe" arial-label="lang: pe" class="dropdown-item"><i><span class="flag flag-pe"></span></i> pe</a>
+												<a href="#?lang=pf" arial-label="lang: pf" class="dropdown-item"><i><span class="flag flag-pf"></span></i> pf</a>
+												<a href="#?lang=pg" arial-label="lang: pg" class="dropdown-item"><i><span class="flag flag-pg"></span></i> pg</a>
+												<a href="#?lang=ph" arial-label="lang: ph" class="dropdown-item"><i><span class="flag flag-ph"></span></i> ph</a>
+												<a href="#?lang=pk" arial-label="lang: pk" class="dropdown-item"><i><span class="flag flag-pk"></span></i> pk</a>
+												<a href="#?lang=pl" arial-label="lang: pl" class="dropdown-item"><i><span class="flag flag-pl"></span></i> pl</a>
+												<a href="#?lang=pm" arial-label="lang: pm" class="dropdown-item"><i><span class="flag flag-pm"></span></i> pm</a>
+												<a href="#?lang=pn" arial-label="lang: pn" class="dropdown-item"><i><span class="flag flag-pn"></span></i> pn</a>
+												<a href="#?lang=pr" arial-label="lang: pr" class="dropdown-item"><i><span class="flag flag-pr"></span></i> pr</a>
+												<a href="#?lang=ps" arial-label="lang: ps" class="dropdown-item"><i><span class="flag flag-ps"></span></i> ps</a>
+												<a href="#?lang=pt" arial-label="lang: pt" class="dropdown-item"><i><span class="flag flag-pt"></span></i> pt</a>
+												<a href="#?lang=pw" arial-label="lang: pw" class="dropdown-item"><i><span class="flag flag-pw"></span></i> pw</a>
+												<a href="#?lang=py" arial-label="lang: py" class="dropdown-item"><i><span class="flag flag-py"></span></i> py</a>
+												<a href="#?lang=qa" arial-label="lang: qa" class="dropdown-item"><i><span class="flag flag-qa"></span></i> qa</a>
+												<a href="#?lang=re" arial-label="lang: re" class="dropdown-item"><i><span class="flag flag-re"></span></i> re</a>
+												<a href="#?lang=ro" arial-label="lang: ro" class="dropdown-item"><i><span class="flag flag-ro"></span></i> ro</a>
+												<a href="#?lang=rs" arial-label="lang: rs" class="dropdown-item"><i><span class="flag flag-rs"></span></i> rs</a>
+												<a href="#?lang=ru" arial-label="lang: ru" class="dropdown-item"><i><span class="flag flag-ru"></span></i> ru</a>
+												<a href="#?lang=rw" arial-label="lang: rw" class="dropdown-item"><i><span class="flag flag-rw"></span></i> rw</a>
+												<a href="#?lang=sa" arial-label="lang: sa" class="dropdown-item"><i><span class="flag flag-sa"></span></i> sa</a>
+												<a href="#?lang=sb" arial-label="lang: sb" class="dropdown-item"><i><span class="flag flag-sb"></span></i> sb</a>
+												<a href="#?lang=sc" arial-label="lang: sc" class="dropdown-item"><i><span class="flag flag-sc"></span></i> sc</a>
+												<a href="#?lang=scotland" arial-label="lang: scotland" class="dropdown-item"><i><span class="flag flag-scotland"></span></i> scotland</a>
+												<a href="#?lang=sd" arial-label="lang: sd" class="dropdown-item"><i><span class="flag flag-sd"></span></i> sd</a>
+												<a href="#?lang=se" arial-label="lang: se" class="dropdown-item"><i><span class="flag flag-se"></span></i> se</a>
+												<a href="#?lang=sg" arial-label="lang: sg" class="dropdown-item"><i><span class="flag flag-sg"></span></i> sg</a>
+												<a href="#?lang=sh" arial-label="lang: sh" class="dropdown-item"><i><span class="flag flag-sh"></span></i> sh</a>
+												<a href="#?lang=si" arial-label="lang: si" class="dropdown-item"><i><span class="flag flag-si"></span></i> si</a>
+												<a href="#?lang=sk" arial-label="lang: sk" class="dropdown-item"><i><span class="flag flag-sk"></span></i> sk</a>
+												<a href="#?lang=sl" arial-label="lang: sl" class="dropdown-item"><i><span class="flag flag-sl"></span></i> sl</a>
+												<a href="#?lang=sm" arial-label="lang: sm" class="dropdown-item"><i><span class="flag flag-sm"></span></i> sm</a>
+												<a href="#?lang=sn" arial-label="lang: sn" class="dropdown-item"><i><span class="flag flag-sn"></span></i> sn</a>
+												<a href="#?lang=so" arial-label="lang: so" class="dropdown-item"><i><span class="flag flag-so"></span></i> so</a>
+												<a href="#?lang=somaliland" arial-label="lang: somaliland" class="dropdown-item"><i><span class="flag flag-somaliland"></span></i> somaliland</a>
+												<a href="#?lang=sr" arial-label="lang: sr" class="dropdown-item"><i><span class="flag flag-sr"></span></i> sr</a>
+												<a href="#?lang=ss" arial-label="lang: ss" class="dropdown-item"><i><span class="flag flag-ss"></span></i> ss</a>
+												<a href="#?lang=st" arial-label="lang: st" class="dropdown-item"><i><span class="flag flag-st"></span></i> st</a>
+												<a href="#?lang=sv" arial-label="lang: sv" class="dropdown-item"><i><span class="flag flag-sv"></span></i> sv</a>
+												<a href="#?lang=sx" arial-label="lang: sx" class="dropdown-item"><i><span class="flag flag-sx"></span></i> sx</a>
+												<a href="#?lang=sy" arial-label="lang: sy" class="dropdown-item"><i><span class="flag flag-sy"></span></i> sy</a>
+												<a href="#?lang=sz" arial-label="lang: sz" class="dropdown-item"><i><span class="flag flag-sz"></span></i> sz</a>
+												<a href="#?lang=tc" arial-label="lang: tc" class="dropdown-item"><i><span class="flag flag-tc"></span></i> tc</a>
+												<a href="#?lang=td" arial-label="lang: td" class="dropdown-item"><i><span class="flag flag-td"></span></i> td</a>
+												<a href="#?lang=tf" arial-label="lang: tf" class="dropdown-item"><i><span class="flag flag-tf"></span></i> tf</a>
+												<a href="#?lang=tg" arial-label="lang: tg" class="dropdown-item"><i><span class="flag flag-tg"></span></i> tg</a>
+												<a href="#?lang=th" arial-label="lang: th" class="dropdown-item"><i><span class="flag flag-th"></span></i> th</a>
+												<a href="#?lang=tibet" arial-label="lang: tibet" class="dropdown-item"><i><span class="flag flag-tibet"></span></i> tibet</a>
+												<a href="#?lang=tj" arial-label="lang: tj" class="dropdown-item"><i><span class="flag flag-tj"></span></i> tj</a>
+												<a href="#?lang=tk" arial-label="lang: tk" class="dropdown-item"><i><span class="flag flag-tk"></span></i> tk</a>
+												<a href="#?lang=tl" arial-label="lang: tl" class="dropdown-item"><i><span class="flag flag-tl"></span></i> tl</a>
+												<a href="#?lang=tm" arial-label="lang: tm" class="dropdown-item"><i><span class="flag flag-tm"></span></i> tm</a>
+												<a href="#?lang=tn" arial-label="lang: tn" class="dropdown-item"><i><span class="flag flag-tn"></span></i> tn</a>
+												<a href="#?lang=to" arial-label="lang: to" class="dropdown-item"><i><span class="flag flag-to"></span></i> to</a>
+												<a href="#?lang=tr" arial-label="lang: tr" class="dropdown-item"><i><span class="flag flag-tr"></span></i> tr</a>
+												<a href="#?lang=tt" arial-label="lang: tt" class="dropdown-item"><i><span class="flag flag-tt"></span></i> tt</a>
+												<a href="#?lang=tv" arial-label="lang: tv" class="dropdown-item"><i><span class="flag flag-tv"></span></i> tv</a>
+												<a href="#?lang=tw" arial-label="lang: tw" class="dropdown-item"><i><span class="flag flag-tw"></span></i> tw</a>
+												<a href="#?lang=tz" arial-label="lang: tz" class="dropdown-item"><i><span class="flag flag-tz"></span></i> tz</a>
+												<a href="#?lang=ua" arial-label="lang: ua" class="dropdown-item"><i><span class="flag flag-ua"></span></i> ua</a>
+												<a href="#?lang=ug" arial-label="lang: ug" class="dropdown-item"><i><span class="flag flag-ug"></span></i> ug</a>
+												<a href="#?lang=um" arial-label="lang: um" class="dropdown-item"><i><span class="flag flag-um"></span></i> um</a>
+												<a href="#?lang=us" arial-label="lang: us" class="dropdown-item"><i><span class="flag flag-us"></span></i> us</a>
+												<a href="#?lang=uy" arial-label="lang: uy" class="dropdown-item"><i><span class="flag flag-uy"></span></i> uy</a>
+												<a href="#?lang=uz" arial-label="lang: uz" class="dropdown-item"><i><span class="flag flag-uz"></span></i> uz</a>
+												<a href="#?lang=va" arial-label="lang: va" class="dropdown-item"><i><span class="flag flag-va"></span></i> va</a>
+												<a href="#?lang=vc" arial-label="lang: vc" class="dropdown-item"><i><span class="flag flag-vc"></span></i> vc</a>
+												<a href="#?lang=ve" arial-label="lang: ve" class="dropdown-item"><i><span class="flag flag-ve"></span></i> ve</a>
+												<a href="#?lang=vg" arial-label="lang: vg" class="dropdown-item"><i><span class="flag flag-vg"></span></i> vg</a>
+												<a href="#?lang=vi" arial-label="lang: vi" class="dropdown-item"><i><span class="flag flag-vi"></span></i> vi</a>
+												<a href="#?lang=vn" arial-label="lang: vn" class="dropdown-item"><i><span class="flag flag-vn"></span></i> vn</a>
+												<a href="#?lang=vu" arial-label="lang: vu" class="dropdown-item"><i><span class="flag flag-vu"></span></i> vu</a>
+												<a href="#?lang=wales" arial-label="lang: wales" class="dropdown-item"><i><span class="flag flag-wales"></span></i> wales</a>
+												<a href="#?lang=wf" arial-label="lang: wf" class="dropdown-item"><i><span class="flag flag-wf"></span></i> wf</a>
+												<a href="#?lang=ws" arial-label="lang: ws" class="dropdown-item"><i><span class="flag flag-ws"></span></i> ws</a>
+												<a href="#?lang=xk" arial-label="lang: xk" class="dropdown-item"><i><span class="flag flag-xk"></span></i> xk</a>
+												<a href="#?lang=ye" arial-label="lang: ye" class="dropdown-item"><i><span class="flag flag-ye"></span></i> ye</a>
+												<a href="#?lang=yt" arial-label="lang: yt" class="dropdown-item"><i><span class="flag flag-yt"></span></i> yt</a>
+												<a href="#?lang=za" arial-label="lang: za" class="dropdown-item"><i><span class="flag flag-za"></span></i> za</a>
+												<a href="#?lang=zanzibar" arial-label="lang: zanzibar" class="dropdown-item"><i><span class="flag flag-zanzibar"></span></i> zanzibar</a>
+												<a href="#?lang=zm" arial-label="lang: zm" class="dropdown-item"><i><span class="flag flag-zm"></span></i> zm</a>
+												<a href="#?lang=zw" arial-label="lang: zw" class="dropdown-item"><i><span class="flag flag-zw"></span></i> zw</a>
+
+											</div>
+
+										</div>
+
+									</div>
+
+								</div>
+
+
+
+								<div>
+
+									<a href="#code_f" class="scroll-to btn btn-sm btn-light" data-toggle="collapse">
+										<i class="fi fi-code"></i> 
+										view code
+									</a>
+
+								</div>
+
+								<div id="code_f" class="collapse">
+								<pre class="mt-5"><code class="language-html">
+&lt;select class="form-control bs-select" data-live-search="true">
+
+	&lt;option val="ad" data-icon="flag flag-ad">ad&lt;/option>
+	&lt;option val="ae" data-icon="flag flag-ae">ae&lt;/option>
+	&lt;option val="af" data-icon="flag flag-af">af&lt;/option>
+	&lt;option val="ag" data-icon="flag flag-ag">ag&lt;/option>
+	&lt;option val="ai" data-icon="flag flag-ai">ai&lt;/option>
+	&lt;option val="al" data-icon="flag flag-al">al&lt;/option>
+	&lt;option val="am" data-icon="flag flag-am">am&lt;/option>
+	&lt;option val="an" data-icon="flag flag-an">an&lt;/option>
+	&lt;option val="ao" data-icon="flag flag-ao">ao&lt;/option>
+	&lt;option val="ar" data-icon="flag flag-ar">ar&lt;/option>
+	&lt;option val="as" data-icon="flag flag-as">as&lt;/option>
+	&lt;option val="at" data-icon="flag flag-at">at&lt;/option>
+	&lt;option val="au" data-icon="flag flag-au">au&lt;/option>
+	&lt;option val="aw" data-icon="flag flag-aw">aw&lt;/option>
+	&lt;option val="az" data-icon="flag flag-az">az&lt;/option>
+	&lt;option val="ba" data-icon="flag flag-ba">ba&lt;/option>
+	&lt;option val="bb" data-icon="flag flag-bb">bb&lt;/option>
+	&lt;option val="bd" data-icon="flag flag-bd">bd&lt;/option>
+	&lt;option val="be" data-icon="flag flag-be">be&lt;/option>
+	&lt;option val="bf" data-icon="flag flag-bf">bf&lt;/option>
+	&lt;option val="bg" data-icon="flag flag-bg">bg&lt;/option>
+	&lt;option val="bh" data-icon="flag flag-bh">bh&lt;/option>
+	&lt;option val="bi" data-icon="flag flag-bi">bi&lt;/option>
+	&lt;option val="bj" data-icon="flag flag-bj">bj&lt;/option>
+	&lt;option val="bm" data-icon="flag flag-bm">bm&lt;/option>
+	&lt;option val="bn" data-icon="flag flag-bn">bn&lt;/option>
+	&lt;option val="bo" data-icon="flag flag-bo">bo&lt;/option>
+	&lt;option val="br" data-icon="flag flag-br">br&lt;/option>
+	&lt;option val="bs" data-icon="flag flag-bs">bs&lt;/option>
+	&lt;option val="bt" data-icon="flag flag-bt">bt&lt;/option>
+	&lt;option val="bv" data-icon="flag flag-bv">bv&lt;/option>
+	&lt;option val="bw" data-icon="flag flag-bw">bw&lt;/option>
+	&lt;option val="by" data-icon="flag flag-by">by&lt;/option>
+	&lt;option val="bz" data-icon="flag flag-bz">bz&lt;/option>
+	&lt;option val="ca" data-icon="flag flag-ca">ca&lt;/option>
+	&lt;option val="catalonia" data-icon="flag flag-catalonia">catalonia&lt;/option>
+	&lt;option val="cd" data-icon="flag flag-cd">cd&lt;/option>
+	&lt;option val="cf" data-icon="flag flag-cf">cf&lt;/option>
+	&lt;option val="cg" data-icon="flag flag-cg">cg&lt;/option>
+	&lt;option val="ch" data-icon="flag flag-ch">ch&lt;/option>
+	&lt;option val="ci" data-icon="flag flag-ci">ci&lt;/option>
+	&lt;option val="ck" data-icon="flag flag-ck">ck&lt;/option>
+	&lt;option val="cl" data-icon="flag flag-cl">cl&lt;/option>
+	&lt;option val="cm" data-icon="flag flag-cm">cm&lt;/option>
+	&lt;option val="cn" data-icon="flag flag-cn">cn&lt;/option>
+	&lt;option val="co" data-icon="flag flag-co">co&lt;/option>
+	&lt;option val="cr" data-icon="flag flag-cr">cr&lt;/option>
+	&lt;option val="cu" data-icon="flag flag-cu">cu&lt;/option>
+	&lt;option val="cv" data-icon="flag flag-cv">cv&lt;/option>
+	&lt;option val="cw" data-icon="flag flag-cw">cw&lt;/option>
+	&lt;option val="cy" data-icon="flag flag-cy">cy&lt;/option>
+	&lt;option val="cz" data-icon="flag flag-cz">cz&lt;/option>
+	&lt;option val="de" data-icon="flag flag-de">de&lt;/option>
+	&lt;option val="dj" data-icon="flag flag-dj">dj&lt;/option>
+	&lt;option val="dk" data-icon="flag flag-dk">dk&lt;/option>
+	&lt;option val="dm" data-icon="flag flag-dm">dm&lt;/option>
+	&lt;option val="do" data-icon="flag flag-do">do&lt;/option>
+	&lt;option val="dz" data-icon="flag flag-dz">dz&lt;/option>
+	&lt;option val="ec" data-icon="flag flag-ec">ec&lt;/option>
+	&lt;option val="ee" data-icon="flag flag-ee">ee&lt;/option>
+	&lt;option val="eg" data-icon="flag flag-eg">eg&lt;/option>
+	&lt;option val="eh" data-icon="flag flag-eh">eh&lt;/option>
+	&lt;option val="england" data-icon="flag flag-england">england&lt;/option>
+	&lt;option val="er" data-icon="flag flag-er">er&lt;/option>
+	&lt;option val="es" data-icon="flag flag-es">es&lt;/option>
+	&lt;option val="et" data-icon="flag flag-et">et&lt;/option>
+	&lt;option val="eu" data-icon="flag flag-eu">eu&lt;/option>
+	&lt;option val="fi" data-icon="flag flag-fi">fi&lt;/option>
+	&lt;option val="fj" data-icon="flag flag-fj">fj&lt;/option>
+	&lt;option val="fk" data-icon="flag flag-fk">fk&lt;/option>
+	&lt;option val="fm" data-icon="flag flag-fm">fm&lt;/option>
+	&lt;option val="fo" data-icon="flag flag-fo">fo&lt;/option>
+	&lt;option val="fr" data-icon="flag flag-fr">fr&lt;/option>
+	&lt;option val="ga" data-icon="flag flag-ga">ga&lt;/option>
+	&lt;option val="gb" data-icon="flag flag-gb">gb&lt;/option>
+	&lt;option val="gd" data-icon="flag flag-gd">gd&lt;/option>
+	&lt;option val="ge" data-icon="flag flag-ge">ge&lt;/option>
+	&lt;option val="gf" data-icon="flag flag-gf">gf&lt;/option>
+	&lt;option val="gg" data-icon="flag flag-gg">gg&lt;/option>
+	&lt;option val="gh" data-icon="flag flag-gh">gh&lt;/option>
+	&lt;option val="gi" data-icon="flag flag-gi">gi&lt;/option>
+	&lt;option val="gl" data-icon="flag flag-gl">gl&lt;/option>
+	&lt;option val="gm" data-icon="flag flag-gm">gm&lt;/option>
+	&lt;option val="gn" data-icon="flag flag-gn">gn&lt;/option>
+	&lt;option val="gp" data-icon="flag flag-gp">gp&lt;/option>
+	&lt;option val="gq" data-icon="flag flag-gq">gq&lt;/option>
+	&lt;option val="gr" data-icon="flag flag-gr">gr&lt;/option>
+	&lt;option val="gs" data-icon="flag flag-gs">gs&lt;/option>
+	&lt;option val="gt" data-icon="flag flag-gt">gt&lt;/option>
+	&lt;option val="gu" data-icon="flag flag-gu">gu&lt;/option>
+	&lt;option val="gw" data-icon="flag flag-gw">gw&lt;/option>
+	&lt;option val="gy" data-icon="flag flag-gy">gy&lt;/option>
+	&lt;option val="hk" data-icon="flag flag-hk">hk&lt;/option>
+	&lt;option val="hm" data-icon="flag flag-hm">hm&lt;/option>
+	&lt;option val="hn" data-icon="flag flag-hn">hn&lt;/option>
+	&lt;option val="hr" data-icon="flag flag-hr">hr&lt;/option>
+	&lt;option val="ht" data-icon="flag flag-ht">ht&lt;/option>
+	&lt;option val="hu" data-icon="flag flag-hu">hu&lt;/option>
+	&lt;option val="ic" data-icon="flag flag-ic">ic&lt;/option>
+	&lt;option val="id" data-icon="flag flag-id">id&lt;/option>
+	&lt;option val="ie" data-icon="flag flag-ie">ie&lt;/option>
+	&lt;option val="il" data-icon="flag flag-il">il&lt;/option>
+	&lt;option val="im" data-icon="flag flag-im">im&lt;/option>
+	&lt;option val="in" data-icon="flag flag-in">in&lt;/option>
+	&lt;option val="io" data-icon="flag flag-io">io&lt;/option>
+	&lt;option val="iq" data-icon="flag flag-iq">iq&lt;/option>
+	&lt;option val="ir" data-icon="flag flag-ir">ir&lt;/option>
+	&lt;option val="is" data-icon="flag flag-is">is&lt;/option>
+	&lt;option val="it" data-icon="flag flag-it">it&lt;/option>
+	&lt;option val="je" data-icon="flag flag-je">je&lt;/option>
+	&lt;option val="jm" data-icon="flag flag-jm">jm&lt;/option>
+	&lt;option val="jo" data-icon="flag flag-jo">jo&lt;/option>
+	&lt;option val="jp" data-icon="flag flag-jp">jp&lt;/option>
+	&lt;option val="ke" data-icon="flag flag-ke">ke&lt;/option>
+	&lt;option val="kg" data-icon="flag flag-kg">kg&lt;/option>
+	&lt;option val="kh" data-icon="flag flag-kh">kh&lt;/option>
+	&lt;option val="ki" data-icon="flag flag-ki">ki&lt;/option>
+	&lt;option val="km" data-icon="flag flag-km">km&lt;/option>
+	&lt;option val="kn" data-icon="flag flag-kn">kn&lt;/option>
+	&lt;option val="kp" data-icon="flag flag-kp">kp&lt;/option>
+	&lt;option val="kr" data-icon="flag flag-kr">kr&lt;/option>
+	&lt;option val="kurdistan" data-icon="flag flag-kurdistan">kurdistan&lt;/option>
+	&lt;option val="kw" data-icon="flag flag-kw">kw&lt;/option>
+	&lt;option val="ky" data-icon="flag flag-ky">ky&lt;/option>
+	&lt;option val="kz" data-icon="flag flag-kz">kz&lt;/option>
+	&lt;option val="la" data-icon="flag flag-la">la&lt;/option>
+	&lt;option val="lb" data-icon="flag flag-lb">lb&lt;/option>
+	&lt;option val="lc" data-icon="flag flag-lc">lc&lt;/option>
+	&lt;option val="li" data-icon="flag flag-li">li&lt;/option>
+	&lt;option val="lk" data-icon="flag flag-lk">lk&lt;/option>
+	&lt;option val="lr" data-icon="flag flag-lr">lr&lt;/option>
+	&lt;option val="ls" data-icon="flag flag-ls">ls&lt;/option>
+	&lt;option val="lt" data-icon="flag flag-lt">lt&lt;/option>
+	&lt;option val="lu" data-icon="flag flag-lu">lu&lt;/option>
+	&lt;option val="lv" data-icon="flag flag-lv">lv&lt;/option>
+	&lt;option val="ly" data-icon="flag flag-ly">ly&lt;/option>
+	&lt;option val="ma" data-icon="flag flag-ma">ma&lt;/option>
+	&lt;option val="mc" data-icon="flag flag-mc">mc&lt;/option>
+	&lt;option val="md" data-icon="flag flag-md">md&lt;/option>
+	&lt;option val="me" data-icon="flag flag-me">me&lt;/option>
+	&lt;option val="mg" data-icon="flag flag-mg">mg&lt;/option>
+	&lt;option val="mh" data-icon="flag flag-mh">mh&lt;/option>
+	&lt;option val="mk" data-icon="flag flag-mk">mk&lt;/option>
+	&lt;option val="ml" data-icon="flag flag-ml">ml&lt;/option>
+	&lt;option val="mm" data-icon="flag flag-mm">mm&lt;/option>
+	&lt;option val="mn" data-icon="flag flag-mn">mn&lt;/option>
+	&lt;option val="mo" data-icon="flag flag-mo">mo&lt;/option>
+	&lt;option val="mp" data-icon="flag flag-mp">mp&lt;/option>
+	&lt;option val="mq" data-icon="flag flag-mq">mq&lt;/option>
+	&lt;option val="mr" data-icon="flag flag-mr">mr&lt;/option>
+	&lt;option val="ms" data-icon="flag flag-ms">ms&lt;/option>
+	&lt;option val="mt" data-icon="flag flag-mt">mt&lt;/option>
+	&lt;option val="mu" data-icon="flag flag-mu">mu&lt;/option>
+	&lt;option val="mv" data-icon="flag flag-mv">mv&lt;/option>
+	&lt;option val="mw" data-icon="flag flag-mw">mw&lt;/option>
+	&lt;option val="mx" data-icon="flag flag-mx">mx&lt;/option>
+	&lt;option val="my" data-icon="flag flag-my">my&lt;/option>
+	&lt;option val="mz" data-icon="flag flag-mz">mz&lt;/option>
+	&lt;option val="na" data-icon="flag flag-na">na&lt;/option>
+	&lt;option val="nc" data-icon="flag flag-nc">nc&lt;/option>
+	&lt;option val="ne" data-icon="flag flag-ne">ne&lt;/option>
+	&lt;option val="nf" data-icon="flag flag-nf">nf&lt;/option>
+	&lt;option val="ng" data-icon="flag flag-ng">ng&lt;/option>
+	&lt;option val="ni" data-icon="flag flag-ni">ni&lt;/option>
+	&lt;option val="nl" data-icon="flag flag-nl">nl&lt;/option>
+	&lt;option val="no" data-icon="flag flag-no">no&lt;/option>
+	&lt;option val="np" data-icon="flag flag-np">np&lt;/option>
+	&lt;option val="nr" data-icon="flag flag-nr">nr&lt;/option>
+	&lt;option val="nu" data-icon="flag flag-nu">nu&lt;/option>
+	&lt;option val="nz" data-icon="flag flag-nz">nz&lt;/option>
+	&lt;option val="om" data-icon="flag flag-om">om&lt;/option>
+	&lt;option val="pa" data-icon="flag flag-pa">pa&lt;/option>
+	&lt;option val="pe" data-icon="flag flag-pe">pe&lt;/option>
+	&lt;option val="pf" data-icon="flag flag-pf">pf&lt;/option>
+	&lt;option val="pg" data-icon="flag flag-pg">pg&lt;/option>
+	&lt;option val="ph" data-icon="flag flag-ph">ph&lt;/option>
+	&lt;option val="pk" data-icon="flag flag-pk">pk&lt;/option>
+	&lt;option val="pl" data-icon="flag flag-pl">pl&lt;/option>
+	&lt;option val="pm" data-icon="flag flag-pm">pm&lt;/option>
+	&lt;option val="pn" data-icon="flag flag-pn">pn&lt;/option>
+	&lt;option val="pr" data-icon="flag flag-pr">pr&lt;/option>
+	&lt;option val="ps" data-icon="flag flag-ps">ps&lt;/option>
+	&lt;option val="pt" data-icon="flag flag-pt">pt&lt;/option>
+	&lt;option val="pw" data-icon="flag flag-pw">pw&lt;/option>
+	&lt;option val="py" data-icon="flag flag-py">py&lt;/option>
+	&lt;option val="qa" data-icon="flag flag-qa">qa&lt;/option>
+	&lt;option val="re" data-icon="flag flag-re">re&lt;/option>
+	&lt;option val="ro" data-icon="flag flag-ro">ro&lt;/option>
+	&lt;option val="rs" data-icon="flag flag-rs">rs&lt;/option>
+	&lt;option val="ru" data-icon="flag flag-ru">ru&lt;/option>
+	&lt;option val="rw" data-icon="flag flag-rw">rw&lt;/option>
+	&lt;option val="sa" data-icon="flag flag-sa">sa&lt;/option>
+	&lt;option val="sb" data-icon="flag flag-sb">sb&lt;/option>
+	&lt;option val="sc" data-icon="flag flag-sc">sc&lt;/option>
+	&lt;option val="scotland" data-icon="flag flag-scotland">scotland&lt;/option>
+	&lt;option val="sd" data-icon="flag flag-sd">sd&lt;/option>
+	&lt;option val="se" data-icon="flag flag-se">se&lt;/option>
+	&lt;option val="sg" data-icon="flag flag-sg">sg&lt;/option>
+	&lt;option val="sh" data-icon="flag flag-sh">sh&lt;/option>
+	&lt;option val="si" data-icon="flag flag-si">si&lt;/option>
+	&lt;option val="sk" data-icon="flag flag-sk">sk&lt;/option>
+	&lt;option val="sl" data-icon="flag flag-sl">sl&lt;/option>
+	&lt;option val="sm" data-icon="flag flag-sm">sm&lt;/option>
+	&lt;option val="sn" data-icon="flag flag-sn">sn&lt;/option>
+	&lt;option val="so" data-icon="flag flag-so">so&lt;/option>
+	&lt;option val="somaliland" data-icon="flag flag-somaliland">somaliland&lt;/option>
+	&lt;option val="sr" data-icon="flag flag-sr">sr&lt;/option>
+	&lt;option val="ss" data-icon="flag flag-ss">ss&lt;/option>
+	&lt;option val="st" data-icon="flag flag-st">st&lt;/option>
+	&lt;option val="sv" data-icon="flag flag-sv">sv&lt;/option>
+	&lt;option val="sx" data-icon="flag flag-sx">sx&lt;/option>
+	&lt;option val="sy" data-icon="flag flag-sy">sy&lt;/option>
+	&lt;option val="sz" data-icon="flag flag-sz">sz&lt;/option>
+	&lt;option val="tc" data-icon="flag flag-tc">tc&lt;/option>
+	&lt;option val="td" data-icon="flag flag-td">td&lt;/option>
+	&lt;option val="tf" data-icon="flag flag-tf">tf&lt;/option>
+	&lt;option val="tg" data-icon="flag flag-tg">tg&lt;/option>
+	&lt;option val="th" data-icon="flag flag-th">th&lt;/option>
+	&lt;option val="tibet" data-icon="flag flag-tibet">tibet&lt;/option>
+	&lt;option val="tj" data-icon="flag flag-tj">tj&lt;/option>
+	&lt;option val="tk" data-icon="flag flag-tk">tk&lt;/option>
+	&lt;option val="tl" data-icon="flag flag-tl">tl&lt;/option>
+	&lt;option val="tm" data-icon="flag flag-tm">tm&lt;/option>
+	&lt;option val="tn" data-icon="flag flag-tn">tn&lt;/option>
+	&lt;option val="to" data-icon="flag flag-to">to&lt;/option>
+	&lt;option val="tr" data-icon="flag flag-tr">tr&lt;/option>
+	&lt;option val="tt" data-icon="flag flag-tt">tt&lt;/option>
+	&lt;option val="tv" data-icon="flag flag-tv">tv&lt;/option>
+	&lt;option val="tw" data-icon="flag flag-tw">tw&lt;/option>
+	&lt;option val="tz" data-icon="flag flag-tz">tz&lt;/option>
+	&lt;option val="ua" data-icon="flag flag-ua">ua&lt;/option>
+	&lt;option val="ug" data-icon="flag flag-ug">ug&lt;/option>
+	&lt;option val="um" data-icon="flag flag-um">um&lt;/option>
+	&lt;option val="us" data-icon="flag flag-us">us&lt;/option>
+	&lt;option val="uy" data-icon="flag flag-uy">uy&lt;/option>
+	&lt;option val="uz" data-icon="flag flag-uz">uz&lt;/option>
+	&lt;option val="va" data-icon="flag flag-va">va&lt;/option>
+	&lt;option val="vc" data-icon="flag flag-vc">vc&lt;/option>
+	&lt;option val="ve" data-icon="flag flag-ve">ve&lt;/option>
+	&lt;option val="vg" data-icon="flag flag-vg">vg&lt;/option>
+	&lt;option val="vi" data-icon="flag flag-vi">vi&lt;/option>
+	&lt;option val="vn" data-icon="flag flag-vn">vn&lt;/option>
+	&lt;option val="vu" data-icon="flag flag-vu">vu&lt;/option>
+	&lt;option val="wales" data-icon="flag flag-wales">wales&lt;/option>
+	&lt;option val="wf" data-icon="flag flag-wf">wf&lt;/option>
+	&lt;option val="ws" data-icon="flag flag-ws">ws&lt;/option>
+	&lt;option val="xk" data-icon="flag flag-xk">xk&lt;/option>
+	&lt;option val="ye" data-icon="flag flag-ye">ye&lt;/option>
+	&lt;option val="yt" data-icon="flag flag-yt">yt&lt;/option>
+	&lt;option val="za" data-icon="flag flag-za">za&lt;/option>
+	&lt;option val="zanzibar" data-icon="flag flag-zanzibar">zanzibar&lt;/option>
+	&lt;option val="zm" data-icon="flag flag-zm">zm&lt;/option>
+	&lt;option val="zw" data-icon="flag flag-zw">zw&lt;/option>
+
+&lt;/select>
+								</code></pre>
+
+							</section>
+
+
+
+						</div>
+
+						<div class="col w-100 max-w-300 d-none d-xl-flex align-self-md-stretch">
+
+							<div class="w-100">
+								<div class="sticky-kit">
+
+								<!--
+								<h6 class="text-dark">Jump To</h6>
+								<ul class="list-unstyled mb-5">
+									<li class="list-item">
+										<a href="#section" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											--
+										</a>
+									</li>
+								</ul>
+								-->
+
+
+
+								<!-- AJAX BOX INFO -->
+								<div 	id="boxinfo_v3" 
+										class="js-ajax" 
+										data-ajax-url="_ajax/boxinfo_v3.html">
+
+									<!-- ajax loading icon -->
+									<div class="text-center bg-white rounded shadow-md p--15 mb-5">
+										<i class="fi fi-circle-spin fi-spin fs--30 text-muted"></i>
+									</div><!-- /ajax loading icon -->
+
+								</div>
+								<!-- /AJAX BOX INFO -->
+
+
+								</div>
+
+
+
+							</div>
+
+						</div>
+
+					</div>
+
+
+
+				</div>
+				<!-- /MIDDLE -->
+
+			</div>
+
+
+
+		</div><!-- /#wrapper -->
+
+
+
+
+		<!--
+			
+			Toast On Load
+
+				data-type 			= '', success, danger, warning, info
+				data-title 			= toast title 	(optional)
+				data-body 			= toast body 	(required)
+				data-pos 			= top-left, top-right, bottom-left, bottom-right, top-center, bottom-center
+				data-delay 			= autoclose in ms
+				data-fill 			= background color fill [true|false]
+
+		-->
+		<div class="hide toast-on-load"
+			data-toast-type="pink" 
+			data-toast-title="" 
+			data-toast-body="<i class='fi fi-emoji-cool float-start'></i> Ajax navigation enabled! Yay!" 
+			data-toast-pos="bottom-center" 
+			data-toast-delay="4000" 
+			data-toast-fill="true" 
+		></div>
+
+
+
+
+		<script src="../assets/js/core.min.js"></script>
+		<script src="../assets/js/vendor_bundle.min.js"></script>
+
+
+
+		<!--
+
+			[SOW Ajax Navigation Plugin] [AJAX ONLY, IF USED]
+			If you have specific page js files, wrap them inside #page_js_files 
+			Ajax Navigation will use them for this page! 
+			This way you can load this page in a normal way and/or via ajax.
+			(you can change/add more containers in sow.config.js)
+
+		-->
+		<div id="page_js_files">
+
+			<script src="assets/plugins/clipboard/clipboard.min.js"></script>
+			<script>
+
+				var clipboard = new Clipboard(".iconsPreview a", {
+				    text: function(e) {
+
+						// bootstrap tooltip
+						setTimeout(function(){ 
+
+							jQuery(e)
+								.attr('data-original-title', 'Copied to Clipboard').tooltip('show')
+								.on('hidden.bs.tooltip', function () {
+
+								// destroy tooltip
+								jQuery(this).tooltip('dispose');
+
+							});
+
+						}, 30);
+
+
+				    	// get class & return
+				        _iconClass = jQuery("span.preview-copy-clipboard", e).html();
+						return _iconClass;
+						
+				    }
+				});
+
+			
+				/* 
+					Inline Search 
+				*/
+				jQuery("#inline-search").keyup(function() {
+					var keywords = jQuery.trim(this.value);
+					if (keywords == "") {
+						_unfilter();
+					}
+					else {
+						_filter(keywords);
+					}
+				});
+
+				function _filter(keywords) {
+					jQuery(".core-icon").hide(); 
+					jQuery('.core-icon a span>i[class*="'+keywords+'"]').parent().parent().parent().show();
+				}
+
+				function _unfilter() {
+					jQuery(".core-icon").show()
+				}
+
+			</script>
+
+		</div>
+
+
+	</body>
+</html>

@@ -1,0 +1,15 @@
+[
+  {
+    "label": "Select Country",
+    "value": "",
+    "selected": false
+  },{
+    "label": "United States",
+    "value": "1",
+    "selected": true
+  },{
+    "label": "Romania",
+    "value": "2",
+    "selected": false
+  }
+]

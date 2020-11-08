@@ -1,0 +1,278 @@
+﻿					<!-- doc:start -->
+					<div class="page-title bg-transparent b-0">
+
+						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
+							Vendor : Colorpicker
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--13 pb-2 px-3">
+								<li class="breadcrumb-item">
+									<a href="index.html" class="js-ajax">Dashboard</a>
+								</li>
+								<li class="breadcrumb-item active">
+									Vendor Plugins
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Colorpicker
+								</li>
+							</ol>
+						</nav>
+
+					</div>
+
+
+
+					<!-- ALERT : NOTE -->
+					<div class="bg-white shadow-xs p-2 mb-4 rounded">
+						<div class="clearfix bg-light p-2 rounded d-flex align-items-center">
+							<span class="btn row-pill btn-sm bg-gradient-warning b-0 py-1 mb-0 float-start">
+								<i class="fi fi-round-info-full"></i>
+								Note
+							</span>
+							<span class="d-block px-2 text-muted text-truncate">
+								This is a basic demo! Please see main <a href="../../html_frontend/documentation/plugins-vendor-colorpicker.html" target="smarty" class="link-muted">full documentation here</a>.
+							</span>
+						</div>
+					</div>
+					<!-- /ALERT : NOTE -->
+
+
+
+					<!-- start:row -->
+					<div class="row gutters-sm">
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Examples</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<p class="lead">
+											Flat, simple, multi-themed, responsive and hackable Color-Picker library.
+										</p>
+
+										<ul class="mt-3">
+											<li class="mt-3">
+												<a href="https://github.com/Simonwep/pickr" target="smarty" class="link-muted">
+													https://github.com/Simonwep/pickr
+												</a>
+											</li>
+											<li>
+												License: MIT
+											</li>
+										</ul>
+
+
+										<div class="row">
+
+											<div class="col-12 col-lg-6">
+
+												<h6 class="mt-7">Inline</h6>
+												<div class="mb-2 text-success bg-light p-3 rounded">
+													<span class="pick_inline"></span>
+												</div>
+
+												<input readonly autocomplete="off" type="text" name="my_picker" class="form-control bg-transparent pick_inline">
+
+												<div class="fs--20 ml--6 mr--6 z-index-1 text-success">
+													<div class="colorpicker"
+														data-theme="classic" 
+														data-target=".pick_inline" 
+														data-color="#42445a" 
+														data-live-update="true" 
+
+														data-hex="true" 
+														data-rgba="true" 
+														data-hsla="true" 
+														data-hsva="true" 
+														data-cmyk="true" 
+
+														data-save="false" 
+														data-clear="true" 
+														
+														data-lng-save="Save" 
+														data-lng-clear="Clear" 
+														
+														data-inline="true" 
+														data-use-as-button="true" 
+														data-default="HEXA"></div>
+												</div>
+
+											</div>
+
+											<div class="col-12 col-lg-6">
+												<h6 class="mt-7">Classic</h6>
+												<div class="input-group-over position-realtive z-index-1 bg-white mb-4">
+
+													<input autocomplete="off" type="text" name="my_picker" class="form-control bg-transparent colorpicker"
+														data-theme="classic" 
+														data-color="#ff0000" 
+
+														data-lng-save="Save" 
+														data-lng-clear="Clear" 
+
+														data-position="bottom-middle" 
+														data-show-always="false" 
+														data-use-as-button="true" 
+														data-default="HEXA">
+
+													<!-- optional icon -->
+													<span class="fs--20 ml-3 mr-3 fi mdi-format_color_fill z-index-n1 text-muted"></span>
+												
+												</div>
+
+
+												<h6>Monolith</h6>
+												<div class="input-group-over position-realtive z-index-1 bg-white mb-4">
+
+													<input autocomplete="off" type="text" name="my_picker" class="form-control bg-transparent colorpicker"
+														data-theme="monolith" 
+														data-color="#ff0000" 
+
+														data-lng-save="Save" 
+														data-lng-clear="Clear" 
+														
+														data-position="bottom-middle" 
+														data-show-always="false" 
+														data-use-as-button="true" 
+														data-default="HEXA">
+
+													<!-- optional icon -->
+													<span class="fs--20 ml-3 mr-3 fi mdi-format_color_fill z-index-n1 text-muted"></span>
+												
+												</div>
+
+
+												<h6>Nano</h6>
+												<div class="input-group-over position-realtive z-index-1 bg-white mb-4">
+
+													<input autocomplete="off" type="text" name="my_picker" class="form-control bg-transparent colorpicker"
+														data-theme="nano" 
+														data-color="#ff0000" 
+
+														data-lng-save="Save" 
+														data-lng-clear="Clear" 
+														
+														data-position="bottom-middle" 
+														data-show-always="false" 
+														data-use-as-button="true" 
+														data-default="HEXA">
+
+													<!-- optional icon -->
+													<span class="fs--20 ml-3 mr-3 fi mdi-format_color_fill z-index-n1 text-muted"></span>
+												
+												</div>
+
+
+											</div>
+
+											<div class="col-12 col-lg-6">
+
+												<h6 class="mt-7 text-danger">Ajax Save</h6>
+												<div class="input-group-over position-realtive z-index-1 bg-white mb-4">
+
+													<input autocomplete="off" type="text" name="my_picker" class="form-control bg-transparent colorpicker"
+														data-theme="classic" 
+														data-color="#ff0000" 
+
+														data-id="1" 
+														data-ajax-url="../../html_frontend/demo.files/php/demo.ajax_request.php" 
+														data-ajax-params="['action','color_change']['section','customer_invoice']" 
+														data-ajax-method="POST" 
+														data-toast-success="Sucessfully Updated!"
+														data-toast-position="top-center"
+
+														data-lng-save="Save" 
+														data-lng-clear="Clear" 
+
+														data-position="bottom-middle" 
+														data-show-always="false" 
+														data-use-as-button="true" 
+														data-default="HEXA">
+
+													<!-- optional icon -->
+													<span class="fs--20 ml-3 mr-3 fi mdi-format_color_fill z-index-n1 text-muted"></span>
+												
+												</div>
+
+											</div>
+
+											<div class="col-12 col-lg-6">
+
+												<h6 class="mt-7">As Button</h6>
+
+												<div class="input-group-over position-realtive bg-white mb-4">
+
+													<input id="pick2" autocomplete="off" type="text" name="my_picker" class="form-control bg-transparent">
+
+													<span class="fs--20 ml--6 mr--6 z-index-1 text-success border d-inline-block rounded">
+
+														<span class="colorpicker"
+															data-theme="classic" 
+															data-target="#pick2" 
+															data-color="#42445a" 
+
+															data-lng-save="Save" 
+															data-lng-clear="Clear" 
+															
+															data-position="bottom-middle" 
+															data-show-always="false" 
+															data-use-as-button="false" 
+															data-default="HEXA"></span>
+
+													</span>
+												</div>
+
+
+											<div class="input-group-over position-realtive bg-white form-control-pill mb-4">
+
+												<input id="pick3" autocomplete="off" type="text" name="my_picker" class="form-control bg-transparent">
+
+												<span class="fs--20 ml--6 mr--6 z-index-1 text-success border d-inline-block rounded-circle">
+													<span class="colorpicker"
+														data-theme="classic" 
+														data-target="#pick3" 
+														data-color="#42445a" 
+
+														data-lng-save="Save" 
+														data-lng-clear="Clear" 
+														
+														data-position="bottom-middle" 
+														data-show-always="false" 
+														data-use-as-button="false" 
+														data-default="HEXA"></span>
+												</span>
+											</div>
+
+											</div>
+
+											<div class="col-12 col-lg-6">
+
+											</div>
+
+											<div class="col-12 col-lg-6">
+
+											</div>
+
+										</div>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+					</div>
+					<!-- end:row: -->
+					<!-- doc:end -->

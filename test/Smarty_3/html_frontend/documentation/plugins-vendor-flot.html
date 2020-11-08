@@ -1,0 +1,3640 @@
+﻿<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+
+		<meta charset="UTF-8">
+		<title>Smarty</title>
+		<meta name="description" content="Smarty Documentation">
+
+        <meta name="viewport" content="width=device-width, maximum-scale=5, initial-scale=1, user-scalable=0">
+        <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+        <!-- up to 10% speed up for external res -->
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+        <link rel="preconnect" href="https://fonts.googleapis.com/">
+        <link rel="preconnect" href="https://fonts.gstatic.com/">
+        <!-- preloading icon font is helping to speed up a little bit -->
+        <link rel="preload" href="../assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
+
+		<link rel="stylesheet" href="../assets/css/core.min.css">
+		<link rel="stylesheet" href="../assets/css/vendor_bundle.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
+
+		<!-- favicon -->
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="apple-touch-icon" href="../demo.files/logo/icon_512x512.png">
+
+		<link rel="manifest" href="../assets/images/manifest/manifest.json">
+		<meta name="theme-color" content="#377dff">
+
+	</head>
+
+
+	<!--
+
+		Layout Admin
+			.layout-admin 	(required)
+
+			.aside-sticky  					- sidebar : fixed and push header
+			.header-sticky  				- header : always visible on top (acting as old .header-focus)
+			.header-scroll-reveal  			- header : hide on scroll down and reveal on scroll up
+
+	-->
+	<body class="layout-admin aside-sticky header-sticky" data-s2t-class="btn-indigo btn-sm rounded-circle">
+
+		<div id="wrapper">
+
+
+
+			<!-- HEADER -->
+			<header id="header" class="d-flex align-items-center shadow-xs">
+
+
+				<!-- NAVBAR -->
+				<div class="container-fluid position-relative">
+
+					<nav class="navbar navbar-expand-lg navbar-dark justify-content-lg-between">
+
+						<div class="align-items-start">
+							
+							<!-- 
+								sidebar toggler 
+							-->
+							<a href="#aside-main" class="btn-sidebar-toggle h-100 d-inline-block d-lg-none justify-content-center align-items-center p-2">
+								<span class="group-icon">
+									<i>
+										<svg width="25" viewBox="0 0 20 20">
+											<path fill="#333333" d="M 19.9876 1.998 L -0.0108 1.998 L -0.0108 -0.0019 L 19.9876 -0.0019 L 19.9876 1.998 Z"></path>
+											<path fill="#333333" d="M 19.9876 7.9979 L -0.0108 7.9979 L -0.0108 5.9979 L 19.9876 5.9979 L 19.9876 7.9979 Z"></path>
+											<path fill="#333333" d="M 19.9876 13.9977 L -0.0108 13.9977 L -0.0108 11.9978 L 19.9876 11.9978 L 19.9876 13.9977 Z"></path>
+											<path fill="#333333" d="M 19.9876 19.9976 L -0.0108 19.9976 L -0.0108 17.9976 L 19.9876 17.9976 L 19.9876 19.9976 Z"></path>
+										</svg>
+									</i>
+
+									<i>
+										<svg width="25" viewBox="0 0 47.971 47.971">
+											<path fill="#333333" d="M28.228,23.986L47.092,5.122c1.172-1.171,1.172-3.071,0-4.242c-1.172-1.172-3.07-1.172-4.242,0L23.986,19.744L5.121,0.88c-1.172-1.172-3.07-1.172-4.242,0c-1.172,1.171-1.172,3.071,0,4.242l18.865,18.864L0.879,42.85c-1.172,1.171-1.172,3.071,0,4.242C1.465,47.677,2.233,47.97,3,47.97s1.535-0.293,2.121-0.879l18.865-18.864L42.85,47.091c0.586,0.586,1.354,0.879,2.121,0.879s1.535-0.293,2.121-0.879c1.172-1.171,1.172-3.071,0-4.242L28.228,23.986z"/>
+										</svg>
+									</i>
+								</span>
+
+							</a>
+
+
+							<!-- 
+								Logo : height: 60px max
+							-->
+							<a class="navbar-brand" href="index.html">
+								<img src="assets/images/logo/logo_dark.svg" width="110" height="70" alt="...">
+							</a>
+
+						</div>
+
+
+
+
+					<!-- 
+
+						[SOW] SEARCH SUGGEST PLUGIN
+						[GULP/src/plugins/sow_search_suggest/sow_search_suggest.js]
+						[SCSS/_plugins/sow_search_suggest.scss]
+						++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++
+
+						PLEASE READ DOCUMENTATION
+						documentation/plugins-sow-search.html
+
+					-->
+					<form 	action="index.html" 
+							method="GET" 
+							data-autosuggest="on" 
+
+							data-mode="json" 
+							data-json-max-results='10'
+							data-json-related-title='Explore Smarty'
+							data-json-related-item-icon='fi fi-star-empty'
+							data-json-suggest-title='Suggestions for you'
+							data-json-suggest-noresult='No results for'
+							data-json-suggest-item-icon='fi fi-search'
+							data-json-suggest-min-score='5'
+							data-json-highlight-term='true'
+							data-contentType='application/json; charset=utf-8'
+							data-dataType='json'
+
+							data-container="#sow-search-container" 
+							data-input-min-length="2" 
+							data-input-delay="100" 
+							data-related-keywords="" 
+							data-related-url="_ajax/search_suggestion_json_related.json" 
+							data-suggest-url="_ajax/search_suggestion_json_suggest.json" 
+							data-related-action="related_get" 
+							data-suggest-action="suggest_get" 
+							class="js-ajax-search sow-search sow-search-mobile-float d-flex-1-1-auto mx-4">
+						<div class="sow-search-input w-100 d-flex align-items-center">
+
+							<div class="input-group-over d-flex align-items-center w-100 h-100 rounded">
+
+								<input placeholder="component search..." name="s" type="text" class="form-control-sow-search form-control form-control-pill b-0 bg-gray-100" value="" autocomplete="off">
+
+								<span class="sow-search-buttons">
+
+									<!-- search button -->
+									<button type="submit" class="btn btn-primary btn-noshadow m-0 px-2 py-1 b-0 bg-transparent text-muted">
+										<i class="fi fi-search fs--20"></i>
+									</button>
+
+									<!-- close : mobile only (d-inline-block d-lg-none) -->
+									<a href="javascript:;" class="btn-sow-search-toggler btn btn-light btn-noshadow m-0 px-2 py-1 d-inline-block d-lg-none">
+										<i class="fi fi-close fs--20"></i>
+									</a>
+
+								</span>
+
+							</div>
+
+						</div>
+
+						<!-- search suggestion container -->
+						<div class="sow-search-container rounded-xl w-100 p-0 hide shadow-md" id="sow-search-container">
+							<div class="sow-search-container-wrapper rounded-xl">
+
+								<!-- main search container -->
+								<div class="sow-search-loader p--15 text-center hide">
+									<i class="fi fi-circle-spin fi-spin text-muted fs--30"></i>
+								</div>
+
+								<!-- 
+									AJAX CONTENT CONTAINER 
+									SHOULD ALWAYS BE AS IT IS : NO COMMENTS OR EVEN SPACES!
+								--><div class="sow-search-content rounded w-100 scrollable-vertical"></div>
+
+							</div>
+						</div>
+						<!-- /search suggestion container -->
+
+						<!-- 
+
+							overlay combinations:
+								overlay-dark opacity-* [1-9]
+								overlay-light opacity-* [1-9]
+
+						-->
+						<div class="sow-search-backdrop overlay-dark opacity-3 hide"></div>
+
+					</form>
+					<!-- /SEARCH -->
+
+
+
+
+					<!-- OPTIONS -->
+					<ul class="list-inline list-unstyled mb-0 d-flex align-items-end">
+
+						<li class="list-inline-item mx-1 dropdown float-start d-inline-block d-lg-none">
+
+							<a href="#" class="btn-sow-search-toggler btn btn-sm rounded-circle btn-warning bg-gradient-warning">
+								<i class="fi fi-search"></i>
+							</a>
+
+						</li>
+
+
+						<li class="list-inline-item mx-1 dropdown float-start d-none d-lg-inline-block">
+
+							<div class="btn-group rounded-xxl overflow-hidden" role="group" aria-label="Basic example">
+								
+								<a href="../index.html" target="layerstore" class="btn btn-sm btn-pills btn-indigo">
+									<span>Front</span>
+								</a>
+
+								<a href="https://wrapbootstrap.com/theme/smarty-website-admin-rtl-WB02DSN1B" target="wrapbootstrap" class="btn btn-sm btn-pills btn-indigo py-1">
+									<i class="fi fi-cart-1 mx-2 fs--20"></i>
+								</a>
+
+								<a href="../../html_admin/layout_1/" target="layerstore" class="btn btn-sm btn-pills btn-indigo">
+									<span>Admin</span>
+								</a>
+
+							</div>
+
+						</li>
+
+						<!-- header toggle : desktop only -->
+						<li class="list-inline-item mx-1 dropdown float-start d-none d-lg-block">
+
+							<a href="#" class="btn-header-toggle btn-toggle btn btn-sm rounded-circle btn-secondary">
+								<span class="group-icon">
+									<i class="fi fi-arrow-up"></i>
+									<i class="fi fi-arrow-down"></i>
+								</span>
+							</a>
+
+						</li>
+
+					</ul>
+					<!-- /OPTIONS -->
+
+
+
+					</nav>
+
+				</div>
+				<!-- /NAVBAR -->
+
+			</header>
+			<!-- /HEADER -->
+
+
+
+
+
+			<div id="wrapper_content" class="d-flex align-items-stretch">
+
+				<!-- SIDEBAR -->
+				<aside id="aside-main" class="aside-start bg-gradient-indigo font-weight-normal aside-hide-xs">
+
+					<div class="aside-wrapper scrollable-vertical scrollable-styled-light">
+
+						<!-- hide on mobile: d-none d-lg-block -->
+						<div class="p-3">
+							<!--<img class="js-ajax-loaded-animate img-fluid" src="assets/svg/artworks/undraw_smiley_face_lmgm.svg" width="300" height="248" alt="...">-->
+							<img class="js-ajax-loaded-animate img-fluid" src="assets/svg/artworks/startup.svg" width="225" height="198" alt="...">
+						</div>
+
+
+						<!--
+
+							All parent open navs are closed on click!
+							To ignore this feature, add .js-ignore to .nav-deep
+
+							Links height (paddings):
+								.nav-deep-xs
+								.nav-deep-md  	(default, ununsed class)
+								.nav-deep-sm
+								.nav-deep-lg
+						-->
+						<nav class="nav-deep nav-deep-dark nav-deep-xs pb-5">
+							<ul class="nav flex-column">
+
+								<li class="nav-title mt-3">
+									<h6 class="fs--14 mb-1 font-weight-medium text-warning">
+										HOW DO I START?
+									</h6>
+								</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="index.html">
+											Introduction
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="changelog.html">
+											<span class="badge float-end mt-1">v3.1.2</span>
+											Changelog
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="credits.html">
+											Credits
+										</a>
+									</li>
+
+
+
+
+
+								<li class="nav-title mt-5">
+									<h6 class="fs--14 mb-1 font-weight-medium text-warning">
+										COMPONENTS &amp; BLOCKS
+									</h6>
+								</li>
+
+								<li class="nav-item">
+									<a class="nav-link" href="#">
+										<span class="group-icon float-end">
+											<i class="fi fi-arrow-end-slim"></i>
+											<i class="fi fi-arrow-down-slim"></i>
+										</span>
+										<b>Components</b>
+									</a>
+								
+									<ul class="nav flex-column">
+
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-alerts.html">
+												Alerts
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-accordions.html">
+												Accordions
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-badges.html">
+												Badges
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-breadcrumbs.html">
+												Breadcrumbs
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-buttons.html">
+												Buttons
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-cards.html">
+												Cards
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-carousel.html">
+												Carousel
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-collapse.html">
+												Collapse
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-dropdowns.html">
+												Dropdowns
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-forms.html">
+												Forms
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-icons.html">
+												Icons
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-flags.html">
+												Flags
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-lists.html">
+												Lists
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-media.html">
+												Media
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-modals.html">
+												Modals
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-navs.html">
+												Navs
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-navigation.html">
+												Navigation
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-pagination.html">
+												Pagination
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-progress.html">
+												Progress
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-popover.html">
+												Popover
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-scrollspy.html">
+												Scrollspy
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-spinners.html">
+												Spinners
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-tabs.html">
+												Tabs
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-tables.html">
+												Tables
+											</a>
+										</li>
+
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-timeline.html">
+												Timeline
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-thumbnails.html">
+												Thumbnails
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-tooltip.html">
+												Tooltip
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link js-ajax" href="components-typography.html">
+												Typography
+											</a>
+										</li>
+
+									</ul>
+								</li>
+
+
+
+
+
+									<li class="nav-item">
+										<a class="nav-link" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											<b>Quick Blocks</b>
+										</a>
+
+										<ul class="nav flex-column">
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-testimonials.html">
+													Testimonials
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-pricing.html">
+													Pricing
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-cta.html">
+													Call to action
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-brands.html">
+													Brands
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="block-various.html">
+													Various
+												</a>
+											</li>
+										</ul>
+
+									</li>
+
+
+
+									<li class="nav-item">
+										<a class="nav-link" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											<b>Utilities</b>
+										</a>
+
+										<ul class="nav flex-column">
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-text-backgrounds.html">
+													Text &amp; Backgrouns
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-text-color-extended.html">
+													Extended Text Color
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-borders.html">
+													Borders
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-shadows.html">
+													Box Shadows
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-font.html">
+													Font Size / Weight
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-width-height.html">
+													Width / Height
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-padding-margin.html">
+													Paddings / Margins
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-transition.html">
+													Transitions / Transforms
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-position.html">
+													Position
+												</a>
+											</li>
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-visibility.html">
+													Visibility
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-overlays.html">
+													Overlays &amp; Opacity
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-scroll.html">
+													Scroll &amp; Scrollbar
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-misc.html">
+													Miscellaneous
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-responsive.html">
+													Responsive
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="util-rtl.html">
+													RTL
+												</a>
+											</li>
+
+										</ul>
+									</li>
+
+		
+
+
+
+
+
+
+
+									<li class="nav-item">
+										<a class="nav-link" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											<b>Php / Forms</b>
+										</a>
+
+										<ul class="nav flex-column">
+
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="php-introduction.html">
+													Introduction
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="php-forms.html">
+													Contact Forms
+												</a>
+											</li>
+										</ul>
+
+									</li>
+
+
+
+
+
+
+
+
+
+
+
+
+									<li class="nav-item nav-item-extended overlay-dark overlay-opacity-2">
+										<a class="nav-link js-ajax" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-expand"></i>
+												<i class="fi fi-shrink"></i>
+											</span>
+											Predefined Layouts
+										</a>
+
+
+										<!-- extended item -->
+										<div class="aside-item d-flex flex-column bg-white shadow-xs w--350"><!-- .w-100 = full width -->
+											
+											<!-- header -->
+											<h3 class="fs--18 bg-light-soft p--15">
+												<button type="button" class="btn-aside-item-extended-close close fi fi-close fs--20 mt--n4 float-end"></button>
+												<i class="fi fi-heart-slim float-start fs--18"></i> 
+												Ready to start
+											</h3>
+
+											<!-- extended item content -->
+											<div 	id="layout_list" 
+													data-ajax-url="_ajax/layout_list.html" 
+													class="js-ajax p-3 scrollable-vertical scrollable-styled-dark m--1">
+
+												<div class="text-center"><!-- ajax loading icon -->
+													<i class="fi fi-circle-spin fi-spin fs--30 text-muted"></i>
+												</div><!-- /ajax loading icon -->
+
+											</div>
+											<!-- /extended item content -->
+
+										</div>
+										<!-- /extended item -->
+
+									</li>
+
+
+
+
+
+								<li class="nav-title mt-5">
+									<h6 class="fs--14 mb-1 font-weight-medium text-warning">
+										SOW : CORE PLUGINS
+									</h6>
+								</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-introduction.html">
+											Introduction
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-header.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">7Kb</span>
+											SOW : Header
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-search-suggest.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">9Kb</span>
+											SOW : Search Suggest
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-input-suggest.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : Input Suggest
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-navigation.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">10Kb</span>
+											SOW : Ajax : Navigation
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-forms.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4Kb</span>
+											SOW : Ajax : Forms
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-content.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4Kb</span>
+											SOW : Ajax : Content
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-modal.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">3Kb</span>
+											SOW : Ajax : Modals
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-confirm.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">6Kb</span>
+											SOW : Ajax : Confirm
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-ajax-select.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4.5Kb</span>
+											SOW : Ajax : Select
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-form-validation.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : Form Validation
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-form-advanced.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">7Kb</span>
+											SOW : Form Advanced
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-file-upload.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">24Kb</span>
+											SOW : File Upload
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-checkall.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Check All
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-checkgroup.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Check Group
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-toasts.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4Kb</span>
+											SOW : Toasts
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-gdpr.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : GDPR Cookies
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-inline-search.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Inline Search
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-dropdown.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">3Kb</span>
+											SOW : Dropdowns
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-deep-navigation.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : Deep Navigation
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-btn-toggle.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2.5Kb</span>
+											SOW : Button Toggle
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-scroll-to.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Scroll To
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-timer-autohide.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+											SOW : Timer Autohide
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-timer-countdown.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+											SOW : Timer Countdown
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-sow-gfont.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1.5Kb</span>
+											SOW : Google Font
+										</a>
+									</li>
+                                    <li class="nav-item">
+                                        <a class="nav-link js-ajax" href="plugins-sow-lazyload.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+                                            SOW : Lazyload
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link js-ajax" href="plugins-sow-count-animate.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">4.1Kb</span>
+                                            SOW : Count Animate
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link js-ajax" href="plugins-sow-utils.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">2Kb</span>
+                                            SOW : Utils
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link js-ajax" href="plugins-sow-service-worker.html">
+											<span class="badge float-end font-weight-light mt--3 text-gray-400">1Kb</span>
+                                            SOW : Service Worker!
+                                        </a>
+                                    </li>
+									<li class="nav-item pl--15 pr--15">
+										<div class="bg-indigo text-gray-500 fs--13 p-2 rounded">
+											SOW Core plugins are developed from scratch. 
+											You can remove, disable or use your own!
+										</div>
+									</li>
+
+
+
+
+
+								<li class="nav-title mt-5">
+									<h6 class="fs--14 mb-1 font-weight-medium text-warning">
+										VENDOR PLUGINS
+									</h6>
+								</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-bootstrap-select.html">
+											Vendor : Bootstrap Select
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-flickity.html">
+											Vendor : Flickity Slider
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-swiper.html">
+											Vendor : Swiper Slider
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-jarallax.html">
+											Vendor : Jaxallax
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-sticky-kit.html">
+											Vendor : Sticky Kit
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-fancybox.html">
+											Vendor : Fancybox
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-photoswipe.html">
+											Vendor : Photoswipe
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="components-map.html">
+											Vendor : Map
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-slimscroll.html">
+											Vendor : Slimscroll
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-nestable.html">
+											Vendor : Nestable
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											Vendor : Pickers
+										</a>
+										<ul class="nav flex-column">
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-datepicker.html">
+													Datepicker
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-rangepicker.html">
+													Rangepicker
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-colorpicker.html">
+													Colorpicker
+												</a>
+											</li>
+										</ul>
+									</li>
+
+									<li class="nav-item active">
+										<a class="nav-link js-ajax" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											Vendor : Charts
+										</a>
+										<ul class="nav flex-column">
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-chartjs.html">
+													Chart.js
+												</a>
+											</li>
+											<li class="nav-item active">
+												<a class="nav-link js-ajax" href="plugins-vendor-flot.html">
+													Flot Chart
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-easypie.html">
+													Easy Pie Chart
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-sparkline.html">
+													Sparkline Charts
+												</a>
+											</li>
+										</ul>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="#">
+											<span class="group-icon float-end">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down-slim"></i>
+											</span>
+											Vendor : Editors
+										</a>
+										<ul class="nav flex-column">
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-medium-editor.html">
+													Medium Editor
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-markdown.html">
+													Markdown Editor
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link js-ajax" href="plugins-vendor-summernote.html">
+													Summernote
+												</a>
+											</li>
+										</ul>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-datatable.html">
+											Vendor : Datatable
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-fullcalendar.html">
+											Vendor : Fullcalendar
+										</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-prismjs.html">
+											Vendor : Prismjs (Highlighter)
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-aos.html">
+											Vendor : AOS
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-typed.html">
+											Vendor : Typed
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-sortablejs.html">
+											Vendor : Sortablejs
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link js-ajax" href="plugins-vendor-cocoen.html">
+											Vendor : Cocoen <small>(Img Compare)</small>
+										</a>
+									</li>
+
+
+
+
+
+
+
+
+
+							</ul>
+						</nav>
+
+
+
+					</div>
+				</aside>
+				<!-- /SIDEBAR -->
+
+
+				<!-- MIDDLE -->
+				<div id="middle" class="flex-fill">
+
+
+
+					<header class="mb-5">
+						<h1 class="h2 mb-0 text-gray-700">
+							Vendor Plugin
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--14">
+								<li class="breadcrumb-item active" aria-current="page">
+									Smarty documentation
+								</li>
+							</ol>
+						</nav>
+
+					</header>
+
+
+
+					<div class="row d-flex flex-fill align-items-start">
+
+						<div class="col align-self-start">
+
+							<section id="section_0">
+
+								<header class="d-flex b-0">
+
+									<h2 class="h5 text-truncate w-100">
+										Vendor : Flot Chart
+									</h2>
+
+									<div class="ui-options d-flex">
+
+										<!-- fullscreen -->
+										<a href="#" class="btn-toggle" data-toggle-container-class="fullscreen" data-toggle-body-class="overflow-hidden" data-target="#section_0">
+											<span class="group-icon">
+												<i class="fi fi-expand"></i>
+												<i class="fi fi-shrink"></i>
+											</span>
+										</a>
+
+									</div>
+
+								</header>
+
+
+								<div class="my-4">
+
+									<p class="lead">
+										Attractive JavaScript charts for jQuery 
+									</p>
+
+									<ul class="mt-3">
+										<li class="mt-3">
+											<a href="https://github.com/flot/flot" target="smarty" class="link-muted">
+												https://github.com/flot/flot
+											</a>
+										</li>
+										<li>
+											License: IOLA and Ole Laursen
+										</li>
+									</ul>
+
+									<pre class="mt--50"><code class="language-js">
+/* 
+	:: Vendor Path
+	node_modules/flot/
+
+	:: Installed
+	npm install flot 
+	npm install jquery.flot.tooltip
+	npm install file-saver
+
+	:: SOW Controller Init
+*/	$.SOW.vendor.flot.init('.flot-chart');
+									</code></pre>
+
+								</div>
+
+
+							</section>
+
+
+
+
+
+
+
+
+
+
+
+							<section id="section_01">
+								<div class="container pt--50 pb--50">
+
+									<div class="clearfix fs--18 pt-2 pb-2 mb-0">
+										
+										<!-- save image -->
+										<a href="#" data-flot-id="flot_json_example" data-file-name="json-flot" class="btn btn-sm btn-light rounded-circle flot-save float-end m-0">
+											<i class="fi fi-arrow-download m-0"></i>
+										</a>
+										<!-- /save image -->
+
+										Json Ajax Flot 
+										<small class="fs--11 text-muted d-block mt-1">GET DATA VIA AJAX</small>
+
+									</div>
+									
+									<hr>
+
+									<!--
+		
+										data-flot-type="bar|fill" 
+										data-flot-click="modal|url|callback"		
+												empty 		= no click, 
+												url 		= redirect to url, 
+												modal 		= open ajax modal if SOW : Modal plugin is present!
+												callback 	= data is send to callback function only
+																flot_callback = function(event, pos, item) { ... }
+
+										modal attributes (?demo=true. is added to avoid error on local .html)
+											data-flot-click-url="_ajax/modal_flot.html?demo=true"
+											data-flot-modal-size="modal-lg" 
+											data-flot-modal-backdrop="static" 
+											data-flot-modal-centered="true" 
+
+
+										Note: 	is dinamically added to URL val_x, val_y, pos_x, pos_y
+												Example: &val_x=5&val_y=17168&pos_x=5.069341808617234&pos_y=15708.968144044322
+												Debug is on, url is visible in browser console.
+
+									-->
+									<div class="bg-light p-5 mt-5 fs--14 rounded-xl">
+										<div class="flot-chart h--400"
+											data-flot-id="flot_json_example" 
+											data-flot-border-color="#eaeaea" 
+
+											data-flot-type="fill" 
+											data-flot-legend-show="true" 
+
+											data-ajax-url="_ajax/flot_chart_data.json" 
+											data-ajax-update-interval="0" 
+											data-ajax-params="['action','graph_data']['param2','value2']"
+											data-ajax-method="GET" 
+											data-ajax-dataType="json" 
+
+											data-flot-click="modal" 
+											data-flot-click-url="_ajax/modal_flot.html?demo=true" 
+											data-flot-modal-size="modal-lg" 
+											data-flot-modal-backdrop="static" 
+											data-flot-modal-centered="true" 
+
+											data-flot-ticks='[
+											    [1, "Jan"], 
+											    [2, "Feb"], 
+											    [3, "Mar"], 
+											    [4, "Apr"], 
+											    [5, "May"], 
+											    [6, "Jun"],
+											    [7, "Jul"], 
+											    [8, "Aug"], 
+											    [9, "Sep"], 
+											    [10, "Oct"], 
+											    [11, "Nov"], 
+											    [12, "Dec"]
+											]'
+										>
+											
+										</div>
+									</div>
+
+									<div class="alert alert-warning mt-4">
+										Click the graph to see the modal. On click you can open: an ajax modal, go to URL or only pass data to a callback! See <code>data-flot-click</code> variables.
+									</div>
+
+									<div class="alert alert-secondary mt-4">
+										Using <code>data-ajax-update-interval="1000"</code> (or more, in ms), graph is realtime updated! <a href="_ajax/flot_chart_data.json" target="smarty">View json format</a>.
+									</div>
+
+								</div>
+
+
+								<div class="mt--50">
+
+									<a href="#c00" class="scroll-to btn btn-light" data-toggle="collapse">
+										<i class="fi fi-code"></i> 
+										view code
+									</a>
+
+									<div id="c00" class="collapse">
+										<pre class="mt-5"><code class="language-html">
+&lt;div class="clearfix fs--18 pt-2 pb-2 mb-0">
+	
+	&lt;!-- save image -->
+	&lt;a href="#" data-flot-id="flot_json_example" data-file-name="json-flot" class="btn btn-sm btn-light rounded-circle flot-save float-end m-0">
+		&lt;i class="fi fi-arrow-download m-0">&lt;/i>
+	&lt;/a>
+	&lt;!-- /save image -->
+
+	Json Ajax Flot 
+	&lt;small class="fs--11 text-muted d-block mt-1">GET DATA VIA AJAX&lt;/small>
+
+&lt;/div>
+
+&lt;hr>
+
+&lt;!--
+
+	data-flot-type="bar|fill" 
+	data-flot-click="modal|url|callback"		
+			empty 		= no click, 
+			url 		= redirect to url, 
+			modal 		= open ajax modal if SOW : Modal plugin is present!
+			callback 	= data is send to callback function only
+							flot_callback = function(event, pos, item) { ... }
+
+	modal attributes (?demo=true. is added to avoid error on local .html)
+		data-flot-click-url="_ajax/modal_flot.html?demo=true"
+		data-flot-modal-size="modal-lg" 
+		data-flot-modal-backdrop="static" 
+		data-flot-modal-centered="true" 
+
+
+	multiple optional params/identifiers to send to your backend
+	data-ajax-update-params="['action','graph_data']['param2','value2']"
+
+
+	Note: 	is dinamically added to URL val_x, val_y, pos_x, pos_y
+			Example: &amp;val_x=5&amp;val_y=17168&amp;pos_x=5.069341808617234&amp;pos_y=15708.968144044322
+			Debug is on, url is visible in browser console.
+
+-->
+&lt;div class="bg-light p-5 mt-5 fs--14 rounded-xl">
+	&lt;div class="flot-chart h--400"
+		data-flot-id="flot_json_example" 
+		data-flot-border-color="#eaeaea" 
+
+		data-flot-type="fill" 
+		data-flot-legend-show="true" 
+
+		data-ajax-url="_ajax/flot_chart_data.json" 
+		data-ajax-update-interval="0" 
+		data-ajax-params="['action','graph_data']['param2','value2']"
+		data-ajax-method="GET" 
+		data-ajax-dataType="json" 
+
+		data-flot-click="modal" 
+		data-flot-click-url="_ajax/modal_flot.html?demo=true" 
+		data-flot-modal-size="modal-lg" 
+		data-flot-modal-backdrop="static" 
+		data-flot-modal-centered="true" 
+
+		data-flot-ticks='[
+		    [1, "Jan"], 
+		    [2, "Feb"], 
+		    [3, "Mar"], 
+		    [4, "Apr"], 
+		    [5, "May"], 
+		    [6, "Jun"],
+		    [7, "Jul"], 
+		    [8, "Aug"], 
+		    [9, "Sep"], 
+		    [10, "Oct"], 
+		    [11, "Nov"], 
+		    [12, "Dec"]
+		]'
+	>
+		
+	&lt;/div>
+&lt;/div>
+										</code></pre>
+									</div>
+
+								</div>
+
+							</section>
+
+
+
+			
+
+
+
+
+
+							<section id="section_1">
+								<div class="container pt--50 pb--50">
+
+									<div class="clearfix fs--18 pt-2 pb-2 mb-0">
+										
+										<!-- save image -->
+										<a href="#" data-flot-id="flot_yearly" data-file-name="monthly-visits" class="btn btn-sm btn-light rounded-circle flot-save float-end m-0">
+											<i class="fi fi-arrow-download m-0"></i>
+										</a>
+										<!-- /save image -->
+
+										Year: 
+
+										<a class="text-decoration-none" href="javascript:;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											2019 <i class="fi fi-arrow-down fs--13"></i>
+										</a>
+										<div class="dropdown-menu">
+											<a class="dropdown-item" href="#!">2018</a>
+											<a class="dropdown-item text-primary" href="#!">2019</a>
+										</div> 
+
+										<small class="fs--11 text-muted d-block mt-1">GLOBAL MONTHLY VISITS</small>
+
+									</div>
+									
+									<hr>
+
+									<!--
+		
+										data-flot-type="bar|fill" 
+										data-flot-click="modal|url|callback"		
+												empty 		= no click, 
+												url 		= redirect to url, 
+												modal 		= open ajax modal if SOW : Modal plugin is present!
+												callback 	= data is send to callback function only
+																flot_callback = function(event, pos, item) { ... }
+
+										modal attributes (?demo=true. is added to avoid error on local .html)
+											data-flot-click-url="_ajax/modal_flot.html?demo=true"
+											data-flot-modal-size="modal-lg" 
+											data-flot-modal-backdrop="static" 
+											data-flot-modal-centered="true" 
+
+
+										Note: 	is dinamically added to URL val_x, val_y, pos_x, pos_y
+												Example: &val_x=5&val_y=17168&pos_x=5.069341808617234&pos_y=15708.968144044322
+												Debug is on, url is visible in browser console.
+
+									-->
+									<div class="bg-light p-5 mt-5 fs--14 rounded-xl">
+										<div class="flot-chart h--400"
+											data-flot-id="flot_yearly" 
+											data-flot-border-color="#eaeaea" 
+
+											data-flot-type="bar" 
+											data-flot-legend-show="true" 
+
+											data-flot-click="modal" 
+											data-flot-click-url="_ajax/modal_flot.html?demo=true" 
+											data-flot-modal-size="modal-lg" 
+											data-flot-modal-backdrop="static" 
+											data-flot-modal-centered="true" 
+
+											data-flot-color-1="#6595b4" 
+											data-flot-label-1="Visits" 
+											data-flot-data-1="[
+												[1, 0], 
+												[2, 0], 
+												[3, 0],
+												[4, 7881], 
+												[5, 17168], 
+												[6, 18596],
+												[7, 27374], 
+												[8, 19294], 
+												[9, 0],
+												[10, 0], 
+												[11, 0], 
+												[12, 0]
+											]"
+											data-flot-ticks='[
+							                    [1, "Jan"], 
+							                    [2, "Feb"], 
+							                    [3, "Mar"], 
+							                    [4, "Apr"], 
+							                    [5, "May"], 
+							                    [6, "Jun"],
+							                    [7, "Jul"], 
+							                    [8, "Aug"], 
+							                    [9, "Sep"], 
+							                    [10, "Oct"], 
+							                    [11, "Nov"], 
+							                    [12, "Dec"]
+							               ]'
+										>
+											
+										</div>
+									</div>
+
+									<div class="alert alert-warning mt-4">
+										Click the graph to see the modal. On click you can open: an ajax modal, go to URL or only pass data to a callback! See <code>data-flot-click</code> variables.
+									</div>
+
+								</div>
+
+
+								<div class="mt--50">
+
+									<a href="#c1" class="scroll-to btn btn-light" data-toggle="collapse">
+										<i class="fi fi-code"></i> 
+										view code
+									</a>
+
+									<div id="c1" class="collapse">
+										<pre class="mt-5"><code class="language-html">
+&lt;div class="clearfix fs--18 pt-2 pb-2 mb-0">
+	
+	&lt;!-- save image -->
+	&lt;a href="#" data-flot-id="flot_yearly" data-file-name="monthly-visits" class="btn btn-sm btn-light rounded-circle flot-save float-end m-0">
+		&lt;i class="fi fi-arrow-download m-0">&lt;/i>
+	&lt;/a>
+	&lt;!-- /save image -->
+
+	Year: 
+
+	&lt;a class="text-decoration-none" href="javascript:;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		2019 &lt;i class="fi fi-arrow-down fs--13">&lt;/i>
+	&lt;/a>
+	&lt;div class="dropdown-menu">
+		&lt;a class="dropdown-item" href="#!">2018&lt;/a>
+		&lt;a class="dropdown-item text-primary" href="#!">2019&lt;/a>
+	&lt;/div> 
+
+	&lt;small class="fs--11 text-muted d-block mt-1">GLOBAL MONTHLY VISITS&lt;/small>
+
+&lt;/div>
+
+&lt;hr>
+
+&lt;!--
+
+	data-flot-type="bar|fill" 
+	data-flot-click="modal|url|callback"		
+			empty 		= no click, 
+			url 		= redirect to url, 
+			modal 		= open ajax modal if SOW : Modal plugin is present!
+			callback 	= data is send to callback function only
+							flot_callback = function(event, pos, item) { ... }
+
+	modal attributes (?demo=true. is added to avoid error on local .html)
+		data-flot-click-url="_ajax/modal_flot.html?demo=true"
+		data-flot-modal-size="modal-lg" 
+		data-flot-modal-backdrop="static" 
+		data-flot-modal-centered="true" 
+
+
+	Note: 	is dinamically added to URL val_x, val_y, pos_x, pos_y
+			Example: &amp;val_x=5&amp;val_y=17168&amp;pos_x=5.069341808617234&amp;pos_y=15708.968144044322
+			Debug is on, url is visible in browser console.
+
+-->
+&lt;div class="bg-light p-5 mt-5 fs--14 rounded-xl">
+	&lt;div class="flot-chart h--400"
+		data-flot-id="flot_yearly" 
+		data-flot-border-color="#eaeaea" 
+
+		data-flot-type="bar" 
+		data-flot-legend-show="true" 
+
+		data-flot-click="modal" 
+		data-flot-click-url="_ajax/modal_flot.html?demo=true" 
+		data-flot-modal-size="modal-lg" 
+		data-flot-modal-backdrop="static" 
+		data-flot-modal-centered="true" 
+
+		data-flot-color-1="#6595b4" 
+		data-flot-label-1="Visits" 
+		data-flot-data-1="[
+			[1, 0], 
+			[2, 0], 
+			[3, 0],
+			[4, 7881], 
+			[5, 17168], 
+			[6, 18596],
+			[7, 27374], 
+			[8, 19294], 
+			[9, 0],
+			[10, 0], 
+			[11, 0], 
+			[12, 0]
+		]"
+		data-flot-ticks='[
+            [1, "Jan"], 
+            [2, "Feb"], 
+            [3, "Mar"], 
+            [4, "Apr"], 
+            [5, "May"], 
+            [6, "Jun"],
+            [7, "Jul"], 
+            [8, "Aug"], 
+            [9, "Sep"], 
+            [10, "Oct"], 
+            [11, "Nov"], 
+            [12, "Dec"]
+       ]'
+	>
+		
+	&lt;/div>
+&lt;/div>
+										</code></pre>
+									</div>
+
+								</div>
+
+							</section>
+
+
+
+
+
+
+							<section id="section_1_1">
+								<div class="container pt--50 pb--50">
+
+									<div class="clearfix fs--18 pt-2 pb-2 mb-0">
+										
+										<!-- save image -->
+										<a href="#" data-flot-id="flot_yearly" data-file-name="monthly-visits" class="btn btn-sm btn-light rounded-circle flot-save float-end m-0">
+											<i class="fi fi-arrow-download m-0"></i>
+										</a>
+										<!-- /save image -->
+
+										Year: 
+
+										<a class="text-decoration-none" href="javascript:;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											2019 <i class="fi fi-arrow-down fs--13"></i>
+										</a>
+										<div class="dropdown-menu">
+											<a class="dropdown-item" href="#!">2018</a>
+											<a class="dropdown-item text-primary" href="#!">2019</a>
+										</div> 
+
+										<small class="fs--11 text-muted d-block mt-1">GLOBAL MONTHLY VISITS</small>
+
+									</div>
+									
+									<hr>
+
+									<!--
+		
+										data-flot-type="bar|fill" 
+										data-flot-click="modal|url|callback"		
+												empty 		= no click, 
+												url 		= redirect to url, 
+												modal 		= open ajax modal if SOW : Modal plugin is present!
+												callback 	= data is send to callback function only
+																flot_callback = function(event, pos, item) { ... }
+
+										modal attributes (?demo=true. is added to avoid error on local .html)
+											data-flot-click-url="_ajax/modal_flot.html?demo=true"
+											data-flot-modal-size="modal-lg" 
+											data-flot-modal-backdrop="static" 
+											data-flot-modal-centered="true" 
+
+
+										Note: 	is dinamically added to URL val_x, val_y, pos_x, pos_y
+												Example: &val_x=5&val_y=17168&pos_x=5.069341808617234&pos_y=15708.968144044322
+												Debug is on, url is visible in browser console.
+
+									-->
+									<div class="bg-light p-5 mt-5 fs--14 rounded-xl">
+										<div class="flot-chart h--400"
+											data-flot-id="flot_yearly" 
+											data-flot-border-color="#eaeaea" 
+
+											data-flot-type="fill" 
+											data-flot-legend-show="true" 
+
+											data-flot-click="modal" 
+											data-flot-click-url="_ajax/modal_flot.html?demo=true" 
+											data-flot-modal-size="modal-lg" 
+											data-flot-modal-backdrop="static" 
+											data-flot-modal-centered="true" 
+
+											data-flot-color-1="#6595b4" 
+											data-flot-label-1="Visits" 
+											data-flot-data-1="[
+												[1, 0], 
+												[2, 0], 
+												[3, 0],
+												[4, 7881], 
+												[5, 17168], 
+												[6, 18596],
+												[7, 27374], 
+												[8, 19294], 
+												[9, 0],
+												[10, 0], 
+												[11, 0], 
+												[12, 0]
+											]"
+											data-flot-ticks='[
+							                    [1, "Jan"], 
+							                    [2, "Feb"], 
+							                    [3, "Mar"], 
+							                    [4, "Apr"], 
+							                    [5, "May"], 
+							                    [6, "Jun"],
+							                    [7, "Jul"], 
+							                    [8, "Aug"], 
+							                    [9, "Sep"], 
+							                    [10, "Oct"], 
+							                    [11, "Nov"], 
+							                    [12, "Dec"]
+							               ]'
+										>
+											
+										</div>
+									</div>
+
+									<div class="alert alert-warning mt-4">
+										Click the graph to see the modal. On click you can open: an ajax modal, go to URL or only pass data to a callback! See <code>data-flot-click</code> variables.
+									</div>
+
+								</div>
+
+
+								<div class="mt--50">
+
+									<a href="#c2" class="scroll-to btn btn-light" data-toggle="collapse">
+										<i class="fi fi-code"></i> 
+										view code
+									</a>
+
+									<div id="c2" class="collapse">
+										<pre class="mt-5"><code class="language-html">
+&lt;div class="clearfix fs--18 pt-2 pb-2 mb-0">
+	
+	&lt;!-- save image -->
+	&lt;a href="#" data-flot-id="flot_yearly" data-file-name="monthly-visits" class="btn btn-sm btn-light rounded-circle flot-save float-end m-0">
+		&lt;i class="fi fi-arrow-download m-0">&lt;/i>
+	&lt;/a>
+	&lt;!-- /save image -->
+
+	Year: 
+
+	&lt;a class="text-decoration-none" href="javascript:;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		2019 &lt;i class="fi fi-arrow-down fs--13">&lt;/i>
+	&lt;/a>
+	&lt;div class="dropdown-menu">
+		&lt;a class="dropdown-item" href="#!">2018&lt;/a>
+		&lt;a class="dropdown-item text-primary" href="#!">2019&lt;/a>
+	&lt;/div> 
+
+	&lt;small class="fs--11 text-muted d-block mt-1">GLOBAL MONTHLY VISITS&lt;/small>
+
+&lt;/div>
+
+&lt;hr>
+
+&lt;!--
+
+	data-flot-type="bar|fill" 
+	data-flot-click="modal|url|callback"		
+			empty 		= no click, 
+			url 		= redirect to url, 
+			modal 		= open ajax modal if SOW : Modal plugin is present!
+			callback 	= data is send to callback function only
+							flot_callback = function(event, pos, item) { ... }
+
+	modal attributes (?demo=true. is added to avoid error on local .html)
+		data-flot-click-url="_ajax/modal_flot.html?demo=true"
+		data-flot-modal-size="modal-lg" 
+		data-flot-modal-backdrop="static" 
+		data-flot-modal-centered="true" 
+
+
+	Note: 	is dinamically added to URL val_x, val_y, pos_x, pos_y
+			Example: &amp;val_x=5&amp;val_y=17168&amp;pos_x=5.069341808617234&amp;pos_y=15708.968144044322
+			Debug is on, url is visible in browser console.
+
+-->
+&lt;div class="bg-light p-5 mt-5 fs--14 rounded-xl">
+	&lt;div class="flot-chart h--400"
+		data-flot-id="flot_yearly" 
+		data-flot-border-color="#eaeaea" 
+
+		data-flot-type="fill" 
+		data-flot-legend-show="true" 
+
+		data-flot-click="modal" 
+		data-flot-click-url="_ajax/modal_flot.html?demo=true" 
+		data-flot-modal-size="modal-lg" 
+		data-flot-modal-backdrop="static" 
+		data-flot-modal-centered="true" 
+
+		data-flot-color-1="#6595b4" 
+		data-flot-label-1="Visits" 
+		data-flot-data-1="[
+			[1, 0], 
+			[2, 0], 
+			[3, 0],
+			[4, 7881], 
+			[5, 17168], 
+			[6, 18596],
+			[7, 27374], 
+			[8, 19294], 
+			[9, 0],
+			[10, 0], 
+			[11, 0], 
+			[12, 0]
+		]"
+		data-flot-ticks='[
+            [1, "Jan"], 
+            [2, "Feb"], 
+            [3, "Mar"], 
+            [4, "Apr"], 
+            [5, "May"], 
+            [6, "Jun"],
+            [7, "Jul"], 
+            [8, "Aug"], 
+            [9, "Sep"], 
+            [10, "Oct"], 
+            [11, "Nov"], 
+            [12, "Dec"]
+       ]'
+	>
+		
+	&lt;/div>
+&lt;/div>
+										</code></pre>
+									</div>
+
+								</div>
+
+							</section>
+
+
+
+
+							<section id="section_2">
+								<div class="container pt--50 pb--50">
+
+
+									<div class="clearfix fs--18 pt-2 pb-2 mb-0">
+										
+										<!-- save image -->
+										<a href="#" data-flot-id="flot_monthly" data-file-name="daily-visits" class="btn btn-sm btn-light rounded-circle flot-save float-end m-0">
+											<i class="fi fi-arrow-download m-0"></i>
+										</a>
+										<!-- /save image -->
+
+										2019: 
+
+										<a class="text-decoration-none" href="javascript:;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											August <i class="fi fi-arrow-down fs--13"></i>
+										</a>
+										<div class="dropdown-menu">
+											<a class="dropdown-item" href="#!">January</a>
+											<a class="dropdown-item" href="#!">February</a>
+											<a class="dropdown-item" href="#!">March</a>
+											<a class="dropdown-item" href="#!">Apryl</a>
+											<a class="dropdown-item" href="#!">May</a>
+											<a class="dropdown-item" href="#!">June</a>
+											<a class="dropdown-item" href="#!">July</a>
+											<a class="dropdown-item text-primary" href="#!">August</a>
+											<a class="dropdown-item" href="#!">September</a>
+											<a class="dropdown-item" href="#!">October</a>
+											<a class="dropdown-item" href="#!">November</a>
+											<a class="dropdown-item" href="#!">December</a>
+										</div> 
+
+										<small class="fs--11 text-muted d-block mt-1">GLOBAL DAILY VISITS</small>
+
+									</div>
+									
+									<hr>
+
+									<div class="bg-light p-5 mt-5 fs--14 rounded-xl">
+										<div data-gid="201908" class="flot-chart flot-daily h--400" 
+											data-flot-id="flot_monthly" 
+											data-flot-border-color="#eaeaea" 
+											
+											data-flot-type="bar" 
+											data-flot-legend-show="true" 
+
+											data-flot-color-1="#FF9F01" 
+											data-flot-label-1="August, 2019" 
+											data-flot-data-1="[
+												[1, 871], 
+												[2, 938], 
+												[3, 957],
+												[4, 946], 
+												[5, 837], 
+												[6, 895],
+												[7, 881], 
+												[8, 978], 
+												[9, 882],
+												[10, 891], 
+												[11, 781], 
+												[12, 852],
+												[13, 857],
+												[14, 978],
+												[15, 1199],
+												[16, 881],
+												[17, 908],
+												[18, 1024],
+												[19, 811],
+												[20, 842],
+												[21, 802],
+												[22, 343],
+												[23, 0],
+												[24, 0],
+												[25, 0],
+												[26, 0],
+												[27, 0],
+												[28, 0]
+												,[29, 0]
+												,[30, 0]
+												,[31, 0]
+											]"
+											data-flot-ticks='[
+							                    [1, "01"],  [2, "02"],  
+							                    [3, "03"],  [4, "04"],  
+							                    [5, "05"],  [6, "06"],
+							                    [7, "07"],  [8, "08"],  
+							                    [9, "09"],  [10, "10"], 
+							                    [11, "11"], [12, "12"],
+							                    [13, "13"], [14, "14"], 
+							                    [15, "15"], [16, "16"], 
+							                    [17, "17"], [18, "18"],
+							                    [19, "19"], [20, "20"], 
+							                    [21, "21"], [22, "22"], 
+							                    [23, "23"], [24, "24"],
+							                    [25, "25"], [26, "26"], 
+							                    [27, "27"], [28, "28"],
+							                    [29, "29"],[30, "30"],
+							                    [31, "31"]
+							                ]'
+										><!-- FLOT CONTAINER --></div>
+									</div>
+
+								</div>
+
+								<div class="mt--50">
+
+									<a href="#c3" class="scroll-to btn btn-light" data-toggle="collapse">
+										<i class="fi fi-code"></i> 
+										view code
+									</a>
+
+									<div id="c3" class="collapse">
+										<pre class="mt-5"><code class="language-html">
+
+&lt;div class="clearfix fs--18 pt-2 pb-2 mb-0">
+	
+	&lt;!-- save image -->
+	&lt;a href="#" data-flot-id="flot_monthly" data-file-name="daily-visits" class="btn btn-sm btn-light rounded-circle flot-save float-end m-0">
+		&lt;i class="fi fi-arrow-download m-0">&lt;/i>
+	&lt;/a>
+	&lt;!-- /save image -->
+
+	2019: 
+
+	&lt;a class="text-decoration-none" href="javascript:;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		August &lt;i class="fi fi-arrow-down fs--13">&lt;/i>
+	&lt;/a>
+	&lt;div class="dropdown-menu">
+		&lt;a class="dropdown-item" href="#!">January&lt;/a>
+		&lt;a class="dropdown-item" href="#!">February&lt;/a>
+		&lt;a class="dropdown-item" href="#!">March&lt;/a>
+		&lt;a class="dropdown-item" href="#!">Apryl&lt;/a>
+		&lt;a class="dropdown-item" href="#!">May&lt;/a>
+		&lt;a class="dropdown-item" href="#!">June&lt;/a>
+		&lt;a class="dropdown-item" href="#!">July&lt;/a>
+		&lt;a class="dropdown-item text-primary" href="#!">August&lt;/a>
+		&lt;a class="dropdown-item" href="#!">September&lt;/a>
+		&lt;a class="dropdown-item" href="#!">October&lt;/a>
+		&lt;a class="dropdown-item" href="#!">November&lt;/a>
+		&lt;a class="dropdown-item" href="#!">December&lt;/a>
+	&lt;/div> 
+
+	&lt;small class="fs--11 text-muted d-block mt-1">GLOBAL DAILY VISITS&lt;/small>
+
+&lt;/div>
+
+&lt;hr>
+
+
+&lt;!--
+
+	data-flot-type="bar|fill" 
+	data-flot-click="modal|url|callback"		
+			empty 		= no click, 
+			url 		= redirect to url, 
+			modal 		= open ajax modal if SOW : Modal plugin is present!
+			callback 	= data is send to callback function only
+							flot_callback = function(event, pos, item) { ... }
+
+	modal attributes (?demo=true. is added to avoid error on local .html)
+		data-flot-click-url="_ajax/modal_flot.html?demo=true"
+		data-flot-modal-size="modal-lg" 
+		data-flot-modal-backdrop="static" 
+		data-flot-modal-centered="true" 
+
+
+	Note: 	is dinamically added to URL val_x, val_y, pos_x, pos_y
+			Example: &amp;val_x=5&amp;val_y=17168&amp;pos_x=5.069341808617234&amp;pos_y=15708.968144044322
+			Debug is on, url is visible in browser console.
+
+-->
+&lt;div class="bg-light p-5 mt-5 fs--14 rounded-xl">
+	&lt;div data-gid="201908" class="flot-chart flot-daily h--400" 
+		data-flot-id="flot_monthly" 
+		data-flot-border-color="#eaeaea" 
+		
+		data-flot-type="bar" 
+		data-flot-legend-show="true" 
+
+		data-flot-color-1="#FF9F01" 
+		data-flot-label-1="August, 2019" 
+		data-flot-data-1="[
+			[1, 871], 
+			[2, 938], 
+			[3, 957],
+			[4, 946], 
+			[5, 837], 
+			[6, 895],
+			[7, 881], 
+			[8, 978], 
+			[9, 882],
+			[10, 891], 
+			[11, 781], 
+			[12, 852],
+			[13, 857],
+			[14, 978],
+			[15, 1199],
+			[16, 881],
+			[17, 908],
+			[18, 1024],
+			[19, 811],
+			[20, 842],
+			[21, 802],
+			[22, 343],
+			[23, 0],
+			[24, 0],
+			[25, 0],
+			[26, 0],
+			[27, 0],
+			[28, 0]
+			,[29, 0]
+			,[30, 0]
+			,[31, 0]
+		]"
+		data-flot-ticks='[
+            [1, "01"],  [2, "02"],  
+            [3, "03"],  [4, "04"],  
+            [5, "05"],  [6, "06"],
+            [7, "07"],  [8, "08"],  
+            [9, "09"],  [10, "10"], 
+            [11, "11"], [12, "12"],
+            [13, "13"], [14, "14"], 
+            [15, "15"], [16, "16"], 
+            [17, "17"], [18, "18"],
+            [19, "19"], [20, "20"], 
+            [21, "21"], [22, "22"], 
+            [23, "23"], [24, "24"],
+            [25, "25"], [26, "26"], 
+            [27, "27"], [28, "28"],
+            [29, "29"],[30, "30"],
+            [31, "31"]
+        ]'
+	>&lt;!-- FLOT CONTAINER -->&lt;/div>
+&lt;/div>
+										</code></pre>
+									</div>
+
+								</div>
+							</section>
+
+
+
+
+
+							<section id="section_2_2">
+								<div class="container pt--50 pb--50">
+
+
+									<div class="clearfix fs--18 pt-2 pb-2 mb-0">
+										
+										<!-- save image -->
+										<a href="#" data-flot-id="flot_monthly" data-file-name="daily-visits" class="btn btn-sm btn-light rounded-circle flot-save float-end m-0">
+											<i class="fi fi-arrow-download m-0"></i>
+										</a>
+										<!-- /save image -->
+
+										2019: 
+
+										<a class="text-decoration-none" href="javascript:;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											August <i class="fi fi-arrow-down fs--13"></i>
+										</a>
+										<div class="dropdown-menu">
+											<a class="dropdown-item" href="#!">January</a>
+											<a class="dropdown-item" href="#!">February</a>
+											<a class="dropdown-item" href="#!">March</a>
+											<a class="dropdown-item" href="#!">Apryl</a>
+											<a class="dropdown-item" href="#!">May</a>
+											<a class="dropdown-item" href="#!">June</a>
+											<a class="dropdown-item" href="#!">July</a>
+											<a class="dropdown-item text-primary" href="#!">August</a>
+											<a class="dropdown-item" href="#!">September</a>
+											<a class="dropdown-item" href="#!">October</a>
+											<a class="dropdown-item" href="#!">November</a>
+											<a class="dropdown-item" href="#!">December</a>
+										</div> 
+
+										<small class="fs--11 text-muted d-block mt-1">GLOBAL DAILY VISITS</small>
+
+									</div>
+									
+									<hr>
+
+									<div class="bg-light p-5 mt-5 fs--14 rounded-xl">
+										<div data-gid="201908" class="flot-chart flot-daily h--400" 
+											data-flot-id="flot_monthly" 
+											data-flot-border-color="#eaeaea" 
+											
+											data-flot-type="fill" 
+											data-flot-legend-show="true" 
+
+											data-flot-color-1="#FF9F01" 
+											data-flot-label-1="August, 2019" 
+											data-flot-data-1="[
+												[1, 871], 
+												[2, 938], 
+												[3, 957],
+												[4, 946], 
+												[5, 837], 
+												[6, 895],
+												[7, 881], 
+												[8, 978], 
+												[9, 882],
+												[10, 891], 
+												[11, 781], 
+												[12, 852],
+												[13, 857],
+												[14, 978],
+												[15, 1199],
+												[16, 881],
+												[17, 908],
+												[18, 1024],
+												[19, 811],
+												[20, 842],
+												[21, 802],
+												[22, 343],
+												[23, 0],
+												[24, 0],
+												[25, 0],
+												[26, 0],
+												[27, 0],
+												[28, 0]
+												,[29, 0]
+												,[30, 0]
+												,[31, 0]
+											]"
+											data-flot-ticks='[
+							                    [1, "01"],  [2, "02"],  
+							                    [3, "03"],  [4, "04"],  
+							                    [5, "05"],  [6, "06"],
+							                    [7, "07"],  [8, "08"],  
+							                    [9, "09"],  [10, "10"], 
+							                    [11, "11"], [12, "12"],
+							                    [13, "13"], [14, "14"], 
+							                    [15, "15"], [16, "16"], 
+							                    [17, "17"], [18, "18"],
+							                    [19, "19"], [20, "20"], 
+							                    [21, "21"], [22, "22"], 
+							                    [23, "23"], [24, "24"],
+							                    [25, "25"], [26, "26"], 
+							                    [27, "27"], [28, "28"],
+							                    [29, "29"],[30, "30"],
+							                    [31, "31"]
+							                ]'
+										><!-- FLOT CONTAINER --></div>
+									</div>
+
+								</div>
+
+								<div class="mt--50">
+
+									<a href="#c32" class="scroll-to btn btn-light" data-toggle="collapse">
+										<i class="fi fi-code"></i> 
+										view code
+									</a>
+
+									<div id="c32" class="collapse">
+										<pre class="mt-5"><code class="language-html">
+
+&lt;div class="clearfix fs--18 pt-2 pb-2 mb-0">
+	
+	&lt;!-- save image -->
+	&lt;a href="#" data-flot-id="flot_monthly" data-file-name="daily-visits" class="btn btn-sm btn-light rounded-circle flot-save float-end m-0">
+		&lt;i class="fi fi-arrow-download m-0">&lt;/i>
+	&lt;/a>
+	&lt;!-- /save image -->
+
+	2019: 
+
+	&lt;a class="text-decoration-none" href="javascript:;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		August &lt;i class="fi fi-arrow-down fs--13">&lt;/i>
+	&lt;/a>
+	&lt;div class="dropdown-menu">
+		&lt;a class="dropdown-item" href="#!">January&lt;/a>
+		&lt;a class="dropdown-item" href="#!">February&lt;/a>
+		&lt;a class="dropdown-item" href="#!">March&lt;/a>
+		&lt;a class="dropdown-item" href="#!">Apryl&lt;/a>
+		&lt;a class="dropdown-item" href="#!">May&lt;/a>
+		&lt;a class="dropdown-item" href="#!">June&lt;/a>
+		&lt;a class="dropdown-item" href="#!">July&lt;/a>
+		&lt;a class="dropdown-item text-primary" href="#!">August&lt;/a>
+		&lt;a class="dropdown-item" href="#!">September&lt;/a>
+		&lt;a class="dropdown-item" href="#!">October&lt;/a>
+		&lt;a class="dropdown-item" href="#!">November&lt;/a>
+		&lt;a class="dropdown-item" href="#!">December&lt;/a>
+	&lt;/div> 
+
+	&lt;small class="fs--11 text-muted d-block mt-1">GLOBAL DAILY VISITS&lt;/small>
+
+&lt;/div>
+
+&lt;hr>
+
+
+&lt;!--
+
+	data-flot-type="bar|fill" 
+	data-flot-click="modal|url|callback"		
+			empty 		= no click, 
+			url 		= redirect to url, 
+			modal 		= open ajax modal if SOW : Modal plugin is present!
+			callback 	= data is send to callback function only
+							flot_callback = function(event, pos, item) { ... }
+
+	modal attributes (?demo=true. is added to avoid error on local .html)
+		data-flot-click-url="_ajax/modal_flot.html?demo=true"
+		data-flot-modal-size="modal-lg" 
+		data-flot-modal-backdrop="static" 
+		data-flot-modal-centered="true" 
+
+
+	Note: 	is dinamically added to URL val_x, val_y, pos_x, pos_y
+			Example: &amp;val_x=5&amp;val_y=17168&amp;pos_x=5.069341808617234&amp;pos_y=15708.968144044322
+			Debug is on, url is visible in browser console.
+
+-->
+&lt;div class="bg-light p-5 mt-5 fs--14 rounded-xl">
+	&lt;div data-gid="201908" class="flot-chart flot-daily h--400" 
+		data-flot-id="flot_monthly" 
+		data-flot-border-color="#eaeaea" 
+		
+		data-flot-type="fill" 
+		data-flot-legend-show="true" 
+
+		data-flot-color-1="#FF9F01" 
+		data-flot-label-1="August, 2019" 
+		data-flot-data-1="[
+			[1, 871], 
+			[2, 938], 
+			[3, 957],
+			[4, 946], 
+			[5, 837], 
+			[6, 895],
+			[7, 881], 
+			[8, 978], 
+			[9, 882],
+			[10, 891], 
+			[11, 781], 
+			[12, 852],
+			[13, 857],
+			[14, 978],
+			[15, 1199],
+			[16, 881],
+			[17, 908],
+			[18, 1024],
+			[19, 811],
+			[20, 842],
+			[21, 802],
+			[22, 343],
+			[23, 0],
+			[24, 0],
+			[25, 0],
+			[26, 0],
+			[27, 0],
+			[28, 0]
+			,[29, 0]
+			,[30, 0]
+			,[31, 0]
+		]"
+		data-flot-ticks='[
+            [1, "01"],  [2, "02"],  
+            [3, "03"],  [4, "04"],  
+            [5, "05"],  [6, "06"],
+            [7, "07"],  [8, "08"],  
+            [9, "09"],  [10, "10"], 
+            [11, "11"], [12, "12"],
+            [13, "13"], [14, "14"], 
+            [15, "15"], [16, "16"], 
+            [17, "17"], [18, "18"],
+            [19, "19"], [20, "20"], 
+            [21, "21"], [22, "22"], 
+            [23, "23"], [24, "24"],
+            [25, "25"], [26, "26"], 
+            [27, "27"], [28, "28"],
+            [29, "29"],[30, "30"],
+            [31, "31"]
+        ]'
+	>&lt;!-- FLOT CONTAINER -->&lt;/div>
+&lt;/div>
+										</code></pre>
+									</div>
+
+								</div>
+							</section>
+
+
+
+
+
+
+
+							<section id="section_99">
+								<div class="container pt--50 pb--50">
+
+									<div class="clearfix fs--18 pt-2 pb-2 mb-0">
+										
+										<!-- save image -->
+										<a href="#" data-flot-id="flot_duo" data-file-name="monthly-visits" class="btn btn-sm btn-light rounded-circle flot-save float-end m-0">
+											<i class="fi fi-arrow-download m-0"></i>
+										</a>
+										<!-- /save image -->
+
+										TWO GRAPHS: 
+
+										<a class="text-decoration-none" href="javascript:;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											2019 <i class="fi fi-arrow-down fs--13"></i>
+										</a>
+										<div class="dropdown-menu">
+											<a class="dropdown-item" href="#!">2018</a>
+											<a class="dropdown-item text-primary" href="#!">2019</a>
+										</div> 
+
+										<small class="fs--11 text-muted d-block mt-1">GLOBAL MONTHLY VISITS</small>
+
+									</div>
+									
+									<hr>
+
+									<!--
+		
+										data-flot-type="bar|fill" 
+										data-flot-click="modal|url|callback"		
+												empty 		= no click, 
+												url 		= redirect to url, 
+												modal 		= open ajax modal if SOW : Modal plugin is present!
+												callback 	= data is send to callback function only
+																flot_callback = function(event, pos, item) { ... }
+
+										modal attributes (?demo=true. is added to avoid error on local .html)
+											data-flot-click-url="_ajax/modal_flot.html?demo=true"
+											data-flot-modal-size="modal-lg" 
+											data-flot-modal-backdrop="static" 
+											data-flot-modal-centered="true" 
+
+
+										Note: 	is dinamically added to URL val_x, val_y, pos_x, pos_y
+												Example: &val_x=5&val_y=17168&pos_x=5.069341808617234&pos_y=15708.968144044322
+												Debug is on, url is visible in browser console.
+
+									-->
+									<div class="bg-light p-5 mt-5 fs--14 rounded-xl">
+										<div class="flot-chart h--400"
+											data-flot-id="flot_duo" 
+											data-flot-border-color="#eaeaea" 
+
+											data-flot-type="fill" 
+											data-flot-legend-show="true" 
+
+											data-flot-click="modal" 
+											data-flot-click-url="_ajax/modal_flot.html?demo=true" 
+											data-flot-modal-size="modal-lg" 
+											data-flot-modal-backdrop="static" 
+											data-flot-modal-centered="true" 
+
+											data-flot-color-1="#6595b4" 
+											data-flot-label-1="Visits" 
+											data-flot-data-1="[
+												[1, 0], 
+												[2, 0], 
+												[3, 0],
+												[4, 7881], 
+												[5, 17168], 
+												[6, 18596],
+												[7, 27374], 
+												[8, 19294], 
+												[9, 0],
+												[10, 0], 
+												[11, 0], 
+												[12, 0]
+											]"
+
+											data-flot-color-2="#FF9F01" 
+											data-flot-label-2="Orders" 
+											data-flot-fill-2="false" 
+											data-flot-data-2="[
+												[1, 0], 
+												[2, 0], 
+												[3, 0],
+												[4, 3881], 
+												[5, 3168], 
+												[6, 1596],
+												[7, 2774], 
+												[8, 1924], 
+												[9, 0],
+												[10, 0], 
+												[11, 0], 
+												[12, 0]
+											]"
+
+											data-flot-ticks='[
+							                    [1, "Jan"], 
+							                    [2, "Feb"], 
+							                    [3, "Mar"], 
+							                    [4, "Apr"], 
+							                    [5, "May"], 
+							                    [6, "Jun"],
+							                    [7, "Jul"], 
+							                    [8, "Aug"], 
+							                    [9, "Sep"], 
+							                    [10, "Oct"], 
+							                    [11, "Nov"], 
+							                    [12, "Dec"]
+							               ]'
+										>
+											
+										</div>
+									</div>
+
+									<div class="alert alert-warning mt-4">
+										Click the graph to see the modal. On click you can open: an ajax modal, go to URL or only pass data to a callback! See <code>data-flot-click</code> variables.
+									</div>
+
+								</div>
+
+
+								<div class="mt--50">
+
+									<a href="#c99" class="scroll-to btn btn-light" data-toggle="collapse">
+										<i class="fi fi-code"></i> 
+										view code
+									</a>
+
+									<div id="c99" class="collapse">
+										<pre class="mt-5"><code class="language-html">
+&lt;div class="clearfix fs--18 pt-2 pb-2 mb-0">
+	
+	&lt;!-- save image -->
+	&lt;a href="#" data-flot-id="flot_duo" data-file-name="monthly-visits" class="btn btn-sm btn-light rounded-circle flot-save float-end m-0">
+		&lt;i class="fi fi-arrow-download m-0">&lt;/i>
+	&lt;/a>
+	&lt;!-- /save image -->
+
+	TWO GRAPHS: 
+
+	&lt;a class="text-decoration-none" href="javascript:;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		2019 &lt;i class="fi fi-arrow-down fs--13">&lt;/i>
+	&lt;/a>
+	&lt;div class="dropdown-menu">
+		&lt;a class="dropdown-item" href="#!">2018&lt;/a>
+		&lt;a class="dropdown-item text-primary" href="#!">2019&lt;/a>
+	&lt;/div> 
+
+	&lt;small class="fs--11 text-muted d-block mt-1">GLOBAL MONTHLY VISITS&lt;/small>
+
+&lt;/div>
+
+&lt;hr>
+
+&lt;!--
+
+	data-flot-type="bar|fill" 
+	data-flot-click="modal|url|callback"		
+			empty 		= no click, 
+			url 		= redirect to url, 
+			modal 		= open ajax modal if SOW : Modal plugin is present!
+			callback 	= data is send to callback function only
+							flot_callback = function(event, pos, item) { ... }
+
+	modal attributes (?demo=true. is added to avoid error on local .html)
+		data-flot-click-url="_ajax/modal_flot.html?demo=true"
+		data-flot-modal-size="modal-lg" 
+		data-flot-modal-backdrop="static" 
+		data-flot-modal-centered="true" 
+
+
+	Note: 	is dinamically added to URL val_x, val_y, pos_x, pos_y
+			Example: &amp;val_x=5&amp;val_y=17168&amp;pos_x=5.069341808617234&amp;pos_y=15708.968144044322
+			Debug is on, url is visible in browser console.
+
+-->
+&lt;div class="bg-light p-5 mt-5 fs--14 rounded-xl">
+	&lt;div class="flot-chart h--400"
+		data-flot-id="flot_duo" 
+		data-flot-border-color="#eaeaea" 
+
+		data-flot-type="fill" 
+		data-flot-legend-show="true" 
+
+		data-flot-click="modal" 
+		data-flot-click-url="_ajax/modal_flot.html?demo=true" 
+		data-flot-modal-size="modal-lg" 
+		data-flot-modal-backdrop="static" 
+		data-flot-modal-centered="true" 
+
+		data-flot-color-1="#6595b4" 
+		data-flot-label-1="Visits" 
+		data-flot-data-1="[
+			[1, 0], 
+			[2, 0], 
+			[3, 0],
+			[4, 7881], 
+			[5, 17168], 
+			[6, 18596],
+			[7, 27374], 
+			[8, 19294], 
+			[9, 0],
+			[10, 0], 
+			[11, 0], 
+			[12, 0]
+		]"
+
+		data-flot-color-2="#FF9F01" 
+		data-flot-label-2="Orders" 
+		data-flot-fill-2="false" 
+		data-flot-data-2="[
+			[1, 0], 
+			[2, 0], 
+			[3, 0],
+			[4, 3881], 
+			[5, 3168], 
+			[6, 1596],
+			[7, 2774], 
+			[8, 1924], 
+			[9, 0],
+			[10, 0], 
+			[11, 0], 
+			[12, 0]
+		]"
+
+		data-flot-ticks='[
+            [1, "Jan"], 
+            [2, "Feb"], 
+            [3, "Mar"], 
+            [4, "Apr"], 
+            [5, "May"], 
+            [6, "Jun"],
+            [7, "Jul"], 
+            [8, "Aug"], 
+            [9, "Sep"], 
+            [10, "Oct"], 
+            [11, "Nov"], 
+            [12, "Dec"]
+       ]'
+	>
+		
+	&lt;/div>
+&lt;/div>
+										</code></pre>
+									</div>
+
+								</div>
+
+							</section>
+
+
+
+
+
+
+
+							<section id="section_100">
+								<div class="container pt--50 pb--50">
+
+									<div class="clearfix fs--18 pt-2 pb-2 mb-0">
+										
+										<!-- save image -->
+										<a href="#" data-flot-id="flot_three" data-file-name="monthly-visits" class="btn btn-sm btn-light rounded-circle flot-save float-end m-0">
+											<i class="fi fi-arrow-download m-0"></i>
+										</a>
+										<!-- /save image -->
+
+										THREE GRAPHS: 
+
+										<a class="text-decoration-none" href="javascript:;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											2019 <i class="fi fi-arrow-down fs--13"></i>
+										</a>
+										<div class="dropdown-menu">
+											<a class="dropdown-item" href="#!">2018</a>
+											<a class="dropdown-item text-primary" href="#!">2019</a>
+										</div> 
+
+										<small class="fs--11 text-muted d-block mt-1">GLOBAL MONTHLY VISITS</small>
+
+									</div>
+									
+									<hr>
+
+									<!--
+		
+										data-flot-type="bar|fill" 
+										data-flot-click="modal|url|callback"		
+												empty 		= no click, 
+												url 		= redirect to url, 
+												modal 		= open ajax modal if SOW : Modal plugin is present!
+												callback 	= data is send to callback function only
+																flot_callback = function(event, pos, item) { ... }
+
+										modal attributes (?demo=true. is added to avoid error on local .html)
+											data-flot-click-url="_ajax/modal_flot.html?demo=true"
+											data-flot-modal-size="modal-lg" 
+											data-flot-modal-backdrop="static" 
+											data-flot-modal-centered="true" 
+
+
+										Note: 	is dinamically added to URL val_x, val_y, pos_x, pos_y
+												Example: &val_x=5&val_y=17168&pos_x=5.069341808617234&pos_y=15708.968144044322
+												Debug is on, url is visible in browser console.
+
+									-->
+									<div class="bg-light p-5 mt-5 fs--14 rounded-xl">
+										<div class="flot-chart h--400"
+											data-flot-id="flot_three" 
+											data-flot-border-color="#eaeaea" 
+
+											data-flot-type="fill" 
+											data-flot-legend-show="true" 
+
+											data-flot-click="modal" 
+											data-flot-click-url="_ajax/modal_flot.html?demo=true" 
+											data-flot-modal-size="modal-lg" 
+											data-flot-modal-backdrop="static" 
+											data-flot-modal-centered="true" 
+
+											data-flot-color-1="#6595b4" 
+											data-flot-label-1="Visits" 
+											data-flot-data-1="[
+												[1, 0], 
+												[2, 0], 
+												[3, 0],
+												[4, 7881], 
+												[5, 17168], 
+												[6, 18596],
+												[7, 27374], 
+												[8, 19294], 
+												[9, 0],
+												[10, 0], 
+												[11, 0], 
+												[12, 0]
+											]"
+
+											data-flot-color-2="#FF9F01" 
+											data-flot-label-2="Orders" 
+											data-flot-fill-2="false" 
+											data-flot-data-2="[
+												[1, 0], 
+												[2, 0], 
+												[3, 0],
+												[4, 3881], 
+												[5, 3168], 
+												[6, 1596],
+												[7, 2774], 
+												[8, 1924], 
+												[9, 0],
+												[10, 0], 
+												[11, 0], 
+												[12, 0]
+											]"
+
+											data-flot-color-3="#6DBB30" 
+											data-flot-label-3="Conversions" 
+											data-flot-fill-3="true" 
+											data-flot-data-3="[
+												[1, 3588], 
+												[2, 1897], 
+												[3, 4888],
+												[4, 1881], 
+												[5, 2168], 
+												[6, 596],
+												[7, 6774], 
+												[8, 924], 
+												[9, 4877],
+												[10, 3211], 
+												[11, 2100], 
+												[12, 8900]
+											]"
+
+											data-flot-ticks='[
+							                    [1, "Jan"], 
+							                    [2, "Feb"], 
+							                    [3, "Mar"], 
+							                    [4, "Apr"], 
+							                    [5, "May"], 
+							                    [6, "Jun"],
+							                    [7, "Jul"], 
+							                    [8, "Aug"], 
+							                    [9, "Sep"], 
+							                    [10, "Oct"], 
+							                    [11, "Nov"], 
+							                    [12, "Dec"]
+							               ]'
+										>
+											
+										</div>
+									</div>
+
+									<div class="alert alert-warning mt-4">
+										Click the graph to see the modal. On click you can open: an ajax modal, go to URL or only pass data to a callback! See <code>data-flot-click</code> variables.
+									</div>
+
+								</div>
+
+
+								<div class="mt--50">
+
+									<a href="#c100" class="scroll-to btn btn-light" data-toggle="collapse">
+										<i class="fi fi-code"></i> 
+										view code
+									</a>
+
+									<div id="c100" class="collapse">
+										<pre class="mt-5"><code class="language-html">
+&lt;div class="clearfix fs--18 pt-2 pb-2 mb-0">
+	
+	&lt;!-- save image -->
+	&lt;a href="#" data-flot-id="flot_three" data-file-name="monthly-visits" class="btn btn-sm btn-light rounded-circle flot-save float-end m-0">
+		&lt;i class="fi fi-arrow-download m-0">&lt;/i>
+	&lt;/a>
+	&lt;!-- /save image -->
+
+	THREE GRAPHS: 
+
+	&lt;a class="text-decoration-none" href="javascript:;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		2019 &lt;i class="fi fi-arrow-down fs--13">&lt;/i>
+	&lt;/a>
+	&lt;div class="dropdown-menu">
+		&lt;a class="dropdown-item" href="#!">2018&lt;/a>
+		&lt;a class="dropdown-item text-primary" href="#!">2019&lt;/a>
+	&lt;/div> 
+
+	&lt;small class="fs--11 text-muted d-block mt-1">GLOBAL MONTHLY VISITS&lt;/small>
+
+&lt;/div>
+
+&lt;hr>
+
+&lt;!--
+
+	data-flot-type="bar|fill" 
+	data-flot-click="modal|url|callback"		
+			empty 		= no click, 
+			url 		= redirect to url, 
+			modal 		= open ajax modal if SOW : Modal plugin is present!
+			callback 	= data is send to callback function only
+							flot_callback = function(event, pos, item) { ... }
+
+	modal attributes (?demo=true. is added to avoid error on local .html)
+		data-flot-click-url="_ajax/modal_flot.html?demo=true"
+		data-flot-modal-size="modal-lg" 
+		data-flot-modal-backdrop="static" 
+		data-flot-modal-centered="true" 
+
+
+	Note: 	is dinamically added to URL val_x, val_y, pos_x, pos_y
+			Example: &amp;val_x=5&amp;val_y=17168&amp;pos_x=5.069341808617234&amp;pos_y=15708.968144044322
+			Debug is on, url is visible in browser console.
+
+-->
+&lt;div class="bg-light p-5 mt-5 fs--14 rounded-xl">
+	&lt;div class="flot-chart h--400"
+		data-flot-id="flot_three" 
+		data-flot-border-color="#eaeaea" 
+
+		data-flot-type="fill" 
+		data-flot-legend-show="true" 
+
+		data-flot-click="modal" 
+		data-flot-click-url="_ajax/modal_flot.html?demo=true" 
+		data-flot-modal-size="modal-lg" 
+		data-flot-modal-backdrop="static" 
+		data-flot-modal-centered="true" 
+
+		data-flot-color-1="#6595b4" 
+		data-flot-label-1="Visits" 
+		data-flot-data-1="[
+			[1, 0], 
+			[2, 0], 
+			[3, 0],
+			[4, 7881], 
+			[5, 17168], 
+			[6, 18596],
+			[7, 27374], 
+			[8, 19294], 
+			[9, 0],
+			[10, 0], 
+			[11, 0], 
+			[12, 0]
+		]"
+
+		data-flot-color-2="#FF9F01" 
+		data-flot-label-2="Orders" 
+		data-flot-fill-2="false" 
+		data-flot-data-2="[
+			[1, 0], 
+			[2, 0], 
+			[3, 0],
+			[4, 3881], 
+			[5, 3168], 
+			[6, 1596],
+			[7, 2774], 
+			[8, 1924], 
+			[9, 0],
+			[10, 0], 
+			[11, 0], 
+			[12, 0]
+		]"
+
+		data-flot-color-3="#6DBB30" 
+		data-flot-label-3="Conversions" 
+		data-flot-fill-3="true" 
+		data-flot-data-3="[
+			[1, 3588], 
+			[2, 1897], 
+			[3, 4888],
+			[4, 1881], 
+			[5, 2168], 
+			[6, 596],
+			[7, 6774], 
+			[8, 924], 
+			[9, 4877],
+			[10, 3211], 
+			[11, 2100], 
+			[12, 8900]
+		]"
+
+		data-flot-ticks='[
+            [1, "Jan"], 
+            [2, "Feb"], 
+            [3, "Mar"], 
+            [4, "Apr"], 
+            [5, "May"], 
+            [6, "Jun"],
+            [7, "Jul"], 
+            [8, "Aug"], 
+            [9, "Sep"], 
+            [10, "Oct"], 
+            [11, "Nov"], 
+            [12, "Dec"]
+       ]'
+	>
+		
+	&lt;/div>
+&lt;/div>
+										</code></pre>
+									</div>
+
+								</div>
+
+							</section>
+
+
+
+
+
+
+							<section id="section_101">
+
+									<div class="clearfix fs--18 pt-2 pb-2 mb-0">
+										
+										<!-- save image -->
+										<a href="#" data-flot-id="my_flot_id" data-file-name="monthly-visits" class="btn btn-sm btn-light rounded-circle flot-save float-end m-0">
+											<i class="fi fi-arrow-download m-0"></i>
+										</a>
+										<!-- /save image -->
+
+										Custom 
+
+										<a class="text-decoration-none" href="javascript:;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											Inline Javascript <i class="fi fi-arrow-down fs--13"></i>
+										</a>
+										<div class="dropdown-menu">
+											<a class="dropdown-item" href="#!">Option 1</a>
+											<a class="dropdown-item text-primary" href="#!">Option 2</a>
+											<a class="dropdown-item" href="#!">Option 3</a>
+											<a class="dropdown-item" href="#!">Option 4</a>
+											<a class="dropdown-item" href="#!">Option N</a>
+										</div> 
+
+										<small class="fs--11 text-muted d-block mt-1">INLINE CUSTOM JAVASCRIPT</small>
+
+									</div>
+
+									<hr>
+
+									<div class="bg-light p-5 mt-5 fs--14 rounded-xl">
+										<div class="flot-chart h--400" 
+											data-flot-id="my_flot_id"
+											data-flot-custom-data="my_flot_data"
+											data-flot-custom-options="my_flot_options">
+										</div>
+									</div>
+
+									<script>
+
+										/* 
+											define only once, 
+											if multiple graphs are on the same page 
+										*/	
+										var flot_custom = {};
+
+
+										flot_custom['my_flot_data'] = [
+												{ /* data */
+													data: 		[
+														[1, 871], 
+														[2, 938], 
+														[3, 957],
+														[4, 946], 
+														[5, 837], 
+														[6, 895],
+														[7, 881], 
+														[8, 978], 
+														[9, 882],
+														[10, 891]
+													],
+													label: 		'My Custom Flot',
+													lines: 		{ show: true },
+													points: 	{ show: true },
+													color: 		'#6dbb30'
+												}
+									        ];
+
+
+								       	flot_custom['my_flot_options'] =  {
+
+								            grid: {
+								                mouseActiveRadius 	: 	30,
+												hoverable 			: true,
+												borderWidth 		: 0,
+												tickColor 			: '#ebebeb',
+												borderColor 		: '#ebebeb',
+
+								            },
+
+											tooltip : true,
+											tooltipOpts : {
+												content : function(label, xval, yval, flotItem) {
+													return "Value: "+yval;
+												},
+
+												dateFormat : "%y-%0m-%0d"
+											},
+
+											legend: {
+												show: true,
+												noColumns: 1,
+											},
+
+											// https://github.com/flot/flot/blob/master/API.md#customizing-the-axes
+								            xaxis:{
+												ticks: [
+								                    [1, "01"],  [2, "02"],  
+								                    [3, "03"],  [4, "04"],  
+								                    [5, "05"],  [6, "06"],
+								                    [7, "07"],  [8, "08"],  
+								                    [9, "09"],  [10, "10"]
+								                ],
+												tickLength : 5,
+												mode: "time"
+								            },
+
+											series : {
+
+												/* bars */
+												bars: {
+													show: true, 
+													lineWidth:0,
+													align: "center",
+													barWidth: 0.5
+												},
+
+												/* lines */
+												lines : {
+													show : true,
+													lineWidth : 1,
+													fill : true,
+													fillColor : {
+														colors : [{
+															opacity : 0.1
+														}, {
+															opacity : 0.15
+														}]
+													}
+												},
+
+											}
+
+							        	};
+
+
+									</script>
+
+
+
+								<div class="mt--50">
+
+									<a href="#c4" class="scroll-to btn btn-light" data-toggle="collapse">
+										<i class="fi fi-code"></i> 
+										view code
+									</a>
+
+									<div id="c4" class="collapse">
+										<pre class="mt-5"><code class="language-html">&lt;!-- OPTIONAL HEADER -->
+&lt;div class="clearfix fs--18 pt-2 pb-2 mb-0">
+	
+	&lt;!-- save image (see data-flot-id) -->
+	&lt;a href="#" data-flot-id="my_flot_id" data-file-name="monthly-visits" class="btn btn-sm btn-light rounded-circle flot-save float-end m-0">
+		&lt;i class="fi fi-arrow-download m-0">&lt;/i>
+	&lt;/a>
+	&lt;!-- /save image -->
+
+	Custom 
+
+	&lt;a class="text-decoration-none" href="javascript:;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Inline Javascript &lt;i class="fi fi-arrow-down fs--13">&lt;/i>
+	&lt;/a>
+	&lt;div class="dropdown-menu">
+		&lt;a class="dropdown-item" href="#!">Option 1&lt;/a>
+		&lt;a class="dropdown-item text-primary" href="#!">Option 2&lt;/a>
+		&lt;a class="dropdown-item" href="#!">Option 3&lt;/a>
+		&lt;a class="dropdown-item" href="#!">Option 4&lt;/a>
+		&lt;a class="dropdown-item" href="#!">Option N&lt;/a>
+	&lt;/div> 
+
+	&lt;small class="fs--11 text-muted d-block mt-1">INLINE CUSTOM JAVASCRIPT&lt;/small>
+
+&lt;/div>
+
+&lt;hr>
+&lt;!-- END OPTIONAL HEADER -->
+
+
+
+
+&lt;!-- 
+	REQUIRED HTML MARKUP
+	.h--400 is the height
+-->
+&lt;div class="bg-light p-5 mt-5 fs--14 rounded-xl">
+	&lt;div class="flot-chart h--400" 
+		data-flot-id="my_flot_id"
+		data-flot-custom-data="<b><u>my_flot_data</u></b>"
+		data-flot-custom-options="<b><u>my_flot_options</u></b>">
+	&lt;/div>
+&lt;/div>
+
+
+&lt;!--
+
+	INLINE JAVASCRIPT CODE 
+	HIGHLY COSTIMIZABLE
+
+	Custom code is divided in 2 parts:
+	1. my_flot_data 		(data-flot-custom-data)
+	2. my_flot_options 		(data-flot-custom-options)
+	which are array variables (give them any name you want)
+
+	Is nothing different than using direct Flot code,
+	we only use 2 arrays so the controller be able to
+	load the graph.
+
+	The alternative is to simply load the Flot JS bundle (assets/js/vendor.flot.min.js - 127Kb)
+	without Smarty controller - would be the same with one exception: js file is not loaded
+	dinamically only when is needed.
+
+-->
+&lt;script>
+
+	/* 
+		define only once, 
+		if multiple graphs are on the same page 
+	*/	
+	var flot_custom = {};
+
+
+
+	/* 
+		1. FLOT DATA
+	*/
+	flot_custom['<b><u>my_flot_data</u></b>'] = [
+			{ /* data */
+				data: 		[
+					[1, 871], 
+					[2, 938], 
+					[3, 957],
+					[4, 946], 
+					[5, 837], 
+					[6, 895],
+					[7, 881], 
+					[8, 978], 
+					[9, 882],
+					[10, 891]
+				],
+				label: 		'My Custom Flot',
+				lines: 		{ show: true },
+				points: 	{ show: true },
+				color: 		'#6dbb30'
+			}
+        ];
+
+
+
+	/* 
+		2. FLOT OPTIONS
+	*/
+   	flot_custom['<b><u>my_flot_options</u></b>'] =  {
+
+        grid: {
+            mouseActiveRadius 	: 	30,
+			hoverable 			: true,
+			borderWidth 		: 0,
+			tickColor 			: '#ebebeb',
+			borderColor 		: '#ebebeb',
+
+        },
+
+		tooltip : true,
+		tooltipOpts : {
+			content : function(label, xval, yval, flotItem) {
+				return "Value: "+yval;
+			},
+
+			dateFormat : "%y-%0m-%0d"
+		},
+
+		legend: {
+			show: true,
+			noColumns: 1,
+		},
+
+		// https://github.com/flot/flot/blob/master/API.md#customizing-the-axes
+        xaxis:{
+			ticks: [
+                [1, "01"],  [2, "02"],  
+                [3, "03"],  [4, "04"],  
+                [5, "05"],  [6, "06"],
+                [7, "07"],  [8, "08"],  
+                [9, "09"],  [10, "10"]
+            ],
+			tickLength : 5,
+			mode: "time"
+        },
+
+		series : {
+
+			/* bars */
+			bars: {
+				show: true, 
+				lineWidth:0,
+				align: "center",
+				barWidth: 0.5
+			},
+
+			/* lines */
+			lines : {
+				show : true,
+				lineWidth : 1,
+				fill : true,
+				fillColor : {
+					colors : [{
+						opacity : 0.1
+					}, {
+						opacity : 0.15
+					}]
+				}
+			},
+
+		}
+
+	};
+
+
+&lt;/script>
+										</code></pre>
+									</div>
+
+								</div>
+							</section>
+
+
+
+
+
+
+
+
+
+							<section id="section_102">
+
+								<div class="row">
+									<div class="col-12 col-lg-6 mb-4">
+
+										<div class="clearfix fs--18 pt-2 pb-2 mb-0">
+											
+											<!-- save image -->
+											<a href="#" data-flot-id="pie_example1" data-file-name="pie-1" class="btn btn-sm btn-light rounded-circle flot-save float-end m-0">
+												<i class="fi fi-arrow-download m-0"></i>
+											</a>
+											<!-- /save image -->
+
+											Pie 1 
+
+											<a class="text-decoration-none" href="javascript:;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												Dropdown <i class="fi fi-arrow-down fs--13"></i>
+											</a>
+											<div class="dropdown-menu">
+												<a class="dropdown-item" href="#!">Option 1</a>
+												<a class="dropdown-item text-primary" href="#!">Option 2</a>
+												<a class="dropdown-item" href="#!">Option 3</a>
+												<a class="dropdown-item" href="#!">Option 4</a>
+												<a class="dropdown-item" href="#!">Option N</a>
+											</div> 
+
+											<small class="fs--11 text-muted d-block mt-1">PIE CHART WITH LEGEND</small>
+
+										</div>
+
+										<hr>
+
+
+										<div class="bg-light p-5 mt-5 fs--14 rounded-xl">
+											<div class="flot-chart h--400" 
+												
+												data-flot-type="pie" 
+												data-flot-legend-show="true" 
+
+												data-flot-click="modal" 
+												data-flot-click-url="_ajax/modal_flot.html?demo=true" 
+												data-flot-modal-size="modal-lg" 
+												data-flot-modal-backdrop="static" 
+												data-flot-modal-centered="true" 
+
+												data-flot-id="pie_example1"
+												data-flot-pie-data='[
+													{
+														"label": "Asia",
+														"data": "4119630000",
+														"color": "#007bff"
+													},
+													{
+														"label": "Latin America",
+														"data": "590950000",
+														"color": "#dc3545"
+													},
+													{
+														"label": "Africa",
+														"data": "1012960000",
+														"color": "#ffc107"
+													},
+													{
+														"label": "Oceania",
+														"data": "95100000",
+														"color": "#28a745"
+													},
+													{
+														"label": "Europe",
+														"data": "727080000",
+														"color": "#6610f2"
+													},
+													{
+														"label": "North America",
+														"data": "344120000",
+														"color": "#e83e8c"
+													}
+												]'
+												>
+											</div>
+										</div>
+
+									</div>
+
+									<div class="col-12 col-lg-6 mb-4">
+
+										<div class="clearfix fs--18 pt-2 pb-2 mb-0">
+											
+											<!-- save image -->
+											<a href="#" data-flot-id="pie_example2" data-file-name="pie-2" class="btn btn-sm btn-light rounded-circle flot-save float-end m-0">
+												<i class="fi fi-arrow-download m-0"></i>
+											</a>
+											<!-- /save image -->
+
+											Pie 2 
+
+											<a class="text-decoration-none" href="javascript:;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												Dropdown <i class="fi fi-arrow-down fs--13"></i>
+											</a>
+											<div class="dropdown-menu">
+												<a class="dropdown-item" href="#!">Option 1</a>
+												<a class="dropdown-item text-primary" href="#!">Option 2</a>
+												<a class="dropdown-item" href="#!">Option 3</a>
+												<a class="dropdown-item" href="#!">Option 4</a>
+												<a class="dropdown-item" href="#!">Option N</a>
+											</div> 
+
+											<small class="fs--11 text-muted d-block mt-1">PIE CHART WITHOUT LEGEND</small>
+
+										</div>
+
+										<hr>
+
+										<div class="bg-light p-5 mt-5 fs--14 rounded-xl">
+											<div class="flot-chart h--400" 
+												
+												data-flot-type="pie" 
+												data-flot-legend-show="false" 
+
+												data-flot-click="modal" 
+												data-flot-click-url="_ajax/modal_flot.html?demo=true" 
+												data-flot-modal-size="modal-lg" 
+												data-flot-modal-backdrop="static" 
+												data-flot-modal-centered="true" 
+
+												data-flot-id="pie_example2"
+												data-flot-pie-data='[
+													{
+														"label": "Asia",
+														"data": "4119630000",
+														"color": "#007bff"
+													},
+													{
+														"label": "Latin America",
+														"data": "590950000",
+														"color": "#dc3545"
+													},
+													{
+														"label": "Africa",
+														"data": "1012960000",
+														"color": "#ffc107"
+													},
+													{
+														"label": "Oceania",
+														"data": "95100000",
+														"color": "#28a745"
+													},
+													{
+														"label": "Europe",
+														"data": "727080000",
+														"color": "#6610f2"
+													},
+													{
+														"label": "North America",
+														"data": "344120000",
+														"color": "#e83e8c"
+													}
+												]'
+												>
+											</div>
+										</div>
+
+									</div>
+
+								</div>
+
+
+
+								<div class="mt--50">
+
+									<a href="#cpie" class="scroll-to btn btn-light" data-toggle="collapse">
+										<i class="fi fi-code"></i> 
+										view code
+									</a>
+
+									<div id="cpie" class="collapse">
+										<pre class="mt-5"><code class="language-html">
+&lt;div class="clearfix fs--18 pt-2 pb-2 mb-0">
+	
+	&lt;!-- save image -->
+	&lt;a href="#" data-flot-id="pie_example1" data-file-name="monthly-visits" class="btn btn-sm btn-light rounded-circle flot-save float-end m-0">
+		&lt;i class="fi fi-arrow-download m-0">&lt;/i>
+	&lt;/a>
+	&lt;!-- /save image -->
+
+	Pie 1 
+
+	&lt;a class="text-decoration-none" href="javascript:;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Dropdown &lt;i class="fi fi-arrow-down fs--13">&lt;/i>
+	&lt;/a>
+	&lt;div class="dropdown-menu">
+		&lt;a class="dropdown-item" href="#!">Option 1&lt;/a>
+		&lt;a class="dropdown-item text-primary" href="#!">Option 2&lt;/a>
+		&lt;a class="dropdown-item" href="#!">Option 3&lt;/a>
+		&lt;a class="dropdown-item" href="#!">Option 4&lt;/a>
+		&lt;a class="dropdown-item" href="#!">Option N&lt;/a>
+	&lt;/div> 
+
+	&lt;small class="fs--11 text-muted d-block mt-1">PIE CHART WITH LEGEND&lt;/small>
+
+&lt;/div>
+
+&lt;hr>
+
+
+
+
+&lt;!--
+
+	data-flot-type="bar|fill" 
+	data-flot-click="modal|url|callback"		
+			empty 		= no click, 
+			url 		= redirect to url, 
+			modal 		= open ajax modal if SOW : Modal plugin is present!
+			callback 	= data is send to callback function only
+							flot_callback = function(event, pos, item) { ... }
+
+	modal attributes (?demo=true. is added to avoid error on local .html)
+		data-flot-click-url="_ajax/modal_flot.html?demo=true"
+		data-flot-modal-size="modal-lg" 
+		data-flot-modal-backdrop="static" 
+		data-flot-modal-centered="true" 
+
+
+	Note: 	is dinamically added to URL val_x, val_y, pos_x, pos_y
+			Example: &amp;val_x=5&amp;val_y=17168&amp;pos_x=5.069341808617234&amp;pos_y=15708.968144044322
+			Debug is on, url is visible in browser console.
+
+-->
+&lt;div class="bg-light p-5 mt-5 fs--14 rounded-xl">
+	&lt;div class="flot-chart h--400" 
+		
+		data-flot-type="pie" 
+		data-flot-legend-show="true" 
+
+		data-flot-click="modal" 
+		data-flot-click-url="_ajax/modal_flot.html?demo=true" 
+		data-flot-modal-size="modal-lg" 
+		data-flot-modal-backdrop="static" 
+		data-flot-modal-centered="true" 
+
+		data-flot-id="pie_example1"
+		data-flot-pie-data='[
+			{
+				"label": "Asia",
+				"data": "4119630000",
+				"color": "#007bff"
+			},
+			{
+				"label": "Latin America",
+				"data": "590950000",
+				"color": "#dc3545"
+			},
+			{
+				"label": "Africa",
+				"data": "1012960000",
+				"color": "#ffc107"
+			},
+			{
+				"label": "Oceania",
+				"data": "95100000",
+				"color": "#28a745"
+			},
+			{
+				"label": "Europe",
+				"data": "727080000",
+				"color": "#6610f2"
+			},
+			{
+				"label": "North America",
+				"data": "344120000",
+				"color": "#e83e8c"
+			}
+		]'
+		>
+	&lt;/div>
+&lt;/div>
+										</code></pre>
+									</div>
+
+								</div>
+
+							</section>
+
+
+
+
+
+						</div>
+
+						<div class="col w-100 max-w-300 d-none d-xl-flex align-self-md-stretch">
+
+							<div class="w-100">
+								<div class="sticky-kit">
+
+								<h6 class="text-dark">Jump To</h6>
+								<ul class="list-unstyled mb-5">
+									<li class="list-item">
+										<a href="#section_0" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											Plugin info
+										</a>
+									</li>
+									<li class="list-item">
+										<a href="#section_01" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											Json Ajax Flot
+										</a>
+									</li>
+									<li class="list-item">
+										<a href="#section_1" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											Yearly Bar Flot
+										</a>
+									</li>
+									<li class="list-item">
+										<a href="#section_1_1" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											Yearly Fill Flot
+										</a>
+									</li>
+									<li class="list-item">
+										<a href="#section_2" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											Monthly Bar Flot
+										</a>
+									</li>
+									<li class="list-item">
+										<a href="#section_2_2" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											Monthly Fill Flot
+										</a>
+									</li>
+									<li class="list-item">
+										<a href="#section_99" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											Two Graphs
+										</a>
+									</li>
+									<li class="list-item">
+										<a href="#section_100" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											Three Graphs
+										</a>
+									</li>
+									<li class="list-item">
+										<a href="#section_101" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											Inline Custom
+										</a>
+									</li>
+									<li class="list-item">
+										<a href="#section_102" class="text-muted fs--15 font-weight-light p-1 d-block scroll-to">
+											Pie Charts
+										</a>
+									</li>
+								</ul>
+
+
+
+								<!-- AJAX BOX INFO -->
+								<div 	id="boxinfo_v3" 
+										class="js-ajax" 
+										data-ajax-url="_ajax/boxinfo_v3.html">
+
+									<!-- ajax loading icon -->
+									<div class="text-center bg-white rounded shadow-md p--15 mb-5">
+										<i class="fi fi-circle-spin fi-spin fs--30 text-muted"></i>
+									</div><!-- /ajax loading icon -->
+
+								</div>
+								<!-- /AJAX BOX INFO -->
+
+
+								</div>
+
+
+
+							</div>
+
+						</div>
+
+					</div>
+
+
+
+				</div>
+				<!-- /MIDDLE -->
+
+			</div>
+
+
+
+		</div><!-- /#wrapper -->
+
+
+
+
+		<!--
+			
+			Toast On Load
+
+				data-type 			= '', success, danger, warning, info
+				data-title 			= toast title 	(optional)
+				data-body 			= toast body 	(required)
+				data-pos 			= top-left, top-right, bottom-left, bottom-right, top-center, bottom-center
+				data-delay 			= autoclose in ms
+				data-fill 			= background color fill [true|false]
+
+		-->
+		<div class="hide toast-on-load"
+			data-toast-type="pink" 
+			data-toast-title="" 
+			data-toast-body="<i class='fi fi-emoji-cool float-start'></i> Ajax navigation enabled! Yay!" 
+			data-toast-pos="bottom-center" 
+			data-toast-delay="4000" 
+			data-toast-fill="true" 
+		></div>
+
+
+
+
+		<script src="../assets/js/core.js"></script>
+		<script src="../assets/js/vendor_bundle.js"></script>
+
+
+
+		<!--
+
+			[SOW Ajax Navigation Plugin] [AJAX ONLY, IF USED]
+			If you have specific page js files, wrap them inside #page_js_files 
+			Ajax Navigation will use them for this page! 
+			This way you can load this page in a normal way and/or via ajax.
+			(you can change/add more containers in sow.config.js)
+
+		-->
+		<div id="page_js_files">
+
+
+
+			<!-- 
+
+				CONTENT CLIPBOARD COPY 
+
+					<a href="#clipboard_1" class="btn-clipboard btn btn-sm btn-light float-end">
+						<i class="fi fi-lightning"></i> 
+						copy code
+					</a>
+
+					<div id="clipboard_1">
+						.. code 
+					</div>
+
+			-->
+			<script src="assets/js/sow.clipboard.js"></script>
+			<script>
+
+				$.SOW.core.clipboard.init('#middle a.btn-clipboard');
+
+			</script>
+
+
+		</div>
+
+
+	</body>
+</html>

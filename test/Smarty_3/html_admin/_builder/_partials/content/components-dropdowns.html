@@ -1,0 +1,1431 @@
+﻿					<!-- doc:start -->
+					<div class="page-title bg-transparent b-0">
+
+						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
+							Dropdowns
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--13 pb-2 px-3">
+								<li class="breadcrumb-item">
+									<a href="index.html" class="js-ajax">Dashboard</a>
+								</li>
+								<li class="breadcrumb-item active">
+									Components
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Dropdowns
+								</li>
+							</ol>
+						</nav>
+
+					</div>
+
+
+
+					<!-- ALERT : NOTE -->
+					<div class="bg-white shadow-xs p-2 mb-4 rounded">
+						<div class="clearfix bg-light p-2 rounded d-flex align-items-center">
+							<span class="btn row-pill btn-sm bg-gradient-warning b-0 py-1 mb-0 float-start">
+								<i class="fi fi-round-info-full"></i>
+								Note
+							</span>
+							<span class="d-block px-2 text-muted text-truncate">
+								This is a basic demo! Please see main <a href="../../html_frontend/documentation/" target="smarty" class="link-muted">full documentation here</a>.
+							</span>
+						</div>
+					</div>
+					<!-- /ALERT : NOTE -->
+
+
+
+					<!-- counter:start: -->
+					<div class="row gutters-sm">
+
+						<!-- start:col: -->
+						<div class="col-12 col-xl-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Dropdown Forms</span>
+								</div>
+
+								<div class="portlet-body">
+
+									<div class="row py-5">
+
+										<div class="col-12 col-lg-6 mb-4">
+
+											<div class="dropdown">
+												<a href="#" class="btn btn-sm rounded-circle-xs btn-primary btn-pill dropdown-toggle" id="dropdownMenuSignInUp" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+													<span class="group-icon">
+														<i class="fi fi-users"></i>
+														<i class="fi fi-hourglass"></i>
+													</span>
+
+													<span>My Account</span>
+
+												</a>
+
+												<div class="dropdown-menu dropdown-click-ignore shadow-lg w-100 max-w-350 p-0" aria-labelledby="dropdownMenuSignInUp">
+
+
+													<div class="accordion" id="accordionAccount">
+
+
+														<!-- SIGN IN -->
+														<form class="collapse bs-validate show" novalidate method="post" action="#" id="accordionAccountSignIn" data-parent="#accordionAccount">
+															<div class="p--30 pt--0">
+
+																<div class="pb--30 pt--30 -click-ignore">
+																	<img class="img-fluid" src="../../html_frontend/demo.files/svg/content/undraw_mention_6k5d.svg" alt="...">
+																</div>
+
+																<div class="form-label-group mb-4">
+																	<input required placeholder="Email" id="signin_email" type="email" class="form-control form-control-clean">
+																	<label for="signin_email">Email</label>
+																</div>
+
+																<div class="input-group-over">
+																	<div class="form-label-group mb-4">
+																		<input required placeholder="Password" id="signin_password" type="password" class="form-control form-control-clean" autocomplete="new-password">
+																		<label for="signin_password">Password</label>
+																	</div>
+																	<a href="#accordionAccountPasswd" class="btn btn-pill fs--12" data-toggle="collapse" aria-expanded="true" aria-controls="accordionAccountPasswd">
+																		FORGOT?
+																	</a>
+																</div>
+								
+																<button type="submit" class="btn btn-primary btn-soft btn-block">
+																	Sign In
+																</button>
+
+																<div class="text-center mt--30">
+																	<a href="#accordionAccountSignUp" class="d-block text-success text-decoration-none" data-toggle="collapse" aria-expanded="true" aria-controls="accordionAccountSignUp">
+																		Don't have an account yet?
+																	</a>
+																</div>
+
+															</div>
+														</form>
+														<!-- /SIGN IN -->
+
+
+
+														<!-- PASSWD RESET -->
+														<form class="collapse bs-validate" novalidate method="post" action="#" id="accordionAccountPasswd" data-parent="#accordionAccount">
+															<div class="p--30">
+
+																<div class="pb--50 dropdown-click-ignore">
+																	<img class="img-fluid" src="../../html_frontend/demo.files/svg/content/undraw_email_capture_x8kv.svg" alt="...">
+																</div>
+
+																<div class="form-label-group mb-4">
+																	<input required placeholder="Email" id="reset_email" type="email" class="form-control form-control-clean">
+																	<label for="reset_email">Email</label>
+																</div>
+
+																<button type="submit" class="btn btn-primary btn-soft btn-block">
+																	Reset Password
+																</button>
+
+																<div class="text-center mt--30">
+																	<a href="#accordionAccountSignIn" class="d-block text-success text-decoration-none" data-toggle="collapse" aria-expanded="true" aria-controls="accordionAccountSignIn">
+																		Nevermind, back to Sign In
+																	</a>
+																</div>
+
+															</div>
+														</form>
+														<!-- /PASSWD RESET -->
+
+
+
+														<!-- SIGN UP -->
+														<form class="collapse bs-validate" novalidate method="post" action="#" id="accordionAccountSignUp" data-parent="#accordionAccount">
+															<div class="p--30 pt--0">
+
+																<h5 class="text-center pb-3 pt-3">Sign Up</h5>
+
+																<div class="form-label-group mb-3">
+																	<input required id="signup_name" type="text" class="form-control form-control-clean" placeholder="Full Name">
+																	<label for="signup_name">Full Name</label>
+																</div>
+
+																<div class="form-label-group mb-3">
+																	<input required id="signup_email" type="email" class="form-control form-control-clean" placeholder="Email">
+																	<label for="signup_email">Email</label>
+																</div>
+
+																<div class="form-label-group mb-3">
+																	<input required placeholder="Password" id="signup_password_1" type="password" class="form-control form-control-clean" autocomplete="new-password">
+																	<label for="signup_password_1">Password</label>
+																</div>
+
+																<div class="form-label-group mb-4">
+																	<input required placeholder="Password Again" id="signup_password_2" type="password" class="form-control form-control-clean" autocomplete="new-password">
+																	<label for="signup_password_2">Password Again</label>
+																</div>
+
+																<button type="submit" class="btn btn-primary btn-soft btn-block">
+																	Sign Up
+																</button>
+
+																<div class="text-center mt--30">
+																	<a href="#accordionAccountSignIn" class="d-block text-muted text-decoration-none" data-toggle="collapse" aria-expanded="true" aria-controls="accordionAccountSignIn">
+																		Back to Sign In
+																	</a>
+																</div>
+
+															</div>
+														</form>
+														<!-- /SIGN UP -->
+
+
+													</div>
+
+
+												</div>
+											</div>
+
+										</div>
+
+										<div class="col-12 col-lg-6 mb-4">
+
+											<div class="dropdown">
+												<a href="#" class="btn btn-sm rounded-circle-xs btn-primary btn-pill dropdown-toggle" id="dropdownMenuContact" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+													<span class="group-icon">
+														<i class="fi fi-support"></i>
+														<i class="fi fi-envelope-2"></i>
+													</span>
+
+													<span>Contact Us</span>
+
+												</a>
+
+												<div class="dropdown-menu dropdown-click-ignore shadow-lg w-100 max-w-350 p-0" aria-labelledby="dropdownMenuContact">
+
+
+													<div class="accordion" id="accordionDropdownContact">
+
+
+														<!-- 
+															CONTACT FORM : AJAX 
+
+																Plugin required: SOW Ajax Forms
+
+																In order to work as ajax form, SOW Ajax Forms should be available/enabled
+																Else, SOW Form Validation plugin is used.
+																If none of them are available, normal submit is used and you can remove:
+																	.js-ajax
+																	.bs-validate
+																	novalidate
+																	any data-ajax-*
+																	any data-error-*
+
+																** Remove data-error-toast-* for no error toast notifications
+
+															+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+															NOTE: method="GET" is used in this demo!
+															Most contact form are using "POST". So change as you need!
+															The URL you post the data, should also return a success message
+															like the one in action="_ajax/ajax_form_test_submit.html"
+															+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+														-->
+														<form 	novalidate 
+																action="_ajax/ajax_form_test_submit.html" 
+																method="GET" 
+
+																data-ajax-container="#ajax_dd_contact_response_container" 
+																data-ajax-update-url="false" 
+																data-ajax-show-loading-icon="true" 
+																data-ajax-callback-function="" 
+																data-error-scroll-up="true" 
+																
+																data-error-toast-text="<i class='fi fi-circle-spin fi-spin float-start'></i> Please, complete all required fields!" 
+																data-error-toast-delay="2000" 
+																data-error-toast-position="bottom-center"
+
+																data-parent="#accordionDropdownContact"
+																class="collapse bs-validate js-ajax show" 
+																id="accordionDropdownContactForm">
+
+															<!-- 1. 
+																optional, hidden action for your backend
+
+																PHP Basic Example
+																if($_POST['action'] == 'contact_form_submit') {
+																	... send message
+																}
+															-->
+															<input type="hidden" name="action" value="contact_form_submit" tabindex="-1"> 
+															<!-- -->
+
+
+															<!-- 2. 
+																A very small optional trick (using .hide class instead of type="hidden") for some low spam robots. 
+																If this is not empty, the process should stop. A normal user/visitor should not be able to see this field.
+
+																PHP Basic Example
+																if($_POST['norobot'] != '') {
+																	exit;
+																}
+															-->
+															<input type="text" name="norobot" value="" class="hide" tabindex="-1"> 
+															<!-- -->
+															
+															<div class="p--30 pt--0">
+
+																<h3 class="h5 text-center pt-4 pb-3">
+																	Contact Us
+																</h3>
+
+																<div id="ajax_dd_contact_response_container"><!-- ajax response container --></div>
+
+																<div class="form-label-group mb-3">
+																	<input required placeholder="Name" id="contact_name" type="text" class="form-control form-control-clean">
+																	<label for="contact_name">Name</label>
+																</div>
+
+																<div class="form-label-group mb-3">
+																	<input required placeholder="Email" id="contact_email" type="email" class="form-control form-control-clean">
+																	<label for="contact_email">Email</label>
+																</div>
+
+																<div class="form-label-group mb-3">
+																	<input required placeholder="Phone" id="contact_phone" type="text" class="form-control form-control-clean">
+																	<label for="contact_phone">Phone</label>
+																</div>
+
+																<div class="form-label-group mb-4">
+																	<textarea required placeholder="Message" id="contact_message" class="form-control form-control-clean" rows="3"></textarea>
+																	<label for="contact_message">Message</label>
+																</div>
+
+																<button type="submit" class="btn btn-primary btn-soft btn-block">
+																	Send Message
+																</button>
+
+																<div class="text-center mt--30">
+																	<a href="#accordionDropdownContactDetail" class="d-block text-success text-decoration-none" data-toggle="collapse" aria-expanded="true" aria-controls="accordionDropdownContactDetail">
+																		Contact Detail
+																	</a>
+																</div>
+
+															</div>
+														</form>
+														<!-- /CONTACT FORM : AJAX -->
+
+														<!-- 
+															DETAIL 
+
+															Note: 	form is empty but required by bootstrap 
+																	to keep the dropdown open on click.
+														-->
+														<form action="#" method="get" class="collapse" id="accordionDropdownContactDetail" data-parent="#accordionDropdownContact">
+
+
+															<div class="p--30 pt--0">
+
+																<h3 class="h5 text-center pt-4 pb-3">
+																	Contact Detail
+																</h3>
+
+																<p class="font-weight-light fs--15">
+																	Thank you very much for your interest in Smarty. If you have questions, please contact us using our form or by adress/phone.
+																</p>
+
+																<div class="h5 font-weight-medium pb-2 pt-3">
+																	My Company Inc
+																</div>
+
+																<div class="clearfix pb-1">
+																	Address: <span class="text-muted">Lorem iptum dolor sit amet</span>
+																</div>
+																
+																<div class="clearfix pb-1">
+																	Phone: <a href="tel:+01-555-5555" class="d-inline-block link-muted">(+01) 555-5555</a>
+																</div>
+
+																<div class="clearfix pb-1">
+																	Email: <a href="email:me@mycompany.com" class="d-inline-block link-muted">me@mycompany.com</a>
+																</div>
+
+																<div class="py-3">
+																	<img src="assets/images/logo/logo_dark.svg" width="110" height="60" alt="...">
+																</div>
+
+																<div class="text-center mt--30">
+																	<a href="#accordionDropdownContactForm" class="d-block text-muted text-decoration-none" data-toggle="collapse" aria-expanded="true" aria-controls="accordionDropdownContactForm">
+																		Back to contact form
+																	</a>
+																</div>
+
+															</div>
+														</form>
+														<!-- /DETAIL -->
+
+
+													</div>
+
+
+												</div>
+
+											</div>
+
+											<p class="fs--13 text-muted mt-3">
+												Note: <a href="plugins-sow-ajax-forms.html" class="js-ajax link-muted">SOW Ajax Form</a> is used by default for the contact form. See the code for more info.
+											</p>
+										</div>
+
+									</div>
+										
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 col-xl-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Extended Dropdowns</span>
+								</div>
+
+								<div class="portlet-body">
+
+									<div class="py-6">
+
+
+										<!-- Ajax : html -->
+										<div class="dropdown d-inline-block">
+
+											<!--
+													
+												Required Plugins:
+													SOW : Dropdown
+													SOW : Dropdown Ajax
+													SOW : Dropdown Click Ignore
+													* If SOW : Ajax Navigation used (like right now in the demo), 
+													ajax links will be active inside dropdown. Just add .js-ajax to the valid links.
+
+												Optional:
+													data-dropdown-ajax-reload-always="true"
+														Each time a dropdown is clicked, an ajax request is sent to reload the dropdown content.
+														If .dropdown-menu has .dropdown-menu-hover class (dropdown is open on mouse over), is ignored (except on mobile)
+
+												More optional params if needed:
+													data-dropdown-ajax-method="GET|POST"	(default is "GET")
+													data-dropdown-ajax-contentType=""		(jQuery default)
+													data-dropdown-ajax-dataType=""			(jQuery default)
+													data-dropdown-ajax-loadicon=""			(default: "fi fi-circle-spin fi-spin")
+
+											-->
+											<a 	href="#" id="ddAjax_demo1" 
+												data-dropdown-ajax-source="_ajax/dropdown_ajax.html"
+												data-toggle="dropdown" 
+												aria-expanded="false" 
+												aria-haspopup="true" 
+												class="btn btn-sm btn-danger btn-soft btn-pill">
+
+												<span class="group-icon">
+													<i class="fi fi-arrow-end-slim"></i>
+													<i class="fi fi-arrow-down"></i>
+												</span>
+												<span>Ajax : Html</span>
+
+											</a>
+
+											<!--
+												Required: 
+													.dropdown-menu-block-md added to .dropdown-menu (mobile, if dropdown has multilevel)
+
+												Optional:
+													.dropdown-menu-hover
+											-->
+											<div aria-labelledby="ddAjax_demo1" class="dropdown-menu dropdown-menu-clean dropdown-menu-block-md max-w-200">
+												
+												<!-- ajax content -->
+
+											</div>
+
+										</div>
+
+
+
+
+										<!-- Ajax : json -->
+										<div class="dropdown d-inline-block">
+
+											<!--
+													
+												1. Ajax Dropdown Content
+													The dropdown content is loaded on user interaction only:
+														- on mouse over (if dropdown is opening on mouse over (click on mobile device))
+														- on mouse click
+													++ ++ ++
+													Curently is set by config to work for links: a[data-toggle="dropdown"]
+													You can add to config for buttons (separated by comma): button[data-toggle="dropdown"]
+													Or simply by using a class. 
+													Instead of autoinit by config, the plugin can also be called alone like this: 
+														$.SOW.core.dropdown_ajax.init('a[data-toggle="dropdown"]');
+
+
+											-->
+											<a 	href="#" id="ddAjax_demo2" 
+												data-dropdown-ajax-source="_ajax/dropdown_ajax.json"
+												data-dropdown-ajax-mode="json"
+												data-toggle="dropdown" 
+												aria-expanded="false" 
+												aria-haspopup="true" 
+												class="btn btn-sm btn-danger btn-soft btn-pill">
+
+												<span class="group-icon">
+													<i class="fi fi-arrow-end-slim"></i>
+													<i class="fi fi-arrow-down"></i>
+												</span>
+												<span>Ajax : Json</span>
+
+											</a>
+
+											<!--
+
+												Required Plugins:
+													SOW : Dropdown
+													SOW : Dropdown Ajax
+													SOW : Dropdown Click Ignore
+													* If SOW : Ajax Navigation used (like right now in the demo), 
+													ajax links will be active inside dropdown. Just add .js-ajax to dropdown links.
+
+												Optional:
+													data-dropdown-ajax-reload-always="true"
+														Each time a dropdown is clicked, an ajax request is sent to reload the dropdown content.
+														If .dropdown-menu has .dropdown-menu-hover class (dropdown is open on mouse over), is ignored (except on mobile)
+
+												More optional params if needed:
+													data-dropdown-ajax-method="GET|POST"	(default is "GET")
+													data-dropdown-ajax-contentType=""		(jQuery|config default)
+													data-dropdown-ajax-dataType=""			(jQuery|config default)
+													data-dropdown-ajax-loadicon=""			(default: "fi fi-circle-spin fi-spin")
+
+													data-dropdown-ajax-mode="html|json" 			html|json ; json = Build dropdown from json data
+																			html structure: _ajax/dropdown_ajax.html
+																			json structure: _ajax/dropdown_ajax.json
+																			see also _ajax/dropdown_ajax.php (for a php example)
+
+
+												Working examples
+													data-dropdown-ajax-source="_ajax/dropdown_ajax.html"
+													data-dropdown-ajax-mode="html"
+
+													data-dropdown-ajax-source="_ajax/dropdown_ajax.json"
+													data-dropdown-ajax-mode="json"
+
+													data-dropdown-ajax-source="_ajax/dropdown_ajax.php"
+													data-dropdown-ajax-mode="json"
+
+											-->
+											<div aria-labelledby="ddAjax_demo2" class="dropdown-menu dropdown-menu-clean dropdown-menu-block-md max-w-200">
+												
+												<!-- ajax content -->
+
+											</div>
+
+										</div>
+
+
+
+										<!-- 2. Clean -->
+										<div class="dropdown d-inline-block">
+											<a href="#" id="ddHClean_demo1" class="btn btn-sm btn-danger btn-soft btn-pill" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+												<span class="group-icon">
+													<i class="fi fi-arrow-end-slim"></i>
+													<i class="fi fi-arrow-down"></i>
+												</span>
+												<span>Clean</span>
+											</a>
+
+											<div aria-labelledby="ddHClean_demo1" class="dropdown-menu dropdown-menu-clean dropdown-click-ignore max-w-200">
+											
+												<div class="dropdown-header">
+													Clean
+												</div>
+
+												<div class="dropdown-divider"></div>
+
+												<div class="scrollable-vertical max-h-50vh">
+
+													<a class="dropdown-item text-truncate active" href="#">
+														Active
+													</a>
+													<a class="dropdown-item text-truncate disabled" href="#">
+														Disabled
+													</a>
+													<div class="dropdown-divider"></div>
+													<a class="dropdown-item" href="#">
+														Link 1
+													</a>
+													<a class="dropdown-item" href="#">
+														Link 2
+													</a>
+													<a class="dropdown-item max-w-250 text-truncate" href="#">
+														A long text, very very very long text
+													</a>
+												</div>
+
+											</div>
+										</div>
+
+
+
+										<!-- 3. Bullets -->
+										<div class="dropdown d-inline-block">
+											<a href="#" id="ddBullet_demo" class="btn btn-sm btn-danger btn-soft btn-pill" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+												<span class="group-icon">
+													<i class="fi fi-arrow-end-slim"></i>
+													<i class="fi fi-arrow-down"></i>
+												</span>
+												<span>Bullets</span>
+											</a>
+
+											<div aria-labelledby="ddBullet_demo" class="prefix-link-icon prefix-icon-dot dropdown-menu dropdown-menu-clean dropdown-click-ignore max-w-200">
+												
+												<div class="dropdown-header">
+													Bullets
+												</div>
+
+												<div class="dropdown-divider"></div>
+
+												<div class="scrollable-vertical max-h-50vh">
+
+													<a class="dropdown-item text-truncate active" href="#">
+														Active
+													</a>
+													<a class="dropdown-item text-truncate disabled" href="#">
+														Disabled
+													</a>
+													<div class="dropdown-divider"></div>
+													<a class="dropdown-item" href="#">
+														Link 1
+													</a>
+													<a class="dropdown-item" href="#">
+														Link 2
+													</a>
+													<a class="dropdown-item max-w-250 text-truncate" href="#">
+														A long text, very very very long text
+													</a>
+
+												</div>
+
+											</div>
+										</div>
+
+
+
+										<!-- 4. Lines -->
+										<div class="dropdown d-inline-block">
+											<a href="#" id="ddLine_demo" class="btn btn-sm btn-danger btn-soft btn-pill" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+												<span class="group-icon">
+													<i class="fi fi-arrow-end-slim"></i>
+													<i class="fi fi-arrow-down"></i>
+												</span>
+												<span>Lines</span>
+											</a>
+
+											<div aria-labelledby="ddLine_demo" class="prefix-link-icon prefix-icon-line dropdown-menu dropdown-menu-clean dropdown-click-ignore max-w-200">
+												
+												<div class="dropdown-header">
+													Lines
+												</div>
+
+												<div class="dropdown-divider"></div>
+
+												<div class="scrollable-vertical max-h-50vh">
+
+													<a class="dropdown-item text-truncate active" href="#">
+														Active
+													</a>
+													<a class="dropdown-item text-truncate disabled" href="#">
+														Disabled
+													</a>
+													<a class="dropdown-item" href="#">
+														Link 1
+													</a>
+													<a class="dropdown-item" href="#">
+														Link 2
+													</a>
+													<div class="dropdown-divider"></div>
+													<a class="dropdown-item max-w-250 text-truncate" href="#">
+														A long text, very very very long text
+													</a>
+
+												</div>
+
+											</div>
+										</div>
+
+
+
+										<!-- 5. Custom -->
+										<div class="dropdown d-inline-block">
+											<a href="#" id="ddCustom_demo" class="btn btn-sm btn-danger btn-soft btn-pill" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+												<span class="group-icon">
+													<i class="fi fi-arrow-end-slim"></i>
+													<i class="fi fi-arrow-down"></i>
+												</span>
+												<span>Custom &amp; Hover</span>
+											</a>
+
+											<div aria-labelledby="ddCustom_demo" class="dropdown-menu dropdown-menu-clean dropdown-menu-hover w--300">
+												
+												<a href="#" class="dropdown-item transition-hover-left clearfix text-primary pt-4 pb-4 fs--13">
+													
+													<span class="badge badge-secondary badge-soft position-absolute absolute-top right-0 ml-2 mr-2">v3.0.0</span>
+
+													<span class="float-start w--50 mr--20">
+														<img width="50" height="50" class="img-fluid" src="../../html_frontend/demo.files/svg/icons/menu_doc_1.svg" alt="...">
+													</span>
+
+													DOCUMENTATION
+													<span class="d-block text-muted text-truncate fs--14">
+														Don't get stuck!
+													</span>
+												</a>
+
+												<div class="dropdown-divider"></div>
+												
+												<a href="#" class="dropdown-item transition-hover-left clearfix text-primary pt-4 pb-4 fs--13">
+													
+													<span class="float-start w--50 mr--20">
+														<img width="50" height="50" class="img-fluid" src="../../html_frontend/demo.files/svg/icons/menu_doc_2.svg" alt="...">
+													</span>
+
+													COMPONENTS
+													<span class="d-block text-muted text-truncate fs--14">
+														Reusable components
+													</span>
+												</a>
+
+												<div class="dropdown-divider"></div>
+												
+												<a href="#" class="dropdown-item transition-hover-left clearfix text-primary pt-4 pb-4 fs--13">
+
+													<span class="float-start w--50 mr--20">
+														<img width="50" height="50" class="img-fluid" src="../../html_frontend/demo.files/svg/icons/menu_doc_3.svg" alt="...">
+													</span>
+
+													<b>BUILDER</b>
+													<span class="d-block text-muted text-truncate fs--14">
+														Simple layout builder
+													</span>
+												</a>
+
+											</div>
+										</div>
+
+
+
+										<!-- 6. Dark -->
+										<div class="dropdown d-inline-block">
+											<a href="#" id="ddHClean_demo2" class="btn btn-sm btn-secondary btn-soft btn-pill" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+												<span class="group-icon">
+													<i class="fi fi-arrow-end-slim"></i>
+													<i class="fi fi-arrow-down"></i>
+												</span>
+												<span>Dark</span>
+											</a>
+
+											<div aria-labelledby="ddHClean_demo2" class="dropdown-menu dropdown-menu-clean dropdown-menu-dark dropdown-click-ignore max-w-200">
+											
+												<div class="dropdown-header">
+													Dark Dropdown
+												</div>
+
+												<div class="dropdown-divider"></div>
+
+												<div class="scrollable-vertical max-h-50vh">
+
+													<a class="dropdown-item text-truncate active" href="#">
+														Active
+													</a>
+													<a class="dropdown-item text-truncate disabled" href="#">
+														Disabled
+													</a>
+													<div class="dropdown-divider"></div>
+													<a class="dropdown-item" href="#">
+														Link 1
+													</a>
+													<a class="dropdown-item" href="#">
+														Link 2
+													</a>
+													<a class="dropdown-item max-w-250 text-truncate" href="#">
+														A long text, very very very long text
+													</a>
+												</div>
+
+											</div>
+										</div>
+
+
+									</div>
+										
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 col-xl-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Multi Level &amp; Mega</span>
+								</div>
+
+								<div class="portlet-body">
+
+								<div class="py-6">
+
+
+
+									<div class="dropdown d-block mb-5">
+										
+										<a href="#" id="ddMulti_demo" class="btn btn-sm btn-pink btn-pill" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+											<span class="group-icon">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down"></i>
+											</span>
+											<span>Multilevel</span>
+										</a>
+
+										<ul aria-labelledby="ddMulti_demo" class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md dropdown-menu-clean max-w-200">
+											<li class="dropdown-item dropdown">
+												<a href="#" class="dropdown-link" data-toggle="dropdown">Home Corporate</a>
+												
+												<ul class="dropdown-menu dropdown-menu-hover dropdown-menu-block-md shadow-lg b-0 m-0">
+													<li class="dropdown-item dropdown">
+														<a class="dropdown-link" href="#" data-toggle="dropdown">Another Deep</a>
+
+														<ul class="dropdown-menu dropdown-menu-hover shadow-lg b-0 m-0">
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="#">Deep 3:1</a>
+															</li>
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="#">Deep... N levels</a>
+															</li>
+														</ul>
+
+													</li>
+													<li class="dropdown-item">
+														<a class="dropdown-link" href="#">Corporate 2</a>
+													</li>
+													<li class="dropdown-item">
+														<a class="dropdown-link" href="#">Corporate 3</a>
+													</li>
+													<li class="dropdown-item">
+														<a class="dropdown-link" href="#">Corporate 4</a>
+													</li>
+													<li class="dropdown-item">
+														<a class="dropdown-link" href="#">Corporate 5</a>
+													</li>
+												</ul>
+
+											</li>
+
+											<li class="dropdown-item dropdown">
+												<a class="dropdown-link" href="#" data-toggle="dropdown">Niche</a>
+
+												<ul class="dropdown-menu dropdown-menu-hover shadow-lg b-0 m-0">
+													<li class="dropdown-item">
+														<a class="dropdown-link" href="#">Real Estate</a>
+													</li>
+													<li class="dropdown-item">
+														<a class="dropdown-link" href="#">Restaurant</a>
+													</li>
+													<li class="dropdown-item">
+														<a class="dropdown-link" href="#">Construction</a>
+													</li>
+													<li class="dropdown-item">
+														<a class="dropdown-link" href="#">Lawyer</a>
+													</li>
+													<li class="dropdown-item">
+														<a class="dropdown-link" href="#">Marketing</a>
+													</li>
+													<li class="dropdown-item">
+														<a class="dropdown-link" href="#">Car</a>
+													</li>
+													<li class="dropdown-item">
+														<a class="dropdown-link" href="#">Medical</a>
+													</li>
+													<li class="dropdown-item">
+														<a class="dropdown-link" href="#">Hosting</a>
+													</li>
+													<li class="dropdown-item">
+														<a class="dropdown-link" href="#">Education</a>
+													</li>
+													<li class="dropdown-item">
+														<a class="dropdown-link" href="#">Events</a>
+													</li>
+												</ul>
+
+											</li>
+											<li class="dropdown-item">
+												<a class="dropdown-link" href="#">Magazine / News</a>
+											</li>
+											<li class="dropdown-item">
+												<a class="dropdown-link" href="#">Help Center</a>
+											</li>
+											<li class="dropdown-divider"></li>
+											<li class="dropdown-item">
+												<a href="#" class="dropdown-link">
+													<i class="fi fi-emoji-smile text-muted"></i>
+													
+													Smarty v3+
+
+													<span class="d-block text-muted pt--6 fs--13">
+														Rewriten from scratch <br>
+														for best performance!
+													</span>
+												</a>
+											</li>
+										</ul>
+
+									</div>
+
+
+									<!-- 
+
+										.d-block 				= 	required. Will get the width of parent container.
+																	example: if placed inside of .col-6 grid, the width will be the same as .col-6
+										.dropdown-menu-hover 	= not required
+										.dropdown-click-ignore 	= not required, but needed to stay open on self click
+
+									-->
+									<div class="dropdown dropdown-mega d-block mt--5">
+										
+										<a href="#" id="ddMega_demo" class="btn btn-sm btn-pink btn-pill" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+											<span class="group-icon">
+												<i class="fi fi-arrow-end-slim"></i>
+												<i class="fi fi-arrow-down"></i>
+											</span>
+											<span>Mega Dropdown</span>
+										</a>
+
+										<ul class="dropdown-menu dropdown-click-ignore dropdown-menu-clean w-100" aria-labelledby="ddMega_demo">
+											<li class="dropdown-item bg-transparent">
+												
+												<div class="row col-border-md">
+
+													<div class="col-12 col-md-3">
+
+														<h3 class="h6 text-muted text-uppercase fs--14 mb-3">Shop Homepage</h3>
+														<ul class="prefix-link-icon prefix-icon-dot">
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="#">Shop Home 1</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="#">Shop Home 2</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="#">Shop Home 3</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="#">Shop Home 4</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="#">Shop Home 5</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="#">Shop Home 6</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="#">Shop Home 7</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="#">Shop Home 8</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="#">Shop Home 9</a>
+															</li>
+
+														</ul>
+
+													</div>
+
+													<div class="col-12 col-md-3">
+
+														<h3 class="h6 text-muted text-uppercase fs--14 mb-3">Shop Categoriy</h3>
+														<ul class="prefix-link-icon prefix-icon-dot">
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="#">Category 1</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="#">Category 2</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="#">Category 3</a>
+															</li>
+
+														</ul>
+
+														<h3 class="h6 text-muted text-uppercase fs--14 mb-3 mt-5">Shop Product</h3>
+														<ul class="prefix-link-icon prefix-icon-dot">
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="#">Product Page 1</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="#">Product Page 2</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="#">Product Page 3</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="#">Product Page 4</a>
+															</li>
+
+														</ul>
+
+													</div>
+
+													<div class="col-12 col-md-3">
+
+														<h3 class="h6 text-muted text-uppercase fs--14 mb-3">Shop Cart</h3>
+														<ul class="prefix-link-icon prefix-icon-dot">
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="#">Cart</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="#">Cart Empty</a>
+															</li>
+
+														</ul>
+
+														<h3 class="h6 text-muted text-uppercase fs--14 mb-3 mt-5">Shop Elements</h3>
+														<ul class="prefix-link-icon prefix-icon-dot">
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="#">Featured</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="#">Boxes &amp; Carousel</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="#">Countdowns / Promo</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="#">Various Components</a>
+															</li>
+
+														</ul>
+
+													</div>
+
+													<div class="col-12 col-md-3">
+
+														<h3 class="h6 text-muted text-uppercase fs--14 mb-3">Blog Pages</h3>
+														<ul class="prefix-link-icon prefix-icon-line">
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="#">With Sidebar</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="#">Without Sidebar</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="#">Single With Sidebar</a>
+															</li>
+
+															<li class="dropdown-item">
+																<a class="dropdown-link" href="#">Single Without Sidebar</a>
+															</li>
+
+														</ul>
+
+														<div class="mt-4">
+															<img width="600" height="600" class="img-fluid" src="../../html_frontend/demo.files/svg/artworks/undraw_wireframing_nxyi.svg" alt="...">
+														</div>
+
+													</div>
+
+												</div>
+
+											</li>
+										</ul>
+
+									</div>
+
+
+								</div>
+										
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 col-xl-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Dropdown / Dropup</span>
+								</div>
+
+								<div class="portlet-body">
+
+									<div class="py-6">
+
+										<div class="row">
+											<div class="col-6">
+
+												<div class="dropdown">
+													<button class="btn btn-primary btn-soft dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+														<span>Dropdown button</span>
+
+														<span class="group-icon">
+															<i class="fi fi-arrow-down"></i>
+															<i class="fi fi-arrow-up"></i>
+														</span>
+
+													</button>
+
+													<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+														<h6 class="dropdown-header">Dropdown header</h6>
+														<a class="dropdown-item active" href="#">
+															<i class="fi fi-check"></i> 
+															Active
+														</a>
+														<a class="dropdown-item disabled" href="#">
+															<i class="fi fi-close"></i> 
+															Disabled
+														</a>
+														<div class="dropdown-divider"></div>
+														<a class="dropdown-item max-w-250 text-truncate" href="#">
+															<i class="fi fi fi-arrow-end-slim"></i> 
+															A long text, very very very long text
+														</a>
+													</div>
+												</div>
+
+												<br>
+												<br>
+
+												<div class="dropup">
+													<button class="btn btn-pill btn-success btn-soft dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+														<span>Dropup button</span>
+
+														<span class="group-icon">
+															<i class="fi fi-arrow-up"></i>
+															<i class="fi fi-arrow-down"></i>
+														</span>
+
+													</button>
+
+													<div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+														<h6 class="dropdown-header">Dropdown header</h6>
+														<a class="dropdown-item active" href="#">
+															<i class="fi fi-check"></i> 
+															Active
+														</a>
+														<a class="dropdown-item disabled" href="#">
+															<i class="fi fi-close"></i> 
+															Disabled
+														</a>
+														<div class="dropdown-divider"></div>
+														<a class="dropdown-item max-w-250 text-truncate" href="#">
+															<i class="fi fi fi-arrow-end-slim"></i> 
+															A long text, very very very long text
+														</a>
+													</div>
+												</div>
+
+
+											</div>
+
+											<div class="col-6">
+
+												<div class="dropdown">
+													<a class="btn btn-primary btn-soft dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+														<span>Dropdown link</span>
+
+														<span class="group-icon">
+															<i class="fi fi-arrow-down"></i>
+															<i class="fi fi-arrow-up"></i>
+														</span>
+
+													</a>
+
+													<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+														<h6 class="dropdown-header">Dropdown header</h6>
+														<a class="dropdown-item active" href="#">
+															<i class="fi fi-check"></i> 
+															Active
+														</a>
+														<a class="dropdown-item disabled" href="#">
+															<i class="fi fi-close"></i> 
+															Disabled
+														</a>
+														<div class="dropdown-divider"></div>
+														<a class="dropdown-item max-w-250 text-truncate" href="#">
+															<i class="fi fi fi-arrow-end-slim"></i> 
+															A long text, very very very long text
+														</a>
+													</div>
+												</div>
+
+												<br>
+												<br>
+
+												<div class="dropup">
+													<a class="btn btn-pill btn-success btn-soft dropdown-toggle" href="#" role="button" id="dropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+														<span>Dropup link</span>
+
+														<span class="group-icon">
+															<i class="fi fi-arrow-up"></i>
+															<i class="fi fi-arrow-down"></i>
+														</span>
+
+													</a>
+
+													<div class="dropdown-menu" aria-labelledby="dropdownMenuLink2">
+														<h6 class="dropdown-header">Dropdown header</h6>
+														<a class="dropdown-item active" href="#">
+															<i class="fi fi-check"></i> 
+															Active
+														</a>
+														<a class="dropdown-item disabled" href="#">
+															<i class="fi fi-close"></i> 
+															Disabled
+														</a>
+														<div class="dropdown-divider"></div>
+														<a class="dropdown-item max-w-250 text-truncate" href="#">
+															<i class="fi fi fi-arrow-end-slim"></i> 
+															A long text, very very very long text
+														</a>
+													</div>
+												</div>
+
+											</div>
+
+										</div>
+
+									</div>
+										
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 col-xl-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Split Dropdowns</span>
+								</div>
+
+								<div class="portlet-body">
+
+									<div class="py-6">
+
+										<div class="row">
+											<div class="col-6">
+
+												<div class="btn-group">
+													<button type="button" class="btn btn-primary">Action</button>
+													<button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+														<span class="sr-only">Toggle Dropdown</span>
+														<span class="group-icon m-0">
+															<i class="fi fi-arrow-down"></i>
+															<i class="fi fi-arrow-up"></i>
+														</span>
+													</button>
+
+													<div class="dropdown-menu">
+														<h6 class="dropdown-header">Dropdown header</h6>
+														<a class="dropdown-item active" href="#">
+															<i class="fi fi-check"></i> 
+															Active
+														</a>
+														<a class="dropdown-item disabled" href="#">
+															<i class="fi fi-close"></i> 
+															Disabled
+														</a>
+														<div class="dropdown-divider"></div>
+														<a class="dropdown-item max-w-250 text-truncate" href="#">
+															<i class="fi fi fi-arrow-end-slim"></i> 
+															A long text, very very very long text
+														</a>
+													</div>
+												</div>
+
+												&nbsp; 
+
+												<div class="btn-group">
+													<button type="button" class="btn btn-primary btn-soft">Action</button>
+													<a href="#" class="btn btn-primary btn-soft dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+														<span class="sr-only">Toggle Dropdown</span>
+														<span class="group-icon m-0">
+															<i class="fi fi-arrow-down"></i>
+															<i class="fi fi-arrow-up"></i>
+														</span>
+													</a>
+
+													<div class="dropdown-menu">
+														<h6 class="dropdown-header">Dropdown header</h6>
+														<a class="dropdown-item active" href="#">
+															<i class="fi fi-check"></i> 
+															Active
+														</a>
+														<a class="dropdown-item disabled" href="#">
+															<i class="fi fi-close"></i> 
+															Disabled
+														</a>
+														<div class="dropdown-divider"></div>
+														<a class="dropdown-item max-w-250 text-truncate" href="#">
+															<i class="fi fi fi-arrow-end-slim"></i> 
+															A long text, very very very long text
+														</a>
+													</div>
+												</div>
+
+											</div>
+
+											<div class="col-6">
+
+												<div class="btn-group">
+													<button type="button" class="btn btn-pill btn-primary">Action</button>
+													<button type="button" class="btn btn-pill btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+														<span class="sr-only">Toggle Dropdown</span>
+														<span class="group-icon m-0">
+															<i class="fi fi-arrow-down"></i>
+															<i class="fi fi-arrow-up"></i>
+														</span>
+													</button>
+
+													<div class="dropdown-menu">
+														<h6 class="dropdown-header">Dropdown header</h6>
+														<a class="dropdown-item active" href="#">
+															<i class="fi fi-check"></i> 
+															Active
+														</a>
+														<a class="dropdown-item disabled" href="#">
+															<i class="fi fi-close"></i> 
+															Disabled
+														</a>
+														<div class="dropdown-divider"></div>
+														<a class="dropdown-item max-w-250 text-truncate" href="#">
+															<i class="fi fi fi-arrow-end-slim"></i> 
+															A long text, very very very long text
+														</a>
+													</div>
+												</div>
+
+												&nbsp;
+
+
+												<div class="btn-group">
+													<button type="button" class="btn btn-pill btn-primary btn-soft">Action</button>
+													<a href="#" class="btn btn-pill btn-primary btn-soft dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+														<span class="sr-only">Toggle Dropdown</span>
+														<span class="group-icon m-0">
+															<i class="fi fi-arrow-down"></i>
+															<i class="fi fi-arrow-up"></i>
+														</span>
+													</a>
+
+													<div class="dropdown-menu">
+														<h6 class="dropdown-header">Dropdown header</h6>
+														<a class="dropdown-item active" href="#">
+															<i class="fi fi-check"></i> 
+															Active
+														</a>
+														<a class="dropdown-item disabled" href="#">
+															<i class="fi fi-close"></i> 
+															Disabled
+														</a>
+														<div class="dropdown-divider"></div>
+														<a class="dropdown-item max-w-250 text-truncate" href="#">
+															<i class="fi fi fi-arrow-end-slim"></i> 
+															A long text, very very very long text
+														</a>
+													</div>
+												</div>
+
+											</div>
+
+										</div>
+
+									</div>
+										
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+					</div>
+					<!-- end:row: -->
+					<!-- doc:end -->

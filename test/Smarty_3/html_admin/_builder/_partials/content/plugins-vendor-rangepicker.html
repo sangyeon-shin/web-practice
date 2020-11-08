@@ -1,0 +1,515 @@
+﻿					<!-- doc:start -->
+					<div class="page-title bg-transparent b-0">
+
+						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
+							Vendor : Date Rangepicker
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--13 pb-2 px-3">
+								<li class="breadcrumb-item">
+									<a href="index.html" class="js-ajax">Dashboard</a>
+								</li>
+								<li class="breadcrumb-item active">
+									Vendor Plugins
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Date Rangepicker
+								</li>
+							</ol>
+						</nav>
+
+					</div>
+
+
+
+					<!-- ALERT : NOTE -->
+					<div class="bg-white shadow-xs p-2 mb-4 rounded">
+						<div class="clearfix bg-light p-2 rounded d-flex align-items-center">
+							<span class="btn row-pill btn-sm bg-gradient-warning b-0 py-1 mb-0 float-start">
+								<i class="fi fi-round-info-full"></i>
+								Note
+							</span>
+							<span class="d-block px-2 text-muted text-truncate">
+								This is a basic demo! Please see main <a href="../../html_frontend/documentation/plugins-vendor-rangepicker.html" target="smarty" class="link-muted">full documentation here</a>.
+							</span>
+						</div>
+					</div>
+					<!-- /ALERT : NOTE -->
+
+
+
+					<!-- start:row -->
+					<div class="row gutters-sm">
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Examples</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<p class="lead">
+											JavaScript Date Range, Date and Time Picker Component.<br>
+											Smarty enabled ajax functionality on date change!
+										</p>
+
+										<p>
+											How is Daterangepicker compared to Datepicker?<br>
+											Daterangepicker is larger in size because is using moment.js as dependedncy but is definitely richer in features. <br>
+											Daterangepicker can also be used as a single dropdown. Smarty designed them both to look almost the same.<br>
+											Datepicker: 34Kb<br>
+											Daterangepicker: 33Kb + 58Kb <a href="https://momentjs.com/" class="link-muted" target="vendor">moment.js</a>
+										</p>
+
+										<ul class="mt-3">
+											<li class="mt-3">
+												<a href="https://github.com/dangrossman/daterangepicker" target="smarty" class="link-muted">
+													https://github.com/dangrossman/daterangepicker
+												</a>
+											</li>
+											<li>
+												License: MIT
+											</li>
+										</ul>
+
+
+
+
+
+										<div class="row mt-7">
+
+											<div class="col-12 col-lg-4 mb-4">
+
+												<h5 class="mb-3">Predefined Ranges</h5>
+												
+												<input autocomplete="off" type="text" name="my_daterange" class="form-control rangepicker" 
+													data-ranges="true" 
+													data-date-format="MM/DD/YYYY" 
+													data-quick-locale='{
+														"lang_apply"	: "Apply",
+														"lang_cancel"	: "Cancel",
+														"lang_crange"	: "Custom Range",
+														"lang_months" 	: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+														"lang_weekdays" : ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"],
+
+														"lang_today"	: "Today", 
+														"lang_yday"		: "Yesterday", 
+														"lang_7days"	: "Last 7 Days", 
+														"lang_30days"	: "Last 30 Days", 
+														"lang_tmonth"	: "This Month", 
+														"lang_lmonth"	: "Last Month"
+													}'
+												>
+
+											</div>
+
+											<div class="col-12 col-lg-4 mb-4">
+
+												<h5 class="mb-3">Range</h5>
+												
+												<!-- -->
+												<input autocomplete="off" type="text" name="my_daterange" class="form-control rangepicker"
+													data-placement="left" 
+													data-ranges="false" 
+													data-date-start="01/16/2019" 
+													data-date-end="01/28/2019" 
+													data-date-format="MM/DD/YYYY" 
+													data-quick-locale='{
+														"lang_apply"	: "Apply",
+														"lang_cancel"	: "Cancel",
+														"lang_crange"	: "Custom Range",
+														"lang_months" 	: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+														"lang_weekdays" : ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
+													}'
+												>
+
+											</div>
+
+											<div class="col-12 col-lg-4 mb-4">
+
+												<h5 class="mb-3">With Time Picker</h5>
+												
+												<input autocomplete="off" type="text" name="my_daterange" class="form-control rangepicker"
+													data-single-datepicker="true" 
+													data-timepicker="true" 
+													data-timepicker-24h="true" 
+													data-timepicker-show-seconds="true" 
+													data-date-format="MM/DD/YYYY HH:mm:ss" 
+													data-quick-locale='{
+														"lang_apply"	: "Apply",
+														"lang_cancel"	: "Cancel",
+														"lang_crange"	: "Custom Range",
+														"lang_months" 	: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+														"lang_weekdays" : ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
+													}'
+												>
+
+											</div>
+
+
+											<div class="col-12 col-lg-4 mb-4">
+
+												<h5 class="mb-3">Datepicker</h5>
+												<input autocomplete="off" type="text" name="my_daterange" class="form-control rangepicker"
+													data-layout-rounded="false" 
+													data-single-datepicker="true" 
+													data-interval-years='[1982,2020]' 
+													data-date-format="MM/DD/YYYY" 
+													data-quick-locale='{
+														"lang_apply"	: "Apply",
+														"lang_cancel"	: "Cancel",
+														"lang_crange"	: "Custom Range",
+														"lang_months" 	: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+														"lang_weekdays" : ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
+													}'
+												>
+
+											</div>
+
+
+											<div class="col-12 col-lg-4 mb-4">
+
+												<h5 class="mb-3">Datepicker - disable past dates</h5>
+												<input autocomplete="off" type="text" name="my_daterange" class="form-control rangepicker"
+													data-layout-rounded="false" 
+													data-single-datepicker="true" 
+													data-disable-past-dates="true" 
+													data-date-start="01/16/2019" 
+													data-date-format="MM/DD/YYYY" 
+													data-quick-locale='{
+														"lang_apply"	: "Apply",
+														"lang_cancel"	: "Cancel",
+														"lang_crange"	: "Custom Range",
+														"lang_months" 	: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+														"lang_weekdays" : ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
+													}'
+												>
+
+											</div>
+
+
+											<div class="col-12 col-lg-4 mb-4">
+
+												<h5 class="mb-3">All Enabled</h5>
+												
+												<input autocomplete="off" type="text" name="my_daterange" class="form-control rangepicker"
+													data-layout-rounded="true" 
+													data-disable-auto-update-input="true"
+													data-timepicker="true" 
+													data-timepicker-24h="true" 
+													data-timepicker-show-seconds="false" 
+													data-placement="left" 
+													data-date-start="01/16/2019" 
+													data-date-end="01/28/2019" 
+													data-date-format="MM/DD/YYYY HH:mm"
+													data-single-datepicker="false" 
+													data-interval-years='[1982,2020]' 
+													data-ranges="true" 
+													data-quick-locale='{
+														"lang_apply"	: "Apply",
+														"lang_cancel"	: "Cancel",
+														"lang_crange"	: "Custom Range",
+														"lang_months" 	: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+														"lang_weekdays" : ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"],
+
+														"lang_today"	: "Today", 
+														"lang_yday"		: "Yesterday", 
+														"lang_7days"	: "Last 7 Days", 
+														"lang_30days"	: "Last 30 Days", 
+														"lang_tmonth"	: "This Month", 
+														"lang_lmonth"	: "Last Month"
+													}'
+												>
+
+											</div>
+
+
+											<div class="col-12 col-lg-4 mb-4">
+
+												<h5 class="mb-3">Rounded + Icon</h5>
+												<div class="input-group-over position-realtive z-index-1 bg-white form-control-pill">
+
+														<input autocomplete="off" type="text" name="my_daterange" class="form-control form-control-pill rangepicker bg-transparent"
+															data-timepicker="true" 
+															data-single-datepicker="true" 
+															data-date-format="MM/DD/YYYY" 
+															data-quick-locale='{
+																"lang_apply"	: "Apply",
+																"lang_cancel"	: "Cancel",
+																"lang_crange"	: "Custom Range",
+																"lang_months" 	: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+																"lang_weekdays" : ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
+															}'
+														>
+
+													<span class="fi fi-calendar fs--20 ml-4 mr-4 z-index-n1"></span>
+												</div>
+
+
+											</div>
+
+
+											<div class="col-12 col-lg-4 mb-4">
+
+												<h5 class="mb-3">Clean + Icon</h5>
+												<div class="input-group-over position-realtive z-index-1 bg-white">
+
+														<input autocomplete="off" type="text" name="my_daterange" class="form-control form-control-clean rangepicker bg-transparent"
+															data-timepicker="true" 
+															data-single-datepicker="true" 
+															data-date-format="MM/DD/YYYY" 
+															data-quick-locale='{
+																"lang_apply"	: "Apply",
+																"lang_cancel"	: "Cancel",
+																"lang_crange"	: "Custom Range",
+																"lang_months" 	: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+																"lang_weekdays" : ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
+															}'
+														>
+
+													<span class="fi fi-calendar fs--20 ml-4 mr-4 z-index-n1 text-pink"></span>
+												</div>
+
+
+											</div>
+
+
+											<div class="col-12 col-lg-4 mb-4">
+
+												<h5 class="mb-3">
+													Rounded Buttons
+												</h5>
+
+
+												<div class="input-group-over position-realtive z-index-1 bg-white form-control-pill">
+
+														<input autocomplete="off" type="text" name="my_daterange" class="form-control rangepicker bg-transparent"
+															data-layout-rounded="true" 
+															data-date-format="MM/DD/YYYY" 
+															data-placement="left" 
+															data-quick-locale='{
+																"lang_apply"	: "Apply",
+																"lang_cancel"	: "Cancel",
+																"lang_crange"	: "Custom Range",
+																"lang_months" 	: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+																"lang_weekdays" : ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
+															}'
+														>
+
+													<span class="fi fi-calendar fs--20 ml-4 mr-4 z-index-n1 text-success"></span>
+												</div>
+
+
+											</div>
+
+
+											<div class="col-12 col-lg-4 mb-4">
+
+												<h5 class="mb-3">
+													Clear Button
+												</h5>
+
+												<div class="form-label-group">
+
+													<input autocomplete="off" type="text" class="form-control rangepicker" 
+														data-single-datepicker="true" 
+														data-disable-auto-update-input="false" 
+														data-date-format="MM/DD/YYYY HH:mm" 
+														data-quick-locale='{
+															"lang_apply"	: "Apply",
+															"lang_cancel"	: "Cancel",
+															"lang_months" 	: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+															"lang_weekdays" : ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
+														}' placeholder="Event Date Start" name="start">
+
+													<label for="item_name">Event Date Start</label>
+													<a href="#" class="btn btn-rangepicker-clear position-absolute end-0 top-0 z-index-2 fi fi-close"></a>
+
+												</div>
+
+											</div>
+
+
+											<div class="col-12 col-lg-4 mb-4">
+
+												<h5 class="mb-3">
+													Clear Button
+												</h5>
+
+												<div class="form-label-group form-control-pill">
+
+													<input autocomplete="off" type="text" class="form-control rangepicker" 
+														data-single-datepicker="true" 
+														data-disable-auto-update-input="false" 
+														data-date-format="MM/DD/YYYY HH:mm" 
+														data-quick-locale='{
+															"lang_apply"	: "Apply",
+															"lang_cancel"	: "Cancel",
+															"lang_months" 	: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+															"lang_weekdays" : ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
+														}' placeholder="Event Date Start" name="start">
+
+													<label for="item_name">Event Date Start</label>
+													<a href="#" class="btn btn-rangepicker-clear position-absolute end-0 top-0 z-index-2 fi fi-close"></a>
+
+												</div>
+
+											</div>
+
+										</div>
+
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Ajax : Submit on Apply</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<div class="input-group-over position-realtive z-index-1 bg-white">
+
+											<input autocomplete="off" type="text" name="my_daterange" class="form-control bg-transparent rangepicker" 
+												data-layout-rounded="false" 
+												data-disable-auto-update-input="true" 
+												data-timepicker="true" 
+												data-timepicker-24h="true" 
+												data-timepicker-show-seconds="false" 
+												data-date-start="01/16/2019" 
+												data-date-end="01/28/2019" 
+												data-date-format="MM/DD/YYYY" 
+												data-single-datepicker="false" 
+												data-interval-years='[1982,2020]' 
+												data-ranges="true"  
+												data-quick-locale='{
+													"lang_apply"	: "Apply",
+													"lang_cancel"	: "Cancel",
+													"lang_crange"	: "Custom Range",
+													"lang_months" 	: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+													"lang_weekdays" : ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"],
+
+													"lang_today"	: "Today", 
+													"lang_yday"		: "Yesterday", 
+													"lang_7days"	: "Last 7 Days", 
+													"lang_30days"	: "Last 30 Days", 
+													"lang_tmonth"	: "This Month", 
+													"lang_lmonth"	: "Last Month"
+												}'
+
+												data-id="1"
+												data-ajax-url="../../html_frontend/demo.files/php/demo.ajax_request.php" 
+												data-ajax-params="['action','date_change']['section','customer_invoice']"
+												data-ajax-method="POST" 
+
+												data-toast-success="Sucessfully Updated!"
+												data-toast-position="top-center">
+
+											<span class="fi fi-calendar fs--20 ml-4 mr-4 z-index-n1"></span>
+										</div>
+
+
+
+
+									<pre class="bg-gradient-dark rounded p-3 mt-7"><code>&lt;!--
+Remove params you don't need (or set to true/false where is possible)
+Debug is on, you can check your console to see the ajax params sent to the server.
+
+data-quick-locale  is optional, english is used by default so
+is safe to remove. Instead of inline translation, moment.js can be
+used (daterangepicker is anyway using it by default) but the only issue is that 
+the complete moment.js is huge (336Kb - 2 times larger than entire Smarty js core). 
+You an anytime enable full moment.js (or just a specific lang file) from gulp.config.__vendors.js
+
+Attention is required to data-quick-locale, each comma is important, including 
+the quotes. Javascript will not throw any error, will simply ignore it if is not
+valid, will be detected as string instead of object.
+
+If data-quick-locale is used, you can remove ranges you don't need
+(lang_today, lang_yday, lang_7days, etc).
+
+data-id="1"  is not required but might be an id from the database. 
+You can instead to add to data-ajax-params ["id","1"]
+
+<a href="info-ajax-params.html" target="smarty">Read about <b>data-ajax-params</b></a> if you are not yet familiarized.
+
+Ajax required:
+data-disable-auto-update-input="true"
+-->
+&lt;div class="input-group-over position-realtive z-index-1 bg-white">
+
+	&lt;input autocomplete="off" type="text" name="my_daterange" class="form-control bg-transparent rangepicker" 
+		data-layout-rounded="false" 
+		data-disable-auto-update-input="true" 
+		data-timepicker="true" 
+		data-timepicker-24h="true" 
+		data-timepicker-show-seconds="false" 
+		data-date-start="01/16/2019" 
+		data-date-end="01/28/2019" 
+		data-date-format="MM/DD/YYYY" 
+		data-single-datepicker="false" 
+		data-interval-years='[1982,2020]' 
+		data-ranges="true"  
+		data-quick-locale='{
+			"lang_apply"	: "Apply",
+			"lang_cancel"	: "Cancel",
+			"lang_crange"	: "Custom Range",
+			"lang_months" 	: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+			"lang_weekdays" : ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"],
+
+			"lang_today"	: "Today", 
+			"lang_yday"		: "Yesterday", 
+			"lang_7days"	: "Last 7 Days", 
+			"lang_30days"	: "Last 30 Days", 
+			"lang_tmonth"	: "This Month", 
+			"lang_lmonth"	: "Last Month"
+		}'
+
+		data-id="1"
+		data-ajax-url="../../html_frontend/demo.files/php/demo.ajax_request.php" 
+		data-ajax-params="['action','date_change']['section','customer_invoice']"
+		data-ajax-method="POST" 
+
+		data-toast-success="Sucessfully Updated!"
+		data-toast-position="top-center"
+	>
+
+	&lt;span class="fi fi-calendar fs--20 ml-4 mr-4 z-index-n1">&lt;/span>
+&lt;/div>
+											</code></pre>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+
+					</div>
+					<!-- end:row: -->
+					<!-- doc:end -->

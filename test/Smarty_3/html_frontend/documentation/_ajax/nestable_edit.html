@@ -1,0 +1,100 @@
+		<div class="modal-header">
+			<h2 class="modal-title fs--18 m-0">
+				Edit
+			</h2>
+
+			<button type="button" class="close pointer" data-dismiss="modal" aria-label="Close">
+				<span class="fi fi-close fs--18" aria-hidden="true"></span>
+			</button>
+		</div>
+
+		<div class="modal-body p--30">
+
+			<!-- <form class="bs-validate" novalidate action="../demo.files/php/demo.ajax_request.php" method="POST"> -->
+			<form class="bs-validate js-ajax" novalidate 
+					method="post" 
+					action="../demo.files/php/demo.ajax_request.php" 
+					method="POST" 
+
+							data-modal-autoclose-on-success="true"
+							data-modal-autoclose-on-success-delay="1000"
+
+					data-ajax-container="" 
+					data-ajax-update-url="false" 
+					data-ajax-show-loading-icon="true" 
+					
+					data-error-toast-text="<i class='fi fi-circle-spin fi-spin float-start'></i> Please, complete all required fields!" 
+					data-error-toast-delay="3000" 
+					data-error-toast-position="top-center" 
+					data-error-scroll-up="true"
+
+					data-ajax-callback-function="nestable_field_update">
+
+				<!-- nestable item id -->
+				<input type="hidden" name="action" value="update">
+				<input type="hidden" name="item_id" value="1">
+
+				<div class="form-label-group mb-4">
+					<input required placeholder="Item Name" id="item_name" name="item_name" type="text" value="Item 1" class="form-control">
+					<label for="item_name">Item Name</label>
+				</div>
+
+				<button type="submit" class="btn btn-primary btn-soft btn-block">
+					Save Changes
+				</button>
+
+			</form>
+
+		</div>
+
+		<script>
+
+			/* 
+				Example of update Nestable, ONLY IF AJAX FORM IS USED!
+				It's not the best way, so regular form submit is recommended!
+			*/
+
+
+			/* 
+				1. Callback
+				This function should remain here, in this modal
+				because item_id is needed.
+			*/
+			nestable_field_update = function(el, data) {
+
+				var item_id 	= 1,
+					fieldName 	= jQuery('#item_name').val();
+
+				updateNestable(item_id, fieldName);
+
+			}
+
+
+			/*
+				2. Function called by callback
+				This function can be moved to a custom javascript file
+			*/
+			updateNestable = function(item_id, fieldName) {
+
+				if(item_id && fieldName) {
+
+					// update html
+					jQuery('.dd-item[data-id='+item_id+']:not(.dd-handle-custom)>.dd-handle, .dd-item[data-id='+item_id+']>.dd-content').text(fieldName);
+
+					// toast alert
+					if(typeof $.SOW.core.toast === 'object')
+						$.SOW.core.toast.show('success', '', 'Sucessfully Changed!', 'top-center', 1500, true);
+
+					/* 
+						now we can hide the modal
+						
+						HINT: you can add to form instead:	
+							data-modal-autoclose-on-success="true"
+							data-modal-autoclose-on-success-delay="0"
+					*/
+					// jQuery('#sow_ajax_modal').modal('hide');
+
+				}
+
+			}
+		</script>

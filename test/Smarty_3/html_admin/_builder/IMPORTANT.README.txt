@@ -1,0 +1,26 @@
+
+	----------------------------------------------------
+	DO NOT USE THIS FOLDER!
+	This will build the admin layouts, nothing else!
+	----------------------------------------------------
+
+
+	This is what it does:
+		1. get the boilerplate of each layout from _partials
+		2. replace '<!-- builder:content -->' tag with the content for each page from _partials/content/
+		3. save as html page to its folder (exmaple: ../layout_1/index.html)
+		4. copy assets (from the frontend '../../assets')
+
+
+		-------------------------------------------------
+		So, if you changed something in src/scss/_variables.scss
+		you can rebuild all admin layouts by pointing your browser
+		to builder.php - and will rebuild all admin layouts!
+
+		- OR - simply copy/paste the assets/ folder from the frontend to each admin layout!
+		-------------------------------------------------
+
+
+	WHY THIS "TECHNIQUE"?
+	Because is time consuming doing changes by hand! 
+	This can also be achived with GULP! (in a future update)

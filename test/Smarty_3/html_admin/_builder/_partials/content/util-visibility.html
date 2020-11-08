@@ -1,0 +1,130 @@
+﻿					<!-- doc:start -->
+					<div class="page-title bg-transparent b-0">
+
+						<h1 class="h4 mt-4 mb-0 px-3 font-weight-normal">
+							Visibility
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb breadcrumb-sublime fs--13 pb-2 px-3">
+								<li class="breadcrumb-item">
+									<a href="index.html" class="js-ajax">Dashboard</a>
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Utils
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">
+									Visibility
+								</li>
+							</ol>
+						</nav>
+
+					</div>
+
+
+
+
+
+
+
+					<!-- start:row -->
+					<div class="row gutters-sm">
+
+						<!-- start:col: -->
+						<div class="col-12 mb-3">
+
+							<!-- start:portlet -->
+							<div class="portlet">
+
+								<div class="portlet-header border-bottom">
+									<span>Visibility</span>
+								</div>
+
+								<div class="portlet-body">
+									<div class="container py-6">
+
+										<table class="table table-lg">
+											<thead>
+												<tr>
+													<th scope="col" class="w--300">Class</th>
+													<th scope="col">Description</th>
+													<th scope="col" class="w--300">Quick Example</th>
+												</tr>
+											</thead>
+
+											<tbody>
+
+												<tr>
+													<td>
+														<code class="d-block">.hide</code>
+														<code class="d-block">.hide-force</code>
+														<br>
+														<code class="d-block">.show-hover-*</code>
+														<br>
+														
+														<h6>Old Boostrap</h6>
+														<code class="d-block">.hidden-*-[up|down]</code>
+														<br>
+
+														<h6>Boostrap classes</h6>
+														<code class="d-block">.visible</code>
+														<code class="d-block">.invisible</code>
+													</td>
+													<td>
+
+														<p>
+															<code>.hide</code> using just <i>display: none;</i> <br> 
+															<code>.hide-force</code> using <i>display: none <b>!important</b></i>; <br> 
+														</p>
+														<p class="bg-light p--15">
+															<code>.show-hover-*</code> used to show hidden elements on mouse over. 
+															Note: desktop only! Always visible on mobile devices!<br><br>
+
+															Visible on mobile<br>
+															<code>.show-hover-container</code> (main container)<br>
+															<code>.show-hover-item</code> (item to be hidden by default; visible on hover)<br><br>
+
+															All devices, same behaviour<br>
+															<code>.show-hover-container-all</code> (main container)<br>
+															<code>.show-hover-item-all</code> (item to be hidden by default; visible on hover)
+														</p>
+
+
+														<p class="bg-light p--15">
+															<code>.hidden-*-[up|down]</code> are the classes removed in Bootstrap 4. 
+															For some people is more handy to use them than combinations of <code>.d-block .d-none</code> new bootstrap classes. 
+															So you can use <code>.hidden-md-down</code>, <code>.hidden-xs-up</code>, etc. <u>Smarty layouts are not using them by default!</u>.
+															<br><br>
+															If you don't want them, you can comment/remove them in your production: _core/utils/_visibility_oldbs.scss
+														</p>
+
+													</td>
+
+													<td>
+
+														<small>Hover this container</small>
+														<div class="show-hover-container border p--15">
+
+															<div class="show-hover-item">.show-hover-item</div>
+
+														</div>
+
+													</td>
+												</tr>
+
+
+											</tbody>
+										</table>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- end:portlet -->
+
+						</div>
+						<!-- end:col: -->
+
+					</div>
+					<!-- end:row: -->
+					<!-- doc:end -->

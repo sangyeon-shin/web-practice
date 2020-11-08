@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Smarty V3</title>
+		<meta name="description" content="...">
+
+        <meta name="viewport" content="width=device-width, maximum-scale=5, initial-scale=1, user-scalable=0">
+        <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+        <!-- up to 10% speed up for external res -->
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+        <link rel="preconnect" href="https://fonts.googleapis.com/">
+        <link rel="preconnect" href="https://fonts.gstatic.com/">
+        <!-- preloading icon font is helping to speed up a little bit -->
+        <link rel="preload" href="assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
+
+        <link rel="stylesheet" href="assets/css/core.min.css">
+        <link rel="stylesheet" href="assets/css/vendor_bundle.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap">
+
+		<!-- favicon -->
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="apple-touch-icon" href="demo.files/logo/icon_512x512.png">
+
+		<link rel="manifest" href="assets/images/manifest/manifest.json">
+		<meta name="theme-color" content="#377dff">
+
+	</head>
+
+	<body class="header-over bg-light">
+
+		<div id="wrapper">
+
+
+			<!-- HEADER -->
+			<header id="header" class="shadow-xs">
+
+				<!-- NAVBAR -->
+				<div class="container position-relative">
+					<div class="col-lg-10 offset-lg-1">
+
+						<nav class="navbar navbar-expand-lg navbar-light justify-content-lg-between justify-content-md-inherit h--70">
+
+							<div class="align-items-start">
+
+								<!-- 
+									Logo : height: 70px max
+								-->
+								<a class="navbar-brand" href="index.html">
+									<img src="assets/images/logo/logo_light.svg" width="110" height="70" alt="...">
+								</a>
+
+							</div>
+
+
+
+							<!-- OPTIONS -->
+							<ul class="list-inline list-unstyled mb-0 d-flex align-items-end">
+
+
+								<li class="list-inline-item mx-1 dropdown">
+
+									<a href="index.html" aria-label="website search" class="fs--14 text-white clearfix">
+
+										<svg class="mx-1" width="14" height="14" viewBox="0 0 14 14"><path stroke="#FFF" fill="none" d="M11.5 6.73v6.77h-11v-11h7.615m-3.615 7l7-7m2 3v-5h-5"/></svg> 
+										to homepage
+
+									</a>
+
+								</li>
+
+							</ul>
+							<!-- /OPTIONS -->
+
+
+
+						</nav>
+
+					</div>
+				</div>
+				<!-- /NAVBAR -->
+
+			</header>
+			<!-- /HEADER -->
+
+
+		
+
+
+			<!-- PAGE SEARCH -->
+			<section class="bg-gradient-primary text-white pb-5">
+
+				<div class="container">
+
+					<div class="col-lg-10 offset-lg-1">
+
+						<!-- 
+
+							[SOW] SEARCH SUGGEST PLUGIN
+							++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++
+							PLEASE READ DOCUMENTATION
+							documentation/plugins-sow-search-suggest.html
+							++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++
+
+						-->
+						<form 	action="search-result-2.html" 
+								method="GET" 
+								data-autosuggest="on" 
+
+								data-mode="json" 
+								data-json-max-results='10'
+								data-json-related-title='Explore Smarty'
+								data-json-related-item-icon='fi fi-star-empty'
+								data-json-suggest-title='Suggestions for you'
+								data-json-suggest-noresult='No results for'
+								data-json-suggest-item-icon='fi fi-search'
+								data-json-suggest-min-score='5'
+								data-json-highlight-term='true'
+								data-contentType='application/json; charset=utf-8'
+								data-dataType='json'
+
+								data-container="#sow-search-container" 
+								data-input-min-length="2" 
+								data-input-delay="250" 
+								data-related-keywords="" 
+								data-related-url="_ajax/search_suggest_related.json" 
+								data-suggest-url="_ajax/search_suggest_input.json" 
+								data-related-action="related_get" 
+								data-suggest-action="suggest_get" 
+								class="js-ajax-search sow-search d-block">
+							<div class="sow-search-input w-100">
+
+								<!-- rounded: form-control-pill -->
+								<div class="input-group-over d-flex align-items-center w-100 h-100 rounded">
+
+									<input placeholder="How can we help you?" aria-label="How can we help you?" name="s" type="text" class="form-control-sow-search form-control form-control-lg form-control-custom b-0 text-white bg-diff" value="" autocomplete="off">
+
+									<span class="sow-search-buttons">
+
+										<!-- search button -->
+										<button aria-label="Global Search" type="submit" class="btn shadow-none m-0 px-3 py-2 bg-transparent text-white">
+											<i class="fi fi-search fs--20 m-0"></i>
+										</button>
+
+									</span>
+
+								</div>
+
+							</div>
+
+							<!-- search suggestion container -->
+							<div class="sow-search-container w-100 p-0 hide shadow-md" id="sow-search-container">
+								<div class="sow-search-container-wrapper">
+
+									<!-- main search container -->
+									<div class="sow-search-loader p-3 text-center hide">
+										<i class="fi fi-circle-spin fi-spin text-muted fs--30"></i>
+									</div>
+
+									<!-- 
+										AJAX CONTENT CONTAINER 
+										SHOULD ALWAYS BE AS IT IS : NO COMMENTS OR EVEN SPACES!
+									--><div class="sow-search-content rounded w-100 scrollable-vertical"></div>
+
+								</div>
+							</div>
+							<!-- /search suggestion container -->
+
+							<!-- 
+
+								overlay combinations:
+									overlay-dark opacity-* [1-9]
+									overlay-light opacity-* [1-9]
+
+							-->
+							<div class="sow-search-backdrop overlay-dark opacity-3 hide"></div>
+
+						</form>
+						<!-- /SEARCH -->
+
+
+					</div>
+
+				</div>
+
+				<!-- svg shape -->
+				<svg class="absolute-full z-index-0" width="100%" height="100%" viewBox="0 0 1920 90" preserveAspectRatio="none">
+					<path fill="rgba(0,0,0,0.03)" d="M1920,0C1217,0,120.574,155.567,0,0v90h1920V0z"></path>
+				</svg>
+
+			</section>
+			<!-- /PAGE SEARCH -->
+
+
+
+
+
+			<!-- PAGE TITLE -->
+			<section class="pb-4 pt-5">
+				<div class="container">
+					<div class="col-12 col-lg-10 offset-lg-1">
+
+						<h1 class="h2 font-weight-light">
+							Help Center Category
+						</h1>
+
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb fs--14">
+								<li class="breadcrumb-item"><a href="help-center-2-index.html">Help Center 2</a></li>
+								<li class="breadcrumb-item active" aria-current="page">Help Category</li>
+							</ol>
+						</nav>
+
+					</div>
+				</div>
+			</section>
+			<!-- /PAGE TITLE -->
+
+
+
+			<!-- start :: help center -->
+			<section class="py-4 mb-5">
+				<div class="container">
+
+					<div class="bg-white rounded shadow-xs p-4 col-lg-10 offset-lg-1">
+
+						<a href="help-center-2-article.html" class="d-block border-bottom text-decoration-none text-dark transition-hover-top transition-all-ease-250 py-4 d-flex">
+
+							<i class="fi fi-send fs--30 px-3 mx-4 m-0-xs text-primary"></i>
+							
+							<div>
+								<h3 class="text-primary fs--20">Starting in seconds</h3>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed egestas egestas fringilla phasellus faucibus.
+								</p>
+							</div>
+
+						</a>
+
+
+						<a href="help-center-2-article.html" class="d-block border-bottom text-decoration-none text-dark transition-hover-top transition-all-ease-250 py-4 d-flex">
+
+							<i class="fi fi-mollecules fs--30 px-3 mx-4 m-0-xs text-primary"></i>
+							
+							<div>
+								<h3 class="text-primary fs--20">Smarty this year</h3>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed egestas egestas fringilla phasellus faucibus.
+								</p>
+							</div>
+
+						</a>
+
+
+						<a href="help-center-2-article.html" class="d-block border-bottom text-decoration-none text-dark transition-hover-top transition-all-ease-250 py-4 d-flex">
+
+							<i class="fi fi-graph fs--30 px-3 mx-4 m-0-xs text-primary"></i>
+							
+							<div>
+								<h3 class="text-primary fs--20">Smarty over time</h3>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed egestas egestas fringilla phasellus faucibus.
+								</p>
+							</div>
+
+						</a>
+
+
+						<a href="help-center-2-article.html" class="d-block border-bottom text-decoration-none text-dark transition-hover-top transition-all-ease-250 py-4 d-flex">
+
+							<i class="fi fi-umbrella fs--30 px-3 mx-4 m-0-xs text-primary"></i>
+							
+							<div>
+								<h3 class="text-primary fs--20">Smarty Updates</h3>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed egestas egestas fringilla phasellus faucibus.
+								</p>
+							</div>
+
+						</a>
+
+
+						<a href="help-center-2-article.html" class="d-block border-bottom text-decoration-none text-dark transition-hover-top transition-all-ease-250 py-4 d-flex">
+
+							<i class="fi fi-calendar fs--30 px-3 mx-4 m-0-xs text-primary"></i>
+							
+							<div>
+								<h3 class="text-primary fs--20">Smarty future challenges</h3>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed egestas egestas fringilla phasellus faucibus.
+								</p>
+							</div>
+
+						</a>
+
+
+						<a href="help-center-2-article.html" class="d-block border-bottom text-decoration-none text-dark transition-hover-top transition-all-ease-250 py-4 d-flex">
+
+							<i class="fi fi-cogs fs--30 px-3 mx-4 m-0-xs text-primary"></i>
+							
+							<div>
+								<h3 class="text-primary fs--20">Smarty quick setup</h3>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed egestas egestas fringilla phasellus faucibus.
+								</p>
+							</div>
+
+						</a>
+
+
+						<!-- pagination : center -->
+						<nav aria-label="pagination" class="my-6">
+							<ul class="pagination pagination-pill justify-content-center">
+
+								<li class="page-item disabled">
+									<a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+								</li>
+								
+								<li class="page-item">
+									<a class="page-link" href="#">1</a>
+								</li>
+								
+								<li class="page-item active" aria-current="page">
+									<a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+								</li>
+								
+								<li class="page-item">
+									<a class="page-link" href="#">3</a>
+								</li>
+								
+								<li class="page-item">
+									<a class="page-link" href="#">Next</a>
+								</li>
+
+							</ul>
+						</nav>
+						<!-- /pagination : center -->
+
+
+					</div>
+
+				</div>
+			</section>
+			<!-- end :: help center -->
+
+
+
+
+
+			<!-- Footer -->
+			<footer id="footer" class="bg-white">
+				<div class="container text-center py-5">
+
+					<!-- logo -->
+					<span class="h--70 d-inline-flex align-items-center">
+						<img src="assets/images/logo/logo_dark.svg" width="110" height="70" alt="...">
+					</span>
+
+					<p class="m-0 text-gray-500 fs--14">
+
+						&copy; My Company Inc. 2015 – 2019. 
+
+						<br>
+
+						All Rights Reserved.
+					
+					</p>
+
+				</div>
+			</footer>
+			<!-- /Footer -->
+
+
+		</div><!-- /#wrapper -->
+
+		<script src="assets/js/core.min.js"></script>
+		
+	</body>
+</html>

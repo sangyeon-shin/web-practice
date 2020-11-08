@@ -1,0 +1,244 @@
+# Note: For a more friendly format, please see
+# the HTML version: /documentation/changelog.html
+# or the online version
+#################################################
+
+@Version 	3.1.2
+@Date		Tuesday, August 11, 2020
+@Author		Dorin Grigoras
+	* New: 		Ajax Image Switcher (documentation/plugins-sow-dropdown.html#ddimgsw)
+				(src/js/sow.core/sow.dropdown_ajax.js)
+				@VanillaJS
+	* New: 		Ajax Checkbox/Radio Group (documentation/plugins-sow-checkgroup.html)
+				(src/js/sow.core/sow.checkgroup.js)
+	* Update: 	SOW : File Upload (src/js/sow.core/sow.file_upload.js)
+				Added toast message params (ajax delete)
+				Cache reset for `Ajax Image Switcher` (on upload/delete images)
+	* Update: 	SOW : Checkall (Rewritten) (src/js/sow.core/sow.checkall.js)
+	* Update: 	SOW : Utils (+ Ajax Container Reload) (src/js/sow.core/sow.utils.js)
+	* Update: 	SOW : Utils (+ Ajax Form Live Monitor) (src/js/sow.core/sow.utils.js)
+	* Update: 	SOW : Input Suggest (+ Simple Search Suggest) (src/js/sow.core/sow.input_suggest.js)
+	* Update: 	NPM Bootstrap to v4.5.2
+	* Update: 	NPM bootstrap-select to 1.13.18
+	* Update: 	NPM datatables buttons to 1.6.3
+	* Update: 	NPM pickr to 1.7.2
+	* Update: 	NPM jarallax to 1.12.2
+	* Update: 	NPM pdfmake to 0.1.68
+	* Update: 	NPM prismjs to 1.21.0
+	* Update: 	NPM swiper to 6.1.1
+	* Update: 	gulp.config__vendors.js (js/css paths: swiper)
+	* Update: 	Added (src/js/sow.core/sow.vanilla.js)
+				PREPARING FOR JQUERY REPLACEMENT, PURE VANILLAJS
+	* Fix: 		Header sicky/scroll-reveal jump on hard reload
+				(src/js/sow.core/sow.header.js)
+	* Fix" 		SOW : Utils - 'Time ago' live update
+				(src/js/sow.core/sow.utils.js)
+	* Fix: 		SOW : File Upload (validation for `required` attribute, without `multiple` attribute)
+				(src/js/sow.core/sow.file_upload.js) 
+	* Cleanup: 	SOW plugins (various cleanups)
+
+
+
+
+
+@Version 	3.1.1
+@Date		Monday, May 25, 2020
+@Author		Dorin Grigoras
+	* Fix: 		Menu toggler on mobile (borders)
+
+
+@Version 	3.1.0
+@Date		Monday, May 25, 2020
+@Author		Dorin Grigoras
+
+	* NOTE:		To update Smarty is basically a copy/paste of CSS and JS files and your live project is not affected!
+				For this update you have to pay attention to your HEADER LOGO IMAGE (desktop and mobile). CSS rules for 
+				autoresize were removed! From now on, the logo must be manually set right, like any other image - including
+				spaces top/bottom/left/right - depending on the your/client logo!
+
+	* New:		2 Admin Layouts - Horizontal menu only
+	* Fix:		SOW : Form Advanced - modal backdrop (bug appeared in previous update)
+	* Fix:		SOW : Ajax Select 	: rolled back from version 3.0.8 (conflict reason)
+				(push htlm content to a div/container via select)
+	* Fix: 		Multiple SCSS/CSS fixes
+
+	* Update:	Stop propagation on click if dropdown has .dropdown-menu-hover class!
+				is marking it as open!
+	* Update: 	Admin Layouts - changed title/H1 from white background to transparent by default!
+	* Update: 	Multiple changes/updates/fixes in SOW javascript plugins!
+	* Update: 	Latest Bootstrap (4.5.0)
+	* Update: 	Latest jQuery (3.5.1)
+	* Update: 	Multiple Vendors update (datatable, summernote, colorpicker, swpier, flot, prismjs)
+	* Update: 	Documentation (content, layout)
+	* Update: 	Multiple HTML files in frontend and admin (various improvements)
+	* Update: 	Close dropdown on click, if .js-ajax class is present on the link! (fullajax navigation)
+	* Cleanup:	CSS/SCSS Header Logo : removed auto/force resize no matter the width/height of the logo
+	* Update: 	SCSS Variables (src/scss/variables.scss) added lines 503 - 509 (navbar brand, navbar toggler)
+				This line will remove default bootstrap .navbar-brand Y-axis paddings (~5px). Logo need
+				no extra Y-axis paddings for any Smarty header. This means 10px height more space for logo!
+	* Update:	Logo width/height on mobile (src/scss/_layout/_admin.scss ; src/scss/_layout/_header.scss)
+	* Update:	Admin content paddings on mobile (src/scss/_layout/_admin.scss)
+	* Update:	Datatable dropdowns CSS layout (src/scss/_vendors/vendor.datatables.scss)
+	* Update:	PrismJS margins (src/scss/_vendors/vendor.prismjs.scss)
+	* Update: 	GULP - multiple NPM packages (eerything is up to date)
+	* Removed: 	GULP functions (gulp html:build_frontend ; gulp html:build_admin).
+
+	* Update 	NPM Packages
+	@simonwep/pickr                    1.5.1    1.6.0    1.6.0  smarty
+	bootstrap                          4.4.1    4.5.0    4.5.0  smarty
+	bootstrap-select                 1.13.16  1.13.17  1.13.17  smarty
+	datatables.net-autofill-bs4        2.3.4    2.3.5    2.3.5  smarty
+	datatables.net-bs4               1.10.20  1.10.21  1.10.21  smarty
+	datatables.net-buttons-bs4         1.6.1    1.6.2    1.6.2  smarty
+	datatables.net-fixedcolumns-bs4    3.3.0    3.3.1    3.3.1  smarty
+	datatables.net-fixedheader-bs4     3.1.6    3.1.7    3.1.7  smarty
+	datatables.net-keytable-bs4        2.5.1    2.5.2    2.5.2  smarty
+	datatables.net-responsive-bs4      2.2.3    2.2.4    2.2.4  smarty
+	datatables.net-rowgroup-bs4        1.1.1    1.1.2    1.1.2  smarty
+	datatables.net-rowreorder-bs4      1.2.6    1.2.7    1.2.7  smarty
+	datatables.net-scroller-bs4        2.0.1    2.0.2    2.0.2  smarty
+	flot                              3.2.13   3.2.13    4.2.1  smarty
+	gulp-rename                        1.4.0    1.4.0    2.0.0  smarty
+	imagemin-gifsicle                  6.0.1    6.0.1    7.0.0  smarty
+	jquery                             3.4.1    3.4.1    3.5.1  smarty
+	moment                            2.25.0   2.25.3   2.25.3  smarty
+	node-notifier                      6.0.0    6.0.0    7.0.0  smarty
+
+
+
+@Version 	3.0.8
+@Date		Saturday, May 09, 2020
+@Author		Dorin Grigoras
+	* New:		Admin page: page-list.html
+	* New:		Admin page: page-product-add.html
+	* New:		SOW : Util - Ghost Ajax Form (src/js/sow.core/sow.util.js)
+	* New:		SOW : Form Advanced - Dynamic Table (Variants)
+	* New:		SOW : Input Suggest 
+	* Update: 	SOW : Ajax : Confirm (src/js/sow.core/sow.ajax_confirm.js)
+	* Update: 	Nestable Vendor (src/js/vendors/vendor.nestable.js)
+	* Update: 	SOW : Ajax Select (added: "Via ajax / content populate" (src/js/sow.core/sow.ajax_select.js))
+	* Update: 	SOW : Form Advanced (src/js/sow.core/sow.form_advanced.js)
+	* Update: 	Nestable - delete via modal (src/js/vendors/vendor.nestable.js)
+	* Update: 	Daterangepicker - positioning param (src/js/vendors/vendor.daterangepicker.js)
+	* Update: 	GULP : Fullcalendar
+	* Update: 	GULP : Bootstrap Select
+	* Update: 	GULP : Jarallax
+	* Update: 	GULP : PrismJS
+	* Update: 	Summernote
+	* Update: 	Swiper Slider
+	* Update: 	gulp.config__core.js  (sow_util section)
+	* Fix: 		*-sm forms (src/scss/_core/components/_forms.scss)
+	* Fix: 		Nestable Controller : delete on reorder (src/js/vendors/vendor.nestable.js)
+	* Fix: 		Datepicker Controller - data-date-start="" accept real date (src/js/vendors/vendor.datepicker.js)
+
+@Version 	3.0.7
+@Date		Wednesday, February 5, 2020
+@Author		Dorin Grigoras
+	* New: 		Cocoen Vendor (Image Compare)
+	* New 		Cocoen Vendor Image Compare
+	* Update 	SOW : Ajax Navigation (src/js/sow.core/sow.ajax_navigation.js)
+	* Update 	src/scss/_vendors/summernote.scss (because of npm update)
+	* Update 	gulp.config__vendors.js: (summernote section)
+	* Update 	package.json: npm update
+
+@Version 	3.0.6
+@Date		Tuesday, December 3, 2019
+@Author		Dorin Grigoras
+	* New: 		Christmas Shop Concept page
+	* New: 		Landing 7 (Clean SAAS start page)
+	* New: 		SOW : Util – new function added Element Cloner function
+	* New: 		SOW : Util – new function added Element Util function
+	* New: 		Vendor : Prismjs - code highlighter
+	* New: 		Notebook-like Grid Class
+	* New: 		Admin page: account-settings.html
+	* New: 		Admin page: admin-staff.html
+	* New: 		Admin pages: message-*.html
+	
+	* Update 	(GULP users only) Important rewrite in Flaticon (Smarty Core Icons)!
+					Variables.scss : quotes only removed for icons:
+					$rating-icon-empty: \f173 !default;     (instead of "\f173" !default;)
+					$rating-icon-half: \f191 !default;       (instead of "\f191" !default;)
+					$rating-icon-full: \f190 !default;       (instead of "\f190" !default;)
+					$header-main-links-caret-main-ico: \f1c4 !default;       (instead of "\f1c4" !default;)
+					Very important to also replace icon folder: src/scss/_vendors/_sow/flaticon/.
+					Added icon-unquote() mixin function to src/scss/_core/mixins.scss so icons are using it from now!
+					For this update, src/scss/_core/ folder must be replaced - many icons are updated to avoid browser display issues!
+	
+	* Update:	removed additional shadow for soft buttons on active and focus state
+	* Update:	SOW : Toast plugin - replaced default Smarty Utility classes with default Bootstrap classes (nothing affected)
+	* Update:	SOW : Ajax Confirm - new params
+	* Update:	SOW : Button Toggle - allow temporized on ajax requests ( back to previous state for a another request(s) )
+	* Update: 	Minor CSS updates/changes (like dropdown spacings)
+	* Update: 	added $toast-font-size to src/scss/variables.scss
+	* Update: 	GULP : will now copy js/css to html_frontend/assets/ only if html_frontend directory exists
+	* Update:	GULP : remove javascript comments on minified files
+	* Update:	GULP : prepend current version to core & vendor (js and css)
+	* Update:	Grid adjustment/spacings (shop-index-3.html & shop-index-4.html) featured on mobile
+	* Update:	package.json: npm remove popper.js (ununsed, bootstrap already has it packed) <br>
+	* Update:	package.json: npx npm-update-all 
+					:: Affected by update: 1 plugin (chart.js : 2 deprecated variables)
+					:: changes: src/js/vendors/vendor.chartjs.js
+					:: 		- label position (bugxif in Smarty controller when legend was set "true")
+					:: 		- categoryPercentage & barPercentage : moved to [data][datasets]
+					:: 		- added RTL for tooltip & legend
+					:: npm output before update:
+				Package                     Current  Wanted  Latest  Location
+				@simonwep/pickr               1.4.4   1.4.6   1.4.6  smarty
+				autoprefixer                  9.6.5   9.7.0   9.7.0  smarty
+				chart.js                      2.8.0   2.9.1   2.9.1  smarty
+				datatables.net-buttons-bs4    1.6.0   1.6.1   1.6.1  smarty
+				jarallax                     1.11.1  1.12.0  1.12.0  smarty
+				open                          6.4.0   6.4.0   7.0.0  smarty
+				pdfmake                      0.1.60  0.1.61  0.1.61  smarty
+				swiper                        5.0.4   5.2.0   5.2.0  smarty
+
+				--- --- ---
+				npm audit
+				found 0 vulnerabilities in 20730 scanned packages
+
+@Version 	3.0.5
+@Date		Wednesday, October 23, 2019
+@Author		Dorin Grigoras
+	* Fix: 	Fullajax mobile - close navigation on click
+
+@Version 	3.0.4
+@Date		Wednesday, October 23, 201
+@Author		Dorin Grigoras
+	* New: 		Full Ajax 13 Frontend Pages (as a demonstration of Smarty Power)
+	* New: 		Footer variation #4
+	* Update:	Added Social Icons: instagram, twitch, spotify, github, soundcloud
+	* Update:	SOW Header - added onepage navigation function (close navbar if .scroll-to class is present)
+	* Fix:		Small wrong typos in documentation
+	* Fix: 		Dropdown links spacing for no deep dropdowns
+	* Fix: 		.text-rotate class in RTL mode
+
+@Version 	3.0.3
+@Date		Monday, October 21, 2019
+@Author		Dorin Grigoras
+	* New: 		Niche Caffe
+	* Update: 	Added fadein animation alias class to .navbar-collapse 
+	* Update: 	SOW : GRPD - using Google Cookies rules.
+	* Update: 	Smarty Core now set a default "sow" `SameSite & Secure` Cookie according to new Google rules.
+	* Update: 	Removed default "bouncein" animation on mobile main menu to solve possible issues on new header layouts. 
+		  		Now available using classes: navbar-animation-fadein, navbar-animation-bouncein
+	* Update: 	Documentation layout - adaptable using flex utilities (so right boxes are not anynmore shrink).
+	* Change: 	indigo color from #6610f2 to #533be2 (scss/_variables.scss)
+	* Fix: 		Slimscroll Vendor : z-index is hardcoded and a css rule was added to be lower than #header
+
+@Version 	3.0.2
+@Date		Wednesday, October 16, 2019
+@Author		Dorin Grigoras
+	* New: 		Shop Category 4
+	* New: 		Added SEED_PROJECT folder - ready to start a project
+	* Fix: 		Firefox Select icon (src/scss/_core/components/_forms.scss)
+	* Fix: 		`.scrollable-vertical` class visibility 	(src/scss/_core/utils/_scroll.scss)
+
+@Version 	3.0.1
+@Date		Wednesday, October 16, 2019
+@Author		Dorin Grigoras
+	* New: 		Forum Pages
+
+@Version 	3.0.0
+@Date		Tuesday, October 15, 2019
+@Author		Dorin Grigoras
+	* Initial Release

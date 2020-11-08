@@ -1,0 +1,21 @@
+// Load needed variables
+@import '../_core/mixins',
+        '../variables',
+        '../../../node_modules/bootstrap/scss/functions',
+        '../../../node_modules/bootstrap/scss/variables';
+
+
+
+
+.fancybox-container .fancybox-bg {
+	background-color: rgba($white, 0.96);
+}
+.fancybox-caption {
+	background: linear-gradient(to top,rgba(255,255,255,.85) 0,rgba(255,255,255,.3) 50%,rgba(255,255,255,.15) 65%,rgba(255,255,255,.075) 75.5%,rgba(255,255,255,.037) 82.85%,rgba(255,255,255,.019) 88%,rgba(255,255,255,0) 100%) !important;
+}
+.fancybox-caption__body {
+	color: #121212;
+}
+.fancybox-button--close {
+	color: #212121 !important;
+}
