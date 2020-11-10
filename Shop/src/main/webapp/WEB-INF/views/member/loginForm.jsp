@@ -1,3 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"	isELIgnored="false"
+	%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<c:set var="contextPath"  value="${pageContext.request.contextPath }"  />
+<%
+  request.setCharacterEncoding("UTF-8");
+%>  
+
 <!doctype html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -13,17 +23,17 @@
       <link rel="preconnect" href="https://fonts.googleapis.com/">
       <link rel="preconnect" href="https://fonts.gstatic.com/">
       <!-- preloading icon font is helping to speed up a little bit -->
-      <link rel="preload" href="assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
+      <link rel="preload" href="${contextPath}/resources/assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
 
-      <link rel="stylesheet" href="assets/css/core.css">
-      <link rel="stylesheet" href="assets/css/vendor_bundle.min.css">
+      <link rel="stylesheet" href="${contextPath}/resources/assets/css/core.css">
+      <link rel="stylesheet" href="${contextPath}/resources/assets/css/vendor_bundle.min.css">
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap">
 
   <!-- favicon -->
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="demo.files/logo/icon_512x512.png">
 
-  <link rel="manifest" href="assets/images/manifest/manifest.json">
+  <link rel="manifest" href="${contextPath}/resources/assets/images/manifest/manifest.json">
   <meta name="theme-color" content="#377dff">
 
   <!--font-->
@@ -140,7 +150,7 @@
 								Logo : height: 70px max
 							-->
 							<a class="navbar-brand m-0" href="index.html">
-								<img src="assets/images/logo/logo_dark.svg" width="110" height="70" alt="...">
+								<img src="${contextPath}/resources/assets/images/logo/logo_dark.svg" width="110" height="70" alt="...">
 							</a>
 
 						</div>
@@ -470,7 +480,7 @@
 										Logo : height: 70px max
 									-->
 									<a class="navbar-brand" href="index.html">
-										<img src="assets/images/logo/logo_dark.svg" width="110" height="70" alt="...">
+										<img src="${contextPath}/resources/assets/images/logo/logo_dark.svg" width="110" height="70" alt="...">
 									</a>
 
 								</div>
@@ -875,30 +885,30 @@
 
 						<ul class="list-inline mb-0 mt-2 float-end float-none-xs m-0-xs"> 
 							<li class="list-inline-item m-0"> 
-								<img width="38" height="24" class="lazy" data-src="assets/images/credit_card/visa.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="visa credit card icon">
+								<img width="38" height="24" class="lazy" data-src="${contextPath}/resources/assets/images/credit_card/visa.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="visa credit card icon">
 							</li> 
 
 							<li class="list-inline-item m-0"> 
-								<img width="38" height="24" class="lazy" data-src="assets/images/credit_card/mastercard.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="mastercard credit card icon">
+								<img width="38" height="24" class="lazy" data-src="${contextPath}/resources/assets/images/credit_card/mastercard.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="mastercard credit card icon">
 							</li> 
 
 							<li class="list-inline-item m-0"> 
-								<img width="38" height="24" class="lazy" data-src="assets/images/credit_card/discover.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="discover credit card icon">
+								<img width="38" height="24" class="lazy" data-src="${contextPath}/resources/assets/images/credit_card/discover.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="discover credit card icon">
 							</li>
 
 							<li class="list-inline-item m-0"> 
-								<img width="38" height="24" class="lazy" data-src="assets/images/credit_card/amazon.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="amazon credit card icon">
+								<img width="38" height="24" class="lazy" data-src="${contextPath}/resources/assets/images/credit_card/amazon.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="amazon credit card icon">
 							</li>
 							
 							<li class="list-inline-item m-0"> 
-								<img width="38" height="24" class="lazy" data-src="assets/images/credit_card/paypal.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="paypal credit card icon">
+								<img width="38" height="24" class="lazy" data-src="${contextPath}/resources/assets/images/credit_card/paypal.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="paypal credit card icon">
 							</li>
 
 							<li class="list-inline-item m-0"> 
-								<img width="38" height="24" class="lazy" data-src="assets/images/credit_card/skrill.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="skrill credit card icon">
+								<img width="38" height="24" class="lazy" data-src="${contextPath}/resources/assets/images/credit_card/skrill.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="skrill credit card icon">
 							</li>
 
-							<!-- more vendors on assets/images/credit_card/ -->
+							<!-- more vendors on ${contextPath}/resources/assets/images/credit_card/ -->
 
 						</ul>
 
@@ -911,7 +921,7 @@
 
 		</div><!-- /#wrapper -->
 
-		<script src="assets/js/core.min.js"></script>
+		<script src="${contextPath}/resources/assets/js/core.min.js"></script>
 		
 	</body>
 </html>
