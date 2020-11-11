@@ -9,8 +9,11 @@
 %>  
 
 <!doctype html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-	<head>
+<html>
+	 <head>
+	 <meta charset="UTF-8">
+	 <script src="http://code.jquery.com/jquery-latest.js"></script>
+	 <%--
 		<title>이거사조</title>
 		<meta name="description" content="...">
 
@@ -641,9 +644,9 @@
 						</nav>
 
 					</div>
-				
 			</header>
-			<!-- /HEADER -->
+				--%>
+			<!-- /HEADER --> 
 
 
 		
@@ -1879,7 +1882,7 @@
 		    data-ajax-modal-backdrop=""></div>
 
 
-		<script src="${contextPath}/resources/assets/js/core.min.js"></script>
+		<script src="${contextPath}/resources/assets/js/core.js"></script>
 		
 	</body>
 </html>

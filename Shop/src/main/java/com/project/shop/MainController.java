@@ -23,6 +23,8 @@ public class MainController {
 			ModelAndView mav=new ModelAndView();
 			String viewName=(String)request.getAttribute("viewName");
 			mav.setViewName(viewName);
+			System.out.println("mav: "+mav);			
+
 			
 			return mav;
 	}
