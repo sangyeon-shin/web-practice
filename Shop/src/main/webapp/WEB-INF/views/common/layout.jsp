@@ -2,7 +2,7 @@
     pageEncoding="utf-8"
     isELIgnored="false"
     %>
-<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>    <!-- 자바의 import문처럼 타일즈를 사용하기 위해 반드시 추가해야 합니다. -->
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>     <!-- 자바의 import문처럼 타일즈를 사용하기 위해 반드시 추가해야 합니다. -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="contextPath"  value="${pageContext.request.contextPath}"  />
 <%

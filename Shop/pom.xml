@@ -35,8 +35,7 @@
 			<artifactId>tiles-servlet</artifactId>
 			<version>2.2.2</version>
 		</dependency>
-
-
+		
 
 		<!-- Spring -->
 		<dependency>
