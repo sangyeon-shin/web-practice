@@ -99,7 +99,7 @@
 							<!-- 
 								Logo : height: 70px max
 							-->
-							<a class="navbar-brand m-0" href="index.html">
+							<a class="navbar-brand m-0" href="${contextPath }/main/main.do">
 								<img src="${contextPath}/resources/assets/images/logo/logo_dark.svg" width="110" height="70" alt="...">
 							</a>
 
@@ -263,7 +263,7 @@
 							<!-- favourites button : visible : desktop only -->
 							<li class="list-inline-item mx-1 dropdown d-none d-sm-block">
 
-								<a href="signup.html" aria-label="My Favourites" class="d-inline-block text-center text-dark">
+								<a href=${contextPath}/member/signupForm.do" aria-label="signup" class="d-inline-block text-center text-dark">
 									<i class="fi fi-users fs--20"></i>
 									<span class="d-block font-weight-light fs--14">회원가입</span>
 								</a>
